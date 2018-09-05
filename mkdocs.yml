@@ -7,6 +7,7 @@ site_url: https://windforce17.github.io/blog/
 repo_name: 'Windforce17/blog'
 repo_url: 'https://github.com/Windforce17/blog'
 edit_uri: 'blob/master/docs/'
+copyright: 'Copyright &copy; 2016 - 2018 Windforce17'
 theme:
   name: 'material'
   language: 'zh'
@@ -21,6 +22,12 @@ theme:
     text: 'Fira Sans'
     code: 'Fira Mono'
 
+extra_javascript:
+  - '_static/js/extra.js'
+  - 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'
+
+extra_css:
+  - '_static/css/extra.css'
 markdown_extensions:
   - admonition
   - codehilite:
