@@ -1,0 +1,2378 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Windforce17's blog">
+      
+      
+        <link rel="canonical" href="https://windforce17.github.io/coding/golang/Golang 20 Tips/">
+      
+      
+        <meta name="author" content="Windforce17">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../..">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Golang tips and traps - windforce17's blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://gstatic.loli.net" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700|Fira+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../../#golang-tips-and-traps" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://windforce17.github.io/" title="windforce17's blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                windforce17's blog
+              </span>
+              <span class="md-header-nav__topic">
+                Golang tips and traps
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/Windforce17/Windforce17/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Windforce17/Windforce17
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../WebAttack/SQL注入/" title="WebAttack" class="md-tabs__link">
+          WebAttack
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../DjangoStudy/" title="Coding" class="md-tabs__link md-tabs__link--active">
+          Coding
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../ctf/CTFstudy/" title="Ctf" class="md-tabs__link">
+          Ctf
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../keyAndSetting/各种Key/" title="keyAndSetting" class="md-tabs__link">
+          keyAndSetting
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../shell/getshell/" title="Shell" class="md-tabs__link">
+          Shell
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../入侵检测/大型互联网企业入侵检测实战总结/" title="入侵检测" class="md-tabs__link">
+          入侵检测
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../汪汪汪/date/" title="汪汪汪" class="md-tabs__link">
+          汪汪汪
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://windforce17.github.io/" title="windforce17's blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    windforce17's blog
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/Windforce17/Windforce17/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      Windforce17/Windforce17
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../interview/" title="Interview" class="md-nav__link">
+      Interview
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      WebAttack
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        WebAttack
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/SQL注入/" title="SQL注入" class="md-nav__link">
+      SQL注入
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/XSS SSRF/" title="SSRF&XSS" class="md-nav__link">
+      SSRF&XSS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/msf/" title="Msf" class="md-nav__link">
+      Msf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/other/" title="Other" class="md-nav__link">
+      Other
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/php代码审计/" title="Php代码审计" class="md-nav__link">
+      Php代码审计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/web安全深度刨析/" title="Web安全深度刨析" class="md-nav__link">
+      Web安全深度刨析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/wlan attack/" title="mac 下破解Wi-Fi" class="md-nav__link">
+      mac 下破解Wi-Fi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/信息收集/" title="信息收集" class="md-nav__link">
+      信息收集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/压测/" title="工具简介" class="md-nav__link">
+      工具简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/各种漏洞/" title="各种漏洞" class="md-nav__link">
+      各种漏洞
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/提权/" title="提权" class="md-nav__link">
+      提权
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/漏洞扫描/" title="漏洞扫描" class="md-nav__link">
+      漏洞扫描
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/绕过/" title="绕过" class="md-nav__link">
+      绕过
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-14" type="checkbox" id="nav-3-14">
+    
+    <label class="md-nav__link" for="nav-3-14">
+      Internet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-14">
+        Internet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../WebAttack/Internet/网络协议/" title="网络协议" class="md-nav__link">
+      网络协议
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Coding
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Coding
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../DjangoStudy/" title="Django学习" class="md-nav__link">
+      Django学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../doker/" title="Doker" class="md-nav__link">
+      Doker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git 相关/" title="git" class="md-nav__link">
+      git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../jetbrains/" title="Jetbrains" class="md-nav__link">
+      Jetbrains
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../js/" title="绕过chrome检测关闭当前窗口" class="md-nav__link">
+      绕过chrome检测关闭当前窗口
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../math/" title="Math" class="md-nav__link">
+      Math
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../networkCenter/" title="networkCenter" class="md-nav__link">
+      networkCenter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/" title="常用设置" class="md-nav__link">
+      常用设置
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python/" title="各种小玩意" class="md-nav__link">
+      各种小玩意
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../命令/" title="python" class="md-nav__link">
+      python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12" type="checkbox" id="nav-4-12">
+    
+    <label class="md-nav__link" for="nav-4-12">
+      Cpp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-12">
+        Cpp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cpp/c++/" title="C++" class="md-nav__link">
+      C++
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cpp/qt_image/" title="Qt图片处理" class="md-nav__link">
+      Qt图片处理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../cpp/为什么要用基类指针指向派生类对象/" title="为什么要用基类指针指向派生类对象" class="md-nav__link">
+      为什么要用基类指针指向派生类对象
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13" type="checkbox" id="nav-4-13">
+    
+    <label class="md-nav__link" for="nav-4-13">
+      dataBase
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-13">
+        dataBase
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dataBase/mysql/" title="Mysql" class="md-nav__link">
+      Mysql
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14" type="checkbox" id="nav-4-14" checked>
+    
+    <label class="md-nav__link" for="nav-4-14">
+      Golang
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-14">
+        Golang
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Golang tips and traps
+      </label>
+    
+    <a href="./" title="Golang tips and traps" class="md-nav__link md-nav__link--active">
+      Golang tips and traps
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="未使用的变量" class="md-nav__link">
+    未使用的变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="包导入" class="md-nav__link">
+    包导入
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#init" title="init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-pointer" title="nil pointer" class="md-nav__link">
+    nil pointer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitwise-operator" title="bitwise Operator" class="md-nav__link">
+    bitwise Operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-slice-is-reference" title="map , slice is reference" class="md-nav__link">
+    map , slice is reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-multi-slice" title="connect multi slice" class="md-nav__link">
+    connect multi slice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rune" title="rune" class="md-nav__link">
+    rune
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composistion" title="composistion" class="md-nav__link">
+    composistion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-compare" title="struct compare" class="md-nav__link">
+    struct compare
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deepequal-bytesequal" title="DeepEqual() &amp; bytes.Equal" class="md-nav__link">
+    DeepEqual() &amp; bytes.Equal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goroutines-sync-group" title="goroutines sync group" class="md-nav__link">
+    goroutines sync group
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chan-buffer-size" title="chan buffer size" class="md-nav__link">
+    chan buffer size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-channel-closed-channel" title="nil channel &amp; closed channel" class="md-nav__link">
+    nil channel &amp; closed channel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-in-loop" title="variables in loop" class="md-nav__link">
+    variables in loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break-loop" title="break loop" class="md-nav__link">
+    break loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#close-http-body" title="close http body" class="md-nav__link">
+    close http body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defer-call" title="defer call" class="md-nav__link">
+    defer call
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-not-addressable" title="map not addressable" class="md-nav__link">
+    map not addressable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-interfaces-and-nil-interfaces-values" title=""nil" Interfaces and "nil" Interfaces Values" class="md-nav__link">
+    "nil" Interfaces and "nil" Interfaces Values
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rsa/" title="Rsa" class="md-nav__link">
+      Rsa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15">
+    
+    <label class="md-nav__link" for="nav-4-15">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-15">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/arch/" title="Arch" class="md-nav__link">
+      Arch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/etcd/" title="Etcd" class="md-nav__link">
+      Etcd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/https/" title="使用Let's Encrypt 进行泛解析。" class="md-nav__link">
+      使用Let's Encrypt 进行泛解析。
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/improve_performance/" title="性能优化" class="md-nav__link">
+      性能优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/linux/" title="如何查看Linux系统的带宽流量" class="md-nav__link">
+      如何查看Linux系统的带宽流量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/ubuntu16/" title="ubuntu1604" class="md-nav__link">
+      ubuntu1604
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
+    
+    <label class="md-nav__link" for="nav-4-16">
+      Win
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-16">
+        Win
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../win/win ctl/" title="win some command" class="md-nav__link">
+      win some command
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
+    
+    <label class="md-nav__link" for="nav-4-17">
+      编译原理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-17">
+        编译原理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../编译原理/overView/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Ctf
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Ctf
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/CTFstudy/" title="学习基本思路" class="md-nav__link">
+      学习基本思路
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/取证/" title="取证" class="md-nav__link">
+      取证
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/爆破相关/" title="爆破相关" class="md-nav__link">
+      爆破相关
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-4" type="checkbox" id="nav-5-4">
+    
+    <label class="md-nav__link" for="nav-5-4">
+      Awd
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-4">
+        Awd
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/awd/AWD/" title="AWD" class="md-nav__link">
+      AWD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/awd/权限维持/" title="权限维持" class="md-nav__link">
+      权限维持
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-5" type="checkbox" id="nav-5-5">
+    
+    <label class="md-nav__link" for="nav-5-5">
+      Misc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-5">
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/misc/dropsec12.9/" title="misc" class="md-nav__link">
+      misc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/misc/other/" title="Other" class="md-nav__link">
+      Other
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-6" type="checkbox" id="nav-5-6">
+    
+    <label class="md-nav__link" for="nav-5-6">
+      Pwn
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-6">
+        Pwn
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/pwn/1/" title="1" class="md-nav__link">
+      1
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5-7" type="checkbox" id="nav-5-7">
+    
+    <label class="md-nav__link" for="nav-5-7">
+      Reverse
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-5-7">
+        Reverse
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/reverse/ReversingEngineering/" title="相关论坛" class="md-nav__link">
+      相关论坛
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/reverse/shark恒/" title="shark恒破解记录" class="md-nav__link">
+      shark恒破解记录
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ctf/reverse/unpack/" title="脱壳" class="md-nav__link">
+      脱壳
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      keyAndSetting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        keyAndSetting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../keyAndSetting/各种Key/" title="windows kms key" class="md-nav__link">
+      windows kms key
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../shell/getshell/" title="Getshell" class="md-nav__link">
+      Getshell
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      入侵检测
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        入侵检测
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../入侵检测/大型互联网企业入侵检测实战总结/" title="大型互联网企业入侵检测实战总结" class="md-nav__link">
+      大型互联网企业入侵检测实战总结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      汪汪汪
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        汪汪汪
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../汪汪汪/date/" title="Date" class="md-nav__link">
+      Date
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="未使用的变量" class="md-nav__link">
+    未使用的变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="包导入" class="md-nav__link">
+    包导入
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#init" title="init" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-pointer" title="nil pointer" class="md-nav__link">
+    nil pointer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bitwise-operator" title="bitwise Operator" class="md-nav__link">
+    bitwise Operator
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-slice-is-reference" title="map , slice is reference" class="md-nav__link">
+    map , slice is reference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-multi-slice" title="connect multi slice" class="md-nav__link">
+    connect multi slice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rune" title="rune" class="md-nav__link">
+    rune
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composistion" title="composistion" class="md-nav__link">
+    composistion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struct-compare" title="struct compare" class="md-nav__link">
+    struct compare
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deepequal-bytesequal" title="DeepEqual() &amp; bytes.Equal" class="md-nav__link">
+    DeepEqual() &amp; bytes.Equal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goroutines-sync-group" title="goroutines sync group" class="md-nav__link">
+    goroutines sync group
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chan-buffer-size" title="chan buffer size" class="md-nav__link">
+    chan buffer size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-channel-closed-channel" title="nil channel &amp; closed channel" class="md-nav__link">
+    nil channel &amp; closed channel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-in-loop" title="variables in loop" class="md-nav__link">
+    variables in loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#break-loop" title="break loop" class="md-nav__link">
+    break loop
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#close-http-body" title="close http body" class="md-nav__link">
+    close http body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defer-call" title="defer call" class="md-nav__link">
+    defer call
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#map-not-addressable" title="map not addressable" class="md-nav__link">
+    map not addressable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nil-interfaces-and-nil-interfaces-values" title=""nil" Interfaces and "nil" Interfaces Values" class="md-nav__link">
+    "nil" Interfaces and "nil" Interfaces Values
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Windforce17/Windforce17/blob/master/docs/coding/golang/Golang 20 Tips.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="golang-tips-and-traps">Golang tips and traps<a class="headerlink" href="#golang-tips-and-traps" title="Permanent link">&para;</a></h1>
+<h2 id="_1">未使用的变量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kd">var</span> <span class="nx">gvar</span> <span class="kt">int</span> <span class="c1">//not an error</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>  
+    <span class="nx">two</span> <span class="o">:=</span> <span class="mi">2</span>      <span class="c1">//error, unused variable</span>
+    <span class="kd">var</span> <span class="nx">three</span> <span class="kt">int</span> <span class="c1">//error, even though it&#39;s assigned 3 on the next line</span>
+    <span class="nx">three</span> <span class="p">=</span> <span class="mi">3</span>
+    <span class="nx">_</span><span class="p">=</span><span class="nx">two</span>
+
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="_2">包导入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<span class="kn">import</span> <span class="p">.</span> <span class="s">&quot;fmt&quot;</span>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Println</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<span class="kn">import</span> <span class="p">.</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">const</span> <span class="nx">Hello</span><span class="p">=</span><span class="s">&quot;hello&quot;</span>
+<span class="kd">var</span> <span class="nx">world</span> <span class="kt">string</span>
+
+<span class="kd">func</span> <span class="nx">init</span><span class="p">(){</span>
+    <span class="nx">world</span> <span class="p">=</span> <span class="s">&quot;world&quot;</span>
+    <span class="nx">Println</span><span class="p">(</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">world</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">(){}</span>
+</pre></div>
+
+<h2 id="nil-pointer">nil pointer<a class="headerlink" href="#nil-pointer" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>    <span class="kd">var</span> <span class="nx">m</span> <span class="o">*</span><span class="kt">int</span> <span class="c1">//nil int pointer</span>
+    <span class="kd">var</span> <span class="nx">n</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span> <span class="c1">//nil map[string]int reference</span>
+    <span class="o">*</span><span class="nx">m</span><span class="p">=</span><span class="mi">4</span>    <span class="c1">//error</span>
+    <span class="c1">//m=new(int)</span>
+</pre></div>
+
+<h2 id="bitwise-operator">bitwise Operator<a class="headerlink" href="#bitwise-operator" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="o">:=</span><span class="mi">2</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(^</span><span class="nx">a</span><span class="p">)</span>
+    <span class="c1">//~ XOR</span>
+    <span class="c1">//优先级</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="map-slice-is-reference">map , slice is reference<a class="headerlink" href="#map-slice-is-reference" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">s</span><span class="o">:=</span><span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="nx">d</span><span class="o">:=</span><span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">}</span>
+    <span class="nx">s</span><span class="p">=</span><span class="nb">append</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span>
+    <span class="nx">s</span><span class="p">=</span><span class="nb">append</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span>
+    <span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]=</span><span class="mi">7</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+<span class="p">}</span><span class="nx">s</span>
+</pre></div>
+
+<h2 id="connect-multi-slice">connect multi slice<a class="headerlink" href="#connect-multi-slice" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">concat</span>
+
+<span class="kd">func</span> <span class="nx">concatCopyPreAllocate</span><span class="p">(</span><span class="nx">slices</span> <span class="p">[][]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">[]</span><span class="kt">byte</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">totalLen</span> <span class="kt">int</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">s</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">slices</span> <span class="p">{</span>
+        <span class="nx">totalLen</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">tmp</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">totalLen</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">s</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">slices</span> <span class="p">{</span>
+        <span class="nx">i</span> <span class="o">+=</span> <span class="nb">copy</span><span class="p">(</span><span class="nx">tmp</span><span class="p">[</span><span class="nx">i</span><span class="p">:],</span> <span class="nx">s</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">tmp</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">concatAppend</span><span class="p">(</span><span class="nx">slices</span> <span class="p">[][]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">[]</span><span class="kt">byte</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">tmp</span> <span class="p">[]</span><span class="kt">byte</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">s</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">slices</span> <span class="p">{</span>
+        <span class="nx">tmp</span> <span class="p">=</span> <span class="nb">append</span><span class="p">(</span><span class="nx">tmp</span><span class="p">,</span> <span class="nx">s</span><span class="o">...</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">tmp</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="rune">rune<a class="headerlink" href="#rune" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">data2</span> <span class="o">:=</span> <span class="s">&quot;青云&quot;</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">data2</span><span class="p">)))</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">data</span> <span class="o">:=</span> <span class="s">&quot;é&quot;</span><span class="c1">//two codpoints ,combining character</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span> <span class="c1">//prints: 3</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">data</span><span class="p">)))</span><span class="c1">//print:2</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="composistion">composistion<a class="headerlink" href="#composistion" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">type</span> <span class="nx">Person</span> <span class="kd">interface</span> <span class="p">{</span>
+    <span class="nx">Introduce</span><span class="p">()</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">Student</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="kt">string</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">Teacher</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="kt">string</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="nx">Student</span><span class="p">)</span> <span class="nx">Introduce</span><span class="p">(){</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hi, I&#39;m &quot;</span><span class="p">,</span><span class="nx">s</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="p">(</span><span class="nx">s</span> <span class="o">*</span><span class="nx">Teacher</span><span class="p">)</span> <span class="nx">Introduce</span><span class="p">(){</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Hi, I&#39;m teacher&quot;</span><span class="p">,</span><span class="nx">s</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="kd">type</span> <span class="nx">School</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">Person</span>
+    <span class="nx">number</span> <span class="kt">int</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">zhichen</span><span class="o">:=</span><span class="nx">School</span><span class="p">{</span>
+        <span class="nx">Student</span><span class="p">{</span><span class="s">&quot;wzc&quot;</span><span class="p">},</span>
+        <span class="mi">123</span><span class="p">,</span>
+    <span class="p">}</span>
+    <span class="nx">zhichen</span><span class="p">.</span><span class="nx">Introduce</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="struct-compare">struct compare<a class="headerlink" href="#struct-compare" title="Permanent link">&para;</a></h2>
+<p>只有<code>struct</code>中数据都可以比较时，才能用 <code>==</code>
+<div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>  
+    <span class="nx">num</span> <span class="kt">int</span>
+    <span class="nx">fp</span> <span class="kt">float32</span>
+    <span class="nx">complex</span> <span class="kt">complex64</span>
+    <span class="nx">str</span> <span class="kt">string</span>
+    <span class="nx">char</span> <span class="kt">rune</span>
+    <span class="nx">yes</span> <span class="kt">bool</span>
+    <span class="nx">events</span> <span class="o">&lt;-</span><span class="kd">chan</span> <span class="kt">string</span>
+    <span class="nx">handler</span> <span class="kd">interface</span><span class="p">{}</span>
+    <span class="nx">ref</span> <span class="o">*</span><span class="kt">byte</span>
+    <span class="nx">raw</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="kt">byte</span> <span class="c1">//array</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>  
+    <span class="nx">v1</span> <span class="o">:=</span> <span class="nx">data</span><span class="p">{}</span>
+    <span class="nx">v2</span> <span class="o">:=</span> <span class="nx">data</span><span class="p">{}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;v1 == v2:&quot;</span><span class="p">,</span><span class="nx">v1</span> <span class="o">==</span> <span class="nx">v2</span><span class="p">)</span> <span class="c1">//prints: v1 == v2: true</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="deepequal-bytesequal">DeepEqual() &amp; bytes.Equal<a class="headerlink" href="#deepequal-bytesequal" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;bytes&quot;</span>
+    <span class="s">&quot;reflect&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">//nil and empty</span>
+    <span class="kd">var</span> <span class="nx">b1</span> <span class="p">[]</span><span class="kt">byte</span>
+    <span class="nx">b2</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">{}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;b1 == b2:&quot;</span><span class="p">,</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Equal</span><span class="p">(</span><span class="nx">b1</span><span class="p">,</span> <span class="nx">b2</span><span class="p">))</span> <span class="c1">//print: b1 == b2: true</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;b1 == b2&quot;</span><span class="p">,</span><span class="nx">reflect</span><span class="p">.</span><span class="nx">DeepEqual</span><span class="p">(</span><span class="nx">b1</span><span class="p">,</span><span class="nx">b2</span><span class="p">))</span><span class="c1">//print: b1 == b2:false</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;reflect&quot;</span>
+    <span class="s">&quot;encoding/json&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">str</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">&quot;one&quot;</span>
+    <span class="kd">var</span> <span class="nx">in</span> <span class="kd">interface</span><span class="p">{}</span> <span class="p">=</span> <span class="s">&quot;one&quot;</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;str == in:&quot;</span><span class="p">,</span><span class="nx">str</span> <span class="o">==</span> <span class="nx">in</span><span class="p">,</span><span class="nx">reflect</span><span class="p">.</span><span class="nx">DeepEqual</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">in</span><span class="p">))</span>
+    <span class="c1">//prints: str == in: true true</span>
+
+    <span class="nx">v1</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="s">&quot;two&quot;</span><span class="p">}</span>
+    <span class="nx">v2</span> <span class="o">:=</span> <span class="p">[]</span><span class="kd">interface</span><span class="p">{}{</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="s">&quot;two&quot;</span><span class="p">}</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;v1 == v2:&quot;</span><span class="p">,</span><span class="nx">reflect</span><span class="p">.</span><span class="nx">DeepEqual</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span> <span class="nx">v2</span><span class="p">))</span>
+    <span class="c1">//prints: v1 == v2: false (not ok)</span>
+
+    <span class="nx">data</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}{</span>
+        <span class="s">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s">&quot;value&quot;</span><span class="p">:</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;one&quot;</span><span class="p">,</span><span class="s">&quot;two&quot;</span><span class="p">},</span>
+    <span class="p">}</span>
+    <span class="nx">encoded</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nx">Marshal</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="nx">decoded</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{}</span>
+    <span class="nx">json</span><span class="p">.</span><span class="nx">Unmarshal</span><span class="p">(</span><span class="nx">encoded</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">decoded</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;data == decoded:&quot;</span><span class="p">,</span><span class="nx">reflect</span><span class="p">.</span><span class="nx">DeepEqual</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">decoded</span><span class="p">))</span>
+    <span class="c1">//prints: data == decoded: false (not ok)</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="goroutines-sync-group">goroutines sync group<a class="headerlink" href="#goroutines-sync-group" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
+    <span class="nx">workerCount</span> <span class="o">:=</span> <span class="mi">2</span>
+
+    <span class="k">for</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&lt;</span> <span class="nx">workerCount</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+        <span class="nx">wg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">go</span> <span class="nx">doit</span><span class="p">(</span><span class="nx">i</span><span class="p">,</span><span class="o">&amp;</span><span class="nx">wg</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="nx">wg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;all done!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">doit</span><span class="p">(</span><span class="nx">workerId</span> <span class="kt">int</span><span class="p">,</span><span class="nx">group</span> <span class="o">*</span><span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span><span class="p">)</span> <span class="p">{</span><span class="c1">//must pointer</span>
+    <span class="k">defer</span> <span class="nx">group</span><span class="p">.</span><span class="nx">Done</span><span class="p">()</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;[%v] is running\n&quot;</span><span class="p">,</span><span class="nx">workerId</span><span class="p">)</span>
+    <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;[%v] is done\n&quot;</span><span class="p">,</span><span class="nx">workerId</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="chan-buffer-size">chan buffer size<a class="headerlink" href="#chan-buffer-size" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="o">:=</span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">bool</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nx">a</span><span class="o">&lt;-</span><span class="kc">true</span>
+    <span class="kd">var</span> <span class="nx">vg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
+    <span class="nx">vg</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">defer</span> <span class="nx">vg</span><span class="p">.</span><span class="nx">Done</span><span class="p">()</span>
+        <span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">a</span><span class="p">)</span>
+
+        <span class="p">}()</span>
+        <span class="nx">vg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
+
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="nil-channel-closed-channel">nil channel &amp; closed channel<a class="headerlink" href="#nil-channel-closed-channel" title="Permanent link">&para;</a></h2>
+<p><div class="codehilite"><pre><span></span> <span class="c1">//close a nil chan will panic</span>
+ <span class="c1">//send or read nil chan will lock</span>
+ <span class="c1">//sent a closed chan will panic</span>
+ <span class="c1">//you can read close chan</span>
+ <span class="c1">//a closed chan never blocked</span>
+<span class="kd">func</span> <span class="nx">WaitMany</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kd">chan</span> <span class="kt">bool</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">aclosed</span><span class="p">,</span> <span class="nx">bclosed</span> <span class="kt">bool</span>
+        <span class="k">for</span> <span class="p">!</span><span class="nx">aclosed</span> <span class="o">||</span> <span class="p">!</span><span class="nx">bclosed</span> <span class="p">{</span>
+                <span class="k">select</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">a</span><span class="p">:</span>
+                        <span class="nx">aclosed</span> <span class="p">=</span> <span class="kc">true</span>
+                <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">b</span><span class="p">:</span>
+                        <span class="nx">bclosed</span> <span class="p">=</span> <span class="kc">true</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">//do something</span>
+<span class="p">}</span>
+
+<span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+        <span class="s">&quot;fmt&quot;</span>
+        <span class="s">&quot;time&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">WaitMany</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="kd">chan</span> <span class="kt">bool</span><span class="p">)</span> <span class="p">{</span> 
+        <span class="k">for</span> <span class="nx">a</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="o">||</span> <span class="nx">b</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+                <span class="k">select</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">a</span><span class="p">:</span>
+                        <span class="nx">a</span> <span class="p">=</span> <span class="kc">nil</span>
+                <span class="k">case</span> <span class="o">&lt;-</span><span class="nx">b</span><span class="p">:</span>
+                        <span class="nx">b</span> <span class="p">=</span> <span class="kc">nil</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">a</span><span class="p">,</span> <span class="nx">b</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">bool</span><span class="p">),</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">bool</span><span class="p">)</span>
+        <span class="nx">t0</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">()</span>
+        <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nb">close</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+                <span class="nb">close</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+        <span class="p">}()</span>
+        <span class="nx">WaitMany</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;waited %v for WaitMany\n&quot;</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Since</span><span class="p">(</span><span class="nx">t0</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+<a href="https://dave.cheney.net/2013/04/30/curious-channels">https://dave.cheney.net/2013/04/30/curious-channels</a>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;time&quot;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">a</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">bool</span><span class="p">)</span>
+    <span class="k">go</span> <span class="nx">sentTrue</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span><span class="c1">//no buffer will be sending...</span>
+    <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">20</span><span class="o">*</span><span class="nx">time</span><span class="p">.</span><span class="nx">Millisecond</span><span class="p">)</span>
+    <span class="nb">close</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;channel has closed&quot;</span><span class="p">)</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="o">&lt;-</span><span class="nx">a</span><span class="p">)</span>
+
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">sentTrue</span><span class="p">(</span><span class="nx">a</span> <span class="kd">chan</span> <span class="kt">bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">a</span> <span class="o">&lt;-</span> <span class="kc">true</span>
+
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="variables-in-loop">variables in loop<a class="headerlink" href="#variables-in-loop" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">data</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;one&quot;</span><span class="p">,</span> <span class="s">&quot;two&quot;</span><span class="p">,</span> <span class="s">&quot;three&quot;</span><span class="p">}</span>
+    <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">data</span> <span class="p">{</span>
+        <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+
+        <span class="p">}()</span>
+    <span class="p">}</span>
+
+    <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="break-loop">break loop<a class="headerlink" href="#break-loop" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>  
+    <span class="nx">loop</span><span class="p">:</span>
+        <span class="k">for</span> <span class="p">{</span>
+            <span class="k">switch</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="kc">true</span><span class="p">:</span>
+                <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;breaking out...&quot;</span><span class="p">)</span>
+                <span class="k">break</span> <span class="nx">loop</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;out!&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="close-http-body">close http body<a class="headerlink" href="#close-http-body" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>  
+    <span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">&quot;https://www.qingcloud.com/&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">resp</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="nx">body</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadAll</span><span class="p">(</span><span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+        <span class="k">return</span>
+    <span class="p">}</span>
+
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">body</span><span class="p">))</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="defer-call">defer call<a class="headerlink" href="#defer-call" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>  
+    <span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span>
+
+    <span class="k">defer</span> <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;result =&gt;&quot;</span><span class="p">,</span><span class="kd">func</span><span class="p">()</span> <span class="kt">int</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="p">}())</span>
+    <span class="nx">i</span><span class="o">++</span>
+    <span class="c1">//prints: result =&gt; 2 (if you expected 4)</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="map-not-addressable">map not addressable<a class="headerlink" href="#map-not-addressable" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="p">(</span><span class="nx">p</span> <span class="o">*</span><span class="nx">data</span><span class="p">)</span> <span class="nb">print</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;name:&quot;</span><span class="p">,</span><span class="nx">p</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">d1</span> <span class="o">:=</span> <span class="nx">data</span><span class="p">{</span><span class="s">&quot;one&quot;</span><span class="p">}</span>
+    <span class="nx">d1</span><span class="p">.</span><span class="nb">print</span><span class="p">()</span> <span class="c1">//ok</span>
+    <span class="nx">m</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">data</span> <span class="p">{</span><span class="s">&quot;3&quot;</span><span class="p">:</span><span class="nx">data</span><span class="p">{</span><span class="s">&quot;three&quot;</span><span class="p">}}</span>
+    <span class="nx">m</span><span class="p">[</span><span class="s">&quot;3&quot;</span><span class="p">].</span><span class="nb">print</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="kt">string</span>
+<span class="p">}</span>
+<span class="c1">//how to set value</span>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">m</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">data</span> <span class="p">{</span><span class="s">&quot;x&quot;</span><span class="p">:{</span><span class="s">&quot;one&quot;</span><span class="p">}}</span>
+    <span class="nx">m</span><span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">].</span><span class="nx">name</span> <span class="p">=</span> <span class="s">&quot;two&quot;</span> <span class="c1">//error</span>
+    <span class="nx">r</span> <span class="o">:=</span> <span class="nx">m</span><span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">]</span>
+    <span class="nx">r</span><span class="p">.</span><span class="nx">name</span> <span class="p">=</span> <span class="s">&quot;two&quot;</span>
+    <span class="nx">m</span><span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">r</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%v&quot;</span><span class="p">,</span><span class="nx">m</span><span class="p">)</span> <span class="c1">//prints: map[x:{two}]</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>
+    <span class="nx">name</span> <span class="kt">string</span>
+<span class="p">}</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">m</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="o">*</span><span class="nx">data</span> <span class="p">{</span><span class="s">&quot;x&quot;</span><span class="p">:{</span><span class="s">&quot;one&quot;</span><span class="p">}}</span>
+    <span class="nx">m</span><span class="p">[</span><span class="s">&quot;z&quot;</span><span class="p">].</span><span class="nx">name</span> <span class="p">=</span> <span class="s">&quot;what?&quot;</span> <span class="c1">//???</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="nil-interfaces-and-nil-interfaces-values">"nil" Interfaces and "nil" Interfaces Values<a class="headerlink" href="#nil-interfaces-and-nil-interfaces-values" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">*</span><span class="kt">byte</span>
+    <span class="kd">var</span> <span class="nx">in</span> <span class="kd">interface</span><span class="p">{}</span>
+
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span><span class="nx">data</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span> <span class="c1">//prints: &lt;nil&gt; true</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">in</span><span class="p">,</span><span class="nx">in</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span>     <span class="c1">//prints: &lt;nil&gt; true</span>
+    <span class="nx">in</span> <span class="p">=</span> <span class="nx">data</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">in</span><span class="p">,</span><span class="nx">in</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span>     <span class="c1">//prints: &lt;nil&gt; false</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
+
+<span class="kd">func</span> <span class="nx">retnil</span><span class="p">()</span><span class="kd">interface</span><span class="p">{}{</span>
+    <span class="kd">var</span> <span class="nx">result</span> <span class="o">*</span><span class="kd">struct</span><span class="p">{}=</span><span class="kc">nil</span>
+    <span class="k">return</span> <span class="nx">result</span>
+<span class="p">}</span>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                <!-- Set from config but allow override -->
+   
+
+<hr>
+<blockquote class="page-copyright">
+    <p>本页面的全部内容在 <strong></strong> 协议之条款下提供，附加条款亦可能应用。</p>
+</blockquote>
+<!-- Comments Integration -->
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../dataBase/mysql/" title="Mysql" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                Mysql
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../rsa/" title="Rsa" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                Rsa
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 - 2099 Windforce17
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.e72fd936.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.3",url:{base:"../../.."}})</script>
+      
+        <script src="../../../search/main.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
