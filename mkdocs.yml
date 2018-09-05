@@ -5,7 +5,7 @@ site_url: https://windforce17.github.io/
 
 # Repository
 repo_name: 'Windforce17/Windforce17'
-repo_url: 'https://github.com/Windforce17/Windforce17'
+repo_url: 'https://github.com/Windforce17/blog'
 edit_uri: 'blob/master/docs/'
 theme:
   name: 'material'

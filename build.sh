@@ -3,7 +3,7 @@
 
 # Fill this out with the correct org/repo
 ORG=Windforce17
-REPO=Windforce17
+REPO=blog
 # This probably should match an email for one of your users.
 EMAIL=947191263@qq.com
 
