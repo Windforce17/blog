@@ -28,8 +28,8 @@ extra_javascript:
   - 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'
 extra:
   search:
-    language: 'cn'
-  disqus: 'Windforce'
+    language: 'zh-CN'
+  disqus: 'Windforce17'
   copyright: 'CC BY-NC-SA 4.0'
 
 extra_css:
