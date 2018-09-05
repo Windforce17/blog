@@ -23,7 +23,7 @@
       
         <meta name="lang:clipboard.copied" content="已复制">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="cn">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -1414,6 +1414,12 @@
       
       
       
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
     </ul>
   
 </nav>
@@ -1527,6 +1533,12 @@
       
       
       
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
     </ul>
   
 </nav>
@@ -1563,10 +1575,29 @@
 
 <hr>
 <blockquote class="page-copyright">
-    <p>本页面的全部内容在 <strong></strong> 协议之条款下提供，附加条款亦可能应用。</p>
+    <p>本页面的全部内容在 <strong>CC BY-NC-SA 4.0</strong> 协议之条款下提供，附加条款亦可能应用。</p>
 </blockquote>
 <!-- Comments Integration -->
-
+ 
+<h2 id="__comments">评论</h2>
+<form id="gitalk-form" onsubmit="return false;">
+    <div id="gitalk-container"></div>
+</form>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+    clientID: 'de7da411f088d04c1171',
+    clientSecret: 'de998d1fa46f3e4b128c578b824a2ffbc8100b66',
+        repo: 'comment',
+        owner: 'Windfoce17',
+        admin: ['Windfoce17'],
+        id: md5(location.pathname), // Ensure uniqueness and length less than 50
+        distractionFreeMode: false // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script> 
               
             </article>
           </div>
@@ -1643,10 +1674,6 @@
           
             
               
-                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
               
             
           
