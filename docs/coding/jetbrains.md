@@ -1,5 +1,4 @@
 [TOC]
-# the top 10 actions & default keymap shortcuts for these actions, from our point of view, are:
 
 ## Quick-fix:
  `Alt+Enter` on all platforms: Shows intention actions and quick-fixes.  
