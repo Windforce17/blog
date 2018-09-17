@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/coding/doker/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/coding/git/">
       
       
         <meta name="author" content="Windforce17">
@@ -38,11 +38,11 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
     
     
       
-        <title>Doker - windforce17's blog</title>
+        <title>git - windforce17's blog</title>
       
     
     
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#redis-start" tabindex="1" class="md-skip">
+      <a href="../../#git" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -132,7 +132,7 @@
                 windforce17's blog
               </span>
               <span class="md-header-nav__topic">
-                Doker
+                git
               </span>
             
           
@@ -240,7 +240,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../DjangoStudy/" title="Coding" class="md-tabs__link md-tabs__link--active">
+        <a href="./" title="Coding" class="md-tabs__link md-tabs__link--active">
           Coding
         </a>
       
@@ -623,18 +623,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../DjangoStudy/" title="Django学习" class="md-nav__link">
-      Django学习
-    </a>
-  </li>
-
-        
-          
-          
-          
-
   
 
 
@@ -642,33 +630,107 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Doker
+        git
       </label>
     
-    <a href="./" title="Doker" class="md-nav__link md-nav__link--active">
-      Doker
+    <a href="./" title="git" class="md-nav__link md-nav__link--active">
+      git
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#redis-start" title="redis start" class="md-nav__link">
-    redis start
+  <a href="#multiple-accounts-on-github" title="Multiple accounts on Github" class="md-nav__link">
+    Multiple accounts on Github
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mysql-start" title="mysql start" class="md-nav__link">
-    mysql start
+  <a href="#_1" title="从历史的提交建立新分支的方法：" class="md-nav__link">
+    从历史的提交建立新分支的方法：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="将某个历史版本全部拉到工作区和暂存区：" class="md-nav__link">
+    将某个历史版本全部拉到工作区和暂存区：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="将历史版本的某文件版本拉到当前工作区或者暂存区进行处理：" class="md-nav__link">
+    将历史版本的某文件版本拉到当前工作区或者暂存区进行处理：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="已经有添加到暂存区的文件修改，之后又进行了修改。想要都撤销掉，变为和仓库中的版本相同（仓库覆盖工作和暂存）：" class="md-nav__link">
+    已经有添加到暂存区的文件修改，之后又进行了修改。想要都撤销掉，变为和仓库中的版本相同（仓库覆盖工作和暂存）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-reset-hard-head-headhard" title="方法一：git reset --hard HEAD 重设HEAD，hard参数覆盖工作区和暂存区。" class="md-nav__link">
+    方法一：git reset --hard HEAD 重设HEAD，hard参数覆盖工作区和暂存区。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="撤销当前工作区的文件修改，变为和暂存区相同（暂存覆盖工作）：" class="md-nav__link">
+    撤销当前工作区的文件修改，变为和暂存区相同（暂存覆盖工作）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="撤销添加到暂存区的文件修改，将修改退回到工作区（暂存先覆盖工作，然后仓库覆盖暂存）：" class="md-nav__link">
+    撤销添加到暂存区的文件修改，将修改退回到工作区（暂存先覆盖工作，然后仓库覆盖暂存）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="清空暂存区文件修改：" class="md-nav__link">
+    清空暂存区文件修改：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="清空暂存区：" class="md-nav__link">
+    清空暂存区：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout" title="checkout文件层面的操作：" class="md-nav__link">
+    checkout文件层面的操作：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset" title="reset文件层面的操作：" class="md-nav__link">
+    reset文件层面的操作：
   </a>
   
 </li>
@@ -687,18 +749,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../git 相关/" title="git" class="md-nav__link">
-      git
-    </a>
   </li>
 
         
@@ -732,18 +782,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../js/" title="绕过chrome检测关闭当前窗口" class="md-nav__link">
-      绕过chrome检测关闭当前窗口
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../math/" title="Math" class="md-nav__link">
       Math
     </a>
@@ -756,32 +794,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../networkCenter/" title="networkCenter" class="md-nav__link">
-      networkCenter
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../php/" title="常用设置" class="md-nav__link">
       常用设置
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../python/" title="各种小玩意" class="md-nav__link">
-      各种小玩意
     </a>
   </li>
 
@@ -805,13 +819,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12" type="checkbox" id="nav-4-12">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
     
-    <label class="md-nav__link" for="nav-4-12">
+    <label class="md-nav__link" for="nav-4-7">
       Cpp
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-12">
+      <label class="md-nav__title" for="nav-4-7">
         Cpp
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -865,13 +879,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13" type="checkbox" id="nav-4-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
     
-    <label class="md-nav__link" for="nav-4-13">
+    <label class="md-nav__link" for="nav-4-8">
       dataBase
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-13">
+      <label class="md-nav__title" for="nav-4-8">
         dataBase
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -901,13 +915,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14" type="checkbox" id="nav-4-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9" type="checkbox" id="nav-4-9">
     
-    <label class="md-nav__link" for="nav-4-14">
+    <label class="md-nav__link" for="nav-4-9">
       Golang
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-14">
+      <label class="md-nav__title" for="nav-4-9">
         Golang
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -949,13 +963,49 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-15" type="checkbox" id="nav-4-15">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
     
-    <label class="md-nav__link" for="nav-4-15">
+    <label class="md-nav__link" for="nav-4-10">
+      Javascript
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-10">
+        Javascript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../javascript/js/" title="绕过chrome检测关闭当前窗口" class="md-nav__link">
+      绕过chrome检测关闭当前窗口
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11" type="checkbox" id="nav-4-11">
+    
+    <label class="md-nav__link" for="nav-4-11">
       Linux
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-15">
+      <label class="md-nav__title" for="nav-4-11">
         Linux
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1045,13 +1095,61 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-16" type="checkbox" id="nav-4-16">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-12" type="checkbox" id="nav-4-12">
     
-    <label class="md-nav__link" for="nav-4-16">
+    <label class="md-nav__link" for="nav-4-12">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-12">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/DjangoStudy/" title="Django学习" class="md-nav__link">
+      Django学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../python/python/" title="各种小玩意" class="md-nav__link">
+      各种小玩意
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-13" type="checkbox" id="nav-4-13">
+    
+    <label class="md-nav__link" for="nav-4-13">
       Win
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-16">
+      <label class="md-nav__title" for="nav-4-13">
         Win
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1081,13 +1179,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-14" type="checkbox" id="nav-4-14">
     
-    <label class="md-nav__link" for="nav-4-17">
+    <label class="md-nav__link" for="nav-4-14">
       编译原理
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-17">
+      <label class="md-nav__title" for="nav-4-14">
         编译原理
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1525,20 +1623,92 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#redis-start" title="redis start" class="md-nav__link">
-    redis start
+  <a href="#multiple-accounts-on-github" title="Multiple accounts on Github" class="md-nav__link">
+    Multiple accounts on Github
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mysql-start" title="mysql start" class="md-nav__link">
-    mysql start
+  <a href="#_1" title="从历史的提交建立新分支的方法：" class="md-nav__link">
+    从历史的提交建立新分支的方法：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="将某个历史版本全部拉到工作区和暂存区：" class="md-nav__link">
+    将某个历史版本全部拉到工作区和暂存区：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="将历史版本的某文件版本拉到当前工作区或者暂存区进行处理：" class="md-nav__link">
+    将历史版本的某文件版本拉到当前工作区或者暂存区进行处理：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="已经有添加到暂存区的文件修改，之后又进行了修改。想要都撤销掉，变为和仓库中的版本相同（仓库覆盖工作和暂存）：" class="md-nav__link">
+    已经有添加到暂存区的文件修改，之后又进行了修改。想要都撤销掉，变为和仓库中的版本相同（仓库覆盖工作和暂存）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-reset-hard-head-headhard" title="方法一：git reset --hard HEAD 重设HEAD，hard参数覆盖工作区和暂存区。" class="md-nav__link">
+    方法一：git reset --hard HEAD 重设HEAD，hard参数覆盖工作区和暂存区。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" title="撤销当前工作区的文件修改，变为和暂存区相同（暂存覆盖工作）：" class="md-nav__link">
+    撤销当前工作区的文件修改，变为和暂存区相同（暂存覆盖工作）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" title="撤销添加到暂存区的文件修改，将修改退回到工作区（暂存先覆盖工作，然后仓库覆盖暂存）：" class="md-nav__link">
+    撤销添加到暂存区的文件修改，将修改退回到工作区（暂存先覆盖工作，然后仓库覆盖暂存）：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" title="清空暂存区文件修改：" class="md-nav__link">
+    清空暂存区文件修改：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" title="清空暂存区：" class="md-nav__link">
+    清空暂存区：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkout" title="checkout文件层面的操作：" class="md-nav__link">
+    checkout文件层面的操作：
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset" title="reset文件层面的操作：" class="md-nav__link">
+    reset文件层面的操作：
   </a>
   
 </li>
@@ -1565,16 +1735,67 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/doker.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/git.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Doker</h1>
-                
-                <h2 id="redis-start">redis start<a class="headerlink" href="#redis-start" title="Permanent link">&para;</a></h2>
-<p>docker run --name redis -p 6379:6379 -d redis
-docker run -it  --rm redis:alpine redis-cli -h qing.cugctf.top -p 6379</p>
-<h2 id="mysql-start">mysql start<a class="headerlink" href="#mysql-start" title="Permanent link">&para;</a></h2>
-<p>docker run --name iam-mysql -v ~/mysql/data:/var/lib/mysql/:rw -v ~/mysql/my.cnf:/etc/mysql/my.cnf:ro -p 3306:3306 -e MYSQL_ROOT_PASSWORD=iam -e MYSQL_DATABASE=public -d mysql:5.7 </p>
+                <h1 id="git">git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
+<h2 id="multiple-accounts-on-github">Multiple accounts on Github<a class="headerlink" href="#multiple-accounts-on-github" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>ssh-keygen -t rsa -C <span class="s2">&quot;your_name@home_email.com&quot;</span>
+ssh-keygen -t rsa -C <span class="s2">&quot;your_name@company_email.com&quot;</span>
+<span class="nb">cd</span> ~/.ssh/
+touch config
+vim config
+
+<span class="c1"># Home account</span>
+Host home.github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_home
+
+<span class="c1"># Company account</span>
+Host company.github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_company
+
+git clone git@home.github.com:xxxxx/xx.git
+<span class="c1"># 或者更改.git/config中url字段</span>
+</pre></div>
+
+<p>不行的话，执行</p>
+<div class="codehilite"><pre><span></span>ssh-add -D
+ssh-add -s
+ssh-add -l
+</pre></div>
+
+<h2 id="_1">从历史的提交建立新分支的方法：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>方法一： checkout到历史提交，然后checkout -b。
+方法二： reset到历史提交，checkout -b，然后再reset到原来的版本。
+方法三： git branch <branch> <start point></p>
+<h2 id="_2">将某个历史版本全部拉到工作区和暂存区：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>方法一： 可能的需求是为了将过去删除掉的修改重新应用到最新的版本，这时可以先回到历史版本处建立分支，然后回到原来的最新的版本，进行merge分支的操作。
+方法二： reset加上hard参数到需要的历史版本，然后再reset加上soft参数回来。</p>
+<h2 id="_3">将历史版本的某文件版本拉到当前工作区或者暂存区进行处理：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>方法一： git reset HEAD~2 foo.py，直接拉到暂存区。
+方法二： git checkout HEAD~2 foo.py，拉到工作区和暂存区。</p>
+<h2 id="_4">已经有添加到暂存区的文件修改，之后又进行了修改。想要都撤销掉，变为和仓库中的版本相同（仓库覆盖工作和暂存）：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>方法一：1、git reset HEAD file 清空暂存区的提交，变为和仓库中的版本相同。2、git checkout  --  file 以暂存区为蓝本，覆盖掉工作区。
+方法二：git checkout HEAD --  file 。</p>
+<h2 id="git-reset-hard-head-headhard">方法一：git reset --hard HEAD 重设HEAD，hard参数覆盖工作区和暂存区。<a class="headerlink" href="#git-reset-hard-head-headhard" title="Permanent link">&para;</a></h2>
+<p>方法二：强制切换到其他分支丢弃更改，然后再切回来。</p>
+<h2 id="_5">撤销当前工作区的文件修改，变为和暂存区相同（暂存覆盖工作）：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>方法一：git checkout -- file 暂存区覆盖工作区(以暂存区为蓝本，覆盖掉工作区)。</p>
+<h2 id="_6">撤销添加到暂存区的文件修改，将修改退回到工作区（暂存先覆盖工作，然后仓库覆盖暂存）：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>方法一：1、git checkout  --  file 以暂存区为蓝本，覆盖掉工作区。 2、git reset HEAD file 清空暂存区的提交，变为和仓库中的版本相同。</p>
+<h2 id="_7">清空暂存区文件修改：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>方法一：git reset -- file 清空暂存区的文件修改。</p>
+<h2 id="_8">清空暂存区：<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>方法一：git reset HEAD file 清空暂存区。</p>
+<h2 id="checkout">checkout文件层面的操作：<a class="headerlink" href="#checkout" title="Permanent link">&para;</a></h2>
+<p>主要对暂存区和工作区起作用，一般有暂存区覆盖工作区的行为特征。</p>
+<h2 id="reset">reset文件层面的操作：<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h2>
+<p>主要对暂存区起作用。
+<a href="https://zhuanlan.zhihu.com/p/31154756">https://zhuanlan.zhihu.com/p/31154756</a></p>
                 
                   
                 
@@ -1620,7 +1841,7 @@ docker run -it  --rm redis:alpine redis-cli -h qing.cugctf.top -p 6379</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../DjangoStudy/" title="Django学习" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../WebAttack/Internet/网络协议/" title="网络协议" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1629,19 +1850,19 @@ docker run -it  --rm redis:alpine redis-cli -h qing.cugctf.top -p 6379</p>
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                Django学习
+                网络协议
               </span>
             </div>
           </a>
         
         
-          <a href="../git 相关/" title="git" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../java/" title="Java" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                git
+                Java
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1675,7 +1896,7 @@ docker run -it  --rm redis:alpine redis-cli -h qing.cugctf.top -p 6379</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.e72fd936.js"></script>
+      <script src="../../assets/javascripts/application.a26c1c19.js"></script>
       
         
         
@@ -1690,7 +1911,7 @@ docker run -it  --rm redis:alpine redis-cli -h qing.cugctf.top -p 6379</p>
           
         
       
-      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
         <script src="../../_static/js/extra.js"></script>
       
