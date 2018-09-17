@@ -7,7 +7,7 @@
  `Ctrl+Shift+Space` on all platforms: Offers more accurate completion suggestions than basic completion, by filtering the list of methods and variables to match the expression type.  
 
 ## Refactor this:
- `Ctrl+T` on all platforms: Shows the list of refactorings available in the current scope.  
+ `Ctrl+T`n all platforms: Shows the list of refactorings available in the current scope.  
 
 
 G## o to Related Symbol: 
