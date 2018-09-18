@@ -81,6 +81,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://windforce17.github.io/blog/WebAttack/other/uefi&bios/</loc>
+     <lastmod>2018-09-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://windforce17.github.io/blog/coding/git/</loc>
      <lastmod>2018-09-18</lastmod>
      <changefreq>daily</changefreq>
@@ -137,6 +142,11 @@
     </url>
     <url>
      <loc>https://windforce17.github.io/blog/coding/golang/rsa/</loc>
+     <lastmod>2018-09-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/coding/javascript/ThreeJS/</loc>
      <lastmod>2018-09-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
