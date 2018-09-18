@@ -1,7 +1,26 @@
-# git
+## My first patch
+Linux kernel不是pr维护，而是patch mail。
+
+### Edit ~/.gitconfig
+```conf
+[sendemail]
+  smtpuser = username@mail.com
+  smtpserver = smtp.mail.com
+  smtpencryption = tls
+  smtpserverport = 587
+  #smtppass =  ;using git send-email; prompts for password
+  
+```
+### Generate Patch file
+
+`git format-patch HEAD~`
+`git format-patch HEAD~<number of commits to convert to patches>` turn multiple commits into patch files. These patch files will be emailed to the [Linux Kernel Mailing List (lkml)](https://lkml.org/). They can be applied with `git am <patchfile>`
+
+### Send email
+`git send-email`
+don't forget to install git-mail git core
 
 ## Multiple accounts on Github
-
 
 ```bash
 ssh-keygen -t rsa -C "your_name@home_email.com"
