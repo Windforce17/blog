@@ -42,7 +42,7 @@
     
     
       
-        <title>git - windforce17's blog</title>
+        <title>Git - windforce17's blog</title>
       
     
     
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#git" tabindex="1" class="md-skip">
+      <a href="../../#my-first-patch" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -132,7 +132,7 @@
                 windforce17's blog
               </span>
               <span class="md-header-nav__topic">
-                git
+                Git
               </span>
             
           
@@ -630,26 +630,56 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        git
+        Git
       </label>
     
-    <a href="./" title="git" class="md-nav__link md-nav__link--active">
-      git
+    <a href="./" title="Git" class="md-nav__link md-nav__link--active">
+      Git
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#my-first-patch" title="My first patch" class="md-nav__link">
+    My first patch
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-gitconfig" title="Edit ~/.gitconfig" class="md-nav__link">
+    Edit ~/.gitconfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-patch-file" title="Generate Patch file" class="md-nav__link">
+    Generate Patch file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-email" title="Send email" class="md-nav__link">
+    Send email
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#multiple-accounts-on-github" title="Multiple accounts on Github" class="md-nav__link">
@@ -1623,11 +1653,43 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#my-first-patch" title="My first patch" class="md-nav__link">
+    My first patch
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#edit-gitconfig" title="Edit ~/.gitconfig" class="md-nav__link">
+    Edit ~/.gitconfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-patch-file" title="Generate Patch file" class="md-nav__link">
+    Generate Patch file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#send-email" title="Send email" class="md-nav__link">
+    Send email
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#multiple-accounts-on-github" title="Multiple accounts on Github" class="md-nav__link">
@@ -1738,7 +1800,25 @@
                   <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/git.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="git">git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
+                  <h1>Git</h1>
+                
+                <h2 id="my-first-patch">My first patch<a class="headerlink" href="#my-first-patch" title="Permanent link">&para;</a></h2>
+<p>Linux kernel不是pr维护，而是patch mail。</p>
+<h3 id="edit-gitconfig">Edit ~/.gitconfig<a class="headerlink" href="#edit-gitconfig" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>[sendemail]
+  smtpuser = username@mail.com
+  smtpserver = smtp.mail.com
+  smtpencryption = tls
+  smtpserverport = 587
+  #smtppass =  ;using git send-email; prompts for password
+</pre></div>
+
+<h3 id="generate-patch-file">Generate Patch file<a class="headerlink" href="#generate-patch-file" title="Permanent link">&para;</a></h3>
+<p><code>git format-patch HEAD~</code>
+<code>git format-patch HEAD~&lt;number of commits to convert to patches&gt;</code> turn multiple commits into patch files. These patch files will be emailed to the <a href="https://lkml.org/">Linux Kernel Mailing List (lkml)</a>. They can be applied with <code>git am &lt;patchfile&gt;</code></p>
+<h3 id="send-email">Send email<a class="headerlink" href="#send-email" title="Permanent link">&para;</a></h3>
+<p><code>git send-email</code>
+don't forget to install git-mail git core</p>
 <h2 id="multiple-accounts-on-github">Multiple accounts on Github<a class="headerlink" href="#multiple-accounts-on-github" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>ssh-keygen -t rsa -C <span class="s2">&quot;your_name@home_email.com&quot;</span>
 ssh-keygen -t rsa -C <span class="s2">&quot;your_name@company_email.com&quot;</span>
