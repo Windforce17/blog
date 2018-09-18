@@ -1,4 +1,47 @@
-# 如何查看Linux系统的带宽流量
+## locale  issure
+```sh
+locale-gen "en_US.UTF-8"
+sudo dpkg-reconfigure locales
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
+export LC_ALL="en_US.UTF-8" #to bashrc
+update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+```
+
+## iscsi
+
+1. 发现： `iscsiadm -m discovery -t st -p <ip>`
+
+2. 登录：
+`iscsiadm -m node -T <target> -l`（登陆某个目标器）
+`iscsiadm -m node -L all`（登陆发现的所有目标器）
+登入需验证码的节点，在登陆前需执行：
+- 开启认证
+`iscsiadm -m node -T  <target> --op update --name node.session.auth.authmethod --value=CHAP`
+- 添加用户
+`iscsiadm -m node -T  <target> --op update --name node.session.auth.username --value=mychap`
+- 添加密码
+`iscsiadm –m node –T  <target> --op update –name node.session.auth.password –value=mypassword`
+
+3. 退出:
+`iscsiadm -m node -T <target> -u`（退出某个目标器)
+`iscsiadm -m node -U all`（退出所有登陆的目标器）
+
+4. 连接死掉（断网或者target端断掉）时，使用如下指令：
+
+`iscsiadm -m node -o delete –T  <target> -p <ip>`
+
+5. 查看session:
+
+`iscsiadm -m session` （相当于iscsiadm -m session -P 0）
+`iscsiadm -m session -P 3`  (0-3均可，默认为0)
+
+6. 设置开机自动登录
+`sudo iscsiadm -m node -o update -n node.startup -v automatic` （manual为手动的）
+
+https://wiki.archlinux.org/index.php/Open-iSCSI
+https://blog.csdn.net/imliuqun123/article/details/73873321
+## 如何查看Linux系统的带宽流量
 
 - 按网卡查看流量：ifstat、dstat -nf或sar -n DEV 1 2
 - 按进程查看流量：nethogs
@@ -7,18 +50,17 @@
 - 查看流量最大的端口：sysdig -c topports_server
 - 查看连接最多的服务器端口：sysdig -c fdbytes_by fd.sport
 
-# ssh 免登录问题
+## ssh 免登录问题
 权限问题
 
 /root 775
 /root/.ssh 700
 /root/.ssh/authorized_keys 644
 开启文件AuthorizedKeysFile .ssh/authorized_keys
-# system analyse
-# 查看启动耗时
+## system analyse
+### 查看启动耗时
 $ systemd-analyze                                                                                       
-
-# 查看每个服务的启动耗时
+### 查看每个服务的启动耗时
 $ systemd-analyze blame
 
 # 显示瀑布状的启动过程流
