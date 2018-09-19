@@ -41,6 +41,35 @@ update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
 https://wiki.archlinux.org/index.php/Open-iSCSI
 https://blog.csdn.net/imliuqun123/article/details/73873321
+
+## LVM configure
+PV Physical Volume 
+VG Volume Group
+LV Logical Volume
+PV -> VG -> LV
+### 创建
+```bash
+[root@station55 ~]# pvcreate /dev/sd{b,c}1
+Physical volume "/dev/sdb1" successfully created
+Physical volume "/dev/sdc1" successfully created
+```
+
+- `vgcreate <VGNAME> <dev name>`
+- `lvcreate -L <SIZE> -n <LV_NAME> <VG_NAME>`
+
+### 扩展
+
+- `vgextend <vgname> <pv path>`
+
+- `lvextend -L [+]SIZE <lv path>` Physical boundary
+- `resize2fs <lv path>` Logical boundary
+- `e2fsck   <lv path>` Check file system
+
+### 减小
+- `e2fsck -f <lv path>` Check file system
+- `resize2fs <lv path> <SIZE>` Reduce logical boundary
+-  `lvreduce -L [-]SIZE <lv path>` Physical boundary
+
 ## 如何查看Linux系统的带宽流量
 
 - 按网卡查看流量：ifstat、dstat -nf或sar -n DEV 1 2
