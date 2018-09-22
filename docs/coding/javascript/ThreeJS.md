@@ -52,3 +52,8 @@ renderer.render(scene,camera);
 }
 ```
 
+## load obj
+You need OBJLOader.js
+
+```js
+var loader = new THREE.OBJ

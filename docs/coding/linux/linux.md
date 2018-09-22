@@ -1,4 +1,4 @@
-## locale  issure
+## locale  issue
 ```sh
 locale-gen "en_US.UTF-8"
 sudo dpkg-reconfigure locales
@@ -8,6 +8,9 @@ export LC_ALL="en_US.UTF-8" #to bashrc
 update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ```
 
+## partition
+对于大于5T or gpt的分区，推荐使用parted进行分区.
+https://blog.csdn.net/dufufd/article/details/53508367
 ## iscsi
 
 1. 发现： `iscsiadm -m discovery -t st -p <ip>`
@@ -29,7 +32,8 @@ update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 
 4. 连接死掉（断网或者target端断掉）时，使用如下指令：
 
-`iscsiadm -m node -o delete –T  <target> -p <ip>`
+- `iscsiadm -m node -o delete –T  <target> -p <ip>`
+- `iscsiadm -m node -o delete -p <ip>`
 
 5. 查看session:
 
@@ -56,6 +60,8 @@ Physical volume "/dev/sdc1" successfully created
 
 - `vgcreate <VGNAME> <dev name>`
 - `lvcreate -L <SIZE> -n <LV_NAME> <VG_NAME>`
+- `lvcreate -l <SIZE%>vg -n <LV_NAME> <VG_NAME>`
+- `lvcreate -l <SIZE>free -n <LV_NAME> <VG_NAME>`
 
 ### 扩展
 
