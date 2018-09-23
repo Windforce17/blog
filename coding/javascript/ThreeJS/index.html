@@ -925,12 +925,66 @@
     basic
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init-fps-count" title="init fps count" class="md-nav__link">
+    init fps count
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-basic-elements" title="init basic elements;" class="md-nav__link">
+    init basic elements;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render" title="render" class="md-nav__link">
+    render
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene" title="scene" class="md-nav__link">
+    scene
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#load-obj" title="load obj" class="md-nav__link">
     load obj
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#light" title="light" class="md-nav__link">
+    light
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directional-light" title="directional light" class="md-nav__link">
+    directional light
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1608,12 +1662,66 @@
     basic
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#init-fps-count" title="init fps count" class="md-nav__link">
+    init fps count
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init-basic-elements" title="init basic elements;" class="md-nav__link">
+    init basic elements;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render" title="render" class="md-nav__link">
+    render
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene" title="scene" class="md-nav__link">
+    scene
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#load-obj" title="load obj" class="md-nav__link">
     load obj
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#light" title="light" class="md-nav__link">
+    light
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#directional-light" title="directional light" class="md-nav__link">
+    directional light
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1645,13 +1753,14 @@
                   <h1>ThreeJS</h1>
                 
                 <h2 id="basic">basic<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
-<p>init fps count
+<h3 id="init-fps-count">init fps count<a class="headerlink" href="#init-fps-count" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">stats</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Stats</span><span class="p">();</span>
 <span class="nx">stats</span><span class="p">.</span><span class="nx">domElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">position</span> <span class="o">=</span> <span class="s2">&quot;absolute&quot;</span><span class="p">;</span>
 <span class="nx">stats</span><span class="p">.</span><span class="nx">domElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">left</span> <span class="o">=</span> <span class="s2">&quot;0px&quot;</span><span class="p">;</span>
 <span class="nx">stats</span><span class="p">.</span><span class="nx">domElement</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="s2">&quot;0px&quot;</span><span class="p">;</span>
 <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;Stats.output&quot;</span><span class="p">).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">stats</span><span class="p">.</span><span class="nx">domElement</span><span class="p">);</span>
-</pre></div></p>
+</pre></div>
+
 <p>change stats format
 <div class="codehilite"><pre><span></span><span class="p">#</span><span class="nn">stats</span> <span class="p">#</span><span class="nn">fps</span> <span class="p">{</span>
     <span class="k">background</span><span class="p">:</span> <span class="kc">transparent</span> <span class="cp">!important</span>
@@ -1665,7 +1774,7 @@
     <span class="c">/*display: none;*/</span>
 <span class="p">}</span>
 </pre></div></p>
-<p>init basic elements;</p>
+<h3 id="init-basic-elements">init basic elements;<a class="headerlink" href="#init-basic-elements" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 
 <span class="kd">var</span> <span class="nx">camera</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PerspectiveCamera</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span> <span class="o">/</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
@@ -1682,17 +1791,46 @@
 <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">camera</span><span class="p">);</span>
 </pre></div>
 
-<p>render
+<h3 id="render">render<a class="headerlink" href="#render" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">render</span><span class="p">(){</span>
 <span class="nx">stats</span><span class="p">.</span><span class="nx">update</span><span class="p">()</span><span class="c1">//update fps count</span>
 <span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">)</span>
 <span class="nx">renderer</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">scene</span><span class="p">,</span><span class="nx">camera</span><span class="p">);</span>
 <span class="p">}</span>
+</pre></div>
+
+<h3 id="scene">scene<a class="headerlink" href="#scene" title="Permanent link">&para;</a></h3>
+<p>物体、光源、控制器的添加必须使用secen.add(object)添加到场景中才能渲染出来。
+一个3D项目中可同时存在多个scene，通过切换render的scene来切换显示场景。
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
+<span class="kd">var</span> <span class="nx">mesh</span><span class="o">=</span><span class="nx">scene</span><span class="p">.</span><span class="nx">getObjectByName</span><span class="p">(</span><span class="s2">&quot;sky&quot;</span><span class="p">);</span><span class="c1">//获取场景中name=sky的物体；</span>
 </pre></div></p>
 <h2 id="load-obj">load obj<a class="headerlink" href="#load-obj" title="Permanent link">&para;</a></h2>
 <p>You need OBJLOader.js</p>
-<p>```js
-var loader = new THREE.OBJ</p>
+<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">load</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">OBJLoader</span><span class="p">();</span>
+    <span class="nx">loader</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;bunny_1k.obj&quot;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">obj</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="s2">&quot;rabbit&quot;</span><span class="p">;</span>
+        <span class="nx">obj</span><span class="p">.</span><span class="nx">traverse</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">child</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">child</span> <span class="k">instanceof</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">){</span>
+                <span class="c1">// child.material.side=THREE.DoubleSide;</span>
+                <span class="nx">mesh</span><span class="o">=</span><span class="nx">obj</span><span class="p">;</span>
+                <span class="nx">mesh</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+                <span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">setY</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">);</span>
+                <span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">setX</span><span class="p">(</span><span class="mf">0.5</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+        <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</pre></div>
+
+<h2 id="light">light<a class="headerlink" href="#light" title="Permanent link">&para;</a></h2>
+<h3 id="directional-light">directional light<a class="headerlink" href="#directional-light" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">directionalLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">DirectionalLight</span><span class="p">(</span> <span class="mh">0xffeedd</span> <span class="p">);</span>
+<span class="nx">directionalLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span> <span class="nx">directionalLight</span> <span class="p">);</span>
+</pre></div>
                 
                   
                 
