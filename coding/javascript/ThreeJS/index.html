@@ -962,9 +962,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#material" title="material" class="md-nav__link">
+    material
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#load-obj" title="load obj" class="md-nav__link">
     load obj
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texture" title="texture" class="md-nav__link">
+    texture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -983,8 +1003,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pointlight" title="PointLight" class="md-nav__link">
+    PointLight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambientlight" title="ambientLight" class="md-nav__link">
+    ambientLight
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event" title="event" class="md-nav__link">
+    event
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controls" title="controls" class="md-nav__link">
+    controls
+  </a>
   
 </li>
       
@@ -1699,9 +1747,29 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#material" title="material" class="md-nav__link">
+    material
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#load-obj" title="load obj" class="md-nav__link">
     load obj
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#texture" title="texture" class="md-nav__link">
+    texture
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1720,8 +1788,36 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pointlight" title="PointLight" class="md-nav__link">
+    PointLight
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ambientlight" title="ambientLight" class="md-nav__link">
+    ambientLight
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event" title="event" class="md-nav__link">
+    event
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controls" title="controls" class="md-nav__link">
+    controls
+  </a>
   
 </li>
       
@@ -1805,15 +1901,25 @@
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">scene</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Scene</span><span class="p">();</span>
 <span class="kd">var</span> <span class="nx">mesh</span><span class="o">=</span><span class="nx">scene</span><span class="p">.</span><span class="nx">getObjectByName</span><span class="p">(</span><span class="s2">&quot;sky&quot;</span><span class="p">);</span><span class="c1">//获取场景中name=sky的物体；</span>
 </pre></div></p>
+<h2 id="material">material<a class="headerlink" href="#material" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>   <span class="nx">child</span><span class="p">.</span><span class="nx">material</span><span class="p">.</span><span class="nx">side</span><span class="o">=</span><span class="nx">THREE</span><span class="p">.</span><span class="nx">DoubleSide</span><span class="p">;</span> <span class="c1">//?</span>
+</pre></div>
+
 <h2 id="load-obj">load obj<a class="headerlink" href="#load-obj" title="Permanent link">&para;</a></h2>
 <p>You need OBJLOader.js</p>
-<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">load</span><span class="p">()</span> <span class="p">{</span>
+<p><div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">load</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">OBJLoader</span><span class="p">();</span>
     <span class="nx">loader</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s2">&quot;bunny_1k.obj&quot;</span><span class="p">,</span><span class="kd">function</span> <span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
         <span class="nx">obj</span><span class="p">.</span><span class="nx">name</span><span class="o">=</span><span class="s2">&quot;rabbit&quot;</span><span class="p">;</span>
         <span class="nx">obj</span><span class="p">.</span><span class="nx">traverse</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">child</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">if</span> <span class="p">(</span><span class="nx">child</span> <span class="k">instanceof</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">Mesh</span><span class="p">){</span>
-                <span class="c1">// child.material.side=THREE.DoubleSide;</span>
+                <span class="c1">// child.material.side=THREE.DoubleSide;//??</span>
+
+                <span class="c1">//set material on loading</span>
+                <span class="nx">child</span><span class="p">.</span><span class="nx">material</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">MeshLambertMaterial</span><span class="p">({</span>
+                <span class="nx">color</span><span class="o">:</span> <span class="mh">0xffff00</span><span class="p">,</span>
+                <span class="nx">side</span><span class="o">:</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">DoubleSide</span>
+                <span class="p">});</span>
                 <span class="nx">mesh</span><span class="o">=</span><span class="nx">obj</span><span class="p">;</span>
                 <span class="nx">mesh</span><span class="p">.</span><span class="nx">scale</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
                 <span class="nx">mesh</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">setY</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">);</span>
@@ -1824,12 +1930,66 @@
     <span class="p">});</span>
 <span class="p">}</span>
 </pre></div>
-
+set material with MTL
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">loader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">OBJMTLLoader</span><span class="p">();</span>
+<span class="nx">loader</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="nx">event</span><span class="p">.</span><span class="nx">content</span><span class="p">;</span>
+    <span class="nx">mesh</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">;</span>
+    <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">loader</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="s1">&#39;../lib/port.obj&#39;</span><span class="p">,</span> <span class="s1">&#39;../lib/port.mtl&#39;</span><span class="p">);</span>
+</pre></div></p>
+<h3 id="texture">texture<a class="headerlink" href="#texture" title="Permanent link">&para;</a></h3>
+<p>load from pictor
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">ImageUtils</span><span class="p">.</span><span class="nx">loadTexture</span><span class="p">(</span><span class="s2">&quot;/lib/textures/disturb.jpg&quot;</span><span class="p">);</span>
+</pre></div></p>
 <h2 id="light">light<a class="headerlink" href="#light" title="Permanent link">&para;</a></h2>
 <h3 id="directional-light">directional light<a class="headerlink" href="#directional-light" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">directionalLight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">DirectionalLight</span><span class="p">(</span> <span class="mh">0xffeedd</span> <span class="p">);</span>
 <span class="nx">directionalLight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="p">);</span>
 <span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span> <span class="nx">directionalLight</span> <span class="p">);</span>
+</pre></div>
+
+<h3 id="pointlight">PointLight<a class="headerlink" href="#pointlight" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">pointlight</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">PointLight</span><span class="p">(</span><span class="mh">0xffffff</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3000</span><span class="p">);</span> 
+<span class="nx">pointlight</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2000</span><span class="p">);</span><span class="c1">//设置点光源位置</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span> <span class="nx">pointlight</span> <span class="p">);</span>
+</pre></div>
+
+<h3 id="ambientlight">ambientLight<a class="headerlink" href="#ambientlight" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">ambient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">AmbientLight</span><span class="p">(</span> <span class="mh">0xcccccc</span> <span class="p">);</span>
+<span class="nx">scene</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span> <span class="nx">ambient</span> <span class="p">);</span>
+</pre></div>
+
+<h2 id="event">event<a class="headerlink" href="#event" title="Permanent link">&para;</a></h2>
+<p>windowResize
+<div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">onWindowResize</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">camera</span><span class="p">.</span><span class="nx">aspect</span><span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="o">/</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">;</span>
+    <span class="nx">camera</span><span class="p">.</span><span class="nx">updateProjectionMatrix</span><span class="p">();</span>
+    <span class="nx">renderer</span><span class="p">.</span><span class="nx">setSize</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">innerWidth</span><span class="p">,</span> <span class="nb">window</span><span class="p">.</span><span class="nx">innerHeight</span><span class="p">);</span>
+    <span class="c1">// controls.handleResize();</span>
+<span class="p">}</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;resize&quot;</span><span class="p">,</span><span class="nx">onWindowResize</span><span class="p">,</span><span class="kc">false</span><span class="p">);</span>
+</pre></div></p>
+<h2 id="controls">controls<a class="headerlink" href="#controls" title="Permanent link">&para;</a></h2>
+<ul>
+<li>FlyControls:飞行控制，用键盘和鼠标控制相机的移动和转动</li>
+<li>OrbitControls::轨道控制器，模拟轨道中的卫星，绕某个对象旋转平移，用键盘和鼠标控制相机位置</li>
+<li>PointerLockControls:指针锁定，鼠标离开画布依然能被捕捉到鼠标交互，主要用于游戏</li>
+<li>TrackballControls：轨迹球控制器，通过键盘和鼠标控制前后左右平移和缩放场景</li>
+<li>TransformControls:变换物体控制器，可以通过鼠标对物体的进行拖放等操作</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="kd">var</span> <span class="nx">controls</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">OrbitControls</span><span class="p">(</span><span class="nx">camera</span><span class="p">,</span><span class="nx">container</span><span class="p">);</span>
+<span class="c1">//controls.maxPolarAngle=1.5;</span>
+<span class="c1">//controls.minPolarAngle=1;</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enableDamping</span><span class="o">=</span><span class="kc">true</span><span class="p">;</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enableKeys</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">enablePan</span><span class="o">=</span><span class="kc">false</span><span class="p">;</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">dampingFactor</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">;</span>
+<span class="nx">controls</span><span class="p">.</span><span class="nx">rotateSpeed</span><span class="o">=</span><span class="mf">0.1</span><span class="p">;</span>
+<span class="c1">//      controls.enabled = false;</span>
+<span class="c1">//controls.minDistance=1000;</span>
+<span class="c1">//controls.maxDistance=3000;</span>
 </pre></div>
                 
                   
