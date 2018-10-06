@@ -1,4 +1,4 @@
-# shark恒破解记录
+## shark恒破解记录
 
 ## 第一期
 1. nop爆破
@@ -48,9 +48,26 @@
 mfc中特征码 sub eax,0a ，找到后下面的je跳转回车
 
 ## 去弹窗
-alt+G 跟随api
-ShellExecute
-WinExec
-CreateProcess
-CreateThread
-注册表:
+
+alt+G 跟随api：
+- CreateWindowEx
+- DialogBoxParam
+- ShellExecute
+- WinExec
+- CreateProcess
+- CreateThread
+
+更改IE首页方法：使用注册表：
+- RegCreateKeyExA/W
+- RegOpenKeyExA/W
+- RegDeleteKeyExA/W
+
+
+## 软件
+- restorator 修改窗口，资源
+- procexp 
+- procmon
+
+## F12大法
+RET大法
+nop大法

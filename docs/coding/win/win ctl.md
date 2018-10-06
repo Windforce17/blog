@@ -30,6 +30,7 @@ nginx.conf:
 
 ### kms激活
 
+```bat
 win10 pro key:
 
     slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
@@ -42,7 +43,7 @@ cd office路径:
 
     cscript ospp.vbs /sethst:192.168.1.1
     cscript ospp.vbs /act
-
+```
 ### kms服务器测试
 
     nslookup -type=srv _vlmcs._tcp.lan
