@@ -1002,6 +1002,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../coding/linux/op service/" title="运维常用服务" class="md-nav__link">
+      运维常用服务
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../coding/linux/ubuntu16/" title="ubuntu1604" class="md-nav__link">
       ubuntu1604
     </a>
@@ -1582,13 +1594,46 @@
 <li>备份www</li>
 <li>备份passwd</li>
 <li>linux_check</li>
-<li>修改默认口令 curl wget</li>
-<li>配置waf，文件监控，日志记录 * getflag所需命令改名</li>
-<li>改权限</li>
+<li>修改默认口令 </li>
+<li>配置waf，文件监控，日志记录 </li>
+<li>getflag所需命令改名</li>
+<li>改cd ls curl wget常用命令</li>
+</ul>
+<h2 id="_2">防御<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>netstat：端口，连接排查方法 </li>
+<li>如何kill进程/防止kill</li>
+<li>改rw/a权限</li>
+<li>目录禁止写入</li>
+<li>删解释器</li>
+<li>sql防注入代码</li>
+<li>日志管理</li>
+<li>文件监控</li>
+<li>umask?</li>
+<li>网络端口监控</li>
+<li>waf过滤sqlmap  //sql改head</li>
+<li>上传漏洞防护</li>
+<li>webshell扫描器</li>
+</ul>
+<h2 id="_3">攻击<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>提权脚本</li>
 <li>白盒审计工具</li>
-<li>Burp</li>
+<li>批量端口扫描 http，爆破phpmyadmin ssh mysql</li>
 <li>上传、权限维持脚本</li>
-<li>扫描webshell,爆破</li>
+<li>扫描webshell,路径爆破</li>
+<li>端口扫描</li>
+<li>Cain4.9 多口令破解测试</li>
+<li>arp欺骗工具</li>
+<li>Wordpress 综合检测工具?</li>
+<li>各大cms get shell</li>
+<li>后门批量上传，管理</li>
+<li>后门开机启动 定时运行</li>
+<li>自动化程度提高</li>
+<li>php 5.10 poc</li>
+<li>xss 打cookie</li>
+<li>自动化攻击，提交</li>
+<li>中国特色字典</li>
 </ul>
 <div class="codehilite"><pre><span></span>lsb_release  -a
 file /bin/ls
@@ -1600,7 +1645,7 @@ ssh user@remote_server tail -f /var/log/apache2/access.log <span class="p">|</sp
 ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log <span class="p">|</span> ngxtop -f 
 </pre></div>
 
-<h2 id="_2">常用命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_4">常用命令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><div class="codehilite"><pre><span></span>scp 文件路径 用户名@IP:存放路径
 who 查看tty
 pkill ‐kill ‐t &lt;用户tty&gt;
@@ -1636,11 +1681,11 @@ r <span class="p">|</span> head ‐
 netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn
 win:netstat -no 查看网络链接</p>
 <h1 id="attack">防御&amp;&amp;attack<a class="headerlink" href="#attack" title="Permanent link">&para;</a></h1>
-<h2 id="_3">防篡改<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_5">防篡改<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>chattr +i /etc/profile
 chattr -R +i /var/www/html
 chattr +a /var/log 只能追加</p>
-<h2 id="_4">进程检查<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_6">进程检查<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>如果我们怀疑某个进程正在是受到溢出攻击后创建的shell进程，我们可以分析这个进程是否有socket连接，linux中查看指定进程socket 连接数的命令为:
 比如我们查看ssh进程的socket连接。如果我们检测的程序有socket连接，说明它正在进行网络通信，我们就需要进行进一步判断。</p>
 <h2 id="nfs">检查nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
