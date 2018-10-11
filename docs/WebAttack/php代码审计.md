@@ -21,7 +21,12 @@ expose_php = off 隐藏版本信息
 
 ## RCE(远程代码执行)
 命令注入攻击中WEB服务器没有过滤类似system(),eval()，exec()等函数是该漏洞攻击成功的最主要原因。
-
+```php
+System() //有回显
+exec() //无回显
+shell_exec() //无回显
+passthru() //有回显
+```
 ### preg_replace()
 正则表达式替换，第一个参数/e结束时，会将第二个参数当成代码执行
 
