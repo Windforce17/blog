@@ -3,14 +3,46 @@
 * 备份www
 * 备份passwd
 * linux_check
-* 修改默认口令 curl wget
-* 配置waf，文件监控，日志记录 * getflag所需命令改名
-* 改权限
+* 修改默认口令 
+* 配置waf，文件监控，日志记录 
+* getflag所需命令改名
+* 改cd ls curl wget常用命令
+
+## 防御
+* netstat：端口，连接排查方法 
+* 如何kill进程/防止kill
+* 改rw/a权限
+* 目录禁止写入
+* 删解释器
+* sql防注入代码
+* 日志管理
+* 文件监控
+* umask?
+* 网络端口监控
+* waf过滤sqlmap  //sql改head
+* 上传漏洞防护
+* webshell扫描器
+
+
+## 攻击
+* 提权脚本
 * 白盒审计工具
-* Burp
+* 批量端口扫描 http，爆破phpmyadmin ssh mysql
 * 上传、权限维持脚本
-* 扫描webshell,爆破
-  
+* 扫描webshell,路径爆破
+* 端口扫描
+* Cain4.9 多口令破解测试
+* arp欺骗工具
+* Wordpress 综合检测工具?
+* 各大cms get shell
+* 后门批量上传，管理
+* 后门开机启动 定时运行
+* 自动化程度提高
+* php 5.10 poc
+* xss 打cookie
+* 自动化攻击，提交
+* 中国特色字典
+
 ```bash
 lsb_release  -a
 file /bin/ls
@@ -21,6 +53,7 @@ whoami
 ssh user@remote_server tail -f /var/log/apache2/access.log | ngxtop -f
 ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log | ngxtop -f 
 ```
+
 ## 常用命令
 
 ```shell
