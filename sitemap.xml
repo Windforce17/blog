@@ -256,6 +256,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://windforce17.github.io/blog/ctf/pwn/pwntools/</loc>
+     <lastmod>2018-10-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://windforce17.github.io/blog/ctf/reverse/ReversingEngineering/</loc>
      <lastmod>2018-10-15</lastmod>
      <changefreq>daily</changefreq>
