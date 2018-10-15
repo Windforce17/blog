@@ -1,6 +1,9 @@
 ## 杂项
-## NTFS ADS流
+## NTFS 
 
+### NTFS 文件恢复
+https://blog.csdn.net/qq_18218335/article/details/57415615
+### ADS流
 这是一种``隐藏文件``的方法
 
 ## 创建数据流

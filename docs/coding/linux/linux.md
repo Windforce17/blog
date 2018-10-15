@@ -7,7 +7,12 @@ LANG=en_US.UTF-8
 export LC_ALL="en_US.UTF-8" #to bashrc
 update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ```
-
+## kill 进程
+`kill -l` 信号列表
+`pgrep` = ps -ef |grep \[process\]
+`pidof` = pid of xxx
+`pkill` = pgrep+kill
+`killall` 必须给出全名
 ## partition
 对于大于5T or gpt的分区，推荐使用parted进行分区.
 https://blog.csdn.net/dufufd/article/details/53508367
@@ -78,7 +83,7 @@ Physical volume "/dev/sdc1" successfully created
 
 ## 如何查看Linux系统的带宽流量
 
-- 按网卡查看流量：ifstat、dstat -nf或sar -n DEV 1 2
+- 按网卡查看流量： vnstatifstat、dstat -nf或sar -n DEV 1 2
 - 按进程查看流量：nethogs
 - 按连接查看流量：iptraf、iftop或tcptrack
 - 查看流量最大的进程：sysdig -c topprocs_net
@@ -110,10 +115,10 @@ $ hostnamectl
 # 设置主机名。
 $ sudo hostnamectl set-hostname rhel7
 
-$ timedatectl
+
 
 # 显示所有可用的时区
-$ timedatectl list-timezones                                                                                   
+$ timedatectl list-timezones                    $ timedatectl   
 
 # 设置当前时区
 $ sudo timedatectl set-timezone America/New_York
