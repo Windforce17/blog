@@ -51,6 +51,9 @@ https://blog.csdn.net/dufufd/article/details/53508367
 https://wiki.archlinux.org/index.php/Open-iSCSI
 https://blog.csdn.net/imliuqun123/article/details/73873321
 
+## multipath 配置
+10.90.1.76
+https://console.bluemix.net/docs/infrastructure/BlockStorage/accessing_block_storage_linux.html#-linux-mpio-iscsi-lun
 ## LVM configure
 PV Physical Volume 
 VG Volume Group
