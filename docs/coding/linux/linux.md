@@ -95,100 +95,100 @@ Physical volume "/dev/sdc1" successfully created
 
 ## ssh 免登录问题
 权限问题
-
-/root 775
-/root/.ssh 700
-/root/.ssh/authorized_keys 644
+```sh
+chmod 775 ~ 
+chmod 700 ~/.ssh 
+chmod 644 ~/.ssh/authorized_keys 
+chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+chmod 644 ~/.ssh/know_hosts
+```
 开启文件AuthorizedKeysFile .ssh/authorized_keys
 ## system analyse
-### 查看启动耗时
-$ systemd-analyze                                                                                       
-### 查看每个服务的启动耗时
-$ systemd-analyze blame
+```sh
+# 查看启动耗时
+ systemd-analyze                                                                                       
+# 查看每个服务的启动耗时
+ systemd-analyze blame
 
 # 显示瀑布状的启动过程流
-$ systemd-analyze critical-chain
+ systemd-analyze critical-chain
 
 # 显示指定服务的启动流
-$ systemd-analyze critical-chain atd.service
+ systemd-analyze critical-chain atd.service
 
 # 显示当前主机的信息
-$ hostnamectl
+ hostnamectl
 
 # 设置主机名。
-$ sudo hostnamectl set-hostname rhel7
+ sudo hostnamectl set-hostname rhel7
+```
 
 
-
-# 显示所有可用的时区
-$ timedatectl list-timezones                    $ timedatectl   
+## 时间设置
+```sh
+ timedatectl list-timezones                   
+ timedatectl   
 
 # 设置当前时区
-$ sudo timedatectl set-timezone America/New_York
-$ sudo timedatectl set-time YYYY-MM-DD
-$ sudo timedatectl set-time HH:MM:SS
+ sudo timedatectl set-timezone America/New_York
+ sudo timedatectl set-time YYYY-MM-DD
+ sudo timedatectl set-time HH:MM:SS
+```
+## session和用户
 
-# 列出当前session
-$ loginctl list-sessions
+```sh
+# 列出session
+ loginctl list-sessions
 
 # 列出当前登录用户
-$ loginctl list-users
+ loginctl list-users
 
 # 列出显示指定用户的信息
-$ loginctl show-user ruanyf
+ loginctl show-user ruanyf
+```
 
-
-
+## 日志操作
+```sh
 #查看所有日志（默认情况下 ，只保存本次启动的日志）
-$ sudo journalctl
+ sudo journalctl
 
 #查看内核日志（不显示应用日志）
-$ sudo journalctl -k
+ sudo journalctl -k
 
 #查看系统本次启动的日志
-$ sudo journalctl -b
-$ sudo journalctl -b -0
+ sudo journalctl -b
+ sudo journalctl -b -0
 
 #查看上一次启动的日志（需更改设置）
-$ sudo journalctl -b -1
+ sudo journalctl -b -1
 
 #查看指定时间的日志
-$ sudo journalctl --since="2012-10-30 18:17:16"
-$ sudo journalctl --since "20 min ago"
-$ sudo journalctl --since yesterday
-$ sudo journalctl --since "2015-01-10" --until "2015-01-11 03:00"
-$ sudo journalctl --since 09:00 --until "1 hour ago"
-
-#显示尾部的最新10行日志
-$ sudo journalctl -n
-
-#显示尾部指定行数的日志
-$ sudo journalctl -n 20
-
-#实时滚动显示最新日志
-$ sudo journalctl -f
+ sudo journalctl --since="2012-10-30 18:17:16"
+ sudo journalctl --since "20 min ago"
+ sudo journalctl --since yesterday
+ sudo journalctl --since "2015-01-10" --until "2015-01-11 03:00"
+ sudo journalctl --since 09:00 --until "1 hour ago"
 
 #查看指定服务的日志
-$ sudo journalctl /usr/lib/systemd/systemd
+ sudo journalctl /usr/lib/systemd/systemd
 
 #查看指定进程的日志
-$ sudo journalctl _PID=1
+ sudo journalctl _PID=1
 
 #查看某个路径的脚本的日志
-$ sudo journalctl /usr/bin/bash
+ sudo journalctl /usr/bin/bash
 
 #查看指定用户的日志
-$ sudo journalctl _UID=33 --since today
+ sudo journalctl _UID=33 --since today
 
 #查看某个 Unit 的日志
-$ sudo journalctl -u nginx.service
-$ sudo journalctl -u nginx.service --since today
+ sudo journalctl -u nginx.service
+ sudo journalctl -u nginx.service --since today
 
 #实时滚动显示某个 Unit 的最新日志
-$ sudo journalctl -u nginx.service -f
+ sudo journalctl -u nginx.service -f
 
-#合并显示多个 Unit 的日志
-$ journalctl -u nginx.service -u php-fpm.service --since today
+
 
 #查看指定优先级（及其以上级别）的日志，共有8级
 # 0: emerg
@@ -199,23 +199,24 @@ $ journalctl -u nginx.service -u php-fpm.service --since today
 # 5: notice
 # 6: info
 # 7: debug
-$ sudo journalctl -p err -b
+ sudo journalctl -p err -b
 
 #日志默认分页输出，--no-pager 改为正常的标准输出
-$ sudo journalctl --no-pager
+ sudo journalctl --no-pager
 
 #以 JSON 格式（单行）输出
-$ sudo journalctl -b -u nginx.service -o json
+ sudo journalctl -b -u nginx.service -o json
 
 #以 JSON 格式（多行）输出，可读性更好
-$ sudo journalctl -b -u nginx.serviceqq
+ sudo journalctl -b -u nginx.serviceqq
  -o json-pretty
 
 #显示日志占据的硬盘空间
-$ sudo journalctl --disk-usage
+ sudo journalctl --disk-usage
 
 #指定日志文件占据的最大空间
-$ sudo journalctl --vacuum-size=1G
+ sudo journalctl --vacuum-size=1G
 
 #指定日志文件保存多久
-$ sudo journalctl --vacuum-time=1years
+ sudo journalctl --vacuum-time=1years
+```
