@@ -71,10 +71,12 @@
 </script>
 
 ## Todo List
-- 短url
-- 数据库设计
+- 短url api
+- vue
 - sa报告
 - 数据库作业
+- 编译原理
+- cg
 ### coding...
 
 * oj 平台
