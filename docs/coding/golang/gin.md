@@ -10,6 +10,10 @@ route := gin.Default()
 		MaxAge:           12 * time.Hour,
     }))
 ```
+## staticFIle
+```go
+route.StaticFile("/", `send.html`)
+```
 ## 返回json
 ```go
 c.JSON(200, &CountryStatics)
