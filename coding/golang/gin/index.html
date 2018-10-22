@@ -830,6 +830,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dataBase/坑/" title="坑" class="md-nav__link">
+      坑
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1790,7 +1802,8 @@
 </pre></div>
 
 <h2 id="staticfile">staticFIle<a class="headerlink" href="#staticfile" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="nx">route</span><span class="p">.</span><span class="nx">StaticFile</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="s">`send.html`</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="nx">route</span><span class="p">.</span><span class="nx">StaticFile</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="s">`send.html`</span><span class="p">)</span><span class="c1">//file</span>
+<span class="nx">route</span><span class="p">.</span><span class="nx">StaticFS</span><span class="p">(</span><span class="s">&quot;/static&quot;</span><span class="p">,</span><span class="nx">http</span><span class="p">.</span><span class="nx">Dir</span><span class="p">(</span><span class="s">&quot;static&quot;</span><span class="p">))</span> <span class="c1">//dir</span>
 </pre></div>
 
 <h2 id="json">返回json<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
