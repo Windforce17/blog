@@ -12,7 +12,9 @@ route := gin.Default()
 ```
 ## staticFIle
 ```go
-route.StaticFile("/", `send.html`)
+route.StaticFile("/", `send.html`)//file
+route.StaticFS("/static",http.Dir("static")) //dir
+
 ```
 ## 返回json
 ```go
