@@ -1,3 +1,29 @@
+## v-chart
+import VCharts from 'v-charts'
+Vue.use(VCharts)
+## 按需引入
+```
+|- lib/
+|- line.js  -------------- 折线图
+
+|- bar.js  --------------- 条形图
+
+|- histogram.js  --------- 柱状图
+
+|- pie.js  --------------- 饼图
+
+|- ring.js  -------------- 环图
+
+|- funnel.js  ------------ 漏斗图
+
+|- waterfall.js  --------- 瀑布图
+
+|- radar.js  ------------- 雷达图
+
+|- map.js  --------------- 地图
+
+|- bmap.js  -------------- 百度地图
+```
 ## axios
 安装：cnpm install axios --save
 ### 改写原型链
