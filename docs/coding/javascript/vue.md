@@ -97,3 +97,7 @@ axios.post('/user',{
 });
 ```
 
+## 打包与部署
+### 部署后static目录为绝对路径？
+将config/index.js下build参数assetsPublicPath清空
+assetsPublicPath: '' 或者设置为'./'
