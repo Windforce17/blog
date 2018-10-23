@@ -211,6 +211,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://windforce17.github.io/blog/coding/linux/nginx/</loc>
+     <lastmod>2018-10-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://windforce17.github.io/blog/coding/linux/op service/</loc>
      <lastmod>2018-10-23</lastmod>
      <changefreq>daily</changefreq>

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.5">
     
     
       
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../../#axios" tabindex="1" class="md-skip">
+      <a href="#v-chart" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -1005,6 +1005,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v-chart" title="v-chart" class="md-nav__link">
+    v-chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="按需引入" class="md-nav__link">
+    按需引入
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#axios" title="axios" class="md-nav__link">
     axios
   </a>
@@ -1013,7 +1027,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="改写原型链" class="md-nav__link">
+  <a href="#_2" title="改写原型链" class="md-nav__link">
     改写原型链
   </a>
   
@@ -1027,7 +1041,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="使用别名" class="md-nav__link">
+  <a href="#_3" title="使用别名" class="md-nav__link">
     使用别名
   </a>
   
@@ -1039,7 +1053,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="打包与部署" class="md-nav__link">
+  <a href="#_4" title="打包与部署" class="md-nav__link">
     打包与部署
   </a>
   
@@ -1155,6 +1169,18 @@
   <li class="md-nav__item">
     <a href="../../linux/linux/" title="Linux" class="md-nav__link">
       Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/nginx/" title="Nginx" class="md-nav__link">
+      Nginx
     </a>
   </li>
 
@@ -1776,6 +1802,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#v-chart" title="v-chart" class="md-nav__link">
+    v-chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="按需引入" class="md-nav__link">
+    按需引入
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#axios" title="axios" class="md-nav__link">
     axios
   </a>
@@ -1784,7 +1824,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="改写原型链" class="md-nav__link">
+  <a href="#_2" title="改写原型链" class="md-nav__link">
     改写原型链
   </a>
   
@@ -1798,7 +1838,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="使用别名" class="md-nav__link">
+  <a href="#_3" title="使用别名" class="md-nav__link">
     使用别名
   </a>
   
@@ -1810,7 +1850,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="打包与部署" class="md-nav__link">
+  <a href="#_4" title="打包与部署" class="md-nav__link">
     打包与部署
   </a>
   
@@ -1856,9 +1896,35 @@
                 
                   <h1>Vue</h1>
                 
-                <h2 id="axios">axios<a class="headerlink" href="#axios" title="Permanent link">&para;</a></h2>
+                <h2 id="v-chart">v-chart<a class="headerlink" href="#v-chart" title="Permanent link">&para;</a></h2>
+<p>import VCharts from 'v-charts'
+Vue.use(VCharts)</p>
+<h2 id="_1">按需引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>|- lib/
+|- line.js  -------------- 折线图
+
+|- bar.js  --------------- 条形图
+
+|- histogram.js  --------- 柱状图
+
+|- pie.js  --------------- 饼图
+
+|- ring.js  -------------- 环图
+
+|- funnel.js  ------------ 漏斗图
+
+|- waterfall.js  --------- 瀑布图
+
+|- radar.js  ------------- 雷达图
+
+|- map.js  --------------- 地图
+
+|- bmap.js  -------------- 百度地图
+</pre></div>
+
+<h2 id="axios">axios<a class="headerlink" href="#axios" title="Permanent link">&para;</a></h2>
 <p>安装：cnpm install axios --save</p>
-<h3 id="_1">改写原型链<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_2">改写原型链<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><div class="codehilite"><pre><span></span><span class="c1">//在main.js中引入：</span>
 <span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
 <span class="c1">//改写原型链</span>
@@ -1913,7 +1979,7 @@
 <span class="kr">export</span> <span class="k">default</span> <span class="nx">store</span>
 </pre></div></p>
 <p><strong>注意：即使已经在 main.js 中引入了 axios，并改写了原型链，也无法在 store.js 中直接使用 $ajax 命令</strong></p>
-<h3 id="_2">使用别名<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">使用别名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1">//post</span>
 <span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/user?ID=12345&#39;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
@@ -1947,7 +2013,7 @@
 <span class="p">});</span>
 </pre></div>
 
-<h2 id="_3">打包与部署<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">打包与部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="static">部署后static目录为绝对路径？<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
 <p>将config/index.js下build参数assetsPublicPath清空
 assetsPublicPath: '' 或者设置为'./'</p>
