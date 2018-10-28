@@ -2,38 +2,36 @@ echo 'Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch' > /etc/pa
 echo '[archlinuxcn]
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 ' >> /etc/pacman.conf
-pacman -Sy
-pacman -S archlinuxcn-keyring
-pacman -Sy
-pacman -S yay
+pacman -Syu &&
+pacman -S yay &&
 # input method
 #fcitx-sogoupinyin fcitx-im
-yay -S fcitx-qt5 \
-fcitx-gtk3 \
-fctix-googlepinyin \
-shadowsocks-qt5 \
-google-chrome \
-go goland pycharm datagri \
-netease-cloud-music \
-wps-offie \
-ttf-wps-fonts \
-ttf-dejavu wqy-zenhei wqy-microhei \
-wireshark-qt \
+yay -S fcitx-qt5 &&
+yay -S fcitx-gtk3 &&
+yay -S fctix-googlepinyin &&
+yay -S shadowsocks-qt5 &&
+yay -S google-chrome &&
+yay -S go goland pycharm datagri &&
+yay -S netease-cloud-music &&
+yay -S wps-offie &&
+yay -S ttf-wps-fonts &&
+yay -S ttf-dejavu wqy-zenhei wqy-microhei &&
+yay -S wireshark-qt &&
 #don't forget gpasswd -a username wireshark
 
 #deepin.com.qq.im
 # add env to .xinitrc or profile
 
 #vmware 
-linux-headers \
+yay -S linux-headers &&
 
-vmware-modconfig --console --install-all
-modprobe vmmon
-modprobe vmci
-modprobe vmnet
+vmware-modconfig --console --install-all &&
+modprobe vmmon &&
+modprobe vmci &&
+modprobe vmnet &&
 # need start service
 #vmware-hostd vmware-networks vmware-usbarbitrator
 
 # uninstall
-yay -Rsn firefox \
-steam-manjaro
+yay -Rsn firefox &&
+yay -Rsn steam-manjaro &&
