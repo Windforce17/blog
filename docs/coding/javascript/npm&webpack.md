@@ -1,3 +1,11 @@
+## 源
+### 淘宝源设置
+安装cnpm：`npm install -g cnpm --registry=https://registry.npm.taobao.org`
+或者:`npm config set registry http://registry.npm.taobao.org/`
+替换回去:`npm config set registry https://registry.npmjs.org/`
+### chromedriver 报错
+npm config set chromedriver_cdnurl https://npm.taobao.org/mirrors/chromedriver
+
 ## webpak
 1. first you need npm
 `npm install webpack webpack-cli --save-dev`
