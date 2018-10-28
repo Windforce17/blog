@@ -11,7 +11,10 @@ yay -S fcitx-gtk3 &&
 yay -S fctix-googlepinyin &&
 yay -S shadowsocks-qt5 &&
 yay -S google-chrome &&
-yay -S go goland pycharm datagrip &&
+yay -S go &&
+yay -S goland &&
+yay -S pycharm &&
+yay -S datagrip &&
 yay -S netease-cloud-music &&
 yay -S wps-offie &&
 yay -S ttf-wps-fonts &&
