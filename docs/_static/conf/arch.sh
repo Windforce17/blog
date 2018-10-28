@@ -11,7 +11,7 @@ yay -S fcitx-gtk3 &&
 yay -S fctix-googlepinyin &&
 yay -S shadowsocks-qt5 &&
 yay -S google-chrome &&
-yay -S go
+yay -S go &&
 yay -S goland &&
 yay -S pycharm &&
 yay -S datagrip &&
