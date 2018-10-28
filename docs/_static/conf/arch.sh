@@ -19,7 +19,7 @@ yay -S netease-cloud-music &&
 yay -S wps-offie &&
 yay -S ttf-wps-fonts &&
 yay -S ttf-dejavu wqy-zenhei wqy-microhei &&
-yay -S wireshark-qt &&
+yay -S wireshark-qt 
 #don't forget gpasswd -a username wireshark
 
 #deepin.com.qq.im
