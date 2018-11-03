@@ -72,14 +72,15 @@
 
 ## Todo List
 - 短url api
-- vue
 - sa报告
-- 数据库作业
+- - vue
 - 编译原理
 - cg
 ### coding...
 
 * oj 平台
+* 书签整理
+* git平台
 * 写一个爆破字段爆破工具
 * 开3389 c++
 * 跨平台抓包，支持https
