@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#v-chart" tabindex="1" class="md-skip">
+      <a href="#vuex" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -992,16 +992,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v-chart" title="v-chart" class="md-nav__link">
-    v-chart
+  <a href="#vuex" title="vuex" class="md-nav__link">
+    vuex
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#v-chart" title="v-chart" class="md-nav__link">
+    v-chart
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" title="按需引入" class="md-nav__link">
     按需引入
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1021,8 +1034,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#vuex" title="封装进vuex中" class="md-nav__link">
-    封装进vuex中
+  <a href="#vuex_1" title="封装进 vuex 中" class="md-nav__link">
+    封装进 vuex 中
   </a>
   
 </li>
@@ -1040,6 +1053,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vscde" title="vscde 相关配置" class="md-nav__link">
+    vscde 相关配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" title="打包与部署" class="md-nav__link">
     打包与部署
   </a>
@@ -1048,8 +1068,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#static" title="部署后static目录为绝对路径？" class="md-nav__link">
-    部署后static目录为绝对路径？
+  <a href="#static" title="部署后 static 目录为绝对路径？" class="md-nav__link">
+    部署后 static 目录为绝对路径？
   </a>
   
 </li>
@@ -1144,6 +1164,18 @@
   <li class="md-nav__item">
     <a href="../../linux/improve_performance/" title="性能优化" class="md-nav__link">
       性能优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/iptables/" title="Iptables" class="md-nav__link">
+      Iptables
     </a>
   </li>
 
@@ -1753,16 +1785,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#v-chart" title="v-chart" class="md-nav__link">
-    v-chart
+  <a href="#vuex" title="vuex" class="md-nav__link">
+    vuex
   </a>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#v-chart" title="v-chart" class="md-nav__link">
+    v-chart
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_1" title="按需引入" class="md-nav__link">
     按需引入
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1782,8 +1827,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#vuex" title="封装进vuex中" class="md-nav__link">
-    封装进vuex中
+  <a href="#vuex_1" title="封装进 vuex 中" class="md-nav__link">
+    封装进 vuex 中
   </a>
   
 </li>
@@ -1801,6 +1846,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#vscde" title="vscde 相关配置" class="md-nav__link">
+    vscde 相关配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" title="打包与部署" class="md-nav__link">
     打包与部署
   </a>
@@ -1809,8 +1861,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#static" title="部署后static目录为绝对路径？" class="md-nav__link">
-    部署后static目录为绝对路径？
+  <a href="#static" title="部署后 static 目录为绝对路径？" class="md-nav__link">
+    部署后 static 目录为绝对路径？
   </a>
   
 </li>
@@ -1847,10 +1899,45 @@
                 
                   <h1>Vue</h1>
                 
-                <h2 id="v-chart">v-chart<a class="headerlink" href="#v-chart" title="Permanent link">&para;</a></h2>
-<p>import VCharts from 'v-charts'
-Vue.use(VCharts)</p>
-<h2 id="_1">按需引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h2 id="vuex">vuex<a class="headerlink" href="#vuex" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1">//虽然分模块化，但是actions和mutations依然注册为全局</span>
+<span class="c1">//全局store</span>
+<span class="c1">//const store = new Vuex.Store({</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+  <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">a</span><span class="o">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="nx">list</span><span class="o">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+  <span class="p">},</span>
+  <span class="nx">getters</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">filteredList</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">state</span><span class="p">.</span><span class="nx">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="c1">//action中所有操作是异步的，如果increment 写入到 mutations，那么则会阻塞</span>
+  <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">increment</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+          <span class="nx">context</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">a</span><span class="o">++</span><span class="p">;</span>
+          <span class="nx">resolve</span><span class="p">();</span>
+        <span class="p">},</span> <span class="mi">1000</span><span class="p">);</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">mutations</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">decrease</span><span class="p">(</span><span class="nx">state</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">state</span><span class="p">.</span><span class="nx">a</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+
+<h2 id="v-chart">v-chart<a class="headerlink" href="#v-chart" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="nx">VCharts</span> <span class="nx">from</span> <span class="s2">&quot;v-charts&quot;</span><span class="p">;</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">VCharts</span><span class="p">);</span>
+</pre></div>
+
+<h3 id="_1">按需引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>|- lib/
 |- line.js  -------------- 折线图
 
@@ -1876,12 +1963,13 @@ Vue.use(VCharts)</p>
 <h2 id="axios">axios<a class="headerlink" href="#axios" title="Permanent link">&para;</a></h2>
 <p>安装：cnpm install axios --save</p>
 <h3 id="_2">改写原型链<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><div class="codehilite"><pre><span></span><span class="c1">//在main.js中引入：</span>
-<span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
+<div class="codehilite"><pre><span></span><span class="c1">//在main.js中引入：</span>
+<span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
 <span class="c1">//改写原型链</span>
-<span class="nx">Vue</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">$ajax</span> <span class="o">=</span> <span class="nx">axios</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">$ajax</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">;</span>
 </pre></div>
-在组件的methods中使用：
+
+<p>在组件的 methods 中使用：</p>
 <div class="codehilite"><pre><span></span><span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
  <span class="nx">submitForm</span> <span class="p">()</span> <span class="p">{</span>
  <span class="k">this</span><span class="p">.</span><span class="nx">$ajax</span><span class="p">({</span>
@@ -1893,80 +1981,103 @@ Vue.use(VCharts)</p>
   <span class="p">}</span>
  <span class="p">})</span>
 <span class="p">}</span>
-</pre></div></p>
-<h3 id="vuex">封装进vuex中<a class="headerlink" href="#vuex" title="Permanent link">&para;</a></h3>
-<p>action 和 mutations 也很类似，主要的区别在于，action 可以包含异步操作，而且可以通过 action 来提交 mutations
+</pre></div>
+
+<h3 id="vuex_1">封装进 vuex 中<a class="headerlink" href="#vuex_1" title="Permanent link">&para;</a></h3>
+<p>action 和 mutations 也很类似，主要的区别在于，action 可以包含异步操作，而且可以通过 action 来提交 mutations</p>
 <div class="codehilite"><pre><span></span><span class="c1">// store.js</span>
-<span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;Vue&#39;</span>
-<span class="kr">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s1">&#39;vuex&#39;</span>
+<span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s2">&quot;Vue&quot;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s2">&quot;vuex&quot;</span><span class="p">;</span>
 
 <span class="c1">// 引入 axios</span>
-<span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s1">&#39;axios&#39;</span>
+<span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
 
-<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">)</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">);</span>
 
 <span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">({</span>
- <span class="c1">// 定义状态</span>
- <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
- <span class="nx">test01</span><span class="o">:</span> <span class="p">{</span>
-  <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Wise Wrong&#39;</span>
- <span class="p">},</span>
- <span class="nx">test02</span><span class="o">:</span> <span class="p">{</span>
-  <span class="nx">tell</span><span class="o">:</span> <span class="s1">&#39;12312345678&#39;</span>
- <span class="p">}</span>
- <span class="p">},</span>
- <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
- <span class="c1">// 封装一个 ajax 方法</span>
- <span class="nx">saveForm</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">axios</span><span class="p">({</span>
-  <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
-  <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;/user&#39;</span><span class="p">,</span>
-  <span class="nx">data</span><span class="o">:</span> <span class="nx">context</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">test02</span>
-  <span class="p">})</span>
- <span class="p">}</span>
- <span class="p">}</span>
-<span class="p">})</span>
+  <span class="c1">// 定义状态</span>
+  <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">test01</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Wise Wrong&quot;</span>
+    <span class="p">},</span>
+    <span class="nx">test02</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">tell</span><span class="o">:</span> <span class="s2">&quot;12312345678&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
+    <span class="c1">// 封装一个 ajax 方法</span>
+    <span class="nx">saveForm</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">axios</span><span class="p">({</span>
+        <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;post&quot;</span><span class="p">,</span>
+        <span class="nx">url</span><span class="o">:</span> <span class="s2">&quot;/user&quot;</span><span class="p">,</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="nx">context</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">test02</span>
+      <span class="p">});</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">});</span>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">store</span>
-</pre></div></p>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">store</span><span class="p">;</span>
+</pre></div>
+
 <p><strong>注意：即使已经在 main.js 中引入了 axios，并改写了原型链，也无法在 store.js 中直接使用 $ajax 命令</strong></p>
 <h3 id="_3">使用别名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1">//post</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/user?ID=12345&#39;</span><span class="p">)</span>
-  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/user?ID=12345&quot;</span><span class="p">)</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
   <span class="p">})</span>
-  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
   <span class="p">});</span>
 <span class="c1">//以上请求也可以通过这种方式来发送</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;/user&#39;</span><span class="p">,{</span>
-  <span class="nx">params</span><span class="o">:</span><span class="p">{</span>
-    <span class="nx">ID</span><span class="o">:</span><span class="mi">12345</span>
-  <span class="p">}</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-<span class="p">});</span>
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/user&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">ID</span><span class="o">:</span> <span class="mi">12345</span>
+    <span class="p">}</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">response</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">});</span>
 <span class="c1">//post</span>
-<span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/user&#39;</span><span class="p">,{</span>
-  <span class="nx">firstName</span><span class="o">:</span><span class="s1">&#39;Fred&#39;</span><span class="p">,</span>
-  <span class="nx">lastName</span><span class="o">:</span><span class="s1">&#39;Flintstone&#39;</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
-<span class="p">})</span>
-<span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">){</span>
-  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
-<span class="p">});</span>
+<span class="nx">axios</span>
+  <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/user&quot;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">firstName</span><span class="o">:</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span>
+    <span class="nx">lastName</span><span class="o">:</span> <span class="s2">&quot;Flintstone&quot;</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+  <span class="p">})</span>
+  <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="p">});</span>
+</pre></div>
+
+<h2 id="vscde">vscde 相关配置<a class="headerlink" href="#vscde" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1"># 安装下面的</span>
+npm install -g eslint
+npm install -g eslint-plugin-html
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="err">//添加下面的配置</span>
+  <span class="s2">&quot;eslint.validate&quot;</span><span class="err">:</span> <span class="p">[</span>
+        <span class="s2">&quot;javascript&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;javascriptreact&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;html&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vue&quot;</span>
+    <span class="p">]</span><span class="err">,</span>
+    <span class="s2">&quot;eslint.options&quot;</span><span class="err">:</span> <span class="p">{</span>
+        <span class="nt">&quot;plugins&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;html&quot;</span><span class="p">]</span>
+    <span class="p">}</span><span class="err">,</span>
 </pre></div>
 
 <h2 id="_4">打包与部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<h3 id="static">部署后static目录为绝对路径？<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
-<p>将config/index.js下build参数assetsPublicPath清空
+<h3 id="static">部署后 static 目录为绝对路径？<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
+<p>将 config/index.js 下 build 参数 assetsPublicPath 清空
 assetsPublicPath: '' 或者设置为'./'</p>
                 
                   
