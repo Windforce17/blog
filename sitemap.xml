@@ -166,26 +166,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/coding/javascript/ThreeJS/</loc>
-     <lastmod>2018-11-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://windforce17.github.io/blog/coding/javascript/js/</loc>
-     <lastmod>2018-11-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://windforce17.github.io/blog/coding/javascript/npm&webpack/</loc>
-     <lastmod>2018-11-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://windforce17.github.io/blog/coding/javascript/vue/</loc>
-     <lastmod>2018-11-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://windforce17.github.io/blog/coding/linux/arch/</loc>
      <lastmod>2018-11-07</lastmod>
      <changefreq>daily</changefreq>
@@ -242,6 +222,31 @@
     </url>
     <url>
      <loc>https://windforce17.github.io/blog/coding/win/win ctl/</loc>
+     <lastmod>2018-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/coding/前端♂js/ThreeJS/</loc>
+     <lastmod>2018-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/coding/前端♂js/css/</loc>
+     <lastmod>2018-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/coding/前端♂js/js/</loc>
+     <lastmod>2018-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/coding/前端♂js/npm&webpack/</loc>
+     <lastmod>2018-11-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/coding/前端♂js/vue/</loc>
      <lastmod>2018-11-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
