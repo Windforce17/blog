@@ -11,77 +11,87 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/SQL注入/</loc>
+     <loc>https://windforce17.github.io/blog/uefi&bios/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/XSS SSRF/</loc>
+     <loc>https://windforce17.github.io/blog/镜像站相关资料/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/msf/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/SQL注入/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/other/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/XSS SSRF/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/php代码审计/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/msf/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/web安全深度刨析/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/other/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/wlan attack/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/php代码审计/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/信息收集/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/web安全深度刨析/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/压测/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/wlan attack/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/各种漏洞/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/信息收集/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/提权/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/压测/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/漏洞扫描/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/各种漏洞/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/绕过/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/提权/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/Internet/网络协议/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/漏洞扫描/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/WebAttack/other/uefi&bios/</loc>
+     <loc>https://windforce17.github.io/blog/Web&Attack/社工/</loc>
+     <lastmod>2018-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/Web&Attack/绕过/</loc>
+     <lastmod>2018-11-11</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/Web&Attack/Internet/网络协议/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -301,12 +311,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/ctf/pwn/1/</loc>
+     <loc>https://windforce17.github.io/blog/ctf/pwn/basic/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/ctf/pwn/pwntools/</loc>
+     <loc>https://windforce17.github.io/blog/ctf/pwn/tools/</loc>
      <lastmod>2018-11-11</lastmod>
      <changefreq>daily</changefreq>
     </url>
