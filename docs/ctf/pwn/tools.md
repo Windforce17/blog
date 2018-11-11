@@ -1,4 +1,8 @@
-# pwntools
+## gdb-peda
+`vmmap`
+查看process mapping信息，得到每个地址的权限
+`find` 在内存中搜索字符串，还有一种方法，`cat /proc/{pid}/maps` 
+## pwntools
 
 
 

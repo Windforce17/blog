@@ -76,6 +76,7 @@
 - - vue
 - 编译原理
 - cg
+
 ### coding...
 
 * oj 平台
@@ -103,9 +104,19 @@ https://pwnable.tw/
 https://pwnhub.cn/
 https://hackme.inndy.tw/
 http://www.exploit-exercises.com
-http://shell-storm.org
 [hakcmeinndy wp](http://carlstar.club/)
 [pwanable wp](https://bbs.ichunqiu.com/thread-46026-1-1.html)
+
+### url
+[在线执行代码](https://www.dooccn.com)
+[ctftools](https://www.ctftools.com/down)
+[新闻](https://www.sitedirsec.com/)
+[cmd5](https://www.cmd5.com/)
+[cmd51](http://www.xmd5.org/)
+[js解密](http://tmxk.org/jother/)
+[gps](http://www.gpsspg.com/bs.htm)
+### 社工
+[be pwn?](https://haveibeenpwned.com/)
 ### 要搭建的服务
 * oj
 * owasp
