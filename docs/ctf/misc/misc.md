@@ -1,4 +1,11 @@
 ## 杂项
+stegosolve 图片隐写
+binwalk 识别文件合成
+foremost 分离合并的多个文件
+stegdetect 检查jpeg淫邪，使用DCT。
+exiftool 读取jpeg中的exif信息
+pngcheck 分析png中的压缩信息
+python-PIL 处理图片库
 ## NTFS 
 
 ### NTFS 文件恢复
