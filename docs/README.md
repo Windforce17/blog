@@ -92,8 +92,20 @@
 ### book
 q-buffer-overflow-tutoral
 ### 刷题
-pwnable.kr
-https://bbs.ichunqiu.com/thread-46026-1-1.html
+http://www.shiyanbar.com/ctf/
+http://ctf.nuptzj.cn/
+https://www.jarvisoj.com/
+https://www.ichunqiu.com/competition
+http://www.whaledu.com/
+http://ddctf.didichuxing.com/
+http://pwnable.kr/
+https://pwnable.tw/
+https://pwnhub.cn/
+https://hackme.inndy.tw/
+http://www.exploit-exercises.com
+http://shell-storm.org
+[hakcmeinndy wp](http://carlstar.club/)
+[pwanable wp](https://bbs.ichunqiu.com/thread-46026-1-1.html)
 ### 要搭建的服务
 * oj
 * owasp
