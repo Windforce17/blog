@@ -93,16 +93,18 @@ Physical volume "/dev/sdc1" successfully created
 - 查看流量最大的端口：sysdig -c topports_server
 - 查看连接最多的服务器端口：sysdig -c fdbytes_by fd.sport
 
-## ssh 免登录问题
-权限问题
+## ssh 各种问题
+### 权限问题
 ```sh
-chmod 775 ~ 
+chmod 700 ~ 
 chmod 700 ~/.ssh 
 chmod 644 ~/.ssh/authorized_keys 
 chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
-chmod 644 ~/.ssh/know_hosts
+chmod 644 ~/.ssh/known_hosts
 ```
-开启文件AuthorizedKeysFile .ssh/authorized_keys
+服务端开启文件AuthorizedKeysFile .ssh/authorized_keys
+### vm machine ssh不出去
+`/etc/ssh/ssh_config` 中添加 `IPQoS lowdelay throughput`
 ## system analyse
 ```sh
 # 查看启动耗时
