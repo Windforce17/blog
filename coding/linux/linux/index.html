@@ -1144,9 +1144,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssh" title="ssh 免登录问题" class="md-nav__link">
-    ssh 免登录问题
+  <a href="#ssh" title="ssh 各种问题" class="md-nav__link">
+    ssh 各种问题
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="权限问题" class="md-nav__link">
+    权限问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vm-machine-ssh" title="vm machine ssh不出去" class="md-nav__link">
+    vm machine ssh不出去
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1158,7 +1178,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="时间设置" class="md-nav__link">
+  <a href="#_5" title="时间设置" class="md-nav__link">
     时间设置
   </a>
   
@@ -1172,7 +1192,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="日志操作" class="md-nav__link">
+  <a href="#_6" title="日志操作" class="md-nav__link">
     日志操作
   </a>
   
@@ -1948,9 +1968,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssh" title="ssh 免登录问题" class="md-nav__link">
-    ssh 免登录问题
+  <a href="#ssh" title="ssh 各种问题" class="md-nav__link">
+    ssh 各种问题
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="权限问题" class="md-nav__link">
+    权限问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vm-machine-ssh" title="vm machine ssh不出去" class="md-nav__link">
+    vm machine ssh不出去
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1962,7 +2002,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="时间设置" class="md-nav__link">
+  <a href="#_5" title="时间设置" class="md-nav__link">
     时间设置
   </a>
   
@@ -1976,7 +2016,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="日志操作" class="md-nav__link">
+  <a href="#_6" title="日志操作" class="md-nav__link">
     日志操作
   </a>
   
@@ -2118,15 +2158,17 @@ Physical volume <span class="s2">&quot;/dev/sdc1&quot;</span> successfully creat
 <li>查看流量最大的端口：sysdig -c topports_server</li>
 <li>查看连接最多的服务器端口：sysdig -c fdbytes_by fd.sport</li>
 </ul>
-<h2 id="ssh">ssh 免登录问题<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<p>权限问题
-<div class="codehilite"><pre><span></span>chmod <span class="m">775</span> ~ 
+<h2 id="ssh">ssh 各种问题<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
+<h3 id="_4">权限问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p><div class="codehilite"><pre><span></span>chmod <span class="m">700</span> ~ 
 chmod <span class="m">700</span> ~/.ssh 
 chmod <span class="m">644</span> ~/.ssh/authorized_keys 
 chmod <span class="m">600</span> ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
-chmod <span class="m">644</span> ~/.ssh/know_hosts
+chmod <span class="m">644</span> ~/.ssh/known_hosts
 </pre></div>
-开启文件AuthorizedKeysFile .ssh/authorized_keys</p>
+服务端开启文件AuthorizedKeysFile .ssh/authorized_keys</p>
+<h3 id="vm-machine-ssh">vm machine ssh不出去<a class="headerlink" href="#vm-machine-ssh" title="Permanent link">&para;</a></h3>
+<p><code>/etc/ssh/ssh_config</code> 中添加 <code>IPQoS lowdelay throughput</code></p>
 <h2 id="system-analyse">system analyse<a class="headerlink" href="#system-analyse" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1"># 查看启动耗时</span>
  systemd-analyze                                                                                       
@@ -2146,7 +2188,7 @@ chmod <span class="m">644</span> ~/.ssh/know_hosts
  sudo hostnamectl set-hostname rhel7
 </pre></div>
 
-<h2 id="_4">时间设置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">时间设置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span> timedatectl list-timezones                   
  timedatectl   
 
@@ -2167,7 +2209,7 @@ chmod <span class="m">644</span> ~/.ssh/know_hosts
  loginctl show-user ruanyf
 </pre></div>
 
-<h2 id="_5">日志操作<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">日志操作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">#查看所有日志（默认情况下 ，只保存本次启动的日志）</span>
  sudo journalctl
 
