@@ -1,7 +1,10 @@
 ##  一些资源
+```
 http://shell-storm.org
+http://shell-storm.org/shellcode/
 https://www.exploit-db.com
 https://www.exploit-db.com/shellcode/
+```
 ## shellcode
 
 
