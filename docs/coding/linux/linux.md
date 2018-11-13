@@ -86,7 +86,7 @@ Physical volume "/dev/sdc1" successfully created
 
 ## 如何查看Linux系统的带宽流量
 
-- 按网卡查看流量： vnstatifstat、dstat -nf或sar -n DEV 1 2
+- 按网卡查看流量： vnstat ifstat、dstat -nf或sar -n DEV 1 2
 - 按进程查看流量：nethogs
 - 按连接查看流量：iptraf、iftop或tcptrack
 - 查看流量最大的进程：sysdig -c topprocs_net
