@@ -71,6 +71,7 @@
 </script>
 
 ## Todo List
+- extractvalue()函数报错注入
 - 短url api
 - sa报告
 - - vue
