@@ -3,3 +3,6 @@
 2. .git .svn .swp ~ .bak 源码，目录泄露
   .git泄露利用EXP
   https://github.com/lijiejie/GitHack
+
+## 其他资料
+在web%Attack中
