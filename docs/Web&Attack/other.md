@@ -128,8 +128,6 @@ Web代理，通过加载sqlmap api进行sqli实时检测
 https://github.com/zt2/sqli-hunter
 新版中国菜刀
 https://github.com/Chora10/Cknife
-.git泄露利用EXP
-https://github.com/lijiejie/GitHack
 浏览器攻击框架
 https://github.com/beefproject/beef
 自动化绕过WAF脚本
