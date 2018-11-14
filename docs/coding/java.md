@@ -1,5 +1,5 @@
-[TOC]
-# Scanner
+
+## Scanner
 
 1. 导入java.util.Scanner
 2. 创建Scanner对象
@@ -59,3 +59,17 @@ final:
 ```
 static
        静态方法中可以直接调用同类中的静态成员，但不能直接调用非静态成员.
+
+## gradle
+### 设置全局代理
+`.gradle`目录下创建一个gradle.properties文件 加入
+```conf
+systemProp.http.proxyHost=127.0.0.1
+systemProp.http.proxyPort=1080
+systemProp.https.nonProxyHosts=10.*|localhost
+
+
+systemProp.https.proxyHost=127.0.0.1
+systemProp.https.proxyPort=1080
+systemProp.https.nonProxyHosts=10.*|localhost
+```

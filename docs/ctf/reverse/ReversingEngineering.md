@@ -1,16 +1,27 @@
-# 相关论坛
+## 相关论坛
 openrce.org
 woodmann.com
 hexblog.com
 
-# 工具
-
-## java逆向
+## 工具
+### 符号执行工具 angr
+```python
+import angr
+import claripy
+argv1 = claripy.BVS('argv1',50*8) # 如有程序需求参数的话,50个字符长度
+proj = angr.Project('./target')
+state = proj.factory.entry_state()## proj.factory.entry_state('./target',argv1) 参数0是目标本身的名字
+simgr = proj.factory.simgr(state)
+simgr.explore(find = 0x400844,avoid = 0x400855) # start traverse
+#simgr.found[0]。solver.eval(argv1,cast_to=str)
+simgr.found[0].posix.dumps(1)
+```
+### java逆向
 clss逆向工具：jad
 
-## PC
+### PC
 
-### nm 
+#### nm 
 列举目标文件中的符号
 ```c
 #include<stdio.h>
@@ -43,7 +54,6 @@ int main(int argc, char const *argv[])
 解析elf文件还有`readelf`
 ### 静态连接和动态链接
 静态连接体积大，因为包含了运行库。
-## android
 ### Apktool
 　　APKTool 是 GOOGLE 提供的 APK 编译工具。能够反编译及回编译 apk，同时安装反编译系统 apk 所需要的 framework-res 框架。
 　　作用：资源文件获取，可以提取出图片文件和布局文件进行使用查看。
