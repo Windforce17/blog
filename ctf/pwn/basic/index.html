@@ -1520,6 +1520,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#plt-got-pltgot" title="plt got .plt.got" class="md-nav__link">
+    plt got .plt.got
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shellcode" title="shellcode" class="md-nav__link">
     shellcode
   </a>
@@ -1872,6 +1879,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#plt-got-pltgot" title="plt got .plt.got" class="md-nav__link">
+    plt got .plt.got
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#shellcode" title="shellcode" class="md-nav__link">
     shellcode
   </a>
@@ -1953,6 +1967,10 @@ https://www.exploit-db.com
 https://www.exploit-db.com/shellcode/
 </pre></div>
 
+<h2 id="plt-got-pltgot">plt got .plt.got<a class="headerlink" href="#plt-got-pltgot" title="Permanent link">&para;</a></h2>
+<p><img alt="plt &amp;got" src="2018-11-15-23-25-29.png" />
+plt 指向got,采用延时绑定。printf函数中，0x404c010实际内容是下一条指令<code>push 0</code>,
+而plt.got是已经绑定的， puts函数的0x804bff4是指向实际puts函数的</p>
 <h2 id="shellcode">shellcode<a class="headerlink" href="#shellcode" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>jmp sh
 run:
