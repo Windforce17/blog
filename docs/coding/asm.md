@@ -1,0 +1,1 @@
+- 使用`nasm [sourcecode] -o [target] -felf32`编译一个汇编文件 
