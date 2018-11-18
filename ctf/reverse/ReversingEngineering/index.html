@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.6">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.1.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.451f80e5.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.11e41852.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.20ef595d.js"></script>
     
     
       
@@ -2050,7 +2050,7 @@ hexblog.com</p>
 <span class="kn">import</span> <span class="nn">claripy</span>
 <span class="n">argv1</span> <span class="o">=</span> <span class="n">claripy</span><span class="o">.</span><span class="n">BVS</span><span class="p">(</span><span class="s1">&#39;argv1&#39;</span><span class="p">,</span><span class="mi">50</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># 如有程序需求参数的话,50个字符长度</span>
 <span class="n">proj</span> <span class="o">=</span> <span class="n">angr</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="s1">&#39;./target&#39;</span><span class="p">)</span>
-<span class="n">state</span> <span class="o">=</span> <span class="n">proj</span><span class="o">.</span><span class="n">factory</span><span class="o">.</span><span class="n">entry_state</span><span class="p">()</span><span class="c1">## proj.factory.entry_state(&#39;./target&#39;,argv1) 参数0是目标本身的名字</span>
+<span class="n">state</span> <span class="o">=</span> <span class="n">proj</span><span class="o">.</span><span class="n">factory</span><span class="o">.</span><span class="n">entry_state</span><span class="p">()</span><span class="c1">## proj.factory.entry_state(args=[&#39;./target&#39;, argv1]) 参数0是目标本身的名字</span>
 <span class="n">simgr</span> <span class="o">=</span> <span class="n">proj</span><span class="o">.</span><span class="n">factory</span><span class="o">.</span><span class="n">simgr</span><span class="p">(</span><span class="n">state</span><span class="p">)</span>
 <span class="n">simgr</span><span class="o">.</span><span class="n">explore</span><span class="p">(</span><span class="n">find</span> <span class="o">=</span> <span class="mh">0x400844</span><span class="p">,</span><span class="n">avoid</span> <span class="o">=</span> <span class="mh">0x400855</span><span class="p">)</span> <span class="c1"># start traverse</span>
 <span class="c1">#simgr.found[0]。solver.eval(argv1,cast_to=str)</span>
@@ -2198,7 +2198,7 @@ C:  为初始化数值
       
     </div>
     
-      <script src="../../../assets/javascripts/application.627ea402.js"></script>
+      <script src="../../../assets/javascripts/application.905597d0.js"></script>
       
         
         
