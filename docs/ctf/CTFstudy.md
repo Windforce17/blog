@@ -87,7 +87,7 @@ multipart/form-data变换一下大小写，再把第二个Content-Type改成图�
 
 泄漏路径问题，漏洞根源位于/php/file_manager_json.php。
 
-#杂碎
+# 杂碎
 
 培根密码,当铺密码解密，JS/VBS/ASP加密解密  
 cap无线密码破解-aircrack-win  

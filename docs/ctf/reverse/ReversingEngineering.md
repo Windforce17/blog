@@ -10,7 +10,7 @@ import angr
 import claripy
 argv1 = claripy.BVS('argv1',50*8) # 如有程序需求参数的话,50个字符长度
 proj = angr.Project('./target')
-state = proj.factory.entry_state()## proj.factory.entry_state('./target',argv1) 参数0是目标本身的名字
+state = proj.factory.entry_state()## proj.factory.entry_state(args=['./target', argv1]) 参数0是目标本身的名字
 simgr = proj.factory.simgr(state)
 simgr.explore(find = 0x400844,avoid = 0x400855) # start traverse
 #simgr.found[0]。solver.eval(argv1,cast_to=str)
