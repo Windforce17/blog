@@ -1895,7 +1895,7 @@
                 <h1 id="lets-encrypt">使用Let's Encrypt 进行泛解析。<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h1>
 <h2 id="acmesh">acme.sh的方式<a class="headerlink" href="#acmesh" title="Permanent link">&para;</a></h2>
 <p>获取acme脚本如下，注意报错，安装依赖
-- <code>curl https://get.acme.sh | sh</code></p>
+- <code>apt install socat&amp;&amp;curl https://get.acme.sh | sh</code></p>
 <ul>
 <li><code>source ~/.bashrc</code></li>
 </ul>
@@ -1905,8 +1905,6 @@
 <div class="codehilite"><pre><span></span>    <span class="nb">export</span> <span class="nv">DP_Id</span><span class="o">=</span><span class="s2">&quot;1111&quot;</span>  <span class="o">&amp;&amp;</span>
     <span class="nb">export</span> <span class="nv">DP_Key</span><span class="o">=</span><span class="s2">&quot;xxxxx&quot;</span>  <span class="o">&amp;&amp;</span>
     acme.sh --issue --dns dns_dp -d *.dddd.im -d dddd.im
-    <span class="c1"># sed -i &#39;4,5c ssl_certificate /usr/local/nginx/conf/ssl/cugapp.com.cer;\</span>
-    <span class="c1"># ssl_certificate_key /usr/local/nginx/conf/ssl/cugapp.com.key;&#39; ./*.cugapp* &amp;&amp;</span>
     ./acme.sh  --installcert  -d  *.dddd.im   <span class="se">\</span>
             --key-file   /usr/local/nginx/conf/ssl/dddd.im.key <span class="se">\</span>
             --fullchain-file /usr/local/nginx/conf/ssl/dddd.im.cer <span class="se">\</span>
