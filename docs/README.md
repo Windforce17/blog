@@ -71,12 +71,15 @@
 </script>
 
 ## Todo List
+- 准备环境 qemu... awvs appscan
+- 思修作业
+- 整理文档
+- cg
 - extractvalue()函数报错注入
 - 短url api
-- sa报告
-- - vue
+- vue
 - 编译原理
-- cg
+
 
 ### coding...
 
