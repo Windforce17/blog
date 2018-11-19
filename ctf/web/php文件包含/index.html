@@ -1652,6 +1652,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" title="常用重要文件" class="md-nav__link">
+    常用重要文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_files" title="_FILES数组" class="md-nav__link">
     _FILES数组
   </a>
@@ -1659,7 +1666,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="文件包含漏洞" class="md-nav__link">
+  <a href="#_2" title="文件包含漏洞" class="md-nav__link">
     文件包含漏洞
   </a>
   
@@ -1667,7 +1674,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" title="涉及到的危险函数" class="md-nav__link">
+  <a href="#_3" title="涉及到的危险函数" class="md-nav__link">
     涉及到的危险函数
   </a>
   
@@ -1708,7 +1715,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="文件包含爆栈&amp;上传" class="md-nav__link">
+  <a href="#_4" title="文件包含爆栈&amp;上传" class="md-nav__link">
     文件包含爆栈&amp;上传
   </a>
   
@@ -1956,6 +1963,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" title="常用重要文件" class="md-nav__link">
+    常用重要文件
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_files" title="_FILES数组" class="md-nav__link">
     _FILES数组
   </a>
@@ -1963,7 +1977,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="文件包含漏洞" class="md-nav__link">
+  <a href="#_2" title="文件包含漏洞" class="md-nav__link">
     文件包含漏洞
   </a>
   
@@ -1971,7 +1985,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" title="涉及到的危险函数" class="md-nav__link">
+  <a href="#_3" title="涉及到的危险函数" class="md-nav__link">
     涉及到的危险函数
   </a>
   
@@ -2012,7 +2026,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="文件包含爆栈&amp;上传" class="md-nav__link">
+  <a href="#_4" title="文件包含爆栈&amp;上传" class="md-nav__link">
     文件包含爆栈&amp;上传
   </a>
   
@@ -2092,6 +2106,10 @@
                 
                 <h2 id="php">php绕过扩展名<a class="headerlink" href="#php" title="Permanent link">&para;</a></h2>
 <p>phpss</p>
+<h2 id="_1">常用重要文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>/etc/apache2/apache2.conf
+/etc/apache2/sites-enabled/000-default.conf
+/var/log/apache2/error.log</p>
 <h2 id="_files">_FILES数组<a class="headerlink" href="#_files" title="Permanent link">&para;</a></h2>
 <p>$_FILES 数组提供了多个内容在文件上传时使用，比较重要的有以下几个：
 <div class="codehilite"><pre><span></span><span class="x">$_FILES[&#39;myFile&#39;][&#39;name&#39;]// 客户端文件的原名称。 </span>
@@ -2101,9 +2119,9 @@
 </pre></div>
 上传过程中还利用到了一个重要的函数  <code>move_uploaded_file()</code>，该方法是将上传的文件移动到新位置，若不加上这一行代码，临时文件在上传周期后就被删除而不会被存储。</p>
 <p>move_uploaded_file(file,newloc)</p>
-<h2 id="_1">文件包含漏洞<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2">文件包含漏洞<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>服务器通过php的特性（函数）去包含任意文件时，由于要包含的这个文件来源过滤不严，从而可以去包含一个恶意文件，而我们可以构造这个恶意文件来达到邪恶的目的。</p>
-<h3 id="_2">涉及到的危险函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">涉及到的危险函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>include(),require()和include_once(),require_once()</p>
 <h4 id="include">include<a class="headerlink" href="#include" title="Permanent link">&para;</a></h4>
 <p>包含并运行指定文件，当包含外部文件发生错误时，系统给出警告，但整个php文件继续执行。</p>
@@ -2113,7 +2131,7 @@
 <p>这个函数跟include函数作用几乎相同，只是他在导入函数之前先检测下该文件是否被导入。如果已经执行一遍那么就不重复执行了。</p>
 <h4 id="require_once">require_once<a class="headerlink" href="#require_once" title="Permanent link">&para;</a></h4>
 <p>这个函数跟require的区别 跟上面我所讲的include和include_once是一样的。所以我就不重复了</p>
-<h3 id="_3">文件包含爆栈&amp;上传<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">文件包含爆栈&amp;上传<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>漏洞样例
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
     <span class="k">include</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]);</span>
