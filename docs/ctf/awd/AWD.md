@@ -7,7 +7,7 @@
 * 配置waf，文件监控，日志记录 
 * getflag所需命令改名
 * 改cd ls curl wget常用命令
-
+* /var/www/html/ 设置为不可写
 ## 防御
 * netstat：端口，连接排查方法 
 * 如何kill进程/防止kill

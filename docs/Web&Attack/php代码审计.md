@@ -45,21 +45,5 @@ unserialize 会调用__wakeup 函数
 ### 更改http头 
 Content-Type:image/gif
 
-## 文件包含漏洞
-　　服务器通过php的特性（函数）去包含任意文件时，由于要包含的这个文件来源过滤不严，从而可以去包含一个恶意文件，而我们可以构造这个恶意文件来达到邪恶的目的。
 
-
-
-## php伪协议 php://
-挖坑待填
-### 涉及到的危险函数
-include(),require()和include_once(),require_once()
-#### include
-包含并运行指定文件，当包含外部文件发生错误时，系统给出警告，但整个php文件继续执行。
-#### require
-跟include唯一不同的是，当产生错误时候，include下面继续运行而require停止运行了。
-#### include_once
-这个函数跟include函数作用几乎相同，只是他在导入函数之前先检测下该文件是否被导入。如果已经执行一遍那么就不重复执行了。
-#### require_once
-这个函数跟require的区别 跟上面我所讲的include和include_once是一样的。所以我就不重复了
 
