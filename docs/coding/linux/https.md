@@ -1,7 +1,7 @@
 # 使用Let's Encrypt 进行泛解析。
 ## acme.sh的方式
 获取acme脚本如下，注意报错，安装依赖
-- `curl https://get.acme.sh | sh`
+- `apt install socat&&curl https://get.acme.sh | sh`
 
 - `source ~/.bashrc`
 
