@@ -49,6 +49,7 @@ payload
 </body>
 </html>
 ```
+PHP7中如果include(‘php://filter/string.strip_tags/resource=/etc/passwd’)，就会引起PHP程序直接崩溃
 
 #### 文件包含getshell
 利用bp发包
