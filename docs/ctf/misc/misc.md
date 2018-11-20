@@ -27,8 +27,9 @@ c:\test>dir /r test.txt
 PS C:\test> Get-Content test.txt -stream ThisIsAnADS
 ```
 ## png
-
-## png图片格式http://www.cnblogs.com/fengyv/archive/2006/04/30/2423964.html
+分析lsb：https://github.com/zed-0xff/zsteg
+## png图片格式
+http://www.cnblogs.com/fengyv/archive/2006/04/30/2423964.html
 
 ## 查看IDAT数据块
 pngcheck.exe -v xxx.png 正常一个块是65524

