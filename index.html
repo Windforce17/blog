@@ -453,6 +453,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" title="未验证的一些玩意" class="md-nav__link">
+    未验证的一些玩意
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql" title="mysql 协议加密算法" class="md-nav__link">
+    mysql 协议加密算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1442,8 +1462,8 @@
 
 
   <li class="md-nav__item">
-    <a href="ctf/CTFstudy/" title="学习基本思路" class="md-nav__link">
-      学习基本思路
+    <a href="ctf/CTFstudy/" title="CTFstudy" class="md-nav__link">
+      CTFstudy
     </a>
   </li>
 
@@ -1559,6 +1579,18 @@
   <li class="md-nav__item">
     <a href="ctf/misc/misc/" title="Misc" class="md-nav__link">
       Misc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ctf/misc/webasm/" title="Webasm" class="md-nav__link">
+      Webasm
     </a>
   </li>
 
@@ -1727,6 +1759,18 @@
   <li class="md-nav__item">
     <a href="ctf/web/php文件包含/" title="Php文件包含" class="md-nav__link">
       Php文件包含
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="ctf/web/ssti/" title="Ssti" class="md-nav__link">
+      Ssti
     </a>
   </li>
 
@@ -1980,6 +2024,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_4" title="未验证的一些玩意" class="md-nav__link">
+    未验证的一些玩意
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql" title="mysql 协议加密算法" class="md-nav__link">
+    mysql 协议加密算法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2076,13 +2140,14 @@
 <h2 id="todo-list">Todo List<a class="headerlink" href="#todo-list" title="Permanent link">&para;</a></h2>
 <ul>
 <li>准备环境 qemu... awvs appscan</li>
-<li>思修作业</li>
-<li>整理文档</li>
 <li>cg</li>
 <li>extractvalue()函数报错注入</li>
 <li>短url api</li>
 <li>vue</li>
 <li>编译原理</li>
+<li><a href="https://www.leavesongs.com/">https://www.leavesongs.com/</a></li>
+<li>?name=admin' and 1=2 union select 1,2,group_concat(flag) from flag--+ </li>
+<li>上面的group_concat 作用</li>
 </ul>
 <h3 id="coding">coding...<a class="headerlink" href="#coding" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2131,6 +2196,11 @@
 <li>wooyun</li>
 <li>file server</li>
 </ul>
+<h3 id="_4">未验证的一些玩意<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h4 id="mysql">mysql 协议加密算法<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>hash1 = SHA1(password) //password是用户输入的密码
+result = hash1 ^ sha1(scramble+sha1(hash1)) //scamble 是mysql server端发送的，当密码为空，固定为0x00
+</pre></div>
                 
                   
                 

