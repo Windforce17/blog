@@ -2171,7 +2171,8 @@ payload
     <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div></p>
+</pre></div>
+PHP7中如果include(‘php://filter/string.strip_tags/resource=/etc/passwd’)，就会引起PHP程序直接崩溃</p>
 <h4 id="getshell">文件包含getshell<a class="headerlink" href="#getshell" title="Permanent link">&para;</a></h4>
 <p>利用bp发包
 <code>http://localhost:9000/&lt;?php phpinfo();?&gt;</code> 会被及记录到log/access.log
