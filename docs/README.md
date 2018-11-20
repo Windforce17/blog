@@ -95,6 +95,13 @@
   
 ### book
 q-buffer-overflow-tutoral
+逆向工程核心原理
+《XSS跨站脚本攻击剖析与防御》
+加密与解密
+IDA Pro权威指南
+0day安全
+angr
+https://docs.angr.io/
 ### 刷题
 http://www.shiyanbar.com/ctf/
 http://ctf.nuptzj.cn/
