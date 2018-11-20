@@ -2,47 +2,48 @@
 stegosolve 图片隐写
 binwalk 识别文件合成
 foremost 分离合并的多个文件
-stegdetect 检查jpeg淫邪，使用DCT。
+stegdetect 检查jpeg隐写，使用DCT。
 exiftool 读取jpeg中的exif信息
 pngcheck 分析png中的压缩信息
 python-PIL 处理图片库
+
+
+## strings 命令查看大于14个字符串
+```sh
+strings qweqwe.pcapng | grep '^[a-z0-9]\{14\}$' | tr -d '\n' > test.txt
+```  
 ## NTFS 
 
 ### NTFS 文件恢复
 https://blog.csdn.net/qq_18218335/article/details/57415615
 ### ADS流
-这是一种``隐藏文件``的方法
-
-## 创建数据流
-
-    c:\test>echo Hello, freebuf! > test.txt:ThisIsAnADS
-
+这是一种`隐藏文件`的方法
+```powershell
+# 创建数据流
+c:\test>echo Hello, freebuf! > test.txt:ThisIsAnADS
 ## 列出数据流
-
 c:\test>dir /r test.txt
-
-## 查看ADS内容
-
+# 查看ADS内容
 PS C:\test> Get-Content test.txt -stream ThisIsAnADS
-
-# png
+```
+## png
 
 ## png图片格式http://www.cnblogs.com/fengyv/archive/2006/04/30/2423964.html
 
 ## 查看IDAT数据块
-pngcheck.exe -v xxx.png 正常一个快是65524
+pngcheck.exe -v xxx.png 正常一个块是65524
 
-#zlib
+##zlib
 
 78 9C是zlib压缩标志
 zlib扩展阅读http://zlib.net/
 
-# GIF
-开头GIF8(7/9)a
-扩展阅读
+## GIF
+开头GIF8[7/9]a
+### 扩展阅读
 http://dev.gameres.com/Program/Visual/Other/GIFDoc.htm
 可以用Stegsolve播放帧
-# PIL库的使用
+## PIL库的使用
 import Image
 MAX = 25
 pic = Image.new("RGB",(MAX, MAX))

@@ -72,15 +72,14 @@
 
 ## Todo List
 - 准备环境 qemu... awvs appscan
-- 思修作业
-- 整理文档
 - cg
 - extractvalue()函数报错注入
 - 短url api
 - vue
 - 编译原理
-
-
+- https://www.leavesongs.com/
+- ?name=admin' and 1=2 union select 1,2,group_concat(flag) from flag--+ 
+- 上面的group_concat 作用
 ### coding...
 
 * oj 平台
@@ -127,3 +126,10 @@ http://www.exploit-exercises.com
 * msf vuln
 * wooyun
 * file server
+
+### 未验证的一些玩意
+#### mysql 协议加密算法
+```
+hash1 = SHA1(password) //password是用户输入的密码
+result = hash1 ^ sha1(scramble+sha1(hash1)) //scamble 是mysql server端发送的，当密码为空，固定为0x00
+```

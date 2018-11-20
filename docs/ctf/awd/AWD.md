@@ -1,5 +1,6 @@
 ## 准备
-
+[reverse shell manager](https://github.com/WangYihang/Platypus)
+[web shell manager](https://github.com/WangYihang/Webshell-Sniper)
 * 备份www
 * 备份passwd
 * linux_check

