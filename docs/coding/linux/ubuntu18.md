@@ -10,8 +10,11 @@
 
 sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 ## nfs
-
-stop broken nfs
+### /etc/export 配置详解
+- https://www.cnblogs.com/huangzhen/archive/2012/08/15/2640371.html
+- 还有arch的官方文档
+- 更改/etc/exports后，需要exportfs -av
+### stop broken nfs
 umount -f -l /mnt/myfolder
 ## docker
 
