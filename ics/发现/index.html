@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/Web&Attack/php代码审计/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/ics/发现/">
       
       
         <meta name="author" content="Windforce17">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Php代码审计 - windforce17's blog</title>
+        <title>发现 - windforce17's blog</title>
       
     
     
@@ -107,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#phpini" tabindex="1" class="md-skip">
+      <a href="#s7tcp102" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -133,7 +133,7 @@
                 windforce17's blog
               </span>
               <span class="md-header-nav__topic">
-                Php代码审计
+                发现
               </span>
             
           
@@ -232,7 +232,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../SQL注入/" title="Web&Attack" class="md-tabs__link md-tabs__link--active">
+        <a href="../../Web&Attack/SQL注入/" title="Web&Attack" class="md-tabs__link">
           Web&Attack
         </a>
       
@@ -271,7 +271,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../ics/发现/" title="Ics" class="md-tabs__link">
+        <a href="./" title="Ics" class="md-tabs__link md-tabs__link--active">
           Ics
         </a>
       
@@ -415,12 +415,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Web&Attack
@@ -438,7 +436,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../SQL注入/" title="SQL注入" class="md-nav__link">
+    <a href="../../Web&Attack/SQL注入/" title="SQL注入" class="md-nav__link">
       SQL注入
     </a>
   </li>
@@ -450,7 +448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../XSS SSRF/" title="XSS SSRF" class="md-nav__link">
+    <a href="../../Web&Attack/XSS SSRF/" title="XSS SSRF" class="md-nav__link">
       XSS SSRF
     </a>
   </li>
@@ -462,7 +460,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../msf/" title="Msf" class="md-nav__link">
+    <a href="../../Web&Attack/msf/" title="Msf" class="md-nav__link">
       Msf
     </a>
   </li>
@@ -474,7 +472,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../other/" title="Other" class="md-nav__link">
+    <a href="../../Web&Attack/other/" title="Other" class="md-nav__link">
       Other
     </a>
   </li>
@@ -484,140 +482,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Php代码审计
-      </label>
-    
-    <a href="./" title="Php代码审计" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../Web&Attack/php代码审计/" title="Php代码审计" class="md-nav__link">
       Php代码审计
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#phpini" title="php.ini" class="md-nav__link">
-    php.ini
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="代码审计" class="md-nav__link">
-    代码审计
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#seay-rips" title="两款代码审计工具 seay ,RIPS" class="md-nav__link">
-    两款代码审计工具 seay ,RIPS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phpmyadmin" title="phpmyadmin 密码修改" class="md-nav__link">
-    phpmyadmin 密码修改
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="序列化和反序列化" class="md-nav__link">
-    序列化和反序列化
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="变量覆盖漏洞" class="md-nav__link">
-    变量覆盖漏洞
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rce" title="RCE(远程代码执行)" class="md-nav__link">
-    RCE(远程代码执行)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ereg" title="ereg()" class="md-nav__link">
-    ereg()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preg_replace" title="preg_replace()" class="md-nav__link">
-    preg_replace()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="序列化与反序列化" class="md-nav__link">
-    序列化与反序列化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assert" title="assert()" class="md-nav__link">
-    assert()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#http" title="更改http头" class="md-nav__link">
-    更改http头
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -627,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../web安全深度刨析/" title="Web安全深度刨析" class="md-nav__link">
+    <a href="../../Web&Attack/web安全深度刨析/" title="Web安全深度刨析" class="md-nav__link">
       Web安全深度刨析
     </a>
   </li>
@@ -639,7 +508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../wlan attack/" title="Wlan attack" class="md-nav__link">
+    <a href="../../Web&Attack/wlan attack/" title="Wlan attack" class="md-nav__link">
       Wlan attack
     </a>
   </li>
@@ -651,7 +520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../信息收集/" title="信息收集" class="md-nav__link">
+    <a href="../../Web&Attack/信息收集/" title="信息收集" class="md-nav__link">
       信息收集
     </a>
   </li>
@@ -663,7 +532,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../压测/" title="工具简介" class="md-nav__link">
+    <a href="../../Web&Attack/压测/" title="工具简介" class="md-nav__link">
       工具简介
     </a>
   </li>
@@ -675,7 +544,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../各种漏洞/" title="各种漏洞" class="md-nav__link">
+    <a href="../../Web&Attack/各种漏洞/" title="各种漏洞" class="md-nav__link">
       各种漏洞
     </a>
   </li>
@@ -687,7 +556,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../提权/" title="提权" class="md-nav__link">
+    <a href="../../Web&Attack/提权/" title="提权" class="md-nav__link">
       提权
     </a>
   </li>
@@ -699,7 +568,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../漏洞扫描/" title="漏洞扫描" class="md-nav__link">
+    <a href="../../Web&Attack/漏洞扫描/" title="漏洞扫描" class="md-nav__link">
       漏洞扫描
     </a>
   </li>
@@ -711,7 +580,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../社工/" title="社工" class="md-nav__link">
+    <a href="../../Web&Attack/社工/" title="社工" class="md-nav__link">
       社工
     </a>
   </li>
@@ -723,7 +592,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../绕过/" title="绕过" class="md-nav__link">
+    <a href="../../Web&Attack/绕过/" title="绕过" class="md-nav__link">
       绕过
     </a>
   </li>
@@ -754,7 +623,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Internet/网络协议/" title="网络协议" class="md-nav__link">
+    <a href="../../Web&Attack/Internet/网络协议/" title="网络协议" class="md-nav__link">
       网络协议
     </a>
   </li>
@@ -1842,10 +1711,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
     
     <label class="md-nav__link" for="nav-8">
       Ics
@@ -1861,11 +1732,58 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../ics/发现/" title="发现" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        发现
+      </label>
+    
+    <a href="./" title="发现" class="md-nav__link md-nav__link--active">
       发现
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#s7tcp102" title="使用S7（TCP/102）协议进行扫描探测" class="md-nav__link">
+    使用S7（TCP/102）协议进行扫描探测
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s7" title="S7 爆破口令" class="md-nav__link">
+    S7 爆破口令
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2001,98 +1919,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#phpini" title="php.ini" class="md-nav__link">
-    php.ini
+  <a href="#s7tcp102" title="使用S7（TCP/102）协议进行扫描探测" class="md-nav__link">
+    使用S7（TCP/102）协议进行扫描探测
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="代码审计" class="md-nav__link">
-    代码审计
+  <a href="#s7" title="S7 爆破口令" class="md-nav__link">
+    S7 爆破口令
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#seay-rips" title="两款代码审计工具 seay ,RIPS" class="md-nav__link">
-    两款代码审计工具 seay ,RIPS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#phpmyadmin" title="phpmyadmin 密码修改" class="md-nav__link">
-    phpmyadmin 密码修改
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="序列化和反序列化" class="md-nav__link">
-    序列化和反序列化
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="变量覆盖漏洞" class="md-nav__link">
-    变量覆盖漏洞
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rce" title="RCE(远程代码执行)" class="md-nav__link">
-    RCE(远程代码执行)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ereg" title="ereg()" class="md-nav__link">
-    ereg()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preg_replace" title="preg_replace()" class="md-nav__link">
-    preg_replace()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" title="序列化与反序列化" class="md-nav__link">
-    序列化与反序列化
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assert" title="assert()" class="md-nav__link">
-    assert()
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#http" title="更改http头" class="md-nav__link">
-    更改http头
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2118,49 +1954,14 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/Web&Attack/php代码审计.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/ics/发现.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Php代码审计</h1>
+                  <h1>发现</h1>
                 
-                <h2 id="phpini">php.ini<a class="headerlink" href="#phpini" title="Permanent link">&para;</a></h2>
-<p>php.ini并放置在httpd.conf中PHPIniDir指定的目录，使用phpinfo()函数可以查看
-<div class="codehilite"><pre><span></span><span class="na">safe_mode</span> <span class="o">=</span> <span class="s">off 避免各种奇怪的失败</span>
-<span class="na">register_globals 关闭</span>
-<span class="na">open_basedir 配置， 防止目录遍历</span>
-<span class="na">allow_url_fopen 关闭 文件打开限制</span>
-<span class="na">display_error</span> <span class="o">=</span><span class="s">off 避免攻击者获取更多信息</span>
-<span class="na">expose_php</span> <span class="o">=</span> <span class="s">off 隐藏版本信息</span>
-</pre></div></p>
-<h2 id="_1">代码审计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="seay-rips">两款代码审计工具 seay ,RIPS<a class="headerlink" href="#seay-rips" title="Permanent link">&para;</a></h3>
-<p>seay国产</p>
-<h2 id="phpmyadmin">phpmyadmin 密码修改<a class="headerlink" href="#phpmyadmin" title="Permanent link">&para;</a></h2>
-<ol>
-<li>更改用户中的密码</li>
-<li><code>config.inc.php</code>中password修改</li>
-</ol>
-<h2 id="_2">序列化和反序列化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>CVE-2016-7124</p>
-<h2 id="_3">变量覆盖漏洞<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>变量覆盖指的是用我们自定义的参数值替换程序原有的变量值，一般变量覆盖漏洞需要结合程序的其它功能来实现完整的攻击 变量覆盖漏洞大多数由函数使用不当导致，经常引发变量覆盖漏洞的函数有：extract(),parse_str()和import_request_variables()</p>
-<h2 id="rce">RCE(远程代码执行)<a class="headerlink" href="#rce" title="Permanent link">&para;</a></h2>
-<p>命令注入攻击中WEB服务器没有过滤类似system(),eval()，exec()等函数是该漏洞攻击成功的最主要原因。
-<div class="codehilite"><pre><span></span><span class="x">System() //有回显</span>
-<span class="x">exec() //无回显</span>
-<span class="x">shell_exec() //无回显</span>
-<span class="x">passthru() //有回显</span>
-</pre></div></p>
-<h3 id="ereg">ereg()<a class="headerlink" href="#ereg" title="Permanent link">&para;</a></h3>
-<p>出现%00 则只检查%00前面的字符串</p>
-<h3 id="preg_replace">preg_replace()<a class="headerlink" href="#preg_replace" title="Permanent link">&para;</a></h3>
-<p>正则表达式替换，第一个参数/e结束时，会将第二个参数当成代码执行</p>
-<h3 id="_4">序列化与反序列化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>unserialize 会调用__wakeup 函数</p>
-<h3 id="assert">assert()<a class="headerlink" href="#assert" title="Permanent link">&para;</a></h3>
-<p>当第一参数是字符串时，执行字符串代码</p>
-<h3 id="http">更改http头<a class="headerlink" href="#http" title="Permanent link">&para;</a></h3>
-<p>Content-Type:image/gif</p>
+                <h2 id="s7tcp102">使用S7（TCP/102）协议进行扫描探测<a class="headerlink" href="#s7tcp102" title="Permanent link">&para;</a></h2>
+<h2 id="s7">S7 爆破口令<a class="headerlink" href="#s7" title="Permanent link">&para;</a></h2>
+<p>S7 FuzzTools </p>
                 
                   
                 
@@ -2206,7 +2007,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../other/" title="Other" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../ctf/wp/2018护网杯/" title="wp" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2215,19 +2016,19 @@
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                Other
+                wp
               </span>
             </div>
           </a>
         
         
-          <a href="../web安全深度刨析/" title="Web安全深度刨析" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../keyAndSetting/各种Key/" title="windows kms key" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                Web安全深度刨析
+                windows kms key
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

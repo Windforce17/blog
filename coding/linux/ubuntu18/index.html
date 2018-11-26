@@ -271,6 +271,19 @@
   
     <li class="md-tabs__item">
       
+        <a href="../../../ics/发现/" title="Ics" class="md-tabs__link">
+          Ics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
         <a href="../../../keyAndSetting/各种Key/" title="keyAndSetting" class="md-tabs__link">
           keyAndSetting
         </a>
@@ -1139,6 +1152,26 @@
     nfs
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etcexport" title="/etc/export 配置详解" class="md-nav__link">
+    /etc/export 配置详解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-broken-nfs" title="stop broken nfs" class="md-nav__link">
+    stop broken nfs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1807,10 +1840,46 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
-      keyAndSetting
+      Ics
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
+        Ics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ics/发现/" title="发现" class="md-nav__link">
+      发现
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      keyAndSetting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
         keyAndSetting
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1840,13 +1909,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
     
-    <label class="md-nav__link" for="nav-9">
+    <label class="md-nav__link" for="nav-10">
       Shell
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
+      <label class="md-nav__title" for="nav-10">
         Shell
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1876,13 +1945,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
-    <label class="md-nav__link" for="nav-10">
+    <label class="md-nav__link" for="nav-11">
       入侵检测
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
+      <label class="md-nav__title" for="nav-11">
         入侵检测
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1943,6 +2012,26 @@
   <a href="#nfs" title="nfs" class="md-nav__link">
     nfs
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etcexport" title="/etc/export 配置详解" class="md-nav__link">
+    /etc/export 配置详解
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stop-broken-nfs" title="stop broken nfs" class="md-nav__link">
+    stop broken nfs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2021,8 +2110,14 @@
 <h2 id="change-source">change source<a class="headerlink" href="#change-source" title="Permanent link">&para;</a></h2>
 <p>sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list</p>
 <h2 id="nfs">nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
-<p>stop broken nfs
-umount -f -l /mnt/myfolder</p>
+<h3 id="etcexport">/etc/export 配置详解<a class="headerlink" href="#etcexport" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.cnblogs.com/huangzhen/archive/2012/08/15/2640371.html">https://www.cnblogs.com/huangzhen/archive/2012/08/15/2640371.html</a></li>
+<li>还有arch的官方文档</li>
+<li>更改/etc/exports后，需要exportfs -av</li>
+</ul>
+<h3 id="stop-broken-nfs">stop broken nfs<a class="headerlink" href="#stop-broken-nfs" title="Permanent link">&para;</a></h3>
+<p>umount -f -l /mnt/myfolder</p>
 <h2 id="docker">docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <p>sudo apt-get install -y\
     apt-transport-https \
