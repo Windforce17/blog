@@ -1134,9 +1134,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gcc" title="gcc 编译" class="md-nav__link">
-    gcc 编译
+  <a href="#_1" title="编译环境" class="md-nav__link">
+    编译环境
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#32" title="32位" class="md-nav__link">
+    32位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#armmisp" title="arm/misp" class="md-nav__link">
+    arm/misp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1995,9 +2015,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gcc" title="gcc 编译" class="md-nav__link">
-    gcc 编译
+  <a href="#_1" title="编译环境" class="md-nav__link">
+    编译环境
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#32" title="32位" class="md-nav__link">
+    32位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#armmisp" title="arm/misp" class="md-nav__link">
+    arm/misp
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2102,11 +2142,17 @@
                 
                 
                 <h1 id="ubuntu1604">ubuntu1604<a class="headerlink" href="#ubuntu1604" title="Permanent link">&para;</a></h1>
-<h2 id="gcc">gcc 编译<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
+<h2 id="_1">编译环境<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="32">32位<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
 <p>sudo apt install -y build-essential module-assistant &amp;&amp;
  sudo apt install -y libc6-dev-i386 &amp;&amp;
  sudo apt install -y gcc-multilib g++-multilib 
 可以使用-m32 编译32位程序啦</p>
+<h3 id="armmisp">arm/misp<a class="headerlink" href="#armmisp" title="Permanent link">&para;</a></h3>
+<p>sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+sudo apt-get install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi 
+sudo apt-get install gcc-arm-linux-gnueabi g++-arm-linux-gnueabilibncurses5-dev
+apt install gcc-mips-linux-gnu</p>
 <h2 id="change-source">change source<a class="headerlink" href="#change-source" title="Permanent link">&para;</a></h2>
 <p>sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list</p>
 <h2 id="nfs">nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
