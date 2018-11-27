@@ -1,11 +1,17 @@
 # ubuntu1604
 
-## gcc 编译
+##  编译环境
+
+### 32位
  sudo apt install -y build-essential module-assistant &&
  sudo apt install -y libc6-dev-i386 &&
  sudo apt install -y gcc-multilib g++-multilib 
 可以使用-m32 编译32位程序啦
-
+### arm/misp
+sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+sudo apt-get install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi 
+sudo apt-get install gcc-arm-linux-gnueabi g++-arm-linux-gnueabilibncurses5-dev
+apt install gcc-mips-linux-gnu
 ## change source
 
 sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
