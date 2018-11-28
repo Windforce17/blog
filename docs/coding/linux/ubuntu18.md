@@ -1,5 +1,8 @@
-# ubuntu1604
-
+## ubuntu1804
+sudo apt-get install ttf-wqy-zenhei
+sudo apt-get install xfonts-wqy
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i google-chrome-stable_current_amd64.deb 
 ##  编译环境
 
 ### 32位
