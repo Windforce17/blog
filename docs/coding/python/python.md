@@ -21,7 +21,19 @@ print('{:x}'.format(250))
 print('{:,}'.format(100000000))
 print('{:,}'.format(235445.234235))
 ```
+## bytes&&string on py3
+```py
+s = str(codecs.decode('16ff00', 'hex'))
+# s: b'\\x16\\xff\\x00'
+codecs.decode('16 ff00', 'hex')
+# error!
+hex_string = """ 16 03 02 """
+some_bytes = bytes.fromhex(hex_string)
+# some_bytes: b'\x16\x03\x02'
+some_bytes = bytearray.fromhex(hex_string)
+# some_bytes: bytearray(b'\x16\x03\x02')
 
+```
 ## 各种小玩意
 ### 查看当前环境
 ```
