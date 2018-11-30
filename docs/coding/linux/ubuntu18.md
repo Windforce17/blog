@@ -10,6 +10,7 @@ dpkg -i google-chrome-stable_current_amd64.deb
  sudo apt install -y libc6-dev-i386 &&
  sudo apt install -y gcc-multilib g++-multilib 
 可以使用-m32 编译32位程序啦
+
 ### arm/misp
 sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
 sudo apt-get install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi 
