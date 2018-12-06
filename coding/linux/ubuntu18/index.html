@@ -1256,13 +1256,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pmm" title="pmm" class="md-nav__link">
-    pmm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#php" title="如何重启php" class="md-nav__link">
     如何重启php
   </a>
@@ -2214,13 +2207,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pmm" title="pmm" class="md-nav__link">
-    pmm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#php" title="如何重启php" class="md-nav__link">
     如何重启php
   </a>
@@ -2314,32 +2300,6 @@ sudo vim /lib/systemd/system/docker.service
 <span class="c1">#重新加载配置文件，重启docker daemon</span>
 sudo systemctl daemon-reload
 sudo systemctl restart docker
-</pre></div>
-
-<h2 id="pmm">pmm<a class="headerlink" href="#pmm" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1"># 拉取服务器镜像</span>
-
-docker pull percona/pmm-server:latest
-
-<span class="c1"># 创建PMM数据容器</span>
-
-docker create <span class="se">\</span>
-   -v /opt/prometheus/data <span class="se">\</span>
-   -v /opt/consul-data <span class="se">\</span>
-   -v /var/lib/mysql <span class="se">\</span>
-   -v /var/lib/grafana <span class="se">\</span>
-   --name pmm-data <span class="se">\</span>
-   percona/pmm-server:latest /bin/true
-
-<span class="c1"># 创建PMM服务器容器, 同时设置登录用户名(SERVER_USER)和密码(SERVER_PASSWORD), 根据需要进行修改. 默认使用80端口, 如果需要可以更改.</span>
-
-docker run -d -p <span class="m">9001</span>:80 <span class="se">\</span>
-  --volumes-from pmm-data <span class="se">\</span>
-  --name pmm-server <span class="se">\</span>
-  -e <span class="nv">SERVER_USER</span><span class="o">=</span><span class="nb">test</span> <span class="se">\</span>
-  -e <span class="nv">SERVER_PASSWORD</span><span class="o">=</span><span class="nb">test</span> <span class="se">\</span>
-  --restart always <span class="se">\</span>
-  percona/pmm-server:latest
 </pre></div>
 
 <h2 id="php">如何重启php<a class="headerlink" href="#php" title="Permanent link">&para;</a></h2>
