@@ -61,33 +61,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-## pmm
 
-```bash
-# 拉取服务器镜像
-
-docker pull percona/pmm-server:latest
-
-# 创建PMM数据容器
-
-docker create \
-   -v /opt/prometheus/data \
-   -v /opt/consul-data \
-   -v /var/lib/mysql \
-   -v /var/lib/grafana \
-   --name pmm-data \
-   percona/pmm-server:latest /bin/true
-
-# 创建PMM服务器容器, 同时设置登录用户名(SERVER_USER)和密码(SERVER_PASSWORD), 根据需要进行修改. 默认使用80端口, 如果需要可以更改.
-
-docker run -d -p 9001:80 \
-  --volumes-from pmm-data \
-  --name pmm-server \
-  -e SERVER_USER=test \
-  -e SERVER_PASSWORD=test \
-  --restart always \
-  percona/pmm-server:latest
-```
 
 ## 如何重启php
 
