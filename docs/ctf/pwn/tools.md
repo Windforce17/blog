@@ -59,3 +59,6 @@ rop.read(0, elf.bss(0x80))
 rop.dump()
 str(rop)
 ```
+
+## shellcraft
+shellcode=asm(shellcraft.sh())

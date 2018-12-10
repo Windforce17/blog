@@ -94,6 +94,7 @@
 * http://ctf5.shiyanbar.com/web/index_3.php
   
 ### book
+[21st Century C: C Tips from the New School 1st Edition](https://www.amazon.com/21st-Century-Tips-New-School/dp/1449327141/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=thegroovycorpora&linkId=2118b794f9d0816d53bff771c54f309e&language=en_US)
 q-buffer-overflow-tutoral
 逆向工程核心原理
 《XSS跨站脚本攻击剖析与防御》
