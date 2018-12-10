@@ -246,6 +246,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://windforce17.github.io/blog/coding/linux/ptrace/</loc>
+     <lastmod>2018-12-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://windforce17.github.io/blog/coding/linux/ubuntu18/</loc>
      <lastmod>2018-12-10</lastmod>
      <changefreq>daily</changefreq>
@@ -351,12 +356,22 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://windforce17.github.io/blog/ctf/pwn/ROP/</loc>
+     <lastmod>2018-12-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://windforce17.github.io/blog/ctf/pwn/basic/</loc>
      <lastmod>2018-12-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://windforce17.github.io/blog/ctf/pwn/heap/</loc>
+     <lastmod>2018-12-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/ctf/pwn/res/</loc>
      <lastmod>2018-12-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -377,6 +392,11 @@
     </url>
     <url>
      <loc>https://windforce17.github.io/blog/ctf/reverse/unpack/</loc>
+     <lastmod>2018-12-10</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/ctf/reverse/反调试/</loc>
      <lastmod>2018-12-10</lastmod>
      <changefreq>daily</changefreq>
     </url>
