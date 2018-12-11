@@ -114,6 +114,7 @@ https://pwnable.tw/
 https://pwnhub.cn/
 https://hackme.inndy.tw/
 http://www.exploit-exercises.com
+http://www.wechall.net/
 [hakcmeinndy wp](http://carlstar.club/)
 [pwanable wp](https://bbs.ichunqiu.com/thread-46026-1-1.html)
 
