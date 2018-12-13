@@ -1119,8 +1119,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="获取证书" class="md-nav__link">
-    获取证书
+  <a href="#dnspod-api" title="使用dnspod api" class="md-nav__link">
+    使用dnspod api
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webroot" title="使用webroot方式" class="md-nav__link">
+    使用webroot方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="开启自动更新" class="md-nav__link">
+    开启自动更新
   </a>
   
 </li>
@@ -2152,8 +2166,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="获取证书" class="md-nav__link">
-    获取证书
+  <a href="#dnspod-api" title="使用dnspod api" class="md-nav__link">
+    使用dnspod api
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webroot" title="使用webroot方式" class="md-nav__link">
+    使用webroot方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="开启自动更新" class="md-nav__link">
+    开启自动更新
   </a>
   
 </li>
@@ -2191,7 +2219,7 @@
 <li><code>source ~/.bashrc</code></li>
 </ul>
 <p>不行就去.acme.sh/里面吧</p>
-<h2 id="_1">获取证书<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="dnspod-api">使用dnspod api<a class="headerlink" href="#dnspod-api" title="Permanent link">&para;</a></h2>
 <p>下面是dddd.im的脚本。
 <div class="codehilite"><pre><span></span>    <span class="nb">export</span> <span class="nv">DP_Id</span><span class="o">=</span><span class="s2">&quot;1111&quot;</span>  <span class="o">&amp;&amp;</span>
     <span class="nb">export</span> <span class="nv">DP_Key</span><span class="o">=</span><span class="s2">&quot;xxxxx&quot;</span>  <span class="o">&amp;&amp;</span>
@@ -2201,6 +2229,14 @@
             --fullchain-file /usr/local/nginx/conf/ssl/dddd.im.cer <span class="se">\</span>
             --reloadcmd  <span class="s2">&quot;nginx -s reload&quot;</span> 
 </pre></div></p>
+<h2 id="webroot">使用webroot方式<a class="headerlink" href="#webroot" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>acme.sh  --issue -d blog.lomot.cn  --webroot  /var/www/blog.lomot.cn/
+</pre></div>
+
+<h2 id="_1">开启自动更新<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>acme.sh --upgrade --auto-upgrade
+acme.sh --renew -d <span class="s1">&#39;*.168seo.cn&#39;</span> --force
+</pre></div>
                 
                   
                 
