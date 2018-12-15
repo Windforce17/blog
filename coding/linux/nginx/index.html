@@ -107,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#proxy_pass" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -558,8 +558,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/压测/" title="工具简介" class="md-nav__link">
-      工具简介
+    <a href="../../../Web&Attack/压测/" title="压测" class="md-nav__link">
+      压测
     </a>
   </li>
 
@@ -1154,6 +1154,13 @@
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="安装" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#proxy_pass" title="proxy_pass详解" class="md-nav__link">
@@ -2145,6 +2152,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" title="安装" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#proxy_pass" title="proxy_pass详解" class="md-nav__link">
     proxy_pass详解
   </a>
@@ -2191,7 +2205,14 @@
                 
                   <h1>Nginx</h1>
                 
-                <h2 id="proxy_pass">proxy_pass详解<a class="headerlink" href="#proxy_pass" title="Permanent link">&para;</a></h2>
+                <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>apt install libssl-dev
+apt install libpcre3-dev
+apt-get install zlib1g-dev
+./configure  --prefix<span class="o">=</span>/usr/local/nginx  --sbin-path<span class="o">=</span>/usr/local/nginx/sbin/nginx --conf-path<span class="o">=</span>/usr/local/nginx/conf/nginx.conf --error-log-path<span class="o">=</span>/var/log/nginx/error.log --http-log-path<span class="o">=</span>/var/log/nginx/access.log   --user<span class="o">=</span>www --group<span class="o">=</span>www --with-http_ssl_module --with-http_stub_status_module --with-http_sub_module --with-http_gzip_static_module --with-http_v2_module --with-pcre --add-module<span class="o">=</span>../ngx_http_google_filter_module --add-module<span class="o">=</span>../ngx_http_substitutions_filter_module
+</pre></div>
+
+<h2 id="proxy_pass">proxy_pass详解<a class="headerlink" href="#proxy_pass" title="Permanent link">&para;</a></h2>
 <p>在nginx中配置proxy_pass代理转发时，如果在proxy_pass后面的url加/，表示绝对根路径；如果没有/，表示相对路径，把匹配的路径部分也给代理走.</p>
 <h3 id="http19216811proxytesthtml">'<a href="http://192.168.1.1/proxy/test.html">http://192.168.1.1/proxy/test.html</a>'<a class="headerlink" href="#http19216811proxytesthtml" title="Permanent link">&para;</a></h3>
 <p><div class="codehilite"><pre><span></span>location /proxy/ {

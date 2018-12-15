@@ -107,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#docker" tabindex="1" class="md-skip">
+      <a href="#bbr" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -558,8 +558,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/压测/" title="工具简介" class="md-nav__link">
-      工具简介
+    <a href="../../../Web&Attack/压测/" title="压测" class="md-nav__link">
+      压测
     </a>
   </li>
 
@@ -1168,6 +1168,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#bbr" title="bbr" class="md-nav__link">
+    bbr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker" title="docker 常用容器" class="md-nav__link">
     docker 常用容器
   </a>
@@ -1204,6 +1211,13 @@
         <li class="md-nav__item">
   <a href="#_1" title="运维常用服务" class="md-nav__link">
     运维常用服务
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="流量监控" class="md-nav__link">
+    流量监控
   </a>
   
 </li>
@@ -2166,6 +2180,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#bbr" title="bbr" class="md-nav__link">
+    bbr
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker" title="docker 常用容器" class="md-nav__link">
     docker 常用容器
   </a>
@@ -2206,6 +2227,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" title="流量监控" class="md-nav__link">
+    流量监控
+  </a>
+  
+</li>
+      
       
       
       
@@ -2233,7 +2261,9 @@
                 
                   <h1>Op&docker service</h1>
                 
-                <h2 id="docker">docker 常用容器<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
+                <h2 id="bbr">bbr<a class="headerlink" href="#bbr" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/teddysun/across/raw/master/bbr.sh">https://github.com/teddysun/across/raw/master/bbr.sh</a></p>
+<h2 id="docker">docker 常用容器<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
 <h3 id="mssql">mssql<a class="headerlink" href="#mssql" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># 注意，PASSWORD必须足够复杂，否则会报错</span>
 docker run -e <span class="s1">&#39;ACCEPT_EULA=Y&#39;</span> -e <span class="s1">&#39;SA_PASSWORD=Str0ngPassword!&#39;</span> -p <span class="m">1433</span>:1433 -d microsoft/mssql-server-linux
@@ -2280,6 +2310,8 @@ docker run -d -p <span class="m">9001</span>:80 <span class="se">\</span>
 <li>自定义nginx日志字段</li>
 <li>网络质量：smokeping</li>
 </ul>
+<h2 id="_2">流量监控<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.bboysoul.com/2018/03/12/matomo%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E5%92%8C%E4%BD%93%E9%AA%8C/">matomo和piwik</a></p>
                 
                   
                 

@@ -558,8 +558,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/压测/" title="工具简介" class="md-nav__link">
-      工具简介
+    <a href="../../../Web&Attack/压测/" title="压测" class="md-nav__link">
+      压测
     </a>
   </li>
 
@@ -2169,7 +2169,14 @@ ssh user@remote_server tail -f /var/log/apache2/access.log <span class="p">|</sp
 ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log <span class="p">|</span> ngxtop -f 
 </pre></div>
 
-<h2 id="_4">常用命令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_4">虚拟化判断<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.bboysoul.com/2017/11/08/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E5%88%A4%E6%96%AD%E4%BD%A0%E7%9A%84vps%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%E7%9A%84%E5%B7%A5%E5%85%B7/">https://www.bboysoul.com/2017/11/08/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E5%88%A4%E6%96%AD%E4%BD%A0%E7%9A%84vps%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%E7%9A%84%E5%B7%A5%E5%85%B7/</a></p>
+<p><a href="https://people.redhat.com/~rjones/virt-what/">https://people.redhat.com/~rjones/virt-what/</a></p>
+<h2 id="_5">发现<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>angry ip scanner
+nmap
+msscan</p>
+<h2 id="_6">常用命令<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p><div class="codehilite"><pre><span></span>scp 文件路径 用户名@IP:存放路径
 who 查看tty
 pkill ‐kill ‐t &lt;用户tty&gt;
@@ -2205,11 +2212,11 @@ r <span class="p">|</span> head ‐
 netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn
 win:netstat -no 查看网络链接</p>
 <h1 id="attack">防御&amp;&amp;attack<a class="headerlink" href="#attack" title="Permanent link">&para;</a></h1>
-<h2 id="_5">防篡改<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_7">防篡改<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>chattr +i /etc/profile
 chattr -R +i /var/www/html
 chattr +a /var/log 只能追加</p>
-<h2 id="_6">进程检查<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_8">进程检查<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
 <p>如果我们怀疑某个进程正在是受到溢出攻击后创建的shell进程，我们可以分析这个进程是否有socket连接，linux中查看指定进程socket 连接数的命令为:
 比如我们查看ssh进程的socket连接。如果我们检测的程序有socket连接，说明它正在进行网络通信，我们就需要进行进一步判断。</p>
 <h2 id="nfs">检查nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
