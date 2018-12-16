@@ -53,3 +53,16 @@ docker run -d -p 9001:80 \
 
 ## 流量监控
 [matomo和piwik](https://www.bboysoul.com/2018/03/12/matomo%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E5%92%8C%E4%BD%93%E9%AA%8C/)
+
+## nfs
+解决`nfsd: sent only 253344 when sending 1040772 bytes - shutting down socket` 问题
+### 重新挂载
+```sh
+mount -t nfs -o soft -o nolock -o intr xx.xx.xx.xx:/oneT/file.cugapp.com.seafile-data /nfs/seafile-data-nfs/
+```
+### 更改相关配置
+- 网卡最大传输队列
+```sh
+ip link set ib0 txqueuelen 10000
+```
+- 更改内核配置
