@@ -11,11 +11,14 @@ docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Str0ngPassword!' -p 1433:1433 -d m
 docker run -d  -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword  postgres 
 ```
 
+
+
 ```sh
 docker run -it --rm postgres psql -h host -U postgres
 ```
 
-
+### mysql
+docker run -d --name yp_gis_mysql -p 3306:3306 -v /data/yp_gis_mysql/:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mysql_password mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 ## pmm
 
 ```bash
