@@ -11,6 +11,8 @@
 ## network
 监控工具 dstat -n -N lo
 ```conf
+fs.file-max = 1000000
+fs.inotify.max_user_instances = 8192
 net.core.netdev_max_backlog = 65536
 net.core.optmem_max = 65536 
 net.core.rmem_default = 8388608
@@ -32,6 +34,10 @@ net.ipv4.tcp_wmem = 4096 65536 16777216
 net.ipv4.udp_rmem_min = 16384
 net.ipv4.udp_wmem_min = 16384
 net.ipv4.ip_local_port_range = 1024  65535
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
+
+
 ```
 
 ![](improve_performance/2018-06-25-13-06-33.png)
