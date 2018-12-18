@@ -42,7 +42,7 @@
     
     
       
-        <title>常用设置 - windforce17's blog</title>
+        <title>Php - windforce17's blog</title>
       
     
     
@@ -107,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#nginx" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -133,7 +133,7 @@
                 windforce17's blog
               </span>
               <span class="md-header-nav__topic">
-                常用设置
+                Php
               </span>
             
           
@@ -781,30 +781,26 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        常用设置
+        Php
       </label>
     
-    <a href="./" title="常用设置" class="md-nav__link md-nav__link--active">
-      常用设置
+    <a href="./" title="Php" class="md-nav__link md-nav__link--active">
+      Php
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#phpdebug-php" title="任意环境下调试php,debug php" class="md-nav__link">
-    任意环境下调试php,debug php
+  <a href="#nginx" title="nginx中到配置" class="md-nav__link">
+    nginx中到配置
   </a>
   
 </li>
@@ -817,7 +813,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="一些函数" class="md-nav__link">
+  <a href="#_1" title="一些函数" class="md-nav__link">
     一些函数
   </a>
   
@@ -2182,15 +2178,13 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#phpdebug-php" title="任意环境下调试php,debug php" class="md-nav__link">
-    任意环境下调试php,debug php
+  <a href="#nginx" title="nginx中到配置" class="md-nav__link">
+    nginx中到配置
   </a>
   
 </li>
@@ -2203,7 +2197,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="一些函数" class="md-nav__link">
+  <a href="#_1" title="一些函数" class="md-nav__link">
     一些函数
   </a>
   
@@ -2261,14 +2255,29 @@
                   <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/php.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">常用设置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="phpdebug-php">任意环境下调试php,debug php<a class="headerlink" href="#phpdebug-php" title="Permanent link">&para;</a></h2>
-<p>在不管php.ini配置的情况下开启php调试,php debug.
-<div class="codehilite"><pre><span></span><span class="x">ini_set(&#39;display_errors&#39;,1);            //错误信息</span>
-<span class="x">ini_set(&#39;display_startup_errors&#39;,1);    //php启动错误信息</span>
-<span class="x">error_reporting(-1);                    //打印出所有的 错误信息</span>
-<span class="x">ini_set(&#39;error_log&#39;, dirname(__FILE__) . &#39;/error_log.txt&#39;); //将出错信息输出到一个文本文件</span>
-</pre></div></p>
+                  <h1>Php</h1>
+                
+                <h2 id="nginx">nginx中到配置<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>  location ~ [^/]\.php(/|$) {
+    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #fastcgi_pass unix:/dev/shm/php-cgi.sock;
+    #fastcgi_pass remote_php_ip:9000;
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi.conf;
+  }
+  ```
+
+## 任意环境下调试php,debug php
+
+在不管php.ini配置的情况下开启php调试,php debug.
+```php
+ini_set(&#39;display_errors&#39;,1);            //错误信息
+ini_set(&#39;display_startup_errors&#39;,1);    //php启动错误信息
+error_reporting(-1);                    //打印出所有的 错误信息
+ini_set(&#39;error_log&#39;, dirname(__FILE__) . &#39;/error_log.txt&#39;); //将出错信息输出到一个文本文件
+</pre></div>
+
 <h2 id="debug-phpini">debug php.ini<a class="headerlink" href="#debug-phpini" title="Permanent link">&para;</a></h2>
 <p>;显示错误信息
 display_errors = On
@@ -2276,7 +2285,7 @@ display_errors = On
 display_startup_errors = On
 ;日志记录错误信息
 log_errors = On</p>
-<h2 id="_2">一些函数<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_1">一些函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="extract">extract()<a class="headerlink" href="#extract" title="Permanent link">&para;</a></h3>
 <p>数从数组中将变量导入到当前的符号表。</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>

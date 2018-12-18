@@ -776,8 +776,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/" title="常用设置" class="md-nav__link">
-      常用设置
+    <a href="../../php/" title="Php" class="md-nav__link">
+      Php
     </a>
   </li>
 
@@ -1288,6 +1288,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-proxt-set" title="docker proxt set" class="md-nav__link">
+    docker proxt set
+  </a>
   
 </li>
       
@@ -2327,6 +2334,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#docker-proxt-set" title="docker proxt set" class="md-nav__link">
+    docker proxt set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#php" title="如何重启php" class="md-nav__link">
     如何重启php
   </a>
@@ -2420,6 +2434,21 @@ sudo vim /lib/systemd/system/docker.service
 <span class="c1">#重新加载配置文件，重启docker daemon</span>
 sudo systemctl daemon-reload
 sudo systemctl restart docker
+</pre></div>
+
+<h2 id="docker-proxt-set">docker proxt set<a class="headerlink" href="#docker-proxt-set" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    mkdir /etc/systemd/system/docker.service.d/
+<span class="k">fi</span>
+
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    mkdir /etc/systemd/system/docker.service.d/
+<span class="k">fi</span>
+<span class="nb">echo</span> <span class="s1">&#39;[Service]</span>
+<span class="s1">Environment=&quot;HTTP_PROXY=http://127.0.0.1:8123&quot; &quot;HTTPS_PROXY=http://127.0.0.1:8123&quot; &quot;NO_PROXY=localhost,127.0.0.1&quot;&#39;</span> &gt; /etc/systemd/system/docker.service.d/http-proxy.conf
+
+systemctl daemon-reload
+systemctl restart docker
 </pre></div>
 
 <h2 id="php">如何重启php<a class="headerlink" href="#php" title="Permanent link">&para;</a></h2>
