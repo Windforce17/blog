@@ -61,6 +61,21 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
+## docker proxt set
+```sh
+if [ ! -d "/etc/systemd/system/docker.service.d/"]; then
+    mkdir /etc/systemd/system/docker.service.d/
+fi
+
+if [ ! -d "/etc/systemd/system/docker.service.d/"]; then
+    mkdir /etc/systemd/system/docker.service.d/
+fi
+echo '[Service]
+Environment="HTTP_PROXY=http://127.0.0.1:8123" "HTTPS_PROXY=http://127.0.0.1:8123" "NO_PROXY=localhost,127.0.0.1"' > /etc/systemd/system/docker.service.d/http-proxy.conf
+
+systemctl daemon-reload
+systemctl restart docker
+```
 
 
 ## 如何重启php

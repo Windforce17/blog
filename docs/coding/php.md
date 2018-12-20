@@ -1,4 +1,14 @@
-# 常用设置
+## nginx中到配置
+```conf
+  location ~ [^/]\.php(/|$) {
+    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #fastcgi_pass unix:/dev/shm/php-cgi.sock;
+    #fastcgi_pass remote_php_ip:9000;
+    fastcgi_pass 127.0.0.1:9000;
+    fastcgi_index index.php;
+    include fastcgi.conf;
+  }
+  ```
 
 ## 任意环境下调试php,debug php
 

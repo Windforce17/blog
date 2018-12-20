@@ -33,3 +33,7 @@ location /proxy/ {
 }
 ```
 http://127.0.0.1/aaatest.html
+
+
+## google镜像站
+https://github.com/cuber/ngx_http_google_filter_module/tree/dev
