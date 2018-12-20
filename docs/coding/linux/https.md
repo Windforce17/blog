@@ -13,7 +13,7 @@
     export DP_Id="1111"  &&
     export DP_Key="xxxxx"  &&
     acme.sh --issue --dns dns_dp -d *.dddd.im -d dddd.im
-    ./acme.sh  --installcert  -d  *.dddd.im   \
+    acme.sh  --installcert  -d  *.dddd.im   \
             --key-file   /usr/local/nginx/conf/ssl/dddd.im.key \
             --fullchain-file /usr/local/nginx/conf/ssl/dddd.im.cer \
             --reloadcmd  "nginx -s reload" 
