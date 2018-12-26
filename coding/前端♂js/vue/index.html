@@ -2,7 +2,7 @@
 
 
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
@@ -1437,6 +1437,19 @@
     vscde 相关配置
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postdata" title="post时data区别" class="md-nav__link">
+    post时data区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1473,6 +1486,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vuetify/" title="Vuetify" class="md-nav__link">
+      Vuetify
+    </a>
   </li>
 
         
@@ -2290,6 +2315,19 @@
     vscde 相关配置
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postdata" title="post时data区别" class="md-nav__link">
+    post时data区别
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2485,8 +2523,7 @@
   <span class="p">});</span>
 <span class="c1">//post</span>
 <span class="nx">axios</span>
-  <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/user&quot;</span><span class="p">,</span> <span class="p">{</span>
-    <span class="nx">firstName</span><span class="o">:</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span>
+  <span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/user&quot;</span><span class="p">,</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span> <span class="nx">firstName</span><span class="o">:</span> <span class="s2">&quot;Fred&quot;</span><span class="p">,</span>
     <span class="nx">lastName</span><span class="o">:</span> <span class="s2">&quot;Flintstone&quot;</span>
   <span class="p">})</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
@@ -2495,6 +2532,19 @@
   <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
   <span class="p">});</span>
+
+  <span class="kd">let</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">headers</span> <span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Content-Type&#39;</span><span class="o">:</span><span class="s1">&#39;application/json;charset=UTF-8&#39;</span>
+        <span class="p">},</span>
+    <span class="p">};</span>
+<span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">authUrl</span><span class="p">,</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">userInfo</span><span class="p">),</span><span class="nx">config</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="p">{</span>
+         <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+    <span class="p">})</span>
 </pre></div>
 
 <h2 id="vscde">vscde 相关配置<a class="headerlink" href="#vscde" title="Permanent link">&para;</a></h2>
@@ -2515,6 +2565,11 @@ npm install -g eslint-plugin-html
     <span class="p">}</span><span class="err">,</span>
 </pre></div>
 
+<h3 id="postdata">post时data区别<a class="headerlink" href="#postdata" title="Permanent link">&para;</a></h3>
+<p>如果直接将对象传给axio的d第二个参数，那么header会被设置为application/json;charset=UTF-8，并发送options请求，如果使用JSON.stringify，那么header就会被设置为application/x-www-form-urlencoded，不发送options请求，but参数并不会urlencode，需要使用qs库进行urlencode，qs.stringify(data)
+实测一下代码不行，依然会报错。
+<div class="codehilite"><pre><span></span><span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">post</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
+</pre></div></p>
 <h2 id="_4">打包与部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="static">部署后 static 目录为绝对路径？<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
 <p>将 config/index.js 下 build 参数 assetsPublicPath 清空
@@ -2579,13 +2634,13 @@ assetsPublicPath: '' 或者设置为'./'</p>
           </a>
         
         
-          <a href="../../编译原理/overView/" title="概述" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../vuetify/" title="Vuetify" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                概述
+                Vuetify
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
