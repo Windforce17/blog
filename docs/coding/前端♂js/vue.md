@@ -162,8 +162,7 @@ axios
   });
 //post
 axios
-  .post("/user", {
-    firstName: "Fred",
+  .post("/user", JSON.stringify({ firstName: "Fred",
     lastName: "Flintstone"
   })
   .then(function(res) {
@@ -172,6 +171,19 @@ axios
   .catch(function(err) {
     console.log(err);
   });
+
+  let config = {
+        headers : {
+            'Content-Type':'application/json;charset=UTF-8'
+        },
+    };
+axios.post(this.authUrl,JSON.stringify(this.userInfo),config)
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+         console.log(err)
+    })
 ```
 
 ## vscde 相关配置
@@ -195,6 +207,13 @@ npm install -g eslint-plugin-html
     },
 ```
 
+
+### post时data区别
+如果直接将对象传给axio的d第二个参数，那么header会被设置为application/json;charset=UTF-8，并发送options请求，如果使用JSON.stringify，那么header就会被设置为application/x-www-form-urlencoded，不发送options请求，but参数并不会urlencode，需要使用qs库进行urlencode，qs.stringify(data)
+实测一下代码不行，依然会报错。
+```js
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+```
 ## 打包与部署
 
 ### 部署后 static 目录为绝对路径？
