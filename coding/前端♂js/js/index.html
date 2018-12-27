@@ -107,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#chrome" tabindex="1" class="md-skip">
+      <a href="#es6" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -1313,6 +1313,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../WDS can't connet/" title="WDS can't connet" class="md-nav__link">
+      WDS can't connet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../css/" title="Css" class="md-nav__link">
       Css
     </a>
@@ -1346,6 +1358,26 @@
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#es6" title="ES6" class="md-nav__link">
+    ES6
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key" title="获得对象的所有key" class="md-nav__link">
+    获得对象的所有key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#chrome" title="绕过 chrome 检测关闭当前窗口" class="md-nav__link">
@@ -2163,6 +2195,26 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#es6" title="ES6" class="md-nav__link">
+    ES6
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key" title="获得对象的所有key" class="md-nav__link">
+    获得对象的所有key
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#chrome" title="绕过 chrome 检测关闭当前窗口" class="md-nav__link">
     绕过 chrome 检测关闭当前窗口
   </a>
@@ -2203,7 +2255,35 @@
                 
                   <h1>Js</h1>
                 
-                <h2 id="chrome">绕过 chrome 检测关闭当前窗口<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
+                <h2 id="es6">ES6<a class="headerlink" href="#es6" title="Permanent link">&para;</a></h2>
+<h3 id="key">获得对象的所有key<a class="headerlink" href="#key" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1">// &gt;IE9</span>
+<span class="kd">let</span> <span class="nx">k</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span>
+<span class="c1">//lodash</span>
+<span class="kd">let</span> <span class="nx">k</span> <span class="o">=</span> <span class="nx">_</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">target</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">jsonObject1</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;xiaoming&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">29</span>
+        <span class="p">},</span>
+        <span class="kd">var</span> <span class="nx">keys1</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">p1</span> <span class="k">in</span> <span class="nx">jsonObject1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">jsonObject1</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">p1</span><span class="p">))</span>
+            <span class="nx">keys1</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">p1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="c1">//不使用hasOwnPropert,给object添加的属性也会输出</span>
+<span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">test</span> <span class="o">=</span> <span class="s2">&quot;I am test&quot;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">jsonObject</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;xiaoming&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">29</span>
+        <span class="p">},</span>
+        <span class="nx">keys</span> <span class="o">=</span> <span class="p">[];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="k">in</span> <span class="nx">jsonObject</span><span class="p">)</span>
+        <span class="nx">keys</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">p</span><span class="p">);</span>
+</pre></div>
+
+<h2 id="chrome">绕过 chrome 检测关闭当前窗口<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="kd">function</span> <span class="nx">closeWindows</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">userAgent</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Firefox&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Chrome&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
