@@ -34,6 +34,11 @@ some_bytes = bytearray.fromhex(hex_string)
 # some_bytes: bytearray(b'\x16\x03\x02')
 
 ```
+
+## jupyter
+这个东西会装上ipython，可以开启一个浏览器进行多人协作写py。
+![jupyter](2019-01-04-19-42-34.png)
+**安装：** https://jupyter.readthedocs.io/en/latest/install.html
 ## 各种小玩意
 ### 查看当前环境
 ```
@@ -72,5 +77,5 @@ pip3 install pylibemu
 
 
 ## gmpy2
-大数优化
+大数计算的优化lib
 apt install python-gmpy2
