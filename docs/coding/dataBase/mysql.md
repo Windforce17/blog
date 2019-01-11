@@ -86,9 +86,28 @@ lines terminated by '\r\n';
 C:\wamp64\bin\mysql\mysql5.7.14\bin\mysqldump.exe -h 127.0.0.1 -u root --default-character-set=utf8 hise >C:\Users\msi\Desktop\sql.sql
 
 ## mysql各种坑
-### 时间相减问题
 
-**两个时间不能直接相减，不然会出错!!**
+### DATETIME、TIMESTAMP、DATE、时间
+### 范围
+一个完整的日期格式如下：YYYY-MM-DD HH:MM:SS[.fraction]，它可分为两部分：date部分和time部分，其中，date部分对应格式中的“YYYY-MM-DD”，time部分对应格式中的“HH:MM:SS[.fraction]”。对于date字段来说，它只支持date部分，如果插入了time部分的内容，它会丢弃掉该部分的内容，并提示一个warning.
+
+timestamp所能存储的时间范围为：'1970-01-01 00:00:01.000000' 到 '2038-01-19 03:14:07.999999'。
+
+datetime所能存储的时间范围为：'1000-01-01 00:00:00.000000' 到 '9999-12-31 23:59:59.999999'。
+### 存储
+对于TIMESTAMP，它把客户端插入的时间从当前时区转化为UTC（世界标准时间）进行存储。查询时，将其又转化为客户端当前时区进行返回。
+
+而对于DATETIME，不做任何改变，基本上是原样输入和输出
+### 时间比较
+- 相同格式的直接进行比较 '2019-01-17'> '2019-01-10'
+- `WHERE DATE_FORMAT(st.create_time,'%Y-%m-%d %H:%i')>=DATE_FORMAT('2017-12-9 10:29:00','%Y-%m-%d %H:%i' )`
+- 如果你的格式是`2013-01-12 23:23:56`
+  `select * from product where Date(add_time) = '2013-01-12' `
+  `select * from product where date(add_time) between '2013-01-01' and '2013-01-31'`
+  `select * from product where Year(add_time) = 2013 and Month(add_time) = 1 `
+
+### 两个时间不能直接相减，不然会出错!!
+
 ```sql
     mysql> select t1,t2,t2-t1 from mytest;  
     +---------------------+---------------------+-------+  
@@ -100,11 +119,10 @@ C:\wamp64\bin\mysql\mysql5.7.14\bin\mysqldump.exe -h 127.0.0.1 -u root --default
     +---------------------+---------------------+-------+  
     3 rows in set  
 ```
-
-### 原因
+#### 原因
 实际是mysql的时间相减是做了一个隐式转换操作，将时间转换为`整数`但并不是用`unix_timestamp`转换，而是直接把年月日时分秒拼起来，如2013-04-21 16:59:33 直接转换为`20130421165933`，由于时间不是十进制，所以最后得到的结果**没有意义**，这也是导致上面出现坑爹的结果。
 
-### 解决
+#### 解决
 要得到正确的时间相减秒值，有以下3种方法：
 1. `time_to_sec(timediff(t2, t1))`,
 2. `timestampdiff(second, t1, t2)`,
