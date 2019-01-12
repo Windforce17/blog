@@ -23,7 +23,8 @@
 * waf过滤sqlmap  //sql改head
 * 上传漏洞防护
 * webshell扫描器
-
+* linux后门发现chkrootkit
+* 河马webshell查杀 http://www.shellpub.com/ 
 
 ## 攻击
 * 提权脚本
