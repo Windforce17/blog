@@ -1215,15 +1215,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#pmm" title="pmm" class="md-nav__link">
     pmm
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1235,9 +1235,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="流量监控" class="md-nav__link">
+  <a href="#_2" title="各种监控" class="md-nav__link">
+    各种监控
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="流量监控" class="md-nav__link">
     流量监控
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu" title="CPU、内存 单机监控" class="md-nav__link">
+    CPU、内存 单机监控
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="服务心跳" class="md-nav__link">
+    服务心跳
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1250,14 +1277,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="重新挂载" class="md-nav__link">
+  <a href="#_5" title="重新挂载" class="md-nav__link">
     重新挂载
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="更改相关配置" class="md-nav__link">
+  <a href="#_6" title="更改相关配置" class="md-nav__link">
     更改相关配置
   </a>
   
@@ -2321,15 +2348,15 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#pmm" title="pmm" class="md-nav__link">
     pmm
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2341,9 +2368,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="流量监控" class="md-nav__link">
+  <a href="#_2" title="各种监控" class="md-nav__link">
+    各种监控
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="流量监控" class="md-nav__link">
     流量监控
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpu" title="CPU、内存 单机监控" class="md-nav__link">
+    CPU、内存 单机监控
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="服务心跳" class="md-nav__link">
+    服务心跳
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2356,14 +2410,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="重新挂载" class="md-nav__link">
+  <a href="#_5" title="重新挂载" class="md-nav__link">
     重新挂载
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="更改相关配置" class="md-nav__link">
+  <a href="#_6" title="更改相关配置" class="md-nav__link">
     更改相关配置
   </a>
   
@@ -2418,7 +2472,7 @@ docker run -e <span class="s1">&#39;ACCEPT_EULA=Y&#39;</span> -e <span class="s1
 
 <h3 id="mysql">mysql<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h3>
 <p>docker run -d --name yp_gis_mysql -p 3306:3306 -v /data/yp_gis_mysql/:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mysql_password mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</p>
-<h2 id="pmm">pmm<a class="headerlink" href="#pmm" title="Permanent link">&para;</a></h2>
+<h3 id="pmm">pmm<a class="headerlink" href="#pmm" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># 拉取服务器镜像</span>
 
 docker pull percona/pmm-server:latest
@@ -2451,16 +2505,25 @@ docker run -d -p <span class="m">9001</span>:80 <span class="se">\</span>
 <li>阿里云 logsearch</li>
 <li>自定义nginx日志字段</li>
 <li>网络质量：smokeping</li>
+<li>gitlab</li>
+<li>seafile</li>
 </ul>
-<h2 id="_2">流量监控<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_2">各种监控<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">流量监控<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.bboysoul.com/2018/03/12/matomo%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E5%92%8C%E4%BD%93%E9%AA%8C/">matomo和piwik</a></p>
+<h3 id="cpu">CPU、内存 单机监控<a class="headerlink" href="#cpu" title="Permanent link">&para;</a></h3>
+<p>NetData
+<img alt="NetData" src="../2019-01-16-22-16-34.png" /></p>
+<h3 id="_4">服务心跳<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>uptimeRobot
+<img alt="uptimeRobot" src="../2019-01-16-22-17-26.png" /></p>
 <h2 id="nfs">nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
 <p>解决<code>nfsd: sent only 253344 when sending 1040772 bytes - shutting down socket</code> 问题</p>
-<h3 id="_3">重新挂载<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_5">重新挂载<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>mount -t nfs -o soft -o nolock -o intr xx.xx.xx.xx:/oneT/file.cugapp.com.seafile-data /nfs/seafile-data-nfs/
 </pre></div>
 
-<h3 id="_4">更改相关配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_6">更改相关配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>网卡最大传输队列
 <div class="codehilite"><pre><span></span>ip link <span class="nb">set</span> ib0 txqueuelen <span class="m">10000</span>
