@@ -11,8 +11,8 @@ https://www.exploit-db.com/shellcode/
 ![plt &got](basic/2018-11-15-23-25-29.png)
 plt 指向got,采用延时绑定。printf函数中，0x404c010实际内容是下一条指令`push 0`,
 而plt.got是已经绑定的， puts函数的0x804bff4是指向实际puts函数的
-## shellcode
 
+## shellcode
 
 ```x86asm
 jmp sh

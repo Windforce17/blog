@@ -14,6 +14,11 @@ mysqld  -remove //卸载
 ```sql
 CREATE USER 'root'@'%' IDENTIFIED BY 'iam';
 ```
+
+## 创建用户并同时授权
+```sql
+grant all privileges on db_name.* to db_user@'%' identified by 'db_pass';
+```
 ## 授权 root登陆，外部访问
 
 ```sql
@@ -22,7 +27,6 @@ grant all privileges on *.* to 'root'@'localhost';
 --所有ip都可以的登陆
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 ```
-
 
 
 ## 常用命令，查询
