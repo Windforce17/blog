@@ -10,9 +10,7 @@
 
 ## pwntools
 
-
-
-## 运行时变量
+### 运行时变量
 ```py
 context.log_level = 'debug'
 context.arch      = 'i386'
@@ -21,11 +19,11 @@ context.endian    = 'little'
 context.word_size = 32
 ```
 
-## 连接
+### 连接
 sh = porcess("./level0")
 sh = remote("127.0.0.1",10001)
 sh.close()  
-## IO
+### IO
 
 ```py
 sh.send(data)  发送数据
@@ -37,7 +35,7 @@ sh.recvall()  一直接收直到EOF
 sh.recvrepeat(timeout = default)  持续接受直到EOF或timeout
 sh.interactive()  直接进行交互，相当于回到shell的模式，在取得shell之后使用
 ```
-##  汇编和反汇编
+###  汇编和反汇编
 
 ```py
 asm('nop')
@@ -45,7 +43,7 @@ asm('nop',arch='arm')
 disasm('6a0258cd80ebf9'.decode('hex'))
 ```
 
-## ELF
+### ELF
 
 ```py
 e = ELF('/bin/cat')
@@ -56,7 +54,7 @@ print hex(e.plt['write']) # PLT的地址
 print hex(e.search('/bin/sh').next())# 字符串/bin/sh的地
 ```
 
-## ROP
+### ROP
 
 ```py
 elf = ELF('ropasaurusrex')
@@ -66,5 +64,9 @@ rop.dump()
 str(rop)
 ```
 
-## shellcraft
+### shellcraft
 shellcode=asm(shellcraft.sh())
+
+## 有用的站
+libc databases:http://libcdb.com
+系统调用表：http://syscalls.kernelgrok.com/
