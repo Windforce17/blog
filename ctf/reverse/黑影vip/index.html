@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/ctf/reverse/ida_py/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/ctf/reverse/黑影vip/">
       
       
         <meta name="author" content="Windforce17">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Ida py - windforce17's blog</title>
+        <title>黑影vip - windforce17's blog</title>
       
     
     
@@ -107,7 +107,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#peid" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -133,7 +133,7 @@
                 windforce17's blog
               </span>
               <span class="md-header-nav__topic">
-                Ida py
+                黑影vip
               </span>
             
           
@@ -1815,51 +1815,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Ida py
-      </label>
-    
-    <a href="./" title="Ida py" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../ida_py/" title="Ida py" class="md-nav__link">
       Ida py
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="获得范围内数据" class="md-nav__link">
-    获得范围内数据
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1927,11 +1887,58 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../黑影vip/" title="黑影vip" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        黑影vip
+      </label>
+    
+    <a href="./" title="黑影vip" class="md-nav__link md-nav__link--active">
       黑影vip
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#peid" title="欺骗PEID" class="md-nav__link">
+    欺骗PEID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="无端加花指令" class="md-nav__link">
+    无端加花指令
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2228,8 +2235,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="获得范围内数据" class="md-nav__link">
-    获得范围内数据
+  <a href="#peid" title="欺骗PEID" class="md-nav__link">
+    欺骗PEID
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="无端加花指令" class="md-nav__link">
+    无端加花指令
   </a>
   
 </li>
@@ -2256,22 +2270,28 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/reverse/ida_py.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/reverse/黑影vip.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Ida py</h1>
+                  <h1>黑影vip</h1>
                 
-                <p>记录一些ida api的技巧</p>
-<h2 id="_1">获得范围内数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><div class="codehilite"><pre><span></span><span class="n">buf</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_many_bytes</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-<span class="n">buf</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">)</span>
-</pre></div>
-转为C数组
-<div class="codehilite"><pre><span></span><span class="n">buf</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_many_bytes</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
-<span class="n">buf</span> <span class="o">=</span> <span class="n">buf</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">)</span>
-<span class="n">two_hex_char_seq</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="n">buf</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">c_array</span> <span class="o">=</span> <span class="s2">&quot;{0x&quot;</span> <span class="o">+</span> <span class="s2">&quot;, 0x&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">two_hex_char_seq</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;}&quot;</span>
-</pre></div></p>
+                <h2 id="peid">欺骗PEID<a class="headerlink" href="#peid" title="Permanent link">&para;</a></h2>
+<p>aspack加壳后，更改物理偏移在600-700之间，物理大小随便大，不过貌似在v0.95无效了
+<img alt="改区段" src="../2019-01-20-11-07-47.png" />
+<img alt="peid" src="../2019-01-20-11-15-17.png" />
+伪装壳最好的是hying
+北斗特征
+popad
+popfd</p>
+<h2 id="_1">无端加花指令<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>一定占用空间，申请内存存放花指令，一定会释放
+command下断：
+bp VirtualFree
+执行到用户返回
+virtual memory</p>
+<p>远call F7 近call F8
+<img alt="int3;nop" src="../2019-01-20-11-42-57.png" />
+两字节的代码被改了，在下面一条指定下断F2</p>
                 
                   
                 
@@ -2317,7 +2337,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ReversingEngineering/" title="ReversingEngineering" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../反调试/" title="反调试" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2326,19 +2346,19 @@
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                ReversingEngineering
+                反调试
               </span>
             </div>
           </a>
         
         
-          <a href="../mov混淆/" title="Mov混淆" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../web/basic/" title="Basic" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                Mov混淆
+                Basic
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

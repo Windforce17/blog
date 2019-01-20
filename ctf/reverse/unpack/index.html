@@ -42,7 +42,7 @@
     
     
       
-        <title>脱壳 - windforce17's blog</title>
+        <title>Unpack - windforce17's blog</title>
       
     
     
@@ -133,7 +133,7 @@
                 windforce17's blog
               </span>
               <span class="md-header-nav__topic">
-                脱壳
+                Unpack
               </span>
             
           
@@ -1731,6 +1731,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../pwn/fmt/" title="Fmt" class="md-nav__link">
+      Fmt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../pwn/heap/" title="Heap" class="md-nav__link">
       Heap
     </a>
@@ -1861,79 +1873,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        脱壳
-      </label>
-    
-    <a href="./" title="脱壳" class="md-nav__link md-nav__link--active">
-      脱壳
+    <a href="./" title="Unpack" class="md-nav__link md-nav__link--active">
+      Unpack
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#esp" title="ESP定律" class="md-nav__link">
-    ESP定律
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="单步法" class="md-nav__link">
-    单步法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="两次断点(内存镜象法)" class="md-nav__link">
-    两次断点(内存镜象法)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="最后一次异常" class="md-nav__link">
-    最后一次异常
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sfx" title="sfx" class="md-nav__link">
-    sfx
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" title="跟踪" class="md-nav__link">
-    跟踪
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -1946,6 +1888,18 @@
   <li class="md-nav__item">
     <a href="../反调试/" title="反调试" class="md-nav__link">
       反调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../黑影vip/" title="黑影vip" class="md-nav__link">
+      黑影vip
     </a>
   </li>
 
@@ -2241,63 +2195,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#esp" title="ESP定律" class="md-nav__link">
-    ESP定律
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="单步法" class="md-nav__link">
-    单步法
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="两次断点(内存镜象法)" class="md-nav__link">
-    两次断点(内存镜象法)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="最后一次异常" class="md-nav__link">
-    最后一次异常
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sfx" title="sfx" class="md-nav__link">
-    sfx
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" title="跟踪" class="md-nav__link">
-    跟踪
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2311,10 +2208,10 @@
                   <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/reverse/unpack.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="_1">脱壳<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+                <h2 id="_1">脱壳<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>找到OEP</li>
-<li>Dump镜像文件</li>
+<li>Dump镜像文件，修复镜像大小</li>
 <li>修复IAT</li>
 <li>修复重定位表，修复资源，vmoep等</li>
 </ol>

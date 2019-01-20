@@ -1733,6 +1733,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../fmt/" title="Fmt" class="md-nav__link">
+      Fmt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../heap/" title="Heap" class="md-nav__link">
       Heap
     </a>
@@ -1782,6 +1794,13 @@
         <li class="md-nav__item">
   <a href="#gdb-peda" title="gdb-peda" class="md-nav__link">
     gdb-peda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readelfobjdump" title="readelf、objdump" class="md-nav__link">
+    readelf、objdump
   </a>
   
 </li>
@@ -1949,8 +1968,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reverse/unpack/" title="脱壳" class="md-nav__link">
-      脱壳
+    <a href="../../reverse/unpack/" title="Unpack" class="md-nav__link">
+      Unpack
     </a>
   </li>
 
@@ -1963,6 +1982,18 @@
   <li class="md-nav__item">
     <a href="../../reverse/反调试/" title="反调试" class="md-nav__link">
       反调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reverse/黑影vip/" title="黑影vip" class="md-nav__link">
+      黑影vip
     </a>
   </li>
 
@@ -2267,6 +2298,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#readelfobjdump" title="readelf、objdump" class="md-nav__link">
+    readelf、objdump
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pwntools" title="pwntools" class="md-nav__link">
     pwntools
   </a>
@@ -2353,6 +2391,9 @@
 <p><code>vmmap</code>
 查看process mapping信息，得到每个地址的权限
 <code>find</code> 在内存中搜索字符串，还有一种方法，<code>cat /proc/{pid}/maps</code> </p>
+<h2 id="readelfobjdump">readelf、objdump<a class="headerlink" href="#readelfobjdump" title="Permanent link">&para;</a></h2>
+<p>使用<code>readelf -a /lib32/libc.so.6 |grep '__libc_start_main'</code>查找libc中的函数地址</p>
+<p><code>objdump -d -M intel [elf_file]</code> 进行反汇编elf文件</p>
 <h2 id="pwntools">pwntools<a class="headerlink" href="#pwntools" title="Permanent link">&para;</a></h2>
 <h2 id="_1">运行时变量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
