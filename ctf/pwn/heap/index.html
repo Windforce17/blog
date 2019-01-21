@@ -1774,6 +1774,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fastbin" title="Fastbin" class="md-nav__link">
+    Fastbin
+  </a>
+  
+</li>
+      
       
       
       
@@ -2234,6 +2241,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fastbin" title="Fastbin" class="md-nav__link">
+    Fastbin
+  </a>
+  
+</li>
+      
       
       
       
@@ -2262,6 +2276,35 @@
                   <h1>Heap</h1>
                 
                 <h2 id="_1">堆数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>存放chunk的metadata的chunk的结构(header)
+<div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">malloc_chunk</span><span class="p">{</span>
+    <span class="kt">size_t</span> <span class="n">prev_size</span><span class="p">;</span> <span class="c1">//qword 可能存放上一个chunk的data</span>
+    <span class="kt">size_t</span> <span class="n">size</span><span class="p">;</span><span class="c1">//qword</span>
+    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd</span><span class="p">;</span>
+    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">bk</span><span class="p">;</span>
+    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd_nextsize</span><span class="p">;</span>
+    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">bk_nextsize</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+使用中的chunk
+<img alt="inuse" src="../2019-01-21-20-38-59.png" />
+mem=malloc(size)</li>
+<li>chunk = mem-16;</li>
+<li>chunksize = (size+8)#16</li>
+<li>chunk的地址是malloc得到的地址-16</li>
+<li>chunksize是size+8向上对齐16的整数倍</li>
+</ul>
+<h2 id="fastbin">Fastbin<a class="headerlink" href="#fastbin" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Chunk size &lt;= get_max_fast()的chunk，会被放在fastbin的bin里</li>
+<li>64bit是128bytes，32bit是64bytes</li>
+<li>global_max_fast 一开始是0</li>
+<li>Fastbin是single linked list，只能使用fd，以NULL结尾</li>
+<li>Chuk Size从32开始，共7个可用的fastbin</li>
+<li>free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并</li>
+<li>malloc和free会对chunk进行检查，但检查fastbin的很少</li>
+</ul>
                 
                   
                 
