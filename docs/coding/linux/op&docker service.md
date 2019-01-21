@@ -19,7 +19,7 @@ docker run -it --rm postgres psql -h host -U postgres
 
 ### mysql
 docker run -d --name yp_gis_mysql -p 3306:3306 -v /data/yp_gis_mysql/:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mysql_password mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
-## pmm
+### pmm
 
 ```bash
 # 拉取服务器镜像
@@ -53,9 +53,18 @@ docker run -d -p 9001:80 \
 * 阿里云 logsearch
 * 自定义nginx日志字段
 * 网络质量：smokeping
-
-## 流量监控
+* gitlab
+* seafile
+## 各种监控
+### 流量监控
 [matomo和piwik](https://www.bboysoul.com/2018/03/12/matomo%E7%9A%84%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E5%92%8C%E4%BD%93%E9%AA%8C/)
+
+### CPU、内存 单机监控
+NetData
+![NetData](2019-01-16-22-16-34.png)
+### 服务心跳
+uptimeRobot
+![uptimeRobot](2019-01-16-22-17-26.png)
 
 ## nfs
 解决`nfsd: sent only 253344 when sending 1040772 bytes - shutting down socket` 问题

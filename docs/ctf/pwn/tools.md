@@ -2,6 +2,12 @@
 `vmmap`
 查看process mapping信息，得到每个地址的权限
 `find` 在内存中搜索字符串，还有一种方法，`cat /proc/{pid}/maps` 
+
+## readelf、objdump
+使用`readelf -a /lib32/libc.so.6 |grep '__libc_start_main'`查找libc中的函数地址
+
+`objdump -d -M intel [elf_file]` 进行反汇编elf文件
+
 ## pwntools
 
 
