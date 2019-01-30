@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.962652e9.js"></script>
     
     
       
@@ -70,6 +70,9 @@
     
     
       <link rel="stylesheet" href="../../../_static/css/extra.css">
+    
+    
+      
     
     
   </head>
@@ -1791,6 +1794,40 @@
     Fastbin
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#malloc" title="malloc时检查" class="md-nav__link">
+    malloc时检查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free" title="free时的检查" class="md-nav__link">
+    free时的检查
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#double-free" title="double free" class="md-nav__link">
+    double free
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" title="tips" class="md-nav__link">
+    tips
+  </a>
+  
 </li>
       
       
@@ -2258,6 +2295,40 @@
     Fastbin
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#malloc" title="malloc时检查" class="md-nav__link">
+    malloc时检查
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#free" title="free时的检查" class="md-nav__link">
+    free时的检查
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#double-free" title="double free" class="md-nav__link">
+    double free
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips" title="tips" class="md-nav__link">
+    tips
+  </a>
+  
 </li>
       
       
@@ -2293,10 +2364,10 @@
 <div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">malloc_chunk</span><span class="p">{</span>
     <span class="kt">size_t</span> <span class="n">prev_size</span><span class="p">;</span> <span class="c1">//qword 可能存放上一个chunk的data</span>
     <span class="kt">size_t</span> <span class="n">size</span><span class="p">;</span><span class="c1">//qword</span>
-    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd</span><span class="p">;</span>
-    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">bk</span><span class="p">;</span>
-    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd_nextsize</span><span class="p">;</span>
-    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">bk_nextsize</span><span class="p">;</span>
+    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd</span><span class="p">;</span> <span class="c1">//会被data覆盖</span>
+    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">bk</span><span class="p">;</span><span class="c1">//会被data覆盖</span>
+    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd_nextsize</span><span class="p">;</span><span class="c1">//会被data覆盖</span>
+    <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">bk_nextsize</span><span class="p">;</span><span class="c1">//会被data覆盖</span>
 <span class="p">}</span>
 </pre></div>
 使用中的chunk
@@ -2306,17 +2377,50 @@ mem=malloc(size)</li>
 <li>chunksize = (size+8)#16</li>
 <li>chunk的地址是malloc得到的地址-16</li>
 <li>chunksize是size+8向上对齐16的整数倍</li>
+<li>一般情况下free的时候会检查前后空间是不是free，如果是free将会合并</li>
+<li>带debug symbol的lib可以直接看各种bin和结构体
+(gdb)p main_arena</li>
 </ul>
+<p>回收的chunk
+<img alt="not_inuse" src="../2019-01-21-23-42-44.png" /></p>
 <h2 id="fastbin">Fastbin<a class="headerlink" href="#fastbin" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Chunk size &lt;= get_max_fast()的chunk，会被放在fastbin的bin里</li>
 <li>64bit是128bytes，32bit是64bytes</li>
 <li>global_max_fast 一开始是0</li>
 <li>Fastbin是single linked list，只能使用fd，以NULL结尾</li>
-<li>Chuk Size从32开始，共7个可用的fastbin</li>
-<li>free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并</li>
-<li>malloc和free会对chunk进行检查，但检查fastbin的很少</li>
+<li>Chuk Size从32开始，共7个可用的fastbin
+32、48、64、80、96、112、128</li>
 </ul>
+<h3 id="malloc">malloc时检查<a class="headerlink" href="#malloc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>malloc和free会对chunk进行检查，但检查fastbin的很少，比如说fastbin[2]的chunk size必须为64</li>
+<li>free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并</li>
+</ul>
+<h3 id="free">free时的检查<a class="headerlink" href="#free" title="Permanent link">&para;</a></h3>
+<p>malloc.c: _int_free
+- free的地址要16bit align
+- chunk 头和尾size要对，size不能太大
+- 下一个chunk的size不能过小</p>
+<h2 id="double-free">double free<a class="headerlink" href="#double-free" title="Permanent link">&para;</a></h2>
+<ul>
+<li>double free可以改变fd，拿到任意地址进行读写</li>
+<li>fastbin只检查bin中的第一块chunk，只要不是连续free同一块chunk就没关系(fasttop)检查
+<div class="codehilite"><pre><span></span><span class="c1">//假设p、q都小于global_max_fast</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+    <span class="c1">//fastbin-&gt;q</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+    <span class="c1">//fastbin-&gt;p-&gt;q</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
+    <span class="c1">//          &lt;-</span>
+    <span class="c1">//fastbin-&gt;q-&gt;p</span>
+    <span class="c1">//不会报错</span>
+    <span class="c1">//再malloc就会无限拿到p、q的地址...</span>
+</pre></div></li>
+</ul>
+<h2 id="tips">tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
+<p>64位got地址40开头，可以把0x40当作chunk_size用来绕过libc的检查。那么malloc应该是56字节，
+<img alt="64bit_chunk_size" src="../2019-01-21-23-19-07.png" /></p>
                 
                   
                 
@@ -2417,7 +2521,7 @@ mem=malloc(size)</li>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b3a2063f.js"></script>
+      <script src="../../../assets/javascripts/application.6460bce7.js"></script>
       
         
         
@@ -2439,9 +2543,6 @@ mem=malloc(size)</li>
         <script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
         <script src="../../../search/main.js"></script>
-      
-    
-    
       
     
   </body>

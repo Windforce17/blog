@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
       
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.962652e9.js"></script>
     
     
       
@@ -70,6 +70,9 @@
     
     
       <link rel="stylesheet" href="../../../_static/css/extra.css">
+    
+    
+      
     
     
   </head>
@@ -2428,7 +2431,8 @@
                 <h2 id="gdb-peda">gdb-peda<a class="headerlink" href="#gdb-peda" title="Permanent link">&para;</a></h2>
 <p><code>vmmap</code>
 查看process mapping信息，得到每个地址的权限
-<code>find</code> 在内存中搜索字符串，还有一种方法，<code>cat /proc/{pid}/maps</code> </p>
+<code>find</code> 在内存中搜索字符串，还有一种方法，<code>cat /proc/{pid}/maps</code> 
+本地调试的时候利用gdb绕过ALSR:<code>ncat -vc 'gdbserver 127.0.0.1:5000 ./pwn1' -kl 127.0.0.1 4000</code></p>
 <h2 id="readelfobjdump">readelf、objdump<a class="headerlink" href="#readelfobjdump" title="Permanent link">&para;</a></h2>
 <p>使用<code>readelf -a /lib32/libc.so.6 |grep '__libc_start_main'</code>查找libc中的函数地址</p>
 <p><code>objdump -d -M intel [elf_file]</code> 进行反汇编elf文件</p>
@@ -2446,14 +2450,14 @@
 sh = remote("127.0.0.1",10001)
 sh.close()  </p>
 <h3 id="io">IO<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">sh</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="err">发送数据</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="err">发送一行数据，相当于在数据后面加</span>\<span class="n">n</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">numb</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="n">dufault</span><span class="p">)</span>  <span class="err">接受数据，</span><span class="n">numb指定接收的字节</span><span class="err">，</span><span class="n">timeout指定超时</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">recvline</span><span class="p">(</span><span class="n">keepends</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="err">接受一行数据，</span><span class="n">keepends为是否保留行尾的</span>\<span class="n">n</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&quot;Hello,World</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="n">fasle</span><span class="p">)</span>  <span class="err">接受数据直到我们设置的标志出现</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">recvall</span><span class="p">()</span>  <span class="err">一直接收直到</span><span class="n">EOF</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">recvrepeat</span><span class="p">(</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">default</span><span class="p">)</span>  <span class="err">持续接受直到</span><span class="n">EOF或timeout</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>  <span class="err">直接进行交互，相当于回到</span><span class="n">shell的模式</span><span class="err">，在取得</span><span class="n">shell之后使用</span>
+<div class="codehilite"><pre><span></span><span class="n">sh</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1">#发送数据</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1">#发送一行数据，相当于在数据后面加</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">numb</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="n">dufault</span><span class="p">)</span> <span class="c1"># 接受数据，numb指定接收的字节，timeout指定超时</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">recvline</span><span class="p">(</span><span class="n">keepends</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c1">#接受一行数据，keepends为是否保留行尾的</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&quot;Hello,World</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="n">fasle</span><span class="p">)</span> <span class="c1"># 接受数据直到我们设置的标志出现</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">recvall</span><span class="p">()</span> <span class="c1"># 一直接收直到EOF</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">recvrepeat</span><span class="p">(</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">default</span><span class="p">)</span>  <span class="c1">#持续接受直到EOF或timeout</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span> <span class="c1"># 直接进行交互，相当于回到shell的模式，在取得shell之后使用</span>
 </pre></div>
 
 <h3 id="_3">汇编和反汇编<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -2584,7 +2588,7 @@ sh.close()  </p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b3a2063f.js"></script>
+      <script src="../../../assets/javascripts/application.6460bce7.js"></script>
       
         
         
@@ -2606,9 +2610,6 @@ sh.close()  </p>
         <script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
         <script src="../../../search/main.js"></script>
-      
-    
-    
       
     
   </body>
