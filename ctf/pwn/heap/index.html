@@ -2371,7 +2371,7 @@
 <span class="p">}</span>
 </pre></div>
 使用中的chunk
-<img alt="inuse" src="../2019-01-21-20-38-59.png" />
+<img alt="inuse" src="2019-01-21-20-38-59.png" />
 mem=malloc(size)</li>
 <li>chunk = mem-16;</li>
 <li>chunksize = (size+8)#16</li>
@@ -2382,7 +2382,7 @@ mem=malloc(size)</li>
 (gdb)p main_arena</li>
 </ul>
 <p>回收的chunk
-<img alt="not_inuse" src="../2019-01-21-23-42-44.png" /></p>
+<img alt="not_inuse" src="2019-01-21-23-42-44.png" /></p>
 <h2 id="fastbin">Fastbin<a class="headerlink" href="#fastbin" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Chunk size &lt;= get_max_fast()的chunk，会被放在fastbin的bin里</li>
@@ -2420,7 +2420,7 @@ mem=malloc(size)</li>
 </ul>
 <h2 id="tips">tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <p>64位got地址40开头，可以把0x40当作chunk_size用来绕过libc的检查。那么malloc应该是56字节，
-<img alt="64bit_chunk_size" src="../2019-01-21-23-19-07.png" /></p>
+<img alt="64bit_chunk_size" src="2019-01-21-23-19-07.png" /></p>
                 
                   
                 
