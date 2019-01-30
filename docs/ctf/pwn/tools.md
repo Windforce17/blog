@@ -2,7 +2,7 @@
 `vmmap`
 查看process mapping信息，得到每个地址的权限
 `find` 在内存中搜索字符串，还有一种方法，`cat /proc/{pid}/maps` 
-
+本地调试的时候利用gdb绕过ALSR:`ncat -vc 'gdbserver 127.0.0.1:5000 ./pwn1' -kl 127.0.0.1 4000`
 ## readelf、objdump
 使用`readelf -a /lib32/libc.so.6 |grep '__libc_start_main'`查找libc中的函数地址
 
@@ -28,14 +28,14 @@ sh.close()
 ## IO
 
 ```py
-sh.send(data)  发送数据
-sh.sendline(data)  发送一行数据，相当于在数据后面加\n
-sh.recv(numb = 2048, timeout = dufault)  接受数据，numb指定接收的字节，timeout指定超时
-sh.recvline(keepends=True)  接受一行数据，keepends为是否保留行尾的\n
-sh.recvuntil("Hello,World\n",drop=fasle)  接受数据直到我们设置的标志出现
-sh.recvall()  一直接收直到EOF
-sh.recvrepeat(timeout = default)  持续接受直到EOF或timeout
-sh.interactive()  直接进行交互，相当于回到shell的模式，在取得shell之后使用
+sh.send(data)  #发送数据
+sh.sendline(data)  #发送一行数据，相当于在数据后面加
+sh.recv(numb = 2048, timeout = dufault) # 接受数据，numb指定接收的字节，timeout指定超时
+sh.recvline(keepends=True)  #接受一行数据，keepends为是否保留行尾的
+sh.recvuntil("Hello,World\n",drop=fasle) # 接受数据直到我们设置的标志出现
+sh.recvall() # 一直接收直到EOF
+sh.recvrepeat(timeout = default)  #持续接受直到EOF或timeout
+sh.interactive() # 直接进行交互，相当于回到shell的模式，在取得shell之后使用
 ```
 ##  汇编和反汇编
 
