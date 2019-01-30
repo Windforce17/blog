@@ -78,3 +78,10 @@ mount -t nfs -o soft -o nolock -o intr xx.xx.xx.xx:/oneT/file.cugapp.com.seafile
 ip link set ib0 txqueuelen 10000
 ```
 - 更改内核配置
+
+
+## openshift
+很nb的一个PaaS工具
+https://github.com/openshift/origin
+https://blog.csdn.net/wh211212/article/details/80539083
+https://docs.openshift.com/online/getting_started/index.html

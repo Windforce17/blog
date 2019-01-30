@@ -33,7 +33,9 @@ linux 下
 - 使用`nasm [sourcecode] -o [target] -felf32`编译一个汇编文件 
 - 使用`objcopy -O binary [source.out] [target]`提取 shellcode的。
 - 使用`xxd -i [target]`将上述shellcode转为char数组
-
+相关工具
+- https://github.com/Neetx/Shellcode-Extractor
+从elf提取shellcode
 ## ROP
  1. ROPgadget 得到代码片断
  2. cd80c3 就是int0x80;ret,s使用`ROPgadget --binary {binaryname} --opcode cd80c3`来寻找
