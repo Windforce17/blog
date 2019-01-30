@@ -86,6 +86,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://windforce17.github.io/blog/Web&Attack/入侵检测&审计/大型互联网企业入侵检测实战总结/</loc>
+     <lastmod>2019-01-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://windforce17.github.io/blog/coding/asm/</loc>
      <lastmod>2019-01-30</lastmod>
      <changefreq>daily</changefreq>
@@ -256,7 +261,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/coding/mac/app/</loc>
+     <loc>https://windforce17.github.io/blog/coding/macOS/app/</loc>
+     <lastmod>2019-01-30</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/coding/macOS/gdb无法调试问题/</loc>
      <lastmod>2019-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -492,11 +502,6 @@
     </url>
     <url>
      <loc>https://windforce17.github.io/blog/shell/phpmyadmin/</loc>
-     <lastmod>2019-01-30</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://windforce17.github.io/blog/入侵检测/大型互联网企业入侵检测实战总结/</loc>
      <lastmod>2019-01-30</lastmod>
      <changefreq>daily</changefreq>
     </url>
