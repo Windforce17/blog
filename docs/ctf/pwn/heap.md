@@ -11,7 +11,7 @@ struct malloc_chunk{
 }
 ```
 使用中的chunk
-![inuse](2019-01-21-20-38-59.png)
+![inuse](heap/2019-01-21-20-38-59.png)
 mem=malloc(size)
 - chunk = mem-16;
 - chunksize = (size+8)#16
@@ -22,7 +22,7 @@ mem=malloc(size)
 (gdb)p main_arena
 
 回收的chunk
-![not_inuse](2019-01-21-23-42-44.png)
+![not_inuse](heap/2019-01-21-23-42-44.png)
 ## Fastbin
 
 - Chunk size <= get_max_fast()的chunk，会被放在fastbin的bin里
@@ -57,4 +57,4 @@ malloc.c: _int_free
 
 ## tips
 64位got地址40开头，可以把0x40当作chunk_size用来绕过libc的检查。那么malloc应该是56字节，
-![64bit_chunk_size](2019-01-21-23-19-07.png)
+![64bit_chunk_size](heap/2019-01-21-23-19-07.png)
