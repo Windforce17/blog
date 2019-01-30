@@ -70,3 +70,27 @@ shellcode=asm(shellcraft.sh())
 ## 有用的站
 libc databases:http://libcdb.com
 系统调用表：http://syscalls.kernelgrok.com/
+
+## dockerfile
+```dockerfile
+FROM ubuntu:18.04
+RUN echo ' deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse \n \
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse \n \ 
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse \n \
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse \n '> /etc/apt/sources.list && \
+RUN apt update && \
+    apt install -y python python3 python-pip\
+    build-essential libc6-dev-i386 \
+    gcc-multilib g++-multilib git && \
+    apt clean 
+WORKDIR /
+# RUN git clone https://github.com/pwndbg/pwndbg \
+    # && cd pwndbg \
+    # && ./setup.sh \
+COPY ./pwndbg pwndbg
+RUN cd pwndbg \
+    && ./setup.sh \
+    && pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple pwntools
+
+ENV LC_ALL=en_US.UTF-8 PYTHONIOENCODING=UTF-8
+```
