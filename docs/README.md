@@ -114,6 +114,9 @@ http://ddctf.didichuxing.com/
 http://pwnable.kr/
 https://pwnable.tw/
 https://pwnhub.cn/
+https://pwnable.xyz/
+http://wargame.kr/
+https://ropemporium.com/
 https://hackme.inndy.tw/
 http://www.exploit-exercises.com
 http://www.wechall.net/
