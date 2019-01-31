@@ -85,3 +85,8 @@ ip link set ib0 txqueuelen 10000
 https://github.com/openshift/origin
 https://blog.csdn.net/wh211212/article/details/80539083
 https://docs.openshift.com/online/getting_started/index.html
+
+## 镜像站配置&&搭建
+https://ring0.me/2013/09/how-ustc-mirror-works/  
+http://fangpeishi.github.io/build_opensource_mirror.html  
+https://www.zhihu.com/question/19719790  

@@ -22,8 +22,8 @@ r.sendline(fmtstr_payload(5,{printf_got:system}))
 ```sh
 readelf -a /lib32/libc.so.6 |grep '__libc_start_main'
 ```
-![readelf](2019-01-20-18-00-48.png)
+![readelf](fmt/2019-01-20-18-00-48.png)
 看最后1.5个byte（32位elf）
-![](2019-01-20-18-02-13.png)
+![](fmt/2019-01-20-18-02-13.png)
 实际elf中的start函数地址
 
