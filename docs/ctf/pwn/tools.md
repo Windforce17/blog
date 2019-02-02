@@ -72,6 +72,7 @@ libc databases:http://libcdb.com
 系统调用表：http://syscalls.kernelgrok.com/
 
 ## dockerfile
+运行的时候需要赋予相应的权限：`--cap-add=SYS_PTRACE --security-opt seccomp=unconfined`,或者直接给root，`--privileged`
 ```dockerfile
 FROM ubuntu:18.04
 RUN echo ' deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse \n \
