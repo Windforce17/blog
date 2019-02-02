@@ -2482,6 +2482,7 @@ sh.close()  </p>
 <p>libc databases:<a href="http://libcdb.com">http://libcdb.com</a>
 系统调用表：<a href="http://syscalls.kernelgrok.com/">http://syscalls.kernelgrok.com/</a></p>
 <h2 id="dockerfile">dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
+<p>运行的时候需要赋予相应的权限：<code>--cap-add=SYS_PTRACE --security-opt seccomp=unconfined</code>,或者直接给root，<code>--privileged</code>
 <div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> ubuntu:18.04</span>
 <span class="k">RUN</span> <span class="nb">echo</span> <span class="err">&#39;</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse <span class="se">\n</span> <span class="se">\</span>
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse <span class="se">\n</span> <span class="se">\ </span>
@@ -2503,7 +2504,7 @@ COPY ./pwndbg pwndbg
     <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pwndbg <span class="se">\</span>
     <span class="o">&amp;&amp;</span> ./setup.sh <span class="se">\</span>
     apt clean 
-</pre></div>
+</pre></div></p>
                 
                   
                 
