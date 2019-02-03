@@ -2559,10 +2559,12 @@
   <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-传入username，password进行运算，步骤及如下：
-1. 先判断密码范围，不可打印就报错，
-2. 通过<code>srand(username[1] + *username + username[2]);</code>设定随机数种子
-3. 再对password每四字节减去<code>rand()</code>，判断结果是否和目标值相等</p>
+传入username，password进行运算，步骤及如下：</p>
+<ol>
+<li>先判断密码范围，不可打印就报错，  </li>
+<li>通过<code>srand(username[1] + *username + username[2]);</code>设定随机数种子  </li>
+<li>再对password每四字节减去<code>rand()</code>，判断结果是否和目标值相等  </li>
+</ol>
 <p>枚举出随机数。
 <div class="codehilite"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
