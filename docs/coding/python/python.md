@@ -33,7 +33,14 @@ some_bytes = bytes.fromhex(hex_string)
 some_bytes = bytearray.fromhex(hex_string)
 # some_bytes: bytearray(b'\x16\x03\x02')
 
+## int转byte、str
+u=[1635017059,1953724780,1868915551]
+username=''
+for x in u:
+    username+=x.to_bytes(4).decode()
+print(username)
 ```
+
 
 ## jupyter
 这个东西会装上ipython，可以开启一个浏览器进行多人协作写py。
@@ -52,10 +59,15 @@ print('\n'.join(sys.path))
 https://www.zhihu.com/question/30941329
 
 ### shellcode检测
+
 pylibemu
+
 ### 各种库
+
 1. distorm3 反编译引擎 pip安装
+
 ### pyv8
+
 js处理，google出品，macos安装
 
 [](https://github.com/emmetio/pyv8-binaries/)
@@ -67,6 +79,7 @@ sudo cp * /Library/Python/2.7/site-packages/
 ```
 
 ### libemu
+
 shellcode 检测工具  preepdf依赖之一
 https://github.com/buffer/libemu
 aclocal
@@ -77,5 +90,6 @@ pip3 install pylibemu
 
 
 ## gmpy2
+
 大数计算的优化lib
 apt install python-gmpy2
