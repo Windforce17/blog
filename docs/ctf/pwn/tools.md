@@ -13,7 +13,8 @@
 ### 运行时变量
 ```py
 context.log_level = 'debug'
-context.arch      = 'i386'
+context.arch      = 'i386' # 32 bit
+context.arch      = 'amd64'# 64 bit
 context.os        = 'linux'
 context.endian    = 'little'
 context.word_size = 32

@@ -109,3 +109,11 @@ if(!prev_inuse(p)){
 - result：p=&p-0x18 ，p指向了p的地址-0x18
 
 利用：需要一个overflow来改写prevsize，使free时候的p为global的heap
+
+## mmap Chunks overflow
+前提：需要任何大小的的malloc，但不需要free。  
+当malloc size超过0x21000时，会改用mmap直接申请新的空间
+mmap得到的地址是连续的，同通常是在上一次mmap之前，通常在tls段，malloc时会分局tls段上某个指针来决定使用的arena,
+mmap chunk overflow可以覆盖arena的指针，
+tls段上还有stack address stack guard canary  
+伪造arena的fastbin部分，使下次malloc时可以取得的chunk
