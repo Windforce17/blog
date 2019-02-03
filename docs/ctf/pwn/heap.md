@@ -3,7 +3,7 @@
 ```c
 struct malloc_chunk{
     size_t prev_size; //qword 可能存放上一个chunk的data
-    size_t size;//qword
+    size_t size;//qword size最低位表示上一个chunk是否在使用（prev_inuse）
     malloc_chunk *fd; //会被data覆盖
     malloc_chunk *bk;//会被data覆盖
     malloc_chunk *fd_nextsize;//会被data覆盖
@@ -58,3 +58,54 @@ malloc.c: _int_free
 ## tips
 64位got地址40开头，可以把0x40当作chunk_size用来绕过libc的检查。那么malloc应该是56字节，
 ![64bit_chunk_size](heap/2019-01-21-23-19-07.png)
+
+## 其他堆合并
+下图是size>128的堆合并过程，用gdb调试的时候有两个技巧
+- `info macro [macroname]`  显示宏
+- `macro expand [code]`  展开宏
+![gdb](heap/2019-02-01-12-40-08.png)
+
+### unlink 
+```c
+// double link list 拿掉一个
+//p BK FD 都是chunk structure指针
+#define unlink(P,BK,FD) {\
+    FD = P->fd;\
+    BK = P->bk;\
+    FD->bk=BK;\
+    BK->fd=FD;\
+}
+
+if(!prev_inuse(p)){
+    prevsize = p->prev_size;
+    size += prevsize;
+    p = chunk_at_offset(p,-((long) prevsize));
+    unlink(p,bak,fwd);
+}
+```
+拿出来后会把合并后的chunk放到另一个bin里。
+前一个chunk可以覆盖到p的prev_size ，那么就可以控制unlink中p的位置，从而控制fd，bk的内容，例如
+- FD = p->fd = free@got.plt-0x18
+- BK = p->bk = shellcode
+上面跑完后会把free的addres写为shellcode的address（FD和FD->bk的偏移为0x18），但同时，shellcode里（BK）的位置（Bk->fd）会被改掉（FD），所以shellcode里要用jmp跳过
+
+*上述方法现在已经里用不了了*  
+现在的unlink会检查双向链表是不是合法但，指针要能指回来。
+```c
+#define unlink(P,BK,FD){\
+    FD = P -> fd;\
+    BK = P -> bk;\
+    if(FD->bk!=P || BK->fd!=P)\
+        malloc_printerr(check_action,"corrupted d..",P);\
+    else{\
+        FD->bk=BK;\
+        BK->fd=FD;\
+    }\
+}
+```
+绕过方法：需要一个可读写的chunk p，知道&p（p是global的） 
+- FD=P->fd=&P-0x18
+- BK=P->bk=&pP-0x10
+- result：p=&p-0x18 ，p指向了p的地址-0x18
+
+利用：需要一个overflow来改写prevsize，使free时候的p为global的heap
