@@ -65,3 +65,37 @@ int main(int argc, char const *argv[])
 ### Javasnoop
 　　Javasnoop 是一个 java 应用程序安全测试工具，它允许你以拦截的方法，篡改数据和hack 运行在你计算机上的 java 应用程序。通常在没有源代码的情况下，测试 java 客户端 的安全性最好的结果是不可预知的，最坏的结果是不切实际的。
 　　一个连接到目标机器的Java代理与JavaSnoop工具连接来测试该机器上的应用程序以便寻找其安全弱点。它可以是一个安全工具也可以成为黑客工具。
+
+### z3
+两种写法都行，常用的
+```py
+from z3 import *
+x = BitVec('x',32)
+
+solve(
+    x<50,
+    4*(x>>2)==x,
+    4*(x>>4)!=x>>2,
+    x>>4==0,
+    x>>3!=0
+)
+```
+Solver:
+```py
+from z3 import *
+
+x = BitVec('x',32)
+s = Solver()
+s.add(x<50)
+s.add(4*(x>>2)==x)
+s.add(4*(x>>4)!=x>>2)
+s.add(x>>4!=0)
+s.add(x>>3!=0)
+for c in s.assertions():
+    print (c)
+print(s.check())
+for k,v in s.statistics():
+    print(k,v)
+m=s.model()
+print(m)
+```
