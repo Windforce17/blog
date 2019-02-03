@@ -1865,6 +1865,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mmap-chunks-overflow" title="mmap Chunks overflow" class="md-nav__link">
+    mmap Chunks overflow
+  </a>
+  
+</li>
+      
       
       
       
@@ -2010,6 +2017,18 @@
   <li class="md-nav__item">
     <a href="../../reverse/反调试/" title="反调试" class="md-nav__link">
       反调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reverse/各种段/" title="各种段" class="md-nav__link">
+      各种段
     </a>
   </li>
 
@@ -2362,6 +2381,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mmap-chunks-overflow" title="mmap Chunks overflow" class="md-nav__link">
+    mmap Chunks overflow
+  </a>
+  
+</li>
+      
       
       
       
@@ -2497,6 +2523,13 @@ mem=malloc(size)</li>
 - BK=P-&gt;bk=&amp;pP-0x10
 - result：p=&amp;p-0x18 ，p指向了p的地址-0x18</p>
 <p>利用：需要一个overflow来改写prevsize，使free时候的p为global的heap</p>
+<h2 id="mmap-chunks-overflow">mmap Chunks overflow<a class="headerlink" href="#mmap-chunks-overflow" title="Permanent link">&para;</a></h2>
+<p>前提：需要任何大小的的malloc，但不需要free。<br />
+当malloc size超过0x21000时，会改用mmap直接申请新的空间
+mmap得到的地址是连续的，同通常是在上一次mmap之前，通常在tls段，malloc时会分局tls段上某个指针来决定使用的arena,
+mmap chunk overflow可以覆盖arena的指针，
+tls段上还有stack address stack guard canary<br />
+伪造arena的fastbin部分，使下次malloc时可以取得的chunk</p>
                 
                   
                 
