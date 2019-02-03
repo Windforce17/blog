@@ -225,9 +225,10 @@ __int64 __fastcall sub_400977(_DWORD *username, _DWORD *password)
 }
 ```
 传入username，password进行运算，步骤及如下：
-1. 先判断密码范围，不可打印就报错，
-2. 通过`srand(username[1] + *username + username[2]);`设定随机数种子
-3. 再对password每四字节减去`rand()`，判断结果是否和目标值相等
+
+1. 先判断密码范围，不可打印就报错，  
+2. 通过`srand(username[1] + *username + username[2]);`设定随机数种子  
+3. 再对password每四字节减去`rand()`，判断结果是否和目标值相等  
    
 枚举出随机数。
 ```c
