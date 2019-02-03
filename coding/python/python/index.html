@@ -2452,6 +2452,13 @@
 <span class="c1"># some_bytes: b&#39;\x16\x03\x02&#39;</span>
 <span class="n">some_bytes</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="n">hex_string</span><span class="p">)</span>
 <span class="c1"># some_bytes: bytearray(b&#39;\x16\x03\x02&#39;)</span>
+
+<span class="c1">## int转byte、str</span>
+<span class="n">u</span><span class="o">=</span><span class="p">[</span><span class="mi">1635017059</span><span class="p">,</span><span class="mi">1953724780</span><span class="p">,</span><span class="mi">1868915551</span><span class="p">]</span>
+<span class="n">username</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">u</span><span class="p">:</span>
+    <span class="n">username</span><span class="o">+=</span><span class="n">x</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
 </pre></div>
 
 <h2 id="jupyter">jupyter<a class="headerlink" href="#jupyter" title="Permanent link">&para;</a></h2>
