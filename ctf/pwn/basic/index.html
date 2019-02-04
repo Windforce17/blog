@@ -1781,6 +1781,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#alarm" title="干掉alarm" class="md-nav__link">
+    干掉alarm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#plt-got-pltgot" title="plt got .plt.got" class="md-nav__link">
     plt got .plt.got
   </a>
@@ -1836,8 +1843,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="打开就退出了" class="md-nav__link">
-    打开就退出了
+  <a href="#strace" title="strace" class="md-nav__link">
+    strace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdb-attach" title="gdb attach 失败" class="md-nav__link">
+    gdb attach 失败
   </a>
   
 </li>
@@ -2315,6 +2329,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#alarm" title="干掉alarm" class="md-nav__link">
+    干掉alarm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#plt-got-pltgot" title="plt got .plt.got" class="md-nav__link">
     plt got .plt.got
   </a>
@@ -2370,8 +2391,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="打开就退出了" class="md-nav__link">
-    打开就退出了
+  <a href="#strace" title="strace" class="md-nav__link">
+    strace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gdb-attach" title="gdb attach 失败" class="md-nav__link">
+    gdb attach 失败
   </a>
   
 </li>
@@ -2410,6 +2438,18 @@ https://www.exploit-db.com
 https://www.exploit-db.com/shellcode/
 </pre></div>
 
+<h2 id="alarm">干掉alarm<a class="headerlink" href="#alarm" title="Permanent link">&para;</a></h2>
+<p>很多题目都有alarm函数防止Dos攻击，超过指定的时候后程序就会退出，不便于debug，通常有几种干掉alarm的方法：
+- vim: <code>%s/alarm/isnan/g</code>
+- <code>sed-i s/alarm/isnan/g [elf name]</code>
+- LD_PRELOAD
+<div class="codehilite"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">alarm</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">seconds</span><span class="p">){</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">seconds</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+编译：<code>gcc -shared [-fPIE/-fPIC] [-m32] hook.c -o hook.so</code><br />
+运行：<code>LD_PRELOAD=./hook.so ./pwnme</code></p>
 <h2 id="plt-got-pltgot">plt got .plt.got<a class="headerlink" href="#plt-got-pltgot" title="Permanent link">&para;</a></h2>
 <p><img alt="plt-&gt;got" src="2018-11-15-23-44-54.png" />
 <img alt="plt &amp;got" src="2018-11-15-23-25-29.png" />
@@ -2488,8 +2528,11 @@ leave= mov esp,ebp,pop ebp;</p>
 <h2 id="_5">保护<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>NX:DEP 栈不可执行，可执行不可写 ROP绕过
 ALSR: 把每次载入的函数地址随机化，利用puts/printf 等leak出libc的实际地址</p>
-<h2 id="_6">打开就退出了<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>用strace分析系统调用</p>
+<h2 id="strace">strace<a class="headerlink" href="#strace" title="Permanent link">&para;</a></h2>
+<p>strace可以输出系统调用，应对一些打开就退出的情况，可以使用<code>strace -e trace=read,write [elf name]</code>来追踪特定的系统调用</p>
+<h2 id="gdb-attach">gdb attach 失败<a class="headerlink" href="#gdb-attach" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="m">0</span> <span class="p">|</span>sudo tee /proc/sys/kernel/yama/ptrace_scope
+</pre></div>
                 
                   
                 
