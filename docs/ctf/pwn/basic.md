@@ -6,6 +6,20 @@ https://www.exploit-db.com
 https://www.exploit-db.com/shellcode/
 ```
 
+## 干掉alarm
+很多题目都有alarm函数防止Dos攻击，超过指定的时候后程序就会退出，不便于debug，通常有几种干掉alarm的方法：
+- vim: `%s/alarm/isnan/g`
+- `sed-i s/alarm/isnan/g [elf name]`
+- LD_PRELOAD
+```c
+#include<stdio.h>
+unsigned int alarm(unsigned int seconds){
+    printf("%d",seconds);
+}
+```
+编译：`gcc -shared [-fPIE/-fPIC] [-m32] hook.c -o hook.so`  
+运行：`LD_PRELOAD=./hook.so ./pwnme`
+
 ## plt got .plt.got
 ![plt->got](basic/2018-11-15-23-44-54.png)
 ![plt &got](basic/2018-11-15-23-25-29.png)
@@ -88,5 +102,10 @@ leave= mov esp,ebp,pop ebp;
 NX:DEP 栈不可执行，可执行不可写 ROP绕过
 ALSR: 把每次载入的函数地址随机化，利用puts/printf 等leak出libc的实际地址
 
-## 打开就退出了
-用strace分析系统调用
+## strace
+strace可以输出系统调用，应对一些打开就退出的情况，可以使用`strace -e trace=read,write [elf name]`来追踪特定的系统调用
+
+## gdb attach 失败
+```sh
+echo 0 |sudo tee /proc/sys/kernel/yama/ptrace_scope
+```
