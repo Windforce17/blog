@@ -2549,9 +2549,12 @@ ALSR: 把每次载入的函数地址随机化，利用puts/printf 等leak出libc
 </pre></div>
 
 <h2 id="ld_preload-ld_show_auxv">LD_PRELOAD、 LD_SHOW_AUXV<a class="headerlink" href="#ld_preload-ld_show_auxv" title="Permanent link">&para;</a></h2>
-<p>LD_PRELOAD可以指定一个或多个共享库文件，linux加载器<code>ld-linux</code>会先于glibc加载LD_PRELOAD指定的库。<br />
+<ul>
+<li>LD_PRELOAD可以指定一个或多个共享库文件，linux加载器<code>ld-linux</code>会先于glibc加载LD_PRELOAD指定的库。<br />
 用途：HOOK掉alarm。<br />
-为了避免用于恶意攻击，在ruid !=euid的情况下加载器是不会使用LD_PRELOAD 进行预加载。</p>
+为了避免用于恶意攻击，在ruid !=euid的情况下加载器是不会使用LD_PRELOAD 进行预加载。</li>
+<li><code>LD_SHOW_AUXV=1 ./pwnme</code> 用于调试</li>
+</ul>
                 
                   
                 
