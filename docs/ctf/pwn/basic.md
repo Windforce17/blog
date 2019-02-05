@@ -110,6 +110,7 @@ strace可以输出系统调用，应对一些打开就退出的情况，可以�
 echo 0 |sudo tee /proc/sys/kernel/yama/ptrace_scope
 ```
 ## LD_PRELOAD、 LD_SHOW_AUXV
-LD_PRELOAD可以指定一个或多个共享库文件，linux加载器`ld-linux`会先于glibc加载LD_PRELOAD指定的库。  
+- LD_PRELOAD可以指定一个或多个共享库文件，linux加载器`ld-linux`会先于glibc加载LD_PRELOAD指定的库。  
 用途：HOOK掉alarm。  
 为了避免用于恶意攻击，在ruid !=euid的情况下加载器是不会使用LD_PRELOAD 进行预加载。
+- `LD_SHOW_AUXV=1 ./pwnme` 用于调试
