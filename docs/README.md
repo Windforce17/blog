@@ -127,7 +127,6 @@ http://www.wechall.net/
 [在线执行代码](https://www.dooccn.com)
 [ctftools](https://www.ctftools.com/down)
 [新闻](https://www.sitedirsec.com/)
-[cmd5](https://www.cmd5.com/)
 [cmd51](http://www.xmd5.org/)
 [js解密](http://tmxk.org/jother/)
 [gps](http://www.gpsspg.com/bs.htm)
