@@ -1773,6 +1773,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#debug-symbolglibc" title="编译带debug symbol的glibc" class="md-nav__link">
+    编译带debug symbol的glibc
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download" title="download" class="md-nav__link">
+    download
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make" title="make" class="md-nav__link">
+    make
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#alarm" title="干掉alarm" class="md-nav__link">
     干掉alarm
   </a>
@@ -2328,6 +2355,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#debug-symbolglibc" title="编译带debug symbol的glibc" class="md-nav__link">
+    编译带debug symbol的glibc
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#download" title="download" class="md-nav__link">
+    download
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#make" title="make" class="md-nav__link">
+    make
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#alarm" title="干掉alarm" class="md-nav__link">
     干掉alarm
   </a>
@@ -2444,6 +2498,21 @@ https://www.exploit-db.com
 https://www.exploit-db.com/shellcode/
 </pre></div>
 
+<h2 id="debug-symbolglibc">编译带debug symbol的glibc<a class="headerlink" href="#debug-symbolglibc" title="Permanent link">&para;</a></h2>
+<h3 id="download">download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h3>
+<p><a href="http://gnu.mirrors.pair.com/libc/">glibc</a></p>
+<h3 id="make">make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h3>
+<p>解压后，要创建额外的build目录，我直接再glibc目录下创建了build目录<code>mkdir build &amp;&amp; cd build</code>，使用下面的命令进行编译,
+<code>CFLAGS</code> makefile编译选项
+<code>-g</code>:包含调试信息是OS native format
+<code>-ggdb</code>: 供gdb使用的调试信息
+<code>-g3</code>: 产生额外的debug信息
+<code>-gdwarf-4</code>: 产生dwarf格式的debug info，产生 <code>.debug_info</code>段
+<code>-Og</code> 启用不影响调试的编译优化
+<code>--prefix</code> 安装路径
+<code>--disable-sanity-checks</code> 关闭
+<div class="codehilite"><pre><span></span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> <span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> ../configure --prefix<span class="o">=</span>/root/app/glibc22364 --disable-werror 
+</pre></div></p>
 <h2 id="alarm">干掉alarm<a class="headerlink" href="#alarm" title="Permanent link">&para;</a></h2>
 <p>很多题目都有alarm函数防止Dos攻击，超过指定的时候后程序就会退出，不便于debug，通常有几种干掉alarm的方法：
 - vim: <code>%s/alarm/isnan/g</code>
