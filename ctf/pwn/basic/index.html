@@ -1794,6 +1794,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_2" title="排错" class="md-nav__link">
+    排错
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1829,14 +1836,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" title="寄存器赋值" class="md-nav__link">
+  <a href="#_3" title="寄存器赋值" class="md-nav__link">
     寄存器赋值
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="栈转移" class="md-nav__link">
+  <a href="#_4" title="栈转移" class="md-nav__link">
     栈转移
   </a>
   
@@ -1848,14 +1855,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="漏洞挖掘方法" class="md-nav__link">
+  <a href="#_5" title="漏洞挖掘方法" class="md-nav__link">
     漏洞挖掘方法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="保护" class="md-nav__link">
+  <a href="#_6" title="保护" class="md-nav__link">
     保护
   </a>
   
@@ -2376,6 +2383,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_2" title="排错" class="md-nav__link">
+    排错
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2411,14 +2425,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" title="寄存器赋值" class="md-nav__link">
+  <a href="#_3" title="寄存器赋值" class="md-nav__link">
     寄存器赋值
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="栈转移" class="md-nav__link">
+  <a href="#_4" title="栈转移" class="md-nav__link">
     栈转移
   </a>
   
@@ -2430,14 +2444,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="漏洞挖掘方法" class="md-nav__link">
+  <a href="#_5" title="漏洞挖掘方法" class="md-nav__link">
     漏洞挖掘方法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="保护" class="md-nav__link">
+  <a href="#_6" title="保护" class="md-nav__link">
     保护
   </a>
   
@@ -2510,9 +2524,12 @@ https://www.exploit-db.com/shellcode/
 <code>-gdwarf-4</code>: 产生dwarf格式的debug info，产生 <code>.debug_info</code>段
 <code>-Og</code> 启用不影响调试的编译优化
 <code>--prefix</code> 安装路径
-<code>--disable-sanity-checks</code> 关闭
+<code>--disable-sanity-checks</code> 关闭适应性检查。可能与GNU/Linux行为不一致</p>
 <div class="codehilite"><pre><span></span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> <span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> ../configure --prefix<span class="o">=</span>/root/app/glibc22364 --disable-werror 
-</pre></div></p>
+</pre></div>
+
+<h3 id="_2">排错<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><code>loc1@GLIBC_2.17' can't be versioned to common symbol 'loc1'</code> 这是一个bug，在<a href="https://stackoverflow.com/questions/51279418/how-to-build-older-version-of-glibc">这里</a>可以找到解决方法。</p>
 <h2 id="alarm">干掉alarm<a class="headerlink" href="#alarm" title="Permanent link">&para;</a></h2>
 <p>很多题目都有alarm函数防止Dos攻击，超过指定的时候后程序就会退出，不便于debug，通常有几种干掉alarm的方法：
 - vim: <code>%s/alarm/isnan/g</code>
@@ -2585,22 +2602,22 @@ sh:
 <span class="n">r</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </pre></div></li>
 </ol>
-<h3 id="_2">寄存器赋值<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">寄存器赋值<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>构造栈结构
 <div class="codehilite"><pre><span></span>  *(pop eax ;ret)
   3
 </pre></div>
 将eax赋值为3</p>
-<h3 id="_3">栈转移<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">栈转移<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>寻找 leave;ret;指令，然后更改ebp的值即可
 leave= mov esp,ebp,pop ebp;</p>
-<h2 id="_4">漏洞挖掘方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">漏洞挖掘方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>现成CMS注意DIFF</li>
 <li>根据漏洞PATCH</li>
 <li>根据漏洞写出EXP，发动攻击 </li>
 </ul>
-<h2 id="_5">保护<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">保护<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>NX:DEP 栈不可执行，可执行不可写 ROP绕过
 ALSR: 把每次载入的函数地址随机化，利用puts/printf 等leak出libc的实际地址</p>
 <h2 id="strace">strace<a class="headerlink" href="#strace" title="Permanent link">&para;</a></h2>
