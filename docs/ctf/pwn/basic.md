@@ -17,10 +17,15 @@ https://www.exploit-db.com/shellcode/
 `-gdwarf-4`: 产生dwarf格式的debug info，产生 `.debug_info`段
 `-Og` 启用不影响调试的编译优化
 `--prefix` 安装路径
-`--disable-sanity-checks` 关闭
+`--disable-sanity-checks` 关闭适应性检查。可能与GNU/Linux行为不一致
+
+
 ```sh
 CFLAGS="-g -g3 -ggdb -gdwarf-4 -Og" CXXFLAGS="-g -g3 -ggdb -gdwarf-4 -Og" ../configure --prefix=/root/app/glibc22364 --disable-werror 
 ``` 
+### 排错
+`loc1@GLIBC_2.17' can't be versioned to common symbol 'loc1'` 这是一个bug，在[这里](https://stackoverflow.com/questions/51279418/how-to-build-older-version-of-glibc)可以找到解决方法。
+
 ## 干掉alarm
 很多题目都有alarm函数防止Dos攻击，超过指定的时候后程序就会退出，不便于debug，通常有几种干掉alarm的方法：
 - vim: `%s/alarm/isnan/g`
