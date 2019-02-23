@@ -9,7 +9,7 @@ https://www.exploit-db.com/shellcode/
 ### download
 [glibc](http://gnu.mirrors.pair.com/libc/)
 ### make
-解压后，要创建额外的build目录，我直接再glibc目录下创建了build目录`mkdir build && cd build`，使用下面的命令进行编译,
+解压后，要创建额外的build目录，直接在glibc目录下创建了build目录`mkdir build && cd build`，使用下面的命令进行编译,
 `CFLAGS` makefile编译选项
 `-g`:包含调试信息是OS native format
 `-ggdb`: 供gdb使用的调试信息
@@ -23,6 +23,10 @@ https://www.exploit-db.com/shellcode/
 ```sh
 CFLAGS="-g -g3 -ggdb -gdwarf-4 -Og" CXXFLAGS="-g -g3 -ggdb -gdwarf-4 -Og" ../configure --prefix=/root/app/glibc22364 --disable-werror 
 ``` 
+### use
+运行前需要加环境变量,
+example:`export LD_LIBRARY_PATH=/root/app/glibc22364/lib/
+
 ### 排错
 `loc1@GLIBC_2.17' can't be versioned to common symbol 'loc1'` 这是一个bug，在[这里](https://stackoverflow.com/questions/51279418/how-to-build-older-version-of-glibc)可以找到解决方法。
 
@@ -70,6 +74,7 @@ linux 下
 相关工具
 - https://github.com/Neetx/Shellcode-Extractor
 从elf提取shellcode
+
 ## ROP
  1. ROPgadget 得到代码片断
  2. cd80c3 就是int0x80;ret,s使用`ROPgadget --binary {binaryname} --opcode cd80c3`来寻找
@@ -114,6 +119,10 @@ r.interactive()
 ### 栈转移
 寻找 leave;ret;指令，然后更改ebp的值即可
 leave= mov esp,ebp,pop ebp;
+
+## return to Dynamic resolver
+return to lib without information leakage
+
 ## 漏洞挖掘方法
 * 现成CMS注意DIFF
 * 根据漏洞PATCH
