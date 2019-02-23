@@ -1795,6 +1795,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#use" title="use" class="md-nav__link">
+    use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_2" title="排错" class="md-nav__link">
     排错
   </a>
@@ -1851,6 +1858,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-to-dynamic-resolver" title="return to Dynamic resolver" class="md-nav__link">
+    return to Dynamic resolver
+  </a>
   
 </li>
       
@@ -2384,6 +2398,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#use" title="use" class="md-nav__link">
+    use
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_2" title="排错" class="md-nav__link">
     排错
   </a>
@@ -2440,6 +2461,13 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#return-to-dynamic-resolver" title="return to Dynamic resolver" class="md-nav__link">
+    return to Dynamic resolver
+  </a>
   
 </li>
       
@@ -2516,7 +2544,7 @@ https://www.exploit-db.com/shellcode/
 <h3 id="download">download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h3>
 <p><a href="http://gnu.mirrors.pair.com/libc/">glibc</a></p>
 <h3 id="make">make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h3>
-<p>解压后，要创建额外的build目录，我直接再glibc目录下创建了build目录<code>mkdir build &amp;&amp; cd build</code>，使用下面的命令进行编译,
+<p>解压后，要创建额外的build目录，直接在glibc目录下创建了build目录<code>mkdir build &amp;&amp; cd build</code>，使用下面的命令进行编译,
 <code>CFLAGS</code> makefile编译选项
 <code>-g</code>:包含调试信息是OS native format
 <code>-ggdb</code>: 供gdb使用的调试信息
@@ -2528,6 +2556,9 @@ https://www.exploit-db.com/shellcode/
 <div class="codehilite"><pre><span></span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> <span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> ../configure --prefix<span class="o">=</span>/root/app/glibc22364 --disable-werror 
 </pre></div>
 
+<h3 id="use">use<a class="headerlink" href="#use" title="Permanent link">&para;</a></h3>
+<p>运行前需要加环境变量,
+example:`export LD_LIBRARY_PATH=/root/app/glibc22364/lib/</p>
 <h3 id="_2">排错<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><code>loc1@GLIBC_2.17' can't be versioned to common symbol 'loc1'</code> 这是一个bug，在<a href="https://stackoverflow.com/questions/51279418/how-to-build-older-version-of-glibc">这里</a>可以找到解决方法。</p>
 <h2 id="alarm">干掉alarm<a class="headerlink" href="#alarm" title="Permanent link">&para;</a></h2>
@@ -2611,6 +2642,8 @@ sh:
 <h3 id="_4">栈转移<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>寻找 leave;ret;指令，然后更改ebp的值即可
 leave= mov esp,ebp,pop ebp;</p>
+<h2 id="return-to-dynamic-resolver">return to Dynamic resolver<a class="headerlink" href="#return-to-dynamic-resolver" title="Permanent link">&para;</a></h2>
+<p>return to lib without information leakage</p>
 <h2 id="_5">漏洞挖掘方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>现成CMS注意DIFF</li>

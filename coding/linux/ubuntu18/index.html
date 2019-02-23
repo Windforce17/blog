@@ -2482,14 +2482,15 @@ wget <a href="https://dl.google.com/linux/direct/google-chrome-stable_current_am
 dpkg -i google-chrome-stable_current_amd64.deb </p>
 <h2 id="_1">编译环境<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="32">32位<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
-<p>sudo apt install -y build-essential module-assistant &amp;&amp;
+<p>sudo apt install -y build-essential &amp;&amp;
  sudo apt install -y libc6-dev-i386 &amp;&amp;
  sudo apt install -y gcc-multilib g++-multilib 
 可以使用-m32 编译32位程序啦</p>
+<p>apt install python-pip python3-pip build-essential libc6-dev-i386 gcc-multilib g++-multilib gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabi g++-arm-linux-gnueabilibncurses5-dev gcc-mips-linux-gnu</p>
 <h3 id="armmisp">arm/misp<a class="headerlink" href="#armmisp" title="Permanent link">&para;</a></h3>
 <p>sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
 sudo apt-get install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi 
-sudo apt-get install gcc-arm-linux-gnueabi g++-arm-linux-gnueabilibncurses5-dev
+sudo apt-get install gcc-arm-linux-gnueabi 
 apt install gcc-mips-linux-gnu</p>
 <h2 id="change-source">change source<a class="headerlink" href="#change-source" title="Permanent link">&para;</a></h2>
 <p>sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list</p>
