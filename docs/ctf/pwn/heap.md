@@ -34,6 +34,7 @@ mem=malloc(size)
 ### malloc时检查
 - malloc和free会对chunk进行检查，但检查fastbin的很少，比如说fastbin[2]的chunk size必须为64
 - free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并
+  
 ### free时的检查
 malloc.c: _int_free
 - free的地址要16bit align
