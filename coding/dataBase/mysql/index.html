@@ -947,6 +947,26 @@
     常用命令，查询
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="各个库的大小" class="md-nav__link">
+    各个库的大小
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="单库下所有表的状态" class="md-nav__link">
+    单库下所有表的状态
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -992,7 +1012,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" title="导出数据" class="md-nav__link">
+  <a href="#_7" title="导出数据" class="md-nav__link">
     导出数据
   </a>
   
@@ -1019,28 +1039,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" title="范围" class="md-nav__link">
+  <a href="#_8" title="范围" class="md-nav__link">
     范围
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" title="存储" class="md-nav__link">
+  <a href="#_9" title="存储" class="md-nav__link">
     存储
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" title="时间比较" class="md-nav__link">
+  <a href="#_10" title="时间比较" class="md-nav__link">
     时间比较
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" title="两个时间不能直接相减，不然会出错!!" class="md-nav__link">
+  <a href="#_11" title="两个时间不能直接相减，不然会出错!!" class="md-nav__link">
     两个时间不能直接相减，不然会出错!!
   </a>
   
@@ -1048,14 +1068,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" title="原因" class="md-nav__link">
+  <a href="#_12" title="原因" class="md-nav__link">
     原因
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" title="解决" class="md-nav__link">
+  <a href="#_13" title="解决" class="md-nav__link">
     解决
   </a>
   
@@ -2453,6 +2473,26 @@
     常用命令，查询
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="各个库的大小" class="md-nav__link">
+    各个库的大小
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="单库下所有表的状态" class="md-nav__link">
+    单库下所有表的状态
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2498,7 +2538,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" title="导出数据" class="md-nav__link">
+  <a href="#_7" title="导出数据" class="md-nav__link">
     导出数据
   </a>
   
@@ -2525,28 +2565,28 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" title="范围" class="md-nav__link">
+  <a href="#_8" title="范围" class="md-nav__link">
     范围
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_7" title="存储" class="md-nav__link">
+  <a href="#_9" title="存储" class="md-nav__link">
     存储
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" title="时间比较" class="md-nav__link">
+  <a href="#_10" title="时间比较" class="md-nav__link">
     时间比较
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_9" title="两个时间不能直接相减，不然会出错!!" class="md-nav__link">
+  <a href="#_11" title="两个时间不能直接相减，不然会出错!!" class="md-nav__link">
     两个时间不能直接相减，不然会出错!!
   </a>
   
@@ -2554,14 +2594,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_10" title="原因" class="md-nav__link">
+  <a href="#_12" title="原因" class="md-nav__link">
     原因
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_11" title="解决" class="md-nav__link">
+  <a href="#_13" title="解决" class="md-nav__link">
     解决
   </a>
   
@@ -2643,8 +2683,21 @@ mysqld  -remove //卸载
 <hr />
 <blockquote>
 <p>show variables like '%plugin%';<br />
-返回插件目录</p>
+返回插件目录
+</p>
 </blockquote>
+<h3 id="_5">各个库的大小<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">table_schema</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">data_length</span><span class="o">+</span><span class="n">index_length</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">as</span> <span class="n">total_mb</span><span class="p">,</span> <span class="err">\</span>
+<span class="k">sum</span><span class="p">(</span><span class="n">data_length</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">as</span> <span class="n">data_mb</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">index_length</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">as</span> <span class="n">index_mb</span><span class="p">,</span> <span class="err">\</span>
+<span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">tables</span><span class="p">,</span> <span class="n">curdate</span><span class="p">()</span> <span class="k">as</span> <span class="n">today</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">group</span> <span class="k">by</span> <span class="n">table_schema</span> <span class="k">order</span> <span class="k">by</span> <span class="mi">2</span> <span class="k">desc</span><span class="p">;</span>
+</pre></div>
+
+<h3 id="_6">单库下所有表的状态<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span> <span class="k">select</span> <span class="k">table_name</span><span class="p">,</span> <span class="p">(</span><span class="n">data_length</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span> <span class="k">as</span> <span class="n">data_mb</span> <span class="p">,</span> <span class="p">(</span><span class="n">index_length</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span> <span class="err">\</span>
+<span class="k">as</span> <span class="n">index_mb</span><span class="p">,</span> <span class="p">((</span><span class="n">data_length</span><span class="o">+</span><span class="n">index_length</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span> <span class="k">as</span> <span class="n">all_mb</span><span class="p">,</span> <span class="n">table_rows</span> <span class="err">\</span>
+<span class="k">from</span> <span class="n">tables</span> <span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;data_1234567890&#39;</span><span class="p">;</span>
+</pre></div>
+
 <h2 id="mysql">mysql 密码忘记处理<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
 <h3 id="windows">Windows 密码忘记处理<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <ol>
@@ -2692,18 +2745,18 @@ MySQL&gt; quit
 into table vote_person_info character set utf8 
 fields terminated by ',' optionally enclosed by '"' escaped by '"'
 lines terminated by '\r\n';</p>
-<h3 id="_5">导出数据<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_7">导出数据<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>C:\wamp64\bin\mysql\mysql5.7.14\bin\mysqldump.exe -h 127.0.0.1 -u root --default-character-set=utf8 hise &gt;C:\Users\msi\Desktop\sql.sql</p>
 <h2 id="mysql_2">mysql各种坑<a class="headerlink" href="#mysql_2" title="Permanent link">&para;</a></h2>
 <h3 id="datetimetimestampdate">DATETIME、TIMESTAMP、DATE、时间<a class="headerlink" href="#datetimetimestampdate" title="Permanent link">&para;</a></h3>
-<h3 id="_6">范围<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_8">范围<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>一个完整的日期格式如下：YYYY-MM-DD HH:MM:SS[.fraction]，它可分为两部分：date部分和time部分，其中，date部分对应格式中的“YYYY-MM-DD”，time部分对应格式中的“HH:MM:SS[.fraction]”。对于date字段来说，它只支持date部分，如果插入了time部分的内容，它会丢弃掉该部分的内容，并提示一个warning.</p>
 <p>timestamp所能存储的时间范围为：'1970-01-01 00:00:01.000000' 到 '2038-01-19 03:14:07.999999'。</p>
 <p>datetime所能存储的时间范围为：'1000-01-01 00:00:00.000000' 到 '9999-12-31 23:59:59.999999'。</p>
-<h3 id="_7">存储<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h3 id="_9">存储<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>对于TIMESTAMP，它把客户端插入的时间从当前时区转化为UTC（世界标准时间）进行存储。查询时，将其又转化为客户端当前时区进行返回。</p>
 <p>而对于DATETIME，不做任何改变，基本上是原样输入和输出</p>
-<h3 id="_8">时间比较<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="_10">时间比较<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <ul>
 <li>相同格式的直接进行比较 '2019-01-17'&gt; '2019-01-10'</li>
 <li><code>WHERE DATE_FORMAT(st.create_time,'%Y-%m-%d %H:%i')&gt;=DATE_FORMAT('2017-12-9 10:29:00','%Y-%m-%d %H:%i' )</code></li>
@@ -2712,7 +2765,7 @@ lines terminated by '\r\n';</p>
   <code>select * from product where date(add_time) between '2013-01-01' and '2013-01-31'</code>
   <code>select * from product where Year(add_time) = 2013 and Month(add_time) = 1</code></li>
 </ul>
-<h3 id="_9">两个时间不能直接相减，不然会出错!!<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<h3 id="_11">两个时间不能直接相减，不然会出错!!<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>    <span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span> <span class="k">from</span> <span class="n">mytest</span><span class="p">;</span>  
     <span class="o">+</span><span class="c1">---------------------+---------------------+-------+  </span>
     <span class="o">|</span> <span class="n">t1</span>                  <span class="o">|</span> <span class="n">t2</span>                  <span class="o">|</span> <span class="n">t2</span><span class="o">-</span><span class="n">t1</span> <span class="o">|</span>  
@@ -2724,9 +2777,9 @@ lines terminated by '\r\n';</p>
     <span class="mi">3</span> <span class="k">rows</span> <span class="k">in</span> <span class="k">set</span>  
 </pre></div>
 
-<h4 id="_10">原因<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h4>
+<h4 id="_12">原因<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
 <p>实际是mysql的时间相减是做了一个隐式转换操作，将时间转换为<code>整数</code>但并不是用<code>unix_timestamp</code>转换，而是直接把年月日时分秒拼起来，如2013-04-21 16:59:33 直接转换为<code>20130421165933</code>，由于时间不是十进制，所以最后得到的结果<strong>没有意义</strong>，这也是导致上面出现坑爹的结果。</p>
-<h4 id="_11">解决<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<h4 id="_13">解决<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
 <p>要得到正确的时间相减秒值，有以下3种方法：
 1. <code>time_to_sec(timediff(t2, t1))</code>,
 2. <code>timestampdiff(second, t1, t2)</code>,

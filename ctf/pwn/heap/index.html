@@ -2409,8 +2409,9 @@
                 
                 <h2 id="_1">堆数据结构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>存放chunk的metadata的chunk的结构(header)
-<div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">malloc_chunk</span><span class="p">{</span>
+<li>存放chunk的metadata的chunk的结构(header)</li>
+</ul>
+<p><div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">malloc_chunk</span><span class="p">{</span>
     <span class="kt">size_t</span> <span class="n">prev_size</span><span class="p">;</span> <span class="c1">//qword 可能存放上一个chunk的data</span>
     <span class="kt">size_t</span> <span class="n">size</span><span class="p">;</span><span class="c1">//qword size最低位表示上一个chunk是否在使用（prev_inuse）</span>
     <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd</span><span class="p">;</span> <span class="c1">//会被data覆盖</span>
@@ -2421,15 +2422,14 @@
 </pre></div>
 使用中的chunk
 <img alt="inuse" src="2019-01-21-20-38-59.png" />
-mem=malloc(size)</li>
-<li>chunk = mem-16;</li>
-<li>chunksize = (size+8)#16</li>
-<li>chunk的地址是malloc得到的地址-16</li>
-<li>chunksize是size+8向上对齐16的整数倍</li>
-<li>一般情况下free的时候会检查前后空间是不是free，如果是free将会合并</li>
-<li>带debug symbol的lib可以直接看各种bin和结构体
-(gdb)p main_arena</li>
-</ul>
+mem=malloc(size)
+- chunk = mem-16;
+- chunksize = (size+8)#16
+- chunk的地址是malloc得到的地址-16
+- chunksize是size+8向上对齐16的整数倍
+- 一般情况下free的时候会检查前后空间是不是free，如果是free将会合并
+- 带debug symbol的lib可以直接看各种bin和结构体
+(gdb)p main_arena</p>
 <p>回收的chunk
 <img alt="not_inuse" src="2019-01-21-23-42-44.png" /></p>
 <h2 id="fastbin">Fastbin<a class="headerlink" href="#fastbin" title="Permanent link">&para;</a></h2>
@@ -2450,7 +2450,8 @@ mem=malloc(size)</li>
 <p>malloc.c: _int_free
 - free的地址要16bit align
 - chunk 头和尾size要对，size不能太大
-- 下一个chunk的size不能过小</p>
+- 下一个chunk的size不能过小
+- </p>
 <h2 id="double-free">double free<a class="headerlink" href="#double-free" title="Permanent link">&para;</a></h2>
 <ul>
 <li>double free可以改变fd，拿到任意地址进行读写</li>
