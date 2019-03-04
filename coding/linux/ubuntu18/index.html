@@ -1071,18 +1071,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../docker/" title="Docker" class="md-nav__link">
-      Docker
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../etcd/" title="Etcd" class="md-nav__link">
       Etcd
     </a>
@@ -1266,33 +1254,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker" title="docker" class="md-nav__link">
-    docker
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dockertcp" title="docker监听tcp" class="md-nav__link">
-    docker监听tcp
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-proxt-set" title="docker proxt set" class="md-nav__link">
-    docker proxt set
-  </a>
   
 </li>
       
@@ -2456,33 +2417,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#docker" title="docker" class="md-nav__link">
-    docker
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dockertcp" title="docker监听tcp" class="md-nav__link">
-    docker监听tcp
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#docker-proxt-set" title="docker proxt set" class="md-nav__link">
-    docker proxt set
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#php" title="如何重启php" class="md-nav__link">
     如何重启php
   </a>
@@ -2551,49 +2485,6 @@ apt install gcc-mips-linux-gnu</p>
 </ul>
 <h3 id="stop-broken-nfs">stop broken nfs<a class="headerlink" href="#stop-broken-nfs" title="Permanent link">&para;</a></h3>
 <p>umount -f -l /mnt/myfolder</p>
-<h2 id="docker">docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
-<p>sudo apt-get install -y\
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common &amp;&amp;
-curl -fsSL <a href="https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg">https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg</a> | sudo apt-key add - &amp;&amp;</p>
-<p>sudo add-apt-repository \
-   "deb [arch=amd64] <a href="https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu">https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu</a> \
-   $(lsb_release -cs) \
-   stable" &amp;&amp;
-sudo apt-get update &amp;&amp;
-sudo apt-get install -y docker-ce</p>
-<p>sudo echo -e "{\n 
-  \"registry-mirrors\": [\"<a href="https://docker.mirrors.ustc.edu.cn/">https://docker.mirrors.ustc.edu.cn/</a>\"]
-}" &gt;/etc/docker/daemon.json 
-sudo systemctl restart docker</p>
-<h3 id="dockertcp">docker监听tcp<a class="headerlink" href="#dockertcp" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># 查看配置文件位于哪里</span>
-systemctl show --property<span class="o">=</span>FragmentPath docker 
-<span class="c1">#编辑配置文件内容，接收所有ip请求</span>
-sudo vim /lib/systemd/system/docker.service  
-<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2376
-<span class="c1">#重新加载配置文件，重启docker daemon</span>
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-</pre></div>
-
-<h2 id="docker-proxt-set">docker proxt set<a class="headerlink" href="#docker-proxt-set" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    mkdir /etc/systemd/system/docker.service.d/
-<span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    mkdir /etc/systemd/system/docker.service.d/
-<span class="k">fi</span>
-<span class="nb">echo</span> <span class="s1">&#39;[Service]</span>
-<span class="s1">Environment=&quot;HTTP_PROXY=http://127.0.0.1:8123&quot; &quot;HTTPS_PROXY=http://127.0.0.1:8123&quot; &quot;NO_PROXY=localhost,127.0.0.1&quot;&#39;</span> &gt; /etc/systemd/system/docker.service.d/http-proxy.conf
-
-systemctl daemon-reload
-systemctl restart docker
-</pre></div>
-
 <h2 id="php">如何重启php<a class="headerlink" href="#php" title="Permanent link">&para;</a></h2>
 <p>启动php-fpm:</p>
 <p>/usr/local/php/sbin/php-fpm
