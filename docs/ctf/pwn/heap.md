@@ -1,5 +1,6 @@
 ## 堆数据结构
 - 存放chunk的metadata的chunk的结构(header)
+  
 ```c
 struct malloc_chunk{
     size_t prev_size; //qword 可能存放上一个chunk的data
@@ -23,6 +24,7 @@ mem=malloc(size)
 
 回收的chunk
 ![not_inuse](heap/2019-01-21-23-42-44.png)
+
 ## Fastbin
 
 - Chunk size <= get_max_fast()的chunk，会被放在fastbin的bin里
@@ -34,11 +36,13 @@ mem=malloc(size)
 ### malloc时检查
 - malloc和free会对chunk进行检查，但检查fastbin的很少，比如说fastbin[2]的chunk size必须为64
 - free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并
+  
 ### free时的检查
 malloc.c: _int_free
 - free的地址要16bit align
 - chunk 头和尾size要对，size不能太大
 - 下一个chunk的size不能过小
+- 
 ## double free
 - double free可以改变fd，拿到任意地址进行读写
 - fastbin只检查bin中的第一块chunk，只要不是连续free同一块chunk就没关系(fasttop)检查
@@ -56,10 +60,12 @@ malloc.c: _int_free
 ```
 
 ## tips
+
 64位got地址40开头，可以把0x40当作chunk_size用来绕过libc的检查。那么malloc应该是56字节，
 ![64bit_chunk_size](heap/2019-01-21-23-19-07.png)
 
 ## 其他堆合并
+
 下图是size>128的堆合并过程，用gdb调试的时候有两个技巧
 - `info macro [macroname]`  显示宏
 - `macro expand [code]`  展开宏
@@ -111,6 +117,7 @@ if(!prev_inuse(p)){
 利用：需要一个overflow来改写prevsize，使free时候的p为global的heap
 
 ## mmap Chunks overflow
+
 前提：需要任何大小的的malloc，但不需要free。  
 当malloc size超过0x21000时，会改用mmap直接申请新的空间
 mmap得到的地址是连续的，同通常是在上一次mmap之前，通常在tls段，malloc时会分局tls段上某个指针来决定使用的arena,

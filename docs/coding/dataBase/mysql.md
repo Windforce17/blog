@@ -37,7 +37,19 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 ---
 > show variables like '%plugin%';  
 > 返回插件目录
-
+> 
+### 各个库的大小
+```sql
+select table_schema, sum(data_length+index_length)/1024/1024 as total_mb, \
+sum(data_length)/1024/1024 as data_mb, sum(index_length)/1024/1024 as index_mb, \
+count(*) as tables, curdate() as today from information_schema.tables group by table_schema order by 2 desc;
+```
+### 单库下所有表的状态
+```sql
+ select table_name, (data_length/1024/1024) as data_mb , (index_length/1024/1024) \
+as index_mb, ((data_length+index_length)/1024/1024) as all_mb, table_rows \
+from tables where table_schema = 'data_1234567890';
+```
 ## mysql 密码忘记处理
 
 ### Windows 密码忘记处理
