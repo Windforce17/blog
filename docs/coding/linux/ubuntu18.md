@@ -28,56 +28,6 @@ sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
 - 更改/etc/exports后，需要exportfs -av
 ### stop broken nfs
 umount -f -l /mnt/myfolder
-## docker
-
-sudo apt-get install -y\
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    software-properties-common &&
-curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add - &&
-
-sudo add-apt-repository \
-   "deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable" &&
-sudo apt-get update &&
-sudo apt-get install -y docker-ce
-
-
-sudo echo -e "{\n 
-  \"registry-mirrors\": [\"https://docker.mirrors.ustc.edu.cn/\"]
-}" >/etc/docker/daemon.json 
-sudo systemctl restart docker
-
-### docker监听tcp
-
-```bash
-# 查看配置文件位于哪里
-systemctl show --property=FragmentPath docker 
-#编辑配置文件内容，接收所有ip请求
-sudo vim /lib/systemd/system/docker.service  
-ExecStart=/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2376
-#重新加载配置文件，重启docker daemon
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-```
-
-## docker proxt set
-```sh
-if [ ! -d "/etc/systemd/system/docker.service.d/"]; then
-    mkdir /etc/systemd/system/docker.service.d/
-fi
-
-if [ ! -d "/etc/systemd/system/docker.service.d/"]; then
-    mkdir /etc/systemd/system/docker.service.d/
-fi
-echo '[Service]
-Environment="HTTP_PROXY=http://127.0.0.1:8123" "HTTPS_PROXY=http://127.0.0.1:8123" "NO_PROXY=localhost,127.0.0.1"' > /etc/systemd/system/docker.service.d/http-proxy.conf
-
-systemctl daemon-reload
-systemctl restart docker
-```
 
 
 ## 如何重启php
