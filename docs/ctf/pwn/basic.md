@@ -4,6 +4,11 @@ http://shell-storm.org
 http://shell-storm.org/shellcode/
 https://www.exploit-db.com
 https://www.exploit-db.com/shellcode/
+[linux pwn 入门教程 i春秋](https://bbs.ichunqiu.com/forum.php?mod=collection&action=view&ctid=157)
+[DynELF](https://bbs.ichunqiu.com/forum.php?mod=viewthread&tid=42933&ctid=157)
+[格式化字符串](https://bbs.ichunqiu.com/forum.php?mod=viewthread&tid=43624&ctid=157)
+[调整栈帧的技巧](https://bbs.ichunqiu.com/forum.php?mod=viewthread&tid=42534&ctid=157)
+[PIE无关](https://bbs.ichunqiu.com/thread-43627-1-1.html)
 ```
 ## 编译带debug symbol的glibc
 ### download
