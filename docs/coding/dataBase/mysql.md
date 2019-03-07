@@ -28,6 +28,10 @@ grant all privileges on *.* to 'root'@'localhost';
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 ```
 
+## 改密码
+```sql
+update user set authentication_string=password('123456') where user='root';
+```
 
 ## 常用命令，查询
 
@@ -73,9 +77,10 @@ d:\usr\local\mysql\bin\mysqladmin -u root -p shutdown  这句提示你重新输�
     sudo /etc/init.d/MySQL stop
 (您可能有其它的方法,总之停止MySQLd的运行就可以了)
 2. 用以下命令启动MySQL，以不检查权限的方式启动；
-
-    MySQLd --skip-grant-tables &
-
+```sh
+    MySQLd --skip-grant-tables & #下面的也行
+    mysqld_safe --skip-grant-tables --skip-networking &
+```
 3. 然后用空密码方式使用root用户登录 MySQL；
 
     MySQL -u root
