@@ -2374,7 +2374,25 @@
                   <h1>Interview</h1>
                 
                 <h2 id="_1">要复习的<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>拥塞避免算法、操作系统的LRU、如何对反爬虫机制进行破解、判断一棵二叉树是不是二叉搜索树、嵌套数组的环形遍历、乐观锁和悲观锁有啥区别、求二叉树是否存在和为N的路径、针对每个连接维护一个线程，开销很大，如何优化、有一个单链表，奇数位是升序的，偶数位是降序的，要求进行给它进行排序1-&gt;200-&gt;10-&gt;120-&gt;30-&gt;8-&gt;88-&gt;4、中断实现机制，软硬中断的区别、redis线程模型、topk问题、聚集索引，非聚集索引、http2</p>
+<p>进程和线程的区别和其使用等
+智能指针
+中序遍历的非递归写法
+多线程的同步方法和如何使用
+    - 锁- 中断- 信号量- 原子操作- ..
+进程间通信的方法，还有它和socket通信的相同和不同点在哪儿
+管道- 消息- 共享文件-unix:///.sock
+linux的进程间通信和windows
+malloc和alloc的区别
+vector何时进行空间的搬运
+大批量对象的搬运进行了怎样的优化
+placement new 和operator new的不同表现
+要vector的新空间为2倍
+操作系统的页和操作系统对进程的内存分配方式还有段页的情况
+<div class="codehilite"><pre><span></span><span class="c1">//运行结果</span>
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span> <span class="kt">void</span> <span class="n">f1</span><span class="p">()</span> <span class="p">{}</span> <span class="k">virtual</span> <span class="kt">void</span>  <span class="n">f2</span><span class="p">()</span> <span class="p">{}</span> <span class="p">}</span> <span class="n">A</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">f1</span><span class="p">();</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">f2</span><span class="p">();</span>
+</pre></div>
+拥塞避免算法、操作系统的LRU、如何对反爬虫机制进行破解、判断一棵二叉树是不是二叉搜索树、嵌套数组的环形遍历、乐观锁和悲观锁有啥区别、求二叉树是否存在和为N的路径、针对每个连接维护一个线程，开销很大，如何优化、有一个单链表，奇数位是升序的，偶数位是降序的，要求进行给它进行排序1-&gt;200-&gt;10-&gt;120-&gt;30-&gt;8-&gt;88-&gt;4、中断实现机制，软硬中断的区别、redis线程模型、topk问题、聚集索引，非聚集索引、http2</p>
 <h3 id="_2">将一棵二叉搜索树转换成双向链表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><a href="https://blog.csdn.net/zengzhen_csdn/article/details/51198530">https://blog.csdn.net/zengzhen_csdn/article/details/51198530</a></p>
 <h3 id="_3">红黑树<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
