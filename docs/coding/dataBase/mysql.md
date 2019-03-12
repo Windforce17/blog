@@ -12,7 +12,7 @@ mysqld  -remove //卸载
 
 ## 创建用户
 ```sql
-CREATE USER 'root'@'%' IDENTIFIED BY 'iam';
+CREATE USER 'git_cugapp_com'@'%' IDENTIFIED BY '12345';
 ```
 
 ## 创建用户并同时授权
@@ -22,8 +22,9 @@ grant all privileges on db_name.* to db_user@'%' identified by 'db_pass';
 ## 授权 root登陆，外部访问
 
 ```sql
+--兼容5.7以前的mysql
 update mysql.user set plugin = 'mysql_native_password' where User='root';
-grant all privileges on *.* to 'root'@'localhost';
+grant all privileges on git_cugapp_com.* to 'git_cugapp_com'@'localhost';
 --所有ip都可以的登陆
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 ```
@@ -32,7 +33,24 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION;
 ```sql
 update user set authentication_string=password('123456') where user='root';
 ```
+## 排错
+### 从5.7前不正确的升级or导入
+```
+ERROR 1805 (HY000): Column count of mysql.user is wrong. Expected 45, found 48. The table is probably corrupted
+```
 
+输入下面命令解决，如果提示密码错误，跳过授权表启动mysql
+```bash 
+mysql_upgrade --force -u root -p
+```
+
+```sql
+alter table user drop column is_role;
+alter table user drop column default_role;
+alter table user drop column max_statement_time;
+alter table user modify max_user_connections int(11) unsigned NOT NULL DEFAULT '0';
+flush privileges;
+```
 ## 常用命令，查询
 
 > select @@basedir;
