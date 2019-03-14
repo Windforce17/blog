@@ -28,8 +28,10 @@ sudo echo -e "{\n
 }" >/etc/docker/daemon.json 
 sudo systemctl restart docker
 ```
-或者`curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun`
-```
+
+- 或者`curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun`
+
+
 - docker 监听tcp，打开api
 ```bash
 # 查看配置文件位于哪里
