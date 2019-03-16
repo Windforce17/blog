@@ -2565,7 +2565,8 @@ docker run -e <span class="s1">&#39;ACCEPT_EULA=Y&#39;</span> -e <span class="s1
 <div class="codehilite"><pre><span></span>docker run -d  -p <span class="m">5432</span>:5432 -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>mysecretpassword  postgres 
 </pre></div>
 
-<div class="codehilite"><pre><span></span>docker run -it --rm postgres psql -h host -U postgres
+<div class="codehilite"><pre><span></span><span class="c1"># 链接postgres</span>
+docker run -it --rm postgres psql -h host -U postgres
 </pre></div>
 
 <h3 id="mysql">mysql<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h3>
