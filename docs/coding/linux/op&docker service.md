@@ -11,9 +11,8 @@ docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Str0ngPassword!' -p 1433:1433 -d m
 docker run -d  -p 5432:5432 -e POSTGRES_PASSWORD=mysecretpassword  postgres 
 ```
 
-
-
 ```sh
+# 链接postgres
 docker run -it --rm postgres psql -h host -U postgres
 ```
 
