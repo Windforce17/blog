@@ -16,6 +16,11 @@ update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 ## partition
 对于大于5T or gpt的分区，推荐使用parted进行分区.
 https://blog.csdn.net/dufufd/article/details/53508367
+
+## 时间戳
+docker container的时区往往是错误的，这里给出Linux通用更改时区的方法
+`ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`
+
 ## iscsi
 
 1. 发现： `iscsiadm -m discovery -t st -p <ip>`
