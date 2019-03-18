@@ -1199,6 +1199,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" title="时间戳" class="md-nav__link">
+    时间戳
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#iscsi" title="iscsi" class="md-nav__link">
     iscsi
   </a>
@@ -1221,21 +1228,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="创建" class="md-nav__link">
+  <a href="#_2" title="创建" class="md-nav__link">
     创建
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="扩展" class="md-nav__link">
+  <a href="#_3" title="扩展" class="md-nav__link">
     扩展
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="减小" class="md-nav__link">
+  <a href="#_4" title="减小" class="md-nav__link">
     减小
   </a>
   
@@ -1262,7 +1269,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" title="权限问题" class="md-nav__link">
+  <a href="#_5" title="权限问题" class="md-nav__link">
     权限问题
   </a>
   
@@ -1288,7 +1295,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="时间设置" class="md-nav__link">
+  <a href="#_6" title="时间设置" class="md-nav__link">
     时间设置
   </a>
   
@@ -1302,7 +1309,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="日志操作" class="md-nav__link">
+  <a href="#_7" title="日志操作" class="md-nav__link">
     日志操作
   </a>
   
@@ -2462,6 +2469,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_1" title="时间戳" class="md-nav__link">
+    时间戳
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#iscsi" title="iscsi" class="md-nav__link">
     iscsi
   </a>
@@ -2484,21 +2498,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="创建" class="md-nav__link">
+  <a href="#_2" title="创建" class="md-nav__link">
     创建
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="扩展" class="md-nav__link">
+  <a href="#_3" title="扩展" class="md-nav__link">
     扩展
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="减小" class="md-nav__link">
+  <a href="#_4" title="减小" class="md-nav__link">
     减小
   </a>
   
@@ -2525,7 +2539,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" title="权限问题" class="md-nav__link">
+  <a href="#_5" title="权限问题" class="md-nav__link">
     权限问题
   </a>
   
@@ -2551,7 +2565,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="时间设置" class="md-nav__link">
+  <a href="#_6" title="时间设置" class="md-nav__link">
     时间设置
   </a>
   
@@ -2565,7 +2579,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="日志操作" class="md-nav__link">
+  <a href="#_7" title="日志操作" class="md-nav__link">
     日志操作
   </a>
   
@@ -2623,6 +2637,9 @@ update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 
 <h2 id="partition">partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h2>
 <p>对于大于5T or gpt的分区，推荐使用parted进行分区.
 <a href="https://blog.csdn.net/dufufd/article/details/53508367">https://blog.csdn.net/dufufd/article/details/53508367</a></p>
+<h2 id="_1">时间戳<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>docker container的时区往往是错误的，这里给出Linux通用更改时区的方法
+<code>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></p>
 <h2 id="iscsi">iscsi<a class="headerlink" href="#iscsi" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -2676,7 +2693,7 @@ update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 
 VG Volume Group
 LV Logical Volume
 PV -&gt; VG -&gt; LV</p>
-<h3 id="_1">创建<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<h3 id="_2">创建<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="o">[</span>root@station55 ~<span class="o">]</span><span class="c1"># pvcreate /dev/sd{b,c}1</span>
 Physical volume <span class="s2">&quot;/dev/sdb1&quot;</span> successfully created
 Physical volume <span class="s2">&quot;/dev/sdc1&quot;</span> successfully created
@@ -2688,7 +2705,7 @@ Physical volume <span class="s2">&quot;/dev/sdc1&quot;</span> successfully creat
 <li><code>lvcreate -l &lt;SIZE%&gt;vg -n &lt;LV_NAME&gt; &lt;VG_NAME&gt;</code></li>
 <li><code>lvcreate -l &lt;SIZE&gt;free -n &lt;LV_NAME&gt; &lt;VG_NAME&gt;</code></li>
 </ul>
-<h3 id="_2">扩展<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h3 id="_3">扩展<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p><code>vgextend &lt;vgname&gt; &lt;pv path&gt;</code></p>
@@ -2699,7 +2716,7 @@ Physical volume <span class="s2">&quot;/dev/sdc1&quot;</span> successfully creat
 <li><code>resize2fs &lt;lv path&gt;</code> Logical boundary</li>
 <li><code>e2fsck   &lt;lv path&gt;</code> Check file system</li>
 </ul>
-<h3 id="_3">减小<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">减小<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>e2fsck -f &lt;lv path&gt;</code> Check file system</li>
 <li><code>resize2fs &lt;lv path&gt; &lt;SIZE&gt;</code> Reduce logical boundary</li>
@@ -2715,7 +2732,7 @@ Physical volume <span class="s2">&quot;/dev/sdc1&quot;</span> successfully creat
 <li>查看连接最多的服务器端口：sysdig -c fdbytes_by fd.sport</li>
 </ul>
 <h2 id="ssh">ssh 各种问题<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<h3 id="_4">权限问题<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">权限问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p><div class="codehilite"><pre><span></span>chmod <span class="m">700</span> ~ 
 chmod <span class="m">700</span> ~/.ssh 
 chmod <span class="m">644</span> ~/.ssh/authorized_keys 
@@ -2744,7 +2761,7 @@ chmod <span class="m">644</span> ~/.ssh/known_hosts
  sudo hostnamectl set-hostname rhel7
 </pre></div>
 
-<h2 id="_5">时间设置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">时间设置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span> timedatectl list-timezones                   
  timedatectl   
 
@@ -2765,7 +2782,7 @@ chmod <span class="m">644</span> ~/.ssh/known_hosts
  loginctl show-user ruanyf
 </pre></div>
 
-<h2 id="_6">日志操作<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">日志操作<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">#查看所有日志（默认情况下 ，只保存本次启动的日志）</span>
  sudo journalctl
 
