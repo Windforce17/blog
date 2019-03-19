@@ -2572,7 +2572,8 @@ sh.close()  </p>
 系统调用表：<a href="http://syscalls.kernelgrok.com/">http://syscalls.kernelgrok.com/</a></p>
 <h2 id="dockerfile">dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
 <p>运行的时候需要赋予相应的权限：<code>--cap-add=SYS_PTRACE --security-opt seccomp=unconfined</code>,或者直接给root，<code>--privileged</code>
-<div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> ubuntu:18.04</span>
+<div class="codehilite"><pre><span></span><span class="c"># ubuntu 18.04</span>
+<span class="k">FROM</span><span class="s"> ubuntu:18.04</span>
 <span class="k">RUN</span> <span class="nb">echo</span> <span class="err">&#39;</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse <span class="se">\n</span> <span class="se">\</span>
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse <span class="se">\n</span> <span class="se">\ </span>
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse <span class="se">\n</span> <span class="se">\</span>
@@ -2583,7 +2584,9 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted 
     build-essential libc6-dev-i386 <span class="se">\</span>
     gcc-multilib g++-multilib git
 <span class="k">WORKDIR</span><span class="s"> /</span>
-<span class="k">ENV</span> <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 <span class="nv">PYTHONIOENCODING</span><span class="o">=</span>UTF-8
+<span class="k">RUN</span> <span class="nb">echo</span> <span class="s1">&#39;LANG=en_US.UTF-8 \n \</span>
+<span class="s1">LANGUAGE=&quot;en_US.UTF-8&quot; \n \</span>
+<span class="s1">LC_ALL=&quot;en_US.UTF-8&quot;\n &#39;</span>&gt;/etc/default/locale
 <span class="c"># RUN git clone https://github.com/pwndbg/pwndbg \</span>
     <span class="c1"># &amp;&amp; cd pwndbg \</span>
     <span class="c1"># &amp;&amp; ./setup.sh \</span>
@@ -2595,6 +2598,33 @@ COPY ./pwndbg pwndbg
     apt clean 
 <span class="k">WORKDIR</span><span class="s"> /ctf</span>
 </pre></div></p>
+<div class="codehilite"><pre><span></span><span class="c"># ubuntu 18.04</span>
+<span class="k">FROM</span><span class="s"> ubuntu:16.04</span>
+<span class="k">RUN</span> <span class="nb">echo</span> <span class="err">&#39;</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse <span class="se">\n</span> <span class="se">\</span>
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse <span class="se">\n</span> <span class="se">\ </span>
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse <span class="se">\n</span> <span class="se">\</span>
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse <span class="se">\n</span> <span class="err">&#39;</span>&gt; /etc/apt/sources.list
+<span class="k">RUN</span> apt update <span class="o">&amp;&amp;</span> <span class="se">\</span>
+    apt install -y vim python python3 python-pip<span class="se">\</span>
+    python-dev python3-dev python-pip python3-pip libglib2.0-dev libc6-dbg <span class="se">\</span>
+    build-essential libc6-dev-i386 <span class="se">\</span>
+    gcc-multilib g++-multilib git
+<span class="k">RUN</span> <span class="nb">echo</span> <span class="s1">&#39;LANG=en_US.UTF-8 \n \</span>
+<span class="s1">LANGUAGE=&quot;en_US.UTF-8&quot; \n \</span>
+<span class="s1">LC_ALL=&quot;en_US.UTF-8&quot;\n &#39;</span>&gt;/etc/default/locale
+<span class="k">WORKDIR</span><span class="s"> /</span>
+<span class="c"># ENV LC_ALL=en_US.UTF-8 PYTHONIOENCODING=UTF-8</span>
+<span class="c"># RUN git clone https://github.com/pwndbg/pwndbg \</span>
+    <span class="c1"># &amp;&amp; cd pwndbg \</span>
+    <span class="c1"># &amp;&amp; ./setup.sh \</span>
+COPY ./pwndbg pwndbg
+<span class="k">RUN</span> mkdir ctf <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple pwntools <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pwndbg <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> ./setup.sh <span class="se">\</span>
+    apt clean 
+<span class="k">WORKDIR</span><span class="s"> /ctf</span>
+</pre></div>
                 
                   
                 
