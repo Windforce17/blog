@@ -95,5 +95,5 @@ RUN mkdir ctf \
     && cd pwndbg \
     && ./setup.sh \
     apt clean 
-
+WORKDIR /ctf
 ```
