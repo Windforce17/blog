@@ -74,6 +74,7 @@ libc databases:http://libcdb.com
 ## dockerfile
 运行的时候需要赋予相应的权限：`--cap-add=SYS_PTRACE --security-opt seccomp=unconfined`,或者直接给root，`--privileged`
 ```dockerfile
+# ubuntu 18.04
 FROM ubuntu:18.04
 RUN echo ' deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse \n \
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse \n \ 
@@ -85,7 +86,38 @@ RUN apt update && \
     build-essential libc6-dev-i386 \
     gcc-multilib g++-multilib git
 WORKDIR /
-ENV LC_ALL=en_US.UTF-8 PYTHONIOENCODING=UTF-8
+RUN echo 'LANG=en_US.UTF-8 \n \
+LANGUAGE="en_US.UTF-8" \n \
+LC_ALL="en_US.UTF-8"\n '>/etc/default/locale
+# RUN git clone https://github.com/pwndbg/pwndbg \
+    # && cd pwndbg \
+    # && ./setup.sh \
+COPY ./pwndbg pwndbg
+RUN mkdir ctf \
+    && pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple pwntools \
+    && cd pwndbg \
+    && ./setup.sh \
+    apt clean 
+WORKDIR /ctf
+```
+
+```dockerfile
+# ubuntu 18.04
+FROM ubuntu:16.04
+RUN echo ' deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse \n \
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse \n \ 
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse \n \
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse \n '> /etc/apt/sources.list
+RUN apt update && \
+    apt install -y vim python python3 python-pip\
+    python-dev python3-dev python-pip python3-pip libglib2.0-dev libc6-dbg \
+    build-essential libc6-dev-i386 \
+    gcc-multilib g++-multilib git
+RUN echo 'LANG=en_US.UTF-8 \n \
+LANGUAGE="en_US.UTF-8" \n \
+LC_ALL="en_US.UTF-8"\n '>/etc/default/locale
+WORKDIR /
+# ENV LC_ALL=en_US.UTF-8 PYTHONIOENCODING=UTF-8
 # RUN git clone https://github.com/pwndbg/pwndbg \
     # && cd pwndbg \
     # && ./setup.sh \
