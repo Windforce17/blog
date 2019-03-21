@@ -64,6 +64,21 @@ rop.dump()
 str(rop)
 ```
 
+### DynELF
+专门应为没有libc的漏洞利用，基本框架
+```
+p = process('./xxx')
+def leak(address):
+  #各种预处理
+  payload = "xxxxxxxx" + address + "xxxxxxxx"
+  p.send(payload)
+  #各种处理
+  data = p.recv(4)
+  log.debug("%#x => %s" % (address, (data or '').encode('hex')))
+  return data
+d = DynELF(leak, elf=ELF("./xxx"))      #初始化DynELF模块 
+systemAddress = d.lookup('system', 'libc')  #在libc文件中搜索system函数的地址
+```
 ### shellcraft
 shellcode=asm(shellcraft.sh())
 
