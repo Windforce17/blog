@@ -1209,6 +1209,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_2" title="常用的配置" class="md-nav__link">
+    常用的配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#proxy_pass" title="proxy_pass详解" class="md-nav__link">
     proxy_pass详解
   </a>
@@ -2356,6 +2363,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#_2" title="常用的配置" class="md-nav__link">
+    常用的配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#proxy_pass" title="proxy_pass详解" class="md-nav__link">
     proxy_pass详解
   </a>
@@ -2414,6 +2428,41 @@
 apt install libpcre3-dev
 apt-get install zlib1g-dev
 ./configure  --prefix<span class="o">=</span>/usr/local/nginx  --sbin-path<span class="o">=</span>/usr/local/nginx/sbin/nginx --conf-path<span class="o">=</span>/usr/local/nginx/conf/nginx.conf --error-log-path<span class="o">=</span>/var/log/nginx/error.log --http-log-path<span class="o">=</span>/var/log/nginx/access.log   --user<span class="o">=</span>www --group<span class="o">=</span>www --with-ipv6 --with-http_ssl_module --with-http_stub_status_module --with-http_sub_module --with-http_gzip_static_module --with-http_v2_module --with-pcre --add-module<span class="o">=</span>../ngx_http_google_filter_module --add-module<span class="o">=</span>../ngx_http_substitutions_filter_module
+</pre></div>
+
+<h2 id="_2">常用的配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span># https+proxy_pass
+server {
+  listen 80;
+  listen 443 ssl http2;
+  ssl_certificate /usr/local/nginx/conf/ssl/cugapp.com.cer;
+  ssl_certificate_key /usr/local/nginx/conf/ssl/cugapp.com.key;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+  ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-128-GCM-SHA256:TLS13-AES-128-CCM-8-SHA256:TLS13-AES-128-CCM-SHA256:EECDH+CHACHA20:EECDH+AES128:RSA+AES128:EECDH+AES256:RSA+AES256:EECDH+3DES:RSA+3DES:!MD5;
+  ssl_prefer_server_ciphers on;
+  ssl_session_timeout 10m;
+  ssl_session_cache builtin:1000 shared:SSL:10m;
+  ssl_buffer_size 1400;
+  add_header Strict-Transport-Security max-age=15768000;
+  ssl_stapling on;
+  ssl_stapling_verify on;
+  server_name gitlab.cugapp.com;
+  access_log /data/wwwlogs/gitlab.cugapp.com_nginx.log combined;
+  index index.html index.htm index.php;
+  root /data/wwwroot/gitlab.cugapp.com;
+#  if ($ssl_protocol = &quot;&quot;) { return 301 https://$host$request_uri; }
+
+  include /usr/local/nginx/conf/rewrite/none.conf;
+  #error_page 404 /404.html;
+  #error_page 502 /502.html;
+  location / {
+    proxy_pass http://gitlab.cugapp.com:3000;
+    include proxy.conf;
+  }
+  location ~ /\.ht {
+    deny all;
+  }
+}
 </pre></div>
 
 <h2 id="proxy_pass">proxy_pass详解<a class="headerlink" href="#proxy_pass" title="Permanent link">&para;</a></h2>

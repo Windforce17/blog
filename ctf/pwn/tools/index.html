@@ -1926,6 +1926,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dynelf" title="DynELF" class="md-nav__link">
+    DynELF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#shellcraft" title="shellcraft" class="md-nav__link">
     shellcraft
   </a>
@@ -2469,6 +2476,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#dynelf" title="DynELF" class="md-nav__link">
+    DynELF
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#shellcraft" title="shellcraft" class="md-nav__link">
     shellcraft
   </a>
@@ -2577,6 +2591,20 @@ sh.close()  </p>
 <span class="nb">str</span><span class="p">(</span><span class="n">rop</span><span class="p">)</span>
 </pre></div>
 
+<h3 id="dynelf">DynELF<a class="headerlink" href="#dynelf" title="Permanent link">&para;</a></h3>
+<p>专门应为没有libc的漏洞利用，基本框架
+<div class="codehilite"><pre><span></span>p = process(&#39;./xxx&#39;)
+def leak(address):
+  #各种预处理
+  payload = &quot;xxxxxxxx&quot; + address + &quot;xxxxxxxx&quot;
+  p.send(payload)
+  #各种处理
+  data = p.recv(4)
+  log.debug(&quot;%#x =&gt; %s&quot; % (address, (data or &#39;&#39;).encode(&#39;hex&#39;)))
+  return data
+d = DynELF(leak, elf=ELF(&quot;./xxx&quot;))      #初始化DynELF模块 
+systemAddress = d.lookup(&#39;system&#39;, &#39;libc&#39;)  #在libc文件中搜索system函数的地址
+</pre></div></p>
 <h3 id="shellcraft">shellcraft<a class="headerlink" href="#shellcraft" title="Permanent link">&para;</a></h3>
 <p>shellcode=asm(shellcraft.sh())</p>
 <h2 id="_4">有用的站<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
