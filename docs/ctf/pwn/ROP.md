@@ -4,6 +4,23 @@ http://www.scs.stanford.edu/brop/
 ## srop
 https://www.freebuf.com/articles/network/87447.html
 https://blog.csdn.net/qq_29343201/article/details/72627439
+
+## ROP
+ 1. ROPgadget 得到代码片断
+ 2. cd80c3 就是int0x80;ret,s使用`ROPgadget --binary {binaryname} --opcode cd80c3`来寻找
+ 3. 动态链接找不到 int 0x80,需要构造rop
+
+### 寄存器赋值
+构造栈结构
+```
+  *(pop eax ;ret)
+  3
+```
+将eax赋值为3
+### 栈转移
+寻找 leave;ret;指令，然后更改ebp的值即可
+leave= mov esp,ebp,pop ebp;
+
 ## 通用技术
 常用的栈布局如下
 ```py
@@ -16,6 +33,13 @@ flat(
     binsh_addr #read第二个参数/system第一个参数
     ]
 )
+
+flat([
+        gets,
+        system,
+        buf,
+        buf
+        ])
 # 64位
 flat(
     [

