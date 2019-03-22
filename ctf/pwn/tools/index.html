@@ -2556,6 +2556,27 @@
 <p>使用<code>readelf -a /lib32/libc.so.6 |grep '__libc_start_main'</code>查找libc中的函数地址</p>
 <p><code>objdump -d -M intel [elf_file]</code> 进行反汇编elf文件</p>
 <h2 id="pwntools">pwntools<a class="headerlink" href="#pwntools" title="Permanent link">&para;</a></h2>
+<p>板子:
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">binascii</span>
+<span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
+<span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
+<span class="n">debug</span><span class="o">=</span><span class="bp">True</span>
+
+<span class="n">libc</span><span class="o">=</span><span class="s1">&#39;/lib/x86_64-linux-gnu/libc.so.6&#39;</span>
+<span class="n">elf_name</span><span class="o">=</span><span class="s1">&#39;./stack&#39;</span>
+<span class="n">remote_addr</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mi">1111</span><span class="p">]</span>
+<span class="n">elf</span><span class="o">=</span><span class="n">ELF</span><span class="p">(</span><span class="n">elf_name</span><span class="p">)</span>
+<span class="n">libc</span><span class="o">=</span><span class="n">ELF</span><span class="p">(</span><span class="n">libc</span><span class="p">)</span>
+<span class="n">puts_plt</span><span class="o">=</span><span class="n">elf</span><span class="o">.</span><span class="n">plt</span><span class="p">[</span><span class="s1">&#39;puts&#39;</span><span class="p">]</span>
+<span class="n">main_addr</span><span class="o">=</span><span class="n">elf</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;main&#39;</span><span class="p">]</span>
+<span class="n">libc_start_main_got</span><span class="o">=</span><span class="n">elf</span><span class="o">.</span><span class="n">got</span><span class="p">[</span><span class="s1">&#39;__libc_start_main&#39;</span><span class="p">]</span>
+
+<span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
+    <span class="n">sh</span><span class="o">=</span><span class="n">process</span><span class="p">(</span><span class="n">elf_name</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">sh</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="n">remote_addr</span><span class="p">)</span>
+</pre></div></p>
 <h3 id="_1">运行时变量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">arch</span>      <span class="o">=</span> <span class="s1">&#39;i386&#39;</span> <span class="c1"># 32 bit</span>
