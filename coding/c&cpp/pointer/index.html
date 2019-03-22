@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/coding/cpp/qt_image/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/coding/c&cpp/pointer/">
       
       
         <meta name="author" content="Windforce17">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Qt图片处理 - windforce17's blog</title>
+        <title>Pointer - windforce17's blog</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#qt" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -135,7 +135,7 @@
               windforce17's blog
             </span>
             <span class="md-header-nav__topic">
-              Qt图片处理
+              Pointer
             </span>
           
         </div>
@@ -792,11 +792,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-12" type="checkbox" id="nav-3-12" checked>
     
     <label class="md-nav__link" for="nav-3-12">
-      Cpp
+      C&cpp
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-12">
-        Cpp
+        C&cpp
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -836,44 +836,26 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Qt图片处理
+        Pointer
       </label>
     
-    <a href="./" title="Qt图片处理" class="md-nav__link md-nav__link--active">
-      Qt图片处理
+    <a href="./" title="Pointer" class="md-nav__link md-nav__link--active">
+      Pointer
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="显示图片" class="md-nav__link">
-    显示图片
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="图片缩放" class="md-nav__link">
-    图片缩放
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="图片旋转" class="md-nav__link">
-    图片旋转
+  <a href="#_1" title="函数指针" class="md-nav__link">
+    函数指针
   </a>
   
 </li>
@@ -892,6 +874,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../qt_image/" title="Qt图片处理" class="md-nav__link">
+      Qt图片处理
+    </a>
   </li>
 
         
@@ -2347,29 +2341,13 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="显示图片" class="md-nav__link">
-    显示图片
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="图片缩放" class="md-nav__link">
-    图片缩放
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="图片旋转" class="md-nav__link">
-    图片旋转
+  <a href="#_1" title="函数指针" class="md-nav__link">
+    函数指针
   </a>
   
 </li>
@@ -2396,51 +2374,26 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/cpp/qt_image.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/c&cpp/pointer.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="qt">Qt图片处理<a class="headerlink" href="#qt" title="Permanent link">&para;</a></h1>
-<h2 id="_1">显示图片<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>    <span class="n">QString</span> <span class="n">filename</span><span class="p">;</span>
-    <span class="n">filename</span><span class="o">=</span><span class="n">QFileDialog</span><span class="o">::</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;选择图像&quot;</span><span class="p">),</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Images (*.png *.bmp *.jpg *.tif *.GIF )&quot;</span><span class="p">));</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">filename</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span>
-    <span class="p">{</span>
-         <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-        <span class="n">QImage</span><span class="o">*</span> <span class="n">img</span><span class="o">=</span><span class="k">new</span> <span class="n">QImage</span><span class="p">;</span>
-
-        <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="p">(</span> <span class="n">img</span><span class="o">-&gt;</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="c1">//加载图像</span>
-        <span class="p">{</span>
-            <span class="n">QMessageBox</span><span class="o">::</span><span class="n">information</span><span class="p">(</span><span class="k">this</span><span class="p">,</span>
-                                     <span class="n">tr</span><span class="p">(</span><span class="s">&quot;打开图像失败&quot;</span><span class="p">),</span>
-                                     <span class="n">tr</span><span class="p">(</span><span class="s">&quot;打开图像失败!&quot;</span><span class="p">));</span>
-            <span class="k">delete</span> <span class="n">img</span><span class="p">;</span>
-            <span class="k">return</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">::</span><span class="n">fromImage</span><span class="p">(</span><span class="o">*</span><span class="n">img</span><span class="p">));</span>
-    <span class="p">}</span>
+                  <h1>Pointer</h1>
+                
+                <h2 id="_1">函数指针<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kt">char</span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n">fun1</span><span class="p">)(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p1</span><span class="p">,</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p2</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span> <span class="o">*</span><span class="nf">fun2</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p1</span><span class="p">,</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p2</span><span class="p">);</span>
+<span class="kt">char</span> <span class="o">*</span> <span class="nf">fun3</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p1</span><span class="p">,</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p2</span><span class="p">);</span>
 </pre></div>
 
-<h2 id="_2">图片缩放<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>图像缩放采用scaled函数。函数原型</p>
-<div class="codehilite"><pre><span></span><span class="n">QImage</span> <span class="n">QImage</span><span class="o">::</span><span class="n">scaled</span> <span class="p">(</span> <span class="k">const</span> <span class="n">QSize</span> <span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span><span class="n">Qt</span><span class="o">::</span><span class="n">AspectRatioMode</span> <span class="n">aspectRatioMode</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">::</span><span class="n">IgnoreAspectRatio</span><span class="p">,</span> <span class="n">Qt</span><span class="o">::</span><span class="n">TransformationModetransformMode</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">::</span><span class="n">FastTransformation</span> <span class="p">)</span> <span class="k">const</span>
-<span class="c1">//使用方法如下，还是利用上面的img：</span>
-
-<span class="n">QImage</span><span class="o">*</span> <span class="n">imgScaled</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QImage</span><span class="err">；</span>
-<span class="o">*</span><span class="n">imgScaled</span><span class="o">=</span><span class="n">img</span><span class="o">-&gt;</span><span class="n">scaled</span><span class="p">(</span><span class="n">width</span><span class="p">,</span>
-                       <span class="n">height</span><span class="p">,</span>
-                       <span class="n">Qt</span><span class="o">::</span><span class="n">KeepAspectRatio</span><span class="p">);</span>
-<span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">::</span><span class="n">fromImage</span><span class="p">(</span><span class="o">*</span><span class="n">imgScaled</span><span class="p">));</span>
-</pre></div>
-
-<h2 id="_3">图片旋转<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">QImage</span><span class="o">*</span> <span class="n">imgRatate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QImage</span><span class="p">;</span>
-<span class="n">QMatrix</span> <span class="n">matrix</span><span class="p">;</span>
-<span class="n">matrix</span><span class="p">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">270</span><span class="p">);</span>
-<span class="o">*</span><span class="n">imgRotate</span> <span class="o">=</span> <span class="n">img</span><span class="o">-&gt;</span><span class="n">transformed</span><span class="p">(</span><span class="n">matrix</span><span class="p">);</span>
-<span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">::</span><span class="n">fromImage</span><span class="p">(</span><span class="o">*</span><span class="n">imgRotate</span><span class="p">));</span>
+<ul>
+<li>fun3是函数，不用多说了。</li>
+<li>fun2也是函数，返回是char **</li>
+<li>fun1是一个变量，指向一个函数，有两个类型为char的参数，于`char<em> (</em>)(char <em>p1,char</em> p2)func1等价</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="c1">//这个是函数指针数组</span>
+<span class="kt">char</span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p</span><span class="p">);</span>
+<span class="c1">// 函数指针数组的指针,上面的指针</span>
+<span class="kt">char</span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p</span><span class="p">);</span>
 </pre></div>
                 
                   
@@ -2502,13 +2455,13 @@
           </a>
         
         
-          <a href="../为什么要用基类指针指向派生类对象/" title="为什么要用基类指针指向派生类对象" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../qt_image/" title="Qt图片处理" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                为什么要用基类指针指向派生类对象
+                Qt图片处理
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

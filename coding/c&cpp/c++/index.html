@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/coding/cpp/lib学习/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/coding/c&cpp/c++/">
       
       
         <meta name="author" content="Windforce17">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Lib学习 - windforce17's blog</title>
+        <title>C++ - windforce17's blog</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#wget" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -135,7 +135,7 @@
               windforce17's blog
             </span>
             <span class="md-header-nav__topic">
-              Lib学习
+              C++
             </span>
           
         </div>
@@ -792,26 +792,14 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-12" type="checkbox" id="nav-3-12" checked>
     
     <label class="md-nav__link" for="nav-3-12">
-      Cpp
+      C&cpp
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-12">
-        Cpp
+        C&cpp
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../c++/" title="C++" class="md-nav__link">
-      C++
-    </a>
-  </li>
-
         
           
           
@@ -824,44 +812,37 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Lib学习
-      </label>
     
-    <a href="./" title="Lib学习" class="md-nav__link md-nav__link--active">
-      Lib学习
+    <a href="./" title="C++" class="md-nav__link md-nav__link--active">
+      C++
     </a>
     
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wget" title="wget" class="md-nav__link">
-    wget
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../lib学习/" title="Lib学习" class="md-nav__link">
+      Lib学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../pointer/" title="Pointer" class="md-nav__link">
+      Pointer
+    </a>
   </li>
 
         
@@ -2329,28 +2310,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wget" title="wget" class="md-nav__link">
-    wget
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -2362,15 +2323,248 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/cpp/lib学习.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/c&cpp/c++.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Lib学习</h1>
-                
-                <h2 id="wget">wget<a class="headerlink" href="#wget" title="Permanent link">&para;</a></h2>
-<p>libunistring
-libidn2
-openssl</p>
+                <h2 id="_1">杂项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>wchar_t 扩展字符集，cin和cout将输入输出看作是char流，因此不适用处理wchar_ t类型，通过前缀L指示宽字符常量和宽字符串。     </li>
+</ul>
+<blockquote>
+<p>c和c++对有效位数要求是，float至少32位，double至少是48位，切不少于float。long
+double至少和double一样多，这三种类型的有效位数可以一样多。通常float为32位，double为64位，long double为80 96 128位。这三种指数类型至少是-37到37，可以从cfloat或float.h找到系统的限制。    </p>
+</blockquote>
+<p><em>wchar_t a[] = L"字符串”;  <br />
+</em>char16_t a[] = u"字符串”;  <br />
+<em>char32_t a[] = U"字符串";   <br />
+</em>cout&lt;&lt;R“(原始字符串)”;  <br />
+<em>c++11 结构可以用列表初始化;  <br />
+</em>{}列表初始化，不允许缩窄，变量。
+ <em>（c++11）   <br />
+</em>关键字auto可以不指定变量的类型    <br />
+<em>cin.getline(name,int);
+ </em>读取一行的输入。丢弃换行符
+ <em>cin.get(name,int);读取一行，留下换行符。   <br />
+</em>cin.get()读取单个字符；  <br />
+<em>cin.clear();清除失效位（failbit）；   <br />
+</em>前缀R表示raw原始字符串，此时\n不表示换行符；</p>
+<p>结构数组初始化: </p>
+<div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">a</span><span class="p">;</span>         
+    <span class="n">a</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>      
+    <span class="p">{</span>  <span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">32.3</span><span class="p">}</span> 
+    <span class="p">{...}</span>    
+     <span class="p">};</span>
+</pre></div>
+
+<h1 id="_2">位操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span> 对一个二进制补码数取相反数，反转每一位，然后再加1.
+ 二进制计数法只能精确的表示多个1/2的幂的和。
+</pre></div>
+
+
+<ul>
+<li><code>~</code>按位取反，</li>
+<li><code>&amp;</code>只有两个操作数对应为1才为1 </li>
+<li><code>|</code> 任意操作数为1，那么结果就为1  </li>
+<li><code>^</code>位异或，如果操作数中的对应位有一个为1，但不都未1，那么结果为1</li>
+</ul>
+<h1 id="qt">Qt静态编译<a class="headerlink" href="#qt" title="Permanent link">&para;</a></h1>
+<ol>
+<li>官网下载5.8的包,源码https://pan.baidu.com/s/1bpgkTnp</li>
+<li>安装mingw</li>
+<li>解压static包到c:\qt下,解压OpenSSL的zip压缩包（openssl-1.0.1c_static_w32_mingw.zip）到 C:\Dev</li>
+<li>打开QtCreator选择上方工具栏中的 -&gt; 工具 -&gt; 选项 -&gt; 构建和运行</li>
+<li>在上方选项卡中选择 Qt Versions，并且点击右侧的添加</li>
+<li>打开qmake.exe，路径是：C:\Qt\Qt5.8.0_MinGW_static\bin\qmake.exe </li>
+<li><img src="qt静态编译1.png"></li>
+<li>构件套件(kit)中配置一个新的套件,上面的要点应用.</li>
+<li><img src="qt静态编译2.png"></li>
+<li>然后release吧~</li>
+</ol>
+<h1 id="qtqstring">Qt下的QString与数字的相互转化<a class="headerlink" href="#qtqstring" title="Permanent link">&para;</a></h1>
+<h2 id="qstring-double">把QString转换为 double类型<a class="headerlink" href="#qstring-double" title="Permanent link">&para;</a></h2>
+<h3 id="1qstring-str12345">方法1.QString str="123.45";<a class="headerlink" href="#1qstring-str12345" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>double val=str.toDouble(); //val=123.45
+</pre></div>
+
+
+<h3 id="2">方法2.很适合科学计数法形式转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>bool ok;
+
+double d;
+
+d=QString(&quot;1234.56e-02&quot;).toDouble(&amp;amp;ok); //ok=true;d;12.3456.
+</pre></div>
+
+
+<h3 id="qstringfloat">把QString转换为float形<a class="headerlink" href="#qstringfloat" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>1.QString str=&quot;123.45&quot;;
+
+float d=str.toFloat(); //d=123.45
+
+2.QString str=&quot;R2D2&quot;;
+
+bool ok;
+
+float d=str.toFloat(&amp;amp;ok); //转换是被时返回0.0,ok=false;
+</pre></div>
+
+
+<h2 id="qstring">把QString形转换为整形<a class="headerlink" href="#qstring" title="Permanent link">&para;</a></h2>
+<h3 id="1">1.转换为十进制整形<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>注意：基数默认为10。当基数为10时，并且基数必须在2到36之</p>
+<p>间。如果基数为0，若字符串是以0x开头的就会转换为16进制，若以0开头就转换为八进制，否则就转换为十进制。</p>
+<div class="codehilite"><pre><span></span>Qstring str=&quot;FF&quot;;
+
+bool ok;
+
+int dec=str.toInt(&amp;amp;ok,10); //dec=255 ; ok=rue
+
+int hex =str.toInt(&amp;amp;ok,16); //hex=255;ok=true;
+</pre></div>
+
+
+<h2 id="3qstring">3.常整形转换为Qstring形<a class="headerlink" href="#3qstring" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>long a =63;
+QString str=QString::number(a,16); //str=&quot;3f&quot;;
+QString str=QString::number(a,16).toUpper(); //str=&quot;3F&quot;;
+</pre></div>
+
+
+<h3 id="qstring-char42">Qstring 转换char*问题<a class="headerlink" href="#qstring-char42" title="Permanent link">&para;</a></h3>
+<h4 id="_3">方法一:<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>QString qstr(&quot;hello,word&quot;);
+const char * p = qstr.toLocal8Bit().data();
+</pre></div>
+
+
+<h4 id="_4">方法二:<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>const char \*p = qstr.toStdString().data();
+转换过来的是常量
+</pre></div>
+
+
+<h2 id="qstring_1">把当前时间转化为QString...<a class="headerlink" href="#qstring_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>public QDateTime qdate = QDateTime.currentDateTime();
+datetime = qdate.toString(&quot;yyyy年MM月dd日ddddhh:mm:ss&quot;);
+如果不是QTime和QDate类比如说：通过TCP/IP接收到的char unsigned char 类等如何转换为QString类
+QString Time2String( DWORD dwTime)
+{
+    char cTime[50] = {0};
+    memset(cTime,0,50);
+    strftime(cTime,32,&quot;%Y-%m-%d %H:%M:%S&quot;,localtime(&amp;amp;time_t(dwTime)));
+    return QString(cTime);
+}
+</pre></div>
+
+
+<h2 id="gcc">gcc编译<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
+<p>1.使用gcc生成静态库及静态库使用方法：</p>
+<p>在此例中，test.c用于编译生成静态库libtest.a，test.h为libtest.a对应的头文件。</p>
+<p>第一步：生成test.o目标文件，使用gcc -c test.c -o test.o命令。</p>
+<p>第二步：使用ar将test.o打包成libtest.a静态库，使用ar rcs -o libtest.a test.o命令</p>
+<p>第三步：生成libtest.a静态库后，可以使用命令ar t libtest.a查看libtest.a文件中包含哪些文件。</p>
+<p>第四步：编译main.c，并使用libtest.a静态库，链接时-l参数后不加空格指定所需要链接的库，这里库名是libtest.a，但是只需要给出-ltest即可，ld会以libtest作为库的实际名字。完整的命令为：gcc -o app_static main.c -L. -ltest 或者是gcc -o app_static main.c libtest.a</p>
+<p>第五步：运行app_static</p>
+<p>直接使用命令./app_static</p>
+<p>2.使用gcc生成动态库及使用动态库的方法</p>
+<p>第一步：生成test.o目标文件，使用如下命令。在此处需要添加-fPIC参数，该参数用于生成位置无关代码已工生成动态库使用，使用命令：gcc -c -o test.o -fPIC test.c</p>
+<p>第二步：使用-shared参数生成动态库，使用如下命令：gcc -shared -o libmyshare.so test.o,上述两个命令可以连在一起，如下所示：gcc -shared -fPIC -o libmyshare.so test.c</p>
+<p>第三步：编译main.c，使用libmyshare.so动态库，命令如下gcc -o app_share main.c -L. -lmyshare.使用ldd app_share命令查看app_share使用动态库，如果libmyshare无法找到，直接执行app_share就会出现错误。解决方法：首先使用export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH将当前目录加入LD_LIBRARY_PATH变量中。再次运行ldd app_share</p>
+<p>另一种编译main.c，并链接libmyshare.so的方式如下（该方式通过./libmyshare.so直接指定使用当前目录下的libmyshare.so文件），使用命令：gcc -o app_share main.c ./libmyshare.so</p>
+<h2 id="_5">动态链接库<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="c1">//导出函数接口，dll中可以调用</span>
+    <span class="n">_declspec</span><span class="p">(</span><span class="n">dllexport</span><span class="p">)</span> <span class="kt">void</span> <span class="n">go</span><span class="p">()</span> <span class="c1">//export method,call in load</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+
+<h2 id="forward-declaration">前向声明 forward declaration<a class="headerlink" href="#forward-declaration" title="Permanent link">&para;</a></h2>
+<p>前向声明是一种，不完全类型声明，所以他并不能取代完全类型，对于编译器来说，在需要知其被声明对象大小和内容时，前向声明，己不可用。故其应用场景，仅限如下：</p>
+<ul>
+<li>1，声明引用和指针</li>
+<li>2，作函数(仅声明)，的返回类型或是参数类型。</li>
+</ul>
+<p>下面给出了一个应用场景： 
+A.h</p>
+<div class="codehilite"><pre><span></span><span class="cp">#ifndef __A__H__</span>
+<span class="cp">#define __A__H__</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="k">class</span> <span class="nc">B</span><span class="p">;</span>  <span class="c1">// here is the forward declaration</span>
+
+<span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">B</span> <span class="n">getBfromA</span><span class="p">();</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">who_are_you</span><span class="p">();</span>
+
+<span class="p">};</span>
+<span class="cp">#endif</span>
+</pre></div>
+
+<p>B.h</p>
+<div class="codehilite"><pre><span></span><span class="cp">#ifndef __B__H__</span>
+<span class="cp">#define __B__H__</span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+
+<span class="k">class</span> <span class="nc">A</span><span class="p">;</span>  <span class="c1">// Here is the forward declaration</span>
+
+<span class="k">class</span> <span class="nc">B</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">A</span> <span class="n">getAfromB</span><span class="p">();</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">who_are_you</span><span class="p">();</span>
+<span class="p">};</span>
+
+<span class="cp">#endif</span>
+</pre></div>
+
+<p>A.cpp</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;B.h&quot;</span><span class="cp"></span>
+
+<span class="n">B</span> <span class="n">A</span><span class="o">::</span><span class="n">getBfromA</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">B</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">A</span><span class="o">::</span><span class="n">who_are_you</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s">&quot;I am A&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>B.cpp</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;B.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
+
+<span class="n">A</span> <span class="n">B</span><span class="o">::</span><span class="n">getAfromB</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">A</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">B</span><span class="o">::</span><span class="n">who_are_you</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s">&quot;I am B&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+<p>main.cpp</p>
+<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;B.h&quot;</span><span class="cp"></span>
+
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+  <span class="n">B</span> <span class="n">b</span><span class="p">;</span>
+
+  <span class="n">A</span> <span class="n">ab</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">getAfromB</span><span class="p">();</span>
+  <span class="n">B</span> <span class="n">ba</span> <span class="o">=</span> <span class="n">a</span><span class="p">.</span><span class="n">getBfromA</span><span class="p">();</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ab is: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ab</span><span class="p">.</span><span class="n">who_are_you</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;ba is: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">ba</span><span class="p">.</span><span class="n">who_are_you</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
                 
                   
                 
@@ -2416,7 +2610,7 @@ openssl</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../c++/" title="C++" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../命令/" title="python" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2425,19 +2619,19 @@ openssl</p>
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                C++
+                python
               </span>
             </div>
           </a>
         
         
-          <a href="../qt_image/" title="Qt图片处理" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../lib学习/" title="Lib学习" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                Qt图片处理
+                Lib学习
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
