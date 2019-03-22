@@ -1816,7 +1816,34 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="通用技术" class="md-nav__link">
+  <a href="#rop" title="ROP" class="md-nav__link">
+    ROP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="寄存器赋值" class="md-nav__link">
+    寄存器赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="栈转移" class="md-nav__link">
+    栈转移
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="通用技术" class="md-nav__link">
     通用技术
   </a>
   
@@ -2156,11 +2183,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-11-3" type="checkbox" id="nav-4-11-3">
     
     <label class="md-nav__link" for="nav-4-11-3">
-      L3sec招新
+      L3sec
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
       <label class="md-nav__title" for="nav-4-11-3">
-        L3sec招新
+        L3sec
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -2171,8 +2198,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/L3sec招新/wp/" title="Wp" class="md-nav__link">
-      Wp
+    <a href="../../wp/L3sec/pwn1/" title="Pwn1" class="md-nav__link">
+      Pwn1
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wp/L3sec/招新/" title="招新" class="md-nav__link">
+      招新
     </a>
   </li>
 
@@ -2357,7 +2396,34 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" title="通用技术" class="md-nav__link">
+  <a href="#rop" title="ROP" class="md-nav__link">
+    ROP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="寄存器赋值" class="md-nav__link">
+    寄存器赋值
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="栈转移" class="md-nav__link">
+    栈转移
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="通用技术" class="md-nav__link">
     通用技术
   </a>
   
@@ -2402,7 +2468,22 @@
 <h2 id="srop">srop<a class="headerlink" href="#srop" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.freebuf.com/articles/network/87447.html">https://www.freebuf.com/articles/network/87447.html</a>
 <a href="https://blog.csdn.net/qq_29343201/article/details/72627439">https://blog.csdn.net/qq_29343201/article/details/72627439</a></p>
-<h2 id="_1">通用技术<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="rop">ROP<a class="headerlink" href="#rop" title="Permanent link">&para;</a></h2>
+<ol>
+<li>ROPgadget 得到代码片断</li>
+<li>cd80c3 就是int0x80;ret,s使用<code>ROPgadget --binary {binaryname} --opcode cd80c3</code>来寻找</li>
+<li>动态链接找不到 int 0x80,需要构造rop</li>
+</ol>
+<h3 id="_1">寄存器赋值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>构造栈结构
+<div class="codehilite"><pre><span></span>  *(pop eax ;ret)
+  3
+</pre></div>
+将eax赋值为3</p>
+<h3 id="_2">栈转移<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>寻找 leave;ret;指令，然后更改ebp的值即可
+leave= mov esp,ebp,pop ebp;</p>
+<h2 id="_3">通用技术<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>常用的栈布局如下
 <div class="codehilite"><pre><span></span><span class="c1"># 32位</span>
 <span class="n">flat</span><span class="p">(</span>
@@ -2413,6 +2494,13 @@
     <span class="n">binsh_addr</span> <span class="c1">#read第二个参数/system第一个参数</span>
     <span class="p">]</span>
 <span class="p">)</span>
+
+<span class="n">flat</span><span class="p">([</span>
+        <span class="n">gets</span><span class="p">,</span>
+        <span class="n">system</span><span class="p">,</span>
+        <span class="n">buf</span><span class="p">,</span>
+        <span class="n">buf</span>
+        <span class="p">])</span>
 <span class="c1"># 64位</span>
 <span class="n">flat</span><span class="p">(</span>
     <span class="p">[</span>
