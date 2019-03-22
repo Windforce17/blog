@@ -9,6 +9,28 @@
 `objdump -d -M intel [elf_file]` 进行反汇编elf文件
 
 ## pwntools
+板子:
+```py
+from pwn import *
+import binascii
+context.log_level='debug'
+context.terminal=['bash']
+debug=True
+
+libc='/lib/x86_64-linux-gnu/libc.so.6'
+elf_name='./stack'
+remote_addr=['',1111]
+elf=ELF(elf_name)
+libc=ELF(libc)
+puts_plt=elf.plt['puts']
+main_addr=elf.symbols['main']
+libc_start_main_got=elf.got['__libc_start_main']
+
+if debug:
+    sh=process(elf_name)
+else:
+    sh=remote(remote_addr)
+```
 ### 运行时变量
 ```py
 context.log_level = 'debug'
