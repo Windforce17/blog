@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.2">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.0">
     
     
       
@@ -2587,7 +2587,7 @@
 <span class="k">if</span> <span class="n">debug</span><span class="p">:</span>
     <span class="n">sh</span><span class="o">=</span><span class="n">process</span><span class="p">(</span><span class="n">elf_name</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">sh</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="n">remote_addr</span><span class="p">)</span>
+    <span class="n">sh</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="n">remote_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">remote_addr</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div></p>
 <h3 id="_1">运行时变量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
