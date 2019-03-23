@@ -29,8 +29,9 @@ libc_start_main_got=elf.got['__libc_start_main']
 if debug:
     sh=process(elf_name)
 else:
-    sh=remote(remote_addr)
+    sh=remote(remote_addr[0],remote_addr[1])
 ```
+
 ### 运行时变量
 ```py
 context.log_level = 'debug'
