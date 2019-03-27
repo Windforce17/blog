@@ -2052,8 +2052,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/web/ssti/" title="Ssti" class="md-nav__link">
-      Ssti
+    <a href="../../../ctf/web/python/" title="Python" class="md-nav__link">
+      Python
     </a>
   </li>
 
@@ -2405,7 +2405,7 @@ double至少和double一样多，这三种类型的有效位数可以一样多�
 
 double d;
 
-d=QString(&quot;1234.56e-02&quot;).toDouble(&amp;amp;ok); //ok=true;d;12.3456.
+d=QString(&quot;1234.56e-02&quot;).toDouble(&amp;ok); //ok=true;d;12.3456.
 </pre></div>
 
 
@@ -2418,7 +2418,7 @@ float d=str.toFloat(); //d=123.45
 
 bool ok;
 
-float d=str.toFloat(&amp;amp;ok); //转换是被时返回0.0,ok=false;
+float d=str.toFloat(&amp;ok); //转换是被时返回0.0,ok=false;
 </pre></div>
 
 
@@ -2430,9 +2430,9 @@ float d=str.toFloat(&amp;amp;ok); //转换是被时返回0.0,ok=false;
 
 bool ok;
 
-int dec=str.toInt(&amp;amp;ok,10); //dec=255 ; ok=rue
+int dec=str.toInt(&amp;ok,10); //dec=255 ; ok=rue
 
-int hex =str.toInt(&amp;amp;ok,16); //hex=255;ok=true;
+int hex =str.toInt(&amp;ok,16); //hex=255;ok=true;
 </pre></div>
 
 
@@ -2464,7 +2464,7 @@ QString Time2String( DWORD dwTime)
 {
     char cTime[50] = {0};
     memset(cTime,0,50);
-    strftime(cTime,32,&quot;%Y-%m-%d %H:%M:%S&quot;,localtime(&amp;amp;time_t(dwTime)));
+    strftime(cTime,32,&quot;%Y-%m-%d %H:%M:%S&quot;,localtime(&amp;time_t(dwTime)));
     return QString(cTime);
 }
 </pre></div>

