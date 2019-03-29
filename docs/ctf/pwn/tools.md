@@ -17,10 +17,16 @@ context.log_level='debug'
 context.terminal=['bash']
 debug=True
 
-libc='/lib/x86_64-linux-gnu/libc.so.6'
 elf_name='./stack'
 remote_addr=['',1111]
+
 elf=ELF(elf_name)
+context.arch=elf.arch
+if elf.arch=='amd64':
+    libc='/lib/x86_64-linux-gnu/libc.so.6'
+else:
+    libc='/lib32/libc.so.6/'
+
 libc=ELF(libc)
 puts_plt=elf.plt['puts']
 main_addr=elf.symbols['main']
