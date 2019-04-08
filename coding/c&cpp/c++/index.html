@@ -2380,18 +2380,29 @@ double至少和double一样多，这三种类型的有效位数可以一样多�
      <span class="p">};</span>
 </pre></div>
 
-<h1 id="_2">位操作<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span> 对一个二进制补码数取相反数，反转每一位，然后再加1.
- 二进制计数法只能精确的表示多个1/2的幂的和。
-</pre></div>
+<h2 id="_2">类大小计算<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>下面的输出是多少?
+<div class="codehilite"><pre><span></span><span class="cp">#pragma packed()</span>
+<span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">CTest</span>
+<span class="p">{</span>
+    <span class="k">public</span><span class="o">:</span>
+        <span class="n">CTest</span><span class="p">()</span><span class="o">:</span><span class="n">m_chData</span><span class="p">(</span><span class="sc">&#39;\0&#39;</span><span class="p">),</span><span class="n">m_nData</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+        <span class="p">}</span>
+        <span class="k">virtual</span> <span class="kt">void</span> <span class="n">mem_fun</span><span class="p">(){}</span>
+    <span class="k">private</span><span class="o">:</span>
+        <span class="kt">char</span> <span class="n">m_chData</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">m_nData</span><span class="p">;</span>
+        <span class="k">static</span> <span class="kt">char</span> <span class="n">s_chData</span><span class="p">;</span>
+<span class="p">}</span><span class="n">__attribute__</span><span class="p">((</span><span class="n">packed</span><span class="p">));</span>
 
-
-<ul>
-<li><code>~</code>按位取反，</li>
-<li><code>&amp;</code>只有两个操作数对应为1才为1 </li>
-<li><code>|</code> 任意操作数为1，那么结果就为1  </li>
-<li><code>^</code>位异或，如果操作数中的对应位有一个为1，但不都未1，那么结果为1</li>
-</ul>
+<span class="kt">char</span> <span class="n">CTest</span><span class="o">::</span><span class="n">s_chData</span><span class="o">=</span><span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+  <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">CTest</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div></p>
 <h1 id="qt">Qt静态编译<a class="headerlink" href="#qt" title="Permanent link">&para;</a></h1>
 <ol>
 <li>官网下载5.8的包,源码https://pan.baidu.com/s/1bpgkTnp</li>

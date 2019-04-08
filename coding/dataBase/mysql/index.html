@@ -1137,6 +1137,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_16" title="性能优化" class="md-nav__link">
+    性能优化
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="建表" class="md-nav__link">
+    建表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="索引" class="md-nav__link">
+    索引
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="使用合适的数据类型" class="md-nav__link">
+    使用合适的数据类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" title="sql的编写需要注意优化" class="md-nav__link">
+    sql的编写需要注意优化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2810,6 +2851,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_16" title="性能优化" class="md-nav__link">
+    性能优化
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" title="建表" class="md-nav__link">
+    建表
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" title="索引" class="md-nav__link">
+    索引
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" title="使用合适的数据类型" class="md-nav__link">
+    使用合适的数据类型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sql" title="sql的编写需要注意优化" class="md-nav__link">
+    sql的编写需要注意优化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -3130,6 +3212,59 @@ mysql> select @@validate_password_length;
 6 rows in set (0.00 sec)</pre>
 
 </pre>
+
+<h2 id="_16">性能优化<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h2>
+<h3 id="_17">建表<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h3>
+<ul>
+<li>表字段避免null值出现，null值很难查询优化且占用额外的索引空间，推荐默认数字0代替null。</li>
+<li>尽量使用INT而非BIGINT，如果非负则加上UNSIGNED（这样数值容量会扩大一倍），当然能使用TINYINT、SMALLINT、MEDIUM_INT更好。</li>
+<li>使用枚举或整数代替字符串类型</li>
+<li>尽量使用TIMESTAMP而非DATETIME</li>
+<li>单表不要有太多字段，建议在20以内</li>
+<li>用整型来存IP</li>
+</ul>
+<h3 id="_18">索引<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h3>
+<ul>
+<li>索引并不是越多越好，要根据查询有针对性的创建，考虑在WHERE和ORDER BY命令上涉及的列建立索引，可根据EXPLAIN来查看是否用了索引还是全表扫描</li>
+<li>应尽量避免在WHERE子句中对字段进行NULL值判断，否则将导致引擎放弃使用索引而进行全表扫描</li>
+<li>值分布很稀少的字段不适合建索引，例如"性别"这种只有两三个值的字段</li>
+<li>字符字段只建前缀索引</li>
+<li>字符字段最好不要做主键</li>
+<li>不用外键，由程序保证约束</li>
+<li>尽量不用UNIQUE，由程序保证约束</li>
+<li>使用多列索引时注意顺序和查询条件保持一致，同时删除不必要的单列索引</li>
+</ul>
+<h3 id="_19">使用合适的数据类型<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h3>
+<p>简言之就是使用合适的数据类型，选择合适的索引
+1. 选择合适的数据类型
+   1. 使用可存下数据的最小的数据类型，整型 &lt; date,time &lt; char,varchar &lt; blob
+   2. 使用简单的数据类型，整型比字符处理开销更小，因为字符串的比较更复杂。如，int类型存储时间类型，bigint类型转ip函数
+   3. 使用合理的字段属性长度，固定长度的表会更快。使用enum、char而不是varchar
+   4. 尽可能使用not null定义字段
+   5. 尽量少用text，非用不可最好分表
+2. 选择合适的索引列
+    1. 查询频繁的列，在where，group by，order by，on从句中出现的列
+    2. where条件中&lt;，&lt;=，=，&gt;，&gt;=，between，in，以及like 字符串+通配符（%）出现的列
+    3. 长度小的列，索引字段越小越好，因为数据库的存储单位是页，一页中能存下的数据越多越好
+    4. 离散度大（不同的值多）的列，放在联合索引前面。查看离散度，通过统计不同的列值来实现，count越大，离散程度越高</p>
+<h3 id="sql">sql的编写需要注意优化<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h3>
+<ul>
+<li>使用limit对查询结果的记录进行限定</li>
+<li>避免select *，将需要查找的字段列出来</li>
+<li>使用连接（join）来代替子查询</li>
+<li>拆分大的delete或insert语句</li>
+<li>可通过开启慢查询日志来找出较慢的SQL</li>
+<li>不做列运算：SELECT id WHERE age + 1 = 10，任何对列的操作都将导致表扫描，它包括数据库教程函数、计算表达式等- 等，查询时要尽可能将操作移至等号右边</li>
+<li>sql语句尽可能简单：一条sql只能在一个cpu运算；大语句拆小语句，减少锁时间；一条大sql可以堵死整个库</li>
+<li>OR改写成IN：OR的效率是n级别，IN的效率是log(n)级别，in- 的个数建议控制在200以内</li>
+<li>不用函数和触发器，在应用程序实现</li>
+<li>避免%xxx式查询</li>
+<li>少用JOIN</li>
+<li>使用同类型进行比较，比如用'123'和'123'比，123和123比</li>
+<li>尽量避免在WHERE子句中使用!=或&lt;&gt;操作符，否则将引擎放弃使用索引而进行全表扫描</li>
+<li>对于连续数值，使用BETWEEN不用IN：SELECT id FROM t WHERE num BETWEEN 1 AND 5</li>
+<li>列表数据不要拿全表，要使用LIMIT来分页，每页数量也不要太- 大</li>
+</ul>
                 
                   
                 
