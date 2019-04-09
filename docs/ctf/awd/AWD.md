@@ -9,6 +9,8 @@
 * getflag所需命令改名
 * 改cd ls curl wget常用命令
 * /var/www/html/ 设置为不可写
+* D盾扫后门
+* chattr -i
 ## 防御
 * netstat：端口，连接排查方法 
 * 如何kill进程/防止kill
@@ -44,6 +46,12 @@
 * xss 打cookie
 * 自动化攻击，提交
 * 中国特色字典
+* bash不记录历史记录
+
+```
+export HISTFILE=/dev/null
+export HISTSILZ
+```
 
 ```bash
 lsb_release  -a

