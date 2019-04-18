@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/coding/linux/docker/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/coding/linux/devops/gitlab&ci/">
       
       
         <meta name="author" content="Windforce17">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
-      <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.1">
+      <link rel="shortcut icon" href="../../../..">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
     
     
       
-        <title>Docker - windforce17's blog</title>
+        <title>Gitlab&ci - windforce17's blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.3020aac5.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.3020aac5.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.224b79ff.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -66,10 +66,10 @@
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="../../../_static/css/extra.css">
+      <link rel="stylesheet" href="../../../../_static/css/extra.css">
     
     
       
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#swarm" tabindex="1" class="md-skip">
+      <a href="#gitlab-runner" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -135,7 +135,7 @@
               windforce17's blog
             </span>
             <span class="md-header-nav__topic">
-              Docker
+              Gitlab&ci
             </span>
           
         </div>
@@ -211,7 +211,7 @@
         
   <li class="md-tabs__item">
     
-      <a href="../../.." title="Home" class="md-tabs__link">
+      <a href="../../../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -223,7 +223,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../Web&Attack/XSS SSRF/" title="Web&Attack" class="md-tabs__link">
+        <a href="../../../../Web&Attack/XSS SSRF/" title="Web&Attack" class="md-tabs__link">
           Web&Attack
         </a>
       
@@ -236,7 +236,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../asm/" title="Coding" class="md-tabs__link md-tabs__link--active">
+        <a href="../../../asm/" title="Coding" class="md-tabs__link md-tabs__link--active">
           Coding
         </a>
       
@@ -249,7 +249,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../ctf/CTFstudy/" title="Ctf" class="md-tabs__link">
+        <a href="../../../../ctf/CTFstudy/" title="Ctf" class="md-tabs__link">
           Ctf
         </a>
       
@@ -262,7 +262,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../ics/发现/" title="Ics" class="md-tabs__link">
+        <a href="../../../../ics/发现/" title="Ics" class="md-tabs__link">
           Ics
         </a>
       
@@ -275,7 +275,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../keyAndSetting/各种Key/" title="keyAndSetting" class="md-tabs__link">
+        <a href="../../../../keyAndSetting/各种Key/" title="keyAndSetting" class="md-tabs__link">
           keyAndSetting
         </a>
       
@@ -288,7 +288,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../shell/getshell/" title="Shell" class="md-tabs__link">
+        <a href="../../../../shell/getshell/" title="Shell" class="md-tabs__link">
           Shell
         </a>
       
@@ -345,7 +345,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../.." title="Home" class="md-nav__link">
+    <a href="../../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -376,7 +376,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/XSS SSRF/" title="XSS SSRF" class="md-nav__link">
+    <a href="../../../../Web&Attack/XSS SSRF/" title="XSS SSRF" class="md-nav__link">
       XSS SSRF
     </a>
   </li>
@@ -388,7 +388,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/msf/" title="Msf" class="md-nav__link">
+    <a href="../../../../Web&Attack/msf/" title="Msf" class="md-nav__link">
       Msf
     </a>
   </li>
@@ -400,7 +400,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/other/" title="Other" class="md-nav__link">
+    <a href="../../../../Web&Attack/other/" title="Other" class="md-nav__link">
       Other
     </a>
   </li>
@@ -412,7 +412,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/phpmyadmin_getshell/" title="Phpmyadmin getshell" class="md-nav__link">
+    <a href="../../../../Web&Attack/phpmyadmin_getshell/" title="Phpmyadmin getshell" class="md-nav__link">
       Phpmyadmin getshell
     </a>
   </li>
@@ -424,7 +424,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/php代码审计/" title="Php代码审计" class="md-nav__link">
+    <a href="../../../../Web&Attack/php代码审计/" title="Php代码审计" class="md-nav__link">
       Php代码审计
     </a>
   </li>
@@ -436,7 +436,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/upload/" title="Upload" class="md-nav__link">
+    <a href="../../../../Web&Attack/upload/" title="Upload" class="md-nav__link">
       Upload
     </a>
   </li>
@@ -448,7 +448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/web安全深度刨析/" title="Web安全深度刨析" class="md-nav__link">
+    <a href="../../../../Web&Attack/web安全深度刨析/" title="Web安全深度刨析" class="md-nav__link">
       Web安全深度刨析
     </a>
   </li>
@@ -460,7 +460,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/wlan attack/" title="Wlan attack" class="md-nav__link">
+    <a href="../../../../Web&Attack/wlan attack/" title="Wlan attack" class="md-nav__link">
       Wlan attack
     </a>
   </li>
@@ -472,7 +472,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/信息收集/" title="信息收集" class="md-nav__link">
+    <a href="../../../../Web&Attack/信息收集/" title="信息收集" class="md-nav__link">
       信息收集
     </a>
   </li>
@@ -484,7 +484,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/压测/" title="压测" class="md-nav__link">
+    <a href="../../../../Web&Attack/压测/" title="压测" class="md-nav__link">
       压测
     </a>
   </li>
@@ -496,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/各种漏洞/" title="各种漏洞" class="md-nav__link">
+    <a href="../../../../Web&Attack/各种漏洞/" title="各种漏洞" class="md-nav__link">
       各种漏洞
     </a>
   </li>
@@ -508,7 +508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/提权/" title="提权" class="md-nav__link">
+    <a href="../../../../Web&Attack/提权/" title="提权" class="md-nav__link">
       提权
     </a>
   </li>
@@ -520,7 +520,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/漏洞扫描/" title="漏洞扫描" class="md-nav__link">
+    <a href="../../../../Web&Attack/漏洞扫描/" title="漏洞扫描" class="md-nav__link">
       漏洞扫描
     </a>
   </li>
@@ -532,7 +532,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/社工/" title="社工" class="md-nav__link">
+    <a href="../../../../Web&Attack/社工/" title="社工" class="md-nav__link">
       社工
     </a>
   </li>
@@ -544,7 +544,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/绕过/" title="绕过" class="md-nav__link">
+    <a href="../../../../Web&Attack/绕过/" title="绕过" class="md-nav__link">
       绕过
     </a>
   </li>
@@ -575,7 +575,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/Internet/网络协议/" title="网络协议" class="md-nav__link">
+    <a href="../../../../Web&Attack/Internet/网络协议/" title="网络协议" class="md-nav__link">
       网络协议
     </a>
   </li>
@@ -611,7 +611,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/SQL注入-绕过/SQL注入/" title="SQL注入" class="md-nav__link">
+    <a href="../../../../Web&Attack/SQL注入-绕过/SQL注入/" title="SQL注入" class="md-nav__link">
       SQL注入
     </a>
   </li>
@@ -647,7 +647,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/入侵检测&审计/大型互联网企业入侵检测实战总结/" title="大型互联网企业入侵检测实战总结" class="md-nav__link">
+    <a href="../../../../Web&Attack/入侵检测&审计/大型互联网企业入侵检测实战总结/" title="大型互联网企业入侵检测实战总结" class="md-nav__link">
       大型互联网企业入侵检测实战总结
     </a>
   </li>
@@ -690,7 +690,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../asm/" title="Asm" class="md-nav__link">
+    <a href="../../../asm/" title="Asm" class="md-nav__link">
       Asm
     </a>
   </li>
@@ -702,7 +702,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../conf/" title="Conf" class="md-nav__link">
+    <a href="../../../conf/" title="Conf" class="md-nav__link">
       Conf
     </a>
   </li>
@@ -714,7 +714,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../git/" title="Git" class="md-nav__link">
+    <a href="../../../git/" title="Git" class="md-nav__link">
       Git
     </a>
   </li>
@@ -726,7 +726,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../interview/" title="Interview" class="md-nav__link">
+    <a href="../../../interview/" title="Interview" class="md-nav__link">
       Interview
     </a>
   </li>
@@ -738,7 +738,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../java/" title="Java" class="md-nav__link">
+    <a href="../../../java/" title="Java" class="md-nav__link">
       Java
     </a>
   </li>
@@ -750,7 +750,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../jetbrains/" title="Jetbrains" class="md-nav__link">
+    <a href="../../../jetbrains/" title="Jetbrains" class="md-nav__link">
       Jetbrains
     </a>
   </li>
@@ -762,7 +762,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../math/" title="Math" class="md-nav__link">
+    <a href="../../../math/" title="Math" class="md-nav__link">
       Math
     </a>
   </li>
@@ -774,7 +774,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/" title="Php" class="md-nav__link">
+    <a href="../../../php/" title="Php" class="md-nav__link">
       Php
     </a>
   </li>
@@ -786,7 +786,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../uefi&bios/" title="Uefi&bios" class="md-nav__link">
+    <a href="../../../uefi&bios/" title="Uefi&bios" class="md-nav__link">
       Uefi&bios
     </a>
   </li>
@@ -798,7 +798,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../参考文献写法/" title="参考文献写法" class="md-nav__link">
+    <a href="../../../参考文献写法/" title="参考文献写法" class="md-nav__link">
       参考文献写法
     </a>
   </li>
@@ -810,7 +810,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../命令/" title="python" class="md-nav__link">
+    <a href="../../../命令/" title="python" class="md-nav__link">
       python
     </a>
   </li>
@@ -841,7 +841,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../c&cpp/c++/" title="C++" class="md-nav__link">
+    <a href="../../../c&cpp/c++/" title="C++" class="md-nav__link">
       C++
     </a>
   </li>
@@ -853,7 +853,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../c&cpp/lib学习/" title="Lib学习" class="md-nav__link">
+    <a href="../../../c&cpp/lib学习/" title="Lib学习" class="md-nav__link">
       Lib学习
     </a>
   </li>
@@ -865,7 +865,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../c&cpp/pointer/" title="Pointer" class="md-nav__link">
+    <a href="../../../c&cpp/pointer/" title="Pointer" class="md-nav__link">
       Pointer
     </a>
   </li>
@@ -877,7 +877,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../c&cpp/qt_image/" title="Qt图片处理" class="md-nav__link">
+    <a href="../../../c&cpp/qt_image/" title="Qt图片处理" class="md-nav__link">
       Qt图片处理
     </a>
   </li>
@@ -889,7 +889,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../c&cpp/为什么要用基类指针指向派生类对象/" title="为什么要用基类指针指向派生类对象" class="md-nav__link">
+    <a href="../../../c&cpp/为什么要用基类指针指向派生类对象/" title="为什么要用基类指针指向派生类对象" class="md-nav__link">
       为什么要用基类指针指向派生类对象
     </a>
   </li>
@@ -925,7 +925,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../dataBase/mysql/" title="Mysql" class="md-nav__link">
+    <a href="../../../dataBase/mysql/" title="Mysql" class="md-nav__link">
       Mysql
     </a>
   </li>
@@ -937,7 +937,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../dataBase/坑/" title="坑" class="md-nav__link">
+    <a href="../../../dataBase/坑/" title="坑" class="md-nav__link">
       坑
     </a>
   </li>
@@ -958,11 +958,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-14" type="checkbox" id="nav-3-14">
     
     <label class="md-nav__link" for="nav-3-14">
-      Devops
+      Golang
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-14">
-        Devops
+        Golang
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -973,8 +973,56 @@
 
 
   <li class="md-nav__item">
-    <a href="../../devops/gitlab&ci/" title="Gitlab&ci" class="md-nav__link">
-      Gitlab&ci
+    <a href="../../../golang/Golang 20 Tips/" title="Golang tips and traps" class="md-nav__link">
+      Golang tips and traps
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../golang/gin/" title="Gin" class="md-nav__link">
+      Gin
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../golang/go/" title="Go" class="md-nav__link">
+      Go
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../golang/rsa/" title="Rsa" class="md-nav__link">
+      Rsa
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../golang/vgo/" title="Vgo" class="md-nav__link">
+      Vgo
     </a>
   </li>
 
@@ -994,94 +1042,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-15" type="checkbox" id="nav-3-15">
     
     <label class="md-nav__link" for="nav-3-15">
-      Golang
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-15">
-        Golang
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../golang/Golang 20 Tips/" title="Golang tips and traps" class="md-nav__link">
-      Golang tips and traps
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../golang/gin/" title="Gin" class="md-nav__link">
-      Gin
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../golang/go/" title="Go" class="md-nav__link">
-      Go
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../golang/rsa/" title="Rsa" class="md-nav__link">
-      Rsa
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../golang/vgo/" title="Vgo" class="md-nav__link">
-      Vgo
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16" type="checkbox" id="nav-3-16">
-    
-    <label class="md-nav__link" for="nav-3-16">
       Javascript
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-16">
+      <label class="md-nav__title" for="nav-3-15">
         Javascript
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1093,7 +1057,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../javascript/vue/" title="Vue" class="md-nav__link">
+    <a href="../../../javascript/vue/" title="Vue" class="md-nav__link">
       Vue
     </a>
   </li>
@@ -1113,13 +1077,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-17" type="checkbox" id="nav-3-17" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16" type="checkbox" id="nav-3-16" checked>
     
-    <label class="md-nav__link" for="nav-3-17">
+    <label class="md-nav__link" for="nav-3-16">
       Linux
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-17">
+      <label class="md-nav__title" for="nav-3-16">
         Linux
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1131,7 +1095,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../CentOS7/" title="CentOS7" class="md-nav__link">
+    <a href="../../CentOS7/" title="CentOS7" class="md-nav__link">
       CentOS7
     </a>
   </li>
@@ -1143,8 +1107,89 @@
 
 
   <li class="md-nav__item">
-    <a href="../arch/" title="Arch" class="md-nav__link">
+    <a href="../../arch/" title="Arch" class="md-nav__link">
       Arch
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../etcd/" title="Etcd" class="md-nav__link">
+      Etcd
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../nginx/" title="Nginx" class="md-nav__link">
+      Nginx
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ptrace/" title="Ptrace" class="md-nav__link">
+      Ptrace
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ubuntu18/" title="Ubuntu18" class="md-nav__link">
+      Ubuntu18
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16-7" type="checkbox" id="nav-3-16-7" checked>
+    
+    <label class="md-nav__link" for="nav-3-16-7">
+      Devops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-16-7">
+        Devops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
     </a>
   </li>
 
@@ -1162,11 +1207,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Docker
+        Gitlab&ci
       </label>
     
-    <a href="./" title="Docker" class="md-nav__link md-nav__link--active">
-      Docker
+    <a href="./" title="Gitlab&ci" class="md-nav__link md-nav__link--active">
+      Gitlab&ci
     </a>
     
       
@@ -1178,15 +1223,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#swarm" title="swarm" class="md-nav__link">
-    swarm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="一些命令和脚本" class="md-nav__link">
-    一些命令和脚本
+  <a href="#gitlab-runner" title="gitlab-runner" class="md-nav__link">
+    gitlab-runner
   </a>
   
 </li>
@@ -1205,18 +1243,6 @@
   
 </nav>
     
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../etcd/" title="Etcd" class="md-nav__link">
-      Etcd
-    </a>
   </li>
 
         
@@ -1274,32 +1300,49 @@
 
 
   <li class="md-nav__item">
-    <a href="../nginx/" title="Nginx" class="md-nav__link">
-      Nginx
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../op&docker service/" title="Op&docker service" class="md-nav__link">
       Op&docker service
     </a>
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-17" type="checkbox" id="nav-3-17">
+    
+    <label class="md-nav__link" for="nav-3-17">
+      macOS
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-17">
+        macOS
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../ptrace/" title="Ptrace" class="md-nav__link">
-      Ptrace
+    <a href="../../../macOS/app/" title="App" class="md-nav__link">
+      App
     </a>
   </li>
 
@@ -1310,8 +1353,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../ubuntu18/" title="Ubuntu18" class="md-nav__link">
-      Ubuntu18
+    <a href="../../../macOS/gdb无法调试问题/" title="Gdb无法调试问题" class="md-nav__link">
+      Gdb无法调试问题
     </a>
   </li>
 
@@ -1331,11 +1374,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-18" type="checkbox" id="nav-3-18">
     
     <label class="md-nav__link" for="nav-3-18">
-      macOS
+      Python
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-18">
-        macOS
+        Python
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1346,8 +1389,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../macOS/app/" title="App" class="md-nav__link">
-      App
+    <a href="../../../python/DjangoStudy/" title="Django学习" class="md-nav__link">
+      Django学习
     </a>
   </li>
 
@@ -1358,8 +1401,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../macOS/gdb无法调试问题/" title="Gdb无法调试问题" class="md-nav__link">
-      Gdb无法调试问题
+    <a href="../../../python/python/" title="Python" class="md-nav__link">
+      Python
     </a>
   </li>
 
@@ -1379,11 +1422,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-19" type="checkbox" id="nav-3-19">
     
     <label class="md-nav__link" for="nav-3-19">
-      Python
+      Win
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-19">
-        Python
+        Win
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1394,20 +1437,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../python/DjangoStudy/" title="Django学习" class="md-nav__link">
-      Django学习
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../python/python/" title="Python" class="md-nav__link">
-      Python
+    <a href="../../../win/win ctl/" title="win some command" class="md-nav__link">
+      win some command
     </a>
   </li>
 
@@ -1427,11 +1458,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-20" type="checkbox" id="nav-3-20">
     
     <label class="md-nav__link" for="nav-3-20">
-      Win
+      前端♂js
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
       <label class="md-nav__title" for="nav-3-20">
-        Win
+        前端♂js
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1442,8 +1473,80 @@
 
 
   <li class="md-nav__item">
-    <a href="../../win/win ctl/" title="win some command" class="md-nav__link">
-      win some command
+    <a href="../../../前端♂js/ThreeJS/" title="ThreeJS" class="md-nav__link">
+      ThreeJS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../前端♂js/WDS can't connet/" title="WDS can't connet" class="md-nav__link">
+      WDS can't connet
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../前端♂js/css/" title="Css" class="md-nav__link">
+      Css
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../前端♂js/js/" title="Js" class="md-nav__link">
+      Js
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../前端♂js/npm&webpack/" title="Npm&webpack" class="md-nav__link">
+      Npm&webpack
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../前端♂js/vue/" title="Vue" class="md-nav__link">
+      Vue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../前端♂js/vuetify/" title="Vuetify" class="md-nav__link">
+      Vuetify
     </a>
   </li>
 
@@ -1463,118 +1566,10 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-21" type="checkbox" id="nav-3-21">
     
     <label class="md-nav__link" for="nav-3-21">
-      前端♂js
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-21">
-        前端♂js
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../前端♂js/ThreeJS/" title="ThreeJS" class="md-nav__link">
-      ThreeJS
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../前端♂js/WDS can't connet/" title="WDS can't connet" class="md-nav__link">
-      WDS can't connet
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../前端♂js/css/" title="Css" class="md-nav__link">
-      Css
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../前端♂js/js/" title="Js" class="md-nav__link">
-      Js
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../前端♂js/npm&webpack/" title="Npm&webpack" class="md-nav__link">
-      Npm&webpack
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../前端♂js/vue/" title="Vue" class="md-nav__link">
-      Vue
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../前端♂js/vuetify/" title="Vuetify" class="md-nav__link">
-      Vuetify
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-22" type="checkbox" id="nav-3-22">
-    
-    <label class="md-nav__link" for="nav-3-22">
       编译原理
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-22">
+      <label class="md-nav__title" for="nav-3-21">
         编译原理
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1586,7 +1581,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../编译原理/overView/" title="概述" class="md-nav__link">
+    <a href="../../../编译原理/overView/" title="概述" class="md-nav__link">
       概述
     </a>
   </li>
@@ -1627,7 +1622,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/CTFstudy/" title="CTFstudy" class="md-nav__link">
+    <a href="../../../../ctf/CTFstudy/" title="CTFstudy" class="md-nav__link">
       CTFstudy
     </a>
   </li>
@@ -1639,7 +1634,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/取证/" title="取证" class="md-nav__link">
+    <a href="../../../../ctf/取证/" title="取证" class="md-nav__link">
       取证
     </a>
   </li>
@@ -1651,7 +1646,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/恶意软件分析/" title="恶意软件分析" class="md-nav__link">
+    <a href="../../../../ctf/恶意软件分析/" title="恶意软件分析" class="md-nav__link">
       恶意软件分析
     </a>
   </li>
@@ -1663,7 +1658,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/爆破相关/" title="爆破相关" class="md-nav__link">
+    <a href="../../../../ctf/爆破相关/" title="爆破相关" class="md-nav__link">
       爆破相关
     </a>
   </li>
@@ -1694,7 +1689,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/awd/AWD/" title="AWD" class="md-nav__link">
+    <a href="../../../../ctf/awd/AWD/" title="AWD" class="md-nav__link">
       AWD
     </a>
   </li>
@@ -1706,7 +1701,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/awd/权限维持/" title="权限维持" class="md-nav__link">
+    <a href="../../../../ctf/awd/权限维持/" title="权限维持" class="md-nav__link">
       权限维持
     </a>
   </li>
@@ -1742,7 +1737,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/crypto/decrypt_online/" title="Decrypt online" class="md-nav__link">
+    <a href="../../../../ctf/crypto/decrypt_online/" title="Decrypt online" class="md-nav__link">
       Decrypt online
     </a>
   </li>
@@ -1754,7 +1749,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/crypto/rsa待填/" title="Rsa待填" class="md-nav__link">
+    <a href="../../../../ctf/crypto/rsa待填/" title="Rsa待填" class="md-nav__link">
       Rsa待填
     </a>
   </li>
@@ -1790,7 +1785,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/misc/dropsec12.9/" title="misc" class="md-nav__link">
+    <a href="../../../../ctf/misc/dropsec12.9/" title="misc" class="md-nav__link">
       misc
     </a>
   </li>
@@ -1802,7 +1797,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/misc/misc/" title="Misc" class="md-nav__link">
+    <a href="../../../../ctf/misc/misc/" title="Misc" class="md-nav__link">
       Misc
     </a>
   </li>
@@ -1814,7 +1809,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/misc/webasm/" title="Webasm" class="md-nav__link">
+    <a href="../../../../ctf/misc/webasm/" title="Webasm" class="md-nav__link">
       Webasm
     </a>
   </li>
@@ -1826,7 +1821,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/misc/wireshark/" title="Wireshark" class="md-nav__link">
+    <a href="../../../../ctf/misc/wireshark/" title="Wireshark" class="md-nav__link">
       Wireshark
     </a>
   </li>
@@ -1838,7 +1833,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/misc/内存取证/" title="内存取证" class="md-nav__link">
+    <a href="../../../../ctf/misc/内存取证/" title="内存取证" class="md-nav__link">
       内存取证
     </a>
   </li>
@@ -1874,7 +1869,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/pwn/ROP/" title="ROP" class="md-nav__link">
+    <a href="../../../../ctf/pwn/ROP/" title="ROP" class="md-nav__link">
       ROP
     </a>
   </li>
@@ -1886,7 +1881,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/pwn/basic/" title="Basic" class="md-nav__link">
+    <a href="../../../../ctf/pwn/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
   </li>
@@ -1898,7 +1893,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/pwn/fmt/" title="Fmt" class="md-nav__link">
+    <a href="../../../../ctf/pwn/fmt/" title="Fmt" class="md-nav__link">
       Fmt
     </a>
   </li>
@@ -1910,7 +1905,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/pwn/heap/" title="Heap" class="md-nav__link">
+    <a href="../../../../ctf/pwn/heap/" title="Heap" class="md-nav__link">
       Heap
     </a>
   </li>
@@ -1922,7 +1917,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/pwn/res/" title="Res" class="md-nav__link">
+    <a href="../../../../ctf/pwn/res/" title="Res" class="md-nav__link">
       Res
     </a>
   </li>
@@ -1934,7 +1929,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/pwn/tools/" title="Tools" class="md-nav__link">
+    <a href="../../../../ctf/pwn/tools/" title="Tools" class="md-nav__link">
       Tools
     </a>
   </li>
@@ -1970,7 +1965,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/ReversingEngineering/" title="ReversingEngineering" class="md-nav__link">
+    <a href="../../../../ctf/reverse/ReversingEngineering/" title="ReversingEngineering" class="md-nav__link">
       ReversingEngineering
     </a>
   </li>
@@ -1982,7 +1977,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/ida_py/" title="Ida py" class="md-nav__link">
+    <a href="../../../../ctf/reverse/ida_py/" title="Ida py" class="md-nav__link">
       Ida py
     </a>
   </li>
@@ -1994,7 +1989,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/mov混淆/" title="Mov混淆" class="md-nav__link">
+    <a href="../../../../ctf/reverse/mov混淆/" title="Mov混淆" class="md-nav__link">
       Mov混淆
     </a>
   </li>
@@ -2006,7 +2001,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/pyc/" title="Pyc" class="md-nav__link">
+    <a href="../../../../ctf/reverse/pyc/" title="Pyc" class="md-nav__link">
       Pyc
     </a>
   </li>
@@ -2018,7 +2013,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/shark恒/" title="Shark恒" class="md-nav__link">
+    <a href="../../../../ctf/reverse/shark恒/" title="Shark恒" class="md-nav__link">
       Shark恒
     </a>
   </li>
@@ -2030,7 +2025,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/unpack/" title="Unpack" class="md-nav__link">
+    <a href="../../../../ctf/reverse/unpack/" title="Unpack" class="md-nav__link">
       Unpack
     </a>
   </li>
@@ -2042,7 +2037,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/加密与解密/" title="加密与解密" class="md-nav__link">
+    <a href="../../../../ctf/reverse/加密与解密/" title="加密与解密" class="md-nav__link">
       加密与解密
     </a>
   </li>
@@ -2054,7 +2049,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/反调试/" title="反调试" class="md-nav__link">
+    <a href="../../../../ctf/reverse/反调试/" title="反调试" class="md-nav__link">
       反调试
     </a>
   </li>
@@ -2066,7 +2061,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/各种段/" title="各种段" class="md-nav__link">
+    <a href="../../../../ctf/reverse/各种段/" title="各种段" class="md-nav__link">
       各种段
     </a>
   </li>
@@ -2078,7 +2073,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/reverse/黑影vip/" title="黑影vip" class="md-nav__link">
+    <a href="../../../../ctf/reverse/黑影vip/" title="黑影vip" class="md-nav__link">
       黑影vip
     </a>
   </li>
@@ -2114,7 +2109,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/web/basic/" title="Basic" class="md-nav__link">
+    <a href="../../../../ctf/web/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
   </li>
@@ -2126,7 +2121,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/web/php文件包含/" title="Php文件包含" class="md-nav__link">
+    <a href="../../../../ctf/web/php文件包含/" title="Php文件包含" class="md-nav__link">
       Php文件包含
     </a>
   </li>
@@ -2138,7 +2133,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/web/python/" title="Python" class="md-nav__link">
+    <a href="../../../../ctf/web/python/" title="Python" class="md-nav__link">
       Python
     </a>
   </li>
@@ -2174,7 +2169,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/wp/2018护网杯/" title="wp" class="md-nav__link">
+    <a href="../../../../ctf/wp/2018护网杯/" title="wp" class="md-nav__link">
       wp
     </a>
   </li>
@@ -2186,7 +2181,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/wp/catalyst/" title="Catalyst" class="md-nav__link">
+    <a href="../../../../ctf/wp/catalyst/" title="Catalyst" class="md-nav__link">
       Catalyst
     </a>
   </li>
@@ -2198,7 +2193,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/wp/jarvisOJ/" title="jarvisOJ" class="md-nav__link">
+    <a href="../../../../ctf/wp/jarvisOJ/" title="jarvisOJ" class="md-nav__link">
       jarvisOJ
     </a>
   </li>
@@ -2229,7 +2224,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/wp/L3sec/pwn1/" title="Pwn1" class="md-nav__link">
+    <a href="../../../../ctf/wp/L3sec/pwn1/" title="Pwn1" class="md-nav__link">
       Pwn1
     </a>
   </li>
@@ -2241,7 +2236,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ctf/wp/L3sec/招新/" title="招新" class="md-nav__link">
+    <a href="../../../../ctf/wp/L3sec/招新/" title="招新" class="md-nav__link">
       招新
     </a>
   </li>
@@ -2287,7 +2282,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../ics/发现/" title="发现" class="md-nav__link">
+    <a href="../../../../ics/发现/" title="发现" class="md-nav__link">
       发现
     </a>
   </li>
@@ -2323,7 +2318,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../keyAndSetting/各种Key/" title="windows kms key" class="md-nav__link">
+    <a href="../../../../keyAndSetting/各种Key/" title="windows kms key" class="md-nav__link">
       windows kms key
     </a>
   </li>
@@ -2359,7 +2354,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../shell/getshell/" title="Getshell" class="md-nav__link">
+    <a href="../../../../shell/getshell/" title="Getshell" class="md-nav__link">
       Getshell
     </a>
   </li>
@@ -2371,7 +2366,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../shell/phar/" title="Phar" class="md-nav__link">
+    <a href="../../../../shell/phar/" title="Phar" class="md-nav__link">
       Phar
     </a>
   </li>
@@ -2383,7 +2378,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../shell/phpmyadmin/" title="Phpmyadmin" class="md-nav__link">
+    <a href="../../../../shell/phpmyadmin/" title="Phpmyadmin" class="md-nav__link">
       Phpmyadmin
     </a>
   </li>
@@ -2413,15 +2408,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#swarm" title="swarm" class="md-nav__link">
-    swarm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="一些命令和脚本" class="md-nav__link">
-    一些命令和脚本
+  <a href="#gitlab-runner" title="gitlab-runner" class="md-nav__link">
+    gitlab-runner
   </a>
   
 </li>
@@ -2448,80 +2436,24 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/linux/docker.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/linux/devops/gitlab&ci.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Docker</h1>
+                  <h1>Gitlab&ci</h1>
                 
-                <h2 id="swarm">swarm<a class="headerlink" href="#swarm" title="Permanent link">&para;</a></h2>
-<p>下面问题需要考虑下：<br />
-网络隔离?<br />
-代理?  </p>
-<h2 id="_1">一些命令和脚本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>删除所有None镜像<code>docker rmi -f $(docker images -f "dangling=true" -q)</code>  </li>
-<li>删除所有运行中镜像docker rm -f $(docker ps -aq)</li>
-<li>
-<p>docker ubuntu 安装脚本
-<div class="codehilite"><pre><span></span>sudo apt-get install -y<span class="se">\</span>
-    apt-transport-https <span class="se">\</span>
-    ca-certificates <span class="se">\</span>
-    curl <span class="se">\</span>
-    software-properties-common <span class="o">&amp;&amp;</span>
-curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg <span class="p">|</span> sudo apt-key add - <span class="o">&amp;&amp;</span>
-
-sudo add-apt-repository <span class="se">\</span>
-   <span class="s2">&quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \</span>
-<span class="s2">   </span><span class="k">$(</span>lsb_release -cs<span class="k">)</span><span class="s2"> \</span>
-<span class="s2">   stable&quot;</span> <span class="o">&amp;&amp;</span>
-sudo apt-get update <span class="o">&amp;&amp;</span>
-sudo apt-get install -y docker-ce
-
-
-sudo <span class="nb">echo</span> -e <span class="s2">&quot;{\n </span>
-<span class="s2">  \&quot;registry-mirrors\&quot;: [\&quot;https://docker.mirrors.ustc.edu.cn/\&quot;]</span>
-<span class="s2">}&quot;</span> &gt;/etc/docker/daemon.json 
-sudo systemctl restart docker
+                <h2 id="gitlab-runner">gitlab-runner<a class="headerlink" href="#gitlab-runner" title="Permanent link">&para;</a></h2>
+<p>一句话脚本,会自动退出，还在找原因
+<div class="codehilite"><pre><span></span>docker run -d -v /srv/gitlab-runner/config:/etc/gitlab-runner gitlab/gitlab-runner register \
+  --non-interactive \
+  --executor &quot;docker&quot; \
+  --docker-image alpine:3 \
+  --url &quot;https://gitlab.cugapp.com/&quot; \
+  --registration-token &quot;tooooooken&quot; \
+  --description &quot;docker-runner&quot; \
+  --tag-list &quot;docker,aws,1C2G&quot; \
+  --run-untagged \
+  --locked=&quot;false&quot;
 </pre></div></p>
-</li>
-<li>
-<p>或者<code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></p>
-</li>
-<li>
-<p>docker 监听tcp，打开api
-<div class="codehilite"><pre><span></span><span class="c1"># 查看配置文件位于哪里</span>
-systemctl show --property<span class="o">=</span>FragmentPath docker 
-<span class="c1">#编辑配置文件内容，接收所有ip请求</span>
-sudo vim /lib/systemd/system/docker.service  
-<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2376
-<span class="c1">#重新加载配置文件，重启docker daemon</span>
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-</pre></div></p>
-</li>
-<li>
-<p>docker proxt set
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    mkdir /etc/systemd/system/docker.service.d/
-<span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    mkdir /etc/systemd/system/docker.service.d/
-<span class="k">fi</span>
-<span class="nb">echo</span> <span class="s1">&#39;[Service]</span>
-<span class="s1">Environment=&quot;HTTP_PROXY=http://127.0.0.1:8123&quot; &quot;HTTPS_PROXY=http://127.0.0.1:8123&quot; &quot;NO_PROXY=localhost,127.0.0.1&quot;&#39;</span> &gt; /etc/systemd/system/docker.service.d/http-proxy.conf
-
-systemctl daemon-reload
-systemctl restart docker
-</pre></div></p>
-</li>
-<li>
-<p>利用ssh转发unix sock
-<div class="codehilite"><pre><span></span>ssh -nNT -L /tmp/docker.sock:/var/run/docker.sock  &lt;USER&gt;@&lt;IP&gt; <span class="p">&amp;</span>
-<span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span>unix:///tmp/docker.sock <span class="c1"># docker client will communicate with this sock</span>
-</pre></div></p>
-</li>
-</ul>
                 
                   
                 
@@ -2567,7 +2499,7 @@ systemctl restart docker
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../arch/" title="Arch" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../docker/" title="Docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2576,19 +2508,19 @@ systemctl restart docker
                 <span class="md-footer-nav__direction">
                   后退
                 </span>
-                Arch
+                Docker
               </span>
             </div>
           </a>
         
         
-          <a href="../etcd/" title="Etcd" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../https/" title="使用Let's Encrypt 进行泛解析。" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   前进
                 </span>
-                Etcd
+                使用Let's Encrypt 进行泛解析。
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2620,12 +2552,12 @@ systemctl restart docker
       
     </div>
     
-      <script src="../../../assets/javascripts/application.3ca04de7.js"></script>
+      <script src="../../../../assets/javascripts/application.48c2c9de.js"></script>
       
         
         
           
-          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          <script src="../../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
           
             
               
@@ -2635,13 +2567,13 @@ systemctl restart docker
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
       
-        <script src="../../../_static/js/extra.js"></script>
+        <script src="../../../../_static/js/extra.js"></script>
       
         <script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
-        <script src="../../../search/main.js"></script>
+        <script src="../../../../search/main.js"></script>
       
     
   </body>
