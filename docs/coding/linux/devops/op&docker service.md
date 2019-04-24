@@ -52,7 +52,6 @@ docker run -d -p 9001:80 \
 * 阿里云 logsearch
 * 自定义nginx日志字段
 * 网络质量：smokeping
-* gitlab
 * seafile
 ## 各种监控
 ### 流量监控

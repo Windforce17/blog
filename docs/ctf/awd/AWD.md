@@ -10,9 +10,10 @@
 * 改cd ls curl wget常用命令
 * /var/www/html/ 设置为不可写
 
-
 ## blog
 https://0day.design/2018/12/20/HCTF%202018%20AWD%E5%B0%8F%E7%BB%93
+* D盾扫后门
+* chattr -i
 ## 防御
 * netstat：端口，连接排查方法 
 * 如何kill进程/防止kill
@@ -48,6 +49,12 @@ https://0day.design/2018/12/20/HCTF%202018%20AWD%E5%B0%8F%E7%BB%93
 * xss 打cookie
 * 自动化攻击，提交
 * 中国特色字典
+* bash不记录历史记录
+
+```
+export HISTFILE=/dev/null
+export HISTSILZ
+```
 
 
 ```bash

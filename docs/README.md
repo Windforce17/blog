@@ -1,3 +1,4 @@
+[![secret](https://raw.githubusercontent.com/Windforce17/blog/master/docs/_static/slogan.svg)](https://windforce17.github.io/blog)
 ## Material color palette 颜色主题
 
 ### Primary colors 主色
@@ -76,7 +77,6 @@
 - extractvalue()函数报错注入
 - 短url api
 - vue
-- 编译原理
 - https://www.leavesongs.com/
 - ?name=admin' and 1=2 union select 1,2,group_concat(flag) from flag--+ 
 - 上面的group_concat 作用

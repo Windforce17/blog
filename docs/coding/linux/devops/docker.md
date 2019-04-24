@@ -1,7 +1,4 @@
-## swarm 
-下面问题需要考虑下：  
-网络隔离?  
-代理?  
+
 
 ## 一些命令和脚本
 - 删除所有None镜像`docker rmi -f $(docker images -f "dangling=true" -q)`  
