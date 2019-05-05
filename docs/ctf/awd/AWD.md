@@ -6,11 +6,11 @@
 * linux_check
 * 修改默认口令 
 * 配置waf，文件监控，日志记录 
-* getflag所需命令改名
-* 改cd ls curl wget常用命令
 * /var/www/html/ 设置为不可写
 * D盾扫后门
 * chattr -i
+* 改cd ls curl wget常用命令
+* getflag所需命令改名
 ## 防御
 * netstat：端口，连接排查方法 
 * 如何kill进程/防止kill
