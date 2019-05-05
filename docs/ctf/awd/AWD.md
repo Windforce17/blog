@@ -7,6 +7,9 @@
 * 修改默认口令 
 * 配置waf，文件监控，日志记录 
 * /var/www/html/ 设置为不可写
+
+## blog
+https://0day.design/2018/12/20/HCTF%202018%20AWD%E5%B0%8F%E7%BB%93
 * D盾扫后门
 * chattr -i
 * 改cd ls curl wget常用命令
@@ -53,6 +56,7 @@ export HISTFILE=/dev/null
 export HISTSILZ
 ```
 
+
 ```bash
 lsb_release  -a
 file /bin/ls
@@ -63,6 +67,8 @@ whoami
 ssh user@remote_server tail -f /var/log/apache2/access.log | ngxtop -f
 ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log | ngxtop -f 
 ```
+
+
 ## 虚拟化判断
 https://www.bboysoul.com/2017/11/08/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E5%88%A4%E6%96%AD%E4%BD%A0%E7%9A%84vps%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%E7%9A%84%E5%B7%A5%E5%85%B7/
     
