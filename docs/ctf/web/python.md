@@ -128,3 +128,6 @@ a = input_t.format(user=User('joe'))
 # 等价于
 {{''.__class__}}
 ```
+
+### cookie生成，解码
+https://github.com/noraj/flask-session-cookie-manager

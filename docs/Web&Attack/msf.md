@@ -198,6 +198,12 @@ sey LHOST
 set LPORT
 ```
 
-### msf后渗透过程
+### 后渗透过程
 https://zhuanlan.zhihu.com/p/31060056
 http://www.freebuf.com/articles/system/5884.html
+https://github.com/aleenzz/Cobalt_Strike_wiki
+
+
+### 痕迹清除
+win：https://github.com/QAX-A-Team/EventCleaner
+Linux /var/log/ lastlog wtmp btmp
