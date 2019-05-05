@@ -10,6 +10,7 @@
 
 ## blog
 https://0day.design/2018/12/20/HCTF%202018%20AWD%E5%B0%8F%E7%BB%93
+https://github.com/admintony/Prepare-for-AWD
 * D盾扫后门
 * chattr -i
 * 改cd ls curl wget常用命令
