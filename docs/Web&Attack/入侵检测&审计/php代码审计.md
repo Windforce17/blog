@@ -9,6 +9,7 @@ display_error =off 避免攻击者获取更多信息
 expose_php = off 隐藏版本信息
 ```
 ## 代码审计
+https://github.com/hongriSec/PHP-Audit-Labs
 ### 两款代码审计工具 seay ,RIPS
 seay国产
 

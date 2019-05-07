@@ -6,14 +6,15 @@
 * linux_check
 * 修改默认口令 
 * 配置waf，文件监控，日志记录 
-* getflag所需命令改名
-* 改cd ls curl wget常用命令
 * /var/www/html/ 设置为不可写
 
 ## blog
 https://0day.design/2018/12/20/HCTF%202018%20AWD%E5%B0%8F%E7%BB%93
+https://github.com/admintony/Prepare-for-AWD
 * D盾扫后门
 * chattr -i
+* 改cd ls curl wget常用命令
+* getflag所需命令改名
 ## 防御
 * netstat：端口，连接排查方法 
 * 如何kill进程/防止kill

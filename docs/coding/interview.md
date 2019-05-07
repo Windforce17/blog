@@ -32,3 +32,6 @@ https://www.jianshu.com/p/0b68b992f688
 
 ## 头条 安全
 1. Linux基本命令、xargs，mysql花式索引，https，证书、输入url点击后背后发生的事，同源策略，xss，csrf，tcp/ip，arp、icmp、go语言数组和slice区别与坑
+
+## 360企业安全
+sql注入类型，判断注入，原理，手写payload，防护，上传所有绕过方法，原理，逻辑漏洞，XSS绕过技巧，防护，Java三大框架，序列化/反序列化，OSI七层，sqlmap各种命令，https注入参数，payload回显参数，nmap扫描存活，waf绕过，双编码绕过，nmap原理，

