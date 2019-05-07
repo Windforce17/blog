@@ -1298,6 +1298,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#docker-registry-frontend" title="docker-registry-frontend" class="md-nav__link">
+    docker-registry-frontend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#mssql" title="mssql" class="md-nav__link">
     mssql
   </a>
@@ -2546,6 +2553,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#docker-registry-frontend" title="docker-registry-frontend" class="md-nav__link">
+    docker-registry-frontend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#mssql" title="mssql" class="md-nav__link">
     mssql
   </a>
@@ -2690,6 +2704,13 @@
                 <h2 id="bbr">bbr<a class="headerlink" href="#bbr" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/teddysun/across/raw/master/bbr.sh">https://github.com/teddysun/across/raw/master/bbr.sh</a></p>
 <h2 id="docker">docker 常用容器<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h2>
+<h3 id="docker-registry-frontend">docker-registry-frontend<a class="headerlink" href="#docker-registry-frontend" title="Permanent link">&para;</a></h3>
+<p>sudo docker run \
+  -d \
+  -e ENV_DOCKER_REGISTRY_HOST=localhost \
+  -e ENV_DOCKER_REGISTRY_PORT=5000 \
+  -p 8081:80 \
+  konradkleine/docker-registry-frontend:v2</p>
 <h3 id="mssql">mssql<a class="headerlink" href="#mssql" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># 注意，PASSWORD必须足够复杂，否则会报错</span>
 docker run -e <span class="s1">&#39;ACCEPT_EULA=Y&#39;</span> -e <span class="s1">&#39;SA_PASSWORD=Str0ngPassword!&#39;</span> -p <span class="m">1433</span>:1433 -d microsoft/mssql-server-linux
