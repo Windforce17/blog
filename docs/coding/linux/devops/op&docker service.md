@@ -1,6 +1,13 @@
 ## bbr
  https://github.com/teddysun/across/raw/master/bbr.sh
 ## docker 常用容器
+### docker-registry-frontend
+sudo docker run \
+  -d \
+  -e ENV_DOCKER_REGISTRY_HOST=localhost \
+  -e ENV_DOCKER_REGISTRY_PORT=5000 \
+  -p 8081:80 \
+  konradkleine/docker-registry-frontend:v2
 ### mssql
 ```sh
 # 注意，PASSWORD必须足够复杂，否则会报错
