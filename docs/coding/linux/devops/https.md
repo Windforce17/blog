@@ -12,10 +12,10 @@
 ```zsh
     export DP_Id="1111"  &&
     export DP_Key="xxxxx"  &&
-    acme.sh --issue --dns dns_dp -d *.dddd.im -d dddd.im
-    acme.sh  --installcert  -d  *.dddd.im   \
-            --key-file   /usr/local/nginx/conf/ssl/dddd.im.key \
-            --fullchain-file /usr/local/nginx/conf/ssl/dddd.im.cer \
+    acme.sh --issue --dns dns_dp -d *.cugapp.com
+    acme.sh  --installcert  -d  *.cugapp.com   \
+            --key-file   /usr/local/nginx/conf/ssl/cugapp.com.key \
+            --fullchain-file /usr/local/nginx/conf/ssl/cugapp.com.cer \
             --reloadcmd  "nginx -s reload" 
 ```
 ## 使用webroot方式
