@@ -116,7 +116,11 @@ libc databases:http://libcdb.com
 系统调用表：http://syscalls.kernelgrok.com/
 
 ## dockerfile
-运行的时候需要赋予相应的权限：`--cap-add=SYS_PTRACE --security-opt seccomp=unconfined`,或者直接给root，`--privileged`
+运行的时候需要赋予相应的权限：`--cap-add=SYS_PTRACE --security-opt seccomp=unconfined`,或者直接给root，`--privileged`,添加下面两行到`~/.bashrc`里就可以快速打开pwn环境啦
+```sh
+alias w1='docker run --name pwntool --privileged --rm -it -v $HOME/ctf:/ctf/ pwntool /bin/bash'
+alias w11='docker exec -it pwntool bash'
+```
 ```dockerfile
 # ubuntu 18.04
 FROM ubuntu:18.04
