@@ -131,7 +131,7 @@ COPY ./pwndbg pwndbg
     apt clean 
 <span class="k">WORKDIR</span><span class="s"> /ctf</span>
 </pre></div></p>
-<div class="codehilite"><pre><span></span><span class="c"># ubuntu 18.04</span>
+<div class="codehilite"><pre><span></span><span class="c"># ubuntu 16.04</span>
 <span class="k">FROM</span><span class="s"> ubuntu:16.04</span>
 <span class="k">RUN</span> <span class="nb">echo</span> <span class="err">&#39;</span> deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse <span class="se">\n</span> <span class="se">\</span>
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse <span class="se">\n</span> <span class="se">\ </span>
@@ -147,10 +147,9 @@ deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted 
 <span class="s1">LC_ALL=&quot;en_US.UTF-8&quot;\n &#39;</span>&gt;/etc/default/locale
 <span class="k">WORKDIR</span><span class="s"> /</span>
 <span class="c"># ENV LC_ALL=en_US.UTF-8 PYTHONIOENCODING=UTF-8</span>
-<span class="c"># RUN git clone https://github.com/pwndbg/pwndbg \</span>
-    <span class="c1"># &amp;&amp; cd pwndbg \</span>
-    <span class="c1"># &amp;&amp; ./setup.sh \</span>
-COPY ./pwndbg pwndbg
+
+<span class="k">COPY</span> ./pwndbg pwndbg
+<span class="k">COPY</span> /etc/resolv.conf /etc/resolv.conf
 <span class="k">RUN</span> mkdir ctf <span class="se">\</span>
     <span class="o">&amp;&amp;</span> pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple pwntools <span class="se">\</span>
     <span class="o">&amp;&amp;</span> <span class="nb">cd</span> pwndbg <span class="se">\</span>
