@@ -146,7 +146,7 @@ WORKDIR /ctf
 ```
 
 ```dockerfile
-# ubuntu 18.04
+# ubuntu 16.04
 FROM ubuntu:16.04
 RUN echo ' deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse \n \
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse \n \ 
@@ -162,10 +162,9 @@ LANGUAGE="en_US.UTF-8" \n \
 LC_ALL="en_US.UTF-8"\n '>/etc/default/locale
 WORKDIR /
 # ENV LC_ALL=en_US.UTF-8 PYTHONIOENCODING=UTF-8
-# RUN git clone https://github.com/pwndbg/pwndbg \
-    # && cd pwndbg \
-    # && ./setup.sh \
+
 COPY ./pwndbg pwndbg
+COPY /etc/resolv.conf /etc/resolv.conf
 RUN mkdir ctf \
     && pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple pwntools \
     && cd pwndbg \
