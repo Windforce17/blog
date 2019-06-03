@@ -7,7 +7,7 @@
 ## go mod
 官方文档:https://github.com/golang/go/wiki/Modules  
 教程:https://roberto.selbach.ca/intro-to-go-modules/  
-go在1.11.1以上添加了go mod特性，用来取代以前的依赖管理。在GOland新建选项的时候选择第二个Go module
+go在1.11.1以上添加了go mod特性，用来取代以前的依赖管理。在Goland新建选项的时候选择第二个Go module
 ![gomod](2019-03-20-17-20-14.png)
 默认环境变量GO111MODULE=auto, 若工程在gopath下，就会从gopath寻找依赖包，或者从vendor中寻找依赖，在外部路径就会使用go module特性。
 
