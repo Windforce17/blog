@@ -5,11 +5,35 @@ http://www.scs.stanford.edu/brop/
 https://www.freebuf.com/articles/network/87447.html
 https://blog.csdn.net/qq_29343201/article/details/72627439
 
-## ROP
+## ROPgadget
  1. ROPgadget 得到代码片断
  2. cd80c3 就是int0x80;ret,s使用`ROPgadget --binary {binaryname} --opcode cd80c3`来寻找
  3. 动态链接找不到 int 0x80,需要构造rop
-
+ 4. `ROPgadget --binary {binary_name} --ropchain`可以直接生成ROP chain，不过要转换一下
+```py
+rop = []
+# i = 1
+for line in open("ropc"):
+    # print line,
+    if "pack" in line and '+=' in line:
+        print line
+        # print i
+        # print str(line).split(", ")[1].split(")")[0]
+        rop.append(str(line).split(", ")[1].split(")")[0])
+    if 'pack' not in line and '+=' in line:
+        # print i
+        # print line
+        rop.append(str(line).split("+= ")[1][1:-2])
+    # i += 1
+i=0
+while(i<len(rop)):
+    if rop[i]=='/bin':
+        rop[i]='0x6e69622f'
+    if rop[i]=='sh':
+        rop[i]='0x68732f2f'
+    i+=1
+print rop
+```
 ### 寄存器赋值
 构造栈结构
 ```
