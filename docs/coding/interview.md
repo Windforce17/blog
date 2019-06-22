@@ -35,3 +35,19 @@ https://www.jianshu.com/p/0b68b992f688
 
 ## 360企业安全
 sql注入类型，判断注入，原理，手写payload(时序)，防护，mysql、oracle、sqlserver注入区别，上传所有绕过方法，原理，解析漏洞，逻辑漏洞，XSS类型，绕过技巧，防护，过滤'<'等还可以XSS吗？Java三大框架，序列化/反序列化，OSI七层，sqlmap各种命令，https注入参数，payload回显参数，nmap扫描存活，waf绕过，双编码绕过，nmap原理，判断存活方法,2345xx http状态吗
+
+## 防御方
+sql注入类型，防护，
+mysql,oracle TiDB mongoDB,Couch 注入防护，加固
+上传绕过方法，原理，防御
+解析漏洞，逻辑漏洞原理，
+xss类型，绕过技巧，如何防御
+Java三大框架
+php，序列化反序列化原理，防御
+OSI七层模型，
+TCP syn floor原理
+nmap扫描防御
+http状态吗，500 502 403 405 401 400 204
+重放攻击防御
+SSL、TLS是什么
+如何配置https证书
