@@ -15,7 +15,12 @@ https://github.com/admintony/Prepare-for-AWD
 * chattr -i
 * 改cd ls curl wget常用命令
 * getflag所需命令改名
+* 
 ## 防御
+* webshell、后门、木马查杀
+  * http://www.shellpub.com/ 
+  * D盾
+  * 火绒
 * netstat：端口，连接排查方法 
 * 如何kill进程/防止kill
 * 改rw/a权限
@@ -30,7 +35,6 @@ https://github.com/admintony/Prepare-for-AWD
 * 上传漏洞防护
 * webshell扫描器
 * linux后门发现chkrootkit
-* 河马webshell查杀 http://www.shellpub.com/ 
 
 ## 攻击
 * 提权脚本

@@ -1,3 +1,9 @@
+##流程
+第一次malloc size<128K时候系统直接给132KB内存,大于则使用mmap
+
+Allocated chunk
+Free chunk
+Top chunk
 ## 堆数据结构
 - 存放chunk的metadata的chunk的结构(header)
   
@@ -25,14 +31,42 @@ mem=malloc(size)
 回收的chunk
 ![not_inuse](heap/2019-01-21-23-42-44.png)
 
+## main_arena header
+- malloc_state
+- 存在各种bin top chunk信息
+- 位于libc的bss段中
 ## Fastbin
-
+- 不会取消inuse flag
 - Chunk size <= get_max_fast()的chunk，会被放在fastbin的bin里
 - 64bit是128bytes，32bit是64bytes
 - global_max_fast 一开始是0
 - Fastbin是single linked list，只能使用fd，以NULL结尾
 - Chuk Size从32开始，共7个可用的fastbin
-32、48、64、80、96、112、128
+32、48、64、80、96、112、128（0x20 0x30 0x40 0x50 0x60 0x70)
+- 32位 fastbin size（0x10 0x18 0x20... 0x40)
+
+## unsorted bin
+- 双向环形链表
+- 每次分配找的大小一样
+- 当free大小不在fastbin，为了效率，先放入到unsorted bin，一段时间后再放入对应的bin中
+- 下次malloc先找unsorted bin中是否有适合的chunk
+  
+## small bin
+- 双向环形链表
+- chunk size < 512(32bit)
+- FIFO
+- 根据大小分成62个大小不同的bin
+- 16 24...80 88...508
+
+## large bin
+- 双向环形链（sorted)
+- chunk size >=512(32bit)
+- 不是一个固定大小的更加
+- 前32个bin 512+64...
+- 32-48bin 2496+512...;
+- 每个bin中大的chunk在前面，小的chunk放在后面
+- unsorted bin small bin large bin 组成 一个chunk array
+
 ### malloc时检查
 - malloc和free会对chunk进行检查，但检查fastbin的很少，比如说fastbin[2]的chunk size必须为64
 - free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并
@@ -42,7 +76,7 @@ malloc.c: _int_free
 - free的地址要16bit align
 - chunk 头和尾size要对，size不能太大
 - 下一个chunk的size不能过小
-- 
+
 ## double free
 - double free可以改变fd，拿到任意地址进行读写
 - fastbin只检查bin中的第一块chunk，只要不是连续free同一块chunk就没关系(fasttop)检查
@@ -64,14 +98,20 @@ malloc.c: _int_free
 64位got地址40开头，可以把0x40当作chunk_size用来绕过libc的检查。那么malloc应该是56字节，
 ![64bit_chunk_size](heap/2019-01-21-23-19-07.png)
 
-## 其他堆合并
-
-下图是size>128的堆合并过程，用gdb调试的时候有两个技巧
+## 堆合并
+- chunk不位mmaped
+- 下一个是top chunk，上一块是free chunk
+- 最后合并到top chunk
+- 下一块不是top chunk时，上或下是free chunk
+- 检查下一个chunk的prev_inuse bit，如果为0则double free
+下图是size>128的堆合并过程，用gdb调试的时候有两个技巧
 - `info macro [macroname]`  显示宏
 - `macro expand [code]`  展开宏
 ![gdb](heap/2019-02-01-12-40-08.png)
 
 ### unlink 
+- 将free的上（下）一个chunk拿掉，进行merge
+- 加入 unsorted bin
 ```c
 // double link list 拿掉一个
 //p BK FD 都是chunk structure指针
