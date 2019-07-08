@@ -104,6 +104,7 @@ malloc.c: _int_free
 - 最后合并到top chunk
 - 下一块不是top chunk时，上或下是free chunk
 - 检查下一个chunk的prev_inuse bit，如果为0则double free
+- P->bk->df==P && P->fd->bk==P(corrupted double linked list)
 下图是size>128的堆合并过程，用gdb调试的时候有两个技巧
 - `info macro [macroname]`  显示宏
 - `macro expand [code]`  展开宏
