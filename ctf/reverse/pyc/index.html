@@ -2024,6 +2024,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" title="查看字节码" class="md-nav__link">
+    查看字节码
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2516,6 +2523,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_3" title="查看字节码" class="md-nav__link">
+    查看字节码
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2549,12 +2563,18 @@
                   <h1>Pyc</h1>
                 
                 <h2 id="py">py反编译<a class="headerlink" href="#py" title="Permanent link">&para;</a></h2>
+<p><a href="https://rednaxelafx.iteye.com/blog/382423">https://rednaxelafx.iteye.com/blog/382423</a></p>
 <h3 id="_1">在线工具<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p><a href="https://wcf1987.iteye.com/blog/1672542">https://wcf1987.iteye.com/blog/1672542</a></p>
 <h3 id="_2">包<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><a href="https://blog.csdn.net/zhongbeida_xue/article/details/79082174">https://blog.csdn.net/zhongbeida_xue/article/details/79082174</a>
 <a href="https://blog.csdn.net/chpllp/article/details/76254927">https://blog.csdn.net/chpllp/article/details/76254927</a>
 <a href="https://wcf1987.iteye.com/blog/1672542">https://wcf1987.iteye.com/blog/1672542</a></p>
+<h3 id="_3">查看字节码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">opcode</span>  
+<span class="k">for</span> <span class="n">op</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">opcode</span><span class="o">.</span><span class="n">opname</span><span class="p">)):</span>  
+  <span class="k">print</span><span class="p">(</span><span class="s1">&#39;0x</span><span class="si">%.2X</span><span class="s1">(</span><span class="si">%.3d</span><span class="s1">): </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">op</span><span class="p">,</span> <span class="n">opcode</span><span class="o">.</span><span class="n">opname</span><span class="p">[</span><span class="n">op</span><span class="p">]))</span> 
+</pre></div>
                 
                   
                 

@@ -2821,7 +2821,8 @@ mem=malloc(size)
 <li>下一个是top chunk，上一块是free chunk</li>
 <li>最后合并到top chunk</li>
 <li>下一块不是top chunk时，上或下是free chunk</li>
-<li>检查下一个chunk的prev_inuse bit，如果为0则double free
+<li>检查下一个chunk的prev_inuse bit，如果为0则double free</li>
+<li>P-&gt;bk-&gt;df==P &amp;&amp; P-&gt;fd-&gt;bk==P(corrupted double linked list)
 下图是size&gt;128的堆合并过程，用gdb调试的时候有两个技巧</li>
 <li><code>info macro [macroname]</code>  显示宏</li>
 <li><code>macro expand [code]</code>  展开宏
