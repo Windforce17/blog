@@ -82,7 +82,8 @@ Key to Flags:
   L (link order), O (extra OS processing required), G (group), T (TLS),
   C (compressed), x (unknown), o (OS specific), E (exclude),
   p (processor specific)
-  ```
+```
+
 ## entries
 如果程序由是`dynamically` 那么由于很多符号都是运行时绑定(plt got got.plt...) 那么为了完成这一过程，头部就增加了`PT_DYNAMIC`的Section，`.dynamic`段，包含了若干entries,结构如下
 ```c
