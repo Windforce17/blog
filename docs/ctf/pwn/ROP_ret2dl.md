@@ -1,8 +1,8 @@
 ## 准备
-PLT - Procedure Linkage Table
-GOT - GLOBAL OFFSET TABLE
-参考[pwn4.fun](http://pwn4.fun/2016/11/09/Return-to-dl-resolve/)
-测试程序源码，编译环境为ubuntu16.04 ,命令`gcc -o bof -m32 -fno-stack-protector bof.c`
+PLT - Procedure Linkage Table  
+GOT - GLOBAL OFFSET TABLE  
+参考[pwn4.fun](http://pwn4.fun/2016/11/09/Return-to-dl-resolve/)  
+测试程序源码，编译环境为ubuntu16.04 ,命令`gcc -o bof -m32 -fno-stack-protector bof.c`  
 ```c
 #include <unistd.h>
 #include <stdio.h>
@@ -207,3 +207,5 @@ Relocation section '.rel.plt' at offset 0x330 contains 5 entries:
 0804a018  00000507 R_386_JUMP_SLOT   00000000   __libc_start_main@GLIBC_2.0
 0804a01c  00000607 R_386_JUMP_SLOT   00000000   write@GLIBC_2.0
 ```
+其中，offset就是`.got.plt`中保存的对应函数地址的地址，即*(0804a01c)=&write
+看
