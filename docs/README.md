@@ -1,4 +1,4 @@
-[![secret](https://raw.githubusercontent.com/Windforce17/blog/master/docs/_static/slogan.svg)](https://windforce17.github.io/blog)
+[![secret](https://raw.githubusercontent.com/Windforce17/blog/master/docs/_static/slogan.png)](https://windforce17.github.io/blog)
 ## Material color palette 颜色主题
 
 ### Primary colors 主色
