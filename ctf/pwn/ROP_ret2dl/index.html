@@ -2563,10 +2563,10 @@
                   <h1>ROP ret2dl</h1>
                 
                 <h2 id="_1">准备<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>PLT - Procedure Linkage Table
-GOT - GLOBAL OFFSET TABLE
-参考<a href="http://pwn4.fun/2016/11/09/Return-to-dl-resolve/">pwn4.fun</a>
-测试程序源码，编译环境为ubuntu16.04 ,命令<code>gcc -o bof -m32 -fno-stack-protector bof.c</code>
+<p>PLT - Procedure Linkage Table<br />
+GOT - GLOBAL OFFSET TABLE<br />
+参考<a href="http://pwn4.fun/2016/11/09/Return-to-dl-resolve/">pwn4.fun</a><br />
+测试程序源码，编译环境为ubuntu16.04 ,命令<code>gcc -o bof -m32 -fno-stack-protector bof.c</code><br />
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
@@ -2755,7 +2755,9 @@ got[0]保存了.dynamic地址:<code>0x08049f14</code>，got[1]保存了linker的
 0804a014  00000407 R_386_JUMP_SLOT   00000000   strlen@GLIBC_2.0
 0804a018  00000507 R_386_JUMP_SLOT   00000000   __libc_start_main@GLIBC_2.0
 0804a01c  00000607 R_386_JUMP_SLOT   00000000   write@GLIBC_2.0
-</pre></div></p>
+</pre></div>
+其中，offset就是<code>.got.plt</code>中保存的对应函数地址的地址，即*(0804a01c)=&amp;write
+看</p>
                 
                   
                 
