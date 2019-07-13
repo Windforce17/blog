@@ -1885,6 +1885,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#entries" title="entries" class="md-nav__link">
+    entries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#plt" title="plt详解" class="md-nav__link">
     plt详解
   </a>
@@ -2529,6 +2536,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#entries" title="entries" class="md-nav__link">
+    entries
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#plt" title="plt详解" class="md-nav__link">
     plt详解
   </a>
@@ -2657,17 +2671,16 @@ Key to Flags:
   L (link order), O (extra OS processing required), G (group), T (TLS),
   C (compressed), x (unknown), o (OS specific), E (exclude),
   p (processor specific)
-  ```
-## entries
-如果程序由是`dynamically` 那么由于很多符号都是运行时绑定(plt got got.plt...) 那么为了完成这一过程，头部就增加了`PT_DYNAMIC`的Section，`.dynamic`段，包含了若干entries,结构如下
-```c
-typedef struct {
-    Elf32_Sword d_tag;
-    union {
-        Elf32_Word d_val;
-        Elf32_Addr d_ptr;
-    } d_un;
-} Elf32_Dyn;
+</pre></div></p>
+<h2 id="entries">entries<a class="headerlink" href="#entries" title="Permanent link">&para;</a></h2>
+<p>如果程序由是<code>dynamically</code> 那么由于很多符号都是运行时绑定(plt got got.plt...) 那么为了完成这一过程，头部就增加了<code>PT_DYNAMIC</code>的Section，<code>.dynamic</code>段，包含了若干entries,结构如下
+<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">Elf32_Sword</span> <span class="n">d_tag</span><span class="p">;</span>
+    <span class="k">union</span> <span class="p">{</span>
+        <span class="n">Elf32_Word</span> <span class="n">d_val</span><span class="p">;</span>
+        <span class="n">Elf32_Addr</span> <span class="n">d_ptr</span><span class="p">;</span>
+    <span class="p">}</span> <span class="n">d_un</span><span class="p">;</span>
+<span class="p">}</span> <span class="n">Elf32_Dyn</span><span class="p">;</span>
 </pre></div>
 使用命令<code>readelf -d bof</code> 就可以看到这个段的数据结构，注意Name/Value就是那个联合体。
 <div class="codehilite"><pre><span></span> Tag        Type                         Name/Value
