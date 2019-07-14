@@ -115,6 +115,10 @@ shellcode=asm(shellcraft.sh())
 libc databases:http://libcdb.com
 系统调用表：http://syscalls.kernelgrok.com/
 
+## ret2dl
+这个工具可以更方便的生成fake_sym...
+
+https://github.com/inaz2/roputils
 ## dockerfile
 运行的时候需要赋予相应的权限：`--cap-add=SYS_PTRACE --security-opt seccomp=unconfined`,或者直接给root，`--privileged`,添加下面两行到`~/.bashrc`里就可以快速打开pwn环境啦
 ```sh
