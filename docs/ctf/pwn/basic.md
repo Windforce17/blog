@@ -137,15 +137,17 @@ linux 下
 - https://github.com/Neetx/Shellcode-Extractor
 从elf提取shellcode
 
+## 生成可打印的shellcode
+TODO:  
+http://blog.eonew.cn/archives/1125
 
 
-## return to Dynamic resolver
-return to lib without information leakage
 
 ## 漏洞挖掘方法
 * 现成CMS注意DIFF
 * 根据漏洞PATCH
 * 根据漏洞写出EXP，发动攻击 
+* 
 ## 保护
 NX:DEP 栈不可执行，可执行不可写 ROP绕过
 ALSR: 把每次载入的函数地址随机化，利用puts/printf 等leak出libc的实际地址
