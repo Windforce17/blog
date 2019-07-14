@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/coding/math/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/coding/vscode/">
       
       
         <meta name="author" content="Windforce17">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Math - windforce17's blog</title>
+        <title>Vscode - windforce17's blog</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#scipy" tabindex="1" class="md-skip">
+      <a href="#vscode" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -119,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Math
+                Vscode
               
             </span>
           
@@ -721,58 +721,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Math
-      </label>
-    
-    <a href="./" title="Math" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../math/" title="Math" class="md-nav__link">
       Math
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scipy" title="调用 scipy 计算排列组合的具体数值" class="md-nav__link">
-    调用 scipy 计算排列组合的具体数值
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#itertools" title="调用 itertools 获取排列组合的全部情况数" class="md-nav__link">
-    调用 itertools 获取排列组合的全部情况数
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -804,11 +757,58 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../vscode/" title="Vscode" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Vscode
+      </label>
+    
+    <a href="./" title="Vscode" class="md-nav__link md-nav__link--active">
       Vscode
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#vscode" title="vscode 配置开发环境" class="md-nav__link">
+    vscode 配置开发环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#golang" title="Golang" class="md-nav__link">
+    Golang
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2516,15 +2516,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scipy" title="调用 scipy 计算排列组合的具体数值" class="md-nav__link">
-    调用 scipy 计算排列组合的具体数值
+  <a href="#vscode" title="vscode 配置开发环境" class="md-nav__link">
+    vscode 配置开发环境
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#itertools" title="调用 itertools 获取排列组合的全部情况数" class="md-nav__link">
-    调用 itertools 获取排列组合的全部情况数
+  <a href="#golang" title="Golang" class="md-nav__link">
+    Golang
   </a>
   
 </li>
@@ -2551,31 +2551,23 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/math.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/vscode.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Math</h1>
+                  <h1>Vscode</h1>
                 
-                <h2 id="scipy">调用 scipy 计算排列组合的具体数值<a class="headerlink" href="#scipy" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">comb</span><span class="p">,</span> <span class="n">perm</span>
-<span class="c1"># 排列</span>
-<span class="n">perm</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mf">6.0</span>
-<span class="c1"># 组合 </span>
-<span class="n">comb</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="mf">3.0</span>
-</pre></div>
-
-<h2 id="itertools">调用 itertools 获取排列组合的全部情况数<a class="headerlink" href="#itertools" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>    <span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">combinations</span><span class="p">,</span> <span class="n">permutations</span>
-    <span class="n">permutations</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="o">&lt;</span><span class="n">itertools</span><span class="o">.</span><span class="n">permutations</span> <span class="n">at</span> <span class="mh">0x7febfd880fc0</span><span class="o">&gt;</span>
-                    <span class="c1"># 可迭代对象</span>
-    <span class="nb">list</span><span class="p">(</span><span class="n">permutations</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
-
-    <span class="nb">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+                <h2 id="vscode">vscode 配置开发环境<a class="headerlink" href="#vscode" title="Permanent link">&para;</a></h2>
+<h2 id="golang">Golang<a class="headerlink" href="#golang" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="c1">#go version &gt;=1.11</span>
+<span class="nb">export</span> <span class="nv">GO111MODULE</span><span class="o">=</span>on
+<span class="nb">export</span> <span class="nv">GOPROXY</span><span class="o">=</span>https://goproxy.io
+go get -u -v github.com/mdempsky/gocode
+go get -u -v github.com/ramya-rao-a/go-outline
+go get -u -v github.com/acroca/go-symbols
+go get -u -v golang.org/x/tools/cmd/guru
+go get -u -v golang.org/x/tools/cmd/gorename
+go get -u -v github.com/sqs/goreturns
+go get -u -v golang.org/x/lint/golint
 </pre></div>
                 
                   
@@ -2622,7 +2614,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../jetbrains/" title="Jetbrains" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../uefi&bios/" title="Uefi&bios" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2631,19 +2623,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                Jetbrains
+                Uefi&bios
               </span>
             </div>
           </a>
         
         
-          <a href="../php/" title="Php" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../参考文献写法/" title="参考文献写法" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                Php
+                参考文献写法
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
