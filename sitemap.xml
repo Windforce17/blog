@@ -396,6 +396,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://windforce17.github.io/blog/ctf/crypto/go_crack/</loc>
+     <lastmod>2019-07-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://windforce17.github.io/blog/ctf/crypto/md5padding/</loc>
      <lastmod>2019-07-14</lastmod>
      <changefreq>daily</changefreq>
@@ -447,6 +452,11 @@
     </url>
     <url>
      <loc>https://windforce17.github.io/blog/ctf/pwn/basic/</loc>
+     <lastmod>2019-07-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/ctf/pwn/encode/</loc>
      <lastmod>2019-07-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
