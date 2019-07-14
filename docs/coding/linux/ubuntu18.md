@@ -6,18 +6,28 @@ dpkg -i google-chrome-stable_current_amd64.deb
 ##  编译环境
 
 ### 32位
+```sh
  sudo apt install -y build-essential &&
  sudo apt install -y libc6-dev-i386 &&
  sudo apt install -y gcc-multilib g++-multilib 
-可以使用-m32 编译32位程序啦
-
+```
+可以使用-m32 编译32位程序啦  
+```sh
+# 32bit lib
+dpkg --add-architecture i386
+apt install libc6:i386 libstdc++6:i386
+apt install libc6-dbg:i386
+```
+```sh
+#arm mips
 apt install python-pip python3-pip build-essential libc6-dev-i386 gcc-multilib g++-multilib gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabi g++-arm-linux-gnueabilibncurses5-dev gcc-mips-linux-gnu
-
+```
 ### arm/misp
 sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
 sudo apt-get install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi 
 sudo apt-get install gcc-arm-linux-gnueabi 
 apt install gcc-mips-linux-gnu
+
 ## change source
 
 sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
