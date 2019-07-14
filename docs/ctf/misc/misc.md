@@ -7,7 +7,11 @@ exiftool 读取jpeg中的exif信息
 pngcheck 分析png中的压缩信息
 python-PIL 处理图片库
 
-
+## zsteg
+这是一个ruby写的工具
+```sh
+gem install zsteg
+```
 ## strings 命令查看大于14个字符串
 ```sh
 strings qweqwe.pcapng | grep '^[a-z0-9]\{14\}$' | tr -d '\n' > test.txt

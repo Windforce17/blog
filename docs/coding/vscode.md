@@ -12,4 +12,5 @@ go get -u -v golang.org/x/tools/cmd/guru
 go get -u -v golang.org/x/tools/cmd/gorename
 go get -u -v github.com/sqs/goreturns
 go get -u -v golang.org/x/lint/golint
+go get -v golang.org/x/tools/cmd/gopls
 ```
