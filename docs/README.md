@@ -73,75 +73,52 @@
 
 ## Todo List
 - 准备环境 qemu... awvs appscan
-- cg
 - extractvalue()函数报错注入
-- 短url api
-- vue
+- 短url，系统设计
 - https://www.leavesongs.com/
-- ?name=admin' and 1=2 union select 1,2,group_concat(flag) from flag--+ 
-- 上面的group_concat 作用
-### coding...
+  
+## coding...
 
+* crc32原理 
 * 书签整理
 * https://github.com/zanyarjamal/xerxes
 * 写一个爆破字段爆破工具
 * 开3389 c++
 * 跨平台抓包，支持https
 * 各种后门隐藏与发现,制作 asp php python c
-* 分布式肉鸡
-* 《redis设计与实现》
+* 分布式肉鸡控制器
 * http://ctf5.shiyanbar.com/web/index_3.php
   
-### book
-https://0x48.pw/
-crc32
-[21st Century C: C Tips from the New School 1st Edition](https://www.amazon.com/21st-Century-Tips-New-School/dp/1449327141/ref=as_li_ss_tl?ie=UTF8&linkCode=sl1&tag=thegroovycorpora&linkId=2118b794f9d0816d53bff771c54f309e&language=en_US)
-q-buffer-overflow-tutoral
-逆向工程核心原理
-《XSS跨站脚本攻击剖析与防御》
-加密与解密
-IDA Pro权威指南
-0day安全
-angr
-https://docs.angr.io/
-### 刷题
-http://www.shiyanbar.com/ctf/
-http://ctf.nuptzj.cn/
-https://www.jarvisoj.com/
-https://www.ichunqiu.com/competition
-http://www.whaledu.com/
-http://ddctf.didichuxing.com/
-http://pwnable.kr/
-https://pwnable.tw/
-https://pwnhub.cn/
-https://pwnable.xyz/
-http://wargame.kr/
-https://ropemporium.com/
-https://hackme.inndy.tw/
-http://www.exploit-exercises.com
-http://www.wechall.net/
-[hakcmeinndy wp](http://carlstar.club/)
-[pwanable wp](https://bbs.ichunqiu.com/thread-46026-1-1.html)
 
-### url
-[在线执行代码](https://www.dooccn.com)
-[ctftools](https://www.ctftools.com/down)
-[新闻](https://www.sitedirsec.com/)
-[cmd51](http://www.xmd5.org/)
-[js解密](http://tmxk.org/jother/)
-[gps](http://www.gpsspg.com/bs.htm)
-### 社工
-[be pwn?](https://haveibeenpwned.com/)
-### 要搭建的服务
-* oj
+
+## 要搭建的服务
+* CTFoj
 * owasp
+* ZvulDrill
 * msf vuln
-* wooyun
+* wooyun drop
 * file server
+* 社工库
 
-### 未验证的一些玩意
-#### mysql 协议加密算法
+## mysql 协议加密算法
 ```
 hash1 = SHA1(password) //password是用户输入的密码
 result = hash1 ^ sha1(scramble+sha1(hash1)) //scamble 是mysql server端发送的，当密码为空，固定为0x00
 ```
+
+## may be useful tools
+### beef install
+```sh
+gem install bundler  
+
+git clone https://github.com/beefproject/beef.git
+bundle install
+```
+
+### web扫描器
+- https://github.com/1120362990/vulnerability-list
+- https://github.com/ysrc/xunfeng
+- https://github.com/1N3/Sn1per
+- wmap
+- OpenVAS
+- nessus

