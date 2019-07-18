@@ -16,18 +16,16 @@ https://github.com/We5ter/Scanners-Box/blob/master/README_CN.md]
 ## CSRF  
 [浅析CSRF](http://www.cnblogs.com/wangyuyu/p/3388169.html)
 [从零开始学CSRF](http://www.freebuf.com/articles/web/55965.html)  
+
 ### 怎么生成CSRF?
 * burpsuite 自动生成利用poc  
 * awvs  
 * xss和csrf结合起来  
 
-## webapp
 
-wxf 
+## 移动端漏洞挖掘
 
-# 移动端漏洞挖掘
-
-## 自动化检测平台
+### 自动化检测平台
 http://service.security.tencent.com/kingkong 同时支持Android或者ios app文件  腾讯
 
 http://appscan.360.cn/app/5b074632a18a25478297a9c7e2a6c3b1/report/  360   只支持Android
@@ -262,54 +260,27 @@ https://github.com/citypw/DNFWAH
 https://github.com/ctfs/write-ups-2016
 https://github.com/ctfs/write-ups-2015
 https://github.com/ctfs/write-ups-2014
-fbctf竞赛平台Demo
-https://github.com/facebook/fbctf
 ctf Resources
 https://github.com/ctfs/resources
-各类编程资源
+
 大礼包（什么都有）
 https://github.com/bayandin/awesome-awesomeness
-bash-handbook
-https://github.com/denysdovhan/bash-handbook
-python资源大全
-https://github.com/jobbole/awesome-python-cn
-git学习资料
-https://github.com/xirong/my-git
+
 安卓开源代码解析
 https://github.com/android-cn/android-open-project-analysis
-python框架，库，资源大合集
-https://github.com/vinta/awesome-python
-JS 正则表达式库（用于简化构造复杂的JS正则表达式）
-https://github.com/VerbalExpressions/JSVerbalExpressions
-Python
-python 正则表达式库（用于简化构造复杂的python正则表达式）
-https://github.com/VerbalExpressions/PythonVerbalExpressions
+
 python任务管理以及命令执行库
 https://github.com/pyinvoke/invoke
-python exe打包库
-https://github.com/pyinstaller/pyinstaller
-py3 爬虫框架
-https://github.com/orf/cyborg
+
 一个提供底层接口数据包编程和网络协议支持的python库
 https://github.com/CoreSecurity/impacket
-python requests 库
-https://github.com/kennethreitz/requests
+
 python 实用工具合集
 https://github.com/mahmoud/boltons
 python爬虫系统
 https://github.com/binux/pyspider
-ctf向 python工具包
-https://github.com/P1kachu/v0lt
-科学上网
-科学上网工具
-https://github.com/XX-net/XX-Net
-老司机福利
-微信自动抢红包动态库
-https://github.com/east520/AutoGetRedEnv
-微信抢红包插件（安卓版）
-https://github.com/geeeeeeeeek/WeChatLuckyMoney
-神器
-https://github.com/yangyangwithgnu/hardseed
+
+
 ## 以下内容来自：https://github.com/We5ter/Scanners-Box/blob/master/README_CN.md
 子域名枚举类
 https://github.com/lijiejie/subDomainsBrute (经典的子域名爆破枚举脚本)
@@ -331,7 +302,6 @@ https://github.com/NetSPI/PowerUpSQL（攻击SQLSERVER的Powershell脚本框架�
 弱口令或信息泄漏扫描类
 https://github.com/lijiejie/htpwdScan (一个简单的HTTP暴力破解、撞库攻击脚本)
 https://github.com/lijiejie/BBScan (一个迷你的信息泄漏批量扫描脚本)
-https://github.com/lijiejie/GitHack (.git文件夹泄漏利用工具)
 https://github.com/wilson9x1/fenghuangscanner_v3 (端口及弱口令检测)
 https://github.com/ysrc/F-Scrack (对各类服务进行弱口令检测的脚本)
 https://github.com/Mebus/cupp （根据用户习惯生成弱口令探测字典脚本）

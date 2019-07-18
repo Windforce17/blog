@@ -10,13 +10,14 @@
 `net user` 当前账户
 `net user` username password /add  添加账户密码
 MS11-058 MS12-020
+
 ## msf基本命令
 `msfupdate`  更新
 `connect` 连接一个主机,   
 `info` 显示模块信息,  
 `back` 从当前环境返回,  
 `? banner` 输出banner使用方法,  
-`irb ruby` 模式,   
+`irb` ruby 模式,   
 `jobs` 任务管理器,   
 `resource` 运行储存在一个文件中的命令  
 `version` 显示版本信息  
@@ -28,7 +29,8 @@ MS11-058 MS12-020
  db_connect msf:hack-money@127.0.0.1/msf2
 ```
 ## 资料
-
+TODO
+```
     https://zhuanlan.zhihu.com/p/25857679
     http://www.kali.org.cn/thread-20133-1-1.html
     http://blog.csdn.net/lijia111111/article/details/64124693
@@ -38,7 +40,7 @@ MS11-058 MS12-020
     http://blog.csdn.net/lzhd24/article/details/50664342
     http://www.freebuf.com/sectool/72135.html
     http://blog.csdn.net/ski_12/article/details/57400687
-
+```
 ## 命令解释
 `msf>show exploit`显示metasploit框架中所有可用的渗透攻击模块。
 
