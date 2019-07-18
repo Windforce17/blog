@@ -1,3 +1,9 @@
+## .git .DS_store泄露
+.git泄露利用EXP:https://github.com/lijiejie/GitHack
+.DS_Store 利用: https://github.com/lijiejie/ds_store_exp
+进程环境变量: /proc/self/environ 
+
+```
 /index.php.bak
 /index.php~
 /.index.php~
@@ -56,3 +62,11 @@
 /login.php.bak
 /view.php.bak
 /blog_manage
+
+/robots.txt 
+/.git/
+/.svn/
+/*.zip 
+/*.rar 
+/.DS_Store/
+```

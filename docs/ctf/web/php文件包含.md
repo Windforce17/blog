@@ -1,10 +1,10 @@
-## php绕过扩展名
-phpss
 
 ## 常用重要文件
+```
 /etc/apache2/apache2.conf
 /etc/apache2/sites-enabled/000-default.conf
 /var/log/apache2/error.log
+```
 ## _FILES数组
 $_FILES 数组提供了多个内容在文件上传时使用，比较重要的有以下几个：
 ```php

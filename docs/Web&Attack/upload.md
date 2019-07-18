@@ -1,13 +1,17 @@
 TODO:  
+## 上传二次渲染
+有时候上传文件时php会用组件把你的文件格式更改为jpg，需要用/ctf/web/php/php_jpg.php中的脚本进行绕过
 
 ## 文件解析
 https://blog.csdn.net/wn314/article/details/77074477
 https://www.cnblogs.com/shellr00t/p/6426856.html
 
-
-截断，分号 php=>ptml,php2 php3 php4...  
+```
+截断，分号 php=>ptml,php2 php3 php4 phpss...  
 flag.php:1  
 flag.php::$DATA  
+空格可以使用$IFS代替
+```
 ## 回调后门
 https://www.leavesongs.com/PENETRATION/php-callback-backdoor.html
 

