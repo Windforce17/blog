@@ -72,7 +72,7 @@
 </script>
 
 ## Todo List
-- 准备环境 qemu... awvs appscan
+- 为什么int 3 可以反调试
 - extractvalue()函数报错注入
 - 短url，系统设计
 - https://www.leavesongs.com/
@@ -114,11 +114,3 @@ gem install bundler
 git clone https://github.com/beefproject/beef.git
 bundle install
 ```
-
-### web扫描器
-- https://github.com/1120362990/vulnerability-list
-- https://github.com/ysrc/xunfeng
-- https://github.com/1N3/Sn1per
-- wmap
-- OpenVAS
-- nessus

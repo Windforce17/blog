@@ -57,7 +57,7 @@ ssh-add -l
 
 方法一： checkout到历史提交，然后checkout -b。
 方法二： reset到历史提交，checkout -b，然后再reset到原来的版本。
-方法三： git branch <branch> <start point>
+方法三： git branch `<branch> <start point>`
 
 ## 将某个历史版本全部拉到工作区和暂存区：
 

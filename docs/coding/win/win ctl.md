@@ -1,24 +1,3 @@
-# win some command
-
-## win 下wnmp环境配置
-
-### nginx
-
-启动即可，别启动了多个进程
-nginx.conf:
-            fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
-
-### php
-
-复制一份到php.ini
-
-命令行启动：
-    php-cgi.exe -b 127.0.0.1:9000
-
-### mysql
-
-见dataBase/mysql
-
 ## 激活
 
 ### kms清除
@@ -47,13 +26,6 @@ cd office路径:
 ### kms服务器测试
 
     nslookup -type=srv _vlmcs._tcp.lan
-
-## 个人备份相关
-
-* jetbrian
-* chrome书签
-* ss
-* xshell
 
 ## 用户管理
 1. net user 显示所有用户

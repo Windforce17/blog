@@ -21,14 +21,14 @@ ini_set('error_log', dirname(__FILE__) . '/error_log.txt'); //将出错信息输
 ```
 
 ## debug php.ini
-
+```ini
 ;显示错误信息
 display_errors = On
 ;显示php开始错误信息
 display_startup_errors = On
 ;日志记录错误信息
 log_errors = On
-
+```
 ## 一些函数
 
 ### extract()
@@ -43,9 +43,7 @@ extract($my_array);
 echo "\$a = $a; \$b = $b; \$c = $c";
 ?>
 ```
-
 ### parse_str()
-
 将查询到的字符串解析到变量中
 
 ```php
@@ -57,5 +55,4 @@ echo $age;
 ```
 
 ### import_request_variables()
-
 将 GET／POST／Cookie 变量导入到全局作用域中

@@ -2,9 +2,10 @@
 - 使用`nasm [sourcecode] -o [target] -felf32`编译一个汇编文件 
 
 ## 字符串计数
-edi:存放字符串
-al：存放字符x
-repne scas byte ptr es:[edi] ：遍历字符串，每循环一次ecx-1，遇到字符x则停止
+- edi:存放字符串
+- al：存放字符x
+- repne scas byte ptr es:[edi] ：遍历字符串，每循环一次ecx-1，遇到字符x则停止
+  
 ```c
 #include<stdio.h>
 
