@@ -2654,26 +2654,38 @@ python-PIL 处理图片库</p>
 <h2 id="zlib">zlib<a class="headerlink" href="#zlib" title="Permanent link">&para;</a></h2>
 <p>78 9C是zlib压缩标志
 zlib扩展阅读http://zlib.net/</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">zlib</span>
+<span class="n">zlib</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="s1">&#39;xxdaxabHI.Ixab..1NOxcc3H/2)xc8xa8xd4MxcdK6H1xd657xae(xd15xcc+xc9xd75xcc5IOxadx05x00Zpx0fx1798&amp;4f#ti</span><span class="si">%d</span><span class="s1">c&#39;</span><span class="p">)</span>
+<span class="c1"># output: &#39;xdctf{st3gan0gr4phy-enc0d3-73xt-1nto-1m4ge}&#39;</span>
+</pre></div>
+
 <h2 id="gif">GIF<a class="headerlink" href="#gif" title="Permanent link">&para;</a></h2>
 <p>开头GIF8[7/9]a</p>
 <h3 id="_2">扩展阅读<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><a href="http://dev.gameres.com/Program/Visual/Other/GIFDoc.htm">http://dev.gameres.com/Program/Visual/Other/GIFDoc.htm</a>
 可以用Stegsolve播放帧</p>
 <h2 id="pil">PIL库的使用<a class="headerlink" href="#pil" title="Permanent link">&para;</a></h2>
-<p>import Image
-MAX = 25
-pic = Image.new("RGB",(MAX, MAX))
-str = "1111111000100001101111111100000101110010110100000110111010100000000010111011011101001000000001011101101110101110110100101110110000010101011011010000011111111010101010101111111000000001011101110000000011010011000001010011101101111010101001000011100000000000101000000001001001101000100111001111011100111100001110111110001100101000110011100001010100011010001111010110000010100010110000011011101100100001110011100100001011111110100000000110101001000111101111111011100001101011011100000100001100110001111010111010001101001111100001011101011000111010011100101110100100111011011000110000010110001101000110001111111011010110111011011"
-i=0
-for y in range (0,MAX):
-    for x in range (0,MAX):
-        if(str[i] == '1'):
-            pic.putpixel([x,y],(0, 0, 0))
-        else:
-            pic.putpixel([x,y],(255,255,255))
-        i = i+1
-pic.show()
-pic.save("flag.png")</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">Image</span>
+<span class="n">MAX</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">pic</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,(</span><span class="n">MAX</span><span class="p">,</span> <span class="n">MAX</span><span class="p">))</span>
+<span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;1111111000100001101111111100000101110010110100000110111010100000000010111011011101001000000001011101101110101110110100101110110000010101011011010000011111111010101010101111111000000001011101110000000011010011000001010011101101111010101001000011100000000000101000000001001001101000100111001111011100111100001110111110001100101000110011100001010100011010001111010110000010100010110000011011101100100001110011100100001011111110100000000110101001000111101111111011100001101011011100000100001100110001111010111010001101001111100001011101011000111010011100101110100100111011011000110000010110001101000110001111111011010110111011011&quot;</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">MAX</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">MAX</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">str</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">):</span>
+            <span class="n">pic</span><span class="o">.</span><span class="n">putpixel</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">],(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">pic</span><span class="o">.</span><span class="n">putpixel</span><span class="p">([</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">],(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">))</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">pic</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">pic</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;flag.png&quot;</span><span class="p">)</span>
+
+<span class="c1"># lSB</span>
+<span class="kn">import</span> <span class="nn">Image</span>
+<span class="n">a</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;zxczxc.png&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="mi">255</span> <span class="k">if</span> <span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
 <h2 id="base64">base64转图片<a class="headerlink" href="#base64" title="Permanent link">&para;</a></h2>
 <p><img src="data:image/jpg;base64,ZmxhZ3t4Y3Rmezg4MzEyN2QyNzI2MjZjOWFmN2Q3M2Q5M2JlMDBkZTQ3fX0="></p>
                 
