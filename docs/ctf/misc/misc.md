@@ -38,10 +38,16 @@ http://www.cnblogs.com/fengyv/archive/2006/04/30/2423964.html
 ## 查看IDAT数据块
 pngcheck.exe -v xxx.png 正常一个块是65524
 
-##zlib
+## zlib
 
 78 9C是zlib压缩标志
 zlib扩展阅读http://zlib.net/
+
+```py
+import zlib
+zlib.decompress('xxdaxabHI.Ixab..1NOxcc3H/2)xc8xa8xd4MxcdK6H1xd657xae(xd15xcc+xc9xd75xcc5IOxadx05x00Zpx0fx1798&4f#ti%dc')
+# output: 'xdctf{st3gan0gr4phy-enc0d3-73xt-1nto-1m4ge}'
+```
 
 ## GIF
 开头GIF8[7/9]a
@@ -49,6 +55,7 @@ zlib扩展阅读http://zlib.net/
 http://dev.gameres.com/Program/Visual/Other/GIFDoc.htm
 可以用Stegsolve播放帧
 ## PIL库的使用
+```py
 import Image
 MAX = 25
 pic = Image.new("RGB",(MAX, MAX))
@@ -64,6 +71,11 @@ for y in range (0,MAX):
 pic.show()
 pic.save("flag.png")
 
+# lSB
+import Image
+a=Image.open('zxczxc.png')
+a.point(lambda i: 255 if i&1 else 0).show()
+```
 ## base64转图片
 
 <img src="data:image/jpg;base64,ZmxhZ3t4Y3Rmezg4MzEyN2QyNzI2MjZjOWFmN2Q3M2Q5M2JlMDBkZTQ3fX0=">

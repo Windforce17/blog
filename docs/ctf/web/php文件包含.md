@@ -84,8 +84,8 @@ php对post过来的文件有一个默认处理流程，即在一个处理周期�
 原文：https://blog.csdn.net/qq_30123355/article/details/58165038 
 
 ## php伪协议
-
-### 读取../flag.php
+https://lorexxar.cn/2016/09/14/php-wei/
+读取../flag.php
 ```
 module=php://filter/read=convert.base64-encode/resource/../flag&name=php
 ```
