@@ -1928,15 +1928,15 @@
     large bin
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#malloc" title="malloc时检查" class="md-nav__link">
-    malloc时检查
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#malloc" title="malloc时的检查" class="md-nav__link">
+    malloc时的检查
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#free" title="free时的检查" class="md-nav__link">
@@ -2539,15 +2539,15 @@
     large bin
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#malloc" title="malloc时检查" class="md-nav__link">
-    malloc时检查
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#malloc" title="malloc时的检查" class="md-nav__link">
+    malloc时的检查
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#free" title="free时的检查" class="md-nav__link">
@@ -2701,16 +2701,17 @@ mem=malloc(size)
 <li>每个bin中大的chunk在前面，小的chunk放在后面</li>
 <li>unsorted bin small bin large bin 组成 一个chunk array</li>
 </ul>
-<h3 id="malloc">malloc时检查<a class="headerlink" href="#malloc" title="Permanent link">&para;</a></h3>
+<h2 id="malloc">malloc时的检查<a class="headerlink" href="#malloc" title="Permanent link">&para;</a></h2>
 <ul>
-<li>malloc和free会对chunk进行检查，但检查fastbin的很少，比如说fastbin[2]的chunk size必须为64</li>
-<li>free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并</li>
+<li>malloc和free会对chunk进行检查，但检查fastbin的很少(其他可能会检测双向链表以及pre_size是否正确等)，比如说fastbin[2]的chunk size必须为64</li>
 </ul>
 <h3 id="free">free时的检查<a class="headerlink" href="#free" title="Permanent link">&para;</a></h3>
 <p>malloc.c: _int_free
 - free的地址要16bit align
 - chunk 头和尾size要对，size不能太大
-- 下一个chunk的size不能过小</p>
+- 下一个chunk的size不能过小
+- free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并,不在fastbin范围能则会设置下一个chunk的prev_size，取消prev_inuse_bit,并检查上下是否被free，进行合并，或者对unsorted bin进行整理等。
+- </p>
 <h2 id="double-free">double free<a class="headerlink" href="#double-free" title="Permanent link">&para;</a></h2>
 <ul>
 <li>double free可以改变fd，拿到任意地址进行读写</li>
