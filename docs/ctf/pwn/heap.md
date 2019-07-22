@@ -67,16 +67,17 @@ mem=malloc(size)
 - 每个bin中大的chunk在前面，小的chunk放在后面
 - unsorted bin small bin large bin 组成 一个chunk array
 
-### malloc时检查
-- malloc和free会对chunk进行检查，但检查fastbin的很少，比如说fastbin[2]的chunk size必须为64
-- free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并
+## malloc时的检查
+- malloc和free会对chunk进行检查，但检查fastbin的很少(其他可能会检测双向链表以及pre_size是否正确等)，比如说fastbin[2]的chunk size必须为64
+
   
 ### free时的检查
 malloc.c: _int_free
 - free的地址要16bit align
 - chunk 头和尾size要对，size不能太大
 - 下一个chunk的size不能过小
-
+- free的时候不会取消下一个chunk的prev_inuse_bit 因为fastbin chunk不会和其他chunk合并,不在fastbin范围能则会设置下一个chunk的prev_size，取消prev_inuse_bit,并检查上下是否被free，进行合并，或者对unsorted bin进行整理等。
+- 
 ## double free
 - double free可以改变fd，拿到任意地址进行读写
 - fastbin只检查bin中的第一块chunk，只要不是连续free同一块chunk就没关系(fasttop)检查
