@@ -2689,7 +2689,18 @@ mem=malloc(size)
 <li>chunk size &lt; 512(32bit)</li>
 <li>FIFO</li>
 <li>根据大小分成62个大小不同的bin</li>
-<li>16 24...80 88...508</li>
+<li>16 24...80 88...508
+<div class="codehilite"><pre><span></span> <span class="c1">//check double link list</span>
+ <span class="c1">//victim 是即将分配的chunk</span>
+  <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// 获取 small bin 中倒数第二个 chunk 。</span>
+                <span class="n">bck</span> <span class="o">=</span> <span class="n">victim</span><span class="o">-&gt;</span><span class="n">bk</span><span class="p">;</span>
+                <span class="c1">// 检查 bck-&gt;fd 是不是 victim，防止伪造</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">__glibc_unlikely</span><span class="p">(</span><span class="n">bck</span><span class="o">-&gt;</span><span class="n">fd</span> <span class="o">!=</span> <span class="n">victim</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="n">errstr</span> <span class="o">=</span> <span class="s">&quot;malloc(): smallbin double linked list corrupted&quot;</span><span class="p">;</span>
+                    <span class="k">goto</span> <span class="n">errout</span><span class="p">;</span>
+                <span class="p">}</span>
+</pre></div></li>
 </ul>
 <h2 id="large-bin">large bin<a class="headerlink" href="#large-bin" title="Permanent link">&para;</a></h2>
 <ul>
@@ -2746,8 +2757,8 @@ mem=malloc(size)
 </ul>
 <h3 id="unlink">unlink<a class="headerlink" href="#unlink" title="Permanent link">&para;</a></h3>
 <ul>
-<li>将free的上（下）一个chunk拿掉，进行merge</li>
-<li>加入 unsorted bin
+<li>将free的上（下）一个chunk拿掉，进行merge，加入 unsorted bin</li>
+<li>取下small bin中的chunk时，似乎也会unlink
 <div class="codehilite"><pre><span></span><span class="c1">// double link list 拿掉一个</span>
 <span class="c1">//p BK FD 都是chunk structure指针</span>
 <span class="cp">#define unlink(P,BK,FD) {\</span>
