@@ -57,7 +57,18 @@ mem=malloc(size)
 - FIFO
 - 根据大小分成62个大小不同的bin
 - 16 24...80 88...508
-
+```c
+ //check double link list
+ //victim 是即将分配的chunk
+  else {
+                // 获取 small bin 中倒数第二个 chunk 。
+                bck = victim->bk;
+                // 检查 bck->fd 是不是 victim，防止伪造
+                if (__glibc_unlikely(bck->fd != victim)) {
+                    errstr = "malloc(): smallbin double linked list corrupted";
+                    goto errout;
+                }
+```
 ## large bin
 - 双向环形链（sorted)
 - chunk size >=512(32bit)
@@ -112,8 +123,8 @@ malloc.c: _int_free
 ![gdb](heap/2019-02-01-12-40-08.png)
 
 ### unlink 
-- 将free的上（下）一个chunk拿掉，进行merge
-- 加入 unsorted bin
+- 将free的上（下）一个chunk拿掉，进行merge，加入 unsorted bin
+- 取下small bin中的chunk时，似乎也会unlink
 ```c
 // double link list 拿掉一个
 //p BK FD 都是chunk structure指针
