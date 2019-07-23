@@ -8,3 +8,7 @@ CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
 # 32bit GOARCH=386
 ```
+
+## 常用包
+https://github.com/urfave/cli
+A simple, fast, and fun package for building command line apps in Go
