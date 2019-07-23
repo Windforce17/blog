@@ -401,11 +401,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/ctf/misc/webasm/</loc>
-     <lastmod>2019-07-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://windforce17.github.io/blog/ctf/misc/wireshark/</loc>
      <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
@@ -466,6 +461,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://windforce17.github.io/blog/ctf/reverse/dotNet/</loc>
+     <lastmod>2019-07-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://windforce17.github.io/blog/ctf/reverse/ida/</loc>
      <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
@@ -487,6 +487,11 @@
     </url>
     <url>
      <loc>https://windforce17.github.io/blog/ctf/reverse/unpack/</loc>
+     <lastmod>2019-07-23</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/ctf/reverse/webasm/</loc>
      <lastmod>2019-07-23</lastmod>
      <changefreq>daily</changefreq>
     </url>
