@@ -71,24 +71,18 @@
 - 首选: http://libgen.io/
 - http://bestcbooks.com
 - http://www.pdf-search-engine.com/  
+- http://openpdf.com/ - 
 - http://www.pdfgeni.com/  
 - http://search-pdf-books.com/ 
 - http://pdf.rapid4me.com/ 
 - http://www.toodoc.com/ 
-- http://openpdf.com/ 
-- http://www.pdfqueen.com/ 
 - http://www.data-sheet.net/ 
 - http://www.ebook-search-engine.com/
-- http://www.pdfone.com/
 - http://live-pdf.com/
-- http://www.aeropdf.com/
-- http://www.ggiaro.com/
 - http://www.pdfsearchengine.in/
-- http://www.pdfeye.com/
 - http://pdftrace.com/
 - http://www.pdf-searcher.com/
-- http://pdflost.com/
-- http://www.filedigg.com/
+- http://www.filegg.com/
 
 ## Tool set
 

@@ -33,6 +33,8 @@ https://www.jianshu.com/p/0b68b992f688
 ## 头条 安全
 1. Linux基本命令、xargs，mysql花式索引，https/SSL ，证书原理、输入url点击后背后发生的事，同源策略，xss，csrf，tcp/ip，arp、icmp、go语言数组和slice区别与坑
 
+2. pe文件结构，hook原理，windows函数调用，linux函数调用，windows，linux系统调用原理。windows漏洞利用，rop，aslr绕过，内核漏洞利用。linux漏洞利用，linux堆栈漏洞，ctf经历，内核漏洞利用，内核保护原理，写一道简单算法，2道汇编，一道函数调用汇编，一道汇编实现memcpy, hook原理
+
 ## 360企业安全
 sql注入类型，判断注入，原理，手写payload(时序)，防护，mysql、oracle、sqlserver注入区别，上传所有绕过方法，原理，解析漏洞，逻辑漏洞，XSS类型，绕过技巧，防护，过滤'<'等还可以XSS吗？Java三大框架，序列化/反序列化，OSI七层，sqlmap各种命令，https注入参数，payload回显参数，nmap扫描存活，waf绕过，双编码绕过，nmap原理，判断存活方法,2345xx http状态吗
 
