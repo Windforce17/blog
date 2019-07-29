@@ -482,15 +482,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="查询子站点，子域名" class="md-nav__link">
-    查询子站点，子域名
+  <a href="#c" title="查询子站点，子域名、旁站、C段" class="md-nav__link">
+    查询子站点，子域名、旁站、C段
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="反向查询" class="md-nav__link">
+  <a href="#_2" title="反向查询" class="md-nav__link">
     反向查询
   </a>
   
@@ -509,7 +509,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="寻找后台" class="md-nav__link">
+  <a href="#_3" title="寻找后台" class="md-nav__link">
     寻找后台
   </a>
   
@@ -2526,15 +2526,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="查询子站点，子域名" class="md-nav__link">
-    查询子站点，子域名
+  <a href="#c" title="查询子站点，子域名、旁站、C段" class="md-nav__link">
+    查询子站点，子域名、旁站、C段
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" title="反向查询" class="md-nav__link">
+  <a href="#_2" title="反向查询" class="md-nav__link">
     反向查询
   </a>
   
@@ -2553,7 +2553,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="寻找后台" class="md-nav__link">
+  <a href="#_3" title="寻找后台" class="md-nav__link">
     寻找后台
   </a>
   
@@ -2619,7 +2619,7 @@
 <li><a href="http://www.yougetsignal.com/tools/web-sites-on-web-server/">http://www.yougetsignal.com/tools/web-sites-on-web-server/</a> 同IP网站反查</li>
 <li><a href="http://bgp.he.net/">http://bgp.he.net/</a> IP信息扫描</li>
 <li><a href="http://builtwith.com/">http://builtwith.com/</a> 网站指纹信息</li>
-<li><a href="http://whois.chinaz.com/">http://whois.chinaz.com/</a> WHOIS查询</li>
+<li><a href="http://whois.chinaz.com/">http://whois.chinaz.com/</a> WHOIS查询 -&gt;邮箱 电话反差</li>
 <li><code>msf &gt; whois url</code> // 通过whois查询  </li>
 <li>RED_HAWK</li>
 <li>Sn1per</li>
@@ -2629,16 +2629,17 @@
 <li><a href="http://whatweb.bugscaner.com/look/">http://whatweb.bugscaner.com/look/</a></li>
 <li>robots.txt</li>
 <li>后台特征：/dede</li>
+<li></li>
 </ul>
 <h2 id="nslookup-cache"><code>nslookup</code> 从cache中查询<a class="headerlink" href="#nslookup-cache" title="Permanent link">&para;</a></h2>
 <p>使用set type = A 可以对ip地址进行解析，   <br />
 使用set type = MX 来查找其邮件转发   <br />
-有些dns服务器开启了区域传送，使用ls -d example.com 命令来查看其所有的              dns记录，这些信息会暴露大量网络的内部拓扑信息。  </p>
+有些dns服务器开启了区域传送，使用ls -d example.com 命令来查看其所有的dns记录，这些信息会暴露大量网络的内部拓扑信息。  </p>
 <h2 id="dig">dig 精确查询<a class="headerlink" href="#dig" title="Permanent link">&para;</a></h2>
 <p><code>dig @dns服务器 域名</code> 触发dns解析服务器向官方权威dns服务器进行一次递归查询，以获得权威解答.在不同网络位置进行查询将有助于发现大型网站所使用的ip地址列表，从而确定所使用的服务器集群范围 </p>
-<h2 id="_2">查询子站点，子域名<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="c">查询子站点，子域名、旁站、C段<a class="headerlink" href="#c" title="Permanent link">&para;</a></h2>
 <p>searchdns.netcraft.com</p>
-<h3 id="_3">反向查询<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h3 id="_2">反向查询<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="http://www.7c.com">www.7c.com</a></li>
 <li><a href="http://www.ip-adress.com/reverse_ip">http://www.ip-adress.com/reverse_ip</a></li>
@@ -2657,14 +2658,13 @@
 </ul>
 </li>
 </ol>
-<h2 id="_4">寻找后台<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_3">寻找后台<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/MichaelDim02/colloide.git">https://github.com/MichaelDim02/colloide.git</a></p>
 <h2 id="google-hacking">google hacking<a class="headerlink" href="#google-hacking" title="Permanent link">&para;</a></h2>
 <p>检索特定类型文件: site:testfire.net filetype:xls搜索易存在sql注入点的页面</p>
 <ul>
-<li>扩展名为inc的文件，可能包含配置信息，数据库用户名/口令                </li>
-<li>bak文件，文本编辑器备份文件                </li>
-<li>.sql脚本        </li>
+<li>扩展名为inc的文件，可能包含配置信息，数据库用户名/口令                              </li>
+<li>.sql .pdf .inc .bak       </li>
 </ul>
 <h2 id="msf">msf服务扫描和查点模块<a class="headerlink" href="#msf" title="Permanent link">&para;</a></h2>
 <p><code>[service_name]_version</code> 遍历网络中包含了某种服务的主机，并进一步确定服务版本,对某种服务进行口令探测攻击在MSF终端中，输入<code>use auxiliary/scanner/telnet/letnet_version</code>or<code>use auxiliary/scanner/ssh/ssh_version</code></p>
