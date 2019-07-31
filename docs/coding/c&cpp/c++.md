@@ -3,25 +3,25 @@
 ## 杂项
 * wchar_t 扩展字符集，cin和cout将输入输出看作是char流，因此不适用处理wchar_ t类型，通过前缀L指示宽字符常量和宽字符串。     
 
-> c和c++对有效位数要求是，float至少32位，double至少是48位，切不少于float。long
-> double至少和double一样多，这三种类型的有效位数可以一样多。通常float为32位，double为64位，long double为80 96 128位。这三种指数类型至少是-37到37，可以从cfloat或float.h找到系统的限制。    
+*c和c++对有效位数要求是，float至少32位，double至少是48位，切不少于float。long
+* double至少和double一样多，这三种类型的有效位数可以一样多。通常float为32位，double为64位，long double为80 96 128位。这三种指数类型至少是-37到37，可以从cfloat或float.h找到系统的限制。    
  
- *wchar_t a[] = L"字符串”;    
- *char16_t a[] = u"字符串”;    
- *char32_t a[] = U"字符串";     
- *cout<<R“(原始字符串)”;    
- *c++11 结构可以用列表初始化;    
- *{}列表初始化，不允许缩窄，变量。
- *（c++11）     
- *关键字auto可以不指定变量的类型      
- *cin.getline(name,int);
- *读取一行的输入。丢弃换行符
- *cin.get(name,int);读取一行，留下换行符。     
- *cin.get()读取单个字符；    
- *cin.clear();清除失效位（failbit）；     
- *前缀R表示raw原始字符串，此时\n不表示换行符；
+* wchar_t a[] = L"字符串”;    
+* char16_t a[] = u"字符串”;    
+* char32_t a[] = U"字符串";     
+* cout<<R“(原始字符串)”;    
+* c++11 结构可以用列表初始化;    
+* {}列表初始化，不允许缩窄，变量。
+* （c++11）     
+* 关键字auto可以不指定变量的类型      
+* cin.getline(name,int);
+* 读取一行的输入。丢弃换行符
+* cin.get(name,int);读取一行，留下换行符。     
+* cin.get()读取单个字符；    
+* cin.clear();清除失效位（failbit）；     
+* 前缀R表示raw原始字符串，此时\n不表示换行符；
  
- 结构数组初始化: 
+结构数组初始化: 
 
 ```cpp
     struct a;         
@@ -30,7 +30,16 @@
     {...}    
      };
 ```
-
+### 列表初始化
+类的初始化是根据定义的顺序，这样的代码会出错。
+```cpp
+struct foo
+{
+    int i ;
+    int j ;
+    foo(int x):j(x), i(j){} // i值未定义
+};
+```
 ## 类大小计算
 下面的输出是多少?
 ```cpp
@@ -143,7 +152,7 @@ int main(){
 
 ## gcc编译
 
-1.使用gcc生成静态库及静态库使用方法：
+1. 使用gcc生成静态库及静态库使用方法：
 
 　　在此例中，test.c用于编译生成静态库libtest.a，test.h为libtest.a对应的头文件。
 
@@ -159,8 +168,8 @@ int main(){
 
 　　直接使用命令./app_static
 
-　　2.使用gcc生成动态库及使用动态库的方法
-
+2. 使用gcc生成动态库及使用动态库的方法
+//-fpie
 　　第一步：生成test.o目标文件，使用如下命令。在此处需要添加-fPIC参数，该参数用于生成位置无关代码已工生成动态库使用，使用命令：gcc -c -o test.o -fPIC test.c
 
 　　第二步：使用-shared参数生成动态库，使用如下命令：gcc -shared -o libmyshare.so test.o,上述两个命令可以连在一起，如下所示：gcc -shared -fPIC -o libmyshare.so test.c
