@@ -799,9 +799,44 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        C++
+      </label>
+    
     <a href="./" title="C++" class="md-nav__link md-nav__link--active">
       C++
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="列表初始化" class="md-nav__link">
+    列表初始化
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2393,6 +2428,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="列表初始化" class="md-nav__link">
+    列表初始化
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2410,24 +2467,24 @@
 <ul>
 <li>wchar_t 扩展字符集，cin和cout将输入输出看作是char流，因此不适用处理wchar_ t类型，通过前缀L指示宽字符常量和宽字符串。     </li>
 </ul>
-<blockquote>
-<p>c和c++对有效位数要求是，float至少32位，double至少是48位，切不少于float。long
-double至少和double一样多，这三种类型的有效位数可以一样多。通常float为32位，double为64位，long double为80 96 128位。这三种指数类型至少是-37到37，可以从cfloat或float.h找到系统的限制。    </p>
-</blockquote>
-<p><em>wchar_t a[] = L"字符串”;  <br />
-</em>char16_t a[] = u"字符串”;  <br />
-<em>char32_t a[] = U"字符串";   <br />
-</em>cout&lt;&lt;R“(原始字符串)”;  <br />
-<em>c++11 结构可以用列表初始化;  <br />
-</em>{}列表初始化，不允许缩窄，变量。
- <em>（c++11）   <br />
-</em>关键字auto可以不指定变量的类型    <br />
-<em>cin.getline(name,int);
- </em>读取一行的输入。丢弃换行符
- <em>cin.get(name,int);读取一行，留下换行符。   <br />
-</em>cin.get()读取单个字符；  <br />
-<em>cin.clear();清除失效位（failbit）；   <br />
-</em>前缀R表示raw原始字符串，此时\n不表示换行符；</p>
+<p>*c和c++对有效位数要求是，float至少32位，double至少是48位，切不少于float。long
+* double至少和double一样多，这三种类型的有效位数可以一样多。通常float为32位，double为64位，long double为80 96 128位。这三种指数类型至少是-37到37，可以从cfloat或float.h找到系统的限制。    </p>
+<ul>
+<li>wchar_t a[] = L"字符串”;    </li>
+<li>char16_t a[] = u"字符串”;    </li>
+<li>char32_t a[] = U"字符串";     </li>
+<li>cout&lt;&lt;R“(原始字符串)”;    </li>
+<li>c++11 结构可以用列表初始化;    </li>
+<li>{}列表初始化，不允许缩窄，变量。</li>
+<li>（c++11）     </li>
+<li>关键字auto可以不指定变量的类型      </li>
+<li>cin.getline(name,int);</li>
+<li>读取一行的输入。丢弃换行符</li>
+<li>cin.get(name,int);读取一行，留下换行符。     </li>
+<li>cin.get()读取单个字符；    </li>
+<li>cin.clear();清除失效位（failbit）；     </li>
+<li>前缀R表示raw原始字符串，此时\n不表示换行符；</li>
+</ul>
 <p>结构数组初始化: </p>
 <div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">a</span><span class="p">;</span>         
     <span class="n">a</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>      
@@ -2436,7 +2493,16 @@ double至少和double一样多，这三种类型的有效位数可以一样多�
      <span class="p">};</span>
 </pre></div>
 
-<h2 id="_2">类大小计算<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_2">列表初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>类的初始化是根据定义的顺序，这样的代码会出错。
+<div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">foo</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="p">;</span>
+    <span class="kt">int</span> <span class="n">j</span> <span class="p">;</span>
+    <span class="n">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="n">j</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">i</span><span class="p">(</span><span class="n">j</span><span class="p">){}</span> <span class="c1">// i值未定义</span>
+<span class="p">};</span>
+</pre></div></p>
+<h2 id="_3">类大小计算<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>下面的输出是多少?
 <div class="codehilite"><pre><span></span><span class="cp">#pragma packed()</span>
 <span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
@@ -2523,13 +2589,13 @@ QString str=QString::number(a,16).toUpper(); //str=&quot;3F&quot;;
 
 
 <h3 id="qstring-char42">Qstring 转换char*问题<a class="headerlink" href="#qstring-char42" title="Permanent link">&para;</a></h3>
-<h4 id="_3">方法一:<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<h4 id="_4">方法一:<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span>QString qstr(&quot;hello,word&quot;);
 const char * p = qstr.toLocal8Bit().data();
 </pre></div>
 
 
-<h4 id="_4">方法二:<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<h4 id="_5">方法二:<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span>const char \*p = qstr.toStdString().data();
 转换过来的是常量
 </pre></div>
@@ -2550,7 +2616,9 @@ QString Time2String( DWORD dwTime)
 
 
 <h2 id="gcc">gcc编译<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
-<p>1.使用gcc生成静态库及静态库使用方法：</p>
+<ol>
+<li>使用gcc生成静态库及静态库使用方法：</li>
+</ol>
 <p>在此例中，test.c用于编译生成静态库libtest.a，test.h为libtest.a对应的头文件。</p>
 <p>第一步：生成test.o目标文件，使用gcc -c test.c -o test.o命令。</p>
 <p>第二步：使用ar将test.o打包成libtest.a静态库，使用ar rcs -o libtest.a test.o命令</p>
@@ -2558,12 +2626,15 @@ QString Time2String( DWORD dwTime)
 <p>第四步：编译main.c，并使用libtest.a静态库，链接时-l参数后不加空格指定所需要链接的库，这里库名是libtest.a，但是只需要给出-ltest即可，ld会以libtest作为库的实际名字。完整的命令为：gcc -o app_static main.c -L. -ltest 或者是gcc -o app_static main.c libtest.a</p>
 <p>第五步：运行app_static</p>
 <p>直接使用命令./app_static</p>
-<p>2.使用gcc生成动态库及使用动态库的方法</p>
-<p>第一步：生成test.o目标文件，使用如下命令。在此处需要添加-fPIC参数，该参数用于生成位置无关代码已工生成动态库使用，使用命令：gcc -c -o test.o -fPIC test.c</p>
+<ol>
+<li>使用gcc生成动态库及使用动态库的方法
+//-fpie
+　　第一步：生成test.o目标文件，使用如下命令。在此处需要添加-fPIC参数，该参数用于生成位置无关代码已工生成动态库使用，使用命令：gcc -c -o test.o -fPIC test.c</li>
+</ol>
 <p>第二步：使用-shared参数生成动态库，使用如下命令：gcc -shared -o libmyshare.so test.o,上述两个命令可以连在一起，如下所示：gcc -shared -fPIC -o libmyshare.so test.c</p>
 <p>第三步：编译main.c，使用libmyshare.so动态库，命令如下gcc -o app_share main.c -L. -lmyshare.使用ldd app_share命令查看app_share使用动态库，如果libmyshare无法找到，直接执行app_share就会出现错误。解决方法：首先使用export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH将当前目录加入LD_LIBRARY_PATH变量中。再次运行ldd app_share</p>
 <p>另一种编译main.c，并链接libmyshare.so的方式如下（该方式通过./libmyshare.so直接指定使用当前目录下的libmyshare.so文件），使用命令：gcc -o app_share main.c ./libmyshare.so</p>
-<h2 id="_5">动态链接库<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">动态链接库<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1">//导出函数接口，dll中可以调用</span>
     <span class="n">_declspec</span><span class="p">(</span><span class="n">dllexport</span><span class="p">)</span> <span class="kt">void</span> <span class="n">go</span><span class="p">()</span> <span class="c1">//export method,call in load</span>
