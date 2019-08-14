@@ -848,6 +848,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#memory" title="memory" class="md-nav__link">
+    memory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#32" title="32位" class="md-nav__link">
+    32位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" title="64位" class="md-nav__link">
+    64位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="地址类型" class="md-nav__link">
+    地址类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2450,6 +2484,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#memory" title="memory" class="md-nav__link">
+    memory
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#32" title="32位" class="md-nav__link">
+    32位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64" title="64位" class="md-nav__link">
+    64位
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="地址类型" class="md-nav__link">
+    地址类型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2499,24 +2567,34 @@ threads/processes sync method
 
 <span class="c1">//&quot;V&quot; function</span>
 <span class="kt">void</span> <span class="n">up</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">)</span>
-
-<span class="cp">## memory</span>
-<span class="err">设备通常提供一组寄存器来进行控制，这些寄存器可能在</span><span class="n">I</span><span class="o">/</span><span class="n">O空间中</span><span class="err">，也能在内存空间中，在</span><span class="n">I</span><span class="o">/</span><span class="n">O空间中时要用IN</span><span class="o">/</span><span class="n">OUT</span> <span class="err">汇编指令进行读写，在</span><span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="err">空间时，被称为</span><span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="err">端口，反之为</span><span class="n">I</span><span class="o">/</span><span class="n">O</span> <span class="err">内存。</span>
-<span class="cp">### 地址类型</span>
-
-<span class="err">用户虚拟地址</span><span class="o">:</span> <span class="mi">32</span><span class="o">/</span><span class="mi">64</span> <span class="n">bit</span> <span class="err">长度，每个进程都有自己的虚拟地址空间</span>
-<span class="err">物理地址</span><span class="o">:</span> <span class="err">略。</span>
-<span class="n">bus地址</span><span class="err">：用于外设和内存，</span><span class="n">x86和物理地址一样</span><span class="err">，但是某些架构实现了</span><span class="n">IOMMU</span><span class="err">，进行重映射，</span>
-<span class="err">内核逻辑地址：：</span><span class="n">These</span> <span class="n">addresses</span> <span class="n">map</span> <span class="n">some</span> <span class="n">portion</span> <span class="p">(</span><span class="n">perhaps</span> <span class="n">all</span><span class="p">)</span> <span class="n">of</span> <span class="n">main</span> <span class="n">memory</span> <span class="n">and</span> <span class="n">are</span> <span class="n">often</span> <span class="n">treated</span> <span class="n">as</span> <span class="k">if</span> <span class="n">they</span> <span class="n">were</span> <span class="n">physical</span> <span class="n">addresses</span><span class="err">，经常被当作物理地址，但实际上和物理地址差一个固定偏移</span><span class="p">,</span><span class="n">kmalloc</span> <span class="err">返回的就是属于这个。</span>
-<span class="err">内核虚拟地址：不一定是线性映射物理地址，内核逻辑地址一定是内核虚拟地址，内核虚拟地址不一定是逻辑地址</span><span class="p">(</span><span class="n">vmalloc</span><span class="p">)</span>
-<span class="err">如果你拿到了一个逻辑地址，</span><span class="n">__pa</span><span class="p">()</span><span class="err">可以得到物理地址</span><span class="p">,</span> <span class="n">__wa</span><span class="p">()</span><span class="err">是逆操作，仅能操作低地址页面。</span>
-<span class="o">!</span><span class="p">[</span><span class="err">看这些坑爹的地址</span><span class="p">](</span><span class="mi">2019</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mo">06</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mo">03</span><span class="o">-</span><span class="mf">18.</span><span class="n">png</span><span class="p">)</span>   
-
-<span class="err">低内存</span><span class="o">:</span> <span class="err">内核中所有逻辑地址，你见到的都是低内存</span>
-<span class="err">高内存：超过了内核虚拟地址，不在内核逻辑地址中。例如用户空间地址</span>
-<span class="err">申请内存主要函数</span><span class="o">:</span>
-<span class="err">```</span><span class="n">c</span>
-<span class="kt">void</span> <span class="o">*</span><span class="n">kmalloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span><span class="kt">int</span> <span class="n">flags</span><span class="p">)</span>
+</pre></div></p>
+<h2 id="memory">memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h2>
+<p>设备通常提供一组寄存器来进行控制，这些寄存器可能在I/O空间中，也能在内存空间中，在I/O空间中时要用IN/OUT 汇编指令进行读写，在I/O 空间时，被称为I/O 端口，反之为I/O 内存。
+|  用途 |                        范围                |
+|:-------|:-------------------------------------: |
+|系统空间| <code>0xffff800000000000~0xffffffffffffffff</code>  |
+|NULL| 就是个空洞|
+|用户|    <code>0x0000000000000000~0x00007ffffffff000</code>|
+| 这64T直接和物理内存进行映射|<code>0xffff880000000000~0xffffc7ffffffffff</code>   |
+|这32T用于vmalloc/ioremap的地址空间| <code>0xffffc90000000000~0xffffe8ffffffffff</code> |</p>
+<p>前两个字节都为0xff是因为高16位没用上，只用了48位  </p>
+<p>文档<code>Documentation\x86_64\mm.txt</code>没有和代码同步。。</p>
+<h3 id="32">32位<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>支持最大内存为64G，开启PAE选项。</p>
+<h3 id="64">64位<a class="headerlink" href="#64" title="Permanent link">&para;</a></h3>
+<p>pgd、pud、pmd、pte各占了9位，加上12位的页内index，共用了48位。即可管理的地址空间为2^48=256T，支持最大物理内存为64T，在MAX_ARCH_PFN 定义，</p>
+<h3 id="_1">地址类型<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>用户虚拟地址: 32/64 bit 长度，每个进程都有自己的虚拟地址空间
+物理地址: 略。
+bus地址：用于外设和内存，x86和物理地址一样，但是某些架构实现了IOMMU，进行重映射，
+内核逻辑地址：：These addresses map some portion (perhaps all) of main memory and are often treated as if they were physical addresses，经常被当作物理地址，但实际上和物理地址差一个固定偏移,kmalloc 返回的就是属于这个。
+内核虚拟地址：不一定是线性映射物理地址，内核逻辑地址一定是内核虚拟地址，内核虚拟地址不一定是逻辑地址(vmalloc)
+如果你拿到了一个逻辑地址，__pa()可以得到物理地址, __wa()是逆操作，仅能操作低地址页面。
+<img alt="看这些坑爹的地址" src="../2019-08-06-11-03-18.png" />   </p>
+<p>低内存: 内核中所有逻辑地址，你见到的都是低内存
+高内存：超过了内核虚拟地址，不在内核逻辑地址中。例如用户空间地址
+申请内存主要函数:
+<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="o">*</span><span class="n">kmalloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span><span class="kt">int</span> <span class="n">flags</span><span class="p">)</span>
 <span class="cm">/*</span>
 <span class="cm">    第一个参数是大小，第二个是分配标志</span>
 <span class="cm">    GFP_KERNEL 在内核空间进程申请内存，不能满足则等待空闲页，最常用</span>
@@ -2548,7 +2626,10 @@ threads/processes sync method
 <span class="cm">*/</span>
 <span class="n">vmalloc</span><span class="p">()</span>
 <span class="c1">//远大于kmalloc开销，区别是在物理地址上不连续，他会进行内存映射，改变页表项，释放应使用vfree(),</span>
-<span class="n">ioremap</span><span class="p">()</span><span class="c1">//将设备寄存器，缓冲，映射到虚拟地址上,多用于PCI video 设备，可以超过高地址范围外（在开机时映射页表)，</span>
+<span class="n">remap_pfn_range</span><span class="p">()</span> <span class="c1">//映射物理地址，保留页到用户空间上，不能用于常规地址。例如__get_free_pages(),尽管如此，依然可以remap high PCI buffers and ISA memory</span>
+<span class="n">ioremap</span><span class="p">()</span><span class="c1">//将设备寄存器，缓冲，映射到虚拟地址上,多用于PCI video 设备，可以超过高地址范围外（在开机时映射页表)，不能映射到用户地址</span>
+
+<span class="kt">int</span> <span class="n">get_user_page</span><span class="p">()</span><span class="c1">// 直接从current-mm拿到pages direct I/O 内核不进行缓存</span>
 </pre></div></p>
                 
                   

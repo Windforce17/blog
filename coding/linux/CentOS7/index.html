@@ -1089,9 +1089,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#yum_1" title="使yum只下载不安装" class="md-nav__link">
-    使yum只下载不安装
+  <a href="#yum_1" title="yum" class="md-nav__link">
+    yum
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="安装指定版本的包" class="md-nav__link">
+    安装指定版本的包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="只下载不安装" class="md-nav__link">
+    只下载不安装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1112,6 +1132,13 @@
         <li class="md-nav__item">
   <a href="#mysql" title="装mysql" class="md-nav__link">
     装mysql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-source" title="kernel source" class="md-nav__link">
+    kernel source
   </a>
   
 </li>
@@ -2536,9 +2563,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#yum_1" title="使yum只下载不安装" class="md-nav__link">
-    使yum只下载不安装
+  <a href="#yum_1" title="yum" class="md-nav__link">
+    yum
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="安装指定版本的包" class="md-nav__link">
+    安装指定版本的包
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="只下载不安装" class="md-nav__link">
+    只下载不安装
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2559,6 +2606,13 @@
         <li class="md-nav__item">
   <a href="#mysql" title="装mysql" class="md-nav__link">
     装mysql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kernel-source" title="kernel source" class="md-nav__link">
+    kernel source
   </a>
   
 </li>
@@ -2627,16 +2681,17 @@ rpm --import <a href="https://www.elrepo.org/RPM-GPG-KEY-elrepo.org">https://www
 </pre></div>
 
 
-<h2 id="yum_1">使yum只下载不安装<a class="headerlink" href="#yum_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>yum install yum-plugin-downloadonly
-</pre></div>
-
-
-<p>使用方法:  </p>
-<div class="codehilite"><pre><span></span>yum install --downloadonly（只下载不安装） --downloaddir=rpm包下载的目录 安装的组件名
-</pre></div>
-
-
+<h2 id="yum_1">yum<a class="headerlink" href="#yum_1" title="Permanent link">&para;</a></h2>
+<h3 id="_1">安装指定版本的包<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>查看所有版本<code>yum --showduplicates list &lt;package name&gt; | expand</code></li>
+<li>安装<code>yum install &lt;package name&gt;-&lt;version info&gt;</code></li>
+</ol>
+<h3 id="_2">只下载不安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>安装插件<code>yum install yum-plugin-downloadonly</code></li>
+<li>下载<code>yum install --downloadonly --downloaddir=&lt;dir&gt; &lt;packagename&gt;</code></li>
+</ol>
 <h2 id="centos-vbox">CentOS 装VBox<a class="headerlink" href="#centos-vbox" title="Permanent link">&para;</a></h2>
 <ol>
 <li><code>yum install gcc kernel-devel</code>  </li>
@@ -2676,6 +2731,10 @@ yum install nginx
 
 <p>关闭命令：
 <code>mysqladmin -u root -p password shutdown</code></p>
+<h2 id="kernel-source">kernel source<a class="headerlink" href="#kernel-source" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>yum install kernel-devel kernel-tools kernel-headers
+</pre></div>
+
 <h2 id="goole-chrome">goole-chrome<a class="headerlink" href="#goole-chrome" title="Permanent link">&para;</a></h2>
 <p><div class="codehilite"><pre><span></span>[google-chrome]
 name=google-chrome
