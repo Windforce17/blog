@@ -35,12 +35,13 @@ getenforce //查看
     vi /etc/udev/rules.d/70-persistent-net.rules
     删除eth0
     修改：vim /etc/sysconfig/network-scripts/ifcfg-eth0
-## 使yum只下载不安装  
-
-    yum install yum-plugin-downloadonly
-使用方法:  
-
-    yum install --downloadonly（只下载不安装） --downloaddir=rpm包下载的目录 安装的组件名
+## yum
+### 安装指定版本的包
+1. 查看所有版本`yum --showduplicates list <package name> | expand`
+2. 安装`yum install <package name>-<version info>`
+### 只下载不安装
+1. 安装插件`yum install yum-plugin-downloadonly`
+2. 下载`yum install --downloadonly --downloaddir=<dir> <packagename>`
 
 ## CentOS 装VBox
 1. `yum install gcc kernel-devel`  
@@ -76,7 +77,10 @@ getenforce //查看
 关闭命令：
 `mysqladmin -u root -p password shutdown`
 
-
+## kernel source
+```sh
+yum install kernel-devel kernel-tools kernel-headers
+```
 
 ## goole-chrome
 ```conf

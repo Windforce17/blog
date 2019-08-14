@@ -25,9 +25,27 @@ int down_trylocal(struct semaphore *sem);
 
 //"V" function
 void up(struct semaphore *sem)
-
+```
 ## memory
 设备通常提供一组寄存器来进行控制，这些寄存器可能在I/O空间中，也能在内存空间中，在I/O空间中时要用IN/OUT 汇编指令进行读写，在I/O 空间时，被称为I/O 端口，反之为I/O 内存。
+|  用途 |                        范围                |
+|:-------|:-------------------------------------: |
+|系统空间| `0xffff800000000000~0xffffffffffffffff`  |
+|NULL| 就是个空洞|
+|用户|    `0x0000000000000000~0x00007ffffffff000`|
+| 这64T直接和物理内存进行映射|`0xffff880000000000~0xffffc7ffffffffff`   |
+|这32T用于vmalloc/ioremap的地址空间| `0xffffc90000000000~0xffffe8ffffffffff` |
+
+
+
+前两个字节都为0xff是因为高16位没用上，只用了48位  
+
+文档`Documentation\x86_64\mm.txt`没有和代码同步。。
+### 32位
+支持最大内存为64G，开启PAE选项。
+### 64位
+pgd、pud、pmd、pte各占了9位，加上12位的页内index，共用了48位。即可管理的地址空间为2^48=256T，支持最大物理内存为64T，在MAX_ARCH_PFN 定义，
+
 ### 地址类型
 
 用户虚拟地址: 32/64 bit 长度，每个进程都有自己的虚拟地址空间
@@ -74,5 +92,8 @@ __get_free_page(gfp_mask,0)
 */
 vmalloc()
 //远大于kmalloc开销，区别是在物理地址上不连续，他会进行内存映射，改变页表项，释放应使用vfree(),
-ioremap()//将设备寄存器，缓冲，映射到虚拟地址上,多用于PCI video 设备，可以超过高地址范围外（在开机时映射页表)，
+remap_pfn_range() //映射物理地址，保留页到用户空间上，不能用于常规地址。例如__get_free_pages(),尽管如此，依然可以remap high PCI buffers and ISA memory
+ioremap()//将设备寄存器，缓冲，映射到虚拟地址上,多用于PCI video 设备，可以超过高地址范围外（在开机时映射页表)，不能映射到用户地址
+
+int get_user_page()// 直接从current-mm拿到pages direct I/O 内核不进行缓存
 ```
