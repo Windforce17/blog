@@ -69,7 +69,9 @@
 
 ### pdf search
 - 首选: http://libgen.io/
+- https://www.jiumodiary.com/
 - http://bestcbooks.com
+- https://www.cn-ki.net/
 - http://www.pdf-search-engine.com/  
 - http://openpdf.com/ - 
 - http://www.pdfgeni.com/  
