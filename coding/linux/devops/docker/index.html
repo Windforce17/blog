@@ -2517,11 +2517,11 @@ sudo systemctl restart docker
 </li>
 <li>
 <p>docker proxt set
-<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     mkdir /etc/systemd/system/docker.service.d/
 <span class="k">fi</span>
 
-<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span><span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     mkdir /etc/systemd/system/docker.service.d/
 <span class="k">fi</span>
 <span class="nb">echo</span> <span class="s1">&#39;[Service]</span>
