@@ -42,11 +42,11 @@ sudo systemctl restart docker
 ```
 - docker proxt set
 ```sh
-if [ ! -d "/etc/systemd/system/docker.service.d/"]; then
+if [ ! -d "/etc/systemd/system/docker.service.d/" ]; then
     mkdir /etc/systemd/system/docker.service.d/
 fi
 
-if [ ! -d "/etc/systemd/system/docker.service.d/"]; then
+if [ ! -d "/etc/systemd/system/docker.service.d/" ]; then
     mkdir /etc/systemd/system/docker.service.d/
 fi
 echo '[Service]

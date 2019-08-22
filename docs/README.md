@@ -72,6 +72,8 @@
 </script>
 
 ## Todo List
+- [x64dbg ida同步插件](https://github.com/bootleg/ret-sync)
+- [IDA符号执行插件使用](https://github.com/illera88/Ponce)
 - 为什么int 3 可以反调试
 - extractvalue()函数报错注入
 - 短url，系统设计
