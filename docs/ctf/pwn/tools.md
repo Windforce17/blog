@@ -1,15 +1,20 @@
 ## gdb-peda
-`vmmap`
-查看process mapping信息，得到每个地址的权限
-`find` 在内存中搜索字符串，还有一种方法，`cat /proc/{pid}/maps` 
-本地调试的时候利用gdb绕过ALSR:`ncat -vc 'gdbserver 127.0.0.1:5000 ./pwn1' -kl 127.0.0.1 4000`
-## readelf、objdump
-使用`readelf -a /lib32/libc.so.6 |grep '__libc_start_main'`查找libc中的函数地址
 
-`objdump -d -M intel [elf_file]` 进行反汇编elf文件
+`vmmap`
+查看 process mapping 信息，得到每个地址的权限
+`find` 在内存中搜索字符串，还有一种方法，`cat /proc/{pid}/maps`
+本地调试的时候利用 gdb 绕过 ALSR:`ncat -vc 'gdbserver 127.0.0.1:5000 ./pwn1' -kl 127.0.0.1 4000`
+
+## readelf、objdump
+
+使用`readelf -a /lib32/libc.so.6 |grep '__libc_start_main'`查找 libc 中的函数地址
+
+`objdump -d -M intel [elf_file]` 进行反汇编 elf 文件
 
 ## pwntools
+
 板子:
+
 ```py
 from pwn import *
 import binascii
@@ -39,6 +44,7 @@ else:
 ```
 
 ### 运行时变量
+
 ```py
 context.log_level = 'debug'
 context.arch      = 'i386' # 32 bit
@@ -49,9 +55,11 @@ context.word_size = 32
 ```
 
 ### 连接
+
 sh = porcess("./level0")
 sh = remote("127.0.0.1",10001)
-sh.close()  
+sh.close()
+
 ### IO
 
 ```py
@@ -64,7 +72,8 @@ sh.recvall() # 一直接收直到EOF
 sh.recvrepeat(timeout = default)  #持续接受直到EOF或timeout
 sh.interactive() # 直接进行交互，相当于回到shell的模式，在取得shell之后使用
 ```
-###  汇编和反汇编
+
+### 汇编和反汇编
 
 ```py
 asm('nop')
@@ -94,7 +103,9 @@ str(rop)
 ```
 
 ### DynELF
-专门应为没有libc的漏洞利用，基本框架
+
+专门应为没有 libc 的漏洞利用，基本框架
+
 ```
 p = process('./xxx')
 def leak(address):
@@ -105,31 +116,39 @@ def leak(address):
   data = p.recv(4)
   log.debug("%#x => %s" % (address, (data or '').encode('hex')))
   return data
-d = DynELF(leak, elf=ELF("./xxx"))      #初始化DynELF模块 
+d = DynELF(leak, elf=ELF("./xxx"))      #初始化DynELF模块
 systemAddress = d.lookup('system', 'libc')  #在libc文件中搜索system函数的地址
 ```
+
 ### shellcraft
+
 shellcode=asm(shellcraft.sh())
 
 ## 有用的站
+
 libc databases:http://libcdb.com
 系统调用表：http://syscalls.kernelgrok.com/
 
 ## ret2dl
-这个工具可以更方便的生成fake_sym...
+
+这个工具可以更方便的生成 fake_sym...
 
 https://github.com/inaz2/roputils
+
 ## dockerfile
-运行的时候需要赋予相应的权限：`--cap-add=SYS_PTRACE --security-opt seccomp=unconfined`,或者直接给root，`--privileged`,添加下面两行到`~/.bashrc`里就可以快速打开pwn环境啦
+
+运行的时候需要赋予相应的权限：`--cap-add=SYS_PTRACE --security-opt seccomp=unconfined`,或者直接给 root，`--privileged`,添加下面两行到`~/.bashrc`里就可以快速打开 pwn 环境啦
+
 ```sh
 alias w1='docker run --name pwntool --privileged --rm -it -v $HOME/ctf:/ctf/ pwntool /bin/bash'
 alias w11='docker exec -it pwntool bash'
 ```
+
 ```dockerfile
 # ubuntu 18.04
 FROM ubuntu:18.04
 RUN echo ' deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse \n \
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse \n \ 
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse \n \
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse \n \
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse \n '> /etc/apt/sources.list
 RUN apt update && \
@@ -149,7 +168,7 @@ RUN mkdir ctf \
     && pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple pwntools \
     && cd pwndbg \
     && ./setup.sh \
-    apt clean 
+    apt clean
 WORKDIR /ctf
 ```
 
@@ -157,7 +176,7 @@ WORKDIR /ctf
 # ubuntu 16.04
 FROM ubuntu:16.04
 RUN echo ' deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse \n \
-deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse \n \ 
+deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse \n \
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse \n \
 deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse \n '> /etc/apt/sources.list
 RUN apt update && \
@@ -177,6 +196,6 @@ RUN mkdir ctf \
     && pip install  -i https://pypi.tuna.tsinghua.edu.cn/simple pwntools \
     && cd pwndbg \
     && ./setup.sh \
-    apt clean 
+    apt clean
 WORKDIR /ctf
 ```
