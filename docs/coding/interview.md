@@ -39,7 +39,7 @@ https://www.jianshu.com/p/0b68b992f688
 
 ## 腾讯
 
-反调试、SEH VEH 硬件断点原理。CE 单步、原理
+硬件断点、软件断点、单步原理。调试器原理。反调试手法、SEH、VEH，异常处理,CE 原理。
 
 ## 头条 安全
 
@@ -47,7 +47,7 @@ https://www.jianshu.com/p/0b68b992f688
 
 2. pe 文件结构，hook 原理，windows 函数调用，linux 函数调用，windows，linux 系统调用原理。windows 漏洞利用，rop，aslr 绕过，内核漏洞利用。linux 漏洞利用，linux 堆栈漏洞，ctf 经历，内核漏洞利用，内核保护原理，写一道简单算法，2 道汇编，一道函数调用汇编，一道汇编实现 memcpy, hook 原理
 
-3. xss 防范，fuzz
+3) xss 防范，fuzz
 
 ## 360 企业安全
 
