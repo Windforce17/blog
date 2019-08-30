@@ -286,7 +286,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../reverse/ReversingEngineering/" class="md-tabs__link">
+        <a href="../../reverse/ReversingTools/" class="md-tabs__link">
           Reverse
         </a>
       
@@ -2367,8 +2367,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../reverse/ReversingEngineering/" title="ReversingEngineering" class="md-nav__link">
-      ReversingEngineering
+    <a href="../../reverse/ReversingTools/" title="ReversingTools" class="md-nav__link">
+      ReversingTools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../reverse/basic/" title="Basic" class="md-nav__link">
+      Basic
     </a>
   </li>
 
@@ -2536,13 +2548,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-15" type="checkbox" id="nav-8-15">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-16" type="checkbox" id="nav-8-16">
     
-    <label class="md-nav__link" for="nav-8-15">
+    <label class="md-nav__link" for="nav-8-16">
       010editor
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-15">
+      <label class="md-nav__title" for="nav-8-16">
         010editor
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2698,12 +2710,19 @@
 <li>要 vector 的新空间为 2 倍</li>
 <li>操作系统的页和操作系统对进程的内存分配方式还有段页- 的情况</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="c1">//运行结果</span>
+<div class="codehilite"><pre><span></span><span class="c1">//运行结果，汇编代码</span>
 <span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
-<span class="k">public</span><span class="o">:</span> <span class="kt">void</span> <span class="n">f1</span><span class="p">()</span> <span class="p">{}</span> <span class="k">virtual</span> <span class="kt">void</span>  <span class="n">f2</span><span class="p">()</span> <span class="p">{}</span> <span class="p">}</span> <span class="n">A</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">f1</span><span class="p">();</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">f2</span><span class="p">();</span>
+<span class="k">public</span><span class="o">:</span>
+    <span class="kt">void</span> <span class="n">f1</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">f2</span><span class="p">()</span> <span class="p">{}</span>
+<span class="p">}</span>
+<span class="n">A</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="n">a</span><span class="o">-&gt;</span><span class="n">f1</span><span class="p">();</span>
+<span class="n">a</span><span class="o">-&gt;</span><span class="n">f2</span><span class="p">();</span>
 </pre></div>
 
-<p>拥塞避免算法、操作系统的 LRU、如何对反爬虫机制进行破解、判断一棵二叉树是不是二叉搜索树、嵌套数组的环形遍历、乐观锁和悲观锁有啥区别、求二叉树是否存在和为 N 的路径、针对每个连接维护一个线程，开销很大，如何优化、有一个单链表，奇数位是升序的，偶数位是降序的，要求进行给它进行排序 1-&gt;200-&gt;10-&gt;120-&gt;30-&gt;8-&gt;88-&gt;4、中断实现机制，软硬中断的区别、redis 线程模型、topk 问题、聚集索引，非聚集索引、http2</p>
+<p><img alt="result" src="../2019-08-30-10-11-40.png" />
+拥塞避免算法、操作系统的 LRU、如何对反爬虫机制进行破解、判断一棵二叉树是不是二叉搜索树、嵌套数组的环形遍历、乐观锁和悲观锁有啥区别、求二叉树是否存在和为 N 的路径、针对每个连接维护一个线程，开销很大，如何优化、有一个单链表，奇数位是升序的，偶数位是降序的，要求进行给它进行排序 1-&gt;200-&gt;10-&gt;120-&gt;30-&gt;8-&gt;88-&gt;4、中断实现机制，软硬中断的区别、redis 线程模型、topk 问题、聚集索引，非聚集索引、http2</p>
 <h3 id="_2">将一棵二叉搜索树转换成双向链表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p><a href="https://blog.csdn.net/zengzhen_csdn/article/details/51198530">https://blog.csdn.net/zengzhen_csdn/article/details/51198530</a></p>
 <h3 id="_3">红黑树<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
