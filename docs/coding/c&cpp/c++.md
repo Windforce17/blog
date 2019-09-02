@@ -1,38 +1,40 @@
-
-## PIC&PIE
-
 ## 杂项
-* wchar_t 扩展字符集，cin和cout将输入输出看作是char流，因此不适用处理wchar_ t类型，通过前缀L指示宽字符常量和宽字符串。     
 
-*c和c++对有效位数要求是，float至少32位，double至少是48位，切不少于float。long
-* double至少和double一样多，这三种类型的有效位数可以一样多。通常float为32位，double为64位，long double为80 96 128位。这三种指数类型至少是-37到37，可以从cfloat或float.h找到系统的限制。    
- 
-* wchar_t a[] = L"字符串”;    
-* char16_t a[] = u"字符串”;    
-* char32_t a[] = U"字符串";     
-* cout<<R“(原始字符串)”;    
-* c++11 结构可以用列表初始化;    
-* {}列表初始化，不允许缩窄，变量。
-* （c++11）     
-* 关键字auto可以不指定变量的类型      
-* cin.getline(name,int);
-* 读取一行的输入。丢弃换行符
-* cin.get(name,int);读取一行，留下换行符。     
-* cin.get()读取单个字符；    
-* cin.clear();清除失效位（failbit）；     
-* 前缀R表示raw原始字符串，此时\n不表示换行符；
- 
-结构数组初始化: 
+- wchar*t 扩展字符集，cin 和 cout 将输入输出看作是 char 流，因此不适用处理 wchar* t 类型，通过前缀 L 指示宽字符常量和宽字符串。
+
+\*c 和 c++对有效位数要求是，float 至少 32 位，double 至少是 48 位，切不少于 float。long
+
+- double 至少和 double 一样多，这三种类型的有效位数可以一样多。通常 float 为 32 位，double 为 64 位，long double 为 80 96 128 位。这三种指数类型至少是-37 到 37，可以从 cfloat 或 float.h 找到系统的限制。
+
+- wchar_t a[] = L"字符串”;
+- char16_t a[] = u"字符串”;
+- char32_t a[] = U"字符串";
+- cout<<R“(原始字符串)”;
+- c++11 结构可以用列表初始化;
+- {}列表初始化，不允许缩窄，变量。
+- （c++11）
+- 关键字 auto 可以不指定变量的类型
+- cin.getline(name,int);
+- 读取一行的输入。丢弃换行符
+- cin.get(name,int);读取一行，留下换行符。
+- cin.get()读取单个字符；
+- cin.clear();清除失效位（failbit）；
+- 前缀 R 表示 raw 原始字符串，此时\n 不表示换行符；
+
+结构数组初始化:
 
 ```cpp
-    struct a;         
-    a b[2] =      
-    {  {"a",1,32.3} 
-    {...}    
+    struct a;
+    a b[2] =
+    {  {"a",1,32.3}
+    {...}
      };
 ```
+
 ### 列表初始化
+
 类的初始化是根据定义的顺序，这样的代码会出错。
+
 ```cpp
 struct foo
 {
@@ -41,8 +43,11 @@ struct foo
     foo(int x):j(x), i(j){} // i值未定义
 };
 ```
+
 ## 类大小计算
+
 下面的输出是多少?
+
 ```cpp
 #pragma packed()
 #include<iostream>
@@ -66,29 +71,28 @@ int main(){
 }
 ```
 
+# Qt 静态编译
 
-# Qt静态编译
- 1. 官网下载5.8的包,源码https://pan.baidu.com/s/1bpgkTnp
- 2. 安装mingw
- 3. 解压static包到c:\qt下,解压OpenSSL的zip压缩包（openssl-1.0.1c_static_w32_mingw.zip）到 C:\Dev
- 4. 打开QtCreator选择上方工具栏中的 -> 工具 -> 选项 -> 构建和运行
- 5. 在上方选项卡中选择 Qt Versions，并且点击右侧的添加
- 6. 打开qmake.exe，路径是：C:\Qt\Qt5.8.0_MinGW_static\bin\qmake.exe 
- 7. <img src="qt静态编译1.png">
- 8. 构件套件(kit)中配置一个新的套件,上面的要点应用.
- 9. <img src="qt静态编译2.png">
- 10. 然后release吧~
+1.  官网下载 5.8 的包,源码https://pan.baidu.com/s/1bpgkTnp
+2.  安装 mingw
+3.  解压 static 包到 c:\qt 下,解压 OpenSSL 的 zip 压缩包（openssl-1.0.1c_static_w32_mingw.zip）到 C:\Dev
+4.  打开 QtCreator 选择上方工具栏中的 -> 工具 -> 选项 -> 构建和运行
+5.  在上方选项卡中选择 Qt Versions，并且点击右侧的添加
+6.  打开 qmake.exe，路径是：C:\Qt\Qt5.8.0_MinGW_static\bin\qmake.exe
+7.  <img src="qt静态编译1.png">
+8.  构件套件(kit)中配置一个新的套件,上面的要点应用.
+9.  <img src="qt静态编译2.png">
+10. 然后 release 吧~
 
-# Qt下的QString与数字的相互转化  
+# Qt 下的 QString 与数字的相互转化
 
-## 把QString转换为 double类型
+## 把 QString 转换为 double 类型
 
-### 方法1.QString str="123.45";
-
+### 方法 1.QString str="123.45";
 
     double val=str.toDouble(); //val=123.45
 
-### 方法2.很适合科学计数法形式转换
+### 方法 2.很适合科学计数法形式转换
 
     bool ok;
 
@@ -96,7 +100,7 @@ int main(){
 
     d=QString("1234.56e-02").toDouble(&ok); //ok=true;d;12.3456.
 
-### 把QString转换为float形
+### 把 QString 转换为 float 形
 
     1.QString str="123.45";
 
@@ -108,13 +112,13 @@ int main(){
 
     float d=str.toFloat(&ok); //转换是被时返回0.0,ok=false;
 
-## 把QString形转换为整形
+## 把 QString 形转换为整形
 
 ### 1.转换为十进制整形
 
-注意：基数默认为10。当基数为10时，并且基数必须在2到36之
+注意：基数默认为 10。当基数为 10 时，并且基数必须在 2 到 36 之
 
-间。如果基数为0，若字符串是以0x开头的就会转换为16进制，若以0开头就转换为八进制，否则就转换为十进制。
+间。如果基数为 0，若字符串是以 0x 开头的就会转换为 16 进制，若以 0 开头就转换为八进制，否则就转换为十进制。
 
     Qstring str="FF";
 
@@ -124,22 +128,26 @@ int main(){
 
     int hex =str.toInt(&ok,16); //hex=255;ok=true;
 
-## 3.常整形转换为Qstring形
+## 3.常整形转换为 Qstring 形
 
     long a =63;
     QString str=QString::number(a,16); //str="3f";
     QString str=QString::number(a,16).toUpper(); //str="3F";
 
-### Qstring 转换char\*问题
+### Qstring 转换 char\*问题
+
 #### 方法一:
+
     QString qstr("hello,word");
     const char * p = qstr.toLocal8Bit().data();
+
 #### 方法二:
+
     const char \*p = qstr.toStdString().data();
     转换过来的是常量
 
+## 把当前时间转化为 QString...
 
-## 把当前时间转化为QString...
     public QDateTime qdate = QDateTime.currentDateTime();
     datetime = qdate.toString("yyyy年MM月dd日ddddhh:mm:ss");
     如果不是QTime和QDate类比如说：通过TCP/IP接收到的char unsigned char 类等如何转换为QString类
@@ -151,33 +159,33 @@ int main(){
         return QString(cTime);
     }
 
-## gcc编译
+## gcc 编译
 
-1. 使用gcc生成静态库及静态库使用方法：
+1. 使用 gcc 生成静态库及静态库使用方法：
 
-　　在此例中，test.c用于编译生成静态库libtest.a，test.h为libtest.a对应的头文件。
+在此例中，test.c 用于编译生成静态库 libtest.a，test.h 为 libtest.a 对应的头文件。
 
-　　第一步：生成test.o目标文件，使用gcc -c test.c -o test.o命令。
+第一步：生成 test.o 目标文件，使用 gcc -c test.c -o test.o 命令。
 
-　　第二步：使用ar将test.o打包成libtest.a静态库，使用ar rcs -o libtest.a test.o命令
+第二步：使用 ar 将 test.o 打包成 libtest.a 静态库，使用 ar rcs -o libtest.a test.o 命令
 
-　　第三步：生成libtest.a静态库后，可以使用命令ar t libtest.a查看libtest.a文件中包含哪些文件。
+第三步：生成 libtest.a 静态库后，可以使用命令 ar t libtest.a 查看 libtest.a 文件中包含哪些文件。
 
-　　第四步：编译main.c，并使用libtest.a静态库，链接时-l参数后不加空格指定所需要链接的库，这里库名是libtest.a，但是只需要给出-ltest即可，ld会以libtest作为库的实际名字。完整的命令为：gcc -o app_static main.c -L. -ltest 或者是gcc -o app_static main.c libtest.a
+第四步：编译 main.c，并使用 libtest.a 静态库，链接时-l 参数后不加空格指定所需要链接的库，这里库名是 libtest.a，但是只需要给出-ltest 即可，ld 会以 libtest 作为库的实际名字。完整的命令为：gcc -o app_static main.c -L. -ltest 或者是 gcc -o app_static main.c libtest.a
 
-　　第五步：运行app_static
+第五步：运行 app_static
 
-　　直接使用命令./app_static
+直接使用命令./app_static
 
-2. 使用gcc生成动态库及使用动态库的方法
-//-fpie
-　　第一步：生成test.o目标文件，使用如下命令。在此处需要添加-fPIC参数，该参数用于生成位置无关代码已工生成动态库使用，使用命令：gcc -c -o test.o -fPIC test.c
+2. 使用 gcc 生成动态库及使用动态库的方法
+   //-fpie
+   　　第一步：生成 test.o 目标文件，使用如下命令。在此处需要添加-fPIC 参数，该参数用于生成位置无关代码已工生成动态库使用，使用命令：gcc -c -o test.o -fPIC test.c
 
-　　第二步：使用-shared参数生成动态库，使用如下命令：gcc -shared -o libmyshare.so test.o,上述两个命令可以连在一起，如下所示：gcc -shared -fPIC -o libmyshare.so test.c
+第二步：使用-shared 参数生成动态库，使用如下命令：gcc -shared -o libmyshare.so test.o,上述两个命令可以连在一起，如下所示：gcc -shared -fPIC -o libmyshare.so test.c
 
-　　第三步：编译main.c，使用libmyshare.so动态库，命令如下gcc -o app_share main.c -L. -lmyshare.使用ldd app_share命令查看app_share使用动态库，如果libmyshare无法找到，直接执行app_share就会出现错误。解决方法：首先使用export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH将当前目录加入LD_LIBRARY_PATH变量中。再次运行ldd app_share
+第三步：编译 main.c，使用 libmyshare.so 动态库，命令如下 gcc -o app_share main.c -L. -lmyshare.使用 ldd app_share 命令查看 app_share 使用动态库，如果 libmyshare 无法找到，直接执行 app_share 就会出现错误。解决方法：首先使用 export LD_LIBRARY_PATH=.:\$LD_LIBRARY_PATH 将当前目录加入 LD_LIBRARY_PATH 变量中。再次运行 ldd app_share
 
-　　另一种编译main.c，并链接libmyshare.so的方式如下（该方式通过./libmyshare.so直接指定使用当前目录下的libmyshare.so文件），使用命令：gcc -o app_share main.c ./libmyshare.so
+另一种编译 main.c，并链接 libmyshare.so 的方式如下（该方式通过./libmyshare.so 直接指定使用当前目录下的 libmyshare.so 文件），使用命令：gcc -o app_share main.c ./libmyshare.so
 
 ## 动态链接库
 
@@ -195,8 +203,8 @@ int main(){
 
 前向声明是一种，不完全类型声明，所以他并不能取代完全类型，对于编译器来说，在需要知其被声明对象大小和内容时，前向声明，己不可用。故其应用场景，仅限如下：
 
-*   1，声明引用和指针
-*   2，作函数(仅声明)，的返回类型或是参数类型。
+- 1，声明引用和指针
+- 2，作函数(仅声明)，的返回类型或是参数类型。
 
 下面给出了一个应用场景： 
 A.h
