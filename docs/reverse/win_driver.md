@@ -37,7 +37,8 @@ NTSTATUS DriverEntry(
 }
 ```
 
-要在windbgx中设置符号目录，编译后，使用InstDrv（驱动加载工具）载入驱动，安装，启动，就能自动断下来了
+要在windbgx中设置符号目录，编译后，使用InstDrv（驱动加载工具）载入驱动，安装，启动，就能自动断下来了.
+或者使用命令`sxe ld DancingKeys.sys`.
 ## 文档和书记
 https://docs.microsoft.com/zh-cn/windows-hardware/drivers/ddi/content/
 
