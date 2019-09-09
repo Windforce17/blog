@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#picpie" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -422,30 +422,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/php_attack/" title="Php attack" class="md-nav__link">
-      Php attack
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Web&Attack/upload&parsing/" title="Upload&parsing" class="md-nav__link">
-      Upload&parsing
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../Web&Attack/wlan/" title="Wlan" class="md-nav__link">
       Wlan
     </a>
@@ -531,13 +507,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-14" type="checkbox" id="nav-2-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-12" type="checkbox" id="nav-2-12">
     
-    <label class="md-nav__link" for="nav-2-14">
+    <label class="md-nav__link" for="nav-2-12">
       Shell
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-14">
+      <label class="md-nav__title" for="nav-2-12">
         Shell
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -550,13 +526,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-14-1" type="checkbox" id="nav-2-14-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-12-1" type="checkbox" id="nav-2-12-1">
     
-    <label class="md-nav__link" for="nav-2-14-1">
+    <label class="md-nav__link" for="nav-2-12-1">
       Php
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-14-1">
+      <label class="md-nav__title" for="nav-2-12-1">
         Php
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -837,9 +813,44 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        C++
+      </label>
+    
     <a href="./" title="C++" class="md-nav__link md-nav__link--active">
       C++
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    列表初始化
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -2515,6 +2526,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    列表初始化
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+        <li class="md-nav__item">
+          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
+            评论
+          </a>
+        </li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2528,48 +2561,52 @@
                   <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/c&cpp/c++.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h2 id="picpie">PIC&amp;PIE<a class="headerlink" href="#picpie" title="Permanent link">&para;</a></h2>
-<h2 id="_1">杂项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h2 id="_1">杂项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>wchar_t 扩展字符集，cin和cout将输入输出看作是char流，因此不适用处理wchar_ t类型，通过前缀L指示宽字符常量和宽字符串。     </li>
+<li>wchar<em>t 扩展字符集，cin 和 cout 将输入输出看作是 char 流，因此不适用处理 wchar</em> t 类型，通过前缀 L 指示宽字符常量和宽字符串。</li>
 </ul>
-<p>*c和c++对有效位数要求是，float至少32位，double至少是48位，切不少于float。long
-* double至少和double一样多，这三种类型的有效位数可以一样多。通常float为32位，double为64位，long double为80 96 128位。这三种指数类型至少是-37到37，可以从cfloat或float.h找到系统的限制。    </p>
+<p>*c 和 c++对有效位数要求是，float 至少 32 位，double 至少是 48 位，切不少于 float。long</p>
 <ul>
-<li>wchar_t a[] = L"字符串”;    </li>
-<li>char16_t a[] = u"字符串”;    </li>
-<li>char32_t a[] = U"字符串";     </li>
-<li>cout&lt;&lt;R“(原始字符串)”;    </li>
-<li>c++11 结构可以用列表初始化;    </li>
+<li>
+<p>double 至少和 double 一样多，这三种类型的有效位数可以一样多。通常 float 为 32 位，double 为 64 位，long double 为 80 96 128 位。这三种指数类型至少是-37 到 37，可以从 cfloat 或 float.h 找到系统的限制。</p>
+</li>
+<li>
+<p>wchar_t a[] = L"字符串”;</p>
+</li>
+<li>char16_t a[] = u"字符串”;</li>
+<li>char32_t a[] = U"字符串";</li>
+<li>cout&lt;&lt;R“(原始字符串)”;</li>
+<li>c++11 结构可以用列表初始化;</li>
 <li>{}列表初始化，不允许缩窄，变量。</li>
-<li>（c++11）     </li>
-<li>关键字auto可以不指定变量的类型      </li>
+<li>（c++11）</li>
+<li>关键字 auto 可以不指定变量的类型</li>
 <li>cin.getline(name,int);</li>
 <li>读取一行的输入。丢弃换行符</li>
-<li>cin.get(name,int);读取一行，留下换行符。     </li>
-<li>cin.get()读取单个字符；    </li>
-<li>cin.clear();清除失效位（failbit）；     </li>
-<li>前缀R表示raw原始字符串，此时\n不表示换行符；</li>
+<li>cin.get(name,int);读取一行，留下换行符。</li>
+<li>cin.get()读取单个字符；</li>
+<li>cin.clear();清除失效位（failbit）；</li>
+<li>前缀 R 表示 raw 原始字符串，此时\n 不表示换行符；</li>
 </ul>
-<p>结构数组初始化: </p>
-<div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">a</span><span class="p">;</span>         
-    <span class="n">a</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>      
-    <span class="p">{</span>  <span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">32.3</span><span class="p">}</span> 
-    <span class="p">{...}</span>    
+<p>结构数组初始化:</p>
+<div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">a</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>
+    <span class="p">{</span>  <span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">32.3</span><span class="p">}</span>
+    <span class="p">{...}</span>
      <span class="p">};</span>
 </pre></div>
 
 <h3 id="_2">列表初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>类的初始化是根据定义的顺序，这样的代码会出错。
+<p>类的初始化是根据定义的顺序，这样的代码会出错。</p>
 <div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">foo</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">i</span> <span class="p">;</span>
     <span class="kt">int</span> <span class="n">j</span> <span class="p">;</span>
     <span class="n">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="n">j</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">i</span><span class="p">(</span><span class="n">j</span><span class="p">){}</span> <span class="c1">// i值未定义</span>
 <span class="p">};</span>
-</pre></div></p>
+</pre></div>
+
 <h2 id="_3">类大小计算<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>下面的输出是多少?
+<p>下面的输出是多少?</p>
 <div class="codehilite"><pre><span></span><span class="cp">#pragma packed()</span>
 <span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
@@ -2590,28 +2627,29 @@
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
   <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">CTest</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div></p>
-<h1 id="qt">Qt静态编译<a class="headerlink" href="#qt" title="Permanent link">&para;</a></h1>
+</pre></div>
+
+<h1 id="qt">Qt 静态编译<a class="headerlink" href="#qt" title="Permanent link">&para;</a></h1>
 <ol>
-<li>官网下载5.8的包,源码https://pan.baidu.com/s/1bpgkTnp</li>
-<li>安装mingw</li>
-<li>解压static包到c:\qt下,解压OpenSSL的zip压缩包（openssl-1.0.1c_static_w32_mingw.zip）到 C:\Dev</li>
-<li>打开QtCreator选择上方工具栏中的 -&gt; 工具 -&gt; 选项 -&gt; 构建和运行</li>
+<li>官网下载 5.8 的包,源码https://pan.baidu.com/s/1bpgkTnp</li>
+<li>安装 mingw</li>
+<li>解压 static 包到 c:\qt 下,解压 OpenSSL 的 zip 压缩包（openssl-1.0.1c_static_w32_mingw.zip）到 C:\Dev</li>
+<li>打开 QtCreator 选择上方工具栏中的 -&gt; 工具 -&gt; 选项 -&gt; 构建和运行</li>
 <li>在上方选项卡中选择 Qt Versions，并且点击右侧的添加</li>
-<li>打开qmake.exe，路径是：C:\Qt\Qt5.8.0_MinGW_static\bin\qmake.exe </li>
+<li>打开 qmake.exe，路径是：C:\Qt\Qt5.8.0_MinGW_static\bin\qmake.exe</li>
 <li><img src="qt静态编译1.png"></li>
 <li>构件套件(kit)中配置一个新的套件,上面的要点应用.</li>
 <li><img src="qt静态编译2.png"></li>
-<li>然后release吧~</li>
+<li>然后 release 吧~</li>
 </ol>
-<h1 id="qtqstring">Qt下的QString与数字的相互转化<a class="headerlink" href="#qtqstring" title="Permanent link">&para;</a></h1>
-<h2 id="qstring-double">把QString转换为 double类型<a class="headerlink" href="#qstring-double" title="Permanent link">&para;</a></h2>
-<h3 id="1qstring-str12345">方法1.QString str="123.45";<a class="headerlink" href="#1qstring-str12345" title="Permanent link">&para;</a></h3>
+<h1 id="qt-qstring">Qt 下的 QString 与数字的相互转化<a class="headerlink" href="#qt-qstring" title="Permanent link">&para;</a></h1>
+<h2 id="qstring-double">把 QString 转换为 double 类型<a class="headerlink" href="#qstring-double" title="Permanent link">&para;</a></h2>
+<h3 id="1qstring-str12345">方法 1.QString str="123.45";<a class="headerlink" href="#1qstring-str12345" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>double val=str.toDouble(); //val=123.45
 </pre></div>
 
 
-<h3 id="2">方法2.很适合科学计数法形式转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<h3 id="2">方法 2.很适合科学计数法形式转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>bool ok;
 
 double d;
@@ -2620,7 +2658,7 @@ d=QString(&quot;1234.56e-02&quot;).toDouble(&amp;ok); //ok=true;d;12.3456.
 </pre></div>
 
 
-<h3 id="qstringfloat">把QString转换为float形<a class="headerlink" href="#qstringfloat" title="Permanent link">&para;</a></h3>
+<h3 id="qstring-float">把 QString 转换为 float 形<a class="headerlink" href="#qstring-float" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span>1.QString str=&quot;123.45&quot;;
 
 float d=str.toFloat(); //d=123.45
@@ -2633,10 +2671,10 @@ float d=str.toFloat(&amp;ok); //转换是被时返回0.0,ok=false;
 </pre></div>
 
 
-<h2 id="qstring">把QString形转换为整形<a class="headerlink" href="#qstring" title="Permanent link">&para;</a></h2>
+<h2 id="qstring">把 QString 形转换为整形<a class="headerlink" href="#qstring" title="Permanent link">&para;</a></h2>
 <h3 id="1">1.转换为十进制整形<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>注意：基数默认为10。当基数为10时，并且基数必须在2到36之</p>
-<p>间。如果基数为0，若字符串是以0x开头的就会转换为16进制，若以0开头就转换为八进制，否则就转换为十进制。</p>
+<p>注意：基数默认为 10。当基数为 10 时，并且基数必须在 2 到 36 之</p>
+<p>间。如果基数为 0，若字符串是以 0x 开头的就会转换为 16 进制，若以 0 开头就转换为八进制，否则就转换为十进制。</p>
 <div class="codehilite"><pre><span></span>Qstring str=&quot;FF&quot;;
 
 bool ok;
@@ -2647,14 +2685,14 @@ int hex =str.toInt(&amp;ok,16); //hex=255;ok=true;
 </pre></div>
 
 
-<h2 id="3qstring">3.常整形转换为Qstring形<a class="headerlink" href="#3qstring" title="Permanent link">&para;</a></h2>
+<h2 id="3-qstring">3.常整形转换为 Qstring 形<a class="headerlink" href="#3-qstring" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>long a =63;
 QString str=QString::number(a,16); //str=&quot;3f&quot;;
 QString str=QString::number(a,16).toUpper(); //str=&quot;3F&quot;;
 </pre></div>
 
 
-<h3 id="qstring-char42">Qstring 转换char*问题<a class="headerlink" href="#qstring-char42" title="Permanent link">&para;</a></h3>
+<h3 id="qstring-char42">Qstring 转换 char*问题<a class="headerlink" href="#qstring-char42" title="Permanent link">&para;</a></h3>
 <h4 id="_4">方法一:<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <div class="codehilite"><pre><span></span>QString qstr(&quot;hello,word&quot;);
 const char * p = qstr.toLocal8Bit().data();
@@ -2667,7 +2705,7 @@ const char * p = qstr.toLocal8Bit().data();
 </pre></div>
 
 
-<h2 id="qstring_1">把当前时间转化为QString...<a class="headerlink" href="#qstring_1" title="Permanent link">&para;</a></h2>
+<h2 id="qstring_1">把当前时间转化为 QString...<a class="headerlink" href="#qstring_1" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>public QDateTime qdate = QDateTime.currentDateTime();
 datetime = qdate.toString(&quot;yyyy年MM月dd日ddddhh:mm:ss&quot;);
 如果不是QTime和QDate类比如说：通过TCP/IP接收到的char unsigned char 类等如何转换为QString类
@@ -2681,25 +2719,25 @@ QString Time2String( DWORD dwTime)
 </pre></div>
 
 
-<h2 id="gcc">gcc编译<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
+<h2 id="gcc">gcc 编译<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
 <ol>
-<li>使用gcc生成静态库及静态库使用方法：</li>
+<li>使用 gcc 生成静态库及静态库使用方法：</li>
 </ol>
-<p>在此例中，test.c用于编译生成静态库libtest.a，test.h为libtest.a对应的头文件。</p>
-<p>第一步：生成test.o目标文件，使用gcc -c test.c -o test.o命令。</p>
-<p>第二步：使用ar将test.o打包成libtest.a静态库，使用ar rcs -o libtest.a test.o命令</p>
-<p>第三步：生成libtest.a静态库后，可以使用命令ar t libtest.a查看libtest.a文件中包含哪些文件。</p>
-<p>第四步：编译main.c，并使用libtest.a静态库，链接时-l参数后不加空格指定所需要链接的库，这里库名是libtest.a，但是只需要给出-ltest即可，ld会以libtest作为库的实际名字。完整的命令为：gcc -o app_static main.c -L. -ltest 或者是gcc -o app_static main.c libtest.a</p>
-<p>第五步：运行app_static</p>
+<p>在此例中，test.c 用于编译生成静态库 libtest.a，test.h 为 libtest.a 对应的头文件。</p>
+<p>第一步：生成 test.o 目标文件，使用 gcc -c test.c -o test.o 命令。</p>
+<p>第二步：使用 ar 将 test.o 打包成 libtest.a 静态库，使用 ar rcs -o libtest.a test.o 命令</p>
+<p>第三步：生成 libtest.a 静态库后，可以使用命令 ar t libtest.a 查看 libtest.a 文件中包含哪些文件。</p>
+<p>第四步：编译 main.c，并使用 libtest.a 静态库，链接时-l 参数后不加空格指定所需要链接的库，这里库名是 libtest.a，但是只需要给出-ltest 即可，ld 会以 libtest 作为库的实际名字。完整的命令为：gcc -o app_static main.c -L. -ltest 或者是 gcc -o app_static main.c libtest.a</p>
+<p>第五步：运行 app_static</p>
 <p>直接使用命令./app_static</p>
 <ol>
-<li>使用gcc生成动态库及使用动态库的方法
-//-fpie
-　　第一步：生成test.o目标文件，使用如下命令。在此处需要添加-fPIC参数，该参数用于生成位置无关代码已工生成动态库使用，使用命令：gcc -c -o test.o -fPIC test.c</li>
+<li>使用 gcc 生成动态库及使用动态库的方法
+   //-fpie
+   　　第一步：生成 test.o 目标文件，使用如下命令。在此处需要添加-fPIC 参数，该参数用于生成位置无关代码已工生成动态库使用，使用命令：gcc -c -o test.o -fPIC test.c</li>
 </ol>
-<p>第二步：使用-shared参数生成动态库，使用如下命令：gcc -shared -o libmyshare.so test.o,上述两个命令可以连在一起，如下所示：gcc -shared -fPIC -o libmyshare.so test.c</p>
-<p>第三步：编译main.c，使用libmyshare.so动态库，命令如下gcc -o app_share main.c -L. -lmyshare.使用ldd app_share命令查看app_share使用动态库，如果libmyshare无法找到，直接执行app_share就会出现错误。解决方法：首先使用export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH将当前目录加入LD_LIBRARY_PATH变量中。再次运行ldd app_share</p>
-<p>另一种编译main.c，并链接libmyshare.so的方式如下（该方式通过./libmyshare.so直接指定使用当前目录下的libmyshare.so文件），使用命令：gcc -o app_share main.c ./libmyshare.so</p>
+<p>第二步：使用-shared 参数生成动态库，使用如下命令：gcc -shared -o libmyshare.so test.o,上述两个命令可以连在一起，如下所示：gcc -shared -fPIC -o libmyshare.so test.c</p>
+<p>第三步：编译 main.c，使用 libmyshare.so 动态库，命令如下 gcc -o app_share main.c -L. -lmyshare.使用 ldd app_share 命令查看 app_share 使用动态库，如果 libmyshare 无法找到，直接执行 app_share 就会出现错误。解决方法：首先使用 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH 将当前目录加入 LD_LIBRARY_PATH 变量中。再次运行 ldd app_share</p>
+<p>另一种编译 main.c，并链接 libmyshare.so 的方式如下（该方式通过./libmyshare.so 直接指定使用当前目录下的 libmyshare.so 文件），使用命令：gcc -o app_share main.c ./libmyshare.so</p>
 <h2 id="_6">动态链接库<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <h3 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1">//导出函数接口，dll中可以调用</span>

