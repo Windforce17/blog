@@ -810,8 +810,6 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         C++
@@ -825,15 +823,61 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    字符扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     列表初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    类大小计算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gcc" class="md-nav__link">
+    gcc 编译
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    动态链接库
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forward-declaration" class="md-nav__link">
+    前向声明 forward declaration
   </a>
   
 </li>
@@ -897,8 +941,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../qt_image/" title="Qt图片处理" class="md-nav__link">
-      Qt图片处理
+    <a href="../qt/" title="Qt 静态编译" class="md-nav__link">
+      Qt 静态编译
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../winapi/" title="Winapi" class="md-nav__link">
+      Winapi
     </a>
   </li>
 
@@ -1773,6 +1829,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../ctf/misc/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../ctf/misc/misc/" title="Misc" class="md-nav__link">
       Misc
     </a>
@@ -2523,15 +2591,61 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    字符扩展
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     列表初始化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    类大小计算
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gcc" class="md-nav__link">
+    gcc 编译
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    动态链接库
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#forward-declaration" class="md-nav__link">
+    前向声明 forward declaration
   </a>
   
 </li>
@@ -2561,7 +2675,9 @@
                   <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/c&cpp/c++.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h2 id="_1">杂项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                  <h1>C++</h1>
+                
+                <h2 id="_1">字符扩展<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li>wchar<em>t 扩展字符集，cin 和 cout 将输入输出看作是 char 流，因此不适用处理 wchar</em> t 类型，通过前缀 L 指示宽字符常量和宽字符串。</li>
 </ul>
@@ -2595,7 +2711,7 @@
      <span class="p">};</span>
 </pre></div>
 
-<h3 id="_2">列表初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_2">列表初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>类的初始化是根据定义的顺序，这样的代码会出错。</p>
 <div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">foo</span>
 <span class="p">{</span>
@@ -2629,96 +2745,6 @@
 <span class="p">}</span>
 </pre></div>
 
-<h1 id="qt">Qt 静态编译<a class="headerlink" href="#qt" title="Permanent link">&para;</a></h1>
-<ol>
-<li>官网下载 5.8 的包,源码https://pan.baidu.com/s/1bpgkTnp</li>
-<li>安装 mingw</li>
-<li>解压 static 包到 c:\qt 下,解压 OpenSSL 的 zip 压缩包（openssl-1.0.1c_static_w32_mingw.zip）到 C:\Dev</li>
-<li>打开 QtCreator 选择上方工具栏中的 -&gt; 工具 -&gt; 选项 -&gt; 构建和运行</li>
-<li>在上方选项卡中选择 Qt Versions，并且点击右侧的添加</li>
-<li>打开 qmake.exe，路径是：C:\Qt\Qt5.8.0_MinGW_static\bin\qmake.exe</li>
-<li><img src="qt静态编译1.png"></li>
-<li>构件套件(kit)中配置一个新的套件,上面的要点应用.</li>
-<li><img src="qt静态编译2.png"></li>
-<li>然后 release 吧~</li>
-</ol>
-<h1 id="qt-qstring">Qt 下的 QString 与数字的相互转化<a class="headerlink" href="#qt-qstring" title="Permanent link">&para;</a></h1>
-<h2 id="qstring-double">把 QString 转换为 double 类型<a class="headerlink" href="#qstring-double" title="Permanent link">&para;</a></h2>
-<h3 id="1qstring-str12345">方法 1.QString str="123.45";<a class="headerlink" href="#1qstring-str12345" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>double val=str.toDouble(); //val=123.45
-</pre></div>
-
-
-<h3 id="2">方法 2.很适合科学计数法形式转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>bool ok;
-
-double d;
-
-d=QString(&quot;1234.56e-02&quot;).toDouble(&amp;ok); //ok=true;d;12.3456.
-</pre></div>
-
-
-<h3 id="qstring-float">把 QString 转换为 float 形<a class="headerlink" href="#qstring-float" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>1.QString str=&quot;123.45&quot;;
-
-float d=str.toFloat(); //d=123.45
-
-2.QString str=&quot;R2D2&quot;;
-
-bool ok;
-
-float d=str.toFloat(&amp;ok); //转换是被时返回0.0,ok=false;
-</pre></div>
-
-
-<h2 id="qstring">把 QString 形转换为整形<a class="headerlink" href="#qstring" title="Permanent link">&para;</a></h2>
-<h3 id="1">1.转换为十进制整形<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<p>注意：基数默认为 10。当基数为 10 时，并且基数必须在 2 到 36 之</p>
-<p>间。如果基数为 0，若字符串是以 0x 开头的就会转换为 16 进制，若以 0 开头就转换为八进制，否则就转换为十进制。</p>
-<div class="codehilite"><pre><span></span>Qstring str=&quot;FF&quot;;
-
-bool ok;
-
-int dec=str.toInt(&amp;ok,10); //dec=255 ; ok=rue
-
-int hex =str.toInt(&amp;ok,16); //hex=255;ok=true;
-</pre></div>
-
-
-<h2 id="3-qstring">3.常整形转换为 Qstring 形<a class="headerlink" href="#3-qstring" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>long a =63;
-QString str=QString::number(a,16); //str=&quot;3f&quot;;
-QString str=QString::number(a,16).toUpper(); //str=&quot;3F&quot;;
-</pre></div>
-
-
-<h3 id="qstring-char42">Qstring 转换 char*问题<a class="headerlink" href="#qstring-char42" title="Permanent link">&para;</a></h3>
-<h4 id="_4">方法一:<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>QString qstr(&quot;hello,word&quot;);
-const char * p = qstr.toLocal8Bit().data();
-</pre></div>
-
-
-<h4 id="_5">方法二:<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<div class="codehilite"><pre><span></span>const char \*p = qstr.toStdString().data();
-转换过来的是常量
-</pre></div>
-
-
-<h2 id="qstring_1">把当前时间转化为 QString...<a class="headerlink" href="#qstring_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>public QDateTime qdate = QDateTime.currentDateTime();
-datetime = qdate.toString(&quot;yyyy年MM月dd日ddddhh:mm:ss&quot;);
-如果不是QTime和QDate类比如说：通过TCP/IP接收到的char unsigned char 类等如何转换为QString类
-QString Time2String( DWORD dwTime)
-{
-    char cTime[50] = {0};
-    memset(cTime,0,50);
-    strftime(cTime,32,&quot;%Y-%m-%d %H:%M:%S&quot;,localtime(&amp;time_t(dwTime)));
-    return QString(cTime);
-}
-</pre></div>
-
-
 <h2 id="gcc">gcc 编译<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
 <ol>
 <li>使用 gcc 生成静态库及静态库使用方法：</li>
@@ -2738,7 +2764,7 @@ QString Time2String( DWORD dwTime)
 <p>第二步：使用-shared 参数生成动态库，使用如下命令：gcc -shared -o libmyshare.so test.o,上述两个命令可以连在一起，如下所示：gcc -shared -fPIC -o libmyshare.so test.c</p>
 <p>第三步：编译 main.c，使用 libmyshare.so 动态库，命令如下 gcc -o app_share main.c -L. -lmyshare.使用 ldd app_share 命令查看 app_share 使用动态库，如果 libmyshare 无法找到，直接执行 app_share 就会出现错误。解决方法：首先使用 export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH 将当前目录加入 LD_LIBRARY_PATH 变量中。再次运行 ldd app_share</p>
 <p>另一种编译 main.c，并链接 libmyshare.so 的方式如下（该方式通过./libmyshare.so 直接指定使用当前目录下的 libmyshare.so 文件），使用命令：gcc -o app_share main.c ./libmyshare.so</p>
-<h2 id="_6">动态链接库<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_4">动态链接库<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1">//导出函数接口，dll中可以调用</span>
     <span class="n">_declspec</span><span class="p">(</span><span class="n">dllexport</span><span class="p">)</span> <span class="kt">void</span> <span class="n">go</span><span class="p">()</span> <span class="c1">//export method,call in load</span>

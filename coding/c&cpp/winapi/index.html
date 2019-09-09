@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/coding/c&cpp/qt_image/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/coding/c&cpp/winapi/">
       
       
         <meta name="author" content="Windforce17">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Qt图片处理 - windforce17's blog</title>
+        <title>Winapi - windforce17's blog</title>
       
     
     
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#qt" tabindex="1" class="md-skip">
+      <a href="#vs" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -119,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Qt图片处理
+                Winapi
               
             </span>
           
@@ -851,6 +851,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../qt/" title="Qt 静态编译" class="md-nav__link">
+      Qt 静态编译
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -858,44 +870,26 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Qt图片处理
+        Winapi
       </label>
     
-    <a href="./" title="Qt图片处理" class="md-nav__link md-nav__link--active">
-      Qt图片处理
+    <a href="./" title="Winapi" class="md-nav__link md-nav__link--active">
+      Winapi
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    显示图片
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    图片缩放
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    图片旋转
+  <a href="#vs" class="md-nav__link">
+    vs 设置
   </a>
   
 </li>
@@ -1787,6 +1781,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../ctf/misc/hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../../ctf/misc/misc/" title="Misc" class="md-nav__link">
       Misc
     </a>
@@ -2537,29 +2543,13 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    显示图片
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    图片缩放
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    图片旋转
+  <a href="#vs" class="md-nav__link">
+    vs 设置
   </a>
   
 </li>
@@ -2586,52 +2576,16 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/c&cpp/qt_image.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/c&cpp/winapi.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="qt">Qt图片处理<a class="headerlink" href="#qt" title="Permanent link">&para;</a></h1>
-<h2 id="_1">显示图片<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>    <span class="n">QString</span> <span class="n">filename</span><span class="p">;</span>
-    <span class="n">filename</span><span class="o">=</span><span class="n">QFileDialog</span><span class="o">::</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;选择图像&quot;</span><span class="p">),</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Images (*.png *.bmp *.jpg *.tif *.GIF )&quot;</span><span class="p">));</span>
-    <span class="k">if</span><span class="p">(</span><span class="n">filename</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span>
-    <span class="p">{</span>
-         <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-        <span class="n">QImage</span><span class="o">*</span> <span class="n">img</span><span class="o">=</span><span class="k">new</span> <span class="n">QImage</span><span class="p">;</span>
-
-        <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="p">(</span> <span class="n">img</span><span class="o">-&gt;</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="c1">//加载图像</span>
-        <span class="p">{</span>
-            <span class="n">QMessageBox</span><span class="o">::</span><span class="n">information</span><span class="p">(</span><span class="k">this</span><span class="p">,</span>
-                                     <span class="n">tr</span><span class="p">(</span><span class="s">&quot;打开图像失败&quot;</span><span class="p">),</span>
-                                     <span class="n">tr</span><span class="p">(</span><span class="s">&quot;打开图像失败!&quot;</span><span class="p">));</span>
-            <span class="k">delete</span> <span class="n">img</span><span class="p">;</span>
-            <span class="k">return</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">::</span><span class="n">fromImage</span><span class="p">(</span><span class="o">*</span><span class="n">img</span><span class="p">));</span>
-    <span class="p">}</span>
-</pre></div>
-
-<h2 id="_2">图片缩放<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>图像缩放采用scaled函数。函数原型</p>
-<div class="codehilite"><pre><span></span><span class="n">QImage</span> <span class="n">QImage</span><span class="o">::</span><span class="n">scaled</span> <span class="p">(</span> <span class="k">const</span> <span class="n">QSize</span> <span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span><span class="n">Qt</span><span class="o">::</span><span class="n">AspectRatioMode</span> <span class="n">aspectRatioMode</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">::</span><span class="n">IgnoreAspectRatio</span><span class="p">,</span> <span class="n">Qt</span><span class="o">::</span><span class="n">TransformationModetransformMode</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">::</span><span class="n">FastTransformation</span> <span class="p">)</span> <span class="k">const</span>
-<span class="c1">//使用方法如下，还是利用上面的img：</span>
-
-<span class="n">QImage</span><span class="o">*</span> <span class="n">imgScaled</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QImage</span><span class="err">；</span>
-<span class="o">*</span><span class="n">imgScaled</span><span class="o">=</span><span class="n">img</span><span class="o">-&gt;</span><span class="n">scaled</span><span class="p">(</span><span class="n">width</span><span class="p">,</span>
-                       <span class="n">height</span><span class="p">,</span>
-                       <span class="n">Qt</span><span class="o">::</span><span class="n">KeepAspectRatio</span><span class="p">);</span>
-<span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">::</span><span class="n">fromImage</span><span class="p">(</span><span class="o">*</span><span class="n">imgScaled</span><span class="p">));</span>
-</pre></div>
-
-<h2 id="_3">图片旋转<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">QImage</span><span class="o">*</span> <span class="n">imgRatate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QImage</span><span class="p">;</span>
-<span class="n">QMatrix</span> <span class="n">matrix</span><span class="p">;</span>
-<span class="n">matrix</span><span class="p">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">270</span><span class="p">);</span>
-<span class="o">*</span><span class="n">imgRotate</span> <span class="o">=</span> <span class="n">img</span><span class="o">-&gt;</span><span class="n">transformed</span><span class="p">(</span><span class="n">matrix</span><span class="p">);</span>
-<span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">::</span><span class="n">fromImage</span><span class="p">(</span><span class="o">*</span><span class="n">imgRotate</span><span class="p">));</span>
-</pre></div>
+                  <h1>Winapi</h1>
+                
+                <h2 id="vs">vs 设置<a class="headerlink" href="#vs" title="Permanent link">&para;</a></h2>
+<p>关掉幽灵/熔断漏洞缓解检查。</p>
+<blockquote>
+<p>Create a win32 console project and click project name to properties, Enable “Spectre Mitigation” under C/C++ Code Generation.</p>
+</blockquote>
                 
                   
                 
@@ -2677,7 +2631,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../pointer/" title="Pointer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../qt/" title="Qt 静态编译" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2686,7 +2640,7 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                Pointer
+                Qt 静态编译
               </span>
             </div>
           </a>

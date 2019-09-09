@@ -156,7 +156,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/coding/c&cpp/qt_image/</loc>
+     <loc>https://windforce17.github.io/blog/coding/c&cpp/qt/</loc>
+     <lastmod>2019-09-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/coding/c&cpp/winapi/</loc>
      <lastmod>2019-09-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -387,6 +392,11 @@
     </url>
     <url>
      <loc>https://windforce17.github.io/blog/ctf/misc/dropsec12.9/</loc>
+     <lastmod>2019-09-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/ctf/misc/hash/</loc>
      <lastmod>2019-09-09</lastmod>
      <changefreq>daily</changefreq>
     </url>

@@ -849,8 +849,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c&cpp/qt_image/" title="Qt图片处理" class="md-nav__link">
-      Qt图片处理
+    <a href="../../../coding/c&cpp/qt/" title="Qt 静态编译" class="md-nav__link">
+      Qt 静态编译
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../coding/c&cpp/winapi/" title="Winapi" class="md-nav__link">
+      Winapi
     </a>
   </li>
 
@@ -1729,6 +1741,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../hash/" title="Hash" class="md-nav__link">
+      Hash
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../misc/" title="Misc" class="md-nav__link">
       Misc
     </a>
@@ -1784,7 +1808,7 @@
       
         <li class="md-nav__item">
   <a href="#volatility" class="md-nav__link">
-    volatility使用
+    volatility 使用
   </a>
   
 </li>
@@ -2539,7 +2563,7 @@
       
         <li class="md-nav__item">
   <a href="#volatility" class="md-nav__link">
-    volatility使用
+    volatility 使用
   </a>
   
 </li>
@@ -2573,46 +2597,72 @@
                 
                 <h2 id="_1">工具<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>dump 内存镜像：Dumpit<br />
-磁盘取证解密器：Elcomsoft Forensic Disk Decryptor   </p>
-<h2 id="volatility">volatility使用<a class="headerlink" href="#volatility" title="Permanent link">&para;</a></h2>
+磁盘取证解密器：Elcomsoft Forensic Disk Decryptor</p>
+<h2 id="volatility">volatility 使用<a class="headerlink" href="#volatility" title="Permanent link">&para;</a></h2>
+<p><a href="http://shaobaobaoer.cn/archives/693/memory-forensics-tool-volatility-usage-and-practice">参考</a>
+插件:</p>
 <ol>
 <li>
-<p>获得profile参数
-<code>volatility -f mem.vmem imageinfo</code></p>
+<p><a href="https://github.com/superponible/volatility-plugins">https://github.com/superponible/volatility-plugins</a></p>
 </li>
 <li>
-<p>get一个shell
-<code>volatility -f mem.vmem –profile=WinXPSP2x86</code></p>
+<p>获得 profile 参数
+   <code>volatility -f mem.vmem imageinfo</code></p>
+</li>
+<li>
+<p>get 一个 shell
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86</code></p>
 </li>
 <li>
 <p>进程列表
-<code>volatility -f mem.vmem –profile=WinXPSP2x86 pslist</code></p>
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 pslist</code></p>
 </li>
 <li>
 <p>内存中的注册表
-<code>volatility -f mem.vmem –profile=WinXPSP2x86 hivelist</code>
-打印出值
-<code>volatility -f mem.vmem –profile=WinXPSP2x86 hivedump -o [reg address]</code> </p>
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 hivelist</code>
+   打印出值
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 hivedump -o [reg address]</code></p>
 </li>
 <li>
 <p>获取用户
-<code>volatility -f mem.vmem –profile=WinXPSP2x86 printkey -K “SAM\Domains\Account\Users\Names”</code></p>
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 printkey -K “SAM\Domains\Account\Users\Names”</code></p>
 </li>
 <li>
 <p>最后登录系统
-<code>volatility -f mem.vmem –profile=WinXPSP2x86 printkey -K “SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon”</code></p>
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 printkey -K “SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon”</code></p>
 </li>
 <li>
-<p>dump一个进程的数据
-<code>volatility -f mem.vmem –profile=WinXPSP2x86 -p [PID] -D [dump 出的文件保存的目录]</code></p>
+<p>dump 一个进程的数据
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 -p [PID] -D [dump 出的文件保存的目录]</code></p>
 </li>
 <li>
 <p>dump cmd 命令情况
-<code>volatility -f mem.vmem –profile=WinXPSP2x86 cmdscan</code></p>
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 cmdscan</code></p>
 </li>
 <li>
-<p>connscan 扫描tcp链接
-<code>volatility connscan -f mem.vmem –profile=WinXPSP2x86</code></p>
+<p>notepad 内容
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 notepad</code></p>
+</li>
+<li>
+<p>内存进程 dump
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 memdump -p [pid] --dump-dir=./</code><br />
+<code>foremost xx.dump</code></p>
+</li>
+<li>
+<p>登录情况
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 hashdump</code></p>
+</li>
+<li>
+<p>查找文件
+   <code>volatility -f mem.vmem –profile=WinXPSP2x86 filescan | grep -E 'jpg|png|jpeg|bmp|gif|zip|txt'</code> 也可以<code>| grep Desktop</code>，发挥想象力。</p>
+</li>
+<li>
+<p>dump 文件
+   <code>volatility -f file_patched.dmp --profile=Win7SP1x86_23418 dumpfiles -D ./ -Q 0x000000000e080690</code></p>
+</li>
+<li>
+<p>connscan 扫描 tcp 链接
+   <code>volatility connscan -f mem.vmem –profile=WinXPSP2x86</code></p>
 </li>
 </ol>
                 

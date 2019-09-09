@@ -13,7 +13,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/coding/linux/devops/https&ssl/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/coding/c&cpp/qt/">
       
       
         <meta name="author" content="Windforce17">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
-      <link rel="shortcut icon" href="../../../..">
+      <link rel="shortcut icon" href="../../..">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
     
     
       
-        <title>使用Let's Encrypt 进行泛解析。 - windforce17's blog</title>
+        <title>Qt 静态编译 - windforce17's blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.4031d38b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -66,10 +66,10 @@
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="../../../../_static/css/extra.css">
+      <link rel="stylesheet" href="../../../_static/css/extra.css">
     
     
       
@@ -93,7 +93,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lets-encrypt" tabindex="1" class="md-skip">
+      <a href="#qt" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -119,7 +119,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                使用Let's Encrypt 进行泛解析。
+                Qt 静态编译
               
             </span>
           
@@ -196,7 +196,7 @@
         
   <li class="md-tabs__item">
     
-      <a href="../../../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         Home
       </a>
     
@@ -208,7 +208,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../../Web&Attack/SQL注入/" class="md-tabs__link">
+        <a href="../../../Web&Attack/SQL注入/" class="md-tabs__link">
           Web&Attack
         </a>
       
@@ -221,7 +221,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../command/" class="md-tabs__link md-tabs__link--active">
+        <a href="../../command/" class="md-tabs__link md-tabs__link--active">
           Coding
         </a>
       
@@ -234,7 +234,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../../ctf/CTFstudy/" class="md-tabs__link">
+        <a href="../../../ctf/CTFstudy/" class="md-tabs__link">
           Ctf
         </a>
       
@@ -247,7 +247,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../../gameSecurity/protect/" class="md-tabs__link">
+        <a href="../../../gameSecurity/protect/" class="md-tabs__link">
           gameSecurity
         </a>
       
@@ -260,7 +260,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../../ics/发现/" class="md-tabs__link">
+        <a href="../../../ics/发现/" class="md-tabs__link">
           Ics
         </a>
       
@@ -273,7 +273,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../../keyAndSetting/各种Key/" class="md-tabs__link">
+        <a href="../../../keyAndSetting/各种Key/" class="md-tabs__link">
           keyAndSetting
         </a>
       
@@ -286,7 +286,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../../../reverse/ReversingTools/" class="md-tabs__link">
+        <a href="../../../reverse/ReversingTools/" class="md-tabs__link">
           Reverse
         </a>
       
@@ -343,7 +343,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../.." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -374,7 +374,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/SQL注入/" title="SQL注入" class="md-nav__link">
+    <a href="../../../Web&Attack/SQL注入/" title="SQL注入" class="md-nav__link">
       SQL注入
     </a>
   </li>
@@ -386,7 +386,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/XSS SSRF/" title="XSS SSRF" class="md-nav__link">
+    <a href="../../../Web&Attack/XSS SSRF/" title="XSS SSRF" class="md-nav__link">
       XSS SSRF
     </a>
   </li>
@@ -398,7 +398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/msf/" title="Msf" class="md-nav__link">
+    <a href="../../../Web&Attack/msf/" title="Msf" class="md-nav__link">
       Msf
     </a>
   </li>
@@ -410,7 +410,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/other/" title="Other" class="md-nav__link">
+    <a href="../../../Web&Attack/other/" title="Other" class="md-nav__link">
       Other
     </a>
   </li>
@@ -422,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/wlan/" title="Wlan" class="md-nav__link">
+    <a href="../../../Web&Attack/wlan/" title="Wlan" class="md-nav__link">
       Wlan
     </a>
   </li>
@@ -434,7 +434,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/信息收集/" title="信息收集" class="md-nav__link">
+    <a href="../../../Web&Attack/信息收集/" title="信息收集" class="md-nav__link">
       信息收集
     </a>
   </li>
@@ -446,7 +446,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/压测/" title="压测" class="md-nav__link">
+    <a href="../../../Web&Attack/压测/" title="压测" class="md-nav__link">
       压测
     </a>
   </li>
@@ -458,7 +458,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/各种漏洞/" title="各种漏洞" class="md-nav__link">
+    <a href="../../../Web&Attack/各种漏洞/" title="各种漏洞" class="md-nav__link">
       各种漏洞
     </a>
   </li>
@@ -470,7 +470,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/大型互联网企业入侵检测实战总结/" title="大型互联网企业入侵检测实战总结" class="md-nav__link">
+    <a href="../../../Web&Attack/大型互联网企业入侵检测实战总结/" title="大型互联网企业入侵检测实战总结" class="md-nav__link">
       大型互联网企业入侵检测实战总结
     </a>
   </li>
@@ -482,7 +482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/提权和后门/" title="提权和后门" class="md-nav__link">
+    <a href="../../../Web&Attack/提权和后门/" title="提权和后门" class="md-nav__link">
       提权和后门
     </a>
   </li>
@@ -494,7 +494,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/社工/" title="社工" class="md-nav__link">
+    <a href="../../../Web&Attack/社工/" title="社工" class="md-nav__link">
       社工
     </a>
   </li>
@@ -544,7 +544,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../Web&Attack/shell/php/getshell/" title="Getshell" class="md-nav__link">
+    <a href="../../../Web&Attack/shell/php/getshell/" title="Getshell" class="md-nav__link">
       Getshell
     </a>
   </li>
@@ -592,7 +592,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../command/" title="python" class="md-nav__link">
+    <a href="../../command/" title="python" class="md-nav__link">
       python
     </a>
   </li>
@@ -604,7 +604,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../conf/" title="Conf" class="md-nav__link">
+    <a href="../../conf/" title="Conf" class="md-nav__link">
       Conf
     </a>
   </li>
@@ -616,7 +616,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../csgo/" title="Csgo" class="md-nav__link">
+    <a href="../../csgo/" title="Csgo" class="md-nav__link">
       Csgo
     </a>
   </li>
@@ -628,7 +628,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../git/" title="Git" class="md-nav__link">
+    <a href="../../git/" title="Git" class="md-nav__link">
       Git
     </a>
   </li>
@@ -640,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../interview/" title="Interview" class="md-nav__link">
+    <a href="../../interview/" title="Interview" class="md-nav__link">
       Interview
     </a>
   </li>
@@ -652,7 +652,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../java/" title="Java" class="md-nav__link">
+    <a href="../../java/" title="Java" class="md-nav__link">
       Java
     </a>
   </li>
@@ -664,7 +664,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../jetbrains/" title="Jetbrains" class="md-nav__link">
+    <a href="../../jetbrains/" title="Jetbrains" class="md-nav__link">
       Jetbrains
     </a>
   </li>
@@ -676,7 +676,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../php/" title="Php" class="md-nav__link">
+    <a href="../../php/" title="Php" class="md-nav__link">
       Php
     </a>
   </li>
@@ -688,7 +688,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../uefi&bios/" title="Uefi&bios" class="md-nav__link">
+    <a href="../../uefi&bios/" title="Uefi&bios" class="md-nav__link">
       Uefi&bios
     </a>
   </li>
@@ -700,7 +700,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../vscode/" title="Vscode" class="md-nav__link">
+    <a href="../../vscode/" title="Vscode" class="md-nav__link">
       Vscode
     </a>
   </li>
@@ -712,7 +712,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../参考文献写法/" title="参考文献写法" class="md-nav__link">
+    <a href="../../参考文献写法/" title="参考文献写法" class="md-nav__link">
       参考文献写法
     </a>
   </li>
@@ -743,7 +743,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../Internet/网络协议/" title="网络协议" class="md-nav__link">
+    <a href="../../Internet/网络协议/" title="网络协议" class="md-nav__link">
       网络协议
     </a>
   </li>
@@ -758,10 +758,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-13" type="checkbox" id="nav-3-13">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-13" type="checkbox" id="nav-3-13" checked>
     
     <label class="md-nav__link" for="nav-3-13">
       C&cpp
@@ -779,7 +781,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../c&cpp/Polymorphism/" title="Polymorphism" class="md-nav__link">
+    <a href="../Polymorphism/" title="Polymorphism" class="md-nav__link">
       Polymorphism
     </a>
   </li>
@@ -791,7 +793,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../c&cpp/asm/" title="Asm" class="md-nav__link">
+    <a href="../asm/" title="Asm" class="md-nav__link">
       Asm
     </a>
   </li>
@@ -803,7 +805,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../c&cpp/c++/" title="C++" class="md-nav__link">
+    <a href="../c++/" title="C++" class="md-nav__link">
       C++
     </a>
   </li>
@@ -815,7 +817,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../c&cpp/ldd/" title="linux 设备驱动第三版" class="md-nav__link">
+    <a href="../ldd/" title="linux 设备驱动第三版" class="md-nav__link">
       linux 设备驱动第三版
     </a>
   </li>
@@ -827,7 +829,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../c&cpp/lib/" title="Lib" class="md-nav__link">
+    <a href="../lib/" title="Lib" class="md-nav__link">
       Lib
     </a>
   </li>
@@ -839,7 +841,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../c&cpp/pointer/" title="Pointer" class="md-nav__link">
+    <a href="../pointer/" title="Pointer" class="md-nav__link">
       Pointer
     </a>
   </li>
@@ -849,11 +851,20 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../../c&cpp/qt/" title="Qt 静态编译" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="Qt 静态编译" class="md-nav__link md-nav__link--active">
       Qt 静态编译
     </a>
+    
   </li>
 
         
@@ -863,7 +874,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../c&cpp/winapi/" title="Winapi" class="md-nav__link">
+    <a href="../winapi/" title="Winapi" class="md-nav__link">
       Winapi
     </a>
   </li>
@@ -899,7 +910,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../dataBase/mysql/" title="Mysql" class="md-nav__link">
+    <a href="../../dataBase/mysql/" title="Mysql" class="md-nav__link">
       Mysql
     </a>
   </li>
@@ -911,7 +922,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../dataBase/坑/" title="坑" class="md-nav__link">
+    <a href="../../dataBase/坑/" title="坑" class="md-nav__link">
       坑
     </a>
   </li>
@@ -947,7 +958,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../golang/Golang 20 Tips/" title="Golang tips and traps" class="md-nav__link">
+    <a href="../../golang/Golang 20 Tips/" title="Golang tips and traps" class="md-nav__link">
       Golang tips and traps
     </a>
   </li>
@@ -959,7 +970,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../golang/gin/" title="Gin" class="md-nav__link">
+    <a href="../../golang/gin/" title="Gin" class="md-nav__link">
       Gin
     </a>
   </li>
@@ -971,7 +982,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../golang/go/" title="Go" class="md-nav__link">
+    <a href="../../golang/go/" title="Go" class="md-nav__link">
       Go
     </a>
   </li>
@@ -983,7 +994,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../golang/problem/" title="Problem" class="md-nav__link">
+    <a href="../../golang/problem/" title="Problem" class="md-nav__link">
       Problem
     </a>
   </li>
@@ -995,7 +1006,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../golang/rsa/" title="Rsa" class="md-nav__link">
+    <a href="../../golang/rsa/" title="Rsa" class="md-nav__link">
       Rsa
     </a>
   </li>
@@ -1007,7 +1018,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../golang/vgo/" title="Vgo" class="md-nav__link">
+    <a href="../../golang/vgo/" title="Vgo" class="md-nav__link">
       Vgo
     </a>
   </li>
@@ -1022,12 +1033,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16" type="checkbox" id="nav-3-16" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16" type="checkbox" id="nav-3-16">
     
     <label class="md-nav__link" for="nav-3-16">
       Linux
@@ -1045,7 +1054,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../CentOS7/" title="CentOS7" class="md-nav__link">
+    <a href="../../linux/CentOS7/" title="CentOS7" class="md-nav__link">
       CentOS7
     </a>
   </li>
@@ -1057,7 +1066,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../arch/" title="Arch" class="md-nav__link">
+    <a href="../../linux/arch/" title="Arch" class="md-nav__link">
       Arch
     </a>
   </li>
@@ -1069,7 +1078,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../etcd/" title="Etcd" class="md-nav__link">
+    <a href="../../linux/etcd/" title="Etcd" class="md-nav__link">
       Etcd
     </a>
   </li>
@@ -1081,7 +1090,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../nginx/" title="Nginx" class="md-nav__link">
+    <a href="../../linux/nginx/" title="Nginx" class="md-nav__link">
       Nginx
     </a>
   </li>
@@ -1093,7 +1102,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ptrace/" title="Ptrace" class="md-nav__link">
+    <a href="../../linux/ptrace/" title="Ptrace" class="md-nav__link">
       Ptrace
     </a>
   </li>
@@ -1105,7 +1114,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../ubuntu18/" title="Ubuntu18" class="md-nav__link">
+    <a href="../../linux/ubuntu18/" title="Ubuntu18" class="md-nav__link">
       Ubuntu18
     </a>
   </li>
@@ -1115,12 +1124,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16-7" type="checkbox" id="nav-3-16-7" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-16-7" type="checkbox" id="nav-3-16-7">
     
     <label class="md-nav__link" for="nav-3-16-7">
       Devops
@@ -1138,7 +1145,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docker/" title="Docker" class="md-nav__link">
+    <a href="../../linux/devops/docker/" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -1150,7 +1157,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../gitlab&ci/" title="Gitlab&ci" class="md-nav__link">
+    <a href="../../linux/devops/gitlab&ci/" title="Gitlab&ci" class="md-nav__link">
       Gitlab&ci
     </a>
   </li>
@@ -1160,76 +1167,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        使用Let's Encrypt 进行泛解析。
-      </label>
-    
-    <a href="./" title="使用Let's Encrypt 进行泛解析。" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../linux/devops/https&ssl/" title="使用Let's Encrypt 进行泛解析。" class="md-nav__link">
       使用Let's Encrypt 进行泛解析。
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#acmesh" class="md-nav__link">
-    acme.sh的方式
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dnspod-api" class="md-nav__link">
-    使用dnspod api
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webroot" class="md-nav__link">
-    使用webroot方式
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    开启自动更新
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1239,7 +1181,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../improve_performance/" title="性能优化" class="md-nav__link">
+    <a href="../../linux/devops/improve_performance/" title="性能优化" class="md-nav__link">
       性能优化
     </a>
   </li>
@@ -1251,7 +1193,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../iptables/" title="Iptables" class="md-nav__link">
+    <a href="../../linux/devops/iptables/" title="Iptables" class="md-nav__link">
       Iptables
     </a>
   </li>
@@ -1263,7 +1205,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../linux/" title="Linux" class="md-nav__link">
+    <a href="../../linux/devops/linux/" title="Linux" class="md-nav__link">
       Linux
     </a>
   </li>
@@ -1275,7 +1217,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../op&docker service/" title="Op&docker service" class="md-nav__link">
+    <a href="../../linux/devops/op&docker service/" title="Op&docker service" class="md-nav__link">
       Op&docker service
     </a>
   </li>
@@ -1316,7 +1258,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../macOS/app/" title="App" class="md-nav__link">
+    <a href="../../macOS/app/" title="App" class="md-nav__link">
       App
     </a>
   </li>
@@ -1328,7 +1270,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../macOS/gdb无法调试问题/" title="Gdb无法调试问题" class="md-nav__link">
+    <a href="../../macOS/gdb无法调试问题/" title="Gdb无法调试问题" class="md-nav__link">
       Gdb无法调试问题
     </a>
   </li>
@@ -1364,7 +1306,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python/DjangoStudy/" title="Django学习" class="md-nav__link">
+    <a href="../../python/DjangoStudy/" title="Django学习" class="md-nav__link">
       Django学习
     </a>
   </li>
@@ -1376,7 +1318,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python/math/" title="Math" class="md-nav__link">
+    <a href="../../python/math/" title="Math" class="md-nav__link">
       Math
     </a>
   </li>
@@ -1388,7 +1330,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../python/python/" title="Python" class="md-nav__link">
+    <a href="../../python/python/" title="Python" class="md-nav__link">
       Python
     </a>
   </li>
@@ -1424,7 +1366,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../win/win ctl/" title="Win ctl" class="md-nav__link">
+    <a href="../../win/win ctl/" title="Win ctl" class="md-nav__link">
       Win ctl
     </a>
   </li>
@@ -1460,7 +1402,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../前端♂js/ThreeJS/" title="ThreeJS" class="md-nav__link">
+    <a href="../../前端♂js/ThreeJS/" title="ThreeJS" class="md-nav__link">
       ThreeJS
     </a>
   </li>
@@ -1472,7 +1414,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../前端♂js/WDS can't connet/" title="WDS can't connet" class="md-nav__link">
+    <a href="../../前端♂js/WDS can't connet/" title="WDS can't connet" class="md-nav__link">
       WDS can't connet
     </a>
   </li>
@@ -1484,7 +1426,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../前端♂js/css/" title="Css" class="md-nav__link">
+    <a href="../../前端♂js/css/" title="Css" class="md-nav__link">
       Css
     </a>
   </li>
@@ -1496,7 +1438,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../前端♂js/js/" title="Js" class="md-nav__link">
+    <a href="../../前端♂js/js/" title="Js" class="md-nav__link">
       Js
     </a>
   </li>
@@ -1508,7 +1450,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../前端♂js/npm&webpack/" title="Npm&webpack" class="md-nav__link">
+    <a href="../../前端♂js/npm&webpack/" title="Npm&webpack" class="md-nav__link">
       Npm&webpack
     </a>
   </li>
@@ -1520,7 +1462,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../前端♂js/vue/" title="Vue" class="md-nav__link">
+    <a href="../../前端♂js/vue/" title="Vue" class="md-nav__link">
       Vue
     </a>
   </li>
@@ -1532,7 +1474,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../前端♂js/vuetify/" title="Vuetify" class="md-nav__link">
+    <a href="../../前端♂js/vuetify/" title="Vuetify" class="md-nav__link">
       Vuetify
     </a>
   </li>
@@ -1568,7 +1510,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../编译原理/overView/" title="概述" class="md-nav__link">
+    <a href="../../编译原理/overView/" title="概述" class="md-nav__link">
       概述
     </a>
   </li>
@@ -1609,7 +1551,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/CTFstudy/" title="CTFstudy" class="md-nav__link">
+    <a href="../../../ctf/CTFstudy/" title="CTFstudy" class="md-nav__link">
       CTFstudy
     </a>
   </li>
@@ -1621,7 +1563,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/取证/" title="取证" class="md-nav__link">
+    <a href="../../../ctf/取证/" title="取证" class="md-nav__link">
       取证
     </a>
   </li>
@@ -1633,7 +1575,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/恶意软件分析/" title="恶意软件分析" class="md-nav__link">
+    <a href="../../../ctf/恶意软件分析/" title="恶意软件分析" class="md-nav__link">
       恶意软件分析
     </a>
   </li>
@@ -1645,7 +1587,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/爆破相关/" title="爆破相关" class="md-nav__link">
+    <a href="../../../ctf/爆破相关/" title="爆破相关" class="md-nav__link">
       爆破相关
     </a>
   </li>
@@ -1676,7 +1618,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/awd/AWD/" title="AWD" class="md-nav__link">
+    <a href="../../../ctf/awd/AWD/" title="AWD" class="md-nav__link">
       AWD
     </a>
   </li>
@@ -1688,7 +1630,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/awd/权限维持/" title="权限维持" class="md-nav__link">
+    <a href="../../../ctf/awd/权限维持/" title="权限维持" class="md-nav__link">
       权限维持
     </a>
   </li>
@@ -1724,7 +1666,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/crypto/decrypt_online/" title="Decrypt online" class="md-nav__link">
+    <a href="../../../ctf/crypto/decrypt_online/" title="Decrypt online" class="md-nav__link">
       Decrypt online
     </a>
   </li>
@@ -1736,7 +1678,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/crypto/go_crack/" title="Go crack" class="md-nav__link">
+    <a href="../../../ctf/crypto/go_crack/" title="Go crack" class="md-nav__link">
       Go crack
     </a>
   </li>
@@ -1748,7 +1690,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/crypto/md5padding/" title="Md5padding" class="md-nav__link">
+    <a href="../../../ctf/crypto/md5padding/" title="Md5padding" class="md-nav__link">
       Md5padding
     </a>
   </li>
@@ -1760,7 +1702,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/crypto/rsa待填/" title="Rsa待填" class="md-nav__link">
+    <a href="../../../ctf/crypto/rsa待填/" title="Rsa待填" class="md-nav__link">
       Rsa待填
     </a>
   </li>
@@ -1796,7 +1738,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/misc/dropsec12.9/" title="misc" class="md-nav__link">
+    <a href="../../../ctf/misc/dropsec12.9/" title="misc" class="md-nav__link">
       misc
     </a>
   </li>
@@ -1808,7 +1750,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/misc/hash/" title="Hash" class="md-nav__link">
+    <a href="../../../ctf/misc/hash/" title="Hash" class="md-nav__link">
       Hash
     </a>
   </li>
@@ -1820,7 +1762,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/misc/misc/" title="Misc" class="md-nav__link">
+    <a href="../../../ctf/misc/misc/" title="Misc" class="md-nav__link">
       Misc
     </a>
   </li>
@@ -1832,7 +1774,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/misc/wireshark/" title="Wireshark" class="md-nav__link">
+    <a href="../../../ctf/misc/wireshark/" title="Wireshark" class="md-nav__link">
       Wireshark
     </a>
   </li>
@@ -1844,7 +1786,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/misc/内存取证/" title="内存取证" class="md-nav__link">
+    <a href="../../../ctf/misc/内存取证/" title="内存取证" class="md-nav__link">
       内存取证
     </a>
   </li>
@@ -1880,7 +1822,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/pwn/ROP/" title="ROP" class="md-nav__link">
+    <a href="../../../ctf/pwn/ROP/" title="ROP" class="md-nav__link">
       ROP
     </a>
   </li>
@@ -1892,7 +1834,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/pwn/ROP_ret2dl/" title="ROP ret2dl" class="md-nav__link">
+    <a href="../../../ctf/pwn/ROP_ret2dl/" title="ROP ret2dl" class="md-nav__link">
       ROP ret2dl
     </a>
   </li>
@@ -1904,7 +1846,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/pwn/arm/" title="Arm" class="md-nav__link">
+    <a href="../../../ctf/pwn/arm/" title="Arm" class="md-nav__link">
       Arm
     </a>
   </li>
@@ -1916,7 +1858,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/pwn/basic/" title="Basic" class="md-nav__link">
+    <a href="../../../ctf/pwn/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
   </li>
@@ -1928,7 +1870,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/pwn/encode/" title="Encode" class="md-nav__link">
+    <a href="../../../ctf/pwn/encode/" title="Encode" class="md-nav__link">
       Encode
     </a>
   </li>
@@ -1940,7 +1882,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/pwn/fmt/" title="Fmt" class="md-nav__link">
+    <a href="../../../ctf/pwn/fmt/" title="Fmt" class="md-nav__link">
       Fmt
     </a>
   </li>
@@ -1952,7 +1894,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/pwn/heap/" title="Heap" class="md-nav__link">
+    <a href="../../../ctf/pwn/heap/" title="Heap" class="md-nav__link">
       Heap
     </a>
   </li>
@@ -1964,7 +1906,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/pwn/res/" title="Res" class="md-nav__link">
+    <a href="../../../ctf/pwn/res/" title="Res" class="md-nav__link">
       Res
     </a>
   </li>
@@ -1976,7 +1918,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/pwn/tools/" title="Tools" class="md-nav__link">
+    <a href="../../../ctf/pwn/tools/" title="Tools" class="md-nav__link">
       Tools
     </a>
   </li>
@@ -2012,7 +1954,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/web/SensitiveFile/" title="SensitiveFile" class="md-nav__link">
+    <a href="../../../ctf/web/SensitiveFile/" title="SensitiveFile" class="md-nav__link">
       SensitiveFile
     </a>
   </li>
@@ -2024,7 +1966,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/web/escape/" title="Escape" class="md-nav__link">
+    <a href="../../../ctf/web/escape/" title="Escape" class="md-nav__link">
       Escape
     </a>
   </li>
@@ -2036,7 +1978,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/web/nodeJs/" title="nodeJs" class="md-nav__link">
+    <a href="../../../ctf/web/nodeJs/" title="nodeJs" class="md-nav__link">
       nodeJs
     </a>
   </li>
@@ -2048,7 +1990,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/web/php文件包含/" title="Php文件包含" class="md-nav__link">
+    <a href="../../../ctf/web/php文件包含/" title="Php文件包含" class="md-nav__link">
       Php文件包含
     </a>
   </li>
@@ -2060,7 +2002,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/web/python/" title="Python" class="md-nav__link">
+    <a href="../../../ctf/web/python/" title="Python" class="md-nav__link">
       Python
     </a>
   </li>
@@ -2072,7 +2014,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/web/xpath、xml注入/" title="Xpath、xml注入" class="md-nav__link">
+    <a href="../../../ctf/web/xpath、xml注入/" title="Xpath、xml注入" class="md-nav__link">
       Xpath、xml注入
     </a>
   </li>
@@ -2108,7 +2050,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/wp/2018护网杯/" title="wp" class="md-nav__link">
+    <a href="../../../ctf/wp/2018护网杯/" title="wp" class="md-nav__link">
       wp
     </a>
   </li>
@@ -2120,7 +2062,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/wp/CG-CTF/" title="re" class="md-nav__link">
+    <a href="../../../ctf/wp/CG-CTF/" title="re" class="md-nav__link">
       re
     </a>
   </li>
@@ -2132,7 +2074,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/wp/catalyst/" title="Catalyst" class="md-nav__link">
+    <a href="../../../ctf/wp/catalyst/" title="Catalyst" class="md-nav__link">
       Catalyst
     </a>
   </li>
@@ -2144,7 +2086,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/wp/jarvisOJ/" title="jarvisOJ" class="md-nav__link">
+    <a href="../../../ctf/wp/jarvisOJ/" title="jarvisOJ" class="md-nav__link">
       jarvisOJ
     </a>
   </li>
@@ -2175,7 +2117,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/wp/L3sec/pwn1/" title="Pwn1" class="md-nav__link">
+    <a href="../../../ctf/wp/L3sec/pwn1/" title="Pwn1" class="md-nav__link">
       Pwn1
     </a>
   </li>
@@ -2187,7 +2129,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ctf/wp/L3sec/招新/" title="招新" class="md-nav__link">
+    <a href="../../../ctf/wp/L3sec/招新/" title="招新" class="md-nav__link">
       招新
     </a>
   </li>
@@ -2233,7 +2175,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../gameSecurity/protect/" title="Protect" class="md-nav__link">
+    <a href="../../../gameSecurity/protect/" title="Protect" class="md-nav__link">
       Protect
     </a>
   </li>
@@ -2269,7 +2211,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../ics/发现/" title="发现" class="md-nav__link">
+    <a href="../../../ics/发现/" title="发现" class="md-nav__link">
       发现
     </a>
   </li>
@@ -2305,7 +2247,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../keyAndSetting/各种Key/" title="windows kms key" class="md-nav__link">
+    <a href="../../../keyAndSetting/各种Key/" title="windows kms key" class="md-nav__link">
       windows kms key
     </a>
   </li>
@@ -2341,7 +2283,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/ReversingTools/" title="ReversingTools" class="md-nav__link">
+    <a href="../../../reverse/ReversingTools/" title="ReversingTools" class="md-nav__link">
       ReversingTools
     </a>
   </li>
@@ -2353,7 +2295,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/basic/" title="Basic" class="md-nav__link">
+    <a href="../../../reverse/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
   </li>
@@ -2365,7 +2307,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/dotNet/" title="dotNet" class="md-nav__link">
+    <a href="../../../reverse/dotNet/" title="dotNet" class="md-nav__link">
       dotNet
     </a>
   </li>
@@ -2377,7 +2319,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/ida/" title="Ida" class="md-nav__link">
+    <a href="../../../reverse/ida/" title="Ida" class="md-nav__link">
       Ida
     </a>
   </li>
@@ -2389,7 +2331,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/mov混淆/" title="Mov混淆" class="md-nav__link">
+    <a href="../../../reverse/mov混淆/" title="Mov混淆" class="md-nav__link">
       Mov混淆
     </a>
   </li>
@@ -2401,7 +2343,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/pe/" title="Pe" class="md-nav__link">
+    <a href="../../../reverse/pe/" title="Pe" class="md-nav__link">
       Pe
     </a>
   </li>
@@ -2413,7 +2355,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/pyc/" title="Pyc" class="md-nav__link">
+    <a href="../../../reverse/pyc/" title="Pyc" class="md-nav__link">
       Pyc
     </a>
   </li>
@@ -2425,7 +2367,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/shark恒/" title="Shark恒" class="md-nav__link">
+    <a href="../../../reverse/shark恒/" title="Shark恒" class="md-nav__link">
       Shark恒
     </a>
   </li>
@@ -2437,7 +2379,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/unpack/" title="Unpack" class="md-nav__link">
+    <a href="../../../reverse/unpack/" title="Unpack" class="md-nav__link">
       Unpack
     </a>
   </li>
@@ -2449,7 +2391,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/webasm/" title="Webasm" class="md-nav__link">
+    <a href="../../../reverse/webasm/" title="Webasm" class="md-nav__link">
       Webasm
     </a>
   </li>
@@ -2461,7 +2403,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/win_driver/" title="Win driver" class="md-nav__link">
+    <a href="../../../reverse/win_driver/" title="Win driver" class="md-nav__link">
       Win driver
     </a>
   </li>
@@ -2473,7 +2415,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/加密与解密/" title="加密与解密" class="md-nav__link">
+    <a href="../../../reverse/加密与解密/" title="加密与解密" class="md-nav__link">
       加密与解密
     </a>
   </li>
@@ -2485,7 +2427,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/反调试/" title="反调试" class="md-nav__link">
+    <a href="../../../reverse/反调试/" title="反调试" class="md-nav__link">
       反调试
     </a>
   </li>
@@ -2497,7 +2439,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/各种段/" title="各种段" class="md-nav__link">
+    <a href="../../../reverse/各种段/" title="各种段" class="md-nav__link">
       各种段
     </a>
   </li>
@@ -2509,7 +2451,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/黑影vip/" title="黑影vip" class="md-nav__link">
+    <a href="../../../reverse/黑影vip/" title="黑影vip" class="md-nav__link">
       黑影vip
     </a>
   </li>
@@ -2540,7 +2482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/010editor/crack/" title="Crack" class="md-nav__link">
+    <a href="../../../reverse/010editor/crack/" title="Crack" class="md-nav__link">
       Crack
     </a>
   </li>
@@ -2573,49 +2515,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#acmesh" class="md-nav__link">
-    acme.sh的方式
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dnspod-api" class="md-nav__link">
-    使用dnspod api
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webroot" class="md-nav__link">
-    使用webroot方式
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    开启自动更新
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-        <li class="md-nav__item">
-          <a href="#__comments" title="评论" class="md-nav__link md-nav__link--active">
-            评论
-          </a>
-        </li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -2626,87 +2525,142 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/linux/devops/https&ssl.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/c&cpp/qt.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lets-encrypt">使用Let's Encrypt 进行泛解析。<a class="headerlink" href="#lets-encrypt" title="Permanent link">&para;</a></h1>
-<h2 id="acmesh">acme.sh的方式<a class="headerlink" href="#acmesh" title="Permanent link">&para;</a></h2>
-<p>获取acme脚本如下，注意报错，安装依赖
-- <code>apt install socat&amp;&amp;curl https://get.acme.sh | sh</code></p>
-<ul>
-<li><code>source ~/.bashrc</code></li>
-</ul>
-<p>不行就去.acme.sh/里面吧</p>
-<h2 id="dnspod-api">使用dnspod api<a class="headerlink" href="#dnspod-api" title="Permanent link">&para;</a></h2>
-<p>下面是dddd.im的脚本。
-<div class="codehilite"><pre><span></span>    <span class="nb">export</span> <span class="nv">DP_Id</span><span class="o">=</span><span class="s2">&quot;1111&quot;</span>  <span class="o">&amp;&amp;</span>
-    <span class="nb">export</span> <span class="nv">DP_Key</span><span class="o">=</span><span class="s2">&quot;xxxxx&quot;</span>  <span class="o">&amp;&amp;</span>
-    acme.sh --issue --dns dns_dp -d *.cugapp.com
-    acme.sh  --installcert  -d  *.cugapp.com   <span class="se">\</span>
-            --key-file   /usr/local/nginx/conf/ssl/cugapp.com.key <span class="se">\</span>
-            --fullchain-file /usr/local/nginx/conf/ssl/cugapp.com.cer <span class="se">\</span>
-            --reloadcmd  <span class="s2">&quot;nginx -s reload&quot;</span> 
-</pre></div></p>
-<h2 id="webroot">使用webroot方式<a class="headerlink" href="#webroot" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>acme.sh  --issue -d blog.lomot.cn  --webroot  /var/www/blog.lomot.cn/
+                <h1 id="qt">Qt 静态编译<a class="headerlink" href="#qt" title="Permanent link">&para;</a></h1>
+<ol>
+<li>官网下载 5.8 的包,源码https://pan.baidu.com/s/1bpgkTnp</li>
+<li>安装 mingw</li>
+<li>解压 static 包到 c:\qt 下,解压 OpenSSL 的 zip 压缩包（openssl-1.0.1c_static_w32_mingw.zip）到 C:\Dev</li>
+<li>打开 QtCreator 选择上方工具栏中的 -&gt; 工具 -&gt; 选项 -&gt; 构建和运行</li>
+<li>在上方选项卡中选择 Qt Versions，并且点击右侧的添加</li>
+<li>打开 qmake.exe，路径是：C:\Qt\Qt5.8.0_MinGW_static\bin\qmake.exe</li>
+<li><img src="qt静态编译1.png"></li>
+<li>构件套件(kit)中配置一个新的套件,上面的要点应用.</li>
+<li><img src="qt静态编译2.png"></li>
+<li>然后 release 吧~</li>
+</ol>
+<h1 id="qt-qstring">Qt 下的 QString 与数字的相互转化<a class="headerlink" href="#qt-qstring" title="Permanent link">&para;</a></h1>
+<h2 id="qstring-double">把 QString 转换为 double 类型<a class="headerlink" href="#qstring-double" title="Permanent link">&para;</a></h2>
+<h3 id="1qstring-str12345">方法 1.QString str="123.45";<a class="headerlink" href="#1qstring-str12345" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>double val=str.toDouble(); //val=123.45
 </pre></div>
 
-<h2 id="_1">开启自动更新<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>acme.sh --upgrade --auto-upgrade
-acme.sh --renew -d <span class="s1">&#39;*.168seo.cn&#39;</span> --force
+
+<h3 id="2">方法 2.很适合科学计数法形式转换<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>bool ok;
+
+double d;
+
+d=QString(&quot;1234.56e-02&quot;).toDouble(&amp;ok); //ok=true;d;12.3456.
 </pre></div>
 
-<h1 id="openssl">下面是一些OpenSSL的东西<a class="headerlink" href="#openssl" title="Permanent link">&para;</a></h1>
-<p>转载:<a href="https://www.jianshu.com/p/bc18038cc9c8">https://www.jianshu.com/p/bc18038cc9c8</a>
-crt和cer是一个东西
-<div class="codehilite"><pre><span></span><span class="c1"># 转换为perm文件</span>
-openssl pkcs12 -in xxx.pfx -nodes -out xxx.pem 
-openssl x509 -inform der -in xxx.cer -out xxx.pem
 
-<span class="c1"># 提取密钥对，生成打文件可以给nginx用了，不过提取需要密码</span>
-openssl pkcs12 -in xxx.pfx -clcerts -nokeys -out xxx.crt
-openssl pkcs12 -in xxx.pfx -nocerts -nodes -out xxx.key
-<span class="c1"># 验证一下</span>
-openssl s_server -www -accept <span class="m">443</span> -cert xxx.crt -key xxx.key
+<h3 id="qstring-float">把 QString 转换为 float 形<a class="headerlink" href="#qstring-float" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>1.QString str=&quot;123.45&quot;;
 
-<span class="c1"># 从密钥提取私钥 头部 -----BEGIN RSA PUBLIC KEY-----</span>
-openssl rsa -in  xxx.key -out private.pem
-<span class="c1"># 从密钥对提取公钥 头部：-----BEGIN RSA PRIVATE KEY-----</span>
-openssl rsa -in private.pem -RSAPublicKey_out -out public.pem
-<span class="c1"># 从密钥对提取公钥 头部：-----BEGIN PUBLIC KEY-----</span>
-openssl rsa -in private.key -pubout -out public.key
+float d=str.toFloat(); //d=123.45
+
+2.QString str=&quot;R2D2&quot;;
+
+bool ok;
+
+float d=str.toFloat(&amp;ok); //转换是被时返回0.0,ok=false;
 </pre></div>
-python相关代码
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">rsa</span>
 
-<span class="c1"># 生成密钥</span>
-<span class="p">(</span><span class="n">pubkey</span><span class="p">,</span> <span class="n">privkey</span><span class="p">)</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">newkeys</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
 
-<span class="c1"># 保存密钥</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;public.pem&#39;</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pubkey</span><span class="o">.</span><span class="n">save_pkcs1</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+<h2 id="qstring">把 QString 形转换为整形<a class="headerlink" href="#qstring" title="Permanent link">&para;</a></h2>
+<h3 id="1">1.转换为十进制整形<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>注意：基数默认为 10。当基数为 10 时，并且基数必须在 2 到 36 之</p>
+<p>间。如果基数为 0，若字符串是以 0x 开头的就会转换为 16 进制，若以 0 开头就转换为八进制，否则就转换为十进制。</p>
+<div class="codehilite"><pre><span></span>Qstring str=&quot;FF&quot;;
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;private.pem&#39;</span><span class="p">,</span> <span class="s1">&#39;w+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">privkey</span><span class="o">.</span><span class="n">save_pkcs1</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+bool ok;
 
-<span class="c1"># 导入密钥</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;public.pem&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">pubkey</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">PublicKey</span><span class="o">.</span><span class="n">load_pkcs1</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+int dec=str.toInt(&amp;ok,10); //dec=255 ; ok=rue
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;private.pem&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">privkey</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">PrivateKey</span><span class="o">.</span><span class="n">load_pkcs1</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+int hex =str.toInt(&amp;ok,16); //hex=255;ok=true;
+</pre></div>
 
-    <span class="c1"># 明文</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="s1">&#39;123123ssss&#39;</span>
 
-    <span class="c1"># 公钥加密</span>
-    <span class="n">crypto</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">encrypt</span><span class="p">(</span><span class="n">message</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">pubkey</span><span class="p">)</span>
-    <span class="c1"># print(crypto)</span>
+<h2 id="3-qstring">3.常整形转换为 Qstring 形<a class="headerlink" href="#3-qstring" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>long a =63;
+QString str=QString::number(a,16); //str=&quot;3f&quot;;
+QString str=QString::number(a,16).toUpper(); //str=&quot;3F&quot;;
+</pre></div>
 
-    <span class="c1"># 私钥解密</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">crypto</span><span class="p">,</span> <span class="n">privkey</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-</pre></div></p>
+
+<h3 id="qstring-char42">Qstring 转换 char*问题<a class="headerlink" href="#qstring-char42" title="Permanent link">&para;</a></h3>
+<h4 id="_1">方法一:<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>QString qstr(&quot;hello,word&quot;);
+const char * p = qstr.toLocal8Bit().data();
+</pre></div>
+
+
+<h4 id="_2">方法二:<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>const char \*p = qstr.toStdString().data();
+转换过来的是常量
+</pre></div>
+
+
+<h2 id="qstring_1">把当前时间转化为 QString...<a class="headerlink" href="#qstring_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>public QDateTime qdate = QDateTime.currentDateTime();
+datetime = qdate.toString(&quot;yyyy年MM月dd日ddddhh:mm:ss&quot;);
+如果不是QTime和QDate类比如说：通过TCP/IP接收到的char unsigned char 类等如何转换为QString类
+QString Time2String( DWORD dwTime)
+{
+    char cTime[50] = {0};
+    memset(cTime,0,50);
+    strftime(cTime,32,&quot;%Y-%m-%d %H:%M:%S&quot;,localtime(&amp;time_t(dwTime)));
+    return QString(cTime);
+}
+</pre></div>
+
+
+<h1 id="qt_1">Qt 图片处理<a class="headerlink" href="#qt_1" title="Permanent link">&para;</a></h1>
+<h2 id="_3">显示图片<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>    <span class="n">QString</span> <span class="n">filename</span><span class="p">;</span>
+    <span class="n">filename</span><span class="o">=</span><span class="n">QFileDialog</span><span class="o">::</span><span class="n">getOpenFileName</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;选择图像&quot;</span><span class="p">),</span><span class="s">&quot;&quot;</span><span class="p">,</span><span class="n">tr</span><span class="p">(</span><span class="s">&quot;Images (*.png *.bmp *.jpg *.tif *.GIF )&quot;</span><span class="p">));</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">filename</span><span class="p">.</span><span class="n">isEmpty</span><span class="p">())</span>
+    <span class="p">{</span>
+         <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">QImage</span><span class="o">*</span> <span class="n">img</span><span class="o">=</span><span class="k">new</span> <span class="n">QImage</span><span class="p">;</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="o">!</span> <span class="p">(</span> <span class="n">img</span><span class="o">-&gt;</span><span class="n">load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span> <span class="c1">//加载图像</span>
+        <span class="p">{</span>
+            <span class="n">QMessageBox</span><span class="o">::</span><span class="n">information</span><span class="p">(</span><span class="k">this</span><span class="p">,</span>
+                                     <span class="n">tr</span><span class="p">(</span><span class="s">&quot;打开图像失败&quot;</span><span class="p">),</span>
+                                     <span class="n">tr</span><span class="p">(</span><span class="s">&quot;打开图像失败!&quot;</span><span class="p">));</span>
+            <span class="k">delete</span> <span class="n">img</span><span class="p">;</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">::</span><span class="n">fromImage</span><span class="p">(</span><span class="o">*</span><span class="n">img</span><span class="p">));</span>
+    <span class="p">}</span>
+</pre></div>
+
+<h2 id="_4">图片缩放<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>图像缩放采用 scaled 函数。函数原型</p>
+<div class="codehilite"><pre><span></span><span class="n">QImage</span> <span class="n">QImage</span><span class="o">::</span><span class="n">scaled</span> <span class="p">(</span> <span class="k">const</span> <span class="n">QSize</span> <span class="o">&amp;</span> <span class="n">size</span><span class="p">,</span><span class="n">Qt</span><span class="o">::</span><span class="n">AspectRatioMode</span> <span class="n">aspectRatioMode</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">::</span><span class="n">IgnoreAspectRatio</span><span class="p">,</span> <span class="n">Qt</span><span class="o">::</span><span class="n">TransformationModetransformMode</span> <span class="o">=</span> <span class="n">Qt</span><span class="o">::</span><span class="n">FastTransformation</span> <span class="p">)</span> <span class="k">const</span>
+<span class="c1">//使用方法如下，还是利用上面的img：</span>
+
+<span class="n">QImage</span><span class="o">*</span> <span class="n">imgScaled</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QImage</span><span class="err">；</span>
+<span class="o">*</span><span class="n">imgScaled</span><span class="o">=</span><span class="n">img</span><span class="o">-&gt;</span><span class="n">scaled</span><span class="p">(</span><span class="n">width</span><span class="p">,</span>
+                       <span class="n">height</span><span class="p">,</span>
+                       <span class="n">Qt</span><span class="o">::</span><span class="n">KeepAspectRatio</span><span class="p">);</span>
+<span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">::</span><span class="n">fromImage</span><span class="p">(</span><span class="o">*</span><span class="n">imgScaled</span><span class="p">));</span>
+</pre></div>
+
+<h2 id="_5">图片旋转<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">QImage</span><span class="o">*</span> <span class="n">imgRatate</span> <span class="o">=</span> <span class="k">new</span> <span class="n">QImage</span><span class="p">;</span>
+<span class="n">QMatrix</span> <span class="n">matrix</span><span class="p">;</span>
+<span class="n">matrix</span><span class="p">.</span><span class="n">rotate</span><span class="p">(</span><span class="mi">270</span><span class="p">);</span>
+<span class="o">*</span><span class="n">imgRotate</span> <span class="o">=</span> <span class="n">img</span><span class="o">-&gt;</span><span class="n">transformed</span><span class="p">(</span><span class="n">matrix</span><span class="p">);</span>
+<span class="n">ui</span><span class="o">-&gt;</span><span class="n">label</span><span class="o">-&gt;</span><span class="n">setPixmap</span><span class="p">(</span><span class="n">QPixmap</span><span class="o">::</span><span class="n">fromImage</span><span class="p">(</span><span class="o">*</span><span class="n">imgRotate</span><span class="p">));</span>
+</pre></div>
                 
                   
                 
@@ -2752,7 +2706,7 @@ python相关代码
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../gitlab&ci/" title="Gitlab&ci" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../pointer/" title="Pointer" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -2761,19 +2715,19 @@ python相关代码
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                Gitlab&ci
+                Pointer
               </span>
             </div>
           </a>
         
         
-          <a href="../improve_performance/" title="性能优化" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../winapi/" title="Winapi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                性能优化
+                Winapi
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -2805,12 +2759,12 @@ python相关代码
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.718059d6.js"></script>
+      <script src="../../../assets/javascripts/application.718059d6.js"></script>
       
         
         
           
-          <script src="../../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
           
             
               
@@ -2820,13 +2774,13 @@ python相关代码
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
-        <script src="../../../../_static/js/extra.js"></script>
+        <script src="../../../_static/js/extra.js"></script>
       
         <script src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
-        <script src="../../../../search/main.js"></script>
+        <script src="../../../search/main.js"></script>
       
     
   </body>
