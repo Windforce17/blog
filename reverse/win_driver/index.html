@@ -2436,6 +2436,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dbgprint" class="md-nav__link">
+    DbgPrint 无法输出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     文档和书记
   </a>
@@ -2588,6 +2595,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#dbgprint" class="md-nav__link">
+    DbgPrint 无法输出
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     文档和书记
   </a>
@@ -2622,22 +2636,23 @@
                   <h1>Win driver</h1>
                 
                 <h2 id="_1">环境配置<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>vs WDK windbgx要安装<br />
+<p>vs WDK windbgx 要安装<br />
 <a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/</a><br />
-VirtualKD 免去配置Windbg双击调试的步骤，提高响应速度<br />
-<a href="http://sysprogs.com/legacy/virtualkd/download/">http://sysprogs.com/legacy/virtualkd/download/</a>  </p>
+VirtualKD 免去配置 Windbg 双击调试的步骤，提高响应速度<br />
+<a href="http://sysprogs.com/legacy/virtualkd/download/">http://sysprogs.com/legacy/virtualkd/download/</a></p>
 <h2 id="_2">配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>设置符号目录
+<p>设置符号目录</p>
 <div class="codehilite"><pre><span></span>.symfix D:\win_symbol
 .sympath
 </pre></div>
-virtualKD配置：选择custom、C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe /k com:pipe,resets=0,reconnect,port=$(pipename) <br />
-或者使用windbgx.exe</p>
+
+<p>virtualKD 配置：选择 custom、C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe /k com:pipe,resets=0,reconnect,port=$(pipename)<br />
+或者使用 windbgx.exe</p>
 <h2 id="example">example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<p>新建项目,选择WDM,然后目标系统改为win7，调低并关闭警告等级</p>
+<p>新建项目,选择 WDM,然后目标系统改为 win7，调低并关闭警告等级</p>
 <div class="codehilite"><pre><span></span><span class="c1">//main.c</span>
 <span class="cp">#include</span><span class="cpf">&lt;ntddk.h&gt;</span><span class="cp"></span>
-<span class="n">VOID</span> 
+<span class="n">VOID</span>
 <span class="nf">Unload</span><span class="p">(</span>
     <span class="n">_In_</span> <span class="n">PDRIVER_OBJECT</span> <span class="n">DriverObject</span>
 <span class="p">)</span> <span class="p">{</span>
@@ -2655,22 +2670,24 @@ virtualKD配置：选择custom、C:\Program Files (x86)\Windows Kits\10\Debugger
 <span class="p">}</span>
 </pre></div>
 
-<p>要在windbgx中设置符号目录，编译后，使用InstDrv（驱动加载工具）载入驱动，安装，启动，就能自动断下来了.
+<p>要在 windbgx 中设置符号目录，编译后，使用 InstDrv（驱动加载工具）载入驱动，安装，启动，就能自动断下来了.
 或者使用命令<code>sxe ld DancingKeys.sys</code>.</p>
+<h2 id="dbgprint">DbgPrint 无法输出<a class="headerlink" href="#dbgprint" title="Permanent link">&para;</a></h2>
+<p>设置下 log_level:<code>ed Kd_DEFAULT_MASK 0x8</code>(DPFLTR_INFO_LEVEL)，0xf 是所有</p>
 <h2 id="_3">文档和书记<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.microsoft.com/zh-cn/windows-hardware/drivers/ddi/content/">https://docs.microsoft.com/zh-cn/windows-hardware/drivers/ddi/content/</a></p>
 <ul>
-<li>Windows驱动开发技术详解</li>
-<li>天书夜读:从汇编语言到Windows内核编程</li>
-<li>寒江独钓：Windows内核安全编程</li>
-<li>Windows内核安全和驱动开发</li>
-<li>Rootkits-Windows内核的安全防护</li>
+<li>Windows 驱动开发技术详解</li>
+<li>天书夜读:从汇编语言到 Windows 内核编程</li>
+<li>寒江独钓：Windows 内核安全编程</li>
+<li>Windows 内核安全和驱动开发</li>
+<li>Rootkits-Windows 内核的安全防护</li>
 <li>Rootkit 系统灰色地带的潜伏者</li>
-<li>Windows PE权威指南</li>
-<li>深入解析Windows操作系统</li>
-<li>windows内核情景分析</li>
-<li>Windows内核原理与实现</li>
-<li>Windows内核设计思想</li>
+<li>Windows PE 权威指南</li>
+<li>深入解析 Windows 操作系统</li>
+<li>windows 内核情景分析</li>
+<li>Windows 内核原理与实现</li>
+<li>Windows 内核设计思想</li>
 <li>Reversing Modern Malware and Next Generation Theats</li>
 <li><a href="https://github.com/ExpLife/awesome-windows-kernel-security-development">https://github.com/ExpLife/awesome-windows-kernel-security-development</a></li>
 </ul>
