@@ -70,3 +70,21 @@ https://blog.ctftools.com/2017/03/post122/
 https://github.com/facebook/fbctf/wiki/Installation-Guide,-Production
 
 http://192.168.168.42/?LanmanErrorCode=%3Cscript%3EsetTimeout(function(){alert(document.getElementById(%22password%22).value);},1000);%3C/script%3E
+
+## 网络配置
+ip:
+```yaml
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: yes
+    enp0s8:
+      dhcp4: no
+      dhcp6: no
+      addresses: [192.168.66.128/24, ]
+      gateway4:  192.168.66.2
+      nameservers:
+              addresses: [192.168.66.2]
+```
