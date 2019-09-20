@@ -1209,6 +1209,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    网络配置
+  </a>
+  
+</li>
+      
       
       
       
@@ -2704,6 +2711,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    网络配置
+  </a>
+  
+</li>
+      
       
       
       
@@ -2783,6 +2797,22 @@ kill -USR2 \&lt;master pid></p>
 <p><a href="https://blog.ctftools.com/2017/03/post122/">https://blog.ctftools.com/2017/03/post122/</a>
 <a href="https://github.com/facebook/fbctf/wiki/Installation-Guide,-Production">https://github.com/facebook/fbctf/wiki/Installation-Guide,-Production</a></p>
 <p><a href="http://192.168.168.42/?LanmanErrorCode=%3Cscript%3EsetTimeout(function(){alert(document.getElementById(%22password%22).value);},1000);%3C/script%3E">http://192.168.168.42/?LanmanErrorCode=%3Cscript%3EsetTimeout(function(){alert(document.getElementById(%22password%22).value);},1000);%3C/script%3E</a></p>
+<h2 id="_2">网络配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>ip:
+<div class="codehilite"><pre><span></span><span class="nt">network</span><span class="p">:</span>
+  <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+  <span class="nt">renderer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">networkd</span>
+  <span class="nt">ethernets</span><span class="p">:</span>
+    <span class="nt">enp0s3</span><span class="p">:</span>
+      <span class="nt">dhcp4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">yes</span>
+    <span class="nt">enp0s8</span><span class="p">:</span>
+      <span class="nt">dhcp4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
+      <span class="nt">dhcp6</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
+      <span class="nt">addresses</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">192.168.66.128/24</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">]</span>
+      <span class="nt">gateway4</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">192.168.66.2</span>
+      <span class="nt">nameservers</span><span class="p">:</span>
+              <span class="nt">addresses</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">192.168.66.2</span><span class="p p-Indicator">]</span>
+</pre></div></p>
                 
                   
                 
