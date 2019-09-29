@@ -1,5 +1,6 @@
 ## .git .DS_store泄露
-.git泄露利用EXP:https://github.com/lijiejie/GitHack
+.git泄露利用EXP:https://github.com/lijiejie/GitHack  
+https://github.com/BugScanTeam/GitHack
 .DS_Store 利用: https://github.com/lijiejie/ds_store_exp
 进程环境变量: /proc/self/environ 
 

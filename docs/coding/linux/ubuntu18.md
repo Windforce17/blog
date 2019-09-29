@@ -1,4 +1,4 @@
-## ubuntu1804
+## ubuntu1804 chrome
 
 sudo apt-get install ttf-wqy-zenhei
 sudo apt-get install xfonts-wqy
