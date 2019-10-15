@@ -2433,8 +2433,6 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         反调试
@@ -2448,22 +2446,40 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ptrace" class="md-nav__link">
     ptrace
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     断点检测
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    windows
   </a>
   
 </li>
@@ -2564,22 +2580,40 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    linux
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#ptrace" class="md-nav__link">
     ptrace
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     断点检测
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    windows
   </a>
   
 </li>
@@ -2609,6 +2643,8 @@
                   <a href="https://github.com/Windforce17/blog/blob/master/docs/reverse/反调试.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
+                  <h1>反调试</h1>
+                
                 <h2 id="linux">linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
 <h3 id="ptrace">ptrace<a class="headerlink" href="#ptrace" title="Permanent link">&para;</a></h3>
 <p><div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
@@ -2637,14 +2673,18 @@
 </pre></div>
 使用perl绕过
 antibp.pl:
-```perl</p>
-<h1 id="usrbinperl">!/usr/bin/perl<a class="headerlink" href="#usrbinperl" title="Permanent link">&para;</a></h1>
-<p>while(&lt;&gt;)
-{
-    if($_ =~ m/([0-9a-f][4]:\s<em>[0-9a-f \t]</em>.*0xcc)/ ){ print; }
-}
-<code>objdump -M intel -d xxx.elf | ./antibp.pl</code>
- 80483be: 3d cc 00 00 00 cmp eax,0xcc</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/perl</span>
+<span class="k">while</span><span class="p">(</span><span class="o">&lt;&gt;</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="nv">$_</span> <span class="o">=~</span> <span class="sr">m/([0-9a-f][4]:\s*[0-9a-f \t]*.*0xcc)/</span> <span class="p">){</span> <span class="k">print</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="sb">`objdump -M intel -d xxx.elf | ./antibp.pl`</span>
+ <span class="mi">80483</span><span class="n">be:</span> <span class="mi">3</span><span class="n">d</span> <span class="n">cc</span> <span class="mo">00</span> <span class="mo">00</span> <span class="mo">00</span> <span class="ow">cmp</span> <span class="n">eax</span><span class="p">,</span><span class="mh">0xcc</span>
+</pre></div></p>
+<h2 id="windows">windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
+<p>//TODO
+need to test
+[<a href="https://ctf-wiki.github.io/ctf-wiki/reverse/windows/anti-debug/ntglobalflag-zh/">https://ctf-wiki.github.io/ctf-wiki/reverse/windows/anti-debug/ntglobalflag-zh/</a>]</p>
                 
                   
                 
