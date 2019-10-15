@@ -556,11 +556,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://windforce17.github.io/blog/reverse/mov混淆/</loc>
-     <lastmod>2019-10-15</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://windforce17.github.io/blog/reverse/pe/</loc>
      <lastmod>2019-10-15</lastmod>
      <changefreq>daily</changefreq>
@@ -607,6 +602,11 @@
     </url>
     <url>
      <loc>https://windforce17.github.io/blog/reverse/各种段/</loc>
+     <lastmod>2019-10-15</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://windforce17.github.io/blog/reverse/混淆/</loc>
      <lastmod>2019-10-15</lastmod>
      <changefreq>daily</changefreq>
     </url>
