@@ -2320,6 +2320,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    断点
+  </a>
+  
+</li>
+      
       
       
       
@@ -2578,6 +2585,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    断点
+  </a>
+  
+</li>
+      
       
       
       
@@ -2607,11 +2621,36 @@
                 
                 <h2 id="interrupt">中断(interrupt)<a class="headerlink" href="#interrupt" title="Permanent link">&para;</a></h2>
 <p>不管是软中断还是硬中断，都是为了让 CPU 放下当前任务去干别的事情..比如说 IO
-有一个表对应了不同的中断类型。(你猜这个表叫啥？)</p>
+有一个表对应了不同的中断类型-中断向量表。</p>
 <h2 id="exception">异常(exception)<a class="headerlink" href="#exception" title="Permanent link">&para;</a></h2>
 <p>分为两大类，错误和陷阱，区别是从哪恢复执行。
 错误：除 0，非法访问，缺页等。触发错误处理，然后再从会产出错误的代码执行。<br />
-陷阱：0xcc、SYSENTER 系统调用等。从下一条指令开始执行。</p>
+陷阱：0xcc、SYSENTER 系统调用等。从下一条指令开始执行。
+中止：通常是一些严重错误，CPU中止程序的执行并报告错误，而且不再恢复执行（指令无需压栈，通常可以看到当前的栈快照）。如越界访问或溢出。 
+中断和异常有相同的处理过程：
+<img alt="" src="../2019-10-15-10-01-28.png" />
+在处理多个中断和异常时有优先级顺序：
+<img alt="" src="../2019-10-15-10-02-06.png" />
+<img alt="" src="../2019-10-15-10-02-14.png" /></p>
+<h2 id="_1">断点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>硬件断点
+<div class="codehilite"><pre><span></span><span class="n">HANDLE</span> <span class="nf">SetHardwareBreakpoint</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hThread</span><span class="p">,</span><span class="n">HWBRK_TYPE</span> <span class="n">Type</span><span class="p">,</span><span class="n">HWBRK_SIZE</span> <span class="n">Size</span><span class="p">,</span><span class="kt">void</span><span class="o">*</span> <span class="n">s</span><span class="p">);</span>
+</pre></div>
+DR0~DR3保存地址，DR4 DR5没用，DR7用来设置断点条件，DR6反应断点状态。
+//TODO: 图片转表格。
+<img alt="" src="../2019-10-15-09-56-33.png" />
+<img alt="" src="../2019-10-15-09-57-07.png" />
+<img alt="" src="../2019-10-15-09-57-15.png" /></p>
+<p>单步执行(step in)
+1. 通过调试符号获取当前指令对应的行信息，并保存该行的信息。</p>
+<ol>
+<li>
+<p>设置TF位，开始CPU的单步执行。</p>
+</li>
+<li>
+<p>在处理单步执行异常时，获取当前指令对应的行信息，与①中保存的行信息进行比较。如果相同，表示仍然在同一行上，转到②；如果不相同，表示已到了不同的行，结束StepIn。</p>
+</li>
+</ol>
                 
                   
                 
