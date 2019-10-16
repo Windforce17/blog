@@ -1,0 +1,44 @@
+## linux
+### ptrace
+```c
+int main()
+{
+    if (ptrace(PTRACE_TRACEME, 0, 1, 0) < 0) {
+        printf("DEBUGGING... Bye\n");
+        return 1;
+    }
+    printf("Hello\n");
+    return 0;
+}
+```
+断点+patch即可
+
+### 断点检测
+检测指令是否为0xcc
+```c
+void foo() {
+    printf("Hello\n");
+}
+int main() {
+    if ((*(volatile unsigned *)((unsigned)foo) & 0xff) == 0xcc) {
+        printf("BREAKPOINT\n");
+        exit(1);
+    }
+    foo();
+}
+```
+使用perl绕过
+antibp.pl:
+```perl
+#!/usr/bin/perl
+while(<>)
+{
+    if($_ =~ m/([0-9a-f][4]:\s*[0-9a-f \t]*.*0xcc)/ ){ print; }
+}
+`objdump -M intel -d xxx.elf | ./antibp.pl`
+ 80483be: 3d cc 00 00 00 cmp eax,0xcc
+```
+## windows
+//TODO
+need to test
+[https://ctf-wiki.github.io/ctf-wiki/reverse/windows/anti-debug/ntglobalflag-zh/]
