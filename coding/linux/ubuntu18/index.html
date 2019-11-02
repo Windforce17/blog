@@ -1239,13 +1239,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fbctf" class="md-nav__link">
-    fbctf
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     网络配置
   </a>
@@ -2753,13 +2746,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fbctf" class="md-nav__link">
-    fbctf
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     网络配置
   </a>
@@ -2822,7 +2808,9 @@ sudo apt-get install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-
 sudo apt-get install gcc-arm-linux-gnueabi
 apt install gcc-mips-linux-gnu</p>
 <h2 id="change-source">change source<a class="headerlink" href="#change-source" title="Permanent link">&para;</a></h2>
-<p>sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list</p>
+<div class="codehilite"><pre><span></span>sudo sed -i <span class="s1">&#39;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&#39;</span> /etc/apt/sources.list
+</pre></div>
+
 <h2 id="nfs">nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
 <h3 id="etcexport">/etc/export 配置详解<a class="headerlink" href="#etcexport" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2841,12 +2829,8 @@ USR1 重新打开日志文件
 USR2 平滑重载所有 worker 进程并重新载入配置和二进制模块
 先查看 php-fpm 的 master 进程号
 kill -USR2 \&lt;master pid></p>
-<h2 id="fbctf">fbctf<a class="headerlink" href="#fbctf" title="Permanent link">&para;</a></h2>
-<p><a href="https://blog.ctftools.com/2017/03/post122/">https://blog.ctftools.com/2017/03/post122/</a>
-<a href="https://github.com/facebook/fbctf/wiki/Installation-Guide,-Production">https://github.com/facebook/fbctf/wiki/Installation-Guide,-Production</a></p>
-<p><a href="http://192.168.168.42/?LanmanErrorCode=%3Cscript%3EsetTimeout(function(){alert(document.getElementById(%22password%22).value);},1000);%3C/script%3E">http://192.168.168.42/?LanmanErrorCode=%3Cscript%3EsetTimeout(function(){alert(document.getElementById(%22password%22).value);},1000);%3C/script%3E</a></p>
 <h2 id="_2">网络配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>ip:
+<p>ip:</p>
 <div class="codehilite"><pre><span></span><span class="nt">network</span><span class="p">:</span>
   <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
   <span class="nt">renderer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">networkd</span>
@@ -2856,11 +2840,11 @@ kill -USR2 \&lt;master pid></p>
     <span class="nt">enp0s8</span><span class="p">:</span>
       <span class="nt">dhcp4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
       <span class="nt">dhcp6</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">no</span>
-      <span class="nt">addresses</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">192.168.66.128/24</span><span class="p p-Indicator">,</span> <span class="p p-Indicator">]</span>
-      <span class="nt">gateway4</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">192.168.66.2</span>
+      <span class="nt">addresses</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">192.168.66.128/24</span><span class="p p-Indicator">]</span>
+      <span class="nt">gateway4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">192.168.66.2</span>
       <span class="nt">nameservers</span><span class="p">:</span>
-              <span class="nt">addresses</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">192.168.66.2</span><span class="p p-Indicator">]</span>
-</pre></div></p>
+        <span class="nt">addresses</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">192.168.66.2</span><span class="p p-Indicator">]</span>
+</pre></div>
                 
                   
                 

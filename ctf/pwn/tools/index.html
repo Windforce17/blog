@@ -2965,11 +2965,12 @@ COPY ./pwndbg pwndbg
 
 <div class="codehilite"><pre><span></span><span class="c"># ubuntu 16.04</span>
 <span class="k">FROM</span><span class="s"> ubuntu:16.04</span>
-<span class="k">RUN</span> <span class="nb">echo</span> <span class="s1">&#39; deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse \n \</span>
-<span class="s1">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse \n \</span>
-<span class="s1">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse \n \</span>
-<span class="s1">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse \n &#39;</span>&gt; /etc/apt/sources.list
-<span class="k">RUN</span> apt update <span class="o">&amp;&amp;</span> <span class="se">\</span>
+<span class="c"># RUN echo &#39; deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse \n \</span>
+<span class="c"># deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse \n \</span>
+<span class="c"># deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse \n \</span>
+<span class="c"># deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-security main restricted universe multiverse \n &#39;&gt; /etc/apt/sources.list</span>
+<span class="k">RUN</span> sed -i <span class="s1">&#39;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&#39;</span> /etc/apt/sources.list <span class="se">\</span>
+    <span class="o">&amp;&amp;</span> apt update <span class="o">&amp;&amp;</span> <span class="se">\</span>
     apt install -y vim python python3 python-pip<span class="se">\</span>
     python-dev python3-dev python-pip python3-pip libglib2.0-dev libc6-dbg <span class="se">\</span>
     build-essential libc6-dev-i386 <span class="se">\</span>
