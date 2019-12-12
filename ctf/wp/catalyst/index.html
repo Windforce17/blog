@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.82a18eb7.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
       
@@ -62,7 +62,7 @@
     
       
         <link href="https://gstatic.loli.net" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700|Fira+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
@@ -2368,18 +2368,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../reverse/basic (SFConflict wzcboss@qq.com 2019-10-16-12-03-27)/" title="basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)" class="md-nav__link">
-      basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../reverse/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
@@ -2549,13 +2537,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-17" type="checkbox" id="nav-8-17">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-16" type="checkbox" id="nav-8-16">
     
-    <label class="md-nav__link" for="nav-8-17">
+    <label class="md-nav__link" for="nav-8-16">
       010editor
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-17">
+      <label class="md-nav__title" for="nav-8-16">
         010editor
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2610,6 +2598,18 @@
   <li class="md-nav__item">
     <a href="../../../ustc/857/" title="857" class="md-nav__link">
       857
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ustc/math/" title="Math" class="md-nav__link">
+      Math
     </a>
   </li>
 
@@ -2798,14 +2798,14 @@
 <span class="p">)</span>
 <span class="c1"># 可以用下面方法将16进制的字符串转为ascii，但注意小端存储</span>
 <span class="n">h</span><span class="o">=</span><span class="nb">hex</span><span class="p">(</span><span class="mi">1868915551</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">a2b_hex</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">2</span><span class="p">:]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">binascii</span><span class="o">.</span><span class="n">a2b_hex</span><span class="p">(</span><span class="n">h</span><span class="p">[</span><span class="mi">2</span><span class="p">:]))</span>
 <span class="c1"># 下面也是可以的，而且更简单.. </span>
 <span class="n">u</span><span class="o">=</span><span class="p">[</span><span class="mi">1635017059</span><span class="p">,</span><span class="mi">1953724780</span><span class="p">,</span><span class="mi">1868915551</span><span class="p">]</span>
 <span class="n">username</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">u</span><span class="p">:</span>
     <span class="n">username</span><span class="o">+=</span><span class="n">x</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
 </pre></div>
 得到username=catalyst_ceo</p>
 <h3 id="_3">第三、四个<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -2971,12 +2971,12 @@
     <span class="c1"># 逆向出密码</span>
     <span class="nb">sum</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">rands</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
 <span class="n">passwd</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;&#39;</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">sum</span><span class="p">:</span>
     <span class="c1">#小端转换并打印</span>
     <span class="n">passwd</span><span class="o">+=</span><span class="n">binascii</span><span class="o">.</span><span class="n">a2b_hex</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">2</span><span class="p">:])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="k">print</span><span class="p">(</span><span class="n">passwd</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">passwd</span><span class="p">)</span>
 <span class="c1">#output:</span>
 <span class="n">sLSVpQ4vK3cGWyW86AiZhggwLHBjmx9CRspVGggj</span>
 </pre></div></p>
@@ -2984,6 +2984,7 @@
 <p>输入用户名密码后拿到flag:<code>ALEXCTF{1_t41d_y0u_y0u_ar3__gr34t__reverser__s33}</code></p>
                 
                   
+                
                 
               
               
@@ -3080,7 +3081,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.718059d6.js"></script>
+      <script src="../../../assets/javascripts/application.d151b584.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.82a18eb7.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
       
@@ -62,7 +62,7 @@
     
       
         <link href="https://gstatic.loli.net" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700|Fira+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
@@ -2424,18 +2424,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../reverse/basic (SFConflict wzcboss@qq.com 2019-10-16-12-03-27)/" title="basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)" class="md-nav__link">
-      basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../reverse/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
@@ -2605,13 +2593,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-17" type="checkbox" id="nav-8-17">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-16" type="checkbox" id="nav-8-16">
     
-    <label class="md-nav__link" for="nav-8-17">
+    <label class="md-nav__link" for="nav-8-16">
       010editor
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-17">
+      <label class="md-nav__title" for="nav-8-16">
         010editor
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2666,6 +2654,18 @@
   <li class="md-nav__item">
     <a href="../../../ustc/857/" title="857" class="md-nav__link">
       857
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ustc/math/" title="Math" class="md-nav__link">
+      Math
     </a>
   </li>
 
@@ -2838,7 +2838,7 @@
 <span class="kn">import</span> <span class="nn">binascii</span>
 <span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
-<span class="n">debug</span><span class="o">=</span><span class="bp">True</span>
+<span class="n">debug</span><span class="o">=</span><span class="kc">True</span>
 
 <span class="n">elf_name</span><span class="o">=</span><span class="s1">&#39;./stack&#39;</span>
 <span class="n">remote_addr</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="mi">1111</span><span class="p">]</span>
@@ -2878,7 +2878,7 @@ sh.close()</p>
 <div class="codehilite"><pre><span></span><span class="n">sh</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1">#发送数据</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1">#发送一行数据，相当于在数据后面加</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">numb</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="n">dufault</span><span class="p">)</span> <span class="c1"># 接受数据，numb指定接收的字节，timeout指定超时</span>
-<span class="n">sh</span><span class="o">.</span><span class="n">recvline</span><span class="p">(</span><span class="n">keepends</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>  <span class="c1">#接受一行数据，keepends为是否保留行尾的</span>
+<span class="n">sh</span><span class="o">.</span><span class="n">recvline</span><span class="p">(</span><span class="n">keepends</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1">#接受一行数据，keepends为是否保留行尾的</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s2">&quot;Hello,World</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="n">drop</span><span class="o">=</span><span class="n">fasle</span><span class="p">)</span> <span class="c1"># 接受数据直到我们设置的标志出现</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">recvall</span><span class="p">()</span> <span class="c1"># 一直接收直到EOF</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">recvrepeat</span><span class="p">(</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">default</span><span class="p">)</span>  <span class="c1">#持续接受直到EOF或timeout</span>
@@ -2893,11 +2893,11 @@ sh.close()</p>
 
 <h3 id="elf">ELF<a class="headerlink" href="#elf" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="s1">&#39;/bin/cat&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>  <span class="c1"># 文件装载的基地址</span>
-<span class="k">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;write&#39;</span><span class="p">])</span> <span class="c1"># 函数地址</span>
-<span class="k">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">got</span><span class="p">[</span><span class="s1">&#39;write&#39;</span><span class="p">])</span> <span class="c1"># GOT表的地址</span>
-<span class="k">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">plt</span><span class="p">[</span><span class="s1">&#39;write&#39;</span><span class="p">])</span> <span class="c1"># PLT的地址</span>
-<span class="k">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;/bin/sh&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">())</span><span class="c1"># 字符串/bin/sh的地</span>
+<span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>  <span class="c1"># 文件装载的基地址</span>
+<span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;write&#39;</span><span class="p">])</span> <span class="c1"># 函数地址</span>
+<span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">got</span><span class="p">[</span><span class="s1">&#39;write&#39;</span><span class="p">])</span> <span class="c1"># GOT表的地址</span>
+<span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">plt</span><span class="p">[</span><span class="s1">&#39;write&#39;</span><span class="p">])</span> <span class="c1"># PLT的地址</span>
+<span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;/bin/sh&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">())</span><span class="c1"># 字符串/bin/sh的地</span>
 </pre></div>
 
 <h3 id="rop">ROP<a class="headerlink" href="#rop" title="Permanent link">&para;</a></h3>
@@ -2938,7 +2938,7 @@ systemAddress = d.lookup(&#39;system&#39;, &#39;libc&#39;)  #在libc文件中搜
 </pre></div>
 
 <div class="codehilite"><pre><span></span><span class="c"># ubuntu 18.04</span>
-<span class="k">FROM</span><span class="s"> ubuntu:18.04</span>
+<span class="k">FROM</span> <span class="s">ubuntu:18.04</span>
 <span class="k">RUN</span> <span class="nb">echo</span> <span class="s1">&#39; deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse \n \</span>
 <span class="s1">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse \n \</span>
 <span class="s1">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricted universe multiverse \n \</span>
@@ -2965,7 +2965,7 @@ COPY ./pwndbg pwndbg
 </pre></div>
 
 <div class="codehilite"><pre><span></span><span class="c"># ubuntu 16.04</span>
-<span class="k">FROM</span><span class="s"> ubuntu:16.04</span>
+<span class="k">FROM</span> <span class="s">ubuntu:16.04</span>
 <span class="c"># RUN echo &#39; deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse \n \</span>
 <span class="c"># deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse \n \</span>
 <span class="c"># deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-backports main restricted universe multiverse \n \</span>
@@ -2993,6 +2993,7 @@ COPY ./pwndbg pwndbg
 </pre></div>
                 
                   
+                
                 
               
               
@@ -3089,7 +3090,7 @@ COPY ./pwndbg pwndbg
       
     </div>
     
-      <script src="../../../assets/javascripts/application.718059d6.js"></script>
+      <script src="../../../assets/javascripts/application.d151b584.js"></script>
       
         
         

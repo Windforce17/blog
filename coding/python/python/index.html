@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -46,7 +46,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.4031d38b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.82a18eb7.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
       
@@ -62,7 +62,7 @@
     
       
         <link href="https://gstatic.loli.net" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700|Fira+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
         <style>body,input{font-family:"Fira Sans","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono","Courier New",Courier,monospace}</style>
       
     
@@ -2403,18 +2403,6 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../reverse/basic (SFConflict wzcboss@qq.com 2019-10-16-12-03-27)/" title="basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)" class="md-nav__link">
-      basic (SFConflict wzcboss@qq.com 2019 10 16 12 03 27)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
     <a href="../../../reverse/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
@@ -2584,13 +2572,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-17" type="checkbox" id="nav-8-17">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8-16" type="checkbox" id="nav-8-16">
     
-    <label class="md-nav__link" for="nav-8-17">
+    <label class="md-nav__link" for="nav-8-16">
       010editor
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-8-17">
+      <label class="md-nav__title" for="nav-8-16">
         010editor
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2645,6 +2633,18 @@
   <li class="md-nav__item">
     <a href="../../../ustc/857/" title="857" class="md-nav__link">
       857
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../ustc/math/" title="Math" class="md-nav__link">
+      Math
     </a>
   </li>
 
@@ -2783,26 +2783,26 @@
                   <h1>Python</h1>
                 
                 <h2 id="format">format 函数<a class="headerlink" href="#format" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="k">print</span><span class="p">(</span><span class="s1">&#39;{名字}今天{动作}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="err">名字</span><span class="o">=</span><span class="s1">&#39;陈某某&#39;</span><span class="p">,</span><span class="err">动作</span><span class="o">=</span><span class="s1">&#39;拍视频&#39;</span><span class="p">))</span><span class="c1">#通关键字</span>
+<div class="codehilite"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{名字}</span><span class="s1">今天</span><span class="si">{动作}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">名字</span><span class="o">=</span><span class="s1">&#39;陈某某&#39;</span><span class="p">,</span><span class="n">动作</span><span class="o">=</span><span class="s1">&#39;拍视频&#39;</span><span class="p">))</span><span class="c1">#通关键字</span>
 <span class="n">grade</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span> <span class="p">:</span> <span class="s1">&#39;陈某某&#39;</span><span class="p">,</span> <span class="s1">&#39;fenshu&#39;</span><span class="p">:</span> <span class="s1">&#39;59&#39;</span><span class="p">}</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{name}电工考了{fenshu}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">grade</span><span class="p">))</span><span class="c1">#通过关键字，可字典当关键字传入值时，在字典前加**即可</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{name}</span><span class="s1">电工考了</span><span class="si">{fenshu}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">grade</span><span class="p">))</span><span class="c1">#通过关键字，可字典当关键字传入值时，在字典前加**即可</span>
 
 <span class="c1">#通过位置</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{1}今天{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;拍视频&#39;</span><span class="p">,</span><span class="s1">&#39;陈某某&#39;</span><span class="p">))</span><span class="c1">#通过位置</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{0}今天{1}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;陈某某&#39;</span><span class="p">,</span><span class="s1">&#39;拍视频&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{1}</span><span class="s1">今天</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;拍视频&#39;</span><span class="p">,</span><span class="s1">&#39;陈某某&#39;</span><span class="p">))</span><span class="c1">#通过位置</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">今天</span><span class="si">{1}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;陈某某&#39;</span><span class="p">,</span><span class="s1">&#39;拍视频&#39;</span><span class="p">))</span>
 
 <span class="c1">#精度和类型f精度常和f一起使用</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{:.1f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">4.234324525254</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{:.4f}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">4.1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.1f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">4.234324525254</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.4f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">4.1</span><span class="p">))</span>
 <span class="c1">#进制转化，b o d x 分别表示二、八、十、十六进制</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{:b}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{:o}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{:d}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{:x}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:b}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:o}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:x}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">250</span><span class="p">))</span>
 
 <span class="c1">#千分位分隔符，这种情况只针对与数字</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{:,}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100000000</span><span class="p">))</span>
-<span class="k">print</span><span class="p">(</span><span class="s1">&#39;{:,}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">235445.234235</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100000000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">235445.234235</span><span class="p">))</span>
 </pre></div>
 
 <h2 id="bytesstring-on-py3">bytes&amp;&amp;string on py3<a class="headerlink" href="#bytesstring-on-py3" title="Permanent link">&para;</a></h2>
@@ -2821,7 +2821,7 @@
 <span class="n">username</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">u</span><span class="p">:</span>
     <span class="n">username</span><span class="o">+=</span><span class="n">x</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
 </pre></div>
 
 <h2 id="jupyter">jupyter<a class="headerlink" href="#jupyter" title="Permanent link">&para;</a></h2>
@@ -2864,6 +2864,7 @@ pip3 install pylibemu</p>
 apt install python-gmpy2</p>
                 
                   
+                
                 
               
               
@@ -2960,7 +2961,7 @@ apt install python-gmpy2</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.718059d6.js"></script>
+      <script src="../../../assets/javascripts/application.d151b584.js"></script>
       
         
         
