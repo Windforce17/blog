@@ -4,7 +4,7 @@
 
 ![cotx](2019-12-12-20-47-40.png)  
 定义域: $x\neq k\pi (k \in \bold{Z})$  
-值域: $(-\infty ,+\infin)$  
+值域: $(-\infty ,+\infty)$  
 求导:$\frac{d \cot x}{dx}=-\csc^2(x)$  
 积分:
 
@@ -12,13 +12,13 @@
 
 ![secx](2019-12-12-20-58-42.png)  
 定义域: $x\neq \frac{\pi}{2}+k\pi (k \in \bold{Z})$  
-值域: $(-\infin,-1] \cup [1,\infin)$
+值域: $(-\infty,-1] \cup [1,\infty)$
 
 ## $y=\csc x$
 
 ![cscx](2019-12-12-21-04-34.png)  
 定义域:$x\neq k\pi (k \in \bold{Z})$
-值域: $(-\infin,-1] \cup [1,\infin)$  
+值域: $(-\infty,-1] \cup [1,\infty)$  
 求导: $\frac{d\csc x}{dx}= -\cot x \csc x$  
 积分: $\int \csc xdx = -\ln(\csc x- \cot x)+C$
 
