@@ -52,8 +52,6 @@ alias "+dj" "+duck;+jump"
 alias "-dj" "-jump;-duck"
 bind "x" "+dj" //一键蹲跳
 bind "shift" "+speed;r_cleardecals" //静步清除血迹
-bind "f3" "buy sg556; buy m4a1; buy vesthelm; buy defuser;buy smokegrenade;buy hegrenade;buy flashbang;buy flashbang;"
-bind "f1" "buy awp;buy vesthelm; buy defuser; buy smokegrenade;buy hegrenade;buy flashbang;buy flashbang;"
 bind "n" "toggle cl_crosshairsize 1000 2.5"//切换准星
 
 ```
