@@ -1,4 +1,5 @@
-## nginx中到配置
+## nginx 中到配置
+
 ```conf
   location ~ [^/]\.php(/|$) {
     fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
@@ -8,11 +9,12 @@
     fastcgi_index index.php;
     include fastcgi.conf;
   }
-  ```
+```
 
-## 任意环境下调试php,debug php
+## 任意环境下调试 php,debug php
 
-在不管php.ini配置的情况下开启php调试,php debug.
+在不管 php.ini 配置的情况下开启 php 调试,php debug.
+
 ```php
 ini_set('display_errors',1);            //错误信息
 ini_set('display_startup_errors',1);    //php启动错误信息
@@ -21,6 +23,7 @@ ini_set('error_log', dirname(__FILE__) . '/error_log.txt'); //将出错信息输
 ```
 
 ## debug php.ini
+
 ```ini
 ;显示错误信息
 display_errors = On
@@ -29,7 +32,10 @@ display_startup_errors = On
 ;日志记录错误信息
 log_errors = On
 ```
+
 ## 一些函数
+
+[PHP mysqli 操作数据库](https://segmentfault.com/a/1190000003841357)
 
 ### extract()
 
@@ -43,7 +49,9 @@ extract($my_array);
 echo "\$a = $a; \$b = $b; \$c = $c";
 ?>
 ```
+
 ### parse_str()
+
 将查询到的字符串解析到变量中
 
 ```php
@@ -55,4 +63,5 @@ echo $age;
 ```
 
 ### import_request_variables()
+
 将 GET／POST／Cookie 变量导入到全局作用域中
