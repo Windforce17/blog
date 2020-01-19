@@ -1372,6 +1372,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#multiprocessing" class="md-nav__link">
+    multiprocessing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#jupyter" class="md-nav__link">
     jupyter
   </a>
@@ -1402,7 +1409,7 @@
         
           <li class="md-nav__item">
   <a href="#shellcode" class="md-nav__link">
-    shellcode检测
+    shellcode 检测
   </a>
   
 </li>
@@ -2832,6 +2839,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#multiprocessing" class="md-nav__link">
+    multiprocessing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#jupyter" class="md-nav__link">
     jupyter
   </a>
@@ -2862,7 +2876,7 @@
         
           <li class="md-nav__item">
   <a href="#shellcode" class="md-nav__link">
-    shellcode检测
+    shellcode 检测
   </a>
   
 </li>
@@ -2969,8 +2983,33 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
 </pre></div>
 
+<h2 id="multiprocessing">multiprocessing<a class="headerlink" href="#multiprocessing" title="Permanent link">&para;</a></h2>
+<p>不被 GIL 锁限制，直接跑满 cpu</p>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">multiprocessing</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+        <span class="nb">print</span> <span class="n">msg</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;done &quot;</span> <span class="o">+</span> <span class="n">msg</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">pool</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">xrange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;hello </span><span class="si">%d</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pool</span><span class="o">.</span><span class="n">apply_async</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="p">)))</span>
+    <span class="n">pool</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">pool</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">res</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="n">res</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="nb">print</span> <span class="s2">&quot;Sub-process(es) done.&quot;</span>
+</pre></div>
+
+<p>windows 下可能会崩溃的话，添加<code>multiprocessing.freeze_support()</code></p>
 <h2 id="jupyter">jupyter<a class="headerlink" href="#jupyter" title="Permanent link">&para;</a></h2>
-<p>这个东西会装上ipython，可以开启一个浏览器进行多人协作写py。
+<p>这个东西会装上 ipython，可以开启一个浏览器进行多人协作写 py。
 <img alt="jupyter" src="../2019-01-04-19-42-34.png" />
 <strong>安装：</strong> <a href="https://jupyter.readthedocs.io/en/latest/install.html">https://jupyter.readthedocs.io/en/latest/install.html</a></p>
 <h2 id="_1">各种小玩意<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
@@ -2982,14 +3021,15 @@ print(&#39;\n&#39;.join(sys.path))
 
 <h3 id="mac-os-x-python">Mac OS X 上如何切换默认的 Python 版本<a class="headerlink" href="#mac-os-x-python" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.zhihu.com/question/30941329">https://www.zhihu.com/question/30941329</a></p>
-<h3 id="shellcode">shellcode检测<a class="headerlink" href="#shellcode" title="Permanent link">&para;</a></h3>
+<h3 id="shellcode">shellcode 检测<a class="headerlink" href="#shellcode" title="Permanent link">&para;</a></h3>
 <p>pylibemu</p>
 <h3 id="_3">各种库<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>distorm3 反编译引擎 pip安装</li>
+<li>distorm3 反编译引擎 pip 安装</li>
+<li><a href="https://www.freebuf.com/sectool/175208.html">Impacket</a> 低级网络编程，支持各种协议</li>
 </ol>
 <h3 id="pyv8">pyv8<a class="headerlink" href="#pyv8" title="Permanent link">&para;</a></h3>
-<p>js处理，google出品，macos安装</p>
+<p>js 处理，google 出品，macos 安装</p>
 <p><a href="https://github.com/emmetio/pyv8-binaries/"></a></p>
 <div class="codehilite"><pre><span></span><span class="nb">cd</span> pyv8 //进入解压后的目录
 sudo cp * /Library/Python/2.7/site-packages/
@@ -2997,7 +3037,7 @@ sudo cp * /Library/Python/2.7/site-packages/
 </pre></div>
 
 <h3 id="libemu">libemu<a class="headerlink" href="#libemu" title="Permanent link">&para;</a></h3>
-<p>shellcode 检测工具  preepdf依赖之一
+<p>shellcode 检测工具 preepdf 依赖之一
 <a href="https://github.com/buffer/libemu">https://github.com/buffer/libemu</a>
 aclocal
 autoreconf -v -i
@@ -3005,7 +3045,7 @@ autoreconf -v -i
 sudo make install
 pip3 install pylibemu</p>
 <h2 id="gmpy2">gmpy2<a class="headerlink" href="#gmpy2" title="Permanent link">&para;</a></h2>
-<p>大数计算的优化lib
+<p>大数计算的优化 lib
 apt install python-gmpy2</p>
                 
                   

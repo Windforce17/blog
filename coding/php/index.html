@@ -678,7 +678,14 @@
       
         <li class="md-nav__item">
   <a href="#nginx" class="md-nav__link">
-    nginx中到配置
+    nginx 中到配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phpdebug-php" class="md-nav__link">
+    任意环境下调试 php,debug php
   </a>
   
 </li>
@@ -2782,7 +2789,14 @@
       
         <li class="md-nav__item">
   <a href="#nginx" class="md-nav__link">
-    nginx中到配置
+    nginx 中到配置
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phpdebug-php" class="md-nav__link">
+    任意环境下调试 php,debug php
   </a>
   
 </li>
@@ -2855,7 +2869,7 @@
                 
                   <h1>Php</h1>
                 
-                <h2 id="nginx">nginx中到配置<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
+                <h2 id="nginx">nginx 中到配置<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span>  location ~ [^/]\.php(/|$) {
     fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
     #fastcgi_pass unix:/dev/shm/php-cgi.sock;
@@ -2864,16 +2878,14 @@
     fastcgi_index index.php;
     include fastcgi.conf;
   }
-  ```
+</pre></div>
 
-## 任意环境下调试php,debug php
-
-在不管php.ini配置的情况下开启php调试,php debug.
-```php
-ini_set(&#39;display_errors&#39;,1);            //错误信息
-ini_set(&#39;display_startup_errors&#39;,1);    //php启动错误信息
-error_reporting(-1);                    //打印出所有的 错误信息
-ini_set(&#39;error_log&#39;, dirname(__FILE__) . &#39;/error_log.txt&#39;); //将出错信息输出到一个文本文件
+<h2 id="phpdebug-php">任意环境下调试 php,debug php<a class="headerlink" href="#phpdebug-php" title="Permanent link">&para;</a></h2>
+<p>在不管 php.ini 配置的情况下开启 php 调试,php debug.</p>
+<div class="codehilite"><pre><span></span><span class="x">ini_set(&#39;display_errors&#39;,1);            //错误信息</span>
+<span class="x">ini_set(&#39;display_startup_errors&#39;,1);    //php启动错误信息</span>
+<span class="x">error_reporting(-1);                    //打印出所有的 错误信息</span>
+<span class="x">ini_set(&#39;error_log&#39;, dirname(__FILE__) . &#39;/error_log.txt&#39;); //将出错信息输出到一个文本文件</span>
 </pre></div>
 
 <h2 id="debug-phpini">debug php.ini<a class="headerlink" href="#debug-phpini" title="Permanent link">&para;</a></h2>
@@ -2886,6 +2898,7 @@ ini_set(&#39;error_log&#39;, dirname(__FILE__) . &#39;/error_log.txt&#39;); //�
 </pre></div>
 
 <h2 id="_1">一些函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://segmentfault.com/a/1190000003841357">PHP mysqli 操作数据库</a></p>
 <h3 id="extract">extract()<a class="headerlink" href="#extract" title="Permanent link">&para;</a></h3>
 <p>数从数组中将变量导入到当前的符号表。</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
