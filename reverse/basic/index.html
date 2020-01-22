@@ -2389,6 +2389,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#oep" class="md-nav__link">
+    各种 OEP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delphi" class="md-nav__link">
+    delphi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vc" class="md-nav__link">
+    vc++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vc60" class="md-nav__link">
+    vc6.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vc70" class="md-nav__link">
+    vc7.0
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2774,6 +2815,47 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#oep" class="md-nav__link">
+    各种 OEP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delphi" class="md-nav__link">
+    delphi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vc" class="md-nav__link">
+    vc++
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vc60" class="md-nav__link">
+    vc6.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vc70" class="md-nav__link">
+    vc7.0
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2808,31 +2890,61 @@
 <p>分为两大类，错误和陷阱，区别是从哪恢复执行。
 错误：除 0，非法访问，缺页等。触发错误处理，然后再从会产出错误的代码执行。<br />
 陷阱：0xcc、SYSENTER 系统调用等。从下一条指令开始执行。
-中止：通常是一些严重错误，CPU中止程序的执行并报告错误，而且不再恢复执行（指令无需压栈，通常可以看到当前的栈快照）。如越界访问或溢出。 
+中止：通常是一些严重错误，CPU 中止程序的执行并报告错误，而且不再恢复执行（指令无需压栈，通常可以看到当前的栈快照）。如越界访问或溢出。
 中断和异常有相同的处理过程：
 <img alt="" src="../2019-10-15-10-01-28.png" />
 在处理多个中断和异常时有优先级顺序：
 <img alt="" src="../2019-10-15-10-02-06.png" />
 <img alt="" src="../2019-10-15-10-02-14.png" /></p>
 <h2 id="_1">断点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>硬件断点
+<p>硬件断点</p>
 <div class="codehilite"><pre><span></span><span class="n">HANDLE</span> <span class="nf">SetHardwareBreakpoint</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hThread</span><span class="p">,</span><span class="n">HWBRK_TYPE</span> <span class="n">Type</span><span class="p">,</span><span class="n">HWBRK_SIZE</span> <span class="n">Size</span><span class="p">,</span><span class="kt">void</span><span class="o">*</span> <span class="n">s</span><span class="p">);</span>
 </pre></div>
-DR0~DR3保存地址，DR4 DR5没用，DR7用来设置断点条件，DR6反应断点状态。
+
+<p>DR0~DR3 保存地址，DR4 DR5 没用，DR7 用来设置断点条件，DR6 反应断点状态。
 //TODO: 图片转表格。
 <img alt="" src="../2019-10-15-09-56-33.png" />
 <img alt="" src="../2019-10-15-09-57-07.png" />
 <img alt="" src="../2019-10-15-09-57-15.png" /></p>
-<p>单步执行(step in)
-1. 通过调试符号获取当前指令对应的行信息，并保存该行的信息。</p>
+<p>单步执行(step in)</p>
 <ol>
 <li>
-<p>设置TF位，开始CPU的单步执行。</p>
+<p>通过调试符号获取当前指令对应的行信息，并保存该行的信息。</p>
 </li>
 <li>
-<p>在处理单步执行异常时，获取当前指令对应的行信息，与①中保存的行信息进行比较。如果相同，表示仍然在同一行上，转到②；如果不相同，表示已到了不同的行，结束StepIn。</p>
+<p>设置 TF 位，开始 CPU 的单步执行。</p>
+</li>
+<li>
+<p>在处理单步执行异常时，获取当前指令对应的行信息，与 ① 中保存的行信息进行比较。如果相同，表示仍然在同一行上，转到 ②；如果不相同，表示已到了不同的行，结束 StepIn。</p>
 </li>
 </ol>
+<h2 id="oep">各种 OEP<a class="headerlink" href="#oep" title="Permanent link">&para;</a></h2>
+<h3 id="delphi">delphi<a class="headerlink" href="#delphi" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>55            PUSH EBP
+8BEC          MOV EBP,ESP
+83C4 F0       ADD ESP,-10
+B8 A86F4B00   MOV EAX,PE.004B6FA8
+</pre></div>
+
+<h3 id="vc">vc++<a class="headerlink" href="#vc" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>55            PUSH EBP
+8BEC          MOV EBP,ESP
+83EC 44       SUB ESP,44
+56            PUSH ESI
+</pre></div>
+
+<h3 id="vc60">vc6.0<a class="headerlink" href="#vc60" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>55                 push ebp
+8BEC               mov ebp,esp
+6A FF              push -1
+</pre></div>
+
+<h3 id="vc70">vc7.0<a class="headerlink" href="#vc70" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span>6A 70              push 70
+68 50110001        push hh.01001150
+E8 1D020000        call hh.010017B0
+33DB               xor ebx,ebx
+</pre></div>
                 
                   
                 
