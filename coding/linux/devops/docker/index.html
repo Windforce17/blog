@@ -2779,10 +2779,10 @@
                 
                 <h2 id="_1">一些命令和脚本<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>删除所有None镜像<code>docker rmi -f $(docker images -f "dangling=true" -q)</code>  </li>
-<li>删除所有运行中镜像docker rm -f $(docker ps -aq)</li>
-<li>
-<p>docker ubuntu 安装脚本
+<li>删除所有 None 镜像<code>docker rmi -f $(docker images -f "dangling=true" -q)</code></li>
+<li>删除所有运行中镜像 docker rm -f $(docker ps -aq)</li>
+<li>docker ubuntu 安装脚本</li>
+</ul>
 <div class="codehilite"><pre><span></span>sudo apt-get install -y<span class="se">\</span>
     apt-transport-https <span class="se">\</span>
     ca-certificates <span class="se">\</span>
@@ -2798,29 +2798,47 @@ sudo apt-get update <span class="o">&amp;&amp;</span>
 sudo apt-get install -y docker-ce
 
 
-sudo <span class="nb">echo</span> -e <span class="s2">&quot;{\n </span>
+sudo <span class="nb">echo</span> -e <span class="s2">&quot;{\n</span>
 <span class="s2">  \&quot;registry-mirrors\&quot;: [\&quot;https://docker.mirrors.ustc.edu.cn/\&quot;]</span>
-<span class="s2">}&quot;</span> &gt;/etc/docker/daemon.json 
+<span class="s2">}&quot;</span> &gt;/etc/docker/daemon.json
 sudo systemctl restart docker
-</pre></div></p>
-</li>
-<li>
-<p>或者<code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></p>
-</li>
-<li>
-<p>docker 监听tcp，打开api
+</pre></div>
+
+<ul>
+<li>或者<code>curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun</code></li>
+</ul>
+<div class="codehilite"><pre><span></span>{
+  &quot;registry-mirrors&quot; : [
+    &quot;http://ovfftd6p.mirror.aliyuncs.com&quot;,
+    &quot;http://registry.docker-cn.com&quot;,
+    &quot;http://docker.mirrors.ustc.edu.cn&quot;,
+    &quot;http://hub-mirror.c.163.com&quot;
+  ],
+  &quot;insecure-registries&quot; : [
+    &quot;registry.docker-cn.com&quot;,
+    &quot;docker.mirrors.ustc.edu.cn&quot;
+  ],
+  &quot;debug&quot; : true,
+  &quot;experimental&quot; : true
+}
+</pre></div>
+
+<ul>
+<li>docker 监听 tcp，打开 api</li>
+</ul>
 <div class="codehilite"><pre><span></span><span class="c1"># 查看配置文件位于哪里</span>
-systemctl show --property<span class="o">=</span>FragmentPath docker 
+systemctl show --property<span class="o">=</span>FragmentPath docker
 <span class="c1">#编辑配置文件内容，接收所有ip请求</span>
-sudo vim /lib/systemd/system/docker.service  
+sudo vim /lib/systemd/system/docker.service
 <span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/dockerd -H unix:///var/run/docker.sock -H tcp://0.0.0.0:2376
 <span class="c1">#重新加载配置文件，重启docker daemon</span>
 sudo systemctl daemon-reload
 sudo systemctl restart docker
-</pre></div></p>
-</li>
-<li>
-<p>docker proxt set
+</pre></div>
+
+<ul>
+<li>docker proxt set</li>
+</ul>
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     mkdir /etc/systemd/system/docker.service.d/
 <span class="k">fi</span>
@@ -2833,15 +2851,14 @@ sudo systemctl restart docker
 
 systemctl daemon-reload
 systemctl restart docker
-</pre></div></p>
-</li>
-<li>
-<p>利用ssh转发unix sock
+</pre></div>
+
+<ul>
+<li>利用 ssh 转发 unix sock</li>
+</ul>
 <div class="codehilite"><pre><span></span>ssh -nNT -L /tmp/docker.sock:/var/run/docker.sock  &lt;USER&gt;@&lt;IP&gt; <span class="p">&amp;</span>
 <span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span>unix:///tmp/docker.sock <span class="c1"># docker client will communicate with this sock</span>
-</pre></div></p>
-</li>
-</ul>
+</pre></div>
                 
                   
                 
