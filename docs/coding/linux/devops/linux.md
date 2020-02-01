@@ -99,6 +99,13 @@ Physical volume "/dev/sdc1" successfully created
 - 查看连接最多的服务器端口：sysdig -c fdbytes_by fd.sport
 
 ## ssh 各种问题
+
+## ssh每次失败后重试时间设置
+
+
+    /etc/pam.d/system-login
+    auth optional pam_faildelay.so delay=4000000
+4秒后重试
 ### 权限问题
 ```sh
 chmod 700 ~ 
