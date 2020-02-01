@@ -1322,6 +1322,13 @@
     ssh 各种问题
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh_1" class="md-nav__link">
+    ssh每次失败后重试时间设置
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -2969,6 +2976,13 @@
     ssh 各种问题
   </a>
   
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh_1" class="md-nav__link">
+    ssh每次失败后重试时间设置
+  </a>
+  
     <nav class="md-nav">
       <ul class="md-nav__list">
         
@@ -3166,13 +3180,20 @@ Physical volume <span class="s2">&quot;/dev/sdc1&quot;</span> successfully creat
 <li>查看连接最多的服务器端口：sysdig -c fdbytes_by fd.sport</li>
 </ul>
 <h2 id="ssh">ssh 各种问题<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<h3 id="_5">权限问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><div class="codehilite"><pre><span></span>chmod <span class="m">700</span> ~ 
-chmod <span class="m">700</span> ~/.ssh 
-chmod <span class="m">644</span> ~/.ssh/authorized_keys 
-chmod <span class="m">600</span> ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
-chmod <span class="m">644</span> ~/.ssh/known_hosts
+<h2 id="ssh_1">ssh每次失败后重试时间设置<a class="headerlink" href="#ssh_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span>/etc/pam.d/system-login
+auth optional pam_faildelay.so delay=4000000
 </pre></div>
+
+
+<p>4秒后重试</p>
+<h3 id="_5">权限问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p><code>sh
+chmod 700 ~ 
+chmod 700 ~/.ssh 
+chmod 644 ~/.ssh/authorized_keys 
+chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+chmod 644 ~/.ssh/known_hosts</code>
 服务端开启文件AuthorizedKeysFile .ssh/authorized_keys</p>
 <h3 id="vm-machine-ssh">vm machine ssh不出去<a class="headerlink" href="#vm-machine-ssh" title="Permanent link">&para;</a></h3>
 <p><code>/etc/ssh/ssh_config</code> 中添加 <code>IPQoS lowdelay throughput</code></p>

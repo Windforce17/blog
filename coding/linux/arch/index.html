@@ -1110,13 +1110,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    ssh每次失败后重试时间设置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     安装后的
   </a>
@@ -2832,13 +2825,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssh" class="md-nav__link">
-    ssh每次失败后重试时间设置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     安装后的
   </a>
@@ -2900,7 +2886,23 @@
                   <h1>Arch</h1>
                 
                 <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>建议使用Ultra ISO,rufus(win),dd(linux)进行写入U盘</p>
+<p>建议使用Ultra ISO,rufus(win),dd(linux)进行写入U盘
+1. 验证hash，设置键盘，检查启动模式，连接互联网
+2. 更新时间<code>timedatectl set-ntp true</code>
+3. 分区，根目录，LVM，RAID,swap等,然后格式化,uefi的可以试试直接格式化/dev/sda....
+4. swap处理 <code>mkswap /dev/sdX2;swapon /dev/sdX2</code>
+5. 挂载根目录 <code>mount /dev/sdX1 /mnt</code> 
+6. 修改<code>/etc/pacman.d/mirrorlist</code> 选择最快的地址，我使用ustc和清华的，或者使用<code>pacman-mirrors -b testing -c China</code>
+7. 安装系统：<code>pacstrap /mnt base linux linux-firmware</code>
+8. 更新启动挂载盘:<code>genfstab -U /mnt &gt; /mnt/etc/fstab</code>
+8. 更改根目录，进入系统 <code>arch-chroot /mnt</code>
+9. 设置时区并同步到硬件:<code>ln -sf /usr/share/zoneinfo/Region/City /etc/localtime;hwclock --systohc</code>
+10. 本地化:注释掉你需要的locales在<code>/etc/locale.gen</code>,然后<code>locale-gen</code>
+11. 添加你的hostname<code>echo you_host_name &gt; /etc/hostname</code>
+12. 在<code>/etc/hosts</code>中添加你的本地ip，例如<code>127.0.0.1 you_hostname\n ::1 you_hostname</code>
+13. 安装grub引导:<code>grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg</code>
+14. 改密码:<code>passwd;reboot</code>
+15. 配置网络，自带了<code>systemd-networkd</code>，看<a href="https://wiki.archlinux.org/index.php/Systemd-networkd">这个</a></p>
 <h2 id="_2">联网<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/r8l8q8/article/details/73252970#79tkjm1497440352464">http://blog.csdn.net/r8l8q8/article/details/73252970#79tkjm1497440352464</a></p>
 <h2 id="wifi">wifi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h2>
@@ -2910,13 +2912,6 @@
 警告: lvm2、mdadm、encrypt支持默认是关闭的。
 参考：<a href="https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87</a>)</p>
 <h2 id="_3">安全设置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h2 id="ssh">ssh每次失败后重试时间设置<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>/etc/pam.d/system-login
-auth optional pam_faildelay.so delay=4000000
-</pre></div>
-
-
-<p>4秒后重试</p>
 <h2 id="_4">安装后的<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><span class="c1">#添加以下内容</span>
 sudo pacman-mirrors -b testing -c China<span class="o">&amp;&amp;</span>
@@ -2924,8 +2919,6 @@ sudo vi /etc/pacman.conf
 <span class="o">[</span>archlinuxcn<span class="o">]</span>
 <span class="nv">Server</span> <span class="o">=</span> https://mirrors.ustc.edu.cn/archlinuxcn/<span class="nv">$arch</span>
 sudo pacman -S archlinuxcn-keyring
-<span class="c1">#/etc/parman.d/mirrorlist</span>
-<span class="nv">Server</span> <span class="o">=</span> https://mirrors.ustc.edu.cn/manjaro/stable/<span class="nv">$repo</span>/<span class="nv">$arch</span>
 </pre></div>
 
 <h3 id="_5">环境配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>

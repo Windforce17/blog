@@ -2842,10 +2842,6 @@ sudo systemctl restart docker
 <div class="codehilite"><pre><span></span><span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     mkdir /etc/systemd/system/docker.service.d/
 <span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> ! -d <span class="s2">&quot;/etc/systemd/system/docker.service.d/&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    mkdir /etc/systemd/system/docker.service.d/
-<span class="k">fi</span>
 <span class="nb">echo</span> <span class="s1">&#39;[Service]</span>
 <span class="s1">Environment=&quot;HTTP_PROXY=http://127.0.0.1:8123&quot; &quot;HTTPS_PROXY=http://127.0.0.1:8123&quot; &quot;NO_PROXY=localhost,127.0.0.1&quot;&#39;</span> &gt; /etc/systemd/system/docker.service.d/http-proxy.conf
 
