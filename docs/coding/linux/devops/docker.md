@@ -31,7 +31,6 @@ sudo systemctl restart docker
 ```
 {
   "registry-mirrors" : [
-    "http://ovfftd6p.mirror.aliyuncs.com",
     "http://registry.docker-cn.com",
     "http://docker.mirrors.ustc.edu.cn",
     "http://hub-mirror.c.163.com"
@@ -39,9 +38,7 @@ sudo systemctl restart docker
   "insecure-registries" : [
     "registry.docker-cn.com",
     "docker.mirrors.ustc.edu.cn"
-  ],
-  "debug" : true,
-  "experimental" : true
+  ]
 }
 ```
 
