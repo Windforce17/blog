@@ -102,3 +102,4 @@ $$\int \sqrt{a^2-x^2}=\frac{x}{2}\sqrt{a^2-x^2}+\frac{a^2}{2}\arcsin \frac{x}{a}
 ### 题目
 
 https://zhuanlan.zhihu.com/p/78850527
+https://zhuanlan.zhihu.com/p/99890863
