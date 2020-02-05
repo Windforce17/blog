@@ -1,3 +1,7 @@
+## cloud docker nginx
+
+https://zhuanlan.zhihu.com/p/95255564
+
 ## 要复习的
 
 - 进程和线程的区别和其使用等
