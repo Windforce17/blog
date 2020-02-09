@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -3003,7 +3003,7 @@
 <p><code>objdump -d -M intel [elf_file]</code> 进行反汇编 elf 文件</p>
 <h2 id="pwntools">pwntools<a class="headerlink" href="#pwntools" title="Permanent link">&para;</a></h2>
 <p>板子:</p>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">binascii</span>
 <span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
@@ -3028,23 +3028,23 @@
     <span class="n">sh</span><span class="o">=</span><span class="n">process</span><span class="p">(</span><span class="n">elf_name</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">sh</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="n">remote_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">remote_addr</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="_1">运行时变量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">context</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="n">context</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">arch</span>      <span class="o">=</span> <span class="s1">&#39;i386&#39;</span> <span class="c1"># 32 bit</span>
 <span class="n">context</span><span class="o">.</span><span class="n">arch</span>      <span class="o">=</span> <span class="s1">&#39;amd64&#39;</span><span class="c1"># 64 bit</span>
 <span class="n">context</span><span class="o">.</span><span class="n">os</span>        <span class="o">=</span> <span class="s1">&#39;linux&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">endian</span>    <span class="o">=</span> <span class="s1">&#39;little&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">word_size</span> <span class="o">=</span> <span class="mi">32</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="_2">连接<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>sh = porcess("./level0")
 sh = remote("127.0.0.1",10001)
 sh.close()</p>
 <h3 id="io">IO<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">sh</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1">#发送数据</span>
+<div class="codehilite"><pre><span></span><code><span class="n">sh</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1">#发送数据</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>  <span class="c1">#发送一行数据，相当于在数据后面加</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">numb</span> <span class="o">=</span> <span class="mi">2048</span><span class="p">,</span> <span class="n">timeout</span> <span class="o">=</span> <span class="n">dufault</span><span class="p">)</span> <span class="c1"># 接受数据，numb指定接收的字节，timeout指定超时</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">recvline</span><span class="p">(</span><span class="n">keepends</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1">#接受一行数据，keepends为是否保留行尾的</span>
@@ -3052,34 +3052,34 @@ sh.close()</p>
 <span class="n">sh</span><span class="o">.</span><span class="n">recvall</span><span class="p">()</span> <span class="c1"># 一直接收直到EOF</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">recvrepeat</span><span class="p">(</span><span class="n">timeout</span> <span class="o">=</span> <span class="n">default</span><span class="p">)</span>  <span class="c1">#持续接受直到EOF或timeout</span>
 <span class="n">sh</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span> <span class="c1"># 直接进行交互，相当于回到shell的模式，在取得shell之后使用</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="_3">汇编和反汇编<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">asm</span><span class="p">(</span><span class="s1">&#39;nop&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">asm</span><span class="p">(</span><span class="s1">&#39;nop&#39;</span><span class="p">)</span>
 <span class="n">asm</span><span class="p">(</span><span class="s1">&#39;nop&#39;</span><span class="p">,</span><span class="n">arch</span><span class="o">=</span><span class="s1">&#39;arm&#39;</span><span class="p">)</span>
 <span class="n">disasm</span><span class="p">(</span><span class="s1">&#39;6a0258cd80ebf9&#39;</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">))</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="elf">ELF<a class="headerlink" href="#elf" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="s1">&#39;/bin/cat&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">e</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="s1">&#39;/bin/cat&#39;</span><span class="p">)</span>
 <span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">address</span><span class="p">)</span>  <span class="c1"># 文件装载的基地址</span>
 <span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">symbols</span><span class="p">[</span><span class="s1">&#39;write&#39;</span><span class="p">])</span> <span class="c1"># 函数地址</span>
 <span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">got</span><span class="p">[</span><span class="s1">&#39;write&#39;</span><span class="p">])</span> <span class="c1"># GOT表的地址</span>
 <span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">plt</span><span class="p">[</span><span class="s1">&#39;write&#39;</span><span class="p">])</span> <span class="c1"># PLT的地址</span>
 <span class="nb">print</span> <span class="nb">hex</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;/bin/sh&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">next</span><span class="p">())</span><span class="c1"># 字符串/bin/sh的地</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="rop">ROP<a class="headerlink" href="#rop" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">elf</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="s1">&#39;ropasaurusrex&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">elf</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="s1">&#39;ropasaurusrex&#39;</span><span class="p">)</span>
 <span class="n">rop</span> <span class="o">=</span> <span class="n">ROP</span><span class="p">(</span><span class="n">elf</span><span class="p">)</span>
 <span class="n">rop</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">elf</span><span class="o">.</span><span class="n">bss</span><span class="p">(</span><span class="mh">0x80</span><span class="p">))</span>
 <span class="n">rop</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
 <span class="nb">str</span><span class="p">(</span><span class="n">rop</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="dynelf">DynELF<a class="headerlink" href="#dynelf" title="Permanent link">&para;</a></h3>
 <p>专门应为没有 libc 的漏洞利用，基本框架</p>
-<div class="codehilite"><pre><span></span>p = process(&#39;./xxx&#39;)
+<div class="codehilite"><pre><span></span><code>p = process(&#39;./xxx&#39;)
 def leak(address):
   #各种预处理
   payload = &quot;xxxxxxxx&quot; + address + &quot;xxxxxxxx&quot;
@@ -3090,7 +3090,7 @@ def leak(address):
   return data
 d = DynELF(leak, elf=ELF(&quot;./xxx&quot;))      #初始化DynELF模块
 systemAddress = d.lookup(&#39;system&#39;, &#39;libc&#39;)  #在libc文件中搜索system函数的地址
-</pre></div>
+</code></pre></div>
 
 <h3 id="shellcraft">shellcraft<a class="headerlink" href="#shellcraft" title="Permanent link">&para;</a></h3>
 <p>shellcode=asm(shellcraft.sh())</p>
@@ -3102,11 +3102,11 @@ systemAddress = d.lookup(&#39;system&#39;, &#39;libc&#39;)  #在libc文件中搜
 <p><a href="https://github.com/inaz2/roputils">https://github.com/inaz2/roputils</a></p>
 <h2 id="dockerfile">dockerfile<a class="headerlink" href="#dockerfile" title="Permanent link">&para;</a></h2>
 <p>运行的时候需要赋予相应的权限：<code>--cap-add=SYS_PTRACE --security-opt seccomp=unconfined</code>,或者直接给 root，<code>--privileged</code>,添加下面两行到<code>~/.bashrc</code>里就可以快速打开 pwn 环境啦</p>
-<div class="codehilite"><pre><span></span><span class="nb">alias</span> <span class="nv">w1</span><span class="o">=</span><span class="s1">&#39;docker run --name pwntool --privileged --rm -it -v $HOME/ctf:/ctf/ pwntool /bin/bash&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">alias</span> <span class="nv">w1</span><span class="o">=</span><span class="s1">&#39;docker run --name pwntool --privileged --rm -it -v $HOME/ctf:/ctf/ pwntool /bin/bash&#39;</span>
 <span class="nb">alias</span> <span class="nv">w11</span><span class="o">=</span><span class="s1">&#39;docker exec -it pwntool bash&#39;</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="c"># ubuntu 18.04</span>
+<div class="codehilite"><pre><span></span><code><span class="c"># ubuntu 18.04</span>
 <span class="k">FROM</span> <span class="s">ubuntu:18.04</span>
 <span class="k">RUN</span> <span class="nb">echo</span> <span class="s1">&#39; deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic main restricted universe multiverse \n \</span>
 <span class="s1">deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-updates main restricted universe multiverse \n \</span>
@@ -3131,9 +3131,9 @@ COPY ./pwndbg pwndbg
     <span class="o">&amp;&amp;</span> ./setup.sh <span class="se">\</span>
     apt clean
 <span class="k">WORKDIR</span><span class="s"> /ctf</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="c"># ubuntu 16.04</span>
+<div class="codehilite"><pre><span></span><code><span class="c"># ubuntu 16.04</span>
 <span class="k">FROM</span> <span class="s">ubuntu:16.04</span>
 <span class="c"># RUN echo &#39; deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial main restricted universe multiverse \n \</span>
 <span class="c"># deb http://mirrors.tuna.tsinghua.edu.cn/ubuntu/ xenial-updates main restricted universe multiverse \n \</span>
@@ -3159,7 +3159,7 @@ COPY ./pwndbg pwndbg
     <span class="o">&amp;&amp;</span> ./setup.sh <span class="se">\</span>
     apt clean
 <span class="k">WORKDIR</span><span class="s"> /ctf</span>
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -3259,7 +3259,7 @@ COPY ./pwndbg pwndbg
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -3015,24 +3015,24 @@ pngcheck 分析png中的压缩信息
 python-PIL 处理图片库</p>
 <h2 id="zsteg">zsteg<a class="headerlink" href="#zsteg" title="Permanent link">&para;</a></h2>
 <p>这是一个ruby写的工具
-<div class="codehilite"><pre><span></span>gem install zsteg
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code>gem install zsteg
+</code></pre></div></p>
 <h2 id="strings-14">strings 命令查看大于14个字符串<a class="headerlink" href="#strings-14" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>strings qweqwe.pcapng <span class="p">|</span> grep <span class="s1">&#39;^[a-z0-9]\{14\}$&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span> &gt; test.txt
-</pre></div>
+<div class="codehilite"><pre><span></span><code>strings qweqwe.pcapng <span class="p">|</span> grep <span class="s1">&#39;^[a-z0-9]\{14\}$&#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span> &gt; test.txt
+</code></pre></div>
 
 <h2 id="ntfs">NTFS<a class="headerlink" href="#ntfs" title="Permanent link">&para;</a></h2>
 <h3 id="ntfs_1">NTFS 文件恢复<a class="headerlink" href="#ntfs_1" title="Permanent link">&para;</a></h3>
 <p><a href="https://blog.csdn.net/qq_18218335/article/details/57415615">https://blog.csdn.net/qq_18218335/article/details/57415615</a></p>
 <h3 id="ads">ADS流<a class="headerlink" href="#ads" title="Permanent link">&para;</a></h3>
 <p>这是一种<code>隐藏文件</code>的方法
-<div class="codehilite"><pre><span></span><span class="c"># 创建数据流</span>
+<div class="codehilite"><pre><span></span><code><span class="c"># 创建数据流</span>
 <span class="n">c</span><span class="err">:</span><span class="p">\</span><span class="n">test</span><span class="p">&gt;</span><span class="nb">echo </span><span class="n">Hello</span><span class="p">,</span> <span class="n">freebuf</span><span class="p">!</span> <span class="p">&gt;</span> <span class="n">test</span><span class="p">.</span><span class="n">txt</span><span class="err">:</span><span class="n">ThisIsAnADS</span>
 <span class="c">## 列出数据流</span>
 <span class="n">c</span><span class="err">:</span><span class="p">\</span><span class="n">test</span><span class="p">&gt;</span><span class="nb">dir </span><span class="p">/</span><span class="nb">r </span><span class="n">test</span><span class="p">.</span><span class="n">txt</span>
 <span class="c"># 查看ADS内容</span>
 <span class="nb">PS </span><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">test</span><span class="p">&gt;</span> <span class="nb">Get-Content</span> <span class="n">test</span><span class="p">.</span><span class="n">txt</span> <span class="n">-stream</span> <span class="n">ThisIsAnADS</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="png">png<a class="headerlink" href="#png" title="Permanent link">&para;</a></h2>
 <p>分析lsb：<a href="https://github.com/zed-0xff/zsteg">https://github.com/zed-0xff/zsteg</a></p>
 <h2 id="png_1">png图片格式<a class="headerlink" href="#png_1" title="Permanent link">&para;</a></h2>
@@ -3042,10 +3042,10 @@ python-PIL 处理图片库</p>
 <h2 id="zlib">zlib<a class="headerlink" href="#zlib" title="Permanent link">&para;</a></h2>
 <p>78 9C是zlib压缩标志
 zlib扩展阅读http://zlib.net/</p>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">zlib</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">zlib</span>
 <span class="n">zlib</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="s1">&#39;xxdaxabHI.Ixab..1NOxcc3H/2)xc8xa8xd4MxcdK6H1xd657xae(xd15xcc+xc9xd75xcc5IOxadx05x00Zpx0fx1798&amp;4f#ti</span><span class="si">%d</span><span class="s1">c&#39;</span><span class="p">)</span>
 <span class="c1"># output: &#39;xdctf{st3gan0gr4phy-enc0d3-73xt-1nto-1m4ge}&#39;</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="gif">GIF<a class="headerlink" href="#gif" title="Permanent link">&para;</a></h2>
 <p>开头GIF8[7/9]a</p>
@@ -3053,7 +3053,7 @@ zlib扩展阅读http://zlib.net/</p>
 <p><a href="http://dev.gameres.com/Program/Visual/Other/GIFDoc.htm">http://dev.gameres.com/Program/Visual/Other/GIFDoc.htm</a>
 可以用Stegsolve播放帧</p>
 <h2 id="pil">PIL库的使用<a class="headerlink" href="#pil" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">Image</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">Image</span>
 <span class="n">MAX</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="n">pic</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;RGB&quot;</span><span class="p">,(</span><span class="n">MAX</span><span class="p">,</span> <span class="n">MAX</span><span class="p">))</span>
 <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;1111111000100001101111111100000101110010110100000110111010100000000010111011011101001000000001011101101110101110110100101110110000010101011011010000011111111010101010101111111000000001011101110000000011010011000001010011101101111010101001000011100000000000101000000001001001101000100111001111011100111100001110111110001100101000110011100001010100011010001111010110000010100010110000011011101100100001110011100100001011111110100000000110101001000111101111111011100001101011011100000100001100110001111010111010001101001111100001011101011000111010011100101110100100111011011000110000010110001101000110001111111011010110111011011&quot;</span>
@@ -3072,7 +3072,7 @@ zlib扩展阅读http://zlib.net/</p>
 <span class="kn">import</span> <span class="nn">Image</span>
 <span class="n">a</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;zxczxc.png&#39;</span><span class="p">)</span>
 <span class="n">a</span><span class="o">.</span><span class="n">point</span><span class="p">(</span><span class="k">lambda</span> <span class="n">i</span><span class="p">:</span> <span class="mi">255</span> <span class="k">if</span> <span class="n">i</span><span class="o">&amp;</span><span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="base64">base64转图片<a class="headerlink" href="#base64" title="Permanent link">&para;</a></h2>
 <p><img src="data:image/jpg;base64,ZmxhZ3t4Y3Rmezg4MzEyN2QyNzI2MjZjOWFmN2Q3M2Q5M2JlMDBkZTQ3fX0="></p>
@@ -3175,7 +3175,7 @@ zlib扩展阅读http://zlib.net/</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

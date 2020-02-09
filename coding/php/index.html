@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2894,7 +2894,7 @@
                   <h1>Php</h1>
                 
                 <h2 id="nginx">nginx 中到配置<a class="headerlink" href="#nginx" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>  location ~ [^/]\.php(/|$) {
+<div class="codehilite"><pre><span></span><code>  location ~ [^/]\.php(/|$) {
     fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
     #fastcgi_pass unix:/dev/shm/php-cgi.sock;
     #fastcgi_pass remote_php_ip:9000;
@@ -2902,45 +2902,45 @@
     fastcgi_index index.php;
     include fastcgi.conf;
   }
-</pre></div>
+</code></pre></div>
 
 <h2 id="phpdebug-php">任意环境下调试 php,debug php<a class="headerlink" href="#phpdebug-php" title="Permanent link">&para;</a></h2>
 <p>在不管 php.ini 配置的情况下开启 php 调试,php debug.</p>
-<div class="codehilite"><pre><span></span><span class="x">ini_set(&#39;display_errors&#39;,1);            //错误信息</span>
+<div class="codehilite"><pre><span></span><code><span class="x">ini_set(&#39;display_errors&#39;,1);            //错误信息</span>
 <span class="x">ini_set(&#39;display_startup_errors&#39;,1);    //php启动错误信息</span>
 <span class="x">error_reporting(-1);                    //打印出所有的 错误信息</span>
 <span class="x">ini_set(&#39;error_log&#39;, dirname(__FILE__) . &#39;/error_log.txt&#39;); //将出错信息输出到一个文本文件</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="debug-phpini">debug php.ini<a class="headerlink" href="#debug-phpini" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">;显示错误信息</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">;显示错误信息</span>
 <span class="na">display_errors</span> <span class="o">=</span> <span class="s">On</span>
 <span class="c1">;显示php开始错误信息</span>
 <span class="na">display_startup_errors</span> <span class="o">=</span> <span class="s">On</span>
 <span class="c1">;日志记录错误信息</span>
 <span class="na">log_errors</span> <span class="o">=</span> <span class="s">On</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="_1">一些函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><a href="https://segmentfault.com/a/1190000003841357">PHP mysqli 操作数据库</a></p>
 <h3 id="extract">extract()<a class="headerlink" href="#extract" title="Permanent link">&para;</a></h3>
 <p>数从数组中将变量导入到当前的符号表。</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nv">$a</span> <span class="o">=</span> <span class="s2">&quot;Original&quot;</span><span class="p">;</span>
 <span class="nv">$my_array</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Cat&quot;</span><span class="p">,</span><span class="s2">&quot;b&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Dog&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Horse&quot;</span><span class="p">);</span>
 <span class="nb">extract</span><span class="p">(</span><span class="nv">$my_array</span><span class="p">);</span>
 <span class="k">echo</span> <span class="s2">&quot;</span><span class="se">\$</span><span class="s2">a = </span><span class="si">$a</span><span class="s2">; </span><span class="se">\$</span><span class="s2">b = </span><span class="si">$b</span><span class="s2">; </span><span class="se">\$</span><span class="s2">c = </span><span class="si">$c</span><span class="s2">&quot;</span><span class="p">;</span>
 <span class="cp">?&gt;</span><span class="x"></span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="parse_str">parse_str()<a class="headerlink" href="#parse_str" title="Permanent link">&para;</a></h3>
 <p>将查询到的字符串解析到变量中</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">&lt;?php</span>
 <span class="nb">parse_str</span><span class="p">(</span><span class="s2">&quot;name=Bill&amp;age=60&quot;</span><span class="p">);</span>
 <span class="k">echo</span> <span class="nv">$name</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
 <span class="k">echo</span> <span class="nv">$age</span><span class="p">;</span>
 <span class="cp">?&gt;</span><span class="x"></span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="import_request_variables">import_request_variables()<a class="headerlink" href="#import_request_variables" title="Permanent link">&para;</a></h3>
 <p>将 GET／POST／Cookie 变量导入到全局作用域中</p>
@@ -3043,7 +3043,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

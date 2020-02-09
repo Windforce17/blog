@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2833,12 +2833,12 @@
 <p>多线程中使用TLS的例子（动态）
 相关API
 Windows TLS的API: <code>TlsAlloc</code>, <code>TlsFree</code>, <code>TlsSetValue</code>, <code>TlsGetValue</code>。(动态TLS)
-<div class="codehilite"><pre><span></span><span class="n">DWORD</span> <span class="nf">TlsAlloc</span><span class="p">();</span> <span class="c1">//(若要使用动态T L S，首先必须调用TlsAlloc函数)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">DWORD</span> <span class="nf">TlsAlloc</span><span class="p">();</span> <span class="c1">//(若要使用动态T L S，首先必须调用TlsAlloc函数)</span>
 <span class="c1">//这个函数命令系统对进程中的位标志进行扫描，并找出一个FREE标志。然后系统将该标志从FREE改为INUSE，并且TlsAlloc返回位数组中的标志的索引。DLL（或APP）通常将该索引保存在一个全局变量中，因为它的值是每个进程而不是每个线程使用的值。</span>
 <span class="n">BOOL</span> <span class="nf">TlsSetValue</span><span class="p">(</span> <span class="n">DWORD</span> <span class="n">dwTlsIndex</span><span class="p">,</span><span class="n">PVOID</span> <span class="n">pvTlsValue</span><span class="p">);</span> <span class="c1">//将一个值放入线程的数组中</span>
 <span class="n">PVOID</span> <span class="nf">TlsGetValue</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwTlsIndex</span><span class="p">);</span> <span class="c1">//要从线程的数组中检索一个值</span>
 <span class="n">BOOL</span> <span class="nf">TlsFree</span><span class="p">(</span><span class="n">DWORD</span> <span class="n">dwTlsIndex</span><span class="p">);</span> <span class="c1">//当在所有线程中不再需要保留TLS槽时</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="_2">其他资料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>(用到了再看)
 <a href="https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=208428">https://www.52pojie.cn/forum.php?mod=viewthread&amp;tid=208428</a></p>
@@ -2941,7 +2941,7 @@ Windows TLS的API: <code>TlsAlloc</code>, <code>TlsFree</code>, <code>TlsSetValu
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

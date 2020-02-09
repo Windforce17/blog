@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2813,15 +2813,15 @@
                 
                 <p>记录一些ida api的技巧</p>
 <h2 id="_1">获得范围内数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><div class="codehilite"><pre><span></span><span class="n">buf</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_many_bytes</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<p><div class="codehilite"><pre><span></span><code><span class="n">buf</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_many_bytes</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
 <span class="n">buf</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 转为C数组
-<div class="codehilite"><pre><span></span><span class="n">buf</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_many_bytes</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">buf</span> <span class="o">=</span> <span class="n">idaapi</span><span class="o">.</span><span class="n">get_many_bytes</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)</span>
 <span class="n">buf</span> <span class="o">=</span> <span class="n">buf</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">)</span>
 <span class="n">two_hex_char_seq</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">operator</span><span class="o">.</span><span class="n">add</span><span class="p">,</span> <span class="n">buf</span><span class="p">[::</span><span class="mi">2</span><span class="p">],</span> <span class="n">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">c_array</span> <span class="o">=</span> <span class="s2">&quot;{0x&quot;</span> <span class="o">+</span> <span class="s2">&quot;, 0x&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">two_hex_char_seq</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;}&quot;</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="_2">插件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>golang逆向：<a href="https://github.com/sibears/IDAGolangHelper">https://github.com/sibears/IDAGolangHelper</a></p>
                 
@@ -2923,7 +2923,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

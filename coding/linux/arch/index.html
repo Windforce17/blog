@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2937,21 +2937,21 @@
 参考：<a href="https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87</a>)</p>
 <h2 id="_3">安全设置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <h2 id="_4">安装后的<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">#添加以下内容</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#添加以下内容</span>
 sudo pacman-mirrors -b testing -c China<span class="o">&amp;&amp;</span>
 sudo vi /etc/pacman.conf
 <span class="o">[</span>archlinuxcn<span class="o">]</span>
 <span class="nv">Server</span> <span class="o">=</span> https://mirrors.ustc.edu.cn/archlinuxcn/<span class="nv">$arch</span>
 sudo pacman -S archlinuxcn-keyring
-</pre></div>
+</code></pre></div>
 
 <h3 id="_5">环境配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># fonts</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># fonts</span>
  yay -S adobe-source-han-sans-otc-fonts
  yay -S wqy-zenhei wqy-microhei
  yay -S ttf-ms-win10-zh_cn
  yay -S wps-office
-</pre></div>
+</code></pre></div>
 
 <h3 id="qq">qq<a class="headerlink" href="#qq" title="Permanent link">&para;</a></h3>
 <p>安装<code>环境配置</code>中的两个字体
@@ -3058,7 +3058,7 @@ wqy-zenhei与wqy-microhei</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

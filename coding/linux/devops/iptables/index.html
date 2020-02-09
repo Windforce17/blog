@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2817,7 +2817,7 @@
                 
                 <h2 id="iptables">iptables<a class="headerlink" href="#iptables" title="Permanent link">&para;</a></h2>
 <p>注意 --dport 在INPUT指本机端口，而在OUTPUT中相反，设置interface时，input中是 -i ，OUTPUT中是-o
-<div class="codehilite"><pre><span></span><span class="c1">#一下命令配合state模块使用可以更简化</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#一下命令配合state模块使用可以更简化</span>
 <span class="c1"># 删掉所有规则</span>
 iptables -F
 <span class="c1"># 设置默认行为</span>
@@ -2844,18 +2844,18 @@ iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
 <span class="c1"># 允许ping出去</span>
 iptables -A INPUT -p icmp --icmp-type echo-reply -j ACCEPT
 iptables -A OUTPUT -p icmp --icmp-type echo-request -j ACCEPT
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="state">state 插件<a class="headerlink" href="#state" title="Permanent link">&para;</a></h2>
 <p>如果将默认INPUT设置为DROP，那么对于链接建立后，后续的包将全部被DROP，因为没有设置--sport 
-<div class="codehilite"><pre><span></span>iptables -A INPUT -p tcp --dport <span class="m">22</span> -j ACCEPT
-</pre></div>
+<div class="codehilite"><pre><span></span><code>iptables -A INPUT -p tcp --dport <span class="m">22</span> -j ACCEPT
+</code></pre></div>
 此时需要state插件，用来放行RELATED，ESTABLISHED的数据包。(记得放行本地回环)
-<div class="codehilite"><pre><span></span><span class="c1"># not test</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># not test</span>
 iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEP
-</pre></div>
+</code></pre></div>
 开放端口
-<div class="codehilite"><pre><span></span>iptables -I INPUT <span class="m">3</span> -m state --state NEW  -p tcp --dport <span class="m">2333</span> -j ACCEPT
-</pre></div>
+<div class="codehilite"><pre><span></span><code>iptables -I INPUT <span class="m">3</span> -m state --state NEW  -p tcp --dport <span class="m">2333</span> -j ACCEPT
+</code></pre></div>
 更多用法，支持multiport， 请百度
 参考资料 <a href="http://blog.51cto.com/nashsun/1847526">iptables_51CTO</a></p>
                 
@@ -2957,7 +2957,7 @@ iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEP
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

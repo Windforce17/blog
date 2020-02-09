@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2828,7 +2828,7 @@
                   <h1>Gin</h1>
                 
                 <h2 id="_1">跨域处理<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="nx">route</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">Default</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="nx">route</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nx">Default</span><span class="p">()</span>
     <span class="nx">route</span><span class="p">.</span><span class="nx">Use</span><span class="p">(</span><span class="nx">cors</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">cors</span><span class="p">.</span><span class="nx">Config</span><span class="p">{</span>
         <span class="nx">AllowOriginFunc</span><span class="p">:</span>  <span class="kd">func</span><span class="p">(</span><span class="nx">origin</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">bool</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span> <span class="p">},</span>
         <span class="nx">AllowMethods</span><span class="p">:</span>     <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;GET&quot;</span><span class="p">,</span> <span class="s">&quot;POST&quot;</span><span class="p">,</span> <span class="s">&quot;PUT&quot;</span><span class="p">,</span> <span class="s">&quot;DELETE&quot;</span><span class="p">,</span> <span class="s">&quot;PATCH&quot;</span><span class="p">},</span>
@@ -2836,16 +2836,16 @@
         <span class="nx">AllowCredentials</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
         <span class="nx">MaxAge</span><span class="p">:</span>           <span class="mi">12</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Hour</span><span class="p">,</span>
     <span class="p">}))</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="staticfile">staticFIle<a class="headerlink" href="#staticfile" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="nx">route</span><span class="p">.</span><span class="nx">StaticFile</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="s">`send.html`</span><span class="p">)</span><span class="c1">//file</span>
+<div class="codehilite"><pre><span></span><code><span class="nx">route</span><span class="p">.</span><span class="nx">StaticFile</span><span class="p">(</span><span class="s">&quot;/&quot;</span><span class="p">,</span> <span class="s">`send.html`</span><span class="p">)</span><span class="c1">//file</span>
 <span class="nx">route</span><span class="p">.</span><span class="nx">StaticFS</span><span class="p">(</span><span class="s">&quot;/static&quot;</span><span class="p">,</span><span class="nx">http</span><span class="p">.</span><span class="nx">Dir</span><span class="p">(</span><span class="s">&quot;static&quot;</span><span class="p">))</span> <span class="c1">//dir</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="json">返回json<a class="headerlink" href="#json" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="nx">c</span><span class="p">.</span><span class="nx">JSON</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">CountryStatics</span><span class="p">)</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nx">c</span><span class="p">.</span><span class="nx">JSON</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">CountryStatics</span><span class="p">)</span>
+</code></pre></div>
                 
                   
                 
@@ -2945,7 +2945,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

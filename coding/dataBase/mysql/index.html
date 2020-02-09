@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -3317,48 +3317,48 @@
                 
                 <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="win">win<a class="headerlink" href="#win" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>mysqld --initialize //第一次安装，初始化data文件
+<div class="codehilite"><pre><span></span><code>mysqld --initialize //第一次安装，初始化data文件
 mysqld  -install
 net start mysql
 mysqld  -remove //卸载
 ## 非root账户，localhost不能登陆
-</pre></div>
+</code></pre></div>
 
 <h2 id="_2">创建用户<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;git_cugapp_com&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;12345&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">CREATE</span> <span class="k">USER</span> <span class="s1">&#39;git_cugapp_com&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;12345&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <h2 id="_3">创建用户并同时授权<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="n">db_name</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="n">db_user</span><span class="o">@</span><span class="s1">&#39;%&#39;</span> <span class="n">identified</span> <span class="k">by</span> <span class="s1">&#39;db_pass&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="n">db_name</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="n">db_user</span><span class="o">@</span><span class="s1">&#39;%&#39;</span> <span class="n">identified</span> <span class="k">by</span> <span class="s1">&#39;db_pass&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <h2 id="root">授权 root 登陆，外部访问<a class="headerlink" href="#root" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">--兼容5.7以前的mysql</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">--兼容5.7以前的mysql</span>
 <span class="k">update</span> <span class="n">mysql</span><span class="p">.</span><span class="k">user</span> <span class="k">set</span> <span class="n">plugin</span> <span class="o">=</span> <span class="s1">&#39;mysql_native_password&#39;</span> <span class="k">where</span> <span class="k">User</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span>
 <span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="n">git_cugapp_com</span><span class="p">.</span><span class="o">*</span> <span class="k">to</span> <span class="s1">&#39;git_cugapp_com&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="p">;</span>
 <span class="c1">--所有ip都可以的登陆</span>
 <span class="k">GRANT</span> <span class="k">ALL</span> <span class="k">PRIVILEGES</span> <span class="k">ON</span> <span class="o">*</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;root&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span> <span class="k">WITH</span> <span class="k">GRANT</span> <span class="k">OPTION</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="_4">改密码<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="k">update</span> <span class="k">user</span> <span class="k">set</span> <span class="n">authentication_string</span><span class="o">=</span><span class="n">password</span><span class="p">(</span><span class="s1">&#39;cug666&#39;</span><span class="p">)</span> <span class="k">where</span> <span class="k">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="k">update</span> <span class="k">user</span> <span class="k">set</span> <span class="n">authentication_string</span><span class="o">=</span><span class="n">password</span><span class="p">(</span><span class="s1">&#39;cug666&#39;</span><span class="p">)</span> <span class="k">where</span> <span class="k">user</span><span class="o">=</span><span class="s1">&#39;root&#39;</span><span class="p">;</span>
+</code></pre></div>
 
 <h2 id="_5">排错<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <h3 id="57-or">从 5.7 前不正确的升级 or 导入<a class="headerlink" href="#57-or" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>ERROR 1805 (HY000): Column count of mysql.user is wrong. Expected 45, found 48. The table is probably corrupted
-</pre></div>
+<div class="codehilite"><pre><span></span><code>ERROR 1805 (HY000): Column count of mysql.user is wrong. Expected 45, found 48. The table is probably corrupted
+</code></pre></div>
 
 <p>输入下面命令解决，如果提示密码错误，跳过授权表启动 mysql</p>
-<div class="codehilite"><pre><span></span>mysql_upgrade --force -u root -p
-</pre></div>
+<div class="codehilite"><pre><span></span><code>mysql_upgrade --force -u root -p
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="k">alter</span> <span class="k">table</span> <span class="k">user</span> <span class="k">drop</span> <span class="k">column</span> <span class="n">is_role</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="k">alter</span> <span class="k">table</span> <span class="k">user</span> <span class="k">drop</span> <span class="k">column</span> <span class="n">is_role</span><span class="p">;</span>
 <span class="k">alter</span> <span class="k">table</span> <span class="k">user</span> <span class="k">drop</span> <span class="k">column</span> <span class="n">default_role</span><span class="p">;</span>
 <span class="k">alter</span> <span class="k">table</span> <span class="k">user</span> <span class="k">drop</span> <span class="k">column</span> <span class="n">max_statement_time</span><span class="p">;</span>
 <span class="k">alter</span> <span class="k">table</span> <span class="k">user</span> <span class="k">modify</span> <span class="n">max_user_connections</span> <span class="nb">int</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span> <span class="n">unsigned</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="s1">&#39;0&#39;</span><span class="p">;</span>
 <span class="n">flush</span> <span class="k">privileges</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="_6">常用命令，查询<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <blockquote>
@@ -3371,16 +3371,16 @@ mysqld  -remove //卸载
 返回插件目录</p>
 </blockquote>
 <h3 id="_7">各个库的大小<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="k">select</span> <span class="n">table_schema</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">data_length</span><span class="o">+</span><span class="n">index_length</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">as</span> <span class="n">total_mb</span><span class="p">,</span> <span class="err">\</span>
+<div class="codehilite"><pre><span></span><code><span class="k">select</span> <span class="n">table_schema</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">data_length</span><span class="o">+</span><span class="n">index_length</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">as</span> <span class="n">total_mb</span><span class="p">,</span> <span class="err">\</span>
 <span class="k">sum</span><span class="p">(</span><span class="n">data_length</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">as</span> <span class="n">data_mb</span><span class="p">,</span> <span class="k">sum</span><span class="p">(</span><span class="n">index_length</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span> <span class="k">as</span> <span class="n">index_mb</span><span class="p">,</span> <span class="err">\</span>
 <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">tables</span><span class="p">,</span> <span class="n">curdate</span><span class="p">()</span> <span class="k">as</span> <span class="n">today</span> <span class="k">from</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">group</span> <span class="k">by</span> <span class="n">table_schema</span> <span class="k">order</span> <span class="k">by</span> <span class="mi">2</span> <span class="k">desc</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="_8">单库下所有表的状态<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span> <span class="k">select</span> <span class="k">table_name</span><span class="p">,</span> <span class="p">(</span><span class="n">data_length</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span> <span class="k">as</span> <span class="n">data_mb</span> <span class="p">,</span> <span class="p">(</span><span class="n">index_length</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span> <span class="err">\</span>
+<div class="codehilite"><pre><span></span><code> <span class="k">select</span> <span class="k">table_name</span><span class="p">,</span> <span class="p">(</span><span class="n">data_length</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span> <span class="k">as</span> <span class="n">data_mb</span> <span class="p">,</span> <span class="p">(</span><span class="n">index_length</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span> <span class="err">\</span>
 <span class="k">as</span> <span class="n">index_mb</span><span class="p">,</span> <span class="p">((</span><span class="n">data_length</span><span class="o">+</span><span class="n">index_length</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mi">1024</span><span class="p">)</span> <span class="k">as</span> <span class="n">all_mb</span><span class="p">,</span> <span class="n">table_rows</span> <span class="err">\</span>
 <span class="k">from</span> <span class="n">tables</span> <span class="k">where</span> <span class="n">table_schema</span> <span class="o">=</span> <span class="s1">&#39;data_1234567890&#39;</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="mysql">mysql 密码忘记处理<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h2>
 <h3 id="windows">Windows 密码忘记处理<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
@@ -3401,8 +3401,8 @@ mysqld  -remove //卸载
 <ol>
 <li>
 <p>停止 MySQLd；</p>
-<div class="codehilite"><pre><span></span>sudo /etc/init.d/MySQL stop
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo /etc/init.d/MySQL stop
+</code></pre></div>
 
 
 <p>(您可能有其它的方法,总之停止 MySQLd 的运行就可以了)</p>
@@ -3411,9 +3411,9 @@ mysqld  -remove //卸载
 <p>用以下命令启动 MySQL，以不检查权限的方式启动；</p>
 </li>
 </ol>
-<div class="codehilite"><pre><span></span>    MySQLd --skip-grant-tables <span class="p">&amp;</span> <span class="c1">#下面的也行</span>
+<div class="codehilite"><pre><span></span><code>    MySQLd --skip-grant-tables <span class="p">&amp;</span> <span class="c1">#下面的也行</span>
     mysqld_safe --skip-grant-tables --skip-networking <span class="p">&amp;</span>
-</pre></div>
+</code></pre></div>
 
 <ol>
 <li>
@@ -3422,10 +3422,10 @@ mysqld  -remove //卸载
 </li>
 <li>
 <p>修改 root 用户的密码；</p>
-<div class="codehilite"><pre><span></span>MySQL&gt; update MySQL.user set password=PASSWORD(&#39;newpassword&#39;) where User=&#39;root&#39;;
+<div class="codehilite"><pre><span></span><code>MySQL&gt; update MySQL.user set password=PASSWORD(&#39;newpassword&#39;) where User=&#39;root&#39;;
 MySQL&gt; flush privileges;
 MySQL&gt; quit
-</pre></div>
+</code></pre></div>
 
 
 <p>重新启动 MySQL
@@ -3459,7 +3459,7 @@ lines terminated by '\r\n';</p>
   <code>select * from product where Year(add_time) = 2013 and Month(add_time) = 1</code></li>
 </ul>
 <h3 id="_13">两个时间不能直接相减，不然会出错!!<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>    <span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span> <span class="k">from</span> <span class="n">mytest</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">mysql</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">t1</span><span class="p">,</span><span class="n">t2</span><span class="p">,</span><span class="n">t2</span><span class="o">-</span><span class="n">t1</span> <span class="k">from</span> <span class="n">mytest</span><span class="p">;</span>
     <span class="o">+</span><span class="c1">---------------------+---------------------+-------+</span>
     <span class="o">|</span> <span class="n">t1</span>                  <span class="o">|</span> <span class="n">t2</span>                  <span class="o">|</span> <span class="n">t2</span><span class="o">-</span><span class="n">t1</span> <span class="o">|</span>
     <span class="o">+</span><span class="c1">---------------------+---------------------+-------+</span>
@@ -3468,7 +3468,7 @@ lines terminated by '\r\n';</p>
     <span class="o">|</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">21</span> <span class="mi">16</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">33</span> <span class="o">|</span> <span class="mi">2013</span><span class="o">-</span><span class="mi">04</span><span class="o">-</span><span class="mi">21</span> <span class="mi">17</span><span class="p">:</span><span class="mi">59</span><span class="p">:</span><span class="mi">35</span> <span class="o">|</span> <span class="mi">10002</span> <span class="o">|</span>
     <span class="o">+</span><span class="c1">---------------------+---------------------+-------+</span>
     <span class="mi">3</span> <span class="k">rows</span> <span class="k">in</span> <span class="k">set</span>
-</pre></div>
+</code></pre></div>
 
 <h4 id="_14">原因<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
 <p>实际是 mysql 的时间相减是做了一个隐式转换操作，将时间转换为<code>整数</code>但并不是用<code>unix_timestamp</code>转换，而是直接把年月日时分秒拼起来，如 2013-04-21 16:59:33 直接转换为<code>20130421165933</code>，由于时间不是十进制，所以最后得到的结果<strong>没有意义</strong>，这也是导致上面出现坑爹的结果。</p>
@@ -3773,7 +3773,7 @@ mysql> select @@validate_password_length;
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

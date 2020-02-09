@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2853,7 +2853,7 @@
                 
                 <h2 id="linux">linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
 <h3 id="ptrace">ptrace<a class="headerlink" href="#ptrace" title="Permanent link">&para;</a></h3>
-<p><div class="codehilite"><pre><span></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<p><div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">ptrace</span><span class="p">(</span><span class="n">PTRACE_TRACEME</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">printf</span><span class="p">(</span><span class="s">&quot;DEBUGGING... Bye</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
@@ -2862,11 +2862,11 @@
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 断点+patch即可</p>
 <h3 id="_1">断点检测<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>检测指令是否为0xcc
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="nf">foo</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
 <span class="p">}</span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
@@ -2876,17 +2876,17 @@
     <span class="p">}</span>
     <span class="n">foo</span><span class="p">();</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 使用perl绕过
 antibp.pl:
-<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/perl</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/perl</span>
 <span class="k">while</span><span class="p">(</span><span class="o">&lt;&gt;</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span><span class="nv">$_</span> <span class="o">=~</span> <span class="sr">m/([0-9a-f][4]:\s*[0-9a-f \t]*.*0xcc)/</span> <span class="p">){</span> <span class="k">print</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">}</span>
 <span class="sb">`objdump -M intel -d xxx.elf | ./antibp.pl`</span>
  <span class="mi">80483</span><span class="n">be:</span> <span class="mi">3</span><span class="n">d</span> <span class="n">cc</span> <span class="mo">00</span> <span class="mo">00</span> <span class="mo">00</span> <span class="ow">cmp</span> <span class="n">eax</span><span class="p">,</span><span class="mh">0xcc</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="windows">windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h2>
 <p>//TODO
 need to test
@@ -2990,7 +2990,7 @@ need to test
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

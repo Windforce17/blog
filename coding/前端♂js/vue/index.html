@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2988,7 +2988,7 @@
                   <h1>Vue</h1>
                 
                 <h2 id="vuex">vuex<a class="headerlink" href="#vuex" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">//虽然分模块化，但是actions和mutations依然注册为全局</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">//虽然分模块化，但是actions和mutations依然注册为全局</span>
 <span class="c1">//全局store</span>
 <span class="c1">//const store = new Vuex.Store({</span>
 <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
@@ -3018,15 +3018,15 @@
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="v-chart">v-chart<a class="headerlink" href="#v-chart" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="nx">VCharts</span> <span class="nx">from</span> <span class="s2">&quot;v-charts&quot;</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code><span class="kr">import</span> <span class="nx">VCharts</span> <span class="nx">from</span> <span class="s2">&quot;v-charts&quot;</span><span class="p">;</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">VCharts</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="_1">按需引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>|- lib/
+<div class="codehilite"><pre><span></span><code>|- lib/
 |- line.js  -------------- 折线图
 
 |- bar.js  --------------- 条形图
@@ -3046,19 +3046,19 @@
 |- map.js  --------------- 地图
 
 |- bmap.js  -------------- 百度地图
-</pre></div>
+</code></pre></div>
 
 <h2 id="axios">axios<a class="headerlink" href="#axios" title="Permanent link">&para;</a></h2>
 <p>安装：cnpm install axios --save</p>
 <h3 id="_2">改写原型链<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1">//在main.js中引入：</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">//在main.js中引入：</span>
 <span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
 <span class="c1">//改写原型链</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">$ajax</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p>在组件的 methods 中使用：</p>
-<div class="codehilite"><pre><span></span><span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
  <span class="nx">submitForm</span> <span class="p">()</span> <span class="p">{</span>
  <span class="k">this</span><span class="p">.</span><span class="nx">$ajax</span><span class="p">({</span>
   <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
@@ -3069,11 +3069,11 @@
   <span class="p">}</span>
  <span class="p">})</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="vuex_1">封装进 vuex 中<a class="headerlink" href="#vuex_1" title="Permanent link">&para;</a></h3>
 <p>action 和 mutations 也很类似，主要的区别在于，action 可以包含异步操作，而且可以通过 action 来提交 mutations</p>
-<div class="codehilite"><pre><span></span><span class="c1">// store.js</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">// store.js</span>
 <span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s2">&quot;Vue&quot;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s2">&quot;vuex&quot;</span><span class="p">;</span>
 
@@ -3105,11 +3105,11 @@
 <span class="p">});</span>
 
 <span class="kr">export</span> <span class="k">default</span> <span class="nx">store</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 
 <p><strong>注意：即使已经在 main.js 中引入了 axios，并改写了原型链，也无法在 store.js 中直接使用 $ajax 命令</strong></p>
 <h3 id="_3">使用别名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1">//post</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">//post</span>
 <span class="nx">axios</span>
   <span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">&quot;/user?ID=12345&quot;</span><span class="p">)</span>
   <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
@@ -3155,15 +3155,15 @@
     <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">err</span> <span class="p">=&gt;</span> <span class="p">{</span>
          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
     <span class="p">})</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="vscde">vscde 相关配置<a class="headerlink" href="#vscde" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1"># 安装下面的</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 安装下面的</span>
 npm install -g eslint
 npm install -g eslint-plugin-html
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="err">//添加下面的配置</span>
+<div class="codehilite"><pre><span></span><code><span class="err">//添加下面的配置</span>
   <span class="s2">&quot;eslint.validate&quot;</span><span class="err">:</span> <span class="p">[</span>
         <span class="s2">&quot;javascript&quot;</span><span class="p">,</span>
         <span class="s2">&quot;javascriptreact&quot;</span><span class="p">,</span>
@@ -3173,13 +3173,13 @@ npm install -g eslint-plugin-html
     <span class="s2">&quot;eslint.options&quot;</span><span class="err">:</span> <span class="p">{</span>
         <span class="nt">&quot;plugins&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;html&quot;</span><span class="p">]</span>
     <span class="p">}</span><span class="err">,</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="postdata">post时data区别<a class="headerlink" href="#postdata" title="Permanent link">&para;</a></h3>
 <p>如果直接将对象传给axio的d第二个参数，那么header会被设置为application/json;charset=UTF-8，并发送options请求，如果使用JSON.stringify，那么header就会被设置为application/x-www-form-urlencoded，不发送options请求，but参数并不会urlencode，需要使用qs库进行urlencode，qs.stringify(data)
 实测一下代码不行，依然会报错。
-<div class="codehilite"><pre><span></span><span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">post</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
-</pre></div></p>
+<div class="codehilite"><pre><span></span><code><span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">post</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
+</code></pre></div></p>
 <h2 id="_4">打包与部署<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="static">部署后 static 目录为绝对路径？<a class="headerlink" href="#static" title="Permanent link">&para;</a></h3>
 <p>将 config/index.js 下 build 参数 assetsPublicPath 清空
@@ -3283,7 +3283,7 @@ assetsPublicPath: '' 或者设置为'./'</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

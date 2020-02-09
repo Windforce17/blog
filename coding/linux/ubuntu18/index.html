@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2956,20 +2956,20 @@ wget <a href="https://dl.google.com/linux/direct/google-chrome-stable_current_am
 dpkg -i google-chrome-stable_current_amd64.deb</p>
 <h2 id="_1">编译环境<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="32">32 位<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span> sudo apt install -y build-essential <span class="o">&amp;&amp;</span>
+<div class="codehilite"><pre><span></span><code> sudo apt install -y build-essential <span class="o">&amp;&amp;</span>
  sudo apt install -y libc6-dev-i386 <span class="o">&amp;&amp;</span>
  sudo apt install -y gcc-multilib g++-multilib
-</pre></div>
+</code></pre></div>
 
 <p>可以使用-m32 编译 32 位程序啦</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 32bit lib dbug info</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 32bit lib dbug info</span>
 dpkg --add-architecture i386
 apt install libc6:i386 libstdc++6:i386 libc6-dbg:i386
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="c1">#arm mips</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">#arm mips</span>
 apt install python-pip python3-pip build-essential libc6-dev-i386 gcc-multilib g++-multilib gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabi g++-arm-linux-gnueabilibncurses5-dev gcc-mips-linux-gnu
-</pre></div>
+</code></pre></div>
 
 <h3 id="armmisp">arm/misp<a class="headerlink" href="#armmisp" title="Permanent link">&para;</a></h3>
 <p>sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
@@ -2977,8 +2977,8 @@ sudo apt-get install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-
 sudo apt-get install gcc-arm-linux-gnueabi
 apt install gcc-mips-linux-gnu</p>
 <h2 id="change-source">change source<a class="headerlink" href="#change-source" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sudo sed -i <span class="s1">&#39;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&#39;</span> /etc/apt/sources.list
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo sed -i <span class="s1">&#39;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&#39;</span> /etc/apt/sources.list
+</code></pre></div>
 
 <h2 id="nfs">nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
 <h3 id="etcexport">/etc/export 配置详解<a class="headerlink" href="#etcexport" title="Permanent link">&para;</a></h3>
@@ -3000,7 +3000,7 @@ USR2 平滑重载所有 worker 进程并重新载入配置和二进制模块
 kill -USR2 \&lt;master pid></p>
 <h2 id="_2">网络配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>ip:</p>
-<div class="codehilite"><pre><span></span><span class="nt">network</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">network</span><span class="p">:</span>
   <span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
   <span class="nt">renderer</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">networkd</span>
   <span class="nt">ethernets</span><span class="p">:</span>
@@ -3013,7 +3013,7 @@ kill -USR2 \&lt;master pid></p>
       <span class="nt">gateway4</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">192.168.66.2</span>
       <span class="nt">nameservers</span><span class="p">:</span>
         <span class="nt">addresses</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">192.168.66.2</span><span class="p p-Indicator">]</span>
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -3113,7 +3113,7 @@ kill -USR2 \&lt;master pid></p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

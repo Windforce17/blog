@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -3072,22 +3072,22 @@
   -p 8081:80 \
   konradkleine/docker-registry-frontend:v2</p>
 <h3 id="mssql">mssql<a class="headerlink" href="#mssql" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># 注意，PASSWORD必须足够复杂，否则会报错</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 注意，PASSWORD必须足够复杂，否则会报错</span>
 docker run -e <span class="s1">&#39;ACCEPT_EULA=Y&#39;</span> -e <span class="s1">&#39;SA_PASSWORD=Str0ngPassword!&#39;</span> -p <span class="m">1433</span>:1433 -d microsoft/mssql-server-linux
-</pre></div>
+</code></pre></div>
 
 <h3 id="postgresql">postgresql<a class="headerlink" href="#postgresql" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>docker run -d  -p <span class="m">5432</span>:5432 -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>mysecretpassword  postgres 
-</pre></div>
+<div class="codehilite"><pre><span></span><code>docker run -d  -p <span class="m">5432</span>:5432 -e <span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>mysecretpassword  postgres 
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="c1"># 链接postgres</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 链接postgres</span>
 docker run -it --rm postgres psql -h host -U postgres
-</pre></div>
+</code></pre></div>
 
 <h3 id="mysql">mysql<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h3>
 <p>docker run -d --name yp_gis_mysql -p 3306:3306 -v /data/yp_gis_mysql/:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=mysql_password mysql --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci</p>
 <h3 id="pmm">pmm<a class="headerlink" href="#pmm" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1"># 拉取服务器镜像</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 拉取服务器镜像</span>
 
 docker pull percona/pmm-server:latest
 
@@ -3110,7 +3110,7 @@ docker run -d -p <span class="m">9001</span>:80 <span class="se">\</span>
   -e <span class="nv">SERVER_PASSWORD</span><span class="o">=</span><span class="nb">test</span> <span class="se">\</span>
   --restart always <span class="se">\</span>
   percona/pmm-server:latest
-</pre></div>
+</code></pre></div>
 
 <h2 id="_1">运维常用服务<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3133,14 +3133,14 @@ docker run -d -p <span class="m">9001</span>:80 <span class="se">\</span>
 <h2 id="nfs">nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
 <p>解决<code>nfsd: sent only 253344 when sending 1040772 bytes - shutting down socket</code> 问题</p>
 <h3 id="_5">重新挂载<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>mount -t nfs -o soft -o nolock -o intr xx.xx.xx.xx:/oneT/file.cugapp.com.seafile-data /nfs/seafile-data-nfs/
-</pre></div>
+<div class="codehilite"><pre><span></span><code>mount -t nfs -o soft -o nolock -o intr xx.xx.xx.xx:/oneT/file.cugapp.com.seafile-data /nfs/seafile-data-nfs/
+</code></pre></div>
 
 <h3 id="_6">更改相关配置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <ul>
 <li>网卡最大传输队列
-<div class="codehilite"><pre><span></span>ip link <span class="nb">set</span> ib0 txqueuelen <span class="m">10000</span>
-</pre></div></li>
+<div class="codehilite"><pre><span></span><code>ip link <span class="nb">set</span> ib0 txqueuelen <span class="m">10000</span>
+</code></pre></div></li>
 <li>更改内核配置</li>
 </ul>
 <h2 id="openshift">openshift<a class="headerlink" href="#openshift" title="Permanent link">&para;</a></h2>
@@ -3251,7 +3251,7 @@ docker run -d -p <span class="m">9001</span>:80 <span class="se">\</span>
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

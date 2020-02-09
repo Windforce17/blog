@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2902,16 +2902,16 @@
 <p>IDA F5 或者直接查找string</p>
 <h2 id="readasm2">ReadAsm2<a class="headerlink" href="#readasm2" title="Permanent link">&para;</a></h2>
 <p>看汇编代码
-<div class="codehilite"><pre><span></span><span class="nb">input</span><span class="o">=</span><span class="p">[</span><span class="mh">0x67</span><span class="p">,</span> <span class="mh">0x6e</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x63</span><span class="p">,</span> <span class="mh">0x7e</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x69</span><span class="p">,</span> <span class="mh">0x6d</span><span class="p">,</span>
+<div class="codehilite"><pre><span></span><code><span class="nb">input</span><span class="o">=</span><span class="p">[</span><span class="mh">0x67</span><span class="p">,</span> <span class="mh">0x6e</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x63</span><span class="p">,</span> <span class="mh">0x7e</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x62</span><span class="p">,</span> <span class="mh">0x69</span><span class="p">,</span> <span class="mh">0x6d</span><span class="p">,</span>
                   <span class="mh">0x55</span><span class="p">,</span> <span class="mh">0x6a</span><span class="p">,</span> <span class="mh">0x7f</span><span class="p">,</span> <span class="mh">0x60</span><span class="p">,</span> <span class="mh">0x51</span><span class="p">,</span> <span class="mh">0x66</span><span class="p">,</span> <span class="mh">0x63</span><span class="p">,</span> <span class="mh">0x4e</span><span class="p">,</span> <span class="mh">0x66</span><span class="p">,</span> <span class="mh">0x7b</span><span class="p">,</span>
                   <span class="mh">0x71</span><span class="p">,</span> <span class="mh">0x4a</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x76</span><span class="p">,</span> <span class="mh">0x6b</span><span class="p">,</span> <span class="mh">0x70</span><span class="p">,</span> <span class="mh">0x79</span><span class="p">,</span> <span class="mh">0x66</span> <span class="p">,</span> <span class="mh">0x1c</span><span class="p">]</span>
 <span class="n">i</span><span class="o">=</span><span class="mi">1</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">x</span><span class="o">^</span><span class="n">i</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
     <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="dypyc">dypyc<a class="headerlink" href="#dypyc" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">base64</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
 
 <span class="k">def</span> <span class="nf">encode</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
@@ -2931,11 +2931,11 @@
 
 <span class="n">correct</span> <span class="o">=</span> <span class="s1">&#39;XlNkVmtUI1MgXWBZXCFeKY+AaXNt&#39;</span>
 <span class="n">decode</span><span class="p">(</span><span class="n">correct</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="wxyvm">WxyVM<a class="headerlink" href="#wxyvm" title="Permanent link">&para;</a></h3>
 <p>就是一个小型虚拟机，但是注意int和char的大小，input的是int，所以结果要&amp;0xff
-<div class="codehilite"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="mi">14997</span>
+<div class="codehilite"><pre><span></span><code><span class="n">i</span><span class="o">=</span><span class="mi">14997</span>
 <span class="n">encrypt</span><span class="o">=</span><span class="p">[</span>
   <span class="mi">4294967236</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">4294967217</span><span class="p">,</span><span class="mi">4294967251</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">4294967191</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4294967259</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">4294967236</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">4294967292</span><span class="p">,</span><span class="mi">91</span><span class="p">,</span><span class="mi">4294967277</span><span class="p">,</span><span class="mi">4294967192</span><span class="p">,</span><span class="mi">4294967263</span><span class="p">,</span><span class="mi">4294967188</span><span class="p">,</span><span class="mi">4294967256</span><span class="p">,</span><span class="mi">4294967219</span><span class="p">,</span><span class="mi">4294967172</span><span class="p">,</span><span class="mi">4294967244</span><span class="p">,</span><span class="mi">8</span><span class="p">]</span>
 
@@ -2959,10 +2959,10 @@
     <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">-</span><span class="mi">3</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">encrypt</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">x</span><span class="o">&amp;</span><span class="mh">0xff</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="single">single<a class="headerlink" href="#single" title="Permanent link">&para;</a></h2>
 <p>就是一个数独，不过注意输入格式，已经存在的数用0代替
-<div class="codehilite"><pre><span></span>0  3  0  6  0  0  0  0  0
+<div class="codehilite"><pre><span></span><code>0  3  0  6  0  0  0  0  0
 6  0  0  0  3  2  4  9  0
 0  9  0  1  0  7  0  6  0
 7  4  6  0  0  0  0  0  0
@@ -2971,8 +2971,8 @@
 0  8  0  9  0  4  0  7  0
 0  7  4  2  1  0  0  0  6
 0  0  0  0  0  3  0  1  0
-</pre></div>
-<div class="codehilite"><pre><span></span><span class="kt">size_t</span> <span class="kr">__fastcall</span> <span class="nf">sub_40078B</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">table</span><span class="p">)</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kt">size_t</span> <span class="kr">__fastcall</span> <span class="nf">sub_40078B</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">input</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">table</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">size_t</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// rax</span>
   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+1Ch] [rbp-14h]</span>
@@ -2991,10 +2991,10 @@
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div></p>
+</code></pre></div></p>
 <h3 id="480-c">480 C++<a class="headerlink" href="#480-c" title="Permanent link">&para;</a></h3>
 <p>看那480个函数，简单的xor
-<div class="codehilite"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+<div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env python</span>
 <span class="n">key</span><span class="o">=</span><span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">481</span><span class="p">):</span>
     <span class="n">n</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -3010,7 +3010,7 @@
             <span class="n">flag1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="nb">chr</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">flag</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">flag1</span><span class="p">)</span>
 <span class="nb">print</span> <span class="n">flag</span>
-</pre></div>
+</code></pre></div>
 flag{N0body_c4n_Mast3r_c_p1us_pLus!}</p>
                 
                   
@@ -3111,7 +3111,7 @@ flag{N0body_c4n_Mast3r_c_p1us_pLus!}</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -3022,13 +3022,13 @@
                 <h2 id="my-first-patch">My first patch<a class="headerlink" href="#my-first-patch" title="Permanent link">&para;</a></h2>
 <p>Linux kernel不是pr维护，而是patch mail。</p>
 <h3 id="edit-gitconfig">Edit ~/.gitconfig<a class="headerlink" href="#edit-gitconfig" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>[sendemail]
+<div class="codehilite"><pre><span></span><code>[sendemail]
   smtpuser = username@mail.com
   smtpserver = smtp.mail.com
   smtpencryption = tls
   smtpserverport = 587
   #smtppass =  ;using git send-email; prompts for password
-</pre></div>
+</code></pre></div>
 
 <h3 id="generate-patch-file">Generate Patch file<a class="headerlink" href="#generate-patch-file" title="Permanent link">&para;</a></h3>
 <p><code>git format-patch HEAD~</code>
@@ -3037,7 +3037,7 @@
 <p><code>git send-email</code>
 don't forget to install git-mail git core</p>
 <h2 id="multiple-accounts-on-github">Multiple accounts on Github<a class="headerlink" href="#multiple-accounts-on-github" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>ssh-keygen -t rsa -C <span class="s2">&quot;your_name@home_email.com&quot;</span>
+<div class="codehilite"><pre><span></span><code>ssh-keygen -t rsa -C <span class="s2">&quot;your_name@home_email.com&quot;</span>
 ssh-keygen -t rsa -C <span class="s2">&quot;your_name@company_email.com&quot;</span>
 <span class="nb">cd</span> ~/.ssh/
 touch config
@@ -3057,13 +3057,13 @@ Host company.github.com
 
 git clone git@home.github.com:xxxxx/xx.git
 <span class="c1"># 或者更改.git/config中url字段</span>
-</pre></div>
+</code></pre></div>
 
 <p>不行的话，执行</p>
-<div class="codehilite"><pre><span></span>ssh-add -D
+<div class="codehilite"><pre><span></span><code>ssh-add -D
 ssh-add -s
 ssh-add -l
-</pre></div>
+</code></pre></div>
 
 <h2 id="_1">从历史的提交建立新分支的方法：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>方法一： checkout到历史提交，然后checkout -b。
@@ -3192,7 +3192,7 @@ ssh-add -l
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

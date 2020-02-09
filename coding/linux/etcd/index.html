@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -3004,58 +3004,58 @@
 <strong><code>请在linux上跑</code></strong></p>
 <h4 id="_4">单一节点<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
 <p>开发时当数据库用，启动一个就可以啦</p>
-<p><div class="codehilite"><pre><span></span>./etcd
-</pre></div>
+<p><div class="codehilite"><pre><span></span><code>./etcd
+</code></pre></div>
 (简单粗暴，直接启动)</p>
 <p>测试：
 1. 设置api版本，默认为2:</p>
-<div class="codehilite"><pre><span></span>```bash
+<div class="codehilite"><pre><span></span><code>```bash
     ETCDCTL_API=3
     export ETCDCTL_API
 ```
-</pre></div>
+</code></pre></div>
 
 
 <ol>
 <li>
 <p>使用etcdctl，如果默认端口为2379，可以不加--endpoints</p>
-<p><div class="codehilite"><pre><span></span>./etcdctl --endpoints<span class="o">=</span><span class="m">127</span>.0.0.1:2379 put a <span class="nb">test</span>
+<p><div class="codehilite"><pre><span></span><code>./etcdctl --endpoints<span class="o">=</span><span class="m">127</span>.0.0.1:2379 put a <span class="nb">test</span>
 <span class="c1"># OK</span>
 ./etcdctl --endpoints<span class="o">=</span><span class="m">127</span>.0.0.1:2379 get a
 <span class="c1"># a</span>
 <span class="c1"># test</span>
-</pre></div>
+</code></pre></div>
 说明etcd工作正常</p>
 </li>
 </ol>
 <h4 id="_5">多个节点<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>节点1
-<div class="codehilite"><pre><span></span>./etcd -name infra0  <span class="se">\</span>
+<div class="codehilite"><pre><span></span><code>./etcd -name infra0  <span class="se">\</span>
   --initial-advertise-peer-urls http://127.0.0.1:2380 <span class="se">\</span>
   --listen-peer-urls http://127.0.0.1:2380 <span class="se">\</span>
   --initial-cluster-token etcd-cluster-1 <span class="se">\</span>
   --listen-client-urls <span class="s1">&#39;http://localhost:2379&#39;</span><span class="se">\</span>
   --advertise-client-urls <span class="s1">&#39;http://localhost:2379&#39;</span><span class="se">\</span>
   --initial-cluster <span class="nv">infra0</span><span class="o">=</span>http://127.0.0.1:2380,infra1<span class="o">=</span>http://127.0.0.1:2381,infra2<span class="o">=</span>http://127.0.0.1:2382 <span class="se">\</span>
-</pre></div>
+</code></pre></div>
 节点2
-<div class="codehilite"><pre><span></span>./etcd -name infra1 <span class="se">\</span>
+<div class="codehilite"><pre><span></span><code>./etcd -name infra1 <span class="se">\</span>
   --initial-advertise-peer-urls http://127.0.0.1:2381 <span class="se">\</span>
   --listen-peer-urls http://127.0.0.1:2381 <span class="se">\</span>
   -initial-cluster-token etcd-cluster-1 <span class="se">\</span>
   --listen-client-urls <span class="s1">&#39;http://localhost:12379&#39;</span> <span class="se">\</span>
   --advertise-client-urls <span class="s1">&#39;http://lcoalhost:2379&#39;</span> <span class="se">\</span>
   -initial-cluster <span class="nv">infra0</span><span class="o">=</span>http://127.0.0.1:2380,infra1<span class="o">=</span>http://127.0.0.1:2381,infra2<span class="o">=</span>http://127.0.0.1:2382 <span class="se">\</span>
-</pre></div>
+</code></pre></div>
 节点3
-<div class="codehilite"><pre><span></span>./etcd -name infra2 <span class="se">\</span>
+<div class="codehilite"><pre><span></span><code>./etcd -name infra2 <span class="se">\</span>
   -initial-advertise-peer-urls http://127.0.0.1:2382 <span class="se">\</span>
   --listen-peer-urls http://127.0.0.1:2382 <span class="se">\</span>
   --initial-cluster-token etcd-cluster-1 <span class="se">\</span>
   --listen-client-urls <span class="s1">&#39;http://localhost:22379&#39;</span> <span class="se">\</span>
   --advertise-client-urls <span class="s1">&#39;http://localhost:2379&#39;</span> <span class="se">\</span>
   --initial-cluster <span class="nv">infra0</span><span class="o">=</span>http://127.0.0.1:2380,infra1<span class="o">=</span>http://127.0.0.1:2381,infra2<span class="o">=</span>http://127.0.0.1:2382 <span class="se">\</span>
-</pre></div>
+</code></pre></div>
 测试方法同上</p>
 <h3 id="url">各种url区别<a class="headerlink" href="#url" title="Permanent link">&para;</a></h3>
 <ol>
@@ -3091,8 +3091,8 @@ http版本的api属于v2，官方建议用v3</p>
 - 当<code>range_end</code>为\0，key不为空时，返回比key大或者等于key的value</p>
 <h3 id="go-client">go client<a class="headerlink" href="#go-client" title="Permanent link">&para;</a></h3>
 <p>go语言有官方的client:</p>
-<div class="codehilite"><pre><span></span>go get github.com/coreos/etcd/clientv3
-</pre></div>
+<div class="codehilite"><pre><span></span><code>go get github.com/coreos/etcd/clientv3
+</code></pre></div>
 
 <p>doc:<a href="https://godoc.org/github.com/coreos/etcd/clientv3">https://godoc.org/github.com/coreos/etcd/clientv3</a></p>
 <p>往下翻有examples</p>
@@ -3205,7 +3205,7 @@ http版本的api属于v2，官方建议用v3</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

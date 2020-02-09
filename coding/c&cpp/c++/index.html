@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2922,26 +2922,26 @@
 <li>前缀 R 表示 raw 原始字符串，此时\n 不表示换行符；</li>
 </ul>
 <p>结构数组初始化:</p>
-<div class="codehilite"><pre><span></span>    <span class="k">struct</span> <span class="n">a</span><span class="p">;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="k">struct</span> <span class="n">a</span><span class="p">;</span>
     <span class="n">a</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>
     <span class="p">{</span>  <span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">32.3</span><span class="p">}</span>
     <span class="p">{...}</span>
      <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="_2">列表初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>类的初始化是根据定义的顺序，这样的代码会出错。</p>
-<div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">foo</span>
+<div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="n">foo</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">i</span> <span class="p">;</span>
     <span class="kt">int</span> <span class="n">j</span> <span class="p">;</span>
     <span class="n">foo</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span><span class="o">:</span><span class="n">j</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">i</span><span class="p">(</span><span class="n">j</span><span class="p">){}</span> <span class="c1">// i值未定义</span>
 <span class="p">};</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="_3">类大小计算<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>下面的输出是多少?</p>
-<div class="codehilite"><pre><span></span><span class="cp">#pragma packed()</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#pragma packed()</span>
 <span class="cp">#include</span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">CTest</span>
@@ -2961,7 +2961,7 @@
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
   <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="k">sizeof</span><span class="p">(</span><span class="n">CTest</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="gcc">gcc 编译<a class="headerlink" href="#gcc" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2984,12 +2984,12 @@
 <p>另一种编译 main.c，并链接 libmyshare.so 的方式如下（该方式通过./libmyshare.so 直接指定使用当前目录下的 libmyshare.so 文件），使用命令：gcc -o app_share main.c ./libmyshare.so</p>
 <h2 id="_4">动态链接库<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="c1">//导出函数接口，dll中可以调用</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">//导出函数接口，dll中可以调用</span>
     <span class="n">_declspec</span><span class="p">(</span><span class="n">dllexport</span><span class="p">)</span> <span class="kt">void</span> <span class="n">go</span><span class="p">()</span> <span class="c1">//export method,call in load</span>
     <span class="p">{</span>
         <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
     <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="forward-declaration">前向声明 forward declaration<a class="headerlink" href="#forward-declaration" title="Permanent link">&para;</a></h2>
 <p>前向声明是一种，不完全类型声明，所以他并不能取代完全类型，对于编译器来说，在需要知其被声明对象大小和内容时，前向声明，己不可用。故其应用场景，仅限如下：</p>
@@ -2999,7 +2999,7 @@
 </ul>
 <p>下面给出了一个应用场景： 
 A.h</p>
-<div class="codehilite"><pre><span></span><span class="cp">#ifndef __A__H__</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef __A__H__</span>
 <span class="cp">#define __A__H__</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
@@ -3012,10 +3012,10 @@ A.h</p>
 
 <span class="p">};</span>
 <span class="cp">#endif</span>
-</pre></div>
+</code></pre></div>
 
 <p>B.h</p>
-<div class="codehilite"><pre><span></span><span class="cp">#ifndef __B__H__</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#ifndef __B__H__</span>
 <span class="cp">#define __B__H__</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
@@ -3029,10 +3029,10 @@ A.h</p>
 <span class="p">};</span>
 
 <span class="cp">#endif</span>
-</pre></div>
+</code></pre></div>
 
 <p>A.cpp</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;B.h&quot;</span><span class="cp"></span>
 
 <span class="n">B</span> <span class="n">A</span><span class="o">::</span><span class="n">getBfromA</span><span class="p">()</span> <span class="p">{</span>
@@ -3042,10 +3042,10 @@ A.h</p>
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">A</span><span class="o">::</span><span class="n">who_are_you</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="s">&quot;I am A&quot;</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>B.cpp</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;B.h&quot;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;B.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
 
 <span class="n">A</span> <span class="n">B</span><span class="o">::</span><span class="n">getAfromB</span><span class="p">()</span> <span class="p">{</span>
@@ -3054,10 +3054,10 @@ A.h</p>
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">B</span><span class="o">::</span><span class="n">who_are_you</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="s">&quot;I am B&quot;</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>main.cpp</p>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&quot;B.h&quot;</span><span class="cp"></span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
@@ -3074,7 +3074,7 @@ A.h</p>
 
   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -3174,7 +3174,7 @@ A.h</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

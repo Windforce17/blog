@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2842,17 +2842,17 @@
 教程: <a href="https://ericpony.github.io/z3py-tutorial/guide-examples.htm">https://ericpony.github.io/z3py-tutorial/guide-examples.htm</a><br />
 上面连接失效了可以看下git仓库，我已经离线了。</p>
 <h3 id="_1">原加密算法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<div class="codehilite"><pre><span></span><code><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
 <span class="c1">#x=???</span>
 <span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">64</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">:</span>
         <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">x</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="mh">0xB0004B7679FA26B3</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="z3">使用z3进行求解<a class="headerlink" href="#z3" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">binascii</span>
 
 
@@ -2899,9 +2899,9 @@
 <span class="c1"># print(binascii.unhexlify(hex(n3)[2:])[::-1], end=&#39;&#39;)</span>
 <span class="c1"># print(binascii.unhexlify(hex(n4)[2:])[::-1], end=&#39;&#39;)</span>
 <span class="c1"># print(binascii.unhexlify(hex(n5)[2:])[::-1], end=&#39;&#39;)</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0xBC8FF26D43536296</span><span class="p">,</span> <span class="mh">0x520100780530EE16</span><span class="p">,</span> <span class="mh">0x4DC0B5EA935F08EC</span><span class="p">,</span> <span class="mh">0x342B90AFD853F450</span><span class="p">,</span>
+<div class="codehilite"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0xBC8FF26D43536296</span><span class="p">,</span> <span class="mh">0x520100780530EE16</span><span class="p">,</span> <span class="mh">0x4DC0B5EA935F08EC</span><span class="p">,</span> <span class="mh">0x342B90AFD853F450</span><span class="p">,</span>
      <span class="mh">0x8B250EBCAA2C3681</span><span class="p">,</span> <span class="mh">0x55759F81A2C68AE4</span><span class="p">]</span>
 <span class="n">r</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
 <span class="n">s1</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2919,7 +2919,7 @@
         <span class="n">r</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(</span><span class="n">t</span> <span class="o">&amp;</span> <span class="mh">0xff</span><span class="p">)</span>
         <span class="n">t</span> <span class="o">&gt;&gt;=</span> <span class="mi">8</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -3019,7 +3019,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -3014,7 +3014,7 @@ Top chunk</p>
 <ul>
 <li>存放chunk的metadata的chunk的结构(header)</li>
 </ul>
-<p><div class="codehilite"><pre><span></span><span class="k">struct</span> <span class="n">malloc_chunk</span><span class="p">{</span>
+<p><div class="codehilite"><pre><span></span><code><span class="k">struct</span> <span class="n">malloc_chunk</span><span class="p">{</span>
     <span class="kt">size_t</span> <span class="n">prev_size</span><span class="p">;</span> <span class="c1">//qword 可能存放上一个chunk的data</span>
     <span class="kt">size_t</span> <span class="n">size</span><span class="p">;</span><span class="c1">//qword size最低位表示上一个chunk是否在使用（prev_inuse）</span>
     <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd</span><span class="p">;</span> <span class="c1">//会被data覆盖</span>
@@ -3022,7 +3022,7 @@ Top chunk</p>
     <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd_nextsize</span><span class="p">;</span><span class="c1">//会被data覆盖</span>
     <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">bk_nextsize</span><span class="p">;</span><span class="c1">//会被data覆盖</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 使用中的chunk
 <img alt="inuse" src="2019-01-21-20-38-59.png" />
 mem=malloc(size)
@@ -3066,7 +3066,7 @@ mem=malloc(size)
 <li>FIFO</li>
 <li>根据大小分成62个大小不同的bin</li>
 <li>16 24...80 88...508
-<div class="codehilite"><pre><span></span> <span class="c1">//check double link list</span>
+<div class="codehilite"><pre><span></span><code> <span class="c1">//check double link list</span>
  <span class="c1">//victim 是即将分配的chunk</span>
   <span class="k">else</span> <span class="p">{</span>
                 <span class="c1">// 获取 small bin 中倒数第二个 chunk 。</span>
@@ -3076,7 +3076,7 @@ mem=malloc(size)
                     <span class="n">errstr</span> <span class="o">=</span> <span class="s">&quot;malloc(): smallbin double linked list corrupted&quot;</span><span class="p">;</span>
                     <span class="k">goto</span> <span class="n">errout</span><span class="p">;</span>
                 <span class="p">}</span>
-</pre></div></li>
+</code></pre></div></li>
 </ul>
 <h2 id="large-bin">large bin<a class="headerlink" href="#large-bin" title="Permanent link">&para;</a></h2>
 <ul>
@@ -3103,7 +3103,7 @@ mem=malloc(size)
 <ul>
 <li>double free可以改变fd，拿到任意地址进行读写</li>
 <li>fastbin只检查bin中的第一块chunk，只要不是连续free同一块chunk就没关系(fasttop)检查
-<div class="codehilite"><pre><span></span><span class="c1">//假设p、q都小于global_max_fast</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">//假设p、q都小于global_max_fast</span>
     <span class="n">free</span><span class="p">(</span><span class="n">q</span><span class="p">);</span>
     <span class="c1">//fastbin-&gt;q</span>
     <span class="n">free</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
@@ -3113,7 +3113,7 @@ mem=malloc(size)
     <span class="c1">//fastbin-&gt;q-&gt;p</span>
     <span class="c1">//不会报错</span>
     <span class="c1">//再malloc就会无限拿到p、q的地址...</span>
-</pre></div></li>
+</code></pre></div></li>
 </ul>
 <h2 id="tips">tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h2>
 <p>64位got地址40开头，可以把0x40当作chunk_size用来绕过libc的检查。那么malloc应该是56字节，
@@ -3135,7 +3135,7 @@ mem=malloc(size)
 <ul>
 <li>将free的上（下）一个chunk拿掉，进行merge，加入 unsorted bin</li>
 <li>取下small bin中的chunk时，似乎也会unlink
-<div class="codehilite"><pre><span></span><span class="c1">// double link list 拿掉一个</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">// double link list 拿掉一个</span>
 <span class="c1">//p BK FD 都是chunk structure指针</span>
 <span class="cp">#define unlink(P,BK,FD) {\</span>
 <span class="cp">    FD = P-&gt;fd;\</span>
@@ -3150,7 +3150,7 @@ mem=malloc(size)
     <span class="n">p</span> <span class="o">=</span> <span class="n">chunk_at_offset</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="o">-</span><span class="p">((</span><span class="kt">long</span><span class="p">)</span> <span class="n">prevsize</span><span class="p">));</span>
     <span class="n">unlink</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">bak</span><span class="p">,</span><span class="n">fwd</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 拿出来后会把合并后的chunk放到另一个bin里。
 前一个chunk可以覆盖到p的prev_size ，那么就可以控制unlink中p的位置，从而控制fd，bk的内容，例如</li>
 <li>FD = p-&gt;fd = free@got.plt-0x18</li>
@@ -3159,7 +3159,7 @@ mem=malloc(size)
 </ul>
 <p><em>上述方法现在已经里用不了了</em><br />
 现在的unlink会检查双向链表是不是合法但，指针要能指回来。
-<div class="codehilite"><pre><span></span><span class="cp">#define unlink(P,BK,FD){\</span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#define unlink(P,BK,FD){\</span>
 <span class="cp">    FD = P -&gt; fd;\</span>
 <span class="cp">    BK = P -&gt; bk;\</span>
 <span class="cp">    if(FD-&gt;bk!=P || BK-&gt;fd!=P)\</span>
@@ -3169,7 +3169,7 @@ mem=malloc(size)
 <span class="cp">        BK-&gt;fd=FD;\</span>
 <span class="cp">    }\</span>
 <span class="cp">}</span>
-</pre></div>
+</code></pre></div>
 绕过方法：需要一个可读写的chunk p，知道&amp;p（p是global的） 
 - FD=P-&gt;fd=&amp;P-0x18
 - BK=P-&gt;bk=&amp;pP-0x10
@@ -3281,7 +3281,7 @@ tls段上还有stack address stack guard canary<br />
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

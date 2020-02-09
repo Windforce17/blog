@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2816,12 +2816,12 @@
                 <h2 id="load-public-or-private-key">load public or private key<a class="headerlink" href="#load-public-or-private-key" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>private:
-<div class="codehilite"><pre><span></span>    <span class="nx">prkey</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadFile</span><span class="p">(</span><span class="s">&quot;/Users/windforce/.ssh/id_rsa&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="nx">prkey</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ioutil</span><span class="p">.</span><span class="nx">ReadFile</span><span class="p">(</span><span class="s">&quot;/Users/windforce/.ssh/id_rsa&quot;</span><span class="p">)</span>
     <span class="nx">prikey</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">pem</span><span class="p">.</span><span class="nx">Decode</span><span class="p">(</span><span class="nx">prkey</span><span class="p">)</span>
     <span class="nx">x509</span><span class="p">.</span><span class="nx">ParsePKCS1PrivateKey</span><span class="p">(</span><span class="nx">prikey</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 public:
-<div class="codehilite"><pre><span></span>    <span class="nx">key</span> <span class="o">:=</span> <span class="s">`-----BEGIN PUBLIC KEY-----</span>
+<div class="codehilite"><pre><span></span><code>    <span class="nx">key</span> <span class="o">:=</span> <span class="s">`-----BEGIN PUBLIC KEY-----</span>
 <span class="s">MIGfMA0GCSqGSIb3DQEBA。QUAA4GNADCBiQKBgQDdlatRjRjogo3WojgGHFHYLugd</span>
 <span class="s">UWAY9iR3fy4arWNA1KoS8kVw33cJibXr8bvwUAUparCwlvdbH6dvEOfou0/gCFQs</span>
 <span class="s">HUfQrSDv+MuSUMAe8jzKE4qW+jK+xQU9a03GUnKHkkle+Q0pX/g6jXZ7r1/xAK5D</span>
@@ -2830,11 +2830,11 @@ public:
     <span class="nx">publicBlock</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">pem</span><span class="p">.</span><span class="nx">Decode</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">key</span><span class="p">))</span>
     <span class="nx">publickey</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">x509</span><span class="p">.</span><span class="nx">ParsePKIXPublicKey</span><span class="p">(</span><span class="nx">publicBlock</span><span class="p">.</span><span class="nx">Bytes</span><span class="p">)</span>
     <span class="nx">publicKey</span> <span class="o">:=</span> <span class="nx">publickey</span><span class="p">.(</span><span class="o">*</span><span class="nx">rsa</span><span class="p">.</span><span class="nx">PublicKey</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 注意，public是<code>ParsePKIXPublicKey</code>，private是<code>ParsePKCS1PrivateKey</code>，pem.Decode实际上去掉了 <em>-----xxxx-----</em></p>
 </blockquote>
 <h2 id="jwt-rs256-verify">jwt-rs256-verify<a class="headerlink" href="#jwt-rs256-verify" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">jwtString</span><span class="o">:=</span><span class="s">&quot;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM&quot;</span>
     <span class="nx">key</span> <span class="o">:=</span> <span class="s">`-----BEGIN PUBLIC KEY-----</span>
 <span class="s">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDdlatRjRjogo3WojgGHFHYLugd</span>
@@ -2851,7 +2851,7 @@ public:
     <span class="p">})</span>
     <span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
     <span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">claims</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <p>最新版本的jwt-go是支持rs256的，parsewithclaims的key的类型为*rsa.PublicKey。</p>
                 
@@ -2953,7 +2953,7 @@ public:
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

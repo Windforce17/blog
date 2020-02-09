@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2996,7 +2996,7 @@ hexblog.com
 <a href="https://github.com/michalmalik/linux-re-101">https://github.com/michalmalik/linux-re-101</a></p>
 <h2 id="_2">工具<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <h3 id="angr">符号执行工具 angr<a class="headerlink" href="#angr" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">angr</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">angr</span>
 <span class="kn">import</span> <span class="nn">claripy</span>
 <span class="n">argv1</span> <span class="o">=</span> <span class="n">claripy</span><span class="o">.</span><span class="n">BVS</span><span class="p">(</span><span class="s1">&#39;argv1&#39;</span><span class="p">,</span><span class="mi">50</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span> <span class="c1"># 如有程序需求参数的话,50个字符长度</span>
 <span class="n">proj</span> <span class="o">=</span> <span class="n">angr</span><span class="o">.</span><span class="n">Project</span><span class="p">(</span><span class="s1">&#39;./target&#39;</span><span class="p">)</span>
@@ -3005,14 +3005,14 @@ hexblog.com
 <span class="n">simgr</span><span class="o">.</span><span class="n">explore</span><span class="p">(</span><span class="n">find</span> <span class="o">=</span> <span class="mh">0x400844</span><span class="p">,</span><span class="n">avoid</span> <span class="o">=</span> <span class="mh">0x400855</span><span class="p">)</span> <span class="c1"># start traverse</span>
 <span class="c1">#simgr.found[0]。solver.eval(argv1,cast_to=str)</span>
 <span class="n">simgr</span><span class="o">.</span><span class="n">found</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">posix</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="java">java逆向<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
 <p>clss逆向工具：jad</p>
 <h3 id="pc">PC<a class="headerlink" href="#pc" title="Permanent link">&para;</a></h3>
 <h4 id="nm">nm<a class="headerlink" href="#nm" title="Permanent link">&para;</a></h4>
 <p>列举目标文件中的符号
-<div class="codehilite"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="k">const</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span>
@@ -3022,14 +3022,14 @@ hexblog.com
 
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div></p>
+</code></pre></div></p>
 <p><img alt="" src="../ReversingEngineering/2018-01-08-13-51-13.png" /></p>
-<div class="codehilite"><pre><span></span>U:  未定义符号，通常为外部符号饮用
+<div class="codehilite"><pre><span></span><code>U:  未定义符号，通常为外部符号饮用
 T:  在文本部分定义的符号，通常为函数名称
 t:  在文本部分定义的局部符号，在C语言中，这个符号通常等同于一个静态函数
 D:  已初始化数值
 C:  为初始化数值
-</pre></div>
+</code></pre></div>
 
 
 <p>上述文件仅进行了编译，并未进行连接。</p>
@@ -3050,7 +3050,7 @@ C:  为初始化数值
 　　一个连接到目标机器的Java代理与JavaSnoop工具连接来测试该机器上的应用程序以便寻找其安全弱点。它可以是一个安全工具也可以成为黑客工具。</p>
 <h3 id="z3">z3<a class="headerlink" href="#z3" title="Permanent link">&para;</a></h3>
 <p>两种写法都行，常用的
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="mi">32</span><span class="p">)</span>
 
 <span class="n">solve</span><span class="p">(</span>
@@ -3060,9 +3060,9 @@ C:  为初始化数值
     <span class="n">x</span><span class="o">&gt;&gt;</span><span class="mi">4</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">x</span><span class="o">&gt;&gt;</span><span class="mi">3</span><span class="o">!=</span><span class="mi">0</span>
 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 Solver:
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="mi">32</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">Solver</span><span class="p">()</span>
@@ -3078,7 +3078,7 @@ Solver:
     <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
 <span class="n">m</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="n">model</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
-</pre></div></p>
+</code></pre></div></p>
                 
                   
                 
@@ -3178,7 +3178,7 @@ Solver:
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

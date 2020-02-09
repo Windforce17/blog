@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2896,7 +2896,7 @@
 <img alt="" src="2019-02-03-10-37-48.png" /></p>
 <h3 id="_1">第一个<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>for循环判断a1(username)的长度，然后将长度传入到sub_400C41(i)
-<div class="codehilite"><pre><span></span><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400C9A</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">a1</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400C9A</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">a1</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+1Ch] [rbp-4h]</span>
 
@@ -2904,9 +2904,9 @@
     <span class="p">;</span>
   <span class="k">return</span> <span class="n">sub_400C41</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 传入长度后，再对长度进行判断，if中的表达式可以用z3来求解</p>
-<p><div class="codehilite"><pre><span></span><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400C41</span><span class="p">(</span><span class="kt">int</span> <span class="n">len_username</span><span class="p">)</span>
+<p><div class="codehilite"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400C41</span><span class="p">(</span><span class="kt">int</span> <span class="n">len_username</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kr">__int64</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// rax</span>
 
@@ -2920,8 +2920,8 @@
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
-<div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="mi">32</span><span class="p">)</span>
 
 <span class="n">solve</span><span class="p">(</span>
@@ -2931,10 +2931,10 @@
     <span class="n">x</span><span class="o">&gt;&gt;</span><span class="mi">4</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span>
     <span class="n">x</span><span class="o">&gt;&gt;</span><span class="mi">3</span><span class="o">!=</span><span class="mi">0</span>
 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 解得长度必须是8位或者12位。</p>
 <h3 id="_2">第二个判断<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><div class="codehilite"><pre><span></span><span class="kt">signed</span> <span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400CDD</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="n">uesrname</span><span class="p">)</span>
+<p><div class="codehilite"><pre><span></span><code><span class="kt">signed</span> <span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400CDD</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="n">uesrname</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">signed</span> <span class="kr">__int64</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// rax</span>
   <span class="kr">__int64</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// [rsp+10h] [rbp-20h]</span>
@@ -2953,9 +2953,9 @@
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 将username看作了4字节，并带入进行运算。同样可以用z3来求解</p>
-<p><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
+<p><div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">z3</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">binascii</span>
 <span class="n">v4</span><span class="o">=</span><span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;v4&#39;</span><span class="p">,</span><span class="mi">64</span><span class="p">)</span><span class="c1">#  solved:1635017059 atac</span>
 <span class="n">v3</span><span class="o">=</span><span class="n">BitVec</span><span class="p">(</span><span class="s1">&#39;v3&#39;</span><span class="p">,</span><span class="mi">64</span><span class="p">)</span><span class="c1">#         1953724780 tsyl</span>
@@ -2975,11 +2975,11 @@
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">u</span><span class="p">:</span>
     <span class="n">username</span><span class="o">+=</span><span class="n">x</span><span class="o">.</span><span class="n">to_bytes</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 得到username=catalyst_ceo</p>
 <h3 id="_3">第三、四个<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>第三个主要判断username是否合法，由于通过第二个检测函数已经解开了username，所以忽略吧..
-<div class="codehilite"><pre><span></span><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_4008F7</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">username</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_4008F7</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">username</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kr">__int64</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// rax</span>
   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+1Ch] [rbp-4h]</span>
@@ -2997,9 +2997,9 @@
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 第四个
-<div class="codehilite"><pre><span></span><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400977</span><span class="p">(</span><span class="n">_DWORD</span> <span class="o">*</span><span class="n">username</span><span class="p">,</span> <span class="n">_DWORD</span> <span class="o">*</span><span class="n">password</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400977</span><span class="p">(</span><span class="n">_DWORD</span> <span class="o">*</span><span class="n">username</span><span class="p">,</span> <span class="n">_DWORD</span> <span class="o">*</span><span class="n">password</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// ebx</span>
   <span class="kt">int</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// ebx</span>
@@ -3090,7 +3090,7 @@
   <span class="p">}</span>
   <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 传入username，password进行运算，步骤及如下：</p>
 <ol>
 <li>先判断密码范围，不可打印就报错，  </li>
@@ -3098,7 +3098,7 @@
 <li>再对password每四字节减去<code>rand()</code>，判断结果是否和目标值相等  </li>
 </ol>
 <p>枚举出随机数。
-<div class="codehilite"><pre><span></span><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
 <span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
         <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">u</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
         <span class="n">u</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1635017059</span><span class="p">;</span>
@@ -3127,9 +3127,9 @@
 <span class="cm">1179934733</span>
 <span class="cm">catalyst_ceo</span>
 <span class="cm">*/</span>
-</pre></div>
+</code></pre></div>
 逆向出password并输出
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">binascii</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">binascii</span>
 <span class="n">rands</span><span class="o">=</span><span class="p">[</span><span class="mi">6833993</span><span class="p">,</span><span class="mi">1732044087</span><span class="p">,</span><span class="mi">2068121063</span><span class="p">,</span><span class="mi">1889579618</span><span class="p">,</span><span class="mi">869606716</span><span class="p">,</span><span class="mi">1364883061</span><span class="p">,</span><span class="mi">1500347741</span><span class="p">,</span><span class="mi">2094174281</span><span class="p">,</span><span class="mi">1508322742</span><span class="p">,</span><span class="mi">1179934733</span>
 <span class="p">]</span>
 <span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1441465642</span><span class="p">,</span><span class="mi">251096121</span><span class="p">,</span><span class="o">-</span><span class="mi">870437532</span><span class="p">,</span><span class="o">-</span><span class="mi">944322827</span><span class="p">,</span><span class="mi">647240698</span><span class="p">,</span><span class="mi">638382323</span><span class="p">,</span><span class="mi">282381039</span><span class="p">,</span><span class="o">-</span><span class="mi">966334428</span><span class="p">,</span><span class="o">-</span><span class="mi">58112612</span><span class="p">,</span><span class="mi">605226810</span>
@@ -3148,7 +3148,7 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">passwd</span><span class="p">)</span>
 <span class="c1">#output:</span>
 <span class="n">sLSVpQ4vK3cGWyW86AiZhggwLHBjmx9CRspVGggj</span>
-</pre></div></p>
+</code></pre></div></p>
 <h3 id="flag">flag<a class="headerlink" href="#flag" title="Permanent link">&para;</a></h3>
 <p>输入用户名密码后拿到flag:<code>ALEXCTF{1_t41d_y0u_y0u_ar3__gr34t__reverser__s33}</code></p>
                 
@@ -3250,7 +3250,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

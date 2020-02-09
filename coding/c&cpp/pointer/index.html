@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2800,21 +2800,21 @@
                   <h1>Pointer</h1>
                 
                 <h2 id="_1">函数指针<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kt">char</span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n">fun1</span><span class="p">)(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p1</span><span class="p">,</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p2</span><span class="p">);</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">char</span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n">fun1</span><span class="p">)(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p1</span><span class="p">,</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p2</span><span class="p">);</span>
 <span class="kt">char</span> <span class="o">*</span> <span class="o">*</span><span class="nf">fun2</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p1</span><span class="p">,</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p2</span><span class="p">);</span>
 <span class="kt">char</span> <span class="o">*</span> <span class="nf">fun3</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p1</span><span class="p">,</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p2</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 
 <ul>
 <li>fun3是函数，不用多说了。</li>
 <li>fun2也是函数，返回是char **</li>
 <li>fun1是一个变量，指向一个函数，有两个类型为char的参数，于`char<em> (</em>)(char <em>p1,char</em> p2)func1等价</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="c1">//这个是函数指针数组</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">//这个是函数指针数组</span>
 <span class="kt">char</span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p</span><span class="p">);</span>
 <span class="c1">// 函数指针数组的指针,上面的指针</span>
 <span class="kt">char</span> <span class="o">*</span> <span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="o">*</span><span class="n">pf</span><span class="p">)[</span><span class="mi">3</span><span class="p">])(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">p</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -2914,7 +2914,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

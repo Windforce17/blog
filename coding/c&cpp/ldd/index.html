@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2877,7 +2877,7 @@
 <h2 id="semaphore">Semaphore<a class="headerlink" href="#semaphore" title="Permanent link">&para;</a></h2>
 <p>线程/进程同步手段之一 
 threads/processes sync method
-<div class="codehilite"><pre><span></span><span class="c1">// init</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">// init</span>
 <span class="kt">void</span> <span class="nf">sema_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">);</span>
 <span class="c1">//mutex mode</span>
 <span class="c1">// init semaphore variable to 1</span>
@@ -2895,7 +2895,7 @@ threads/processes sync method
 
 <span class="c1">//&quot;V&quot; function</span>
 <span class="kt">void</span> <span class="n">up</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">)</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="memory">memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h2>
 <p>设备通常提供一组寄存器来进行控制，这些寄存器可能在I/O空间中，也能在内存空间中，在I/O空间中时要用IN/OUT 汇编指令进行读写，在I/O 空间时，被称为I/O 端口，反之为I/O 内存。
 |  用途 |                        范围                |
@@ -2922,7 +2922,7 @@ bus地址：用于外设和内存，x86和物理地址一样，但是某些架�
 <p>低内存: 内核中所有逻辑地址，你见到的都是低内存
 高内存：超过了内核虚拟地址，不在内核逻辑地址中。例如用户空间地址
 申请内存主要函数:
-<div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="o">*</span><span class="n">kmalloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span><span class="kt">int</span> <span class="n">flags</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span> <span class="o">*</span><span class="n">kmalloc</span><span class="p">(</span><span class="kt">size_t</span> <span class="n">size</span><span class="p">,</span><span class="kt">int</span> <span class="n">flags</span><span class="p">)</span>
 <span class="cm">/*</span>
 <span class="cm">    第一个参数是大小，第二个是分配标志</span>
 <span class="cm">    GFP_KERNEL 在内核空间进程申请内存，不能满足则等待空闲页，最常用</span>
@@ -2958,7 +2958,7 @@ bus地址：用于外设和内存，x86和物理地址一样，但是某些架�
 <span class="n">ioremap</span><span class="p">()</span><span class="c1">//将设备寄存器，缓冲，映射到虚拟地址上,多用于PCI video 设备，可以超过高地址范围外（在开机时映射页表)，不能映射到用户地址</span>
 
 <span class="kt">int</span> <span class="n">get_user_page</span><span class="p">()</span><span class="c1">// 直接从current-mm拿到pages direct I/O 内核不进行缓存</span>
-</pre></div></p>
+</code></pre></div></p>
                 
                   
                 
@@ -3058,7 +3058,7 @@ bus地址：用于外设和内存，x86和物理地址一样，但是某些架�
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

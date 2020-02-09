@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2831,17 +2831,7 @@
 <p>tmux 是以 session、Windows、panel 为基础的。 window 可以切割为不同的 panel，我个人喜欢单独开一个 Window，屏幕小没办法..
 tmux 中的快捷键是有前缀的，默认是<code>ctrl+b</code>.</p>
 <h2 id="config">config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>#below reset tmux prefix command key
-set -g prefix C-x
-unbind C-b
-bind C-x send-prefix
-#set swap pane key
-bind-key k select-pane -U
-bind-key j select-pane -D
-bind-key h select-pane -L
-bind-key l select-pane -R
-</pre></div>
-
+<p>see <code>config/.tmux.conf</code></p>
 <p>将<code>ctrl+b</code> 改为了<code>ctrl+x</code></p>
 <h2 id="_1">快捷键<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p><code>tmux</code> 新建一个默认 session，名字就是编号，需要名字则<code>tmux new -S &lt;name&gt;</code>
@@ -2947,7 +2937,7 @@ bind-key l select-pane -R
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

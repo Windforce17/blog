@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2864,13 +2864,13 @@
 <p>发现是base32，再解码，发现是base64的，那就写脚本，一直解..</p>
 <p><img alt="" src="2017-12-09-12-05-33.png" /></p>
 <p>这里给出一个脚本</p>
-<div class="codehilite"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="c1">#那个字符串，不粘贴过来了，太长了</span>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span><span class="o">=</span><span class="s1">&#39;&#39;</span> <span class="c1">#那个字符串，不粘贴过来了，太长了</span>
 <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     <span class="n">a</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b32decode</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="_1">数据分析<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>丢parrot，<code>binwalk -eM flag</code>
@@ -2879,10 +2879,10 @@
 <p>丢wireshark追踪tcp字节流。</p>
 <p><img alt="" src="2017-12-09-12-39-04.png" /></p>
 <p>令example的值为：</p>
-<div class="codehilite"><pre><span></span>    <span class="n">example</span><span class="o">=</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s1">&#39;mbZoEMrhAO0WWeugNjqNw2odgCp1uOAXYSakNQBvXG4nyCTAdaFqkTssZ+cSJKdEDUpkRXo2sI1bGhcxE+JKlg==&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code>    <span class="n">example</span><span class="o">=</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="s1">&#39;mbZoEMrhAO0WWeugNjqNw2odgCp1uOAXYSakNQBvXG4nyCTAdaFqkTssZ+cSJKdEDUpkRXo2sI1bGhcxE+JKlg==&#39;</span><span class="p">)</span>
     <span class="n">example</span> <span class="o">=</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">example</span><span class="p">,</span> <span class="s1">&#39;Qq4wdrhhyEWe4qBF&#39;</span><span class="p">)</span> 
     <span class="nb">print</span> <span class="n">example</span>
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -2982,7 +2982,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

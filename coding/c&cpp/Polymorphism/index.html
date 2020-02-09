@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2856,7 +2856,7 @@
                 <h2 id="_1">为什么要用基类指针指向派生类对象<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>在基类与派生类之间，有一个规定：派生类对象的地址可以赋给指向基类对象的指针变量（简称基类指针），即基类指针也可以指向派生类对象。为什么有这一规定呢？因为它可以实现多态性【1】，即向不同的对象发送同一个消息，不同的对象在接受时会产生不同的行为。</p>
 <h3 id="_2">举例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<div class="codehilite"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 <span class="k">class</span> <span class="nc">Shape</span> <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
@@ -2896,7 +2896,7 @@
     <span class="p">}</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h3 id="_3">解释<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>上面的不同对象Sq,Cir(来自继承同一基类的不同派生类)接受同一消息（求面积，来自基类的成员函数area()）,但是却根据自身情况调用不同的面积公式（执行了不同的行为，它是通过虚函数实现的）。我们可以理解为，继承同一基类的不同派生对象，对来自基类的同一消息执行了不同的行为，这就是多态，它是通过继承和虚函数实现的。而接受同一消息的实现就是基于基类指针。</p>
@@ -3001,7 +3001,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

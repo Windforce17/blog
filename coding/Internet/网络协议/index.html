@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2902,7 +2902,7 @@
 </ul>
 <p>5、封装和分用</p>
 <p>封装：当应用程序发送数据的时候，数据在协议层次当中从顶向下通过每一层，每一层都会对数据增加一些首部或尾部信息，这样的信息称之为协议数据单元（Protocol Data Unit，缩写为PDU），在分层协议系统里，在指定的协议层上传送的数据单元，包含了该层的协议控制信息和用户信息。如下图所示：</p>
-<div class="codehilite"><pre><span></span>- 物理层（一层）PDU指数据位（Bit）
+<div class="codehilite"><pre><span></span><code>- 物理层（一层）PDU指数据位（Bit）
 
 - 数据链路层（二层）PDU指数据帧（Frame）
 
@@ -2911,7 +2911,7 @@
 - 传输层（四层）PDU指数据段（Segment）
 
 - 第五层以上为数据（data）
-</pre></div>
+</code></pre></div>
 
 
 <p><img alt="" src="../模型.png" />
@@ -3000,8 +3000,8 @@ RFC（Request for Comment）文档是所有以太网协议的正式标准，并�
 <p><strong>traceroute</strong></p>
 <p>traceroute 程序是用来侦测主机到目的主机之间所经路由情况的重要工具。刚才 ping 程序中讲过，带 -R 参数的 ping 命令也可以记录路由过程，但是，因为 IP 数据报头的长度限制(最多能保存 9 个 IP 地址)，ping 不能完全的记录下所经过的路由器，traceroute 正好就填补了这个缺憾。</p>
 <p>实验楼环境没有 traceroute 程序，需要使用以下命令安装：</p>
-<div class="codehilite"><pre><span></span>sudo apt-get install traceroute
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install traceroute
+</code></pre></div>
 
 <p>traceroute 程序的工作原理很简单：</p>
 <ul>
@@ -3112,7 +3112,7 @@ RFC（Request for Comment）文档是所有以太网协议的正式标准，并�
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2921,7 +2921,7 @@
 <li>动态链接找不到 int 0x80,需要构造 rop</li>
 <li><code>ROPgadget --binary {binary_name} --ropchain</code>可以直接生成 ROP chain，不过要转换一下</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="n">rop</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="codehilite"><pre><span></span><code><span class="n">rop</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="c1"># i = 1</span>
 <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ropc&quot;</span><span class="p">):</span>
     <span class="c1"># print line,</span>
@@ -2943,27 +2943,27 @@
         <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;0x68732f2f&#39;</span>
     <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
 <span class="nb">print</span> <span class="n">rop</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="one_gadget">one_gadget<a class="headerlink" href="#one_gadget" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/david942j/one_gadget">https://github.com/david942j/one_gadget</a></p>
 <p>直接从 glibc 里 getshell 的函数。</p>
 <h3 id="_1">寄存器赋值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>构造栈结构</p>
-<div class="codehilite"><pre><span></span>  *(pop eax ;ret)
+<div class="codehilite"><pre><span></span><code>  *(pop eax ;ret)
   3
-</pre></div>
+</code></pre></div>
 
 <p>将 eax 赋值为 3</p>
 <h3 id="_2">栈转移<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>寻找 leave;ret;指令，然后更改 ebp 的值即可</p>
-<div class="codehilite"><pre><span></span><span class="n">payload</span> <span class="o">+=</span> <span class="n">p32</span><span class="p">(</span><span class="n">base_stage</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><code><span class="n">payload</span> <span class="o">+=</span> <span class="n">p32</span><span class="p">(</span><span class="n">base_stage</span><span class="p">)</span>
 <span class="n">payload</span> <span class="o">+=</span> <span class="n">p32</span><span class="p">(</span><span class="n">leave_ret</span><span class="p">)</span>
 <span class="c1">#leave= mov esp,ebp,pop ebp</span>
-</pre></div>
+</code></pre></div>
 
 <p>例子：将 esp 设置到 bss 段上</p>
-<div class="codehilite"><pre><span></span><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">(</span>
+<div class="codehilite"><pre><span></span><code><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">(</span>
   <span class="p">[</span>
   <span class="s1">&#39;A&#39;</span> <span class="o">*</span> <span class="n">offset</span><span class="p">,</span> <span class="c1"># 覆盖到ret</span>
   <span class="n">read_plt</span><span class="p">,</span> <span class="c1"># 读100个字节到base_stage</span>
@@ -2984,11 +2984,11 @@
     <span class="c1">#...</span>
   <span class="p">]</span>
 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="_3">通用技术<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>常用的栈布局如下</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 32位</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 32位</span>
 <span class="n">flat</span><span class="p">(</span>
     <span class="p">[</span>
     <span class="n">read_addr</span><span class="p">,</span>
@@ -3019,11 +3019,11 @@
         <span class="n">system_addr</span><span class="p">,</span>
     <span class="p">]</span>
 <span class="p">)</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="ret2libc">ret2libc<a class="headerlink" href="#ret2libc" title="Permanent link">&para;</a></h2>
 <p>64 下通用 gadget,<code>__libc_csu_init</code>,一共两端代码，可以设置三个寄存器传参的值</p>
-<div class="codehilite"><pre><span></span><span class="c">;第一段代码gad1</span>
+<div class="codehilite"><pre><span></span><code><span class="c">;第一段代码gad1</span>
   <span class="nf">pop</span>     <span class="no">rbx</span>  <span class="c">;必须为0</span>
   <span class="nf">pop</span>     <span class="no">rbp</span>  <span class="c">;必须为1</span>
   <span class="nf">pop</span>     <span class="no">r12</span>  <span class="c">;你call函数的地址(应该是got上的?)</span>
@@ -3031,9 +3031,9 @@
   <span class="nf">pop</span>     <span class="no">r14</span>  <span class="c">;arg2</span>
   <span class="nf">pop</span>     <span class="no">r15</span>  <span class="c">;arg1</span>
   <span class="nf">retn</span>         <span class="c">;gad2</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="c">;第二段代码gad2</span>
+<div class="codehilite"><pre><span></span><code><span class="c">;第二段代码gad2</span>
 <span class="nf">mov</span>     <span class="no">rdx</span><span class="p">,</span> <span class="no">r13</span>
 <span class="nf">mov</span>     <span class="no">rsi</span><span class="p">,</span> <span class="no">r14</span>
 <span class="nf">mov</span>     <span class="no">edi</span><span class="p">,</span> <span class="no">r15d</span>
@@ -3049,7 +3049,7 @@
 <span class="nf">pop</span>     <span class="no">r14</span>
 <span class="nf">pop</span>     <span class="no">r15</span> <span class="c">;这个地方可以构造错位gadgets,恰好可以构造为pop rdi,ret</span>
 <span class="nf">retn</span>     <span class="c">;构造一些垫板(7*8=56byte)，因为后面后面还有很多pop+rbp+ret</span>
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -3149,7 +3149,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

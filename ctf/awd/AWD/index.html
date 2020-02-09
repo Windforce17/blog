@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2810,11 +2810,11 @@
 <li>中国特色字典</li>
 <li>bash 不记录历史记录</li>
 </ul>
-<div class="codehilite"><pre><span></span>export HISTFILE=/dev/null
+<div class="codehilite"><pre><span></span><code>export HISTFILE=/dev/null
 export HISTSILZ
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span>lsb_release  -a
+<div class="codehilite"><pre><span></span><code>lsb_release  -a
 file /bin/ls
 getconf LONG_BIT
 cat /etc/issue
@@ -2822,7 +2822,7 @@ uname -a
 whoami
 ssh user@remote_server tail -f /var/log/apache2/access.log <span class="p">|</span> ngxtop -f
 ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log <span class="p">|</span> ngxtop -f
-</pre></div>
+</code></pre></div>
 
 <h2 id="_4">虚拟化判断<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="https://www.bboysoul.com/2017/11/08/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E5%88%A4%E6%96%AD%E4%BD%A0%E7%9A%84vps%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%E7%9A%84%E5%B7%A5%E5%85%B7/">https://www.bboysoul.com/2017/11/08/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E5%88%A4%E6%96%AD%E4%BD%A0%E7%9A%84vps%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%E7%9A%84%E5%B7%A5%E5%85%B7/</a></p>
@@ -2832,7 +2832,7 @@ ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log <span class="p"
 nmap
 msscan</p>
 <h2 id="_6">常用命令<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>scp 文件路径 用户名@IP:存放路径
+<div class="codehilite"><pre><span></span><code>scp 文件路径 用户名@IP:存放路径
 who 查看tty
 pkill ‐kill ‐t &lt;用户tty&gt;
 <span class="c1">#查看已建立的网络连接及进程</span>
@@ -2863,7 +2863,7 @@ r <span class="p">|</span> head ‐
 <span class="c1">#查看页面访问排名前十的URL</span>
 cat /var/log/apache2/access.log <span class="p">|</span> cut ‐f4 ‐d
 r <span class="p">|</span> head ‐
-</pre></div>
+</code></pre></div>
 
 <p>netstat ‐ant|awk |grep |sed ‐e ‐e |sort|uniq ‐c|sort ‐rn
 win:netstat -no 查看网络链接</p>
@@ -2884,7 +2884,7 @@ mkdir /tmp/r00t</p>
 <p>umount /tmp/r00t</p>
 <p>ssh root@192.168.99.131</p>
 <h2 id="ftp-ssh">ftp ssh 配置文件检查<a class="headerlink" href="#ftp-ssh" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>telnet 192.168.99.131 21
+<div class="codehilite"><pre><span></span><code>telnet 192.168.99.131 21
 
 Trying 192.168.99.131…
 
@@ -2903,7 +2903,7 @@ pass invalid
 ^]
 
 telnet&gt; quit
-</pre></div>
+</code></pre></div>
 
 
 <p>telnet 192.168.99.131 6200</p>
@@ -3034,7 +3034,7 @@ Default password = password</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

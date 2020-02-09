@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2857,27 +2857,27 @@
 <p>不行就去.acme.sh/里面吧</p>
 <h2 id="dnspod-api">使用dnspod api<a class="headerlink" href="#dnspod-api" title="Permanent link">&para;</a></h2>
 <p>下面是dddd.im的脚本。
-<div class="codehilite"><pre><span></span>    <span class="nb">export</span> <span class="nv">DP_Id</span><span class="o">=</span><span class="s2">&quot;1111&quot;</span>  <span class="o">&amp;&amp;</span>
+<div class="codehilite"><pre><span></span><code>    <span class="nb">export</span> <span class="nv">DP_Id</span><span class="o">=</span><span class="s2">&quot;1111&quot;</span>  <span class="o">&amp;&amp;</span>
     <span class="nb">export</span> <span class="nv">DP_Key</span><span class="o">=</span><span class="s2">&quot;xxxxx&quot;</span>  <span class="o">&amp;&amp;</span>
     acme.sh --issue --dns dns_dp -d *.cugapp.com
     acme.sh  --installcert  -d  *.cugapp.com   <span class="se">\</span>
             --key-file   /usr/local/nginx/conf/ssl/cugapp.com.key <span class="se">\</span>
             --fullchain-file /usr/local/nginx/conf/ssl/cugapp.com.cer <span class="se">\</span>
             --reloadcmd  <span class="s2">&quot;nginx -s reload&quot;</span> 
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="webroot">使用webroot方式<a class="headerlink" href="#webroot" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>acme.sh  --issue -d blog.lomot.cn  --webroot  /var/www/blog.lomot.cn/
-</pre></div>
+<div class="codehilite"><pre><span></span><code>acme.sh  --issue -d blog.lomot.cn  --webroot  /var/www/blog.lomot.cn/
+</code></pre></div>
 
 <h2 id="_1">开启自动更新<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>acme.sh --upgrade --auto-upgrade
+<div class="codehilite"><pre><span></span><code>acme.sh --upgrade --auto-upgrade
 acme.sh --renew -d <span class="s1">&#39;*.168seo.cn&#39;</span> --force
-</pre></div>
+</code></pre></div>
 
 <h1 id="openssl">下面是一些OpenSSL的东西<a class="headerlink" href="#openssl" title="Permanent link">&para;</a></h1>
 <p>转载:<a href="https://www.jianshu.com/p/bc18038cc9c8">https://www.jianshu.com/p/bc18038cc9c8</a>
 crt和cer是一个东西
-<div class="codehilite"><pre><span></span><span class="c1"># 转换为perm文件</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 转换为perm文件</span>
 openssl pkcs12 -in xxx.pfx -nodes -out xxx.pem 
 openssl x509 -inform der -in xxx.cer -out xxx.pem
 
@@ -2893,9 +2893,9 @@ openssl rsa -in  xxx.key -out private.pem
 openssl rsa -in private.pem -RSAPublicKey_out -out public.pem
 <span class="c1"># 从密钥对提取公钥 头部：-----BEGIN PUBLIC KEY-----</span>
 openssl rsa -in private.key -pubout -out public.key
-</pre></div>
+</code></pre></div>
 python相关代码
-<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">rsa</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">rsa</span>
 
 <span class="c1"># 生成密钥</span>
 <span class="p">(</span><span class="n">pubkey</span><span class="p">,</span> <span class="n">privkey</span><span class="p">)</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">newkeys</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
@@ -2924,7 +2924,7 @@ python相关代码
     <span class="c1"># 私钥解密</span>
     <span class="n">message</span> <span class="o">=</span> <span class="n">rsa</span><span class="o">.</span><span class="n">decrypt</span><span class="p">(</span><span class="n">crypto</span><span class="p">,</span> <span class="n">privkey</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-</pre></div></p>
+</code></pre></div></p>
                 
                   
                 
@@ -3024,7 +3024,7 @@ python相关代码
       
     </div>
     
-      <script src="../../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

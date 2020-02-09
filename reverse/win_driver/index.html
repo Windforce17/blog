@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -2860,15 +2860,15 @@ VirtualKD 免去配置 Windbg 双击调试的步骤，提高响应速度<br />
 <a href="http://sysprogs.com/legacy/virtualkd/download/">http://sysprogs.com/legacy/virtualkd/download/</a></p>
 <h2 id="_2">配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>设置符号目录</p>
-<div class="codehilite"><pre><span></span>.symfix D:\win_symbol
+<div class="codehilite"><pre><span></span><code>.symfix D:\win_symbol
 .sympath
-</pre></div>
+</code></pre></div>
 
 <p>virtualKD 配置：选择 custom、C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\windbg.exe /k com:pipe,resets=0,reconnect,port=$(pipename)<br />
 或者使用 windbgx.exe</p>
 <h2 id="example">example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
 <p>新建项目,选择 WDM,然后目标系统改为 win7，调低并关闭警告等级</p>
-<div class="codehilite"><pre><span></span><span class="c1">//main.c</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">//main.c</span>
 <span class="cp">#include</span><span class="cpf">&lt;ntddk.h&gt;</span><span class="cp"></span>
 <span class="n">VOID</span>
 <span class="nf">Unload</span><span class="p">(</span>
@@ -2886,7 +2886,7 @@ VirtualKD 免去配置 Windbg 双击调试的步骤，提高响应速度<br />
     <span class="n">DriverObject</span><span class="o">-&gt;</span><span class="n">DriverUnload</span> <span class="o">=</span> <span class="n">Unload</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">STATUS_SUCCESS</span><span class="p">;</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <p>要在 windbgx 中设置符号目录，编译后，使用 InstDrv（驱动加载工具）载入驱动，安装，启动，就能自动断下来了.
 或者使用命令<code>sxe ld DancingKeys.sys</code>.</p>
@@ -3008,7 +3008,7 @@ VirtualKD 免去配置 Windbg 双击调试的步骤，提高响应速度<br />
       
     </div>
     
-      <script src="../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../assets/javascripts/application.df00da5d.js"></script>
       
         
         

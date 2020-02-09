@@ -38,7 +38,7 @@
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.2">
     
     
       
@@ -46,9 +46,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.e194128b.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.adb8469c.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.3e3d1dff.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.a8b3c06d.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
@@ -3071,7 +3071,7 @@
                 
                 <h1 id="golang-tips-and-traps">Golang tips and traps<a class="headerlink" href="#golang-tips-and-traps" title="Permanent link">&para;</a></h1>
 <h2 id="_1">未使用的变量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kd">var</span> <span class="nx">gvar</span> <span class="kt">int</span> <span class="c1">//not an error</span>
 
@@ -3082,18 +3082,18 @@
     <span class="nx">_</span><span class="p">=</span><span class="nx">two</span>
 
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="_2">包导入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 <span class="kn">import</span> <span class="p">.</span> <span class="s">&quot;fmt&quot;</span>
 <span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">Println</span><span class="p">()</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="init">init<a class="headerlink" href="#init" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 <span class="kn">import</span> <span class="p">.</span> <span class="s">&quot;fmt&quot;</span>
 
 <span class="kd">const</span> <span class="nx">Hello</span><span class="p">=</span><span class="s">&quot;hello&quot;</span>
@@ -3105,26 +3105,26 @@
 <span class="p">}</span>
 
 <span class="kd">func</span> <span class="nx">main</span><span class="p">(){}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="nil-pointer">nil pointer<a class="headerlink" href="#nil-pointer" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>    <span class="kd">var</span> <span class="nx">m</span> <span class="o">*</span><span class="kt">int</span> <span class="c1">//nil int pointer</span>
+<div class="codehilite"><pre><span></span><code>    <span class="kd">var</span> <span class="nx">m</span> <span class="o">*</span><span class="kt">int</span> <span class="c1">//nil int pointer</span>
     <span class="kd">var</span> <span class="nx">n</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">int</span> <span class="c1">//nil map[string]int reference</span>
     <span class="o">*</span><span class="nx">m</span><span class="p">=</span><span class="mi">4</span>    <span class="c1">//error</span>
     <span class="c1">//m=new(int)</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="bitwise-operator">bitwise Operator<a class="headerlink" href="#bitwise-operator" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">a</span><span class="o">:=</span><span class="mi">2</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(^</span><span class="nx">a</span><span class="p">)</span>
     <span class="c1">//~ XOR</span>
     <span class="c1">//优先级</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="map-slice-is-reference">map , slice is reference<a class="headerlink" href="#map-slice-is-reference" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">s</span><span class="o">:=</span><span class="nb">make</span><span class="p">([][]</span><span class="kt">int</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
     <span class="nx">d</span><span class="o">:=</span><span class="p">[]</span><span class="kt">int</span><span class="p">{</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">}</span>
     <span class="nx">s</span><span class="p">=</span><span class="nb">append</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span> <span class="nx">d</span><span class="p">)</span>
@@ -3132,10 +3132,10 @@
     <span class="nx">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]=</span><span class="mi">7</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
 <span class="p">}</span><span class="nx">s</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="connect-multi-slice">connect multi slice<a class="headerlink" href="#connect-multi-slice" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">concat</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">concat</span>
 
 <span class="kd">func</span> <span class="nx">concatCopyPreAllocate</span><span class="p">(</span><span class="nx">slices</span> <span class="p">[][]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">[]</span><span class="kt">byte</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">totalLen</span> <span class="kt">int</span>
@@ -3157,10 +3157,10 @@
     <span class="p">}</span>
     <span class="k">return</span> <span class="nx">tmp</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="rune">rune<a class="headerlink" href="#rune" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">data2</span> <span class="o">:=</span> <span class="s">&quot;青云&quot;</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">data2</span><span class="p">)))</span>
 <span class="p">}</span>
@@ -3170,10 +3170,10 @@
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nx">data</span><span class="p">))</span> <span class="c1">//prints: 3</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">len</span><span class="p">([]</span><span class="nb">rune</span><span class="p">(</span><span class="nx">data</span><span class="p">)))</span><span class="c1">//print:2</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="composistion">composistion<a class="headerlink" href="#composistion" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 
@@ -3204,11 +3204,11 @@
     <span class="p">}</span>
     <span class="nx">zhichen</span><span class="p">.</span><span class="nx">Introduce</span><span class="p">()</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="struct-compare">struct compare<a class="headerlink" href="#struct-compare" title="Permanent link">&para;</a></h2>
 <p>只有<code>struct</code>中数据都可以比较时，才能用 <code>==</code>
-<div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>  
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>  
     <span class="nx">num</span> <span class="kt">int</span>
     <span class="nx">fp</span> <span class="kt">float32</span>
     <span class="nx">complex</span> <span class="kt">complex64</span>
@@ -3226,9 +3226,9 @@
     <span class="nx">v2</span> <span class="o">:=</span> <span class="nx">data</span><span class="p">{}</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;v1 == v2:&quot;</span><span class="p">,</span><span class="nx">v1</span> <span class="o">==</span> <span class="nx">v2</span><span class="p">)</span> <span class="c1">//prints: v1 == v2: true</span>
 <span class="p">}</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="deepequal-bytesequal">DeepEqual() &amp; bytes.Equal<a class="headerlink" href="#deepequal-bytesequal" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
     <span class="s">&quot;fmt&quot;</span>
@@ -3243,9 +3243,9 @@
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;b1 == b2:&quot;</span><span class="p">,</span> <span class="nx">bytes</span><span class="p">.</span><span class="nx">Equal</span><span class="p">(</span><span class="nx">b1</span><span class="p">,</span> <span class="nx">b2</span><span class="p">))</span> <span class="c1">//print: b1 == b2: true</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;b1 == b2&quot;</span><span class="p">,</span><span class="nx">reflect</span><span class="p">.</span><span class="nx">DeepEqual</span><span class="p">(</span><span class="nx">b1</span><span class="p">,</span><span class="nx">b2</span><span class="p">))</span><span class="c1">//print: b1 == b2:false</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
     <span class="s">&quot;fmt&quot;</span>
@@ -3274,10 +3274,10 @@
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;data == decoded:&quot;</span><span class="p">,</span><span class="nx">reflect</span><span class="p">.</span><span class="nx">DeepEqual</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">decoded</span><span class="p">))</span>
     <span class="c1">//prints: data == decoded: false (not ok)</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="goroutines-sync-group">goroutines sync group<a class="headerlink" href="#goroutines-sync-group" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">var</span> <span class="nx">wg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
     <span class="nx">workerCount</span> <span class="o">:=</span> <span class="mi">2</span>
 
@@ -3295,10 +3295,10 @@
     <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;[%v] is done\n&quot;</span><span class="p">,</span><span class="nx">workerId</span><span class="p">)</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="chan-buffer-size">chan buffer size<a class="headerlink" href="#chan-buffer-size" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">a</span><span class="o">:=</span><span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="kt">bool</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
     <span class="nx">a</span><span class="o">&lt;-</span><span class="kc">true</span>
     <span class="kd">var</span> <span class="nx">vg</span> <span class="nx">sync</span><span class="p">.</span><span class="nx">WaitGroup</span>
@@ -3311,10 +3311,10 @@
         <span class="nx">vg</span><span class="p">.</span><span class="nx">Wait</span><span class="p">()</span>
 
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="nil-channel-closed-channel">nil channel &amp; closed channel<a class="headerlink" href="#nil-channel-closed-channel" title="Permanent link">&para;</a></h2>
-<p><div class="codehilite"><pre><span></span> <span class="c1">//close a nil chan will panic</span>
+<p><div class="codehilite"><pre><span></span><code> <span class="c1">//close a nil chan will panic</span>
  <span class="c1">//send or read nil chan will lock</span>
  <span class="c1">//sent a closed chan will panic</span>
  <span class="c1">//you can read close chan</span>
@@ -3360,9 +3360,9 @@
         <span class="nx">WaitMany</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span>
         <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;waited %v for WaitMany\n&quot;</span><span class="p">,</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Since</span><span class="p">(</span><span class="nx">t0</span><span class="p">))</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 <a href="https://dave.cheney.net/2013/04/30/curious-channels">https://dave.cheney.net/2013/04/30/curious-channels</a>
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="p">(</span>
     <span class="s">&quot;fmt&quot;</span>
@@ -3383,9 +3383,9 @@
     <span class="nx">a</span> <span class="o">&lt;-</span> <span class="kc">true</span>
 
 <span class="p">}</span>
-</pre></div></p>
+</code></pre></div></p>
 <h2 id="variables-in-loop">variables in loop<a class="headerlink" href="#variables-in-loop" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">data</span> <span class="o">:=</span> <span class="p">[]</span><span class="kt">string</span><span class="p">{</span><span class="s">&quot;one&quot;</span><span class="p">,</span> <span class="s">&quot;two&quot;</span><span class="p">,</span> <span class="s">&quot;three&quot;</span><span class="p">}</span>
     <span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">v</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">data</span> <span class="p">{</span>
         <span class="k">go</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
@@ -3396,10 +3396,10 @@
 
     <span class="nx">time</span><span class="p">.</span><span class="nx">Sleep</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="nx">time</span><span class="p">.</span><span class="nx">Second</span><span class="p">)</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="break-loop">break loop<a class="headerlink" href="#break-loop" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>  
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>  
     <span class="nx">loop</span><span class="p">:</span>
         <span class="k">for</span> <span class="p">{</span>
             <span class="k">switch</span> <span class="p">{</span>
@@ -3411,10 +3411,10 @@
 
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;out!&quot;</span><span class="p">)</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="close-http-body">close http body<a class="headerlink" href="#close-http-body" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>  
+<div class="codehilite"><pre><span></span><code><span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>  
     <span class="nx">resp</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">Get</span><span class="p">(</span><span class="s">&quot;https://www.qingcloud.com/&quot;</span><span class="p">)</span>
     <span class="k">if</span> <span class="nx">resp</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
         <span class="k">defer</span> <span class="nx">resp</span><span class="p">.</span><span class="nx">Body</span><span class="p">.</span><span class="nx">Close</span><span class="p">()</span>
@@ -3431,10 +3431,10 @@
 
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">body</span><span class="p">))</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="defer-call">defer call<a class="headerlink" href="#defer-call" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 
@@ -3445,10 +3445,10 @@
     <span class="nx">i</span><span class="o">++</span>
     <span class="c1">//prints: result =&gt; 2 (if you expected 4)</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="map-not-addressable">map not addressable<a class="headerlink" href="#map-not-addressable" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">name</span> <span class="kt">string</span>
 <span class="p">}</span>
 
@@ -3463,9 +3463,9 @@
     <span class="nx">m</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="nx">data</span> <span class="p">{</span><span class="s">&quot;3&quot;</span><span class="p">:</span><span class="nx">data</span><span class="p">{</span><span class="s">&quot;three&quot;</span><span class="p">}}</span>
     <span class="nx">m</span><span class="p">[</span><span class="s">&quot;3&quot;</span><span class="p">].</span><span class="nb">print</span><span class="p">()</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">name</span> <span class="kt">string</span>
@@ -3479,9 +3479,9 @@
     <span class="nx">m</span><span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">r</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;%v&quot;</span><span class="p">,</span><span class="nx">m</span><span class="p">)</span> <span class="c1">//prints: map[x:{two}]</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kd">type</span> <span class="nx">data</span> <span class="kd">struct</span> <span class="p">{</span>
     <span class="nx">name</span> <span class="kt">string</span>
@@ -3491,10 +3491,10 @@
     <span class="nx">m</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="o">*</span><span class="nx">data</span> <span class="p">{</span><span class="s">&quot;x&quot;</span><span class="p">:{</span><span class="s">&quot;one&quot;</span><span class="p">}}</span>
     <span class="nx">m</span><span class="p">[</span><span class="s">&quot;z&quot;</span><span class="p">].</span><span class="nx">name</span> <span class="p">=</span> <span class="s">&quot;what?&quot;</span> <span class="c1">//???</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="nil-interfaces-and-nil-interfaces-values">"nil" Interfaces and "nil" Interfaces Values<a class="headerlink" href="#nil-interfaces-and-nil-interfaces-values" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 
@@ -3507,9 +3507,9 @@
     <span class="nx">in</span> <span class="p">=</span> <span class="nx">data</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">in</span><span class="p">,</span><span class="nx">in</span> <span class="o">==</span> <span class="kc">nil</span><span class="p">)</span>     <span class="c1">//prints: &lt;nil&gt; false</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
-<div class="codehilite"><pre><span></span><span class="kn">package</span> <span class="nx">main</span>
+<div class="codehilite"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span>
 
 <span class="kn">import</span> <span class="s">&quot;fmt&quot;</span>
 
@@ -3520,7 +3520,7 @@
 <span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
                 
                   
                 
@@ -3620,7 +3620,7 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/application.970603a6.js"></script>
+      <script src="../../../assets/javascripts/application.df00da5d.js"></script>
       
         
         
