@@ -151,7 +151,8 @@ bindkey '\e[1;3B' end-of-line
 bindkey '\ev' deer
 
 alias ll='ls -lh'
-
+alias proxyon='export ALL_PROXY=http://192.168.124.1:1080'
+alias proxyoff='unset ALL_PROXT'
 
 # options
 unsetopt correct_all

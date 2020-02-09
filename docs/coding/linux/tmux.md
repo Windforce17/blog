@@ -5,17 +5,7 @@ tmux 中的快捷键是有前缀的，默认是`ctrl+b`.
 
 ## config
 
-```
-#below reset tmux prefix command key
-set -g prefix C-x
-unbind C-b
-bind C-x send-prefix
-#set swap pane key
-bind-key k select-pane -U
-bind-key j select-pane -D
-bind-key h select-pane -L
-bind-key l select-pane -R
-```
+see `config/.tmux.conf`
 
 将`ctrl+b` 改为了`ctrl+x`
 
