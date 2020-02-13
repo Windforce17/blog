@@ -35,6 +35,8 @@ modprobe vmnet &&
 # need start service
 #vmware-hostd vmware-networks vmware-usbarbitrator
 
+# tools
+yay -S pkgfile &&
 # uninstall
 yay -Rsn firefox &&
 yay -Rsn steam-manjaro &&

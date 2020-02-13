@@ -73,3 +73,24 @@ B8 A86F4B00   MOV EAX,PE.004B6FA8
 E8 1D020000        call hh.010017B0
 33DB               xor ebx,ebx
 ```
+
+## intel 指令编码方式
+
+每一个指令分为 6 部分：
+
+1. prefix 1byte
+2. opcode 1~3byes
+3. ModR/M 1byte(if reqired)
+4. SIM 1byte(if required)
+5. Address displacement 0~4byes
+6. immediate data 0~4bytes
+7. x64 还有 REX 前缀，在 prefix 和 opcode 之间
+
+### prefix
+
+指令前缀，一共五种：
+
+1. LOCK 0xf0 禁止数据线服用，一般很少用
+2. REPNE/REPNZ 0xf2 用 RCX/ECX/CX 寄存器作为指令是否重复执行的依据
+3. REP/REPE/REPZ 0xf3 同上
+4.
