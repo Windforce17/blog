@@ -1110,10 +1110,30 @@
     安装
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    制作多启动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    步骤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     联网
   </a>
   
@@ -1127,14 +1147,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     安全设置
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     安装后的
   </a>
   
@@ -1142,7 +1162,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     环境配置
   </a>
   
@@ -2837,10 +2857,30 @@
     安装
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    制作多启动
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    步骤
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     联网
   </a>
   
@@ -2854,14 +2894,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     安全设置
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     安装后的
   </a>
   
@@ -2869,7 +2909,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     环境配置
   </a>
   
@@ -2922,33 +2962,38 @@
                   <h1>Arch</h1>
                 
                 <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>建议使用Ultra ISO,rufus(win),dd(linux)进行写入U盘
-1. 验证hash，设置键盘，检查启动模式，连接互联网
-2. 更新时间<code>timedatectl set-ntp true</code>
-3. 分区，根目录，LVM，RAID,swap等,然后格式化,uefi的可以试试直接格式化/dev/sda....
-4. swap处理 <code>mkswap /dev/sdX2;swapon /dev/sdX2</code>
-5. 挂载根目录 <code>mount /dev/sdX1 /mnt</code> 
-6. 修改<code>/etc/pacman.d/mirrorlist</code> 选择最快的地址，我使用ustc和清华的，或者使用<code>pacman-mirrors -b testing -c China</code>
-7. 安装系统：<code>pacstrap /mnt base linux linux-firmware</code>
-8. 更新启动挂载盘:<code>genfstab -U /mnt &gt; /mnt/etc/fstab</code>
-8. 更改根目录，进入系统 <code>arch-chroot /mnt</code>
-9. 设置时区并同步到硬件:<code>ln -sf /usr/share/zoneinfo/Region/City /etc/localtime;hwclock --systohc</code>
-10. 本地化:注释掉你需要的locales在<code>/etc/locale.gen</code>,然后<code>locale-gen</code>
-11. 添加你的hostname<code>echo you_host_name &gt; /etc/hostname</code>
-12. 在<code>/etc/hosts</code>中添加你的本地ip，例如<code>127.0.0.1 you_hostname\n ::1 you_hostname</code>
-13. 安装grub引导:<code>grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg</code>
-14. 改密码:<code>passwd;reboot</code>
-15. 配置网络，自带了<code>systemd-networkd</code>，看<a href="https://wiki.archlinux.org/index.php/Systemd-networkd">这个</a></p>
-<h2 id="_2">联网<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_2">制作多启动<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><a href="https://wiki.archlinux.org/index.php/Multiboot_USB_drive">https://wiki.archlinux.org/index.php/Multiboot_USB_drive</a>
+建议使用 Ultra ISO,rufus(win),dd(linux)进行写入 U 盘</p>
+<h3 id="_3">步骤<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>验证 hash，设置键盘，检查启动模式，连接互联网</li>
+<li>更新时间<code>timedatectl set-ntp true</code></li>
+<li>分区，根目录，LVM，RAID,swap 等,然后格式化,uefi 的可以试试直接格式化/dev/sda....</li>
+<li>swap 处理 <code>mkswap /dev/sdX2;swapon /dev/sdX2</code></li>
+<li>挂载根目录 <code>mount /dev/sdX1 /mnt</code></li>
+<li>修改<code>/etc/pacman.d/mirrorlist</code> 选择最快的地址，我使用 ustc 和清华的，或者使用<code>pacman-mirrors -b testing -c China</code></li>
+<li>安装系统：<code>pacstrap /mnt base linux linux-firmware</code></li>
+<li>更新启动挂载盘:<code>genfstab -U /mnt &gt; /mnt/etc/fstab</code></li>
+<li>更改根目录，进入系统 <code>arch-chroot /mnt</code></li>
+<li>设置时区并同步到硬件:<code>ln -sf /usr/share/zoneinfo/Region/City /etc/localtime;hwclock --systohc</code></li>
+<li>本地化:注释掉你需要的 locales 在<code>/etc/locale.gen</code>,然后<code>locale-gen</code></li>
+<li>添加你的 hostname<code>echo you_host_name &gt; /etc/hostname</code></li>
+<li>在<code>/etc/hosts</code>中添加你的本地 ip，例如<code>127.0.0.1 you_hostname\n ::1 you_hostname</code></li>
+<li>安装 grub 引导:<code>grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg</code></li>
+<li>改密码:<code>passwd;reboot</code></li>
+<li>配置网络，自带了<code>systemd-networkd</code>，看<a href="https://wiki.archlinux.org/index.php/Systemd-networkd">这个</a></li>
+</ol>
+<h2 id="_4">联网<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/r8l8q8/article/details/73252970#79tkjm1497440352464">http://blog.csdn.net/r8l8q8/article/details/73252970#79tkjm1497440352464</a></p>
 <h2 id="wifi">wifi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h2>
-<p>iw工具和wpa_supplicant</p>
-<p>更改mkinitcpio配置后，需要手动重新生成镜像：
-    mkinitcpio -p linuxx
-警告: lvm2、mdadm、encrypt支持默认是关闭的。
+<p>iw 工具和 wpa_supplicant</p>
+<p>更改 mkinitcpio 配置后，需要手动重新生成镜像：
+mkinitcpio -p linuxx
+警告: lvm2、mdadm、encrypt 支持默认是关闭的。
 参考：<a href="https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87</a>)</p>
-<h2 id="_3">安全设置<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h2 id="_4">安装后的<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<h2 id="_5">安全设置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h2 id="_6">安装后的<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="c1">#添加以下内容</span>
 sudo pacman-mirrors -b testing -c China<span class="o">&amp;&amp;</span>
 sudo vi /etc/pacman.conf
@@ -2957,7 +3002,7 @@ sudo vi /etc/pacman.conf
 sudo pacman -S archlinuxcn-keyring
 </code></pre></div>
 
-<h3 id="_5">环境配置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_7">环境配置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># fonts</span>
  yay -S adobe-source-han-sans-otc-fonts
  yay -S wqy-zenhei wqy-microhei
@@ -2967,9 +3012,9 @@ sudo pacman -S archlinuxcn-keyring
 
 <h3 id="qq">qq<a class="headerlink" href="#qq" title="Permanent link">&para;</a></h3>
 <p>安装<code>环境配置</code>中的两个字体
-要设置LANG为zh_CN
+要设置 LANG 为 zh_CN
 立即应用:<code>source /etc/profile.d/locale.sh</code>
-wqy-zenhei与wqy-microhei</p>
+wqy-zenhei 与 wqy-microhei</p>
 <h3 id="wps">wps<a class="headerlink" href="#wps" title="Permanent link">&para;</a></h3>
                 
                   

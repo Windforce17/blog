@@ -2466,6 +2466,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#intel" class="md-nav__link">
+    intel 指令编码方式
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefix" class="md-nav__link">
+    prefix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2892,6 +2912,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#intel" class="md-nav__link">
+    intel 指令编码方式
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prefix" class="md-nav__link">
+    prefix
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2981,6 +3021,26 @@ B8 A86F4B00   MOV EAX,PE.004B6FA8
 E8 1D020000        call hh.010017B0
 33DB               xor ebx,ebx
 </code></pre></div>
+
+<h2 id="intel">intel 指令编码方式<a class="headerlink" href="#intel" title="Permanent link">&para;</a></h2>
+<p>每一个指令分为 6 部分：</p>
+<ol>
+<li>prefix 1byte</li>
+<li>opcode 1~3byes</li>
+<li>ModR/M 1byte(if reqired)</li>
+<li>SIM 1byte(if required)</li>
+<li>Address displacement 0~4byes</li>
+<li>immediate data 0~4bytes</li>
+<li>x64 还有 REX 前缀，在 prefix 和 opcode 之间</li>
+</ol>
+<h3 id="prefix">prefix<a class="headerlink" href="#prefix" title="Permanent link">&para;</a></h3>
+<p>指令前缀，一共五种：</p>
+<ol>
+<li>LOCK 0xf0 禁止数据线服用，一般很少用</li>
+<li>REPNE/REPNZ 0xf2 用 RCX/ECX/CX 寄存器作为指令是否重复执行的依据</li>
+<li>REP/REPE/REPZ 0xf3 同上
+4.</li>
+</ol>
                 
                   
                 
