@@ -1088,6 +1088,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Arch
@@ -1101,89 +1103,23 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    安装
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     制作多启动
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     步骤
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    联网
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wifi" class="md-nav__link">
-    wifi
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    安全设置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    安装后的
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    环境配置
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#qq" class="md-nav__link">
-    qq
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wps" class="md-nav__link">
-    wps
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2848,89 +2784,23 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">目录</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    安装
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     制作多启动
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     步骤
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    联网
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wifi" class="md-nav__link">
-    wifi
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    安全设置
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    安装后的
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    环境配置
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#qq" class="md-nav__link">
-    qq
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wps" class="md-nav__link">
-    wps
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2958,8 +2828,6 @@
                 
                   <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/linux/arch.md" title="编辑此页" class="md-icon md-content__icon">&#xE3C9;</a>
                 
-                
-                  <h1>Arch</h1>
                 
                 <h2 id="_1">安装<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <h3 id="_2">制作多启动<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -3003,13 +2871,21 @@ sudo pacman -S archlinuxcn-keyring
 </code></pre></div>
 
 <h3 id="_7">环境配置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># fonts</span>
+<p><div class="codehilite"><pre><span></span><code><span class="c1"># fonts</span>
  yay -S adobe-source-han-sans-otc-fonts
  yay -S wqy-zenhei wqy-microhei
  yay -S ttf-ms-win10-zh_cn
  yay -S wps-office
 </code></pre></div>
-
+```sh</p>
+<h1 id="input-method">input method<a class="headerlink" href="#input-method" title="Permanent link">&para;</a></h1>
+<p>ysy -S fcitx-sogoupinyin &amp;&amp;
+yay -S fcitx-qt5 &amp;&amp;
+yay -S fcitx-gtk3 </p>
+<h1 id="xprofile">.xprofile<a class="headerlink" href="#xprofile" title="Permanent link">&para;</a></h1>
+<p>export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"</p>
 <h3 id="qq">qq<a class="headerlink" href="#qq" title="Permanent link">&para;</a></h3>
 <p>安装<code>环境配置</code>中的两个字体
 要设置 LANG 为 zh_CN
