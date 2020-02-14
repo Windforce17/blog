@@ -59,6 +59,17 @@ sudo pacman -S archlinuxcn-keyring
  yay -S ttf-ms-win10-zh_cn
  yay -S wps-office
 ```
+```sh
+# input method
+ysy -S fcitx-sogoupinyin &&
+yay -S fcitx-qt5 &&
+yay -S fcitx-gtk3 
+
+#.xprofile
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS="@im=fcitx"
+
 
 ### qq
 

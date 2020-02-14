@@ -5,10 +5,9 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 pacman -Syu &&
 pacman -S yay &&
 # input method
-#fcitx-sogoupinyin fcitx-im
+ysy -S fcitx-sogoupinyin &&
 yay -S fcitx-qt5 &&
 yay -S fcitx-gtk3 &&
-yay -S fctix-googlepinyin &&
 yay -S shadowsocks-qt5 &&
 yay -S google-chrome &&
 yay -S go &&
