@@ -59,17 +59,23 @@ sudo pacman -S archlinuxcn-keyring
  yay -S ttf-ms-win10-zh_cn
  yay -S wps-office
 ```
+
 ```sh
 # input method
-ysy -S fcitx-sogoupinyin &&
+ysy -S fcitx-googlepinyin &&
 yay -S fcitx-qt5 &&
-yay -S fcitx-gtk3 
-
+yay -S fcitx-qt4 &&
+yay -S fcitx-
 #.xprofile
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
+```
 
+```sh
+# laptop acpi
+yay -S acpi
+```
 
 ### qq
 
@@ -79,3 +85,7 @@ export XMODIFIERS="@im=fcitx"
 wqy-zenhei 与 wqy-microhei
 
 ### wps
+
+### touchpad
+
+deepin: edit `/usr/share/dde-daemon/guesture.json`
