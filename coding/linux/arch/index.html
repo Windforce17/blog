@@ -1173,6 +1173,19 @@
     qq
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    图片不加载
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2927,6 +2940,19 @@
     qq
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    图片不加载
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3040,10 +3066,20 @@ yay -S acpi
 </code></pre></div>
 
 <h3 id="qq">qq<a class="headerlink" href="#qq" title="Permanent link">&para;</a></h3>
-<p>安装<code>环境配置</code>中的两个字体
+<p>安装<code>环境配置</code>中的两个字体:wqy-zenhei 与 wqy-microhei
 要设置 LANG 为 zh_CN
-立即应用:<code>source /etc/profile.d/locale.sh</code>
-wqy-zenhei 与 wqy-microhei</p>
+立即应用:<code>source /etc/profile.d/locale.sh</code></p>
+<h4 id="_8">图片不加载<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<ol>
+<li>禁用ipv6
+<div class="codehilite"><pre><span></span><code># /etc/sysctl.conf
+net.ipv6.conf.all.disable_ipv6 =1
+net.ipv6.conf.default.disable_ipv6 =1
+net.ipv6.conf.lo.disable_ipv6 =1
+</code></pre></div></li>
+<li>清空缓存
+<code>sudo rm -rf ~/.deepinwine/Deepin-QQ</code></li>
+</ol>
 <h3 id="wps">wps<a class="headerlink" href="#wps" title="Permanent link">&para;</a></h3>
 <h3 id="touchpad">touchpad<a class="headerlink" href="#touchpad" title="Permanent link">&para;</a></h3>
 <p>deepin: edit <code>/usr/share/dde-daemon/guesture.json</code></p>
