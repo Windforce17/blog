@@ -3042,6 +3042,14 @@ sudo vi /etc/pacman.conf
 sudo pacman -S archlinuxcn-keyring
 </code></pre></div>
 
+<ol>
+<li><code>/etc/ssh/ssh_config</code>添加:</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>IPQoS 0
+TCPKeepAlive=yes
+ServerAliveInterval 60
+</code></pre></div>
+
 <h3 id="_7">环境配置<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># fonts</span>
  yay -S adobe-source-han-sans-otc-fonts
@@ -3061,8 +3069,11 @@ yay -S fcitx-
 <span class="nb">export</span> <span class="nv">XMODIFIERS</span><span class="o">=</span><span class="s2">&quot;@im=fcitx&quot;</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># laptop acpi</span>
-yay -S acpi
+<div class="codehilite"><pre><span></span><code><span class="c1"># laptop acpi dell laptop</span>
+yay -S acpi i8utils dell-bios-fan-control-git
+<span class="c1"># control fan speed</span>
+<span class="c1"># https://bbs.archlinux.org/viewtopic.php?id=248106</span>
+<span class="c1"># https://wiki.archlinux.org/index.php/Fan_speed_control#Dell_laptops</span>
 </code></pre></div>
 
 <h3 id="qq">qq<a class="headerlink" href="#qq" title="Permanent link">&para;</a></h3>
@@ -3071,14 +3082,17 @@ yay -S acpi
 立即应用:<code>source /etc/profile.d/locale.sh</code></p>
 <h4 id="_8">图片不加载<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <ol>
-<li>禁用ipv6
+<li>禁用 ipv6</li>
+</ol>
 <div class="codehilite"><pre><span></span><code># /etc/sysctl.conf
 net.ipv6.conf.all.disable_ipv6 =1
 net.ipv6.conf.default.disable_ipv6 =1
 net.ipv6.conf.lo.disable_ipv6 =1
-</code></pre></div></li>
+</code></pre></div>
+
+<ol>
 <li>清空缓存
-<code>sudo rm -rf ~/.deepinwine/Deepin-QQ</code></li>
+   <code>sudo rm -rf ~/.deepinwine/Deepin-QQ</code></li>
 </ol>
 <h3 id="wps">wps<a class="headerlink" href="#wps" title="Permanent link">&para;</a></h3>
 <h3 id="touchpad">touchpad<a class="headerlink" href="#touchpad" title="Permanent link">&para;</a></h3>
