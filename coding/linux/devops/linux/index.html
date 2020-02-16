@@ -1260,7 +1260,7 @@
       
         <li class="md-nav__item">
   <a href="#locale-issue" class="md-nav__link">
-    locale  issue
+    locale issue
   </a>
   
 </li>
@@ -1336,7 +1336,7 @@
       
         <li class="md-nav__item">
   <a href="#linux" class="md-nav__link">
-    如何查看Linux系统的带宽流量
+    如何查看 Linux 系统的带宽流量
   </a>
   
 </li>
@@ -1350,7 +1350,7 @@
       
         <li class="md-nav__item">
   <a href="#ssh_1" class="md-nav__link">
-    ssh每次失败后重试时间设置
+    ssh 每次失败后重试时间设置
   </a>
   
     <nav class="md-nav">
@@ -1364,8 +1364,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#vm-machine-ssh" class="md-nav__link">
-    vm machine ssh不出去
+  <a href="#ssh_2" class="md-nav__link">
+    ssh 失败
   </a>
   
 </li>
@@ -1391,7 +1391,7 @@
       
         <li class="md-nav__item">
   <a href="#session" class="md-nav__link">
-    session和用户
+    session 和用户
   </a>
   
 </li>
@@ -2926,7 +2926,7 @@
       
         <li class="md-nav__item">
   <a href="#locale-issue" class="md-nav__link">
-    locale  issue
+    locale issue
   </a>
   
 </li>
@@ -3002,7 +3002,7 @@
       
         <li class="md-nav__item">
   <a href="#linux" class="md-nav__link">
-    如何查看Linux系统的带宽流量
+    如何查看 Linux 系统的带宽流量
   </a>
   
 </li>
@@ -3016,7 +3016,7 @@
       
         <li class="md-nav__item">
   <a href="#ssh_1" class="md-nav__link">
-    ssh每次失败后重试时间设置
+    ssh 每次失败后重试时间设置
   </a>
   
     <nav class="md-nav">
@@ -3030,8 +3030,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#vm-machine-ssh" class="md-nav__link">
-    vm machine ssh不出去
+  <a href="#ssh_2" class="md-nav__link">
+    ssh 失败
   </a>
   
 </li>
@@ -3057,7 +3057,7 @@
       
         <li class="md-nav__item">
   <a href="#session" class="md-nav__link">
-    session和用户
+    session 和用户
   </a>
   
 </li>
@@ -3103,7 +3103,7 @@
                 
                   <h1>Linux</h1>
                 
-                <h2 id="locale-issue">locale  issue<a class="headerlink" href="#locale-issue" title="Permanent link">&para;</a></h2>
+                <h2 id="locale-issue">locale issue<a class="headerlink" href="#locale-issue" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>locale-gen <span class="s2">&quot;en_US.UTF-8&quot;</span>
 sudo dpkg-reconfigure locales
 <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
@@ -3119,10 +3119,10 @@ update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 
 <code>pkill</code> = pgrep+kill
 <code>killall</code> 必须给出全名</p>
 <h2 id="partition">partition<a class="headerlink" href="#partition" title="Permanent link">&para;</a></h2>
-<p>对于大于5T or gpt的分区，推荐使用parted进行分区.
+<p>对于大于 5T or gpt 的分区，推荐使用 parted 进行分区.
 <a href="https://blog.csdn.net/dufufd/article/details/53508367">https://blog.csdn.net/dufufd/article/details/53508367</a></p>
 <h2 id="_1">时间戳<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>docker container的时区往往是错误的，这里给出Linux通用更改时区的方法
+<p>docker container 的时区往往是错误的，这里给出 Linux 通用更改时区的方法
 <code>ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</code></p>
 <h2 id="iscsi">iscsi<a class="headerlink" href="#iscsi" title="Permanent link">&para;</a></h2>
 <ol>
@@ -3131,41 +3131,43 @@ update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 
 </li>
 <li>
 <p>登录：
-<code>iscsiadm -m node -T &lt;target&gt; -l</code>（登陆某个目标器）
-<code>iscsiadm -m node -L all</code>（登陆发现的所有目标器）
-登入需验证码的节点，在登陆前需执行：</p>
+   <code>iscsiadm -m node -T &lt;target&gt; -l</code>（登陆某个目标器）
+   <code>iscsiadm -m node -L all</code>（登陆发现的所有目标器）
+   登入需验证码的节点，在登陆前需执行：</p>
 </li>
-<li>开启认证
-<code>iscsiadm -m node -T  &lt;target&gt; --op update --name node.session.auth.authmethod --value=CHAP</code></li>
+<li>
+<p>开启认证
+  <code>iscsiadm -m node -T &lt;target&gt; --op update --name node.session.auth.authmethod --value=CHAP</code></p>
+</li>
 <li>添加用户
-<code>iscsiadm -m node -T  &lt;target&gt; --op update --name node.session.auth.username --value=mychap</code></li>
+  <code>iscsiadm -m node -T &lt;target&gt; --op update --name node.session.auth.username --value=mychap</code></li>
 <li>
 <p>添加密码
-<code>iscsiadm –m node –T  &lt;target&gt; --op update –name node.session.auth.password –value=mypassword</code></p>
+  <code>iscsiadm –m node –T &lt;target&gt; --op update –name node.session.auth.password –value=mypassword</code></p>
 </li>
 <li>
 <p>退出:
-<code>iscsiadm -m node -T &lt;target&gt; -u</code>（退出某个目标器)
-<code>iscsiadm -m node -U all</code>（退出所有登陆的目标器）</p>
+   <code>iscsiadm -m node -T &lt;target&gt; -u</code>（退出某个目标器)
+   <code>iscsiadm -m node -U all</code>（退出所有登陆的目标器）</p>
 </li>
 <li>
-<p>连接死掉（断网或者target端断掉）时，使用如下指令：</p>
+<p>连接死掉（断网或者 target 端断掉）时，使用如下指令：</p>
 </li>
 <li>
-<p><code>iscsiadm -m node -o delete –T  &lt;target&gt; -p &lt;ip&gt;</code></p>
+<p><code>iscsiadm -m node -o delete –T &lt;target&gt; -p &lt;ip&gt;</code></p>
 </li>
 <li>
 <p><code>iscsiadm -m node -o delete -p &lt;ip&gt;</code></p>
 </li>
 <li>
-<p>查看session:</p>
+<p>查看 session:</p>
 </li>
 </ol>
-<p><code>iscsiadm -m session</code> （相当于iscsiadm -m session -P 0）
-<code>iscsiadm -m session -P 3</code>  (0-3均可，默认为0)</p>
+<p><code>iscsiadm -m session</code> （相当于 iscsiadm -m session -P 0）
+<code>iscsiadm -m session -P 3</code> (0-3 均可，默认为 0)</p>
 <ol>
 <li>设置开机自动登录
-<code>sudo iscsiadm -m node -o update -n node.startup -v automatic</code> （manual为手动的）</li>
+   <code>sudo iscsiadm -m node -o update -n node.startup -v automatic</code> （manual 为手动的）</li>
 </ol>
 <p><a href="https://wiki.archlinux.org/index.php/Open-iSCSI">https://wiki.archlinux.org/index.php/Open-iSCSI</a>
 <a href="https://blog.csdn.net/imliuqun123/article/details/73873321">https://blog.csdn.net/imliuqun123/article/details/73873321</a></p>
@@ -3173,7 +3175,7 @@ update-locale <span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8 
 <p>10.90.1.76
 <a href="https://console.bluemix.net/docs/infrastructure/BlockStorage/accessing_block_storage_linux.html#-linux-mpio-iscsi-lun">https://console.bluemix.net/docs/infrastructure/BlockStorage/accessing_block_storage_linux.html#-linux-mpio-iscsi-lun</a></p>
 <h2 id="lvm-configure">LVM configure<a class="headerlink" href="#lvm-configure" title="Permanent link">&para;</a></h2>
-<p>PV Physical Volume 
+<p>PV Physical Volume
 VG Volume Group
 LV Logical Volume
 PV -&gt; VG -&gt; LV</p>
@@ -3198,7 +3200,7 @@ Physical volume <span class="s2">&quot;/dev/sdc1&quot;</span> successfully creat
 <p><code>lvextend -L [+]SIZE &lt;lv path&gt;</code> Physical boundary</p>
 </li>
 <li><code>resize2fs &lt;lv path&gt;</code> Logical boundary</li>
-<li><code>e2fsck   &lt;lv path&gt;</code> Check file system</li>
+<li><code>e2fsck &lt;lv path&gt;</code> Check file system</li>
 </ul>
 <h3 id="_4">减小<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <ul>
@@ -3206,36 +3208,40 @@ Physical volume <span class="s2">&quot;/dev/sdc1&quot;</span> successfully creat
 <li><code>resize2fs &lt;lv path&gt; &lt;SIZE&gt;</code> Reduce logical boundary</li>
 <li><code>lvreduce -L [-]SIZE &lt;lv path&gt;</code> Physical boundary</li>
 </ul>
-<h2 id="linux">如何查看Linux系统的带宽流量<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<h2 id="linux">如何查看 Linux 系统的带宽流量<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
 <ul>
-<li>按网卡查看流量： vnstat ifstat、dstat -nf或sar -n DEV 1 2</li>
+<li>按网卡查看流量： vnstat ifstat、dstat -nf 或 sar -n DEV 1 2</li>
 <li>按进程查看流量：nethogs</li>
-<li>按连接查看流量：iptraf、iftop或tcptrack</li>
+<li>按连接查看流量：iptraf、iftop 或 tcptrack</li>
 <li>查看流量最大的进程：sysdig -c topprocs_net</li>
 <li>查看流量最大的端口：sysdig -c topports_server</li>
 <li>查看连接最多的服务器端口：sysdig -c fdbytes_by fd.sport</li>
 </ul>
 <h2 id="ssh">ssh 各种问题<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h2>
-<h2 id="ssh_1">ssh每次失败后重试时间设置<a class="headerlink" href="#ssh_1" title="Permanent link">&para;</a></h2>
+<h2 id="ssh_1">ssh 每次失败后重试时间设置<a class="headerlink" href="#ssh_1" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>/etc/pam.d/system-login
 auth optional pam_faildelay.so delay=4000000
 </code></pre></div>
 
 
-<p>4秒后重试</p>
+<p>4 秒后重试</p>
 <h3 id="_5">权限问题<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><code>sh
-chmod 700 ~ 
-chmod 700 ~/.ssh 
-chmod 644 ~/.ssh/authorized_keys 
-chmod 600 ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
-chmod 644 ~/.ssh/known_hosts</code>
-服务端开启文件AuthorizedKeysFile .ssh/authorized_keys</p>
-<h3 id="vm-machine-ssh">vm machine ssh不出去<a class="headerlink" href="#vm-machine-ssh" title="Permanent link">&para;</a></h3>
-<p><code>/etc/ssh/ssh_config</code> 中添加 <code>IPQoS lowdelay throughput</code></p>
+<div class="codehilite"><pre><span></span><code>chmod <span class="m">700</span> ~
+chmod <span class="m">700</span> ~/.ssh
+chmod <span class="m">644</span> ~/.ssh/authorized_keys
+chmod <span class="m">600</span> ~/.ssh/id_rsa ~/.ssh/id_rsa.pub
+chmod <span class="m">644</span> ~/.ssh/known_hosts
+</code></pre></div>
+
+<p>服务端开启文件 AuthorizedKeysFile .ssh/authorized_keys</p>
+<h3 id="ssh_2">ssh 失败<a class="headerlink" href="#ssh_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>vmware <code>/etc/ssh/ssh_config</code> 中添加 <code>IPQoS lowdelay throughput</code></li>
+<li>stuck when connect succeed 添加<code>IPQoS 0</code></li>
+</ol>
 <h2 id="system-analyse">system analyse<a class="headerlink" href="#system-analyse" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="c1"># 查看启动耗时</span>
- systemd-analyze                                                                                       
+ systemd-analyze
 <span class="c1"># 查看每个服务的启动耗时</span>
  systemd-analyze blame
 
@@ -3253,8 +3259,8 @@ chmod 644 ~/.ssh/known_hosts</code>
 </code></pre></div>
 
 <h2 id="_6">时间设置<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code> timedatectl list-timezones                   
- timedatectl   
+<div class="codehilite"><pre><span></span><code> timedatectl list-timezones
+ timedatectl
 
 <span class="c1"># 设置当前时区</span>
  sudo timedatectl set-timezone America/New_York
@@ -3262,7 +3268,7 @@ chmod 644 ~/.ssh/known_hosts</code>
  sudo timedatectl set-time HH:MM:SS
 </code></pre></div>
 
-<h2 id="session">session和用户<a class="headerlink" href="#session" title="Permanent link">&para;</a></h2>
+<h2 id="session">session 和用户<a class="headerlink" href="#session" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code><span class="c1"># 列出session</span>
  loginctl list-sessions
 
