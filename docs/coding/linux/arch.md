@@ -50,6 +50,14 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 sudo pacman -S archlinuxcn-keyring
 ```
 
+1. `/etc/ssh/ssh_config`添加:
+
+```conf
+IPQoS 0
+TCPKeepAlive=yes
+ServerAliveInterval 60
+```
+
 ### 环境配置
 
 ```sh
@@ -73,8 +81,12 @@ export XMODIFIERS="@im=fcitx"
 ```
 
 ```sh
-# laptop acpi
-yay -S acpi
+# laptop acpi dell laptop
+yay -S acpi i8utils dell-bios-fan-control-git
+# control fan speed
+# https://bbs.archlinux.org/viewtopic.php?id=248106
+# https://wiki.archlinux.org/index.php/Fan_speed_control#Dell_laptops
+
 ```
 
 ### qq
@@ -82,16 +94,21 @@ yay -S acpi
 安装`环境配置`中的两个字体:wqy-zenhei 与 wqy-microhei
 要设置 LANG 为 zh_CN
 立即应用:`source /etc/profile.d/locale.sh`
+
 #### 图片不加载
-1. 禁用ipv6
+
+1. 禁用 ipv6
+
 ```conf
 # /etc/sysctl.conf
 net.ipv6.conf.all.disable_ipv6 =1
 net.ipv6.conf.default.disable_ipv6 =1
 net.ipv6.conf.lo.disable_ipv6 =1
 ```
+
 2. 清空缓存
-`sudo rm -rf ~/.deepinwine/Deepin-QQ`
+   `sudo rm -rf ~/.deepinwine/Deepin-QQ`
+
 ### wps
 
 ### touchpad
