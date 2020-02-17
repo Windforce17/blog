@@ -1169,8 +1169,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#qq" class="md-nav__link">
-    qq
+  <a href="#qqwechat" class="md-nav__link">
+    qq/wechat
   </a>
   
     <nav class="md-nav">
@@ -2936,8 +2936,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#qq" class="md-nav__link">
-    qq
+  <a href="#qqwechat" class="md-nav__link">
+    qq/wechat
   </a>
   
     <nav class="md-nav">
@@ -3069,17 +3069,31 @@ yay -S fcitx-
 <span class="nb">export</span> <span class="nv">XMODIFIERS</span><span class="o">=</span><span class="s2">&quot;@im=fcitx&quot;</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c1"># laptop acpi dell laptop</span>
+<p><div class="codehilite"><pre><span></span><code><span class="c1"># laptop acpi dell laptop</span>
 yay -S acpi i8utils dell-bios-fan-control-git
 <span class="c1"># control fan speed</span>
 <span class="c1"># https://bbs.archlinux.org/viewtopic.php?id=248106</span>
 <span class="c1"># https://wiki.archlinux.org/index.php/Fan_speed_control#Dell_laptops</span>
 </code></pre></div>
-
-<h3 id="qq">qq<a class="headerlink" href="#qq" title="Permanent link">&para;</a></h3>
+添加/etc/locale.conf,修复乱码，中文输入问题。
+<div class="codehilite"><pre><span></span><code>LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
+</code></pre></div></p>
+<h3 id="qqwechat">qq/wechat<a class="headerlink" href="#qqwechat" title="Permanent link">&para;</a></h3>
+<p><code>yay -S deepin.com.qq.im electronic-wechat</code></p>
+<ol>
+<li>
+<p>/opt/deepinwine/apps/Deepin-QQ/run.sh中添加
+<div class="codehilite"><pre><span></span><code>export GTK_IM_MODULE=&quot;fcitx&quot;
+export QT_IM_MODULE=&quot;fcixt&quot;
+export XMODIFIERS=&quot;@im=fcitx&quot;
+</code></pre></div></p>
+</li>
+<li>
 <p>安装<code>环境配置</code>中的两个字体:wqy-zenhei 与 wqy-microhei
-要设置 LANG 为 zh_CN
-立即应用:<code>source /etc/profile.d/locale.sh</code></p>
+要设置 LANG 为支持utf8的字符集</p>
+</li>
+</ol>
 <h4 id="_8">图片不加载<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
 <ol>
 <li>禁用 ipv6</li>
@@ -3095,6 +3109,7 @@ net.ipv6.conf.lo.disable_ipv6 =1
    <code>sudo rm -rf ~/.deepinwine/Deepin-QQ</code></li>
 </ol>
 <h3 id="wps">wps<a class="headerlink" href="#wps" title="Permanent link">&para;</a></h3>
+<p>yay -S wps-office-cn</p>
 <h3 id="touchpad">touchpad<a class="headerlink" href="#touchpad" title="Permanent link">&para;</a></h3>
 <p>deepin: edit <code>/usr/share/dde-daemon/guesture.json</code></p>
                 

@@ -5,7 +5,6 @@ Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 pacman -Syu &&
 pacman -S yay &&
 # input method
-ysy -S fcitx-sogoupinyin &&
 yay -S fcitx-qt5 &&
 yay -S fcitx-gtk3 &&
 yay -S shadowsocks-qt5 &&
@@ -14,7 +13,6 @@ yay -S go &&
 yay -S goland &&
 yay -S pycharm &&
 yay -S datagrip &&
-yay -S netease-cloud-music &&
 yay -S wps-offie &&
 yay -S ttf-wps-fonts &&
 yay -S ttf-dejavu wqy-zenhei wqy-microhei &&
