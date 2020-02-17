@@ -86,14 +86,24 @@ yay -S acpi i8utils dell-bios-fan-control-git
 # control fan speed
 # https://bbs.archlinux.org/viewtopic.php?id=248106
 # https://wiki.archlinux.org/index.php/Fan_speed_control#Dell_laptops
+```
+添加/etc/locale.conf,修复乱码，中文输入问题。
+```conf
+LC_ALL=en_US.UTF-8
+LANG=en_US.UTF-8
+```
+### qq/wechat
+`yay -S deepin.com.qq.im electronic-wechat`
 
+1. /opt/deepinwine/apps/Deepin-QQ/run.sh中添加
+```conf
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcixt"
+export XMODIFIERS="@im=fcitx"
 ```
 
-### qq
-
-安装`环境配置`中的两个字体:wqy-zenhei 与 wqy-microhei
-要设置 LANG 为 zh_CN
-立即应用:`source /etc/profile.d/locale.sh`
+2. 安装`环境配置`中的两个字体:wqy-zenhei 与 wqy-microhei
+要设置 LANG 为支持utf8的字符集
 
 #### 图片不加载
 
@@ -110,6 +120,7 @@ net.ipv6.conf.lo.disable_ipv6 =1
    `sudo rm -rf ~/.deepinwine/Deepin-QQ`
 
 ### wps
+yay -S wps-office-cn
 
 ### touchpad
 
