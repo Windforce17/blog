@@ -61,11 +61,12 @@ ServerAliveInterval 60
 ### 环境配置
 
 ```sh
-# fonts
+# fonts amd vim
  yay -S adobe-source-han-sans-otc-fonts
  yay -S wqy-zenhei wqy-microhei
  yay -S ttf-ms-win10-zh_cn
  yay -S wps-office
+ yay -S gvim
 ```
 
 ```sh
@@ -87,15 +88,50 @@ yay -S acpi i8utils dell-bios-fan-control-git
 # https://bbs.archlinux.org/viewtopic.php?id=248106
 # https://wiki.archlinux.org/index.php/Fan_speed_control#Dell_laptops
 ```
+
 添加/etc/locale.conf,修复乱码，中文输入问题。
+
 ```conf
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 ```
+
+添加`/etc/modules-load.d/80-bbr.conf`:
+
+```conf
+tcp_bbr
+```
+
+添加 `/etc/sysctl.d/improve_network.conf` 开启 bbr
+
+```conf
+net.core.netdev_max_backlog = 100000
+net.core.netdev_budget = 50000
+net.core.netdev_budget_usecs = 5000
+net.core.somaxconn = 4096
+net.core.rmem_default = 1048576
+net.core.rmem_max = 16777216
+net.core.wmem_default = 1048576
+net.core.wmem_max = 16777216
+net.core.optmem_max = 65536
+net.ipv4.tcp_rmem = 4096 1048576 2097152
+net.ipv4.tcp_wmem = 4096 65536 16777216
+net.ipv4.udp_rmem_min = 8192
+net.ipv4.udp_wmem_min = 8192
+net.ipv4.tcp_fastopen = 3
+net.ipv4.tcp_max_syn_backlog = 30000
+net.ipv4.tcp_max_tw_buckets = 2000000
+net.ipv4.tcp_mtu_probing = 1
+net.core.default_qdisc = fq
+net.ipv4.tcp_congestion_control = bbr
+```
+
 ### qq/wechat
+
 `yay -S deepin.com.qq.im electronic-wechat`
 
-1. /opt/deepinwine/apps/Deepin-QQ/run.sh中添加
+1. /opt/deepinwine/apps/Deepin-QQ/run.sh 中添加
+
 ```conf
 export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcixt"
@@ -103,7 +139,7 @@ export XMODIFIERS="@im=fcitx"
 ```
 
 2. 安装`环境配置`中的两个字体:wqy-zenhei 与 wqy-microhei
-要设置 LANG 为支持utf8的字符集
+   要设置 LANG 为支持 utf8 的字符集
 
 #### 图片不加载
 
@@ -120,6 +156,7 @@ net.ipv6.conf.lo.disable_ipv6 =1
    `sudo rm -rf ~/.deepinwine/Deepin-QQ`
 
 ### wps
+
 yay -S wps-office-cn
 
 ### touchpad
