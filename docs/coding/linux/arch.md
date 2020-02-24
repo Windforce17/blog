@@ -28,6 +28,13 @@ https://wiki.archlinux.org/index.php/Multiboot_USB_drive
 
 http://blog.csdn.net/r8l8q8/article/details/73252970#79tkjm1497440352464
 
+如果没有网卡，可以用手机 usb 热点：
+
+```sh
+modprobe rndis_host cdc_ether usbnet
+# 然后使用dhcp之类的设置ip地址，没有dns还要设置dns ping 一下试试
+```
+
 ## wifi
 
 iw 工具和 wpa_supplicant
