@@ -3062,6 +3062,11 @@
 </ol>
 <h2 id="_4">联网<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/r8l8q8/article/details/73252970#79tkjm1497440352464">http://blog.csdn.net/r8l8q8/article/details/73252970#79tkjm1497440352464</a></p>
+<p>如果没有网卡，可以用手机 usb 热点：</p>
+<div class="codehilite"><pre><span></span><code>modprobe rndis_host cdc_ether usbnet
+<span class="c1"># 然后使用dhcp之类的设置ip地址，没有dns还要设置dns ping 一下试试</span>
+</code></pre></div>
+
 <h2 id="wifi">wifi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h2>
 <p>iw 工具和 wpa_supplicant</p>
 <p>更改 mkinitcpio 配置后，需要手动重新生成镜像：
