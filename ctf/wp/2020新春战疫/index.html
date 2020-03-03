@@ -2204,6 +2204,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#flag" class="md-nav__link">
+    分析对flag中间字符串的处理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    字符串拼接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16xor" class="md-nav__link">
+    16进制转换、xor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    求和
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
       
       
       
@@ -2832,6 +2867,41 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#flag" class="md-nav__link">
+    分析对flag中间字符串的处理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    字符串拼接
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16xor" class="md-nav__link">
+    16进制转换、xor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    求和
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    总结
+  </a>
+  
+</li>
+      
       
       
       
@@ -2860,8 +2930,183 @@
                   <h1>2020新春战疫</h1>
                 
                 <h2 id="42">42<a class="headerlink" href="#42" title="Permanent link">&para;</a></h2>
-<p>看名字猜一下，应该是三个整数的立方和=4。
-根据字符串查找，来到这个地方</p>
+<p>看题目名字猜一下，应该是去年发现的三个未知数的立方和=42问题。
+根据字符串查找，来到这个地方
+<img alt="" src="2020-03-01-21-48-45.png" />
+简单单步跟踪后，可以发现主要判断逻辑函数，意外获得了字符串'3nder5tandf10@t'，这个弹窗hooked不用管他。
+<img alt="" src="2020-03-01-21-49-25.png" />
+通过SEH进行触发，由于属于SEH处理链，我没有找到好的方法通过ida进行F5，只能肉眼看汇编代码，配合调试追踪，调试后有两个发现：  <br />
+1.开头一定是f<br />
+2.不一定是flag开头，任意<code>fxxx</code>都可以，但是第五位必须是{，这个check是可以f5的，除此之外还提取了{}的中间部分：
+<img alt="" src="2020-03-01-23-10-38.png" />
+然后遇到第二个对flag中间部分的处理函数</p>
+<h2 id="flag">分析对flag中间字符串的处理<a class="headerlink" href="#flag" title="Permanent link">&para;</a></h2>
+<p>这个处理过程是可以使用f5转化的，
+<div class="codehilite"><pre><span></span><code><span class="kt">int</span> <span class="n">__usercall</span> <span class="n">middle_check</span><span class="err">@</span><span class="o">&lt;</span><span class="n">eax</span><span class="o">&gt;</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">source</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">flag_middle</span><span class="p">,</span> <span class="kt">int</span> <span class="n">flag_middle_len</span><span class="p">,</span> <span class="kt">int</span> <span class="n">a4</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">int</span> <span class="n">v4</span><span class="p">;</span> <span class="c1">// xmm0_4</span>
+  <span class="kt">int</span> <span class="n">v5</span><span class="p">;</span> <span class="c1">// edx</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">v6</span><span class="p">;</span> <span class="c1">// eax</span>
+  <span class="kt">int</span> <span class="n">v8</span><span class="p">;</span> <span class="c1">// [esp+D0h] [ebp-14h]</span>
+  <span class="kt">int</span> <span class="n">v9</span><span class="p">;</span> <span class="c1">// [esp+DCh] [ebp-8h]</span>
+
+  <span class="n">sub_41133E</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="o">&amp;</span><span class="n">unk_424034</span><span class="p">);</span>
+  <span class="n">v9</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">v8</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span> <span class="n">v9</span> <span class="o">&lt;=</span> <span class="n">flag_middle_len</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="p">)</span>
+    <span class="p">{</span>
+      <span class="n">source</span><span class="p">[</span><span class="mh">0x28</span> <span class="o">*</span> <span class="n">v8</span><span class="o">++</span> <span class="o">+</span> <span class="n">v9</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39;-&#39;</span> <span class="p">)</span>
+    <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="n">v8</span> <span class="p">)</span>
+      <span class="p">{</span>
+        <span class="k">switch</span> <span class="p">(</span> <span class="n">v8</span> <span class="p">)</span>
+        <span class="p">{</span>
+          <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+            <span class="n">v5</span> <span class="o">=</span> <span class="n">v9</span><span class="p">;</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span> <span class="mh">0x20</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">];</span>
+            <span class="k">break</span><span class="p">;</span>
+          <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+            <span class="n">v5</span> <span class="o">=</span> <span class="n">v9</span><span class="p">;</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span> <span class="mh">0x43</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">];</span>
+            <span class="k">break</span><span class="p">;</span>
+          <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+            <span class="n">v5</span> <span class="o">=</span> <span class="n">v9</span><span class="p">;</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span> <span class="mh">0x66</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">];</span>
+            <span class="k">break</span><span class="p">;</span>
+          <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+            <span class="n">v5</span> <span class="o">=</span> <span class="n">v9</span><span class="p">;</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span> <span class="mh">0x89</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">];</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="k">else</span>
+      <span class="p">{</span>
+        <span class="n">v5</span> <span class="o">=</span> <span class="n">v9</span><span class="p">;</span>
+        <span class="n">source</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">];</span>
+      <span class="p">}</span>
+      <span class="k">if</span> <span class="p">(</span> <span class="n">flag_middle</span><span class="p">[</span><span class="o">++</span><span class="n">v9</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="p">)</span>
+      <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">v8</span> <span class="p">)</span>
+        <span class="p">{</span>
+          <span class="k">switch</span> <span class="p">(</span> <span class="n">v8</span> <span class="p">)</span>
+          <span class="p">{</span>
+            <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+              <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span> <span class="mh">0x20</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+              <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span> <span class="mh">0x43</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+              <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span> <span class="mh">0x66</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+              <span class="k">break</span><span class="p">;</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+          <span class="n">source</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="n">v6</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">source</span><span class="p">[</span><span class="mi">40</span> <span class="o">*</span> <span class="n">v8</span><span class="p">];</span>
+  <span class="n">v6</span><span class="p">[</span><span class="n">v9</span> <span class="o">-</span> <span class="mi">23</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">return</span> <span class="nf">sub_411352</span><span class="p">(</span><span class="n">v9</span><span class="p">,</span> <span class="n">v5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">v6</span><span class="p">,</span> <span class="n">v4</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+ida没有装插件的话，看括号会非常费劲没有高亮，使用python改下等价代码如下:
+<div class="codehilite"><pre><span></span><code><span class="c1"># flag_middle = &quot;aaaaa-bbbbb-cccc-ddddd&quot; 输入字符串</span>
+<span class="n">v9</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">v8</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">v5</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">source</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">while</span> <span class="n">v9</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">flag_middle</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+        <span class="n">source</span><span class="p">[</span><span class="mh">0x28</span> <span class="o">*</span> <span class="n">v8</span> <span class="o">+</span> <span class="n">v9</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">v8</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">v9</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">v8</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span><span class="mh">0x20</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">v8</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span> <span class="mh">0x43</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">v8</span> <span class="o">=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span><span class="mh">0x66</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">v8</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span><span class="mh">0x89</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">v8</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>   
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span> <span class="o">=</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span>
+    <span class="n">v9</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">flag_middle</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;-&#39;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">v8</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span><span class="mh">0x20</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">v8</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span><span class="mh">0x43</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">v8</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span> <span class="o">+</span><span class="mh">0x66</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">if</span> <span class="n">v8</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">source</span><span class="p">[</span><span class="n">v9</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+</code></pre></div>
+不难发现，以<code>-</code>为分隔符，将flag_middle 分了五段进行存放，当然也有可能是四段，需要进一步分析。</p>
+<h2 id="_1">字符串拼接<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>这部分的内容无法使用f5了，需要阅读汇编代码,从这个地方可以看出是一共五部分，也就是flag{xxx-xxxx-xxxx-xxx-xxx},但每部分长度还不清楚，
+<img alt="" src="2020-03-01-23-56-25.png" />
+当我们输入flag{aaaaa-bbbbb-ccccc-ddddd}时，发现第2,3,4部分第一个字节被舍去，推测每部分长度是固定的，或者第二部分的第一个字节是什么都可以。
+<img alt="" src="2020-03-02-11-50-47.png" />
+每次选取<code>Source[0x28*i]</code> 部分进行字符串拼接，怀疑Source是40*5的二维数组，而中间有一些奇怪的赋值操作:对<code>source[0x28 * v8 + v9]</code>进行置零，赋值到<code>source[v9 +0x20]</code>这些位置等。如果source是二位数组，flag中间每部分长度是固定的，就说得通了。推算得知第1部分是7个字节，第2，3，4部分是四个字节，第5部分长度未知，看起来比较像uuid，这些<code>source[v9 +0x20]=0</code>赋值的语句就有意义了，比如第一部分已经赋值了7个字节，那么第二部分就是从<code>source[8 +0x20]</code>开始，重新构造我们的输入:"flag{aaaaaaa-bbbb-cccc-dddd-eeee}",发现题目不会崩溃了，输出了一个奇怪的数字和Error。
+<img alt="" src="2020-03-02-20-34-10.png" /></p>
+<h2 id="16xor">16进制转换、xor<a class="headerlink" href="#16xor" title="Permanent link">&para;</a></h2>
+<p>搞懂数据的处理方式，下面的逻辑就简单了很多，继续调试可以发现我们的输入会转换为16进制并储存然后和'<code>3nder5tandf10@t</code>进行xor。这里可以推测出flag中间部分长度一共是<code>len("3nder5tandf10@t")*2</code>，当然算'-',那么第五部分的长度就是11。
+<img alt="" src="2020-03-03-15-30-00.png" />
+然后进行存储
+<img alt="" src="2020-03-02-23-17-57.png" /></p>
+<h2 id="_2">求和<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>将前五个字节拼接成了数字，然后第一个字节xor <code>0xFEE1DEAF</code> ,后四个字节xor <code>0x76BDF08F</code>,然后写入到<code>[ebp-2A4</code>]和<code>[ebp-2A0]</code>中。
+<img alt="" src="2020-03-03-15-39-21.png" />
+后面的代码也比较熟悉，做的是同样的操作，稍微调试下就能明，只不过是xor <code>0x846F5F42</code>和xor <code>0x11DC37D</code>
+<img alt="" src="2020-03-03-08-49-19.png" />
+同理，15个字节分成五组，每组xor不一样罢，比如这一组是<code>0x14031D68</code>和<code>0x2CC5D9</code>
+<img alt="" src="2020-03-03-08-55-20.png" />
+剩下的部分就是对这15个字节分组做立方然后求和，所有call <code>0xa412d0</code>都是在做乘法运算
+<img alt="" src="2020-03-03-12-45-26.png" />
+最后输出结果立方和结果
+<img alt="" src="2020-03-03-12-47-04.png" />
+和42(0x2a)进行比较，相等就输出Congratulations!，否则输出Error！
+<img alt="" src="2020-03-03-12-51-59.png" /></p>
+<h2 id="_3">总结<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>首先获得flag中间部分，并去掉<code>-</code>进行拼接转换成16进制后，与<code>3nder5tandf10@t</code>进行xor，结果分为三组，每组五个字节，每组和特定的字节再进行两次xor，最后求立方和，等于42则正确,还有一个问题是，<code>x^3+y^3+z^3=42</code>，xyz的顺序是如何确定的？这直接影响到flag的构成，答案是每组5字节第一次xor时，只有第一个字节参与了运算，并产生四个字节，由于x y z三个参数开头的字节并不相同，那么顺序也就确定了，最后附上payload:
+<div class="codehilite"><pre><span></span><code><span class="c1">#-80538738812075974^3+80435758145817515^3+12602123297335631^3=42</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">80538738812075974</span> <span class="o">&amp;</span> <span class="mh">0xffffffffffffffff</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">80435758145817515</span> <span class="o">&amp;</span> <span class="mh">0xffffffffffffffff</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">12602123297335631</span> <span class="o">&amp;</span> <span class="mh">0xffffffffffffffff</span>
+<span class="n">magic</span> <span class="o">=</span> <span class="s1">&#39;3nder5tandf10@t&#39;</span>
+<span class="n">flag_middle</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="c1"># 求解</span>
+<span class="n">flag_middle</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">x</span><span class="p">))[</span><span class="mi">2</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="mh">0xFEE1DEAF</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span><span class="c1"># 第一组第一个字节</span>
+<span class="n">flag_middle</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">x</span><span class="p">))[</span><span class="mi">10</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="mh">0x76BDF08F</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">flag_middle</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">y</span><span class="p">))[</span><span class="mi">2</span><span class="p">:</span><span class="mi">9</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="mh">0x11DC37D</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>  <span class="c1"># 第二组第一个字节</span>
+<span class="n">flag_middle</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">y</span><span class="p">))[</span><span class="mi">9</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="mh">0x846F5F42</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">flag_middle</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">z</span><span class="p">))[</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="mh">0x2CC5D9</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>  <span class="c1"># 第三组第一个字节</span>
+<span class="n">flag_middle</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="n">z</span><span class="p">))[</span><span class="mi">8</span><span class="p">:],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="mh">0x14031D68</span><span class="p">))[</span><span class="mi">2</span><span class="p">:]</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="c1">#xor</span>
+<span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">flag_middle</span><span class="p">)</span><span class="ow">and</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">magic</span><span class="p">)):</span>
+    <span class="n">flag</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">hex</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">flag_middle</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">16</span><span class="p">)</span> <span class="o">^</span> <span class="nb">ord</span><span class="p">(</span><span class="n">magic</span><span class="p">[</span><span class="n">j</span><span class="p">])))[</span><span class="mi">2</span><span class="p">:]</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span>
+    <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="c1">#整理格式</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="n">flag</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">7</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">flag</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> \
+    <span class="n">flag</span><span class="p">[</span><span class="mi">11</span><span class="p">:</span><span class="mi">15</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">flag</span><span class="p">[</span><span class="mi">15</span><span class="p">:</span><span class="mi">19</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">flag</span><span class="p">[</span><span class="mi">19</span><span class="p">:]</span>
+<span class="n">flag</span> <span class="o">=</span> <span class="s1">&#39;flag{&#39;</span><span class="o">+</span><span class="n">flag</span><span class="o">+</span><span class="s1">&#39;}&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+</code></pre></div>
+由于是debug编译，调试过程中遇到无关代码，要自己辨别，不要去跟系统api函数，其实前四个字节并没有准确判定，只要f开头，第5个字节是{就可以。
+<img alt="" src="2020-03-03-14-56-20.png" /></p>
                 
                   
                 
