@@ -98,7 +98,7 @@ getenforce //查看
 yum install kernel-devel kernel-tools kernel-headers
 ```
 
-## goole-chrome
+## google-chrome
 
 ```conf
 [google-chrome]
