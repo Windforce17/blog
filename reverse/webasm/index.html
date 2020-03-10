@@ -2195,6 +2195,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../ctf/wp/XCITC/" title="XCITC" class="md-nav__link">
+      XCITC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../ctf/wp/catalyst/" title="Catalyst" class="md-nav__link">
       Catalyst
     </a>
@@ -2220,13 +2232,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-6" type="checkbox" id="nav-4-10-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-7" type="checkbox" id="nav-4-10-7">
     
-    <label class="md-nav__link" for="nav-4-10-6">
+    <label class="md-nav__link" for="nav-4-10-7">
       L3sec
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-10-6">
+      <label class="md-nav__title" for="nav-4-10-7">
         L3sec
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2873,7 +2885,10 @@
                 
                 <h2 id="_1">工具<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>//TODO<br />
-<a href="https://github.com/WebAssembly/wabt/">wabt</a></p>
+<a href="https://github.com/WebAssembly/wabt/">wabt</a>
+<a href="https://github.com/athre0z/wasm">https://github.com/athre0z/wasm</a>
+<a href="https://anee.me/reversing-web-assembly-wasm-dd59eb2a52d4">https://anee.me/reversing-web-assembly-wasm-dd59eb2a52d4</a>
+<a href="https://medium.com/@pnfsoftware/reverse-engineering-webassembly-ed184a099931">https://medium.com/@pnfsoftware/reverse-engineering-webassembly-ed184a099931</a></p>
 <h2 id="_2">方法<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>先反编译<code>./wasm2c test.wasm -o test.c</code>
 其实这个.c就能看了不过会耗费稍多一点时间，然后同样将wabt工具包里面wasm2c文件夹下<code>wasm-rt.h</code>，<code>wasm-rt-impl.c</code>，<code>wasm-rt-impl.h</code>三个文件放到和<code>test.c</code>同一个文件，然后编译，这里就不需要链接了，因为链接肯定通不过了，所以我们只需要得到未链接的文件即可：<code>gcc -c test.c -o test.o</code> 最后拖到ida里f5</p>

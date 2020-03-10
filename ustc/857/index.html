@@ -2195,6 +2195,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../ctf/wp/XCITC/" title="XCITC" class="md-nav__link">
+      XCITC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../ctf/wp/catalyst/" title="Catalyst" class="md-nav__link">
       Catalyst
     </a>
@@ -2220,13 +2232,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-6" type="checkbox" id="nav-4-10-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-7" type="checkbox" id="nav-4-10-7">
     
-    <label class="md-nav__link" for="nav-4-10-6">
+    <label class="md-nav__link" for="nav-4-10-7">
       L3sec
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-10-6">
+      <label class="md-nav__title" for="nav-4-10-7">
         L3sec
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2753,6 +2765,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    各种编码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base64" class="md-nav__link">
+    base64
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2938,6 +2970,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    各种编码
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#base64" class="md-nav__link">
+    base64
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -2987,6 +3039,19 @@
 行移位： 行移位，一个简单的置换
 列混淆： 在 GF(2^n)上进行一个矩阵乘法
 轮密钥加：按位 XOR</p>
+<h2 id="_6">各种编码<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="base64">base64<a class="headerlink" href="#base64" title="Permanent link">&para;</a></h3>
+<p>由于各种加密对base64表进行替换，使用python进行还原。
+<div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">base64</span>
+<span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;x2dtJEOmyjacxDemx2eczT5cVS9fVUGvWTuZWjuexjRqy24rV29q&quot;</span>
+
+<span class="n">string1</span> <span class="o">=</span> <span class="s2">&quot;ZYXABCDEFGHIJKLMNOPQRSTUVWzyxabcdefghijklmnopqrstuvw0123456789+/&quot;</span>
+<span class="n">string2</span> <span class="o">=</span> <span class="s2">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/&quot;</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">str1</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">string1</span><span class="p">,</span><span class="n">string2</span><span class="p">))))</span>
+</code></pre></div></p>
                 
                   
                 

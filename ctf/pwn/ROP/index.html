@@ -2294,6 +2294,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../wp/XCITC/" title="XCITC" class="md-nav__link">
+      XCITC
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../wp/catalyst/" title="Catalyst" class="md-nav__link">
       Catalyst
     </a>
@@ -2319,13 +2331,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-6" type="checkbox" id="nav-4-10-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-7" type="checkbox" id="nav-4-10-7">
     
-    <label class="md-nav__link" for="nav-4-10-6">
+    <label class="md-nav__link" for="nav-4-10-7">
       L3sec
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-10-6">
+      <label class="md-nav__title" for="nav-4-10-7">
         L3sec
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -3083,17 +3095,17 @@
 
 <h2 id="ret2libc">ret2libc<a class="headerlink" href="#ret2libc" title="Permanent link">&para;</a></h2>
 <p>64 下通用 gadget,<code>__libc_csu_init</code>,一共两端代码，可以设置三个寄存器传参的值</p>
-<div class="codehilite"><pre><span></span><code><span class="c">;第一段代码gad1</span>
-  <span class="nf">pop</span>     <span class="no">rbx</span>  <span class="c">;必须为0</span>
-  <span class="nf">pop</span>     <span class="no">rbp</span>  <span class="c">;必须为1</span>
-  <span class="nf">pop</span>     <span class="no">r12</span>  <span class="c">;你call函数的地址(应该是got上的?)</span>
-  <span class="nf">pop</span>     <span class="no">r13</span>  <span class="c">;arg3</span>
-  <span class="nf">pop</span>     <span class="no">r14</span>  <span class="c">;arg2</span>
-  <span class="nf">pop</span>     <span class="no">r15</span>  <span class="c">;arg1</span>
-  <span class="nf">retn</span>         <span class="c">;gad2</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">;第一段代码gad1</span>
+  <span class="nf">pop</span>     <span class="no">rbx</span>  <span class="c1">;必须为0</span>
+  <span class="nf">pop</span>     <span class="no">rbp</span>  <span class="c1">;必须为1</span>
+  <span class="nf">pop</span>     <span class="no">r12</span>  <span class="c1">;你call函数的地址(应该是got上的?)</span>
+  <span class="nf">pop</span>     <span class="no">r13</span>  <span class="c1">;arg3</span>
+  <span class="nf">pop</span>     <span class="no">r14</span>  <span class="c1">;arg2</span>
+  <span class="nf">pop</span>     <span class="no">r15</span>  <span class="c1">;arg1</span>
+  <span class="nf">retn</span>         <span class="c1">;gad2</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="c">;第二段代码gad2</span>
+<div class="codehilite"><pre><span></span><code><span class="c1">;第二段代码gad2</span>
 <span class="nf">mov</span>     <span class="no">rdx</span><span class="p">,</span> <span class="no">r13</span>
 <span class="nf">mov</span>     <span class="no">rsi</span><span class="p">,</span> <span class="no">r14</span>
 <span class="nf">mov</span>     <span class="no">edi</span><span class="p">,</span> <span class="no">r15d</span>
@@ -3107,8 +3119,8 @@
 <span class="nf">pop</span>     <span class="no">r12</span>
 <span class="nf">pop</span>     <span class="no">r13</span>
 <span class="nf">pop</span>     <span class="no">r14</span>
-<span class="nf">pop</span>     <span class="no">r15</span> <span class="c">;这个地方可以构造错位gadgets,恰好可以构造为pop rdi,ret</span>
-<span class="nf">retn</span>     <span class="c">;构造一些垫板(7*8=56byte)，因为后面后面还有很多pop+rbp+ret</span>
+<span class="nf">pop</span>     <span class="no">r15</span> <span class="c1">;这个地方可以构造错位gadgets,恰好可以构造为pop rdi,ret</span>
+<span class="nf">retn</span>     <span class="c1">;构造一些垫板(7*8=56byte)，因为后面后面还有很多pop+rbp+ret</span>
 </code></pre></div>
                 
                   
