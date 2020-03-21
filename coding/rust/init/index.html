@@ -1432,6 +1432,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#traitbounds" class="md-nav__link">
+    trait、bounds、生命周期
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#crates" class="md-nav__link">
     常用的 crates
   </a>
@@ -2288,15 +2295,27 @@
           
 
 
+  <li class="md-nav__item">
+    <a href="../../../ctf/wp/%E9%AB%98%E6%A0%A1%E5%85%AC%E5%BC%80/" title="高校公开" class="md-nav__link">
+      高校公开
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-7" type="checkbox" id="nav-4-10-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-10-8" type="checkbox" id="nav-4-10-8">
     
-    <label class="md-nav__link" for="nav-4-10-7">
+    <label class="md-nav__link" for="nav-4-10-8">
       L3sec
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
-      <label class="md-nav__title" for="nav-4-10-7">
+      <label class="md-nav__title" for="nav-4-10-8">
         L3sec
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -2866,6 +2885,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#traitbounds" class="md-nav__link">
+    trait、bounds、生命周期
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#crates" class="md-nav__link">
     常用的 crates
   </a>
@@ -2918,6 +2944,27 @@ rustup default stable
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+<h2 id="traitbounds">trait、bounds、生命周期<a class="headerlink" href="#traitbounds" title="Permanent link">&para;</a></h2>
+<p>T,E都是泛型，同时也实现了Display和Clone trait
+<div class="codehilite"><pre><span></span><code><span class="k">fn</span> <span class="nf">some_funtion</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span><span class="n">E</span><span class="o">&gt;</span><span class="p">(</span><span class="n">t</span>:<span class="nc">T</span><span class="p">,</span><span class="n">e</span>:<span class="nc">E</span><span class="p">)</span>-&gt;<span class="kt">i32</span>
+    <span class="nc">where</span><span class="w"> </span><span class="n">T</span>:<span class="nc">Display</span><span class="o">+</span><span class="nb">Clone</span><span class="p">,</span><span class="w"></span>
+<span class="w">          </span><span class="n">E</span>:<span class="nb">Clone</span><span class="o">+</span><span class="n">Debug</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div>
+生命周期也是泛型的一种：
+<div class="codehilite"><pre><span></span><code><span class="k">fn</span> <span class="nf">longest_whith</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">x</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span><span class="w"> </span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="kp">&amp;</span><span class="na">&#39;a</span><span class="w"> </span><span class="kt">str</span><span class="p">,</span><span class="w"> </span><span class="n">ann</span>: <span class="nc">T</span><span class="p">)</span><span class="w"> </span>-&gt; <span class="kp">&amp;</span><span class="na">&#39;a</span><span class="w"> </span><span class="kt">str</span><span class="w"></span>
+<span class="k">where</span><span class="w"></span>
+<span class="w">    </span><span class="n">T</span>: <span class="nc">Display</span><span class="p">,</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">println</span><span class="o">!</span><span class="p">(</span><span class="s">&quot;Ahhhhhh!!{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ann</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">x</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">.</span><span class="n">len</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">x</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">y</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></p>
 <h2 id="crates">常用的 crates<a class="headerlink" href="#crates" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Rayon</li>
