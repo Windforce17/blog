@@ -9,6 +9,10 @@ CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
 # 32bit GOARCH=386
 ```
 
+## vscode 需要的包
+go get -u -v github.com/rogpeppe/godef
+go get -u -v github.com/sqs/goreturns
+go get -u -v golang.org/x/lint/golint
 ## 常用包
 https://github.com/urfave/cli
 A simple, fast, and fun package for building command line apps in Go
