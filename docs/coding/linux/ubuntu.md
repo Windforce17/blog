@@ -7,6 +7,16 @@ dpkg -i google-chrome-stable_current_amd64.deb
 
 ## 编译环境
 
+```sh
+apt install -y flex &&
+apt install -y bison &&
+apt install -y libxcb-keysyms1 &&
+apt install -y libxrandr2 &&
+apt install -y libnss3 &&
+apt install -y libx11-xcb1 &&
+apt install -y libxss
+```
+
 ### 32 位
 
 ```sh
