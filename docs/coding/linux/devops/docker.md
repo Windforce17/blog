@@ -55,7 +55,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
 
-- docker proxt set
+- docker proxy set
 
 ```sh
 if [ ! -d "/etc/systemd/system/docker.service.d/" ]; then
