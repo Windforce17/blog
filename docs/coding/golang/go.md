@@ -14,6 +14,19 @@ CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
 
 go get -u -v github.com/rogpeppe/godef
 go get -u -v github.com/sqs/goreturns
+go get -u -v github.com/ramya-rao-a/go-outline 
+go get -u -v golang.org/x/tools/cmd/guru 
+go get -u -v golang.org/x/tools/cmd/gorename
+go get -u -v github.com/cweill/gotests/...
+go get -u -v github.com/fatih/gomodifytags
+go get -u -v github.com/josharian/impl
+go get -u -v github.com/davidrjenni/reftools/cmd/fillstruct
+go get -u -v github.com/haya14busa/goplay/cmd/goplay
+go get -u -v github.com/godoctor/godoctor
+go get -u -v github.com/go-delve/delve/cmd/dlv
+go get -u -v github.com/stamblerre/gocode
+go get -u -v github.com/rogpeppe/godef
+go get -u -v golang.org/x/tools/cmd/goimports
 go get -u -v golang.org/x/lint/golint
 
 ## 常用包

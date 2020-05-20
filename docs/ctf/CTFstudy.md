@@ -76,22 +76,11 @@
 ### pdf search
 
 - 首选: http://libgen.io/
+- https://www.cn-ki.net/
+
 - https://www.jiumodiary.com/
 - http://bestcbooks.com
-- https://www.cn-ki.net/
-- http://www.pdf-search-engine.com/
-- http://openpdf.com/ -
 - http://www.pdfgeni.com/
-- http://search-pdf-books.com/
-- http://pdf.rapid4me.com/
-- http://www.toodoc.com/
-- http://www.data-sheet.net/
-- http://www.ebook-search-engine.com/
-- http://live-pdf.com/
-- http://www.pdfsearchengine.in/
-- http://pdftrace.com/
-- http://www.pdf-searcher.com/
-- http://www.filegg.com/
 
 ## Tool set
 
