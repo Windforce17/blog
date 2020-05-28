@@ -65,6 +65,19 @@ $$(1+x)^2 \sim ax$$
 
 $$ x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \sim e^x -1 $$
 
+## 求导
+
+1. 分解法求高阶导
+
+    若$f(x)$可以分解为$f_{1}(x)+f_{2}(x)$,若知道$f_{1}^{(n)}(x)+f_{2}^{(n)}(x)$,则$f^{(n)}(x)=f_{1}^{(n)}(x)+f_{2}^{(n)}(x)$
+
+1. 常用的高阶导
+    - $(e^{ax+b})^{(n)}=a^n+e^{ax+b}$
+    - $[sin(ax+b)]^{(n)}=a^n sin(ax+b+\frac{n\pi}{2})$
+    - $[cos(ax+b)]^{(n)}=a^n cos(ax+b+\frac{n\pi}{2})$
+    - $[\ln(ax+b)]^{(n)}=(-1)^{n-1} a^n\frac{(n-1)!}{(ax+b)^n}$
+    - $(\frac{1}{ax+b})^{(n)}=(-1)^n a^n\frac{n!}{(ax+b)^{n+1}}$
+
 ## 积分
 
 $$ \int \frac{dx}{ax+b} = \frac{1}{a}\ln{|ax+b|}+C$$
