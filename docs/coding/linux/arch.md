@@ -56,32 +56,66 @@ sudo vi /etc/pacman.conf
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 sudo pacman -S archlinuxcn-keyring
 ```
-
-1. `/etc/ssh/ssh_config`添加:
-
+### 修复ssh 连接错误
+`/etc/ssh/ssh_config`添加:
 ```conf
 IPQoS 0
 TCPKeepAlive=yes
 ServerAliveInterval 60
 ```
 
-### 环境配置
+### vmware
+
+```sh
+yay -S gtkmm
+yay -S gtkmm3
+systemctl enable vmware-networks.service
+systemctl enable vmware-usbarbitrator.service
+systemctl enable vmware-hostd.service
+```
+
+### package
+```sh
+
+fakeroot
+ntfs-3g
+# network
+NetworkManager
+wpa_supplicant
+# nvidia intel
+optimus-manager
+# bluetooth
+bluez bluez-utils
+systemctl enable  bluetooth.service
+# caps2ctrl
+kcmshell5 kcm_keyboard
+
+# theme
+libdbusmenu-glib
+nordic-kde-git
+nordic-theme-git
+kcm-colorful-git
+breeze-blurred-git
+kvantum-qt5
+kvantum-theme-nordic-git
+yay -S kdecoration qt5-declarative qt5-x11extras kcoreaddons kguiaddons kconfigwidgets kwindowsystem fftw cmake extra-cmake-modules qtcurve-kde
+```
 
 ```sh
 # fonts amd vim
+visual-studio-code-bin
  yay -S adobe-source-han-sans-otc-fonts
  yay -S wqy-zenhei wqy-microhei
  yay -S ttf-ms-win10-zh_cn
  yay -S wps-office
  yay -S gvim
-```
+````
 
 ```sh
 # input method
 ysy -S fcitx-googlepinyin &&
 yay -S fcitx-qt5 &&
 yay -S fcitx-qt4 &&
-yay -S fcitx-
 #.xprofile
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
