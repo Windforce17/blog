@@ -102,8 +102,9 @@ yay -S kdecoration qt5-declarative qt5-x11extras kcoreaddons kguiaddons kconfigw
 ```
 
 ```sh
-# fonts amd vim
-visual-studio-code-bin
+# fonts amd vim code
+ yay -S visual-studio-code-bin
+ yay -S yapf
  yay -S adobe-source-han-sans-otc-fonts
  yay -S wqy-zenhei wqy-microhei
  yay -S ttf-ms-win10-zh_cn
@@ -120,6 +121,11 @@ yay -S fcitx-qt4 &&
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
+```
+
+okura无法显示中午问题
+```
+yay -S  poppler-data
 ```
 
 ```sh
