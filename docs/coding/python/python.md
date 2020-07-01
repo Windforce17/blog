@@ -42,6 +42,18 @@ username=''
 for x in u:
     username+=x.to_bytes(4).decode()
 print(username)
+
+### hex转换float,float转hex
+def float2hex(s):
+    fp = ctypes.pointer(ctypes.c_float(s))
+    cp = ctypes.cast(fp,ctypes.POINTER(ctypes.c_long))
+    return hex(cp.contents.value)
+
+def hex2float(h):
+    i = int(h,16)
+    cp = ctypes.pointer(ctypes.c_int(i))
+    fp = ctypes.cast(cp,ctypes.POINTER(ctypes.c_float))
+    return fp.contents.value
 ```
 
 ## multiprocessing
