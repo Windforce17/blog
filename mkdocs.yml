@@ -16,7 +16,7 @@ theme:
     primary: 'white'
     accent: 'red'
   icon:
-    logo: 'school'
+    logo: 'material/schoo'
   feature:
     - tabs
   font:
