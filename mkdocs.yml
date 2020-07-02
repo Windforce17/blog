@@ -17,7 +17,7 @@ theme:
     accent: 'red'
   icon:
     logo: 'material/school'
-  feature:
+  features:
     - tabs
   font:
     text: 'Fira Sans'
