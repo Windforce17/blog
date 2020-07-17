@@ -151,8 +151,27 @@ bindkey '\e[1;3B' end-of-line
 bindkey '\ev' deer
 
 alias ll='ls -lh'
-alias proxyon='export ALL_PROXY=http://192.168.124.1:1080'
-alias proxyoff='unset ALL_PROXT'
+# open file
+alias -s gz='tar -xzvf'
+alias -s tgz='tar -xzvf'
+alias -s zip='unzip -O cp936'
+alias -s bz2='tar -xjvf'
+alias -s zst='tar -xvf'
+
+# proxy
+#alias proxyon='export ALL_PROXY=socks5://127.0.0.1:1080'
+alias proxyon='export ALL_PROXY=http://127.0.0.1:12333'
+alias proxyoff='unset ALL_PROXY'
+
+#KDE
+alias kquit='qdbus org.kde.ksmserver /KSMServer logout 0 2 2'
+
+# locale
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+# path
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/root/.local/bin
 
 # options
 unsetopt correct_all
@@ -177,5 +196,6 @@ setopt HIST_VERIFY # Don't execute immediately upon history expansion.
 # ignore complition
 zstyle ':completion:*:complete:-command-:*:*' ignored-patterns '*.pdf|*.exe|*.dll'
 zstyle ':completion:*:*sh:*:' tag-order files
+
 
 
