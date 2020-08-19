@@ -210,3 +210,23 @@ yay -S wps-office-cn
 ### touchpad
 
 deepin: edit `/usr/share/dde-daemon/guesture.json`
+
+##  备份
+```sh
+#excl:
+/proc/*
+/dev/*
+/sys/*
+/tmp/*
+/mnt/*
+/media/*
+/run/*
+/var/lock/*
+/var/run/*
+/var/lib/pacman/*
+/var/cache/pacman/pkg/*
+/lost+found
+```
+```sh
+sudo tar --use-compress-program="zstd -T0" -cvpf backup.tar.zst --exclude-from=excl /
+```
