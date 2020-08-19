@@ -1116,6 +1116,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    debug
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vscode" class="md-nav__link">
     vscode 需要的包
   </a>
@@ -3133,6 +3140,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#debug" class="md-nav__link">
+    debug
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vscode" class="md-nav__link">
     vscode 需要的包
   </a>
@@ -3178,6 +3192,16 @@
 <span class="c1"># 32bit GOARCH=386</span>
 </code></pre></div>
 
+<h2 id="debug">debug<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h2>
+<ol>
+<li>删除debug信息
+<div class="highlight"><pre><span></span><code>go build -ldflags “-s -w”
+</code></pre></div></li>
+<li>有用的函数
+<div class="highlight"><pre><span></span><code><span class="nx">runtime</span><span class="p">.</span><span class="nx">Breakpoint</span><span class="p">()</span><span class="c1">//触发调试器断点。</span>
+<span class="nx">runtime</span><span class="o">/</span><span class="nx">debug</span><span class="p">.</span><span class="nx">PrintStack</span><span class="p">()</span><span class="c1">//显示调试堆栈。</span>
+</code></pre></div></li>
+</ol>
 <h2 id="vscode">vscode 需要的包<a class="headerlink" href="#vscode" title="Permanent link">&para;</a></h2>
 <p>go get -u -v github.com/rogpeppe/godef
 go get -u -v github.com/sqs/goreturns
