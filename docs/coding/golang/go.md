@@ -9,6 +9,16 @@ CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
 # 32bit GOARCH=386
 ```
+## debug
+1. 删除debug信息
+```sh
+go build -ldflags “-s -w”
+```
+2. 有用的函数
+```go
+runtime.Breakpoint()//触发调试器断点。
+runtime/debug.PrintStack()//显示调试堆栈。
+```
 
 ## vscode 需要的包
 

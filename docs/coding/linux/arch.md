@@ -23,6 +23,7 @@ https://wiki.archlinux.org/index.php/Multiboot_USB_drive
 14. 安装 grub 引导:`grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg`
 15. 改密码:`passwd;reboot`
 16. 配置网络，自带了`systemd-networkd`，看[这个](https://wiki.archlinux.org/index.php/Systemd-networkd)
+17. 需要交换文件可以安装`systemd-swap` 并讲`/etc/systemd/swap.conf`中的`swapfu_enabled=1` 然后`systemctl enable --now systemd-swap`即可
 
 ## 联网
 
@@ -123,9 +124,14 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 ```
-
-okura无法显示中午问题
+```sh
+# vscode 解决无法同步的问题
+yay -S visual-studio-code-bin
+yay -S gnome-keyring 
 ```
+
+```sh
+# okura无法显示中文问题
 yay -S  poppler-data
 ```
 
