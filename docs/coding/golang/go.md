@@ -14,6 +14,7 @@ CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
 ```sh
 go build -ldflags “-s -w”
 ```
+
 2. 有用的函数
 ```go
 runtime.Breakpoint()//触发调试器断点。

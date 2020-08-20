@@ -94,3 +94,6 @@ network:
       nameservers:
         addresses: [192.168.66.2]
 ```
+
+## pop!_os
+有用的插件：https://support.system76.com/articles/customize-gnome/
