@@ -95,5 +95,12 @@ network:
         addresses: [192.168.66.2]
 ```
 
+## apt
+1. 依赖查找
+```sh
+# 查找lvm2的依赖
+apt-cache depends lvm2
+# 查找依赖lvm2的包
+apt-cache rdepends lvm2
 ## pop!_os
 有用的插件：https://support.system76.com/articles/customize-gnome/

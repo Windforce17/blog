@@ -5,6 +5,23 @@ yay -S rustup
 rustup default stable
 ```
 
+```sh
+export RUSTUP_DIST_SERVER='https://mirrors.ustc.edu.cn/rust-static'
+export RUSTUP_UPDATE_ROOT='https://mirrors.ustc.edu.cn/rust-static/rustup'
+curl https://mirrors.ustc.edu.cn/rust-static/rustup/rustup-init.sh | sh
+```
+
+cargo:
+```conf
+#~/.cargo/config
+[source.crates-io]
+registry = "https://github.com/rust-lang/crates.io-index"
+replace-with = 'ustc'
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+```
+
+
 其他问题查看[这个](https://wiki.archlinux.org/index.php/Rust#Installation)
 
 ## debug 输出
