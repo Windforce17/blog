@@ -3211,6 +3211,19 @@
 rustup default stable
 </code></pre></div>
 
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">RUSTUP_DIST_SERVER</span><span class="o">=</span><span class="s1">&#39;https://mirrors.ustc.edu.cn/rust-static&#39;</span>
+<span class="nb">export</span> <span class="nv">RUSTUP_UPDATE_ROOT</span><span class="o">=</span><span class="s1">&#39;https://mirrors.ustc.edu.cn/rust-static/rustup&#39;</span>
+curl https://mirrors.ustc.edu.cn/rust-static/rustup/rustup-init.sh <span class="p">|</span> sh
+</code></pre></div>
+
+<p>cargo:
+<div class="highlight"><pre><span></span><code>#~/.cargo/config
+[source.crates-io]
+registry = &quot;https://github.com/rust-lang/crates.io-index&quot;
+replace-with = &#39;ustc&#39;
+[source.ustc]
+registry = &quot;git://mirrors.ustc.edu.cn/crates.io-index&quot;
+</code></pre></div></p>
 <p>其他问题查看<a href="https://wiki.archlinux.org/index.php/Rust#Installation">这个</a></p>
 <h2 id="debug">debug 输出<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h2>
 <p>如果要使用<code>println!("{}",a)</code>这类的语法，必须要实现<code>std::format:Display</code>,debug 同理，但是使用<code>#[derive(Debug)]</code>就可以输出 struct。</p>
