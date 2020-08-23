@@ -102,5 +102,7 @@ network:
 apt-cache depends lvm2
 # 查找依赖lvm2的包
 apt-cache rdepends lvm2
+```
 ## pop!_os
+https://extensions.gnome.org/extension/945/cpu-power-manager/
 有用的插件：https://support.system76.com/articles/customize-gnome/

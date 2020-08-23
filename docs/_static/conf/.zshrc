@@ -163,15 +163,19 @@ alias -s zst='tar -xvf'
 alias proxyon='export ALL_PROXY=http://127.0.0.1:12333'
 alias proxyoff='unset ALL_PROXY'
 
-#KDE
-alias kquit='qdbus org.kde.ksmserver /KSMServer logout 0 2 2'
+#debian
+alias aupdate='sudo apt update && sudo apt upgrade -y'
 
 # locale
 export LC_ALL=en_US.UTF-8  
 export LANG=en_US.UTF-8
+
 # path
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/root/.local/bin
+export PATH=$PATH:~/.local/bin
+
+# rust
+source $HOME/.cargo/env
 
 # options
 unsetopt correct_all
