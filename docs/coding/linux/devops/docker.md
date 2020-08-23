@@ -1,5 +1,5 @@
 ## 一些命令和脚本
-
+- 更新用户组 newgrp docker ，不然你新加的用户还是不能执行docker
 - 删除所有 None 镜像`docker rmi -f $(docker images -f "dangling=true" -q)`
 - 删除所有运行中镜像 docker rm -f \$(docker ps -aq)
 - docker ubuntu 安装脚本
