@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.247db7de.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.24735edb.min.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.93389a19.min.css">
       
@@ -1271,6 +1271,26 @@
           <li class="md-nav__item">
   <a href="#package" class="md-nav__link">
     package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bbr" class="md-nav__link">
+    bbr
+  </a>
+  
+    <nav class="md-nav" aria-label="bbr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pacman" class="md-nav__link">
+    设置pacman彩色输出
   </a>
   
 </li>
@@ -3328,6 +3348,26 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bbr" class="md-nav__link">
+    bbr
+  </a>
+  
+    <nav class="md-nav" aria-label="bbr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pacman" class="md-nav__link">
+    设置pacman彩色输出
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#qqwechat" class="md-nav__link">
     qq/wechat
@@ -3427,10 +3467,17 @@
 <span class="c1"># 然后使用dhcp之类的设置ip地址，没有dns还要设置dns ping 一下试试</span>
 </code></pre></div>
 
+<div class="highlight"><pre><span></span><code><span class="c1"># 接入archlinuxcn</span>
+<span class="nb">echo</span> <span class="s1">&#39;Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch&#39;</span> &gt; /etc/pacman.d/mirrorlist
+<span class="nb">echo</span> <span class="s1">&#39;[archlinuxcn]</span>
+<span class="s1">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span>
+<span class="s1">&#39;</span> &gt;&gt; /etc/pacman.conf
+</code></pre></div>
+
 <h2 id="wifi">wifi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h2>
 <p>iw 工具和 wpa_supplicant</p>
 <p>更改 mkinitcpio 配置后，需要手动重新生成镜像：
-mkinitcpio -p linuxx
+mkinitcpio -p linux
 警告: lvm2、mdadm、encrypt 支持默认是关闭的。
 参考：<a href="https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87">https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87</a>)</p>
 <h2 id="_5">安全设置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
@@ -3450,8 +3497,7 @@ TCPKeepAlive=yes
 ServerAliveInterval 60
 </code></pre></div></p>
 <h3 id="vmware">vmware<a class="headerlink" href="#vmware" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>yay -S gtkmm
-yay -S gtkmm3
+<div class="highlight"><pre><span></span><code>yay -S gtkmm gtkmm3 --needed
 systemctl <span class="nb">enable</span> vmware-networks.service
 systemctl <span class="nb">enable</span> vmware-usbarbitrator.service
 systemctl <span class="nb">enable</span> vmware-hostd.service
@@ -3472,25 +3518,27 @@ systemctl <span class="nb">enable</span>  bluetooth.service
 kcmshell5 kcm_keyboard
 
 <span class="c1"># theme</span>
-libdbusmenu-glib
-nordic-kde-git
-nordic-theme-git
-kcm-colorful-git
-breeze-blurred-git
-kvantum-qt5
-kvantum-theme-nordic-git
+yay -S <span class="se">\</span>
+libdbusmenu-glib <span class="se">\</span>
+nordic-kde-git <span class="se">\</span>
+nordic-theme-git <span class="se">\</span>
+kcm-colorful-git <span class="se">\</span>
+breeze-blurred-git <span class="se">\</span>
+kvantum-qt5 <span class="se">\</span>
+kvantum-theme-nordic-git 
 yay -S kdecoration qt5-declarative qt5-x11extras kcoreaddons kguiaddons kconfigwidgets kwindowsystem fftw cmake extra-cmake-modules qtcurve-kde
 </code></pre></div>
 
 <p><div class="highlight"><pre><span></span><code><span class="c1"># fonts amd vim code</span>
  yay -S visual-studio-code-bin
  yay -S yapf
- yay -S adobe-source-han-sans-otc-fonts
- yay -S wqy-zenhei wqy-microhei
- yay -S ttf-ms-win10-zh_cn
- yay -S wps-office
- yay -S ttf-opensans
+ yay -S adobe-source-han-sans-otc-fonts ttf-dejavu wqy-zenhei wqy-microhei ttf-opensans 
+ wireshark-qt 
+ <span class="c1">#don&#39;t forget gpasswd -a username wireshark</span>
+ yay -S wps-office-cn
  yay -S gvim
+ yay -S ttf-ms-win10-zh_cn
+
 <span class="sb">````</span>
 
 <span class="sb">```</span>sh
@@ -3523,6 +3571,7 @@ yay -S acpi i8utils dell-bios-fan-control-git
 LANG=en_US.UTF-8
 </code></pre></div>
 
+<h2 id="bbr">bbr<a class="headerlink" href="#bbr" title="Permanent link">&para;</a></h2>
 <p>添加<code>/etc/modules-load.d/80-bbr.conf</code>:</p>
 <div class="highlight"><pre><span></span><code>tcp_bbr
 </code></pre></div>
@@ -3549,6 +3598,8 @@ net.core.default_qdisc = fq
 net.ipv4.tcp_congestion_control = bbr
 </code></pre></div>
 
+<h3 id="pacman">设置pacman彩色输出<a class="headerlink" href="#pacman" title="Permanent link">&para;</a></h3>
+<p>打开/etc/pacman.conf文件，找到被注释的#Color，改为Color。pacman就会输出彩色信息，方便查看。</p>
 <h3 id="qqwechat">qq/wechat<a class="headerlink" href="#qqwechat" title="Permanent link">&para;</a></h3>
 <p><code>yay -S deepin.com.qq.im electronic-wechat</code></p>
 <ol>
