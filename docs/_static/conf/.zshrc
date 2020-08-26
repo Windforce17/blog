@@ -160,8 +160,8 @@ alias -s zst='tar -xvf'
 
 # proxy
 #alias proxyon='export ALL_PROXY=socks5://127.0.0.1:1080'
-alias proxyon='export ALL_PROXY=http://127.0.0.1:12333'
-alias proxyoff='unset ALL_PROXY'
+alias proxyon='export ALL_PROXY=http://127.0.0.1:12333;git config --global http.proxy socks5://127.0.0.1:1080;git config --global https.proxy socks5://127.0.0.1:1080'
+alias proxyoff='unset ALL_PROXY;proxy git config --global --unset http.proxy;git config --global --unset https.proxy'
 
 #debian
 alias aupdate='sudo apt update && sudo apt upgrade -y'
@@ -175,7 +175,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/.local/bin
 
 # rust
-source $HOME/.cargo/env
+#source $HOME/.cargo/env
 
 # options
 unsetopt correct_all

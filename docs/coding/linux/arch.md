@@ -36,12 +36,19 @@ modprobe rndis_host cdc_ether usbnet
 # 然后使用dhcp之类的设置ip地址，没有dns还要设置dns ping 一下试试
 ```
 
+```sh
+# 接入archlinuxcn
+echo 'Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch' > /etc/pacman.d/mirrorlist
+echo '[archlinuxcn]
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+' >> /etc/pacman.conf
+```
 ## wifi
 
 iw 工具和 wpa_supplicant
 
 更改 mkinitcpio 配置后，需要手动重新生成镜像：
-mkinitcpio -p linuxx
+mkinitcpio -p linux
 警告: lvm2、mdadm、encrypt 支持默认是关闭的。
 参考：https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
 
@@ -68,8 +75,7 @@ ServerAliveInterval 60
 ### vmware
 
 ```sh
-yay -S gtkmm
-yay -S gtkmm3
+yay -S gtkmm gtkmm3 --needed
 systemctl enable vmware-networks.service
 systemctl enable vmware-usbarbitrator.service
 systemctl enable vmware-hostd.service
@@ -92,13 +98,14 @@ systemctl enable  bluetooth.service
 kcmshell5 kcm_keyboard
 
 # theme
-libdbusmenu-glib
-nordic-kde-git
-nordic-theme-git
-kcm-colorful-git
-breeze-blurred-git
-kvantum-qt5
-kvantum-theme-nordic-git
+yay -S \
+libdbusmenu-glib \
+nordic-kde-git \
+nordic-theme-git \
+kcm-colorful-git \
+breeze-blurred-git \
+kvantum-qt5 \
+kvantum-theme-nordic-git 
 yay -S kdecoration qt5-declarative qt5-x11extras kcoreaddons kguiaddons kconfigwidgets kwindowsystem fftw cmake extra-cmake-modules qtcurve-kde
 ```
 
@@ -106,12 +113,13 @@ yay -S kdecoration qt5-declarative qt5-x11extras kcoreaddons kguiaddons kconfigw
 # fonts amd vim code
  yay -S visual-studio-code-bin
  yay -S yapf
- yay -S adobe-source-han-sans-otc-fonts
- yay -S wqy-zenhei wqy-microhei
- yay -S ttf-ms-win10-zh_cn
- yay -S wps-office
- yay -S ttf-opensans
+ yay -S adobe-source-han-sans-otc-fonts ttf-dejavu wqy-zenhei wqy-microhei ttf-opensans 
+ wireshark-qt 
+ #don't forget gpasswd -a username wireshark
+ yay -S wps-office-cn
  yay -S gvim
+ yay -S ttf-ms-win10-zh_cn
+
 ````
 
 ```sh
@@ -149,7 +157,7 @@ yay -S acpi i8utils dell-bios-fan-control-git
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 ```
-
+## bbr
 添加`/etc/modules-load.d/80-bbr.conf`:
 
 ```conf
@@ -180,6 +188,9 @@ net.core.default_qdisc = fq
 net.ipv4.tcp_congestion_control = bbr
 ```
 
+### 设置pacman彩色输出
+
+打开/etc/pacman.conf文件，找到被注释的#Color，改为Color。pacman就会输出彩色信息，方便查看。
 ### qq/wechat
 
 `yay -S deepin.com.qq.im electronic-wechat`
