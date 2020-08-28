@@ -3083,6 +3083,26 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    欧几里得算法\辗转相除法
+  </a>
+  
+    <nav class="md-nav" aria-label="欧几里得算法\辗转相除法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    最大公因子\最大公约数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     模运算
   </a>
   
@@ -3090,21 +3110,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     性质
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     乘法逆元，加法逆
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     剩余类和剩余类集
   </a>
   
@@ -3226,6 +3246,26 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
+    欧几里得算法\辗转相除法
+  </a>
+  
+    <nav class="md-nav" aria-label="欧几里得算法\辗转相除法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    最大公因子\最大公约数
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     模运算
   </a>
   
@@ -3233,21 +3273,21 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     性质
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     乘法逆元，加法逆
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     剩余类和剩余类集
   </a>
   
@@ -3289,48 +3329,48 @@
 </li>
 <li>
 <p><span><span class="MathJax_Preview">若b|g,b|h,对于任意整数m和n，都有b|(mg+nh)，反之亦然</span><script type="math/tex">若b|g,b|h,对于任意整数m和n，都有b|(mg+nh)，反之亦然</script></span><br />
-   证明：大多数数论上的证明都可以把形如<span><span class="MathJax_Preview">a|b</span><script type="math/tex">a|b</script></span>是式子展开为<span><span class="MathJax_Preview">a=kb</span><script type="math/tex">a=kb</script></span>这样，比较容易。下面证明上面的那个引理。</p>
+    证明：大多数数论上的证明都可以把形如<span><span class="MathJax_Preview">a|b</span><script type="math/tex">a|b</script></span>是式子展开为<span><span class="MathJax_Preview">a=kb</span><script type="math/tex">a=kb</script></span>这样，比较容易证明。下面证明上面的那个引理。  </p>
 </li>
+</ol>
+<p><span><span class="MathJax_Preview"><span><span class="MathJax_Preview">证明：设 mg+nh=xmb+nyb，显然 b|(b(xm+ny)),n和m为任意整数</span><script type="math/tex">证明：设 mg+nh=xmb+nyb，显然 b|(b(xm+ny)),n和m为任意整数</script></span></span><script type="math/tex"><span><span class="MathJax_Preview">证明：设 mg+nh=xmb+nyb，显然 b|(b(xm+ny)),n和m为任意整数</span><script type="math/tex">证明：设 mg+nh=xmb+nyb，显然 b|(b(xm+ny)),n和m为任意整数</script></span></script></span></p>
+<h2 id="_3">欧几里得算法\辗转相除法<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">最大公因子\最大公约数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li>定义<code>c=gcd(|a|,|b|)=max[k,保证k|b且k|b]</code>，则 c 为 a 和 b 的最大公约数\最大公因子。</li>
+</ol>
+<div>
+<div class="MathJax_Preview">令 k=gcd（m，n），j=gcd(n,m\mod n)，即证 k=j\\ 设 m=pn+(m \mod n)（除法定义）\\
+又因为 j|n 且 j|(m\mod n),则 j|m 成立，且 j 是 m 的一个因子，那么 j 就是 m 和 n 的一个公约数，但不一定最大，下面证明最大，由于 k 是 m 和 n 的最大公约数，就有 k\geq j\\
+由 m=pn+(m \mod n)可知，(m \mod n)=m-pn,又因为 k|m 且 k|(-pn)，则 k|(m \mod n)，k 是(m \mod n)和 n 的公约数数，可以得到 j\geq k,所有 k=j，gcd 算法正确。</div>
+<script type="math/tex; mode=display">令 k=gcd（m，n），j=gcd(n,m\mod n)，即证 k=j\\ 设 m=pn+(m \mod n)（除法定义）\\
+又因为 j|n 且 j|(m\mod n),则 j|m 成立，且 j 是 m 的一个因子，那么 j 就是 m 和 n 的一个公约数，但不一定最大，下面证明最大，由于 k 是 m 和 n 的最大公约数，就有 k\geq j\\
+由 m=pn+(m \mod n)可知，(m \mod n)=m-pn,又因为 k|m 且 k|(-pn)，则 k|(m \mod n)，k 是(m \mod n)和 n 的公约数数，可以得到 j\geq k,所有 k=j，gcd 算法正确。</script>
+</div>
+<ol>
+<li><span><span class="MathJax_Preview">gcd(a,b)=1</span><script type="math/tex">gcd(a,b)=1</script></span>，我们可以说 a 和 b 互素\互质。</li>
+</ol>
+<h2 id="_5">模运算<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>就是 <span><span class="MathJax_Preview">m \mod n</span><script type="math/tex">m \mod n</script></span>和<code>%</code>意义是一样的，例如<span><span class="MathJax_Preview">73\mod 23 =4</span><script type="math/tex">73\mod 23 =4</script></span>和编程中的<code>73%23=4</code>是相同的，但是模运算有很多性质，比如同余<span><span class="MathJax_Preview">18 \equiv 11 \mod 7=&gt;(18-1)|7</span><script type="math/tex">18 \equiv 11 \mod 7=>(18-1)|7</script></span>，意思是 18 和 11 模 7 的达到的结果相同。</p>
+<h3 id="_6">性质<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>简单的例如传递性，交换律，还有上面定义就不说了，这里介绍主要运算性质。在密码学可能用到的的比较多。</p>
+<ol>
+<li><span><span class="MathJax_Preview">[(a \mod n )\pm(b \mod n)] \mod n = (a\pm b) \mod n</span><script type="math/tex">[(a \mod n )\pm(b \mod n)] \mod n = (a\pm b) \mod n</script></span></li>
+<li><span><span class="MathJax_Preview">[(a \mod n )\times(b \mod n)] \mod n = (a \times b) \mod n</span><script type="math/tex">[(a \mod n )\times(b \mod n)] \mod n = (a \times b) \mod n</script></span>
+   第二条乘法运算可以化简大整数的模运算，例如求<span><span class="MathJax_Preview">11^7 \mod 13</span><script type="math/tex">11^7 \mod 13</script></span>：</li>
 </ol>
 <div>
 <div class="MathJax_Preview">
-则 mg+nh=xmb+nyb，显然 b|(b(xm+ny)),n和m为任意整数$$
-## 欧几里得算法\辗转相除法
-### 最大公因子\最大公约数
-1. 定义`c=gcd(|a|,|b|)=max[k,保证k|b且k|b]`，则c为a和b的最大公约数\最大公因子。
 </div>
 <script type="math/tex; mode=display">
-则 mg+nh=xmb+nyb，显然 b|(b(xm+ny)),n和m为任意整数$$
-## 欧几里得算法\辗转相除法
-### 最大公因子\最大公约数
-1. 定义`c=gcd(|a|,|b|)=max[k,保证k|b且k|b]`，则c为a和b的最大公约数\最大公因子。
 </script>
 </div>
-<p>令 k=gcd（m，n），j=gcd(n,m\mod n)，即证 k=j\ 设 m=pn+(m \mod n)（除法定义）\
-又因为 j|n 且 j|(m\mod n),则 j|m 成立，且 j 是 m 的一个因子，那么 j 就是 m 和 n 的一个公约数，但不一定最大，下面证明最大，由于 k 是 m 和 n 的最大公约数，就有 k\geq j\
-由 m=pn+(m \mod n)可知，(m \mod n)=m-pn,又因为 k|m 且 k|(-pn)，则 k|(m \mod n)，k 是(m \mod n)和 n 的公约数数，可以得到 j\geq k,所有 k=j，gcd 算法正确。</p>
-<p>$$
-2. <span><span class="MathJax_Preview">gcd(a,b)=1</span><script type="math/tex">gcd(a,b)=1</script></span>，我们可以说a和b互素\互质。</p>
-<h2 id="_3">模运算<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>就是 <span><span class="MathJax_Preview">m \mod n</span><script type="math/tex">m \mod n</script></span>和<code>%</code>意义是一样的，例如<span><span class="MathJax_Preview">73\mod 23 =4</span><script type="math/tex">73\mod 23 =4</script></span>和编程中的<code>73%23=4</code>是相同的，但是模运算有很多性质，比如同余<span><span class="MathJax_Preview">18 \equiv 11 \mod 7=&gt;(18-1)|7</span><script type="math/tex">18 \equiv 11 \mod 7=>(18-1)|7</script></span>，意思是18和11模7的达到的结果相同。</p>
-<h3 id="_4">性质<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>简单的例如传递性，交换律，还有上面定义就不说了，这里介绍主要运算性质。在密码学可能用到的的比较多。
-1. <span><span class="MathJax_Preview">[(a \mod n )\pm(b \mod n)] \mod n = (a\pm b) \mod n</span><script type="math/tex">[(a \mod n )\pm(b \mod n)] \mod n = (a\pm b) \mod n</script></span>
-2. <span><span class="MathJax_Preview">[(a \mod n )\times(b \mod n)] \mod n = (a \times b) \mod n</span><script type="math/tex">[(a \mod n )\times(b \mod n)] \mod n = (a \times b) \mod n</script></span>
-第二条乘法运算可以化简大整数的模运算，例如求<span><span class="MathJax_Preview">11^7 \mod 13</span><script type="math/tex">11^7 \mod 13</script></span>：</p>
-<div>
-<div class="MathJax_Preview">11^4=11^2 \equiv 4^2 \mod 13$$
-$$11^7=11 \times 4 \times 3  \equiv 132 \mod 13 \equiv 2 \mod 13 </div>
-<script type="math/tex; mode=display">11^4=11^2 \equiv 4^2 \mod 13$$
-$$11^7=11 \times 4 \times 3  \equiv 132 \mod 13 \equiv 2 \mod 13 </script>
-</div>
-<h3 id="_5">乘法逆元，加法逆<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<h3 id="_7">乘法逆元，加法逆<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
 <li>在模运算的世界中，存在一个整数<span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>，使得<span><span class="MathJax_Preview">(x+y)\mod n =0</span><script type="math/tex">(x+y)\mod n =0</script></span>，那么我们称<span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>是<span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> 的一个加法逆元素，例如<span><span class="MathJax_Preview">(2+6)\mod 8 =0</span><script type="math/tex">(2+6)\mod 8 =0</script></span>,6 就是 2 的一个加法逆元素。</li>
-<li>若存在<span><span class="MathJax_Preview">xy \mod n=1</span><script type="math/tex">xy \mod n=1</script></span>，则称<span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>是 x 的乘法逆元，并不是所有的x都有乘法逆元，一般来说n是个素数就可以了，这一点后面文章会讨论。求一个数的乘法逆元，需要用到扩展的欧几里得算法。不过我们也可以用工具进行求解，例如在sagemath可以使用
-<code>inverse_mod(100,123457)</code>来求得在模123457下的100乘法逆元，答案是8642，显然<span><span class="MathJax_Preview">100 \times 8642 \equiv 1 \mod 123447</span><script type="math/tex">100 \times 8642 \equiv 1 \mod 123447</script></span>。如果我们试图求得<code>inverse_mod(100,123456)</code>,就会出错，<code>inverse of Mod(100, 123456) does not exist</code>。下面给出Python的</li>
+<li>若存在<span><span class="MathJax_Preview">xy \mod n=1</span><script type="math/tex">xy \mod n=1</script></span>，则称<span><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>是 x 的乘法逆元，并不是所有的 x 都有乘法逆元，一般来说 n 是个素数就可以了，这一点后面文章会讨论。求一个数的乘法逆元，需要用到扩展的欧几里得算法。不过我们也可以用工具进行求解，例如在 sagemath 可以使用
+   <code>inverse_mod(100,123457)</code>来求得在模 123457 下的 100 乘法逆元，答案是 8642，显然<span><span class="MathJax_Preview">100 \times 8642 \equiv 1 \mod 123447</span><script type="math/tex">100 \times 8642 \equiv 1 \mod 123447</script></span>。如果我们试图求得<code>inverse_mod(100,123456)</code>,就会出错，<code>inverse of Mod(100, 123456) does not exist</code>。下面给出 Python 的</li>
 </ol>
-<h3 id="_6">剩余类和剩余类集<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<h3 id="_8">剩余类和剩余类集<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
                 
               
               
