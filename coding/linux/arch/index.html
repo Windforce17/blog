@@ -17,7 +17,7 @@
         <meta name="author" content="Windforce17">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.8">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.9">
     
     
       
@@ -3458,7 +3458,7 @@
 <li>安装 grub 引导:<code>grub-install /dev/sda;grub-mkconfig -o /boot/grub/grub.cfg</code></li>
 <li>改密码:<code>passwd;reboot</code></li>
 <li>配置网络，自带了<code>systemd-networkd</code>，看<a href="https://wiki.archlinux.org/index.php/Systemd-networkd">这个</a></li>
-<li>需要交换文件可以安装<code>systemd-swap</code> 并讲<code>/etc/systemd/swap.conf</code>中的<code>swapfu_enabled=1</code> 然后<code>systemctl enable --now systemd-swap</code>即可</li>
+<li>需要交换文件可以安装<code>systemd-swap</code> 并将<code>/etc/systemd/swap.conf</code>中写入<code>swapfu_enabled=1</code> 然后<code>systemctl enable --now systemd-swap</code>即可</li>
 </ol>
 <h2 id="_4">联网<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p><a href="http://blog.csdn.net/r8l8q8/article/details/73252970#79tkjm1497440352464">http://blog.csdn.net/r8l8q8/article/details/73252970#79tkjm1497440352464</a></p>
