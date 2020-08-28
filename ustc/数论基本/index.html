@@ -3383,6 +3383,22 @@ $$11^7=11 \times 4 \times 3  \equiv 132 \mod 13 \equiv 2 \mod 13 </script>
 <code>inverse_mod(100,123457)</code>来求得在模123457下的100乘法逆元，答案是8642，显然<span><span class="MathJax_Preview">100 \times 8642 \equiv 1 \mod 123447</span><script type="math/tex">100 \times 8642 \equiv 1 \mod 123447</script></span>。如果我们试图求得<code>inverse_mod(100,123456)</code>,就会出错，<code>inverse of Mod(100, 123456) does not exist</code>。下面给出Python的代码</p>
 </li>
 </ol>
+<div class="highlight"><pre><span></span><code><span class="c1">#扩展欧几里得算法</span>
+<span class="k">def</span> <span class="nf">egcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">g</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="n">egcd</span><span class="p">(</span><span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span> <span class="o">//</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="c1"># 求逆元</span>
+<span class="k">def</span> <span class="nf">modinv</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">egcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">g</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;modular inverse does not exist&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="n">m</span>
+</code></pre></div>
+
 <h3 id="_8">剩余类和剩余类集<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
                 
               
