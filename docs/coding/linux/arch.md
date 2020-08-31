@@ -13,7 +13,7 @@ https://wiki.archlinux.org/index.php/Multiboot_USB_drive
 4. swap 处理 `mkswap /dev/sdX2;swapon /dev/sdX2`
 5. 挂载根目录 `mount /dev/sdX1 /mnt`
 6. 修改`/etc/pacman.d/mirrorlist` 选择最快的地址，我使用 ustc 和清华的，或者使用`pacman-mirrors -b testing -c China`
-7. 安装系统：`pacstrap /mnt base linux linux-firmware`
+7. 安装系统：`pacstrap /mnt base base-devel linux linux-firmware zsh`
 8. 更新启动挂载盘:`genfstab -U /mnt > /mnt/etc/fstab`
 9. 更改根目录，进入系统 `arch-chroot /mnt`
 10. 设置时区并同步到硬件:`ln -sf /usr/share/zoneinfo/Region/City /etc/localtime;hwclock --systohc`
