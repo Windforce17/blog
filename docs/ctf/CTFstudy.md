@@ -20,7 +20,9 @@
 - https://hackme.inndy.tw/
 - http://wargame.kr/
 - [hakcmeinndy wp](http://carlstar.club/)
-
+- http://oj.xctf.org.cn/
+- http://ctf.bugku.com/
+- http://rookiehacker.org/
 
 2. pwn
 
