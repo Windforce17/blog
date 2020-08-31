@@ -64,6 +64,18 @@ sudo vi /etc/pacman.conf
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 sudo pacman -S archlinuxcn-keyring
 ```
+
+### 修复无法导入gnu key的问题
+```sh
+# haveged是一个生成系统熵的工具，可以加速随机数生成
+pacman -Syu haveged
+systemctl start haveged
+systemctl enable haveged
+
+rm -fr /etc/pacman.d/gnupg
+pacman-key --init
+pacman-key --populate archlinux
+```
 ### 修复ssh 连接错误
 `/etc/ssh/ssh_config`添加:
 ```conf
