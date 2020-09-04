@@ -1,6 +1,7 @@
 
 
 
+
 <!doctype html>
 <html lang="zh" class="no-js">
   <head>
@@ -25,9 +26,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.a32019b5.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.4dd2dd8d.min.css">
       
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.38c36bb3.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.6a5ad368.min.css">
       
       
         
@@ -1297,6 +1298,19 @@
   <a href="#_1" class="md-nav__link">
     一些命令和脚本
   </a>
+  
+    <nav class="md-nav" aria-label="一些命令和脚本">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    常用启动命令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3072,6 +3086,19 @@
     一些命令和脚本
   </a>
   
+    <nav class="md-nav" aria-label="一些命令和脚本">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    常用启动命令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -3172,6 +3199,13 @@ systemctl restart docker
 <div class="highlight"><pre><span></span><code>ssh -nNT -L /tmp/docker.sock:/var/run/docker.sock  &lt;USER&gt;@&lt;IP&gt; <span class="p">&amp;</span>
 <span class="nb">export</span> <span class="nv">DOCKER_HOST</span><span class="o">=</span>unix:///tmp/docker.sock <span class="c1"># docker client will communicate with this sock</span>
 </code></pre></div>
+
+<h3 id="_2">常用启动命令<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>sage
+<div class="highlight"><pre><span></span><code>docker run -d --restart<span class="o">=</span>always --name<span class="o">=</span>sagemath0 --net<span class="o">=</span>host -v /root/work/math/:/math/ sagemath/sagemath sage --notebook<span class="o">=</span>jupyter --ip <span class="m">0</span>.0.0.0
+</code></pre></div></li>
+</ol>
                 
               
               
@@ -3275,7 +3309,7 @@ systemctl restart docker
           base: "../../../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../../../assets/javascripts/worker/search.fae956e7.min.js"
+            worker: "../../../../assets/javascripts/worker/search.5eca75d3.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
