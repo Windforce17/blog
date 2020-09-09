@@ -2295,6 +2295,44 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-9-7" type="checkbox" id="nav-5-9-7">
+    
+    <label class="md-nav__link" for="nav-5-9-7">
+      Php
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Php" data-md-level="3">
+      <label class="md-nav__title" for="nav-5-9-7">
+        <span class="md-nav__icon md-icon"></span>
+        Php
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../ctf/web/php/php%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/" title="Php代码执行" class="md-nav__link">
+      Php代码执行
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -2711,6 +2749,13 @@
           <li class="md-nav__item">
   <a href="#vc70" class="md-nav__link">
     vc7.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vs2015-debug" class="md-nav__link">
+    vs2015 debug
   </a>
   
 </li>
@@ -3208,6 +3253,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#vs2015-debug" class="md-nav__link">
+    vs2015 debug
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -3316,6 +3368,13 @@ B8 A86F4B00   MOV EAX,PE.004B6FA8
 68 50110001        push hh.01001150
 E8 1D020000        call hh.010017B0
 33DB               xor ebx,ebx
+</code></pre></div>
+
+<h3 id="vs2015-debug">vs2015 debug<a class="headerlink" href="#vs2015-debug" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>83EC 1C          SUB ESP, 1C                        
+C70424 01000000  MOV DWORD PTR SS:[ESP], 1          
+FF15 04614000    CALL DWORD PTR DS:[&lt;&amp;__set_app_type&gt;]
+E8 6BFDFFFF      CALL 新年快乐_dump_scy.401000          
 </code></pre></div>
 
 <h2 id="intel">intel 指令编码方式<a class="headerlink" href="#intel" title="Permanent link">&para;</a></h2>
@@ -3438,7 +3497,7 @@ E8 1D020000        call hh.010017B0
       <script>
         app = initialize({
           base: "../..",
-          features: ["tabs"],
+          features: ['tabs'],
           search: Object.assign({
             worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
           }, typeof search !== "undefined" && search)
