@@ -3242,17 +3242,17 @@
 <img alt="" src="2019-02-03-10-37-48.png" /></p>
 <h3 id="_1">第一个<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>for循环判断a1(username)的长度，然后将长度传入到sub_400C41(i)
-<div class="highlight"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400C9A</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">a1</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="n">sub_400C9A</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">a1</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+1Ch] [rbp-4h]</span>
 
   <span class="k">for</span> <span class="p">(</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">49</span> <span class="o">&amp;&amp;</span> <span class="o">*</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">a1</span><span class="p">);</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
     <span class="p">;</span>
-  <span class="k">return</span> <span class="n">sub_400C41</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nf">sub_400C41</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 传入长度后，再对长度进行判断，if中的表达式可以用z3来求解</p>
-<p><div class="highlight"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400C41</span><span class="p">(</span><span class="kt">int</span> <span class="n">len_username</span><span class="p">)</span>
+<p><div class="highlight"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="n">sub_400C41</span><span class="p">(</span><span class="kt">int</span> <span class="n">len_username</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kr">__int64</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// rax</span>
 
@@ -3280,7 +3280,7 @@
 </code></pre></div>
 解得长度必须是8位或者12位。</p>
 <h3 id="_2">第二个判断<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p><div class="highlight"><pre><span></span><code><span class="kt">signed</span> <span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400CDD</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="n">uesrname</span><span class="p">)</span>
+<p><div class="highlight"><pre><span></span><code><span class="kt">signed</span> <span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="n">sub_400CDD</span><span class="p">(</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="n">uesrname</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">signed</span> <span class="kr">__int64</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// rax</span>
   <span class="kr">__int64</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// [rsp+10h] [rbp-20h]</span>
@@ -3325,7 +3325,7 @@
 得到username=catalyst_ceo</p>
 <h3 id="_3">第三、四个<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>第三个主要判断username是否合法，由于通过第二个检测函数已经解开了username，所以忽略吧..
-<div class="highlight"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_4008F7</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">username</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="n">sub_4008F7</span><span class="p">(</span><span class="kr">__int64</span> <span class="n">username</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kr">__int64</span> <span class="n">result</span><span class="p">;</span> <span class="c1">// rax</span>
   <span class="kt">int</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// [rsp+1Ch] [rbp-4h]</span>
@@ -3345,7 +3345,7 @@
 <span class="p">}</span>
 </code></pre></div>
 第四个
-<div class="highlight"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="nf">sub_400977</span><span class="p">(</span><span class="n">_DWORD</span> <span class="o">*</span><span class="n">username</span><span class="p">,</span> <span class="n">_DWORD</span> <span class="o">*</span><span class="n">password</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kr">__int64</span> <span class="kr">__fastcall</span> <span class="n">sub_400977</span><span class="p">(</span><span class="n">_DWORD</span> <span class="o">*</span><span class="n">username</span><span class="p">,</span> <span class="n">_DWORD</span> <span class="o">*</span><span class="n">password</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// ebx</span>
   <span class="kt">int</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// ebx</span>
@@ -3385,13 +3385,13 @@
     <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">v4</span> <span class="o">=</span> <span class="n">password</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="n">v4</span> <span class="o">-</span> <span class="n">rand</span><span class="p">()</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">870437532</span> <span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">v4</span> <span class="o">-</span> <span class="n">rand</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">-870437532</span> <span class="p">)</span>
   <span class="p">{</span>
     <span class="n">puts</span><span class="p">(</span><span class="s">&quot;invalid username or password&quot;</span><span class="p">);</span>
     <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">v5</span> <span class="o">=</span> <span class="n">password</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="n">v5</span> <span class="o">-</span> <span class="n">rand</span><span class="p">()</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">944322827</span> <span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">v5</span> <span class="o">-</span> <span class="n">rand</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">-944322827</span> <span class="p">)</span>
   <span class="p">{</span>
     <span class="n">puts</span><span class="p">(</span><span class="s">&quot;invalid username or password&quot;</span><span class="p">);</span>
     <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
@@ -3415,13 +3415,13 @@
     <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">v9</span> <span class="o">=</span> <span class="n">password</span><span class="p">[</span><span class="mi">7</span><span class="p">];</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="n">v9</span> <span class="o">-</span> <span class="n">rand</span><span class="p">()</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">966334428</span> <span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">v9</span> <span class="o">-</span> <span class="n">rand</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">-966334428</span> <span class="p">)</span>
   <span class="p">{</span>
     <span class="n">puts</span><span class="p">(</span><span class="s">&quot;invalid username or password&quot;</span><span class="p">);</span>
     <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">v10</span> <span class="o">=</span> <span class="n">password</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
-  <span class="k">if</span> <span class="p">(</span> <span class="n">v10</span> <span class="o">-</span> <span class="n">rand</span><span class="p">()</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">58112612</span> <span class="p">)</span>
+  <span class="k">if</span> <span class="p">(</span> <span class="n">v10</span> <span class="o">-</span> <span class="n">rand</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">-58112612</span> <span class="p">)</span>
   <span class="p">{</span>
     <span class="n">puts</span><span class="p">(</span><span class="s">&quot;invalid username or password&quot;</span><span class="p">);</span>
     <span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>

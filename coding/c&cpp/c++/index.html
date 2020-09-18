@@ -3296,7 +3296,7 @@
 <li>前缀 R 表示 raw 原始字符串，此时\n 不表示换行符；</li>
 </ul>
 <p>结构数组初始化:</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">struct</span> <span class="n">a</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code>    <span class="k">struct</span> <span class="nc">a</span><span class="p">;</span>
     <span class="n">a</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span>
     <span class="p">{</span>  <span class="p">{</span><span class="s">&quot;a&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">32.3</span><span class="p">}</span>
     <span class="p">{...}</span>
@@ -3305,7 +3305,7 @@
 
 <h2 id="_2">列表初始化<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>类的初始化是根据定义的顺序，这样的代码会出错。</p>
-<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">foo</span>
+<div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">foo</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">i</span> <span class="p">;</span>
     <span class="kt">int</span> <span class="n">j</span> <span class="p">;</span>
@@ -3410,7 +3410,7 @@ A.h</p>
 <span class="cp">#include</span> <span class="cpf">&quot;B.h&quot;</span><span class="cp"></span>
 
 <span class="n">B</span> <span class="n">A</span><span class="o">::</span><span class="n">getBfromA</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">B</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nf">B</span><span class="p">();</span>
 <span class="p">}</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">A</span><span class="o">::</span><span class="n">who_are_you</span><span class="p">()</span> <span class="p">{</span>
@@ -3423,7 +3423,7 @@ A.h</p>
 <span class="cp">#include</span> <span class="cpf">&quot;A.h&quot;</span><span class="cp"></span>
 
 <span class="n">A</span> <span class="n">B</span><span class="o">::</span><span class="n">getAfromB</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">A</span><span class="p">();</span>
+  <span class="k">return</span> <span class="nf">A</span><span class="p">();</span>
 <span class="p">}</span>
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">B</span><span class="o">::</span><span class="n">who_are_you</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">return</span> <span class="s">&quot;I am B&quot;</span><span class="p">;</span>

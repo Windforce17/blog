@@ -3490,7 +3490,7 @@ flag{HUST_CyberSecurity}</p>
 </blockquote>
 <h3 id="mang">Mang<a class="headerlink" href="#mang" title="Permanent link">&para;</a></h3>
 <p>可以看到有三段md5，分别解开后得到lyjjj tql wsl，中间要用<code>_</code>得到<code>lyjjj_tql_wsl</code> 这个作为rc4解密的key，解开flag得到<code>flag{l3h_Plastic_Memory}</code>
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">char</span> <span class="o">*</span><span class="n">v3</span><span class="p">;</span> <span class="c1">// eax</span>
   <span class="kt">char</span> <span class="o">*</span><span class="n">v4</span><span class="p">;</span> <span class="c1">// ebx</span>
@@ -3525,8 +3525,8 @@ flag{HUST_CyberSecurity}</p>
   <span class="n">v10</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="n">v11</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="n">v12</span> <span class="o">=</span> <span class="mi">1732584193</span><span class="p">;</span>
-  <span class="n">v13</span> <span class="o">=</span> <span class="o">-</span><span class="mi">271733879</span><span class="p">;</span>
-  <span class="n">v14</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1732584194</span><span class="p">;</span>
+  <span class="n">v13</span> <span class="o">=</span> <span class="mi">-271733879</span><span class="p">;</span>
+  <span class="n">v14</span> <span class="o">=</span> <span class="mi">-1732584194</span><span class="p">;</span>
   <span class="n">v15</span> <span class="o">=</span> <span class="mi">271733878</span><span class="p">;</span>
   <span class="n">MD5Update</span><span class="p">(</span><span class="o">&amp;</span><span class="n">v10</span><span class="p">,</span> <span class="n">v8</span><span class="p">,</span> <span class="n">strlen</span><span class="p">((</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">v8</span><span class="p">));</span>
   <span class="n">MD5Final</span><span class="p">((</span><span class="kt">unsigned</span> <span class="kt">int</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v10</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">v9</span><span class="p">);</span>
@@ -3630,7 +3630,7 @@ tip2:密码在流量包中（HTTP）<br />
 flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
 <h3 id="vitamin">vitamin<a class="headerlink" href="#vitamin" title="Permanent link">&para;</a></h3>
 <p>三个功能，创建修改删除
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="kr">__fastcall</span> <span class="n">__noreturn</span> <span class="nf">sub_4009D6</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">a1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">a2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="kr">__fastcall</span> <span class="n">__noreturn</span> <span class="n">sub_4009D6</span><span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="n">a1</span><span class="p">,</span> <span class="kt">int</span> <span class="o">*</span><span class="n">a2</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">int</span> <span class="n">v2</span><span class="p">;</span> <span class="c1">// [rsp-14h] [rbp-14h]</span>
   <span class="kt">unsigned</span> <span class="kr">__int64</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// [rsp-10h] [rbp-10h]</span>
@@ -3675,7 +3675,7 @@ flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
     <span class="n">dword_6020A4</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="n">puts</span><span class="p">(</span><span class="s">&quot;Done.&quot;</span><span class="p">);</span>
   <span class="p">}</span>
-  <span class="k">return</span> <span class="mi">0LL</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mf">0L</span><span class="n">L</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 观察malloc大小，需要在内存中寻找0x71~0x7f的size，
@@ -3693,7 +3693,7 @@ flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
   <span class="n">strncpy</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="p">(</span><span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="mh">0x28uLL</span><span class="p">);</span>
   <span class="n">puts</span><span class="p">(</span><span class="s">&quot;This is your pill&quot;</span><span class="p">);</span>
   <span class="n">puts</span><span class="p">(</span><span class="n">buf</span><span class="p">);</span>
-  <span class="k">return</span> <span class="mi">0LL</span><span class="p">;</span>
+  <span class="k">return</span> <span class="mf">0L</span><span class="n">L</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 整个exp分三步，先利用uaf 伪造在<code>bss段</code>的chunk,再修改buf的地址到got表，最后将<code>got['free']</code>改为后门地址。
@@ -3736,7 +3736,7 @@ flag{e46f5601-086c-4f06-bcb2-a021e104c5e5}</p>
 flag{b49b2c44-35a1-4be5-9dfa-c173f20e60ee}</p>
 <h3 id="randgame">RandGame<a class="headerlink" href="#randgame" title="Permanent link">&para;</a></h3>
 <p>只有三次输出机会，每次输入的字符串都会被hash(),然后结果和一个随机数比较。
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="kr">__cdecl</span> <span class="n">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">**</span><span class="n">envp</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">signed</span> <span class="kt">int</span> <span class="n">v3</span><span class="p">;</span> <span class="c1">// eax</span>
   <span class="kt">signed</span> <span class="kt">int</span> <span class="n">v5</span><span class="p">;</span> <span class="c1">// [esp+0h] [ebp-Ch]</span>
@@ -3880,7 +3880,7 @@ flag{15c36180-35bf-47af-87d9-6bcde64ff6b2}</p>
 <span class="p">}</span>
 </code></pre></div>
 程序输入只有days可控，观察函数<code>sub_401DDC</code>可以发现<code>unsigned int</code>和<code>int</code>做了比较，那么当day为负数的时候，for循环就会超时，最后被预先设置的<code>alarm</code>中止，由于fopen的特性，key.txt文件就会被清空。那么在下一步只需输入16个0x00即可绕过验证。
-<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="kr">__fastcall</span> <span class="nf">sub_401DDC</span><span class="p">(</span><span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span> <span class="kr">__fastcall</span> <span class="n">sub_401DDC</span><span class="p">(</span><span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">ptr</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="kt">char</span> <span class="n">s</span><span class="p">;</span> <span class="c1">// [rsp+10h] [rbp-50h]</span>
   <span class="kt">FILE</span> <span class="o">*</span><span class="n">stream</span><span class="p">;</span> <span class="c1">// [rsp+50h] [rbp-10h]</span>
@@ -3895,7 +3895,7 @@ flag{15c36180-35bf-47af-87d9-6bcde64ff6b2}</p>
     <span class="n">strcpy</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">ptr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">);</span>
   <span class="p">}</span>
   <span class="n">fwrite</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="mh">0x20uLL</span><span class="p">,</span> <span class="mi">1uLL</span><span class="p">,</span> <span class="n">stream</span><span class="p">);</span>
-  <span class="k">return</span> <span class="n">fclose</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nf">fclose</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 绕过验证后到达函数<code>sub_401BA0</code>，很简单的一个栈溢出，将ret改写为后门即可。

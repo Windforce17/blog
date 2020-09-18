@@ -3360,7 +3360,7 @@ Top chunk</p>
 <ul>
 <li>存放chunk的metadata的chunk的结构(header)</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="n">malloc_chunk</span><span class="p">{</span>
+<p><div class="highlight"><pre><span></span><code><span class="k">struct</span> <span class="nc">malloc_chunk</span><span class="p">{</span>
     <span class="kt">size_t</span> <span class="n">prev_size</span><span class="p">;</span> <span class="c1">//qword 可能存放上一个chunk的data</span>
     <span class="kt">size_t</span> <span class="n">size</span><span class="p">;</span><span class="c1">//qword size最低位表示上一个chunk是否在使用（prev_inuse）</span>
     <span class="n">malloc_chunk</span> <span class="o">*</span><span class="n">fd</span><span class="p">;</span> <span class="c1">//会被data覆盖</span>

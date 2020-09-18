@@ -3208,7 +3208,7 @@
 
 <span class="kd">var</span> <span class="nx">jsonObject1</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;xiaoming&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">29</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mf">29</span>
         <span class="p">},</span>
         <span class="kd">var</span> <span class="nx">keys1</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">p1</span> <span class="k">in</span> <span class="nx">jsonObject1</span><span class="p">)</span> <span class="p">{</span>
@@ -3220,7 +3220,7 @@
 <span class="nb">Object</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">test</span> <span class="o">=</span> <span class="s2">&quot;I am test&quot;</span><span class="p">;</span>
     <span class="kd">var</span> <span class="nx">jsonObject</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;xiaoming&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mi">29</span>
+            <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mf">29</span>
         <span class="p">},</span>
         <span class="nx">keys</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="k">in</span> <span class="nx">jsonObject</span><span class="p">)</span>
@@ -3230,7 +3230,7 @@
 <h2 id="chrome">绕过 chrome 检测关闭当前窗口<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="kd">function</span> <span class="nx">closeWindows</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">userAgent</span> <span class="o">=</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">;</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Firefox&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span> <span class="o">||</span> <span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Chrome&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Firefox&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">1</span> <span class="o">||</span> <span class="nx">userAgent</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;Chrome&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="o">-</span><span class="mf">1</span><span class="p">)</span> <span class="p">{</span>
     <span class="nx">close</span><span class="p">();</span> <span class="c1">//直接调用JQUERY close方法关闭</span>
   <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
     <span class="nb">window</span><span class="p">.</span><span class="nx">opener</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>

@@ -3224,23 +3224,23 @@
 <p>线程/进程同步手段之一 
 threads/processes sync method
 <div class="highlight"><pre><span></span><code><span class="c1">// init</span>
-<span class="kt">void</span> <span class="nf">sema_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">sema_init</span><span class="p">(</span><span class="k">struct</span> <span class="nc">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">);</span>
 <span class="c1">//mutex mode</span>
 <span class="c1">// init semaphore variable to 1</span>
 <span class="n">DECLEAR_MUTEX</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
 <span class="c1">// init semaphore variable to 0(locked state)</span>
 <span class="n">DECLEAR_MUTEX_LOCKED</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
-<span class="kt">void</span> <span class="n">init_MUTEX</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
-<span class="kt">void</span> <span class="nf">inti_MUTEX_LOCAKED</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">init_MUTEX</span><span class="p">(</span><span class="k">struct</span> <span class="nc">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">inti_MUTEX_LOCAKED</span><span class="p">(</span><span class="k">struct</span> <span class="nc">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
 <span class="c1">// &quot;P&quot; function</span>
 <span class="c1">//always use interruptible version, because nointerruptible version may stuck the process</span>
-<span class="kt">void</span> <span class="nf">down</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
-<span class="kt">int</span> <span class="nf">down_interruptible</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
-<span class="kt">int</span> <span class="nf">down_trylocal</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
+<span class="kt">void</span> <span class="nf">down</span><span class="p">(</span><span class="k">struct</span> <span class="nc">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">down_interruptible</span><span class="p">(</span><span class="k">struct</span> <span class="nc">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
+<span class="kt">int</span> <span class="nf">down_trylocal</span><span class="p">(</span><span class="k">struct</span> <span class="nc">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">);</span>
 
 <span class="c1">//&quot;V&quot; function</span>
-<span class="kt">void</span> <span class="n">up</span><span class="p">(</span><span class="k">struct</span> <span class="n">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">)</span>
+<span class="kt">void</span> <span class="n">up</span><span class="p">(</span><span class="k">struct</span> <span class="nc">semaphore</span> <span class="o">*</span><span class="n">sem</span><span class="p">)</span>
 </code></pre></div></p>
 <h2 id="memory">memory<a class="headerlink" href="#memory" title="Permanent link">&para;</a></h2>
 <p>设备通常提供一组寄存器来进行控制，这些寄存器可能在I/O空间中，也能在内存空间中，在I/O空间中时要用IN/OUT 汇编指令进行读写，在I/O 空间时，被称为I/O 端口，反之为I/O 内存。

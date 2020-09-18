@@ -3203,13 +3203,13 @@
 <p>不行就去.acme.sh/里面吧</p>
 <h2 id="dnspod-api">使用dnspod api<a class="headerlink" href="#dnspod-api" title="Permanent link">&para;</a></h2>
 <p>下面是dddd.im的脚本。
-<div class="highlight"><pre><span></span><code>    <span class="nb">export</span> <span class="nv">DP_Id</span><span class="o">=</span><span class="s2">&quot;1111&quot;</span>  <span class="o">&amp;&amp;</span>
-    <span class="nb">export</span> <span class="nv">DP_Key</span><span class="o">=</span><span class="s2">&quot;xxxxx&quot;</span>  <span class="o">&amp;&amp;</span>
-    acme.sh --issue --dns dns_dp -d *.cugapp.com
-    acme.sh  --installcert  -d  *.cugapp.com   <span class="se">\</span>
-            --key-file   /usr/local/nginx/conf/ssl/cugapp.com.key <span class="se">\</span>
-            --fullchain-file /usr/local/nginx/conf/ssl/cugapp.com.cer <span class="se">\</span>
-            --reloadcmd  <span class="s2">&quot;nginx -s reload&quot;</span> 
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">DP_Id</span><span class="o">=</span><span class="s2">&quot;182010&quot;</span>  <span class="o">&amp;&amp;</span>
+<span class="nb">export</span> <span class="nv">DP_Key</span><span class="o">=</span><span class="s2">&quot;xxxxxxx&quot;</span>  <span class="o">&amp;&amp;</span>
+./acme.sh --issue --dns dns_dp -d <span class="s1">&#39;*.0x3f.io&#39;</span>
+./acme.sh  --installcert  -d  <span class="s1">&#39;*.0x3f.io&#39;</span>   <span class="se">\</span>
+        --key-file   /usr/local/nginx/conf/ssl/0x3f.io.key <span class="se">\</span>
+        --fullchain-file /usr/local/nginx/conf/ssl/0x3f.io.cer <span class="se">\</span>
+        --reloadcmd  <span class="s2">&quot;/usr/local/nginx/sbin/nginx -s reload&quot;</span> 
 </code></pre></div></p>
 <h2 id="webroot">使用webroot方式<a class="headerlink" href="#webroot" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>acme.sh  --issue -d blog.lomot.cn  --webroot  /var/www/blog.lomot.cn/
