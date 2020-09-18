@@ -10,13 +10,13 @@
 
 下面是dddd.im的脚本。
 ```zsh
-    export DP_Id="1111"  &&
-    export DP_Key="xxxxx"  &&
-    acme.sh --issue --dns dns_dp -d *.cugapp.com
-    acme.sh  --installcert  -d  *.cugapp.com   \
-            --key-file   /usr/local/nginx/conf/ssl/cugapp.com.key \
-            --fullchain-file /usr/local/nginx/conf/ssl/cugapp.com.cer \
-            --reloadcmd  "nginx -s reload" 
+export DP_Id="182010"  &&
+export DP_Key="xxxxxxx"  &&
+./acme.sh --issue --dns dns_dp -d '*.0x3f.io'
+./acme.sh  --installcert  -d  '*.0x3f.io'   \
+        --key-file   /usr/local/nginx/conf/ssl/0x3f.io.key \
+        --fullchain-file /usr/local/nginx/conf/ssl/0x3f.io.cer \
+        --reloadcmd  "/usr/local/nginx/sbin/nginx -s reload" 
 ```
 ## 使用webroot方式
 ```sh
