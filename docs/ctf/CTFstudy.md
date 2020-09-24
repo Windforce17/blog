@@ -23,6 +23,7 @@
 - http://oj.xctf.org.cn/
 - http://ctf.bugku.com/
 - http://rookiehacker.org/
+- https://buuoj.cn/
 
 2. pwn
 
