@@ -74,6 +74,14 @@ E8 1D020000        call hh.010017B0
 33DB               xor ebx,ebx
 ```
 
+### vs2015 debug
+```
+83EC 1C          SUB ESP, 1C                        
+C70424 01000000  MOV DWORD PTR SS:[ESP], 1          
+FF15 04614000    CALL DWORD PTR DS:[<&__set_app_type>]
+E8 6BFDFFFF      CALL 新年快乐_dump_scy.401000          
+```
+
 ## intel 指令编码方式
 
 每一个指令分为 6 部分：
