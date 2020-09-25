@@ -3352,6 +3352,7 @@
 <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">binascii</span>
 <span class="n">context</span><span class="o">.</span><span class="n">log_level</span><span class="o">=</span><span class="s1">&#39;debug&#39;</span>
+<span class="c1"># context.terminal = [&quot;tmux&quot;,&quot;split&quot;,&quot;-h&quot;]</span>
 <span class="n">context</span><span class="o">.</span><span class="n">terminal</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;bash&#39;</span><span class="p">]</span>
 <span class="n">debug</span><span class="o">=</span><span class="kc">True</span>
 
@@ -3425,17 +3426,17 @@ sh.close()</p>
 
 <h3 id="dynelf">DynELF<a class="headerlink" href="#dynelf" title="Permanent link">&para;</a></h3>
 <p>专门应为没有 libc 的漏洞利用，基本框架</p>
-<div class="highlight"><pre><span></span><code>p = process(&#39;./xxx&#39;)
-def leak(address):
-  #各种预处理
-  payload = &quot;xxxxxxxx&quot; + address + &quot;xxxxxxxx&quot;
-  p.send(payload)
-  #各种处理
-  data = p.recv(4)
-  log.debug(&quot;%#x =&gt; %s&quot; % (address, (data or &#39;&#39;).encode(&#39;hex&#39;)))
-  return data
-d = DynELF(leak, elf=ELF(&quot;./xxx&quot;))      #初始化DynELF模块
-systemAddress = d.lookup(&#39;system&#39;, &#39;libc&#39;)  #在libc文件中搜索system函数的地址
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="n">process</span><span class="p">(</span><span class="s1">&#39;./xxx&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">leak</span><span class="p">(</span><span class="n">address</span><span class="p">):</span>
+  <span class="c1">#各种预处理</span>
+  <span class="n">payload</span> <span class="o">=</span> <span class="s2">&quot;xxxxxxxx&quot;</span> <span class="o">+</span> <span class="n">address</span> <span class="o">+</span> <span class="s2">&quot;xxxxxxxx&quot;</span>
+  <span class="n">p</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">payload</span><span class="p">)</span>
+  <span class="c1">#各种处理</span>
+  <span class="n">data</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+  <span class="n">log</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%#x</span><span class="s2"> =&gt; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="p">(</span><span class="n">data</span> <span class="ow">or</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;hex&#39;</span><span class="p">)))</span>
+  <span class="k">return</span> <span class="n">data</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">DynELF</span><span class="p">(</span><span class="n">leak</span><span class="p">,</span> <span class="n">elf</span><span class="o">=</span><span class="n">ELF</span><span class="p">(</span><span class="s2">&quot;./xxx&quot;</span><span class="p">))</span>      <span class="c1">#初始化DynELF模块</span>
+<span class="n">systemAddress</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="s1">&#39;system&#39;</span><span class="p">,</span> <span class="s1">&#39;libc&#39;</span><span class="p">)</span>  <span class="c1">#在libc文件中搜索system函数的地址</span>
 </code></pre></div>
 
 <h3 id="shellcraft">shellcraft<a class="headerlink" href="#shellcraft" title="Permanent link">&para;</a></h3>

@@ -3263,7 +3263,7 @@
 <h2 id="ropgadget">ROPgadget<a class="headerlink" href="#ropgadget" title="Permanent link">&para;</a></h2>
 <ol>
 <li>ROPgadget 得到代码片断</li>
-<li>cd80c3 就是 int0x80;ret,s 使用<code>ROPgadget --binary {binaryname} --opcode cd80c3</code>来寻找</li>
+<li>cd80c3 就是 int0x80;ret,使用<code>ROPgadget --binary {binaryname} --opcode cd80c3</code>来寻找</li>
 <li>动态链接找不到 int 0x80,需要构造 rop</li>
 <li><code>ROPgadget --binary {binary_name} --ropchain</code>可以直接生成 ROP chain，不过要转换一下</li>
 </ol>
@@ -3285,10 +3285,10 @@
 <span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">rop</span><span class="p">)):</span>
     <span class="k">if</span> <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;/bin&#39;</span><span class="p">:</span>
         <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;0x6e69622f&#39;</span>
-    <span class="k">if</span> <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;sh&#39;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;//sh&#39;</span><span class="p">:</span>
         <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;0x68732f2f&#39;</span>
     <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
-<span class="nb">print</span> <span class="n">rop</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rop</span><span class="p">)</span>
 </code></pre></div>
 
 <h2 id="one_gadget">one_gadget<a class="headerlink" href="#one_gadget" title="Permanent link">&para;</a></h2>
