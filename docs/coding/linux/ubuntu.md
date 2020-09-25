@@ -30,6 +30,7 @@ apt install -y libxss
 ```sh
 # 32bit lib dbug info
 dpkg --add-architecture i386
+apt update
 apt install libc6:i386 libstdc++6:i386 libc6-dbg:i386
 ```
 

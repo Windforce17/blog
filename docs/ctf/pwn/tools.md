@@ -19,6 +19,7 @@
 from pwn import *
 import binascii
 context.log_level='debug'
+# context.terminal = ["tmux","split","-h"]
 context.terminal=['bash']
 debug=True
 
@@ -106,7 +107,7 @@ str(rop)
 
 专门应为没有 libc 的漏洞利用，基本框架
 
-```
+```py
 p = process('./xxx')
 def leak(address):
   #各种预处理

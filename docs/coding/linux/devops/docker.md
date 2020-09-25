@@ -31,14 +31,9 @@ sudo systemctl restart docker
 ```
 {
   "registry-mirrors" : [
-    "http://registry.docker-cn.com",
-    "http://docker.mirrors.ustc.edu.cn",
     "http://hub-mirror.c.163.com"
-  ],
-  "insecure-registries" : [
-    "registry.docker-cn.com",
-    "docker.mirrors.ustc.edu.cn"
   ]
+
 }
 ```
 
