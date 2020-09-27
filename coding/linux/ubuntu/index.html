@@ -3346,9 +3346,9 @@ apt install -y libxss
 
 <p>可以使用-m32 编译 32 位程序啦</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># 32bit lib dbug info</span>
-dpkg --add-architecture i386
-apt update
-apt install libc6:i386 libstdc++6:i386 libc6-dbg:i386
+sudo dpkg --add-architecture i386
+sudo apt update
+sudo apt install libc6:i386 libstdc++6:i386 libc6-dbg:i386
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code><span class="c1">#arm mips</span>
