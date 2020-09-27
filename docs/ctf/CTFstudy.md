@@ -21,11 +21,12 @@
 - http://wargame.kr/
 - [hakcmeinndy wp](http://carlstar.club/)
 - http://oj.xctf.org.cn/
+- https://adworld.xctf.org.cn/
 - http://ctf.bugku.com/
 - http://rookiehacker.org/
 - https://buuoj.cn/
 
-2. pwn
+1. pwn
 
 - http://pwnable.kr/
 - https://pwnable.tw/
