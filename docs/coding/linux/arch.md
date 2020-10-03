@@ -169,7 +169,16 @@ yay -S acpi i8utils dell-bios-fan-control-git
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 ```
-## bbr
+## 性能优化
+### I/O
+1. `/etc/fstab` 文件中添加`noatime`,禁用文件访问时间
+2. TRIM清理磁盘，`sudo hdparm -I /dev/sda | grep TRIM`查看磁盘是否支持TRIM操作，或者使用`sudo systemctl status fstrim.service`查看是否支持。手动清理`sudo fstrim -v /`
+3. 减少swap分区使用：`vm.swappiness=10`，内存低于10%时使用swap分区。
+4. 硬盘增加写缓存
+5. firefox缓存写入RAM：`browser.cache.disk.enable`改为false,`browser.cache.memory.enable`改为true，`browser.cache.memory.capacity`改为204800
+6. 硬盘调度器修改
+7. 使用tlp优化电池使用
+### 网络
 添加`/etc/modules-load.d/80-bbr.conf`:
 
 ```conf
