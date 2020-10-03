@@ -1136,12 +1136,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bbr" class="md-nav__link">
-    bbr
+  <a href="#_7" class="md-nav__link">
+    性能优化
   </a>
   
-    <nav class="md-nav" aria-label="bbr">
+    <nav class="md-nav" aria-label="性能优化">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    I/O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    网络
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#pacman" class="md-nav__link">
@@ -1159,7 +1173,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     图片不加载
   </a>
   
@@ -1190,7 +1204,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     备份
   </a>
   
@@ -3208,12 +3222,26 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bbr" class="md-nav__link">
-    bbr
+  <a href="#_7" class="md-nav__link">
+    性能优化
   </a>
   
-    <nav class="md-nav" aria-label="bbr">
+    <nav class="md-nav" aria-label="性能优化">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    I/O
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    网络
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#pacman" class="md-nav__link">
@@ -3231,7 +3259,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_9" class="md-nav__link">
     图片不加载
   </a>
   
@@ -3262,7 +3290,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+  <a href="#_10" class="md-nav__link">
     备份
   </a>
   
@@ -3433,7 +3461,18 @@ yay -S acpi i8utils dell-bios-fan-control-git
 LANG=en_US.UTF-8
 </code></pre></div>
 
-<h2 id="bbr">bbr<a class="headerlink" href="#bbr" title="Permanent link">&para;</a></h2>
+<h2 id="_7">性能优化<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="io">I/O<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
+<ol>
+<li><code>/etc/fstab</code> 文件中添加<code>noatime</code>,禁用文件访问时间</li>
+<li>TRIM清理磁盘，<code>sudo hdparm -I /dev/sda | grep TRIM</code>查看磁盘是否支持TRIM操作，或者使用<code>sudo systemctl status fstrim.service</code>查看是否支持。手动清理<code>sudo fstrim -v /</code></li>
+<li>减少swap分区使用：<code>vm.swappiness=10</code>，内存低于10%时使用swap分区。</li>
+<li>硬盘增加写缓存</li>
+<li>firefox缓存写入RAM：<code>browser.cache.disk.enable</code>改为false,<code>browser.cache.memory.enable</code>改为true，<code>browser.cache.memory.capacity</code>改为204800</li>
+<li>硬盘调度器修改</li>
+<li>使用tlp优化电池使用</li>
+</ol>
+<h3 id="_8">网络<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>添加<code>/etc/modules-load.d/80-bbr.conf</code>:</p>
 <div class="highlight"><pre><span></span><code>tcp_bbr
 </code></pre></div>
@@ -3476,7 +3515,7 @@ export XMODIFIERS=&quot;@im=fcitx&quot;
 <li>安装<code>环境配置</code>中的两个字体:wqy-zenhei 与 wqy-microhei
    要设置 LANG 为支持 utf8 的字符集</li>
 </ol>
-<h4 id="_7">图片不加载<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h4>
+<h4 id="_9">图片不加载<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <ol>
 <li>禁用 ipv6</li>
 </ol>
@@ -3494,7 +3533,7 @@ net.ipv6.conf.lo.disable_ipv6 =1
 <p>yay -S wps-office-cn</p>
 <h3 id="touchpad">touchpad<a class="headerlink" href="#touchpad" title="Permanent link">&para;</a></h3>
 <p>deepin: edit <code>/usr/share/dde-daemon/guesture.json</code></p>
-<h2 id="_8">备份<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<h2 id="_10">备份<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <p><div class="highlight"><pre><span></span><code><span class="c1">#excl:</span>
 /proc/*
 /dev/*
