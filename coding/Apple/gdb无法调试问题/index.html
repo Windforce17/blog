@@ -9,7 +9,7 @@
         <meta name="description" content="Windforce17's blog">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/ctf/pwn/ROP/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/coding/Apple/gdb%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/">
       
       
         <meta name="author" content="Windforce17">
@@ -19,7 +19,7 @@
     
     
       
-        <title>ROP - windforce17's blog</title>
+        <title>Gdb无法调试问题 - windforce17's blog</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#brop" class="md-skip">
+        <a href="#gdb" class="md-skip">
           跳转至
         </a>
       
@@ -96,7 +96,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              ROP
+              Gdb无法调试问题
             
           </span>
         </div>
@@ -448,10 +448,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       Coding
@@ -471,7 +473,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/Ml%26DL/" title="Ml&DL" class="md-nav__link">
+    <a href="../../Ml%26DL/" title="Ml&DL" class="md-nav__link">
       Ml&DL
     </a>
   </li>
@@ -483,7 +485,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/command/" title="python" class="md-nav__link">
+    <a href="../../command/" title="python" class="md-nav__link">
       python
     </a>
   </li>
@@ -495,7 +497,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/conf/" title="Conf" class="md-nav__link">
+    <a href="../../conf/" title="Conf" class="md-nav__link">
       Conf
     </a>
   </li>
@@ -507,7 +509,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/csgo/" title="Csgo" class="md-nav__link">
+    <a href="../../csgo/" title="Csgo" class="md-nav__link">
       Csgo
     </a>
   </li>
@@ -519,7 +521,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/gdb/" title="Gdb" class="md-nav__link">
+    <a href="../../gdb/" title="Gdb" class="md-nav__link">
       Gdb
     </a>
   </li>
@@ -531,7 +533,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/git/" title="Git" class="md-nav__link">
+    <a href="../../git/" title="Git" class="md-nav__link">
       Git
     </a>
   </li>
@@ -543,7 +545,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/interview/" title="Interview" class="md-nav__link">
+    <a href="../../interview/" title="Interview" class="md-nav__link">
       Interview
     </a>
   </li>
@@ -555,7 +557,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/ipv6/" title="Ipv6" class="md-nav__link">
+    <a href="../../ipv6/" title="Ipv6" class="md-nav__link">
       Ipv6
     </a>
   </li>
@@ -567,7 +569,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/java/" title="Java" class="md-nav__link">
+    <a href="../../java/" title="Java" class="md-nav__link">
       Java
     </a>
   </li>
@@ -579,7 +581,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/jetbrains/" title="Jetbrains" class="md-nav__link">
+    <a href="../../jetbrains/" title="Jetbrains" class="md-nav__link">
       Jetbrains
     </a>
   </li>
@@ -591,7 +593,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/php/" title="Php" class="md-nav__link">
+    <a href="../../php/" title="Php" class="md-nav__link">
       Php
     </a>
   </li>
@@ -603,7 +605,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/uefi%26bios/" title="Uefi&bios" class="md-nav__link">
+    <a href="../../uefi%26bios/" title="Uefi&bios" class="md-nav__link">
       Uefi&bios
     </a>
   </li>
@@ -615,7 +617,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/vim/" title="Vim" class="md-nav__link">
+    <a href="../../vim/" title="Vim" class="md-nav__link">
       Vim
     </a>
   </li>
@@ -627,7 +629,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/vscode/" title="Vscode" class="md-nav__link">
+    <a href="../../vscode/" title="Vscode" class="md-nav__link">
       Vscode
     </a>
   </li>
@@ -639,7 +641,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E5%AD%A6%E6%9C%AF%E5%86%99%E4%BD%9C/" title="学术写作" class="md-nav__link">
+    <a href="../../%E5%AD%A6%E6%9C%AF%E5%86%99%E4%BD%9C/" title="学术写作" class="md-nav__link">
       学术写作
     </a>
   </li>
@@ -651,7 +653,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" title="毕业论文" class="md-nav__link">
+    <a href="../../%E6%AF%95%E4%B8%9A%E8%AE%BA%E6%96%87/" title="毕业论文" class="md-nav__link">
       毕业论文
     </a>
   </li>
@@ -661,10 +663,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-17" type="checkbox" id="nav-4-17" checked>
     
     <label class="md-nav__link" for="nav-4-17">
       Apple
@@ -684,7 +688,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/Apple/app/" title="App" class="md-nav__link">
+    <a href="../app/" title="App" class="md-nav__link">
       App
     </a>
   </li>
@@ -694,11 +698,45 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../../coding/Apple/gdb%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/" title="Gdb无法调试问题" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Gdb无法调试问题
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Gdb无法调试问题" class="md-nav__link md-nav__link--active">
       Gdb无法调试问题
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gdb" class="md-nav__link">
+    给gdb二进制文件签发一个证书
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -708,7 +746,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/Apple/iphone/" title="Iphone" class="md-nav__link">
+    <a href="../iphone/" title="Iphone" class="md-nav__link">
       Iphone
     </a>
   </li>
@@ -746,7 +784,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/Internet/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" title="网络协议" class="md-nav__link">
+    <a href="../../Internet/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" title="网络协议" class="md-nav__link">
       网络协议
     </a>
   </li>
@@ -784,7 +822,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c%26cpp/Polymorphism/" title="Polymorphism" class="md-nav__link">
+    <a href="../../c%26cpp/Polymorphism/" title="Polymorphism" class="md-nav__link">
       Polymorphism
     </a>
   </li>
@@ -796,7 +834,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c%26cpp/asm/" title="Asm" class="md-nav__link">
+    <a href="../../c%26cpp/asm/" title="Asm" class="md-nav__link">
       Asm
     </a>
   </li>
@@ -808,7 +846,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c%26cpp/c%2B%2B/" title="C++" class="md-nav__link">
+    <a href="../../c%26cpp/c%2B%2B/" title="C++" class="md-nav__link">
       C++
     </a>
   </li>
@@ -820,7 +858,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c%26cpp/cmake/" title="Cmake" class="md-nav__link">
+    <a href="../../c%26cpp/cmake/" title="Cmake" class="md-nav__link">
       Cmake
     </a>
   </li>
@@ -832,7 +870,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c%26cpp/ldd/" title="linux 设备驱动第三版" class="md-nav__link">
+    <a href="../../c%26cpp/ldd/" title="linux 设备驱动第三版" class="md-nav__link">
       linux 设备驱动第三版
     </a>
   </li>
@@ -844,7 +882,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c%26cpp/lib/" title="Lib" class="md-nav__link">
+    <a href="../../c%26cpp/lib/" title="Lib" class="md-nav__link">
       Lib
     </a>
   </li>
@@ -856,7 +894,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c%26cpp/pointer/" title="Pointer" class="md-nav__link">
+    <a href="../../c%26cpp/pointer/" title="Pointer" class="md-nav__link">
       Pointer
     </a>
   </li>
@@ -868,7 +906,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c%26cpp/qt/" title="Qt 静态编译" class="md-nav__link">
+    <a href="../../c%26cpp/qt/" title="Qt 静态编译" class="md-nav__link">
       Qt 静态编译
     </a>
   </li>
@@ -880,7 +918,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/c%26cpp/winapi/" title="Winapi" class="md-nav__link">
+    <a href="../../c%26cpp/winapi/" title="Winapi" class="md-nav__link">
       Winapi
     </a>
   </li>
@@ -918,7 +956,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/dataBase/mysql/" title="Mysql" class="md-nav__link">
+    <a href="../../dataBase/mysql/" title="Mysql" class="md-nav__link">
       Mysql
     </a>
   </li>
@@ -930,7 +968,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/dataBase/%E5%9D%91/" title="坑" class="md-nav__link">
+    <a href="../../dataBase/%E5%9D%91/" title="坑" class="md-nav__link">
       坑
     </a>
   </li>
@@ -968,7 +1006,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/golang/Golang%2020%20Tips/" title="Golang tips and traps" class="md-nav__link">
+    <a href="../../golang/Golang%2020%20Tips/" title="Golang tips and traps" class="md-nav__link">
       Golang tips and traps
     </a>
   </li>
@@ -980,7 +1018,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/golang/gin/" title="Gin" class="md-nav__link">
+    <a href="../../golang/gin/" title="Gin" class="md-nav__link">
       Gin
     </a>
   </li>
@@ -992,7 +1030,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/golang/go/" title="Go" class="md-nav__link">
+    <a href="../../golang/go/" title="Go" class="md-nav__link">
       Go
     </a>
   </li>
@@ -1004,7 +1042,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/golang/problem/" title="Problem" class="md-nav__link">
+    <a href="../../golang/problem/" title="Problem" class="md-nav__link">
       Problem
     </a>
   </li>
@@ -1016,7 +1054,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/golang/rsa/" title="Rsa" class="md-nav__link">
+    <a href="../../golang/rsa/" title="Rsa" class="md-nav__link">
       Rsa
     </a>
   </li>
@@ -1028,7 +1066,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/golang/vgo/" title="Vgo" class="md-nav__link">
+    <a href="../../golang/vgo/" title="Vgo" class="md-nav__link">
       Vgo
     </a>
   </li>
@@ -1066,7 +1104,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/CentOS7/" title="CentOS7" class="md-nav__link">
+    <a href="../../linux/CentOS7/" title="CentOS7" class="md-nav__link">
       CentOS7
     </a>
   </li>
@@ -1078,7 +1116,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/arch/" title="Arch" class="md-nav__link">
+    <a href="../../linux/arch/" title="Arch" class="md-nav__link">
       Arch
     </a>
   </li>
@@ -1090,7 +1128,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/etcd/" title="Etcd" class="md-nav__link">
+    <a href="../../linux/etcd/" title="Etcd" class="md-nav__link">
       Etcd
     </a>
   </li>
@@ -1102,7 +1140,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/kernel_send_pack/" title="Kernel send pack" class="md-nav__link">
+    <a href="../../linux/kernel_send_pack/" title="Kernel send pack" class="md-nav__link">
       Kernel send pack
     </a>
   </li>
@@ -1114,7 +1152,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/nginx/" title="Nginx" class="md-nav__link">
+    <a href="../../linux/nginx/" title="Nginx" class="md-nav__link">
       Nginx
     </a>
   </li>
@@ -1126,7 +1164,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/ptrace/" title="Ptrace" class="md-nav__link">
+    <a href="../../linux/ptrace/" title="Ptrace" class="md-nav__link">
       Ptrace
     </a>
   </li>
@@ -1138,7 +1176,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/tmux/" title="Tmux" class="md-nav__link">
+    <a href="../../linux/tmux/" title="Tmux" class="md-nav__link">
       Tmux
     </a>
   </li>
@@ -1150,7 +1188,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/ubuntu/" title="Ubuntu" class="md-nav__link">
+    <a href="../../linux/ubuntu/" title="Ubuntu" class="md-nav__link">
       Ubuntu
     </a>
   </li>
@@ -1183,7 +1221,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/devops/docker/" title="Docker" class="md-nav__link">
+    <a href="../../linux/devops/docker/" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -1195,7 +1233,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/devops/gitlab%26ci/" title="Gitlab&ci" class="md-nav__link">
+    <a href="../../linux/devops/gitlab%26ci/" title="Gitlab&ci" class="md-nav__link">
       Gitlab&ci
     </a>
   </li>
@@ -1207,7 +1245,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/devops/https%26ssl/" title="使用Let's Encrypt 进行泛解析。" class="md-nav__link">
+    <a href="../../linux/devops/https%26ssl/" title="使用Let's Encrypt 进行泛解析。" class="md-nav__link">
       使用Let's Encrypt 进行泛解析。
     </a>
   </li>
@@ -1219,7 +1257,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/devops/improve_performance/" title="性能优化" class="md-nav__link">
+    <a href="../../linux/devops/improve_performance/" title="性能优化" class="md-nav__link">
       性能优化
     </a>
   </li>
@@ -1231,7 +1269,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/devops/iptables/" title="Iptables" class="md-nav__link">
+    <a href="../../linux/devops/iptables/" title="Iptables" class="md-nav__link">
       Iptables
     </a>
   </li>
@@ -1243,7 +1281,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/devops/linux/" title="Linux" class="md-nav__link">
+    <a href="../../linux/devops/linux/" title="Linux" class="md-nav__link">
       Linux
     </a>
   </li>
@@ -1255,7 +1293,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/linux/devops/op%26docker%20service/" title="Op&docker service" class="md-nav__link">
+    <a href="../../linux/devops/op%26docker%20service/" title="Op&docker service" class="md-nav__link">
       Op&docker service
     </a>
   </li>
@@ -1298,7 +1336,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/python/DjangoStudy/" title="Django学习" class="md-nav__link">
+    <a href="../../python/DjangoStudy/" title="Django学习" class="md-nav__link">
       Django学习
     </a>
   </li>
@@ -1310,7 +1348,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/python/math/" title="Math" class="md-nav__link">
+    <a href="../../python/math/" title="Math" class="md-nav__link">
       Math
     </a>
   </li>
@@ -1322,7 +1360,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/python/python/" title="Python" class="md-nav__link">
+    <a href="../../python/python/" title="Python" class="md-nav__link">
       Python
     </a>
   </li>
@@ -1360,7 +1398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/rust/init/" title="Init" class="md-nav__link">
+    <a href="../../rust/init/" title="Init" class="md-nav__link">
       Init
     </a>
   </li>
@@ -1398,7 +1436,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/win/win%20ctl/" title="Win ctl" class="md-nav__link">
+    <a href="../../win/win%20ctl/" title="Win ctl" class="md-nav__link">
       Win ctl
     </a>
   </li>
@@ -1410,7 +1448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/win/winapi/" title="Winapi" class="md-nav__link">
+    <a href="../../win/winapi/" title="Winapi" class="md-nav__link">
       Winapi
     </a>
   </li>
@@ -1448,7 +1486,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/ThreeJS/" title="ThreeJS" class="md-nav__link">
+    <a href="../../%E5%89%8D%E7%AB%AF%E2%99%82js/ThreeJS/" title="ThreeJS" class="md-nav__link">
       ThreeJS
     </a>
   </li>
@@ -1460,7 +1498,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/WDS%20can%27t%20connet/" title="WDS can't connet" class="md-nav__link">
+    <a href="../../%E5%89%8D%E7%AB%AF%E2%99%82js/WDS%20can%27t%20connet/" title="WDS can't connet" class="md-nav__link">
       WDS can't connet
     </a>
   </li>
@@ -1472,7 +1510,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/css/" title="Css" class="md-nav__link">
+    <a href="../../%E5%89%8D%E7%AB%AF%E2%99%82js/css/" title="Css" class="md-nav__link">
       Css
     </a>
   </li>
@@ -1484,7 +1522,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/js/" title="Js" class="md-nav__link">
+    <a href="../../%E5%89%8D%E7%AB%AF%E2%99%82js/js/" title="Js" class="md-nav__link">
       Js
     </a>
   </li>
@@ -1496,7 +1534,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/npm%26webpack/" title="Npm&webpack" class="md-nav__link">
+    <a href="../../%E5%89%8D%E7%AB%AF%E2%99%82js/npm%26webpack/" title="Npm&webpack" class="md-nav__link">
       Npm&webpack
     </a>
   </li>
@@ -1508,7 +1546,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/vue/" title="Vue" class="md-nav__link">
+    <a href="../../%E5%89%8D%E7%AB%AF%E2%99%82js/vue/" title="Vue" class="md-nav__link">
       Vue
     </a>
   </li>
@@ -1520,7 +1558,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/vuetify/" title="Vuetify" class="md-nav__link">
+    <a href="../../%E5%89%8D%E7%AB%AF%E2%99%82js/vuetify/" title="Vuetify" class="md-nav__link">
       Vuetify
     </a>
   </li>
@@ -1558,7 +1596,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../../coding/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/overView/" title="概述" class="md-nav__link">
+    <a href="../../%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/overView/" title="概述" class="md-nav__link">
       概述
     </a>
   </li>
@@ -1578,12 +1616,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Ctf
@@ -1603,7 +1639,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../CTFstudy/" title="CTFstudy" class="md-nav__link">
+    <a href="../../../ctf/CTFstudy/" title="CTFstudy" class="md-nav__link">
       CTFstudy
     </a>
   </li>
@@ -1615,7 +1651,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../%E5%8F%96%E8%AF%81/" title="取证" class="md-nav__link">
+    <a href="../../../ctf/%E5%8F%96%E8%AF%81/" title="取证" class="md-nav__link">
       取证
     </a>
   </li>
@@ -1627,7 +1663,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" title="恶意软件分析" class="md-nav__link">
+    <a href="../../../ctf/%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6%E5%88%86%E6%9E%90/" title="恶意软件分析" class="md-nav__link">
       恶意软件分析
     </a>
   </li>
@@ -1639,7 +1675,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../%E7%88%86%E7%A0%B4%E7%9B%B8%E5%85%B3/" title="爆破相关" class="md-nav__link">
+    <a href="../../../ctf/%E7%88%86%E7%A0%B4%E7%9B%B8%E5%85%B3/" title="爆破相关" class="md-nav__link">
       爆破相关
     </a>
   </li>
@@ -1672,7 +1708,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../awd/AWD/" title="AWD" class="md-nav__link">
+    <a href="../../../ctf/awd/AWD/" title="AWD" class="md-nav__link">
       AWD
     </a>
   </li>
@@ -1684,7 +1720,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../awd/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/" title="权限维持" class="md-nav__link">
+    <a href="../../../ctf/awd/%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/" title="权限维持" class="md-nav__link">
       权限维持
     </a>
   </li>
@@ -1717,7 +1753,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../awd/muma/getshell/" title="Getshell" class="md-nav__link">
+    <a href="../../../ctf/awd/muma/getshell/" title="Getshell" class="md-nav__link">
       Getshell
     </a>
   </li>
@@ -1760,7 +1796,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../crypto/Wiener%E2%80%99s-attack/" title="Wiener’s attack" class="md-nav__link">
+    <a href="../../../ctf/crypto/Wiener%E2%80%99s-attack/" title="Wiener’s attack" class="md-nav__link">
       Wiener’s attack
     </a>
   </li>
@@ -1772,7 +1808,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../crypto/aes/" title="Aes" class="md-nav__link">
+    <a href="../../../ctf/crypto/aes/" title="Aes" class="md-nav__link">
       Aes
     </a>
   </li>
@@ -1784,7 +1820,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../crypto/decrypt_online/" title="Decrypt online" class="md-nav__link">
+    <a href="../../../ctf/crypto/decrypt_online/" title="Decrypt online" class="md-nav__link">
       Decrypt online
     </a>
   </li>
@@ -1796,7 +1832,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../crypto/go_crack/" title="Go crack" class="md-nav__link">
+    <a href="../../../ctf/crypto/go_crack/" title="Go crack" class="md-nav__link">
       Go crack
     </a>
   </li>
@@ -1808,7 +1844,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../crypto/md5padding/" title="Md5padding" class="md-nav__link">
+    <a href="../../../ctf/crypto/md5padding/" title="Md5padding" class="md-nav__link">
       Md5padding
     </a>
   </li>
@@ -1820,7 +1856,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../crypto/multiPrimeRSA/" title="multiPrimeRSA" class="md-nav__link">
+    <a href="../../../ctf/crypto/multiPrimeRSA/" title="multiPrimeRSA" class="md-nav__link">
       multiPrimeRSA
     </a>
   </li>
@@ -1832,7 +1868,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../crypto/rsa/" title="Rsa" class="md-nav__link">
+    <a href="../../../ctf/crypto/rsa/" title="Rsa" class="md-nav__link">
       Rsa
     </a>
   </li>
@@ -1870,7 +1906,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/dropsec12.9/" title="misc" class="md-nav__link">
+    <a href="../../../ctf/misc/dropsec12.9/" title="misc" class="md-nav__link">
       misc
     </a>
   </li>
@@ -1882,7 +1918,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/hash/" title="Hash" class="md-nav__link">
+    <a href="../../../ctf/misc/hash/" title="Hash" class="md-nav__link">
       Hash
     </a>
   </li>
@@ -1894,7 +1930,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/misc/" title="Misc" class="md-nav__link">
+    <a href="../../../ctf/misc/misc/" title="Misc" class="md-nav__link">
       Misc
     </a>
   </li>
@@ -1906,7 +1942,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/wireshark/" title="Wireshark" class="md-nav__link">
+    <a href="../../../ctf/misc/wireshark/" title="Wireshark" class="md-nav__link">
       Wireshark
     </a>
   </li>
@@ -1918,7 +1954,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../misc/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" title="内存取证" class="md-nav__link">
+    <a href="../../../ctf/misc/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" title="内存取证" class="md-nav__link">
       内存取证
     </a>
   </li>
@@ -1933,12 +1969,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-8" type="checkbox" id="nav-5-8" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5-8" type="checkbox" id="nav-5-8">
     
     <label class="md-nav__link" for="nav-5-8">
       Pwn
@@ -1956,100 +1990,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        ROP
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" title="ROP" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../ctf/pwn/ROP/" title="ROP" class="md-nav__link">
       ROP
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#brop" class="md-nav__link">
-    brop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#srop" class="md-nav__link">
-    srop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ropgadget" class="md-nav__link">
-    ROPgadget
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#one_gadget" class="md-nav__link">
-    one_gadget
-  </a>
-  
-    <nav class="md-nav" aria-label="one_gadget">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    寄存器赋值
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    栈转移
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    通用技术
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ret2libc" class="md-nav__link">
-    ret2libc
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -2059,7 +2004,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ROP_ret2dl/" title="ROP ret2dl" class="md-nav__link">
+    <a href="../../../ctf/pwn/ROP_ret2dl/" title="ROP ret2dl" class="md-nav__link">
       ROP ret2dl
     </a>
   </li>
@@ -2071,7 +2016,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../arm/" title="Arm" class="md-nav__link">
+    <a href="../../../ctf/pwn/arm/" title="Arm" class="md-nav__link">
       Arm
     </a>
   </li>
@@ -2083,7 +2028,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../basic/" title="Basic" class="md-nav__link">
+    <a href="../../../ctf/pwn/basic/" title="Basic" class="md-nav__link">
       Basic
     </a>
   </li>
@@ -2095,7 +2040,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../encode/" title="Encode" class="md-nav__link">
+    <a href="../../../ctf/pwn/encode/" title="Encode" class="md-nav__link">
       Encode
     </a>
   </li>
@@ -2107,7 +2052,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../fmt/" title="Fmt" class="md-nav__link">
+    <a href="../../../ctf/pwn/fmt/" title="Fmt" class="md-nav__link">
       Fmt
     </a>
   </li>
@@ -2119,7 +2064,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../heap/" title="Heap" class="md-nav__link">
+    <a href="../../../ctf/pwn/heap/" title="Heap" class="md-nav__link">
       Heap
     </a>
   </li>
@@ -2131,7 +2076,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../res/" title="Res" class="md-nav__link">
+    <a href="../../../ctf/pwn/res/" title="Res" class="md-nav__link">
       Res
     </a>
   </li>
@@ -2143,7 +2088,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../tools/" title="Tools" class="md-nav__link">
+    <a href="../../../ctf/pwn/tools/" title="Tools" class="md-nav__link">
       Tools
     </a>
   </li>
@@ -2181,7 +2126,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../web/SensitiveFile/" title="SensitiveFile" class="md-nav__link">
+    <a href="../../../ctf/web/SensitiveFile/" title="SensitiveFile" class="md-nav__link">
       SensitiveFile
     </a>
   </li>
@@ -2193,7 +2138,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../web/escape/" title="Escape" class="md-nav__link">
+    <a href="../../../ctf/web/escape/" title="Escape" class="md-nav__link">
       Escape
     </a>
   </li>
@@ -2205,7 +2150,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../web/nodeJs/" title="nodeJs" class="md-nav__link">
+    <a href="../../../ctf/web/nodeJs/" title="nodeJs" class="md-nav__link">
       nodeJs
     </a>
   </li>
@@ -2217,7 +2162,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../web/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" title="Php文件包含" class="md-nav__link">
+    <a href="../../../ctf/web/php%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB/" title="Php文件包含" class="md-nav__link">
       Php文件包含
     </a>
   </li>
@@ -2229,7 +2174,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../web/python/" title="Python" class="md-nav__link">
+    <a href="../../../ctf/web/python/" title="Python" class="md-nav__link">
       Python
     </a>
   </li>
@@ -2241,7 +2186,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../web/xpath%E3%80%81xml%E6%B3%A8%E5%85%A5/" title="Xpath、xml注入" class="md-nav__link">
+    <a href="../../../ctf/web/xpath%E3%80%81xml%E6%B3%A8%E5%85%A5/" title="Xpath、xml注入" class="md-nav__link">
       Xpath、xml注入
     </a>
   </li>
@@ -2274,7 +2219,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../web/php/php%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/" title="Php代码执行" class="md-nav__link">
+    <a href="../../../ctf/web/php/php%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C/" title="Php代码执行" class="md-nav__link">
       Php代码执行
     </a>
   </li>
@@ -2317,7 +2262,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/2018%E6%8A%A4%E7%BD%91%E6%9D%AF/" title="wp" class="md-nav__link">
+    <a href="../../../ctf/wp/2018%E6%8A%A4%E7%BD%91%E6%9D%AF/" title="wp" class="md-nav__link">
       wp
     </a>
   </li>
@@ -2329,7 +2274,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/2020%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB/" title="2020新春战疫" class="md-nav__link">
+    <a href="../../../ctf/wp/2020%E6%96%B0%E6%98%A5%E6%88%98%E7%96%AB/" title="2020新春战疫" class="md-nav__link">
       2020新春战疫
     </a>
   </li>
@@ -2341,7 +2286,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/CG-CTF/" title="re" class="md-nav__link">
+    <a href="../../../ctf/wp/CG-CTF/" title="re" class="md-nav__link">
       re
     </a>
   </li>
@@ -2353,7 +2298,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/XCITC/" title="XCITC" class="md-nav__link">
+    <a href="../../../ctf/wp/XCITC/" title="XCITC" class="md-nav__link">
       XCITC
     </a>
   </li>
@@ -2365,7 +2310,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/catalyst/" title="Catalyst" class="md-nav__link">
+    <a href="../../../ctf/wp/catalyst/" title="Catalyst" class="md-nav__link">
       Catalyst
     </a>
   </li>
@@ -2377,7 +2322,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/jarvisOJ/" title="jarvisOJ" class="md-nav__link">
+    <a href="../../../ctf/wp/jarvisOJ/" title="jarvisOJ" class="md-nav__link">
       jarvisOJ
     </a>
   </li>
@@ -2389,7 +2334,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/%E9%AB%98%E6%A0%A1%E5%85%AC%E5%BC%80/" title="高校公开" class="md-nav__link">
+    <a href="../../../ctf/wp/%E9%AB%98%E6%A0%A1%E5%85%AC%E5%BC%80/" title="高校公开" class="md-nav__link">
       高校公开
     </a>
   </li>
@@ -2422,7 +2367,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/L3sec/pwn1/" title="Pwn1" class="md-nav__link">
+    <a href="../../../ctf/wp/L3sec/pwn1/" title="Pwn1" class="md-nav__link">
       Pwn1
     </a>
   </li>
@@ -2434,7 +2379,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../wp/L3sec/%E6%8B%9B%E6%96%B0/" title="招新" class="md-nav__link">
+    <a href="../../../ctf/wp/L3sec/%E6%8B%9B%E6%96%B0/" title="招新" class="md-nav__link">
       招新
     </a>
   </li>
@@ -3043,63 +2988,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#brop" class="md-nav__link">
-    brop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#srop" class="md-nav__link">
-    srop
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ropgadget" class="md-nav__link">
-    ROPgadget
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#one_gadget" class="md-nav__link">
-    one_gadget
-  </a>
-  
-    <nav class="md-nav" aria-label="one_gadget">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    寄存器赋值
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    栈转移
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    通用技术
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ret2libc" class="md-nav__link">
-    ret2libc
+  <a href="#gdb" class="md-nav__link">
+    给gdb二进制文件签发一个证书
   </a>
   
 </li>
@@ -3116,154 +3006,15 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/ctf/pwn/ROP.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/Apple/gdb无法调试问题.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>ROP</h1>
+                  <h1>Gdb无法调试问题</h1>
                 
-                <h2 id="brop">brop<a class="headerlink" href="#brop" title="Permanent link">&para;</a></h2>
-<p><a href="http://www.scs.stanford.edu/brop/">http://www.scs.stanford.edu/brop/</a></p>
-<h2 id="srop">srop<a class="headerlink" href="#srop" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.freebuf.com/articles/network/87447.html">https://www.freebuf.com/articles/network/87447.html</a>
-<a href="https://blog.csdn.net/qq_29343201/article/details/72627439">https://blog.csdn.net/qq_29343201/article/details/72627439</a></p>
-<h2 id="ropgadget">ROPgadget<a class="headerlink" href="#ropgadget" title="Permanent link">&para;</a></h2>
-<ol>
-<li>ROPgadget 得到代码片断</li>
-<li>cd80c3 就是 int0x80;ret,使用<code>ROPgadget --binary {binaryname} --opcode cd80c3</code>来寻找</li>
-<li>动态链接找不到 int 0x80,需要构造 rop</li>
-<li><code>ROPgadget --binary {binary_name} --ropchain</code>可以直接生成 ROP chain，不过要转换一下</li>
-</ol>
-<div class="highlight"><pre><span></span><code><span class="n">rop</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="c1"># i = 1</span>
-<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ropc&quot;</span><span class="p">):</span>
-    <span class="c1"># print line,</span>
-    <span class="k">if</span> <span class="s2">&quot;pack&quot;</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">&#39;+=&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="n">line</span>
-        <span class="c1"># print i</span>
-        <span class="c1"># print str(line).split(&quot;, &quot;)[1].split(&quot;)&quot;)[0]</span>
-        <span class="n">rop</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;)&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
-    <span class="k">if</span> <span class="s1">&#39;pack&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">&#39;+=&#39;</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
-        <span class="c1"># print i</span>
-        <span class="c1"># print line</span>
-        <span class="n">rop</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;+= &quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
-    <span class="c1"># i += 1</span>
-<span class="n">i</span><span class="o">=</span><span class="mi">0</span>
-<span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;</span><span class="nb">len</span><span class="p">(</span><span class="n">rop</span><span class="p">)):</span>
-    <span class="k">if</span> <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;/bin&#39;</span><span class="p">:</span>
-        <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;0x6e69622f&#39;</span>
-    <span class="k">if</span> <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;//sh&#39;</span><span class="p">:</span>
-        <span class="n">rop</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="s1">&#39;0x68732f2f&#39;</span>
-    <span class="n">i</span><span class="o">+=</span><span class="mi">1</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">rop</span><span class="p">)</span>
-</code></pre></div>
-
-<h2 id="one_gadget">one_gadget<a class="headerlink" href="#one_gadget" title="Permanent link">&para;</a></h2>
-<p><a href="https://github.com/david942j/one_gadget">https://github.com/david942j/one_gadget</a></p>
-<p>直接从 glibc 里 getshell 的函数。</p>
-<h3 id="_1">寄存器赋值<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>构造栈结构</p>
-<div class="highlight"><pre><span></span><code>  *(pop eax ;ret)
-  3
-</code></pre></div>
-
-<p>将 eax 赋值为 3</p>
-<h3 id="_2">栈转移<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>寻找 leave;ret;指令，然后更改 ebp 的值即可</p>
-<div class="highlight"><pre><span></span><code><span class="n">payload</span> <span class="o">+=</span> <span class="n">p32</span><span class="p">(</span><span class="n">base_stage</span><span class="p">)</span>
-<span class="n">payload</span> <span class="o">+=</span> <span class="n">p32</span><span class="p">(</span><span class="n">leave_ret</span><span class="p">)</span>
-<span class="c1">#leave= mov esp,ebp,pop ebp</span>
-</code></pre></div>
-
-<p>例子：将 esp 设置到 bss 段上</p>
-<div class="highlight"><pre><span></span><code><span class="n">payload</span> <span class="o">=</span> <span class="n">flat</span><span class="p">(</span>
-  <span class="p">[</span>
-  <span class="s1">&#39;A&#39;</span> <span class="o">*</span> <span class="n">offset</span><span class="p">,</span> <span class="c1"># 覆盖到ret</span>
-  <span class="n">read_plt</span><span class="p">,</span> <span class="c1"># 读100个字节到base_stage</span>
-  <span class="n">ppp_ret</span><span class="p">,</span> <span class="c1"># pop esi ; pop edi ; pop ebp ; ret 清空参数</span>
-  <span class="mi">0</span><span class="p">,</span>
-  <span class="n">base_stage</span><span class="p">,</span>
-  <span class="mi">100</span><span class="p">,</span>
-  <span class="n">pop_ebp_ret</span><span class="p">,</span> <span class="c1"># 把base_stage pop到ebp中</span>
-  <span class="n">base_stage</span><span class="p">,</span>
-  <span class="n">leave_ret</span>  <span class="c1">#mov esp,ebp;pop ebp</span>
-  <span class="p">]</span>
-<span class="p">)</span>
-<span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;/bin/sh&quot;</span>
-<span class="n">payload1</span><span class="o">=</span> <span class="n">flat</span><span class="p">(</span>
-  <span class="p">[</span>
-    <span class="s1">&#39;A&#39;</span> <span class="o">*</span><span class="mi">4</span> <span class="c1"># 接payload1，ebp=&#39;AAAA&#39;</span>
-    <span class="n">write_plt</span>
-    <span class="c1">#...</span>
-  <span class="p">]</span>
-<span class="p">)</span>
-</code></pre></div>
-
-<h2 id="_3">通用技术<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>常用的栈布局如下</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># 32位</span>
-<span class="n">flat</span><span class="p">(</span>
-    <span class="p">[</span>
-    <span class="n">read_addr</span><span class="p">,</span>
-    <span class="n">system_addr</span><span class="p">,</span>
-    <span class="mi">0</span><span class="p">,</span> <span class="c1">#read 函数一个参数 fd/system返回地址</span>
-    <span class="n">binsh_addr</span> <span class="c1">#read第二个参数/system第一个参数</span>
-    <span class="p">]</span>
-<span class="p">)</span>
-
-<span class="n">flat</span><span class="p">([</span>
-        <span class="n">gets</span><span class="p">,</span>
-        <span class="n">system</span><span class="p">,</span>
-        <span class="n">buf</span><span class="p">,</span>
-        <span class="n">buf</span>
-        <span class="p">])</span>
-<span class="c1"># 64位</span>
-<span class="n">flat</span><span class="p">(</span>
-    <span class="p">[</span>
-        <span class="n">pop_edi</span><span class="p">,</span>
-        <span class="mi">0</span><span class="p">,</span> <span class="o">//</span><span class="n">read第一个参数</span> <span class="n">fd</span>
-        <span class="n">pop_rsi</span><span class="p">,</span>
-        <span class="n">binsh_addr</span><span class="p">,</span> <span class="c1">#read第二个参数 sh字符串地址</span>
-        <span class="n">pop_rdx</span><span class="p">,</span>
-        <span class="mi">20</span><span class="p">,</span>      <span class="c1">#read第三个参数 长度</span>
-        <span class="n">read_addr</span><span class="p">,</span>
-        <span class="n">pop_rdi</span><span class="p">,</span>
-        <span class="n">binsh_addr</span><span class="p">,</span><span class="c1"># system第一个参数</span>
-        <span class="n">system_addr</span><span class="p">,</span>
-    <span class="p">]</span>
-<span class="p">)</span>
-</code></pre></div>
-
-<h2 id="ret2libc">ret2libc<a class="headerlink" href="#ret2libc" title="Permanent link">&para;</a></h2>
-<p>64 下通用 gadget,<code>__libc_csu_init</code>,一共两端代码，可以设置三个寄存器传参的值</p>
-<div class="highlight"><pre><span></span><code><span class="c1">;第一段代码gad1</span>
-  <span class="nf">pop</span>     <span class="no">rbx</span>  <span class="c1">;必须为0</span>
-  <span class="nf">pop</span>     <span class="no">rbp</span>  <span class="c1">;必须为1</span>
-  <span class="nf">pop</span>     <span class="no">r12</span>  <span class="c1">;你call函数的地址(应该是got上的?)</span>
-  <span class="nf">pop</span>     <span class="no">r13</span>  <span class="c1">;arg3</span>
-  <span class="nf">pop</span>     <span class="no">r14</span>  <span class="c1">;arg2</span>
-  <span class="nf">pop</span>     <span class="no">r15</span>  <span class="c1">;arg1</span>
-  <span class="nf">retn</span>         <span class="c1">;gad2</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="c1">;第二段代码gad2</span>
-<span class="nf">mov</span>     <span class="no">rdx</span><span class="p">,</span> <span class="no">r13</span>
-<span class="nf">mov</span>     <span class="no">rsi</span><span class="p">,</span> <span class="no">r14</span>
-<span class="nf">mov</span>     <span class="no">edi</span><span class="p">,</span> <span class="no">r15d</span>
-<span class="nf">call</span>    <span class="no">qword</span> <span class="no">ptr</span> <span class="p">[</span><span class="no">r12</span><span class="err">+</span><span class="no">rbx</span><span class="p">*</span><span class="mi">8</span><span class="p">]</span> <span class="no">call</span><span class="p">!!!</span>
-<span class="nf">add</span>     <span class="no">rbx</span><span class="p">,</span> <span class="mi">1</span>
-<span class="nf">cmp</span>     <span class="no">rbx</span><span class="p">,</span> <span class="no">rbp</span>
-<span class="nf">jnz</span>     <span class="no">short</span> <span class="no">loc_400880</span>
-<span class="nf">add</span>     <span class="no">rsp</span><span class="p">,</span> <span class="mi">8</span>
-<span class="nf">pop</span>     <span class="no">rbx</span>
-<span class="nf">pop</span>     <span class="no">rbp</span>
-<span class="nf">pop</span>     <span class="no">r12</span>
-<span class="nf">pop</span>     <span class="no">r13</span>
-<span class="nf">pop</span>     <span class="no">r14</span>
-<span class="nf">pop</span>     <span class="no">r15</span> <span class="c1">;这个地方可以构造错位gadgets,恰好可以构造为pop rdi,ret</span>
-<span class="nf">retn</span>     <span class="c1">;构造一些垫板(7*8=56byte)，因为后面后面还有很多pop+rbp+ret</span>
-</code></pre></div>
+                <h2 id="gdb">给gdb二进制文件签发一个证书<a class="headerlink" href="#gdb" title="Permanent link">&para;</a></h2>
+<p><a href="https://sourceware.org/gdb/wiki/PermissionsDarwin">https://sourceware.org/gdb/wiki/PermissionsDarwin</a></p>
                 
               
               
@@ -3307,7 +3058,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../misc/%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81/" title="内存取证" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../app/" title="App" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3316,19 +3067,19 @@
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                内存取证
+                App
               </div>
             </div>
           </a>
         
         
-          <a href="../ROP_ret2dl/" title="ROP ret2dl" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../iphone/" title="Iphone" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                ROP ret2dl
+                Iphone
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
