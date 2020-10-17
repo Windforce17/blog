@@ -15,18 +15,18 @@
         <meta name="author" content="Windforce17">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
     
     
       
-        <title>Aes - windforce17's blog</title>
+        <title>AES - windforce17's blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.38780c08.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.ce7da9e3.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.3f72e892.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.31e6bbac.min.css">
         
           
           
@@ -98,7 +98,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Aes
+              AES
             
           </span>
         </div>
@@ -1783,19 +1783,23 @@
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Aes
+        AES
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Aes
+      AES
     </a>
     
       
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1803,13 +1807,6 @@
       目录
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#aes" class="md-nav__link">
-    AES
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#s" class="md-nav__link">
@@ -1841,6 +1838,20 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     四个阶段——行移位变换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    四个阶段——列混淆变换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四个阶段——轮密钥加变换
   </a>
   
 </li>
@@ -3030,19 +3041,14 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       目录
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#aes" class="md-nav__link">
-    AES
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#s" class="md-nav__link">
@@ -3078,6 +3084,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    四个阶段——列混淆变换
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    四个阶段——轮密钥加变换
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3095,9 +3115,7 @@
                   </a>
                 
                 
-                  <h1>Aes</h1>
-                
-                <h2 id="aes">AES<a class="headerlink" href="#aes" title="Permanent link">&para;</a></h2>
+                <h1 id="aes">AES<a class="headerlink" href="#aes" title="Permanent link">&para;</a></h1>
 <p>全部理解AES加密，需要有限域，有限域多项式运算相关的知识。
 明文分组长度是16字节，密钥长度根据AES-128、AES-192、AES-256变化。<br />
 四个阶段，一个置换和三个代替：
@@ -3206,6 +3224,51 @@ b_7\\
 2. 第2行循环左移1个字节
 3. 第3行循环左移2个字节
 4. 第4行循环左移3个字节</p>
+<p>逆向操作就是反过来了，例如第二行右移一个字节</p>
+<h2 id="_3">四个阶段——列混淆变换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="2020-10-17-22-26-07.png" />
+实际上就是矩阵乘法，不过要注意的是这个乘法和加法是在<span><span class="MathJax_Preview">GF(2^8)</span><script type="math/tex">GF(2^8)</script></span>上进行的。
+逆向变换只需要乘以逆矩阵，这个逆矩阵也是在<span><span class="MathJax_Preview">GF(2^8)</span><script type="math/tex">GF(2^8)</script></span>上得到。
+<img alt="" src="2020-10-17-22-36-05.png" /></p>
+<h2 id="_4">四个阶段——轮密钥加变换<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>这个阶段最简单，和扩展后的密钥进行异或操作即可。显然也是16字节一组。</p>
+<h1 id="aes_1">AES密钥扩展<a class="headerlink" href="#aes_1" title="Permanent link">&para;</a></h1>
+<p>输入16字节，输出176字节，作用于每一轮加密中的最后一个阶段。这个算法不是很复杂，还是由基本的异或，移位，字节代替完成。伪代码如下：</p>
+<p><div class="highlight"><pre><span></span><code><span class="c1">// 这里一个字是4字节m,输入key，输出w</span>
+<span class="n">AES_key_expansion</span><span class="p">(</span><span class="n">byte</span> <span class="n">key</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">word</span> <span class="n">w</span><span class="p">[</span><span class="mi">44</span><span class="p">])</span>
+<span class="p">{</span>
+  <span class="n">word</span> <span class="n">temp</span><span class="p">;</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">4</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">// 初始化w数组，将key复制到w前4个word中</span>
+    <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="n">key</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">i</span><span class="p">],</span><span class="n">key</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="n">key</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">],</span><span class="n">key</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">]}</span>
+  <span class="p">}</span>
+  <span class="c1">//前4个已经初始化过了，从第5个字开始做字节扩展</span>
+  <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">4</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">44</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//上一组key</span>
+    <span class="n">temp</span><span class="o">=</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="mi">-1</span><span class="p">];</span>
+    <span class="c1">//新的一组key，更新temp</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">%</span><span class="mi">4</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+    <span class="c1">//字节移位，循环左移一个字节，[0,1,2,3] -&gt; [1,2,3,0]</span>
+      <span class="n">temp</span><span class="o">=</span><span class="n">Rotword</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+    <span class="c1">// 从S盒中进行替换</span>
+      <span class="n">temp</span><span class="o">=</span><span class="n">SubWord</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
+    <span class="c1">//Rcon是固定的，每一轮的值不同，如下：</span>
+    <span class="c1">//Rcon={0x01000000,0x02000000,0x04000000...}</span>
+    <span class="c1">//第2 3 4字节都为0，第一个字节为上一组二倍，当然，乘2是在域GF(2^8)进行的。</span>
+      <span class="n">temp</span><span class="o">^=</span><span class="n">Rcon</span><span class="p">[</span><span class="n">i</span><span class="o">/</span><span class="mi">4</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="c1">//最后和temp作xor运算。</span>
+    <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="mi">-4</span><span class="p">]</span><span class="o">^</span><span class="n">temp</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+作用：防止已有的密码分析攻击。使用不同的Rcon（轮常量）可以防止轮密钥产生的对称性和相似性。<br />
+标准：
+1. 知道密钥或者轮密钥某些位不能计算出其他位。
+2. 可逆变换。
+3. 能够在各种处理器上执行。
+4. 密钥每个位都会影响轮密钥产生。
+5. 简单。</p>
                 
               
               
