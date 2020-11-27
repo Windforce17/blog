@@ -16,7 +16,7 @@
         <meta name="author" content="Windforce17">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.19753c6b.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.196e0c26.min.css">
@@ -3204,6 +3204,15 @@
 <span class="c1">#70</span>
 </code></pre></div></p>
 </li>
+<li>GF(2^8)中求逆元和乘法
+<div class="highlight"><pre><span></span><code><span class="n">P</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">PolynomialRing</span><span class="p">(</span><span class="n">GF</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">^</span><span class="mi">8</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">4</span><span class="o">+</span><span class="n">x</span><span class="o">^</span><span class="mi">3</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">c</span><span class="o">.&lt;</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">GF</span><span class="p">(</span><span class="mi">2</span><span class="o">^</span><span class="mi">8</span><span class="p">,</span><span class="n">modulus</span><span class="o">=</span><span class="n">f</span><span class="p">)</span>
+<span class="n">d0</span><span class="o">=</span><span class="n">x</span><span class="o">^</span><span class="mi">6</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="mi">4</span> <span class="o">+</span> <span class="n">x</span><span class="o">^</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">d1</span><span class="o">=</span><span class="n">x</span><span class="o">^</span><span class="mi">7</span> <span class="o">+</span>  <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inverse_mod</span><span class="p">(</span><span class="n">d0</span><span class="p">,</span><span class="n">f</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d0</span><span class="o">*</span><span class="n">d1</span><span class="p">)</span>
+</code></pre></div></li>
 <li>
 <p>讲表达式转换为近似值
 <div class="highlight"><pre><span></span><code><span class="n">result</span><span class="o">=</span><span class="n">pi</span><span class="o">^</span><span class="mi">2</span>

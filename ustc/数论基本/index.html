@@ -16,7 +16,7 @@
         <meta name="author" content="Windforce17">
       
       <link rel="shortcut icon" href="../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.5">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.6">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6910b76c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19753c6b.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
@@ -3229,7 +3229,7 @@ $$11^7=11 \times 4 \times 3  \equiv 132 \mod 13 \equiv 2 \mod 13 </script>
 <code>inverse_mod(100,123457)</code>来求得在模123457下的100乘法逆元，答案是8642，显然<span><span class="MathJax_Preview">100 \times 8642 \equiv 1 \mod 123447</span><script type="math/tex">100 \times 8642 \equiv 1 \mod 123447</script></span>。如果我们试图求得<code>inverse_mod(100,123456)</code>,就会出错，<code>inverse of Mod(100, 123456) does not exist</code>。下面给出Python的代码</p>
 </li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="c1">#扩展欧几里得算法</span>
+<p><div class="highlight"><pre><span></span><code><span class="c1">#扩展欧几里得算法</span>
 <span class="k">def</span> <span class="nf">egcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -3244,7 +3244,20 @@ $$11^7=11 \times 4 \times 3  \equiv 132 \mod 13 \equiv 2 \mod 13 </script>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">x</span> <span class="o">%</span> <span class="n">m</span>
 </code></pre></div>
+如果看得了扩展欧几里得算法，显然可知只有<code>gcd(a,n)==1</code>的情况下，a在模n中才有乘法逆元。
+那么下面的运算法则也只有在a和n互素的情况下成立：
+$$
+(a \times b)\equiv (a \times c)(\mod n)
+$$
+只需两边乘以a的乘法逆元即成立，<code>gcd(a,n)!=1</code>，那a就没有乘法逆元，改式就不成立了</p>
 <h3 id="_8">剩余类和剩余类集<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>剩余类集是由剩余类组成的的集合，例如，模n的剩余类可以表示为<code>[0],[1],[2]...[n-1]</code>,这里面<code>[r]={a:a是一个整数，a mod n == r}</code>,显然，模n的剩余类一种有n个，每个剩余类中的元素数量是无穷多个。</p>
+<p>定义：小于n的集合<span><span class="MathJax_Preview">Z_n = \{0,1,2,3...n-1\}</span><script type="math/tex">Z_n = \{0,1,2,3...n-1\}</script></span>，对于一般模数n，若a和n有任何公因子，那用<span><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>去乘以<span><span class="MathJax_Preview">Z_n</span><script type="math/tex">Z_n</script></span>中的数则不会得到一个完整的剩余类集。  </p>
+<p>令a=6 n=8，则有
+$$
+todo:latex表格
+$$
+显然，若a和n互素，则能得到一个完全剩余类集，而在<span><span class="MathJax_Preview">Z_n</span><script type="math/tex">Z_n</script></span>中就有一个乘法逆元</p>
                 
               
               
