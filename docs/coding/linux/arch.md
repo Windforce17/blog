@@ -13,7 +13,7 @@ https://wiki.archlinux.org/index.php/Multiboot_USB_drive
 4. swap 处理 `mkswap /dev/sdX2;swapon /dev/sdX2`
 5. 挂载根目录 `mount /dev/sdX1 /mnt`
 6. 修改`/etc/pacman.d/mirrorlist` 选择最快的地址，我使用 ustc 和清华的，或者使用`pacman-mirrors -b testing -c China`
-7. 安装系统：`pacstrap /mnt base linux linux-firmware`
+7. 安装系统：`pacstrap /mnt base base-devel linux linux-firmware zsh`
 8. 更新启动挂载盘:`genfstab -U /mnt > /mnt/etc/fstab`
 9. 更改根目录，进入系统 `arch-chroot /mnt`
 10. 设置时区并同步到硬件:`ln -sf /usr/share/zoneinfo/Region/City /etc/localtime;hwclock --systohc`
@@ -63,6 +63,18 @@ sudo vi /etc/pacman.conf
 [archlinuxcn]
 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
 sudo pacman -S archlinuxcn-keyring
+```
+
+### 修复无法导入gnu key的问题
+```sh
+# haveged是一个生成系统熵的工具，可以加速随机数生成
+pacman -Syu haveged
+systemctl start haveged
+systemctl enable haveged
+
+rm -fr /etc/pacman.d/gnupg
+pacman-key --init
+pacman-key --populate archlinux
 ```
 ### 修复ssh 连接错误
 `/etc/ssh/ssh_config`添加:
@@ -157,7 +169,16 @@ yay -S acpi i8utils dell-bios-fan-control-git
 LC_ALL=en_US.UTF-8
 LANG=en_US.UTF-8
 ```
-## bbr
+## 性能优化
+### I/O
+1. `/etc/fstab` 文件中添加`noatime`,禁用文件访问时间
+2. TRIM清理磁盘，`sudo hdparm -I /dev/sda | grep TRIM`查看磁盘是否支持TRIM操作，或者使用`sudo systemctl status fstrim.service`查看是否支持。手动清理`sudo fstrim -v /`
+3. 减少swap分区使用：`vm.swappiness=10`，内存低于10%时使用swap分区。
+4. 硬盘增加写缓存
+5. firefox缓存写入RAM：`browser.cache.disk.enable`改为false,`browser.cache.memory.enable`改为true，`browser.cache.memory.capacity`改为204800
+6. 硬盘调度器修改
+7. 使用tlp优化电池使用
+### 网络
 添加`/etc/modules-load.d/80-bbr.conf`:
 
 ```conf

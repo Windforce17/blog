@@ -131,3 +131,9 @@ point2=E([3,6])
 print(point1+point2)#(6 : 0 : 1)
 print(point1-point2)#(2 : 6 : 1)
 ```
+
+
+## 画个心
+```py
+print'\n'.join([''.join([('LOVEYOU!'[(x-y)%7]if((x*0.05)**2+(y*0.1)**2-1)**3-(x*0.05)**2*(y*0.1)**3<=0 else' ')for x in range(-30,30)])for y in range(15,-15,-1)])
+```

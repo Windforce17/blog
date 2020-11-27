@@ -31,14 +31,9 @@ sudo systemctl restart docker
 ```
 {
   "registry-mirrors" : [
-    "http://registry.docker-cn.com",
-    "http://docker.mirrors.ustc.edu.cn",
     "http://hub-mirror.c.163.com"
-  ],
-  "insecure-registries" : [
-    "registry.docker-cn.com",
-    "docker.mirrors.ustc.edu.cn"
   ]
+
 }
 ```
 
@@ -73,4 +68,11 @@ systemctl restart docker
 ```sh
 ssh -nNT -L /tmp/docker.sock:/var/run/docker.sock  <USER>@<IP> &
 export DOCKER_HOST=unix:///tmp/docker.sock # docker client will communicate with this sock
+```
+
+
+### 常用启动命令
+1. sage
+```sh
+docker run -d --restart=always --name=sagemath0 --net=host -v /root/work/math/:/math/ sagemath/sagemath sage --notebook=jupyter --ip 0.0.0.0
 ```
