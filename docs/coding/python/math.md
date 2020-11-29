@@ -93,8 +93,17 @@ r=x.nth_root(22)
 print(euler_phi(71)) 
 #70
 ```
-
-6. 讲表达式转换为近似值
+6. GF(2^8)中求逆元和乘法
+```py
+P.<x> = PolynomialRing(GF(2))
+f=x^8+x^4+x^3+x+1
+c.<x>=GF(2^8,modulus=f)
+d0=x^6 + x^4 + x^2 + x + 1
+d1=x^7 +  x + 1
+print(inverse_mod(d0,f))
+print(d0*d1)
+```
+7. 讲表达式转换为近似值
 ```py
 result=pi^2
 result.numerical_approx()

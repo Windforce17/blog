@@ -135,8 +135,3 @@ autoreconf -v -i
 ./configure --prefix=/opt/libemu;  
 sudo make install
 pip3 install pylibemu
-
-## gmpy2
-
-大数计算的优化 lib
-apt install python-gmpy2
