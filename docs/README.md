@@ -83,15 +83,13 @@
 ## coding...
 
 * crc32原理 
-* 书签整理
 * https://github.com/zanyarjamal/xerxes
-* 写一个爆破字段爆破工具
 * 开3389 c++
 * 跨平台抓包，支持https
 * 各种后门隐藏与发现,制作 asp php python c
 * 分布式肉鸡控制器
-* http://ctf5.shiyanbar.com/web/index_3.php
-  
+* [高性能开发](https://xie.infoq.cn/article/a0d418bf29915ecad5d5eeab0)
+* https://hackme.inndy.tw/
 
 
 ## 要搭建的服务
@@ -107,13 +105,4 @@
 ```
 hash1 = SHA1(password) //password是用户输入的密码
 result = hash1 ^ sha1(scramble+sha1(hash1)) //scamble 是mysql server端发送的，当密码为空，固定为0x00
-```
-
-## may be useful tools
-### beef install
-```sh
-gem install bundler  
-
-git clone https://github.com/beefproject/beef.git
-bundle install
 ```

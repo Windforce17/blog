@@ -1,5 +1,17 @@
 ## RSA
 这个加密算法也可以在多项式环上定义，本文先简单讨论最基础的内容和相关攻击方法。
+https://www.cnblogs.com/crfshadow/p/14043770.html#_label3
+https://github.com/pcw109550/write-up/tree/master/2019/KAPO/Lenstra-Lenstra-Lovasz
+https://xz.aliyun.com/t/2731#toc-21
+https://crypto.stackovernet.xyz/cn/q/7012
+https://github.com/mimoo/RSA-and-LLL-attacks#boneh-durfee
+https://lazzzaro.github.io/2020/05/06/crypto-RSA/
+https://www.jianshu.com/p/5ef3284ca1b4
+https://blog.csdn.net/qq_42939527/article/details/105202716
+https://www.mscto.com/python/603282.html
+https://zhuanlan.zhihu.com/p/76228394
+https://blog.csdn.net/hiahiachang/article/details/109749551
+https://blog.csdn.net/jcbx_/article/details/110182640
 ### 公钥、私钥
 
 https://blog.csdn.net/qq_31481187/article/details/70448108
