@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.3b61ea93.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4ac31c8c.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
@@ -1557,6 +1557,13 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     消息
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    触发蓝屏
   </a>
   
 </li>
@@ -3340,6 +3347,19 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../wow/DDD/" class="md-nav__link">
+      DDD
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
     <a href="../../../wow/SS/" class="md-nav__link">
       SS
     </a>
@@ -3407,6 +3427,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    触发蓝屏
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3444,6 +3471,33 @@
 <span class="n">PostMessage</span><span class="p">(</span><span class="n">hWOW</span><span class="p">,</span> <span class="n">WM_KEYDOWN</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span> <span class="c1">//0x20空格键</span>
 <span class="n">PostMessage</span><span class="p">(</span><span class="n">hWOW</span><span class="p">,</span> <span class="n">WM_CHAR</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
 <span class="n">PostMessage</span><span class="p">(</span><span class="n">hWOW</span><span class="p">,</span> <span class="n">WM_KEYUP</span><span class="p">,</span> <span class="mh">0x20</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+</code></pre></div>
+<h2 id="_4">触发蓝屏<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp"></span>
+
+<span class="k">typedef</span> <span class="nf">NTSTATUS</span><span class="p">(</span><span class="n">NTAPI</span> <span class="o">*</span><span class="n">TFNRtlAdjustPrivilege</span><span class="p">)(</span><span class="n">ULONG</span> <span class="n">Privilege</span><span class="p">,</span> <span class="n">BOOLEAN</span> <span class="n">Enable</span><span class="p">,</span> <span class="n">BOOLEAN</span> <span class="n">CurrentThread</span><span class="p">,</span> <span class="n">PBOOLEAN</span> <span class="n">Enabled</span><span class="p">);</span>
+
+<span class="k">typedef</span> <span class="nf">NTSTATUS</span><span class="p">(</span><span class="n">NTAPI</span> <span class="o">*</span><span class="n">TFNNtRaiseHardError</span><span class="p">)(</span><span class="n">NTSTATUS</span> <span class="n">ErrorStatus</span><span class="p">,</span> <span class="n">ULONG</span> <span class="n">NumberOfParameters</span><span class="p">,</span>
+    <span class="n">ULONG</span> <span class="n">UnicodeStringParameterMask</span><span class="p">,</span> <span class="n">PULONG_PTR</span> <span class="o">*</span><span class="n">Parameters</span><span class="p">,</span> <span class="n">ULONG</span> <span class="n">ValidResponseOption</span><span class="p">,</span> <span class="n">PULONG</span> <span class="n">Response</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="n">WINAPI</span> <span class="n">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span> <span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span><span class="p">,</span> <span class="n">LPTSTR</span> <span class="n">lpCmdLine</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cmdShow</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">HMODULE</span> <span class="n">hNtdll</span> <span class="o">=</span> <span class="n">GetModuleHandle</span><span class="p">(</span><span class="s">&quot;ntdll.dll&quot;</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">hNtdll</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">NTSTATUS</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">;</span>
+        <span class="n">BOOLEAN</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">ULONG</span> <span class="n">r</span><span class="p">;</span>
+
+        <span class="n">TFNRtlAdjustPrivilege</span> <span class="n">pfnRtlAdjustPrivilege</span> <span class="o">=</span> <span class="p">(</span><span class="n">TFNRtlAdjustPrivilege</span><span class="p">)</span><span class="n">GetProcAddress</span><span class="p">(</span><span class="n">hNtdll</span><span class="p">,</span> <span class="s">&quot;RtlAdjustPrivilege&quot;</span><span class="p">);</span>
+        <span class="n">s1</span> <span class="o">=</span> <span class="n">pfnRtlAdjustPrivilege</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="nb">true</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+
+        <span class="n">TFNNtRaiseHardError</span> <span class="n">pfnNtRaiseHardError</span> <span class="o">=</span> <span class="p">(</span><span class="n">TFNNtRaiseHardError</span><span class="p">)</span><span class="n">GetProcAddress</span><span class="p">(</span><span class="n">hNtdll</span><span class="p">,</span> <span class="s">&quot;NtRaiseHardError&quot;</span><span class="p">);</span>
+        <span class="n">s2</span> <span class="o">=</span> <span class="n">pfnNtRaiseHardError</span><span class="p">(</span><span class="mh">0xDEADDEAD</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre></div>
                 
               
@@ -3541,7 +3595,7 @@
     </div>
     
       <script src="../../../assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.6ced434e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/bundle.bf7b0f12.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
