@@ -21,3 +21,31 @@ PostMessage(hWOW, WM_KEYDOWN, 0x20, NULL); //0x20空格键
 PostMessage(hWOW, WM_CHAR, 0x20, NULL);
 PostMessage(hWOW, WM_KEYUP, 0x20, NULL);
 ```
+## 触发蓝屏
+```c++
+#include <windows.h>
+
+typedef NTSTATUS(NTAPI *TFNRtlAdjustPrivilege)(ULONG Privilege, BOOLEAN Enable, BOOLEAN CurrentThread, PBOOLEAN Enabled);
+
+typedef NTSTATUS(NTAPI *TFNNtRaiseHardError)(NTSTATUS ErrorStatus, ULONG NumberOfParameters,
+    ULONG UnicodeStringParameterMask, PULONG_PTR *Parameters, ULONG ValidResponseOption, PULONG Response);
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int cmdShow)
+{
+	HMODULE hNtdll = GetModuleHandle("ntdll.dll");
+
+	if (hNtdll != 0)
+	{
+		NTSTATUS s1, s2;
+		BOOLEAN b;
+		ULONG r;
+
+		TFNRtlAdjustPrivilege pfnRtlAdjustPrivilege = (TFNRtlAdjustPrivilege)GetProcAddress(hNtdll, "RtlAdjustPrivilege");
+		s1 = pfnRtlAdjustPrivilege(19, true, false, &b);
+
+		TFNNtRaiseHardError pfnNtRaiseHardError = (TFNNtRaiseHardError)GetProcAddress(hNtdll, "NtRaiseHardError");
+		s2 = pfnNtRaiseHardError(0xDEADDEAD, 0, 0, 0, 6, &r);
+	}
+	return 0;
+}
+```
