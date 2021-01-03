@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4ac31c8c.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
         
           
           
@@ -638,8 +638,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-accounts-on-github" class="md-nav__link">
-    Multiple accounts on Github
+  <a href="#git-clone" class="md-nav__link">
+    git clone 优化大小
   </a>
   
 </li>
@@ -3529,8 +3529,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#multiple-accounts-on-github" class="md-nav__link">
-    Multiple accounts on Github
+  <a href="#git-clone" class="md-nav__link">
+    git clone 优化大小
   </a>
   
 </li>
@@ -3647,8 +3647,15 @@
 <h3 id="send-email">Send email<a class="headerlink" href="#send-email" title="Permanent link">&para;</a></h3>
 <p><code>git send-email</code>
 don't forget to install git-mail git core</p>
-<h2 id="multiple-accounts-on-github">Multiple accounts on Github<a class="headerlink" href="#multiple-accounts-on-github" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>ssh-keygen -t rsa -C <span class="s2">&quot;your_name@home_email.com&quot;</span>
+<h2 id="git-clone">git clone 优化大小<a class="headerlink" href="#git-clone" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>git clone https://xxx/xxx.git --depth <span class="m">1</span>
+<span class="c1">#重新拉去历史记录</span>
+git pull --unshallow 
+<span class="sb">```</span>sh 
+<span class="c1">## Multiple accounts on Github</span>
+
+<span class="sb">```</span>bash
+ssh-keygen -t rsa -C <span class="s2">&quot;your_name@home_email.com&quot;</span>
 ssh-keygen -t rsa -C <span class="s2">&quot;your_name@company_email.com&quot;</span>
 <span class="nb">cd</span> ~/.ssh/
 touch config
@@ -3797,8 +3804,8 @@ ssh-add -l
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.08c56446.min.js"></script>
-      <script src="../../assets/javascripts/bundle.bf7b0f12.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
