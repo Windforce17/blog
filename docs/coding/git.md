@@ -20,6 +20,12 @@ Linux kernel不是pr维护，而是patch mail。
 `git send-email`
 don't forget to install git-mail git core
 
+## git clone 优化大小
+```sh
+git clone https://xxx/xxx.git --depth 1
+#重新拉去历史记录
+git pull --unshallow 
+```sh 
 ## Multiple accounts on Github
 
 ```bash
