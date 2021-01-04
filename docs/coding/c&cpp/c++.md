@@ -210,8 +210,9 @@ int main() {
 ## 右值引用(std::move())
 
 如果学完了 rust 可能理解更深了,
-[深入浅出 C++ 11 右值引用](https://www.zhihu.com/collection/262759047)
-
 ## 元编程
 
 [浅谈 C++元编程](https://zhuanlan.zhihu.com/p/87917516)
+
+## 其他
+SIGFPE信号来源：除0，(INT_MIN /-1),这个会得到一个无法表示的正数。
