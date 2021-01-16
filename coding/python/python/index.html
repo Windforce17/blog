@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://windforce17.github.io/blog/coding/python/python/">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -1459,6 +1459,13 @@
         <li class="md-nav__item">
   <a href="#format" class="md-nav__link">
     format 函数
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#typeisinstance" class="md-nav__link">
+    type和isinstance()
   </a>
   
 </li>
@@ -3113,6 +3120,19 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../reverse/hook/" class="md-nav__link">
+      Hook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
     <a href="../../../reverse/ida/" class="md-nav__link">
       Ida
     </a>
@@ -3285,14 +3305,14 @@
   <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-17" type="checkbox" id="nav-11-17" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-18" type="checkbox" id="nav-11-18" >
     
-    <label class="md-nav__link" for="nav-11-17">
+    <label class="md-nav__link" for="nav-11-18">
       010editor
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="010editor" data-md-level="2">
-      <label class="md-nav__title" for="nav-11-17">
+      <label class="md-nav__title" for="nav-11-18">
         <span class="md-nav__icon md-icon"></span>
         010editor
       </label>
@@ -3563,6 +3583,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#typeisinstance" class="md-nav__link">
+    type和isinstance()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#bytesstring-on-py3" class="md-nav__link">
     bytes&amp;&amp;string on py3
   </a>
@@ -3679,6 +3706,19 @@
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">100000000</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:,}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mf">235445.234235</span><span class="p">))</span>
 </code></pre></div>
+<h2 id="typeisinstance">type和isinstance()<a class="headerlink" href="#typeisinstance" title="Permanent link">&para;</a></h2>
+<p>这两个函数都是查看or判断变量类型的，但isinstance()对继承来的对象判断更准确。
+<div class="highlight"><pre><span></span><code><span class="k">class</span> <span class="nc">Vehicle</span><span class="p">:</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Truck</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">(),</span> <span class="n">Vehicle</span><span class="p">)</span>  <span class="c1"># returns True</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">Vehicle</span><span class="p">())</span> <span class="o">==</span> <span class="n">Vehicle</span>      <span class="c1"># returns True</span>
+<span class="nb">isinstance</span><span class="p">(</span><span class="n">Truck</span><span class="p">(),</span> <span class="n">Vehicle</span><span class="p">)</span>    <span class="c1"># returns True</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">Truck</span><span class="p">())</span> <span class="o">==</span> <span class="n">Vehicle</span>        <span class="c1"># returns False, and this probably won&#39;t be what you want.</span>
+</code></pre></div></p>
 <h2 id="bytesstring-on-py3">bytes&amp;&amp;string on py3<a class="headerlink" href="#bytesstring-on-py3" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">codecs</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;16ff00&#39;</span><span class="p">,</span> <span class="s1">&#39;hex&#39;</span><span class="p">))</span>
 <span class="c1"># s: b&#39;\\x16\\xff\\x00&#39;</span>

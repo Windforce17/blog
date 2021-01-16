@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://windforce17.github.io/blog/coding/%E5%89%8D%E7%AB%AF%E2%99%82js/vue/">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
@@ -3131,6 +3131,19 @@
 
 
   <li class="md-nav__item">
+    <a href="../../../reverse/hook/" class="md-nav__link">
+      Hook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
     <a href="../../../reverse/ida/" class="md-nav__link">
       Ida
     </a>
@@ -3303,14 +3316,14 @@
   <li class="md-nav__item md-nav__item--nested">
     
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-17" type="checkbox" id="nav-11-17" >
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-18" type="checkbox" id="nav-11-18" >
     
-    <label class="md-nav__link" for="nav-11-17">
+    <label class="md-nav__link" for="nav-11-18">
       010editor
       <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="010editor" data-md-level="2">
-      <label class="md-nav__title" for="nav-11-17">
+      <label class="md-nav__title" for="nav-11-18">
         <span class="md-nav__icon md-icon"></span>
         010editor
       </label>
@@ -3697,7 +3710,7 @@
 <div class="highlight"><pre><span></span><code><span class="c1">//虽然分模块化，但是actions和mutations依然注册为全局</span>
 <span class="c1">//全局store</span>
 <span class="c1">//const store = new Vuex.Store({</span>
-<span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
   <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">a</span><span class="o">:</span> <span class="mf">123</span><span class="p">,</span>
     <span class="nx">list</span><span class="o">:</span> <span class="p">[</span><span class="mf">1</span><span class="p">,</span> <span class="mf">2</span><span class="p">,</span> <span class="mf">3</span><span class="p">,</span> <span class="mf">4</span><span class="p">,</span> <span class="mf">5</span><span class="p">,</span> <span class="mf">6</span><span class="p">]</span>
@@ -3726,7 +3739,7 @@
 <span class="p">};</span>
 </code></pre></div>
 <h2 id="v-chart">v-chart<a class="headerlink" href="#v-chart" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="kr">import</span> <span class="nx">VCharts</span> <span class="nx">from</span> <span class="s2">&quot;v-charts&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">VCharts</span> <span class="nx">from</span> <span class="s2">&quot;v-charts&quot;</span><span class="p">;</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">VCharts</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="_1">按需引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
@@ -3755,7 +3768,7 @@
 <p>安装：cnpm install axios --save</p>
 <h3 id="_2">改写原型链<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">//在main.js中引入：</span>
-<span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
 <span class="c1">//改写原型链</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">$ajax</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">;</span>
 </code></pre></div>
@@ -3775,15 +3788,15 @@
 <h3 id="vuex_1">封装进 vuex 中<a class="headerlink" href="#vuex_1" title="Permanent link">&para;</a></h3>
 <p>action 和 mutations 也很类似，主要的区别在于，action 可以包含异步操作，而且可以通过 action 来提交 mutations</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// store.js</span>
-<span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s2">&quot;Vue&quot;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s2">&quot;vuex&quot;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s2">&quot;Vue&quot;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s2">&quot;vuex&quot;</span><span class="p">;</span>
 
 <span class="c1">// 引入 axios</span>
-<span class="kr">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">);</span>
 
-<span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">({</span>
+<span class="kd">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vuex</span><span class="p">.</span><span class="nx">Store</span><span class="p">({</span>
   <span class="c1">// 定义状态</span>
   <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
     <span class="nx">test01</span><span class="o">:</span> <span class="p">{</span>
@@ -3805,7 +3818,7 @@
   <span class="p">}</span>
 <span class="p">});</span>
 
-<span class="kr">export</span> <span class="k">default</span> <span class="nx">store</span><span class="p">;</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">store</span><span class="p">;</span>
 </code></pre></div>
 <p><strong>注意：即使已经在 main.js 中引入了 axios，并改写了原型链，也无法在 store.js 中直接使用 $ajax 命令</strong></p>
 <h3 id="_3">使用别名<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
