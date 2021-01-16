@@ -23,6 +23,21 @@ print('{:,}'.format(100000000))
 print('{:,}'.format(235445.234235))
 ```
 
+## type和isinstance()
+这两个函数都是查看or判断变量类型的，但isinstance()对继承来的对象判断更准确。
+```py3
+class Vehicle:
+    pass
+
+class Truck(Vehicle):
+    pass
+
+isinstance(Vehicle(), Vehicle)  # returns True
+type(Vehicle()) == Vehicle      # returns True
+isinstance(Truck(), Vehicle)    # returns True
+type(Truck()) == Vehicle        # returns False, and this probably won't be what you want.
+
+```
 ## bytes&&string on py3
 
 ```py
@@ -100,6 +115,7 @@ windows 下可能会崩溃的话，添加`multiprocessing.freeze_support()`
 import sys
 print('\n'.join(sys.path))
 ````
+
 
 ### Mac OS X 上如何切换默认的 Python 版本
 
