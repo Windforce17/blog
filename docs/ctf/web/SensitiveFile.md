@@ -1,6 +1,10 @@
 ## .git .DS_store泄露
 .git泄露利用EXP:https://github.com/lijiejie/GitHack  
 https://github.com/BugScanTeam/GitHack
+https://github.com/denny0223/scrabble
+`git reset--hard HEAD^` 回滚到上一个版本
+`git log-stat` 查看修改的文件
+`git diff commit-id` 查看差异
 .DS_Store 利用: https://github.com/lijiejie/ds_store_exp
 进程环境变量: /proc/self/environ 
 
