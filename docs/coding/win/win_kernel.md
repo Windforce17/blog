@@ -18,3 +18,13 @@
 7. 其他初始化动作，Hook，过滤，回调等。
 
 ## 内核对象
+内核对象分为对象头和对象体，对象头至少有OBJECT_HEADER，紧接着是对象体，对象指针指向对象体。对象体有一个type和size成员。内核对象是可以等待的。可以作为参数传递给内核的KeWaitForSingalObject()、KeWaitForMultipleObjects()函数以及应用层WaitForSingalObject()函数WaitForMultipleObject()
+### dispatch对象
+对象体开头放置了一个DISPATCHER_HEADER，以K开头的内核对象名表明这是一个内核对象。
+### I/O 对象
+I/O对象开始位置没有DISPATCHER_HEADER，会放置一个type和size有关的成员。
+常见的I/O对象包括DEVICE_OBJECT DRIVER_OBJECT FILE_OBJECT IRP VPB KPROFILE。
+
+### 其他
+EPROCESS和ETHREAD对象。未导出。可以将自己从EPROCESS链表摘除，隐藏进程。
+使用PsLookupProcessByProcessId拿到进程的EPROCESS结构，PsGetCurrentProcss拿到当前EPROCESS结构。
