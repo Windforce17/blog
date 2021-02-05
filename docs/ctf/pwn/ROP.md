@@ -3,7 +3,16 @@
 http://www.scs.stanford.edu/brop/
 
 ## srop
-
+```py
+#seting architect
+context.arch = "amd64"
+# 设置寄存器
+sigframe = SigreturnFrame()
+sigframe.rax = 0x1
+sigframe.rdi = 0x2
+sigframe.rsi = 0x3
+sigframe.rdx = 0x4
+```
 https://www.freebuf.com/articles/network/87447.html
 https://blog.csdn.net/qq_29343201/article/details/72627439
 

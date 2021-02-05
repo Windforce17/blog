@@ -470,3 +470,4 @@ username=p'='&password=p'='
 username=a'+0;%00&password=
 
 ## 其他
+打印log路径：`SHOW VARIBLES LIKE 'general%'`
