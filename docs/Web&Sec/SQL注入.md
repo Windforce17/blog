@@ -469,5 +469,11 @@ username=p'='&password=p'='
 
 username=a'+0;%00&password=
 
+## 读写文件
+user有file_priv权限。
+select load file("/etc/passwd/")
+LOAD DATA LOCAL INFILE "/etc/passwd" INTO TABLE mytable;
+secure_file_priv 为NULL禁止导出，为空无限制 
+
 ## 其他
 打印log路径：`SHOW VARIBLES LIKE 'general%'`

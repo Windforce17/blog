@@ -74,3 +74,20 @@ T50除了能够修改网络路由，能够在单个SOCKET上顺序发送所有�
 -c ＜chan＞ #自定义信道
 -s ＜pps＞ #发包速率mdk3 --help b #查看详细内容
 　　示例：mdk3 mon0 b –f /usr/share/set/src/fasttrack/wordlist.txt –t –c 6 –s 80
+
+# DDos防御
+大带宽防御不了
+## 常见弱点
+登录认证
+评论
+用户动态
+api
+## 防御手段
+1. 拼带宽，流量清洗
+2. DPS转发功能，流量给域名提供商
+3. IP/网段封杀，统计B段、C段连接数，超过后DROP
+4. 抓HTTP报文
+tcpdump -XvvennSs 0 tcp[20:2]=0x4745 or tcp[20:2]=0x4854
+
+## 反击
+1. 域名解析到127.0.0.1

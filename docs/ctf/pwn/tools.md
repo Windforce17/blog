@@ -1,5 +1,5 @@
-## gdb-peda
-
+## pwndbg
+`cyclic/cyclic -l`来寻找padding的长度
 `vmmap`
 查看 process mapping 信息，得到每个地址的权限
 `find` 在内存中搜索字符串，还有一种方法，`cat /proc/{pid}/maps`
@@ -47,6 +47,7 @@ else:
 ### 运行时变量
 
 ```py
+## 设置context.binary后 arch都不用设置了
 context.log_level = 'debug'
 context.arch      = 'i386' # 32 bit
 context.arch      = 'amd64'# 64 bit

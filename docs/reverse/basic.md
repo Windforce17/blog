@@ -101,4 +101,3 @@ E8 6BFDFFFF      CALL 新年快乐_dump_scy.401000
 1. LOCK 0xf0 禁止数据线服用，一般很少用
 2. REPNE/REPNZ 0xf2 用 RCX/ECX/CX 寄存器作为指令是否重复执行的依据
 3. REP/REPE/REPZ 0xf3 同上
-4.

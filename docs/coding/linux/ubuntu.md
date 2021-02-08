@@ -34,22 +34,14 @@ sudo apt update
 sudo apt install libc6:i386 libstdc++6:i386 libc6-dbg:i386
 ```
 
-```sh
-#arm mips
-apt install python-pip python3-pip build-essential libc6-dev-i386 gcc-multilib g++-multilib gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabi g++-arm-linux-gnueabilibncurses5-dev gcc-mips-linux-gnu
-```
 
-### arm/misp
 
-sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
-sudo apt-get install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi
-sudo apt-get install gcc-arm-linux-gnueabi
-apt install gcc-mips-linux-gnu
 
 ## change source
 
 ```sh
 sudo sed -i 's/archive.ubuntu.com/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
+sed -i 's/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
 ```
 
 ## nfs
