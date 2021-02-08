@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8e656da0.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.936e7021.min.css">
         
           
           
@@ -41,7 +41,7 @@
         
         <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
         <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
-        <style>body,input{font-family:"Fira Sans",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Fira Sans",;--md-code-font-family:"Fira Mono",}</style>
       
     
     
@@ -432,8 +432,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Web%26Sec/%E5%8E%8B%E6%B5%8B/" class="md-nav__link">
-        压测
+      <a href="../../../Web%26Sec/%E5%8E%8B%E6%B5%8B%E5%92%8CDDos/" class="md-nav__link">
+        压测和DDos
       </a>
     </li>
   
@@ -2196,8 +2196,55 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    环境搭建
+    环境
   </a>
+  
+    <nav class="md-nav" aria-label="环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    依赖安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    运行
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arm32" class="md-nav__link">
+    arm32
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arm64" class="md-nav__link">
+    arm64
+  </a>
+  
+    <nav class="md-nav" aria-label="arm64">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3106,6 +3153,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../reverse/%E8%B0%83%E7%94%A8%E7%BA%A6%E5%AE%9A/" class="md-nav__link">
+        调用约定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../reverse/%E9%BB%91%E5%BD%B1vip/" class="md-nav__link">
         黑影vip
       </a>
@@ -3121,14 +3180,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-18" type="checkbox" id="nav-11-18" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-19" type="checkbox" id="nav-11-19" >
       
-      <label class="md-nav__link" for="nav-11-18">
+      <label class="md-nav__link" for="nav-11-19">
         010editor
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="010editor" data-md-level="2">
-        <label class="md-nav__title" for="nav-11-18">
+        <label class="md-nav__title" for="nav-11-19">
           <span class="md-nav__icon md-icon"></span>
           010editor
         </label>
@@ -3382,8 +3441,55 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    环境搭建
+    环境
   </a>
+  
+    <nav class="md-nav" aria-label="环境">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    依赖安装
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    运行
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arm32" class="md-nav__link">
+    arm32
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arm64" class="md-nav__link">
+    arm64
+  </a>
+  
+    <nav class="md-nav" aria-label="arm64">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    指令
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3406,8 +3512,56 @@
                 
                   <h1>Arm</h1>
                 
-                <h2 id="_1">环境搭建<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>apt install qemu</p>
+                <h2 id="_1">环境<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">依赖安装<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>eabi和eabihf不同，对FPU有不同的处理。
+<div class="highlight"><pre><span></span><code>apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
+apt install gcc-arm-linux-gnueabi g++-arm-linux-gnueabi
+apt install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+apt install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi
+apt install python2-pip python3-pip build-essential gcc-multilib g++-multilib   gcc-arm-linux-gnueabi libncurses5-dev
+apt install gcc-mips-linux-gnu
+</code></pre></div>
+qemu安装
+<div class="highlight"><pre><span></span><code>apt install qemu-user-static qemu-user
+</code></pre></div></p>
+<h3 id="_3">运行<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>注意-L参数，选择正确的依赖库
+<div class="highlight"><pre><span></span><code>qemu-arm -L /usr/arm-linux-gnueabi ./pwn
+socat tcp-l:10002,fork exec:&quot;qemu-arm -g 1234 -L /usr/arm-linux-gnueabi ./pwn&quot;,reuseaddr
+</code></pre></div></p>
+<h2 id="arm32">arm32<a class="headerlink" href="#arm32" title="Permanent link">&para;</a></h2>
+<p>r11保存ebp
+pc寄存器存的是<code>当前指令位置+2*指令长度</code>,因为流水线。
+r0<sub>r3用来传递参数，无需恢复r0</sub>r3储存内容
+r0储存返回值：
+如果是64位整数，可能会用到r1。
+如果是浮点数，可以通过浮点运算部件的寄存器f0、d0或s0来返回。
+如果是复合型浮点数（如复数）时，可以通过寄存器f0～fn或d0～dn来返回。
+r4~r11保存局部变量，需要保存这些寄存器，r7用于系统调用号
+r12用作过程调用中间临时寄存器，记作IP。在子程序之间的连接代码段中常常有这种使用规则。
+r13用作栈指针，也叫SP，不能用于其他用途。SP在进入子程序和退出时必须相等
+r14保存返回地址，也叫LR。它用于保存子程序的返回地址。
+bx=call，bx指令同时切换到thumb模式，指令长度为2byte。原来为5byte
+arm可以直接控制pc寄存器
+<code>STMFD SP! ,{R0-R7，LR}</code>和<code>STMFD SP ,{R0-R7，LR}</code>区别：不加叹号，虽然会压栈，但SP的值不改变。
+<code>LDMFD SP! ,{R0-R7，LR}</code>出栈操作。
+mov指令只能作用于寄存器</p>
+<h2 id="arm64">arm64<a class="headerlink" href="#arm64" title="Permanent link">&para;</a></h2>
+<p>一共31个寄存器，在32位下叫做Wn。64位下叫做Xn。
+SP，栈指针
+R29=FP，栈基地址。
+x0~x7传参，
+x29保存ebp
+x30寄存器保存返回地址，执行ret时将x30的值给pc。
+某些情况下，返回值是通过X8返回的。
+bl指令用于跳转，返回地址保存在x30中。</p>
+<h3 id="_4">指令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nf">ldp</span> <span class="no">x19</span><span class="p">,</span> <span class="no">x20</span><span class="p">,</span> <span class="p">[</span><span class="no">sp</span><span class="p">,</span> <span class="mi">#0</span><span class="no">x10</span><span class="p">]</span>     <span class="err">从</span> <span class="no">sp</span><span class="err">+</span><span class="mi">0x10</span> <span class="err">的位置读</span> <span class="mi">0x10</span> <span class="err">字节，按顺序放入</span> <span class="no">x19</span><span class="p">,</span> <span class="no">x20</span> <span class="err">寄存器</span>
+<span class="nf">ldp</span> <span class="no">x29</span><span class="p">,</span> <span class="no">x30</span><span class="p">,</span> <span class="p">[</span><span class="no">sp</span><span class="p">],</span> <span class="mi">#0</span><span class="no">x40</span>      <span class="err">从</span> <span class="no">sp</span> <span class="err">的位置读</span> <span class="mi">0x10</span> <span class="err">字节，按顺序放入</span> <span class="no">x29</span><span class="p">,</span> <span class="no">x30</span> <span class="err">寄存器，然后</span> <span class="no">sp</span> <span class="err">+=</span> <span class="mi">0x40</span>
+<span class="nf">MOV</span> <span class="no">X1</span><span class="p">,</span> <span class="no">X0</span>  <span class="err">寄存器</span><span class="no">X0的值传给X1</span>
+<span class="nf">blr</span> <span class="no">x3</span>    <span class="err">跳转到由</span><span class="no">Xm目标寄存器指定的地址处</span><span class="err">，同时将下一条指令存放到</span><span class="no">X30寄存器中</span>  
+</code></pre></div>
                 
               
               
@@ -3503,8 +3657,8 @@
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.f03b12a7.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d3f6ab33.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8e656da0.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.936e7021.min.css">
         
           
           
@@ -41,7 +41,7 @@
         
         <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
         <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
-        <style>body,input{font-family:"Fira Sans",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Fira Sans",;--md-code-font-family:"Fira Mono",}</style>
       
     
     
@@ -432,8 +432,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Web%26Sec/%E5%8E%8B%E6%B5%8B/" class="md-nav__link">
-        压测
+      <a href="../../../Web%26Sec/%E5%8E%8B%E6%B5%8B%E5%92%8CDDos/" class="md-nav__link">
+        压测和DDos
       </a>
     </li>
   
@@ -1261,13 +1261,6 @@
           <li class="md-nav__item">
   <a href="#32" class="md-nav__link">
     32 位
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#armmisp" class="md-nav__link">
-    arm/misp
   </a>
   
 </li>
@@ -3195,6 +3188,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../reverse/%E8%B0%83%E7%94%A8%E7%BA%A6%E5%AE%9A/" class="md-nav__link">
+        调用约定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../reverse/%E9%BB%91%E5%BD%B1vip/" class="md-nav__link">
         黑影vip
       </a>
@@ -3210,14 +3215,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-18" type="checkbox" id="nav-11-18" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-19" type="checkbox" id="nav-11-19" >
       
-      <label class="md-nav__link" for="nav-11-18">
+      <label class="md-nav__link" for="nav-11-19">
         010editor
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="010editor" data-md-level="2">
-        <label class="md-nav__title" for="nav-11-18">
+        <label class="md-nav__title" for="nav-11-19">
           <span class="md-nav__icon md-icon"></span>
           010editor
         </label>
@@ -3491,13 +3496,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#armmisp" class="md-nav__link">
-    arm/misp
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -3609,16 +3607,9 @@ sudo dpkg --add-architecture i386
 sudo apt update
 sudo apt install libc6:i386 libstdc++6:i386 libc6-dbg:i386
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">#arm mips</span>
-apt install python-pip python3-pip build-essential libc6-dev-i386 gcc-multilib g++-multilib gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi gcc-arm-linux-gnueabi g++-arm-linux-gnueabilibncurses5-dev gcc-mips-linux-gnu
-</code></pre></div>
-<h3 id="armmisp">arm/misp<a class="headerlink" href="#armmisp" title="Permanent link">&para;</a></h3>
-<p>sudo apt-get install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
-sudo apt-get install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi
-sudo apt-get install gcc-arm-linux-gnueabi
-apt install gcc-mips-linux-gnu</p>
 <h2 id="change-source">change source<a class="headerlink" href="#change-source" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>sudo sed -i <span class="s1">&#39;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&#39;</span> /etc/apt/sources.list
+sed -i <span class="s1">&#39;s/security.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g&#39;</span> /etc/apt/sources.list
 </code></pre></div>
 <h2 id="nfs">nfs<a class="headerlink" href="#nfs" title="Permanent link">&para;</a></h2>
 <h3 id="etcexport">/etc/export 配置详解<a class="headerlink" href="#etcexport" title="Permanent link">&para;</a></h3>
@@ -3761,8 +3752,8 @@ apt-cache rdepends lvm2
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.f03b12a7.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d3f6ab33.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({

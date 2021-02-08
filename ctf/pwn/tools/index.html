@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.cb6bc1d0.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8e656da0.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.39b8e14a.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.936e7021.min.css">
         
           
           
@@ -41,7 +41,7 @@
         
         <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
         <link rel="stylesheet" href="https://fonts.loli.net/css?family=Fira+Sans:300,400,400i,700%7CFira+Mono&display=fallback">
-        <style>body,input{font-family:"Fira Sans",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Fira Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"Fira Sans",;--md-code-font-family:"Fira Mono",}</style>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#gdb-peda" class="md-skip">
+        <a href="#pwndbg" class="md-skip">
           跳转至
         </a>
       
@@ -432,8 +432,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Web%26Sec/%E5%8E%8B%E6%B5%8B/" class="md-nav__link">
-        压测
+      <a href="../../../Web%26Sec/%E5%8E%8B%E6%B5%8B%E5%92%8CDDos/" class="md-nav__link">
+        压测和DDos
       </a>
     </li>
   
@@ -2267,8 +2267,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gdb-peda" class="md-nav__link">
-    gdb-peda
+  <a href="#pwndbg" class="md-nav__link">
+    pwndbg
   </a>
   
 </li>
@@ -3203,6 +3203,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../reverse/%E8%B0%83%E7%94%A8%E7%BA%A6%E5%AE%9A/" class="md-nav__link">
+        调用约定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../reverse/%E9%BB%91%E5%BD%B1vip/" class="md-nav__link">
         黑影vip
       </a>
@@ -3218,14 +3230,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-18" type="checkbox" id="nav-11-18" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-19" type="checkbox" id="nav-11-19" >
       
-      <label class="md-nav__link" for="nav-11-18">
+      <label class="md-nav__link" for="nav-11-19">
         010editor
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="010editor" data-md-level="2">
-        <label class="md-nav__title" for="nav-11-18">
+        <label class="md-nav__title" for="nav-11-19">
           <span class="md-nav__icon md-icon"></span>
           010editor
         </label>
@@ -3478,8 +3490,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#gdb-peda" class="md-nav__link">
-    gdb-peda
+  <a href="#pwndbg" class="md-nav__link">
+    pwndbg
   </a>
   
 </li>
@@ -3600,8 +3612,9 @@
                 
                   <h1>Tools</h1>
                 
-                <h2 id="gdb-peda">gdb-peda<a class="headerlink" href="#gdb-peda" title="Permanent link">&para;</a></h2>
-<p><code>vmmap</code>
+                <h2 id="pwndbg">pwndbg<a class="headerlink" href="#pwndbg" title="Permanent link">&para;</a></h2>
+<p><code>cyclic/cyclic -l</code>来寻找padding的长度
+<code>vmmap</code>
 查看 process mapping 信息，得到每个地址的权限
 <code>find</code> 在内存中搜索字符串，还有一种方法，<code>cat /proc/{pid}/maps</code>
 本地调试的时候利用 gdb 绕过 ALSR:<code>ncat -vc 'gdbserver 127.0.0.1:5000 ./pwn1' -kl 127.0.0.1 4000</code></p>
@@ -3638,7 +3651,8 @@
     <span class="n">sh</span><span class="o">=</span><span class="n">remote</span><span class="p">(</span><span class="n">remote_addr</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">remote_addr</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </code></pre></div>
 <h3 id="_1">运行时变量<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">context</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">## 设置context.binary后 arch都不用设置了</span>
+<span class="n">context</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;debug&#39;</span>
 <span class="n">context</span><span class="o">.</span><span class="n">arch</span>      <span class="o">=</span> <span class="s1">&#39;i386&#39;</span> <span class="c1"># 32 bit</span>
 <span class="n">context</span><span class="o">.</span><span class="n">arch</span>      <span class="o">=</span> <span class="s1">&#39;amd64&#39;</span><span class="c1"># 64 bit</span>
 <span class="n">context</span><span class="o">.</span><span class="n">os</span>        <span class="o">=</span> <span class="s1">&#39;linux&#39;</span>
@@ -3854,8 +3868,8 @@ COPY ./pwndbg pwndbg
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.18f0862e.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../../assets/javascripts/vendor.f03b12a7.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d3f6ab33.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
