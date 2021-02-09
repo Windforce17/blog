@@ -87,7 +87,11 @@ network:
       nameservers:
         addresses: [192.168.66.2]
 ```
-
+## 修复/dev/null
+```sh
+mknod /pwn/dev/null c 1 3
+chmod 666 /pwn/dev/null
+```
 ## apt
 1. 依赖查找
 ```sh
