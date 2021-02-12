@@ -14,12 +14,20 @@ qemu安装
 apt install qemu-user-static qemu-user
 ```
 ### 运行
+1. 直接运行elf
 注意-L参数，选择正确的依赖库
 ```
 qemu-arm -L /usr/arm-linux-gnueabi ./pwn
 socat tcp-l:10002,fork exec:"qemu-arm -g 1234 -L /usr/arm-linux-gnueabi ./pwn",reuseaddr
 ```
+2. 系统级模拟
+下载kernel:https://people.debian.org/~aurel32/qemu/armel/
+```
+sudo tunctl -t tap0 -u `whoami`
+sudo ifconfig tap0 192.168.2.1/24
+qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.img-3.2.0-4-versatile -hda debian_wheezy_armel_standard.qcow2 -append "root=/dev/sda1"  -net nic -net tap,ifname=tap0,script=no,downscript=no -nographic
 
+```
 ## arm32
 
 r11保存ebp
