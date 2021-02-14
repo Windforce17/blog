@@ -13,14 +13,14 @@
         <meta name="author" content="Windforce17">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/coding/git/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/gameSecurity/todo/">
       
       <link rel="shortcut icon" href="../..">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.0b1">
     
     
       
-        <title>Git - windforce17's blog</title>
+        <title>Todo - windforce17's blog</title>
       
     
     
@@ -69,11 +69,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#my-first-patch" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -102,7 +97,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Git
+              Todo
             
           </span>
         </div>
@@ -535,14 +530,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
       
       <label class="md-nav__link" for="nav-4">
         Coding
@@ -561,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Ml%26DL/" class="md-nav__link">
+      <a href="../../coding/Ml%26DL/" class="md-nav__link">
         Ml&DL
       </a>
     </li>
@@ -573,7 +566,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../command/" class="md-nav__link">
+      <a href="../../coding/command/" class="md-nav__link">
         python
       </a>
     </li>
@@ -585,7 +578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../conf/" class="md-nav__link">
+      <a href="../../coding/conf/" class="md-nav__link">
         Conf
       </a>
     </li>
@@ -597,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gdb/" class="md-nav__link">
+      <a href="../../coding/gdb/" class="md-nav__link">
         Gdb
       </a>
     </li>
@@ -607,156 +600,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Git
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../coding/git/" class="md-nav__link">
         Git
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#my-first-patch" class="md-nav__link">
-    My first patch
-  </a>
-  
-    <nav class="md-nav" aria-label="My first patch">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#edit-gitconfig" class="md-nav__link">
-    Edit ~/.gitconfig
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generate-patch-file" class="md-nav__link">
-    Generate Patch file
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#send-email" class="md-nav__link">
-    Send email
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-clone" class="md-nav__link">
-    git clone 优化大小
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    从历史的提交建立新分支的方法：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    将某个历史版本全部拉到工作区和暂存区：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    将历史版本的某文件版本拉到当前工作区或者暂存区进行处理：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    已经有添加到暂存区的文件修改，之后又进行了修改。想要都撤销掉，变为和仓库中的版本相同（仓库覆盖工作和暂存）：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-reset-hard-head-headhard" class="md-nav__link">
-    方法一：git reset --hard HEAD 重设HEAD，hard参数覆盖工作区和暂存区。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    撤销当前工作区的文件修改，变为和暂存区相同（暂存覆盖工作）：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    撤销添加到暂存区的文件修改，将修改退回到工作区（暂存先覆盖工作，然后仓库覆盖暂存）：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    清空暂存区文件修改：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    清空暂存区：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checkout" class="md-nav__link">
-    checkout文件层面的操作：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reset" class="md-nav__link">
-    reset文件层面的操作：
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -766,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interview/" class="md-nav__link">
+      <a href="../../coding/interview/" class="md-nav__link">
         Interview
       </a>
     </li>
@@ -778,7 +626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ipv6/" class="md-nav__link">
+      <a href="../../coding/ipv6/" class="md-nav__link">
         Ipv6
       </a>
     </li>
@@ -790,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../java/" class="md-nav__link">
+      <a href="../../coding/java/" class="md-nav__link">
         Java
       </a>
     </li>
@@ -802,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../jetbrains/" class="md-nav__link">
+      <a href="../../coding/jetbrains/" class="md-nav__link">
         Jetbrains
       </a>
     </li>
@@ -814,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../php/" class="md-nav__link">
+      <a href="../../coding/php/" class="md-nav__link">
         Php
       </a>
     </li>
@@ -826,7 +674,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../uefi%26bios/" class="md-nav__link">
+      <a href="../../coding/uefi%26bios/" class="md-nav__link">
         Uefi&bios
       </a>
     </li>
@@ -838,7 +686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vim/" class="md-nav__link">
+      <a href="../../coding/vim/" class="md-nav__link">
         Vim
       </a>
     </li>
@@ -850,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vscode/" class="md-nav__link">
+      <a href="../../coding/vscode/" class="md-nav__link">
         Vscode
       </a>
     </li>
@@ -862,7 +710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+      <a href="../../coding/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
         系统设计
       </a>
     </li>
@@ -874,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E9%AB%98%E6%80%A7%E8%83%BD%E5%BC%80%E5%8F%91/" class="md-nav__link">
+      <a href="../../coding/%E9%AB%98%E6%80%A7%E8%83%BD%E5%BC%80%E5%8F%91/" class="md-nav__link">
         高性能开发
       </a>
     </li>
@@ -908,7 +756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Apple/app/" class="md-nav__link">
+      <a href="../../coding/Apple/app/" class="md-nav__link">
         App
       </a>
     </li>
@@ -920,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Apple/gdb%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/" class="md-nav__link">
+      <a href="../../coding/Apple/gdb%E6%97%A0%E6%B3%95%E8%B0%83%E8%AF%95%E9%97%AE%E9%A2%98/" class="md-nav__link">
         Gdb无法调试问题
       </a>
     </li>
@@ -932,7 +780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Apple/iphone/" class="md-nav__link">
+      <a href="../../coding/Apple/iphone/" class="md-nav__link">
         Iphone
       </a>
     </li>
@@ -972,7 +820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Internet/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
+      <a href="../../coding/Internet/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/" class="md-nav__link">
         网络协议
       </a>
     </li>
@@ -1012,7 +860,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c%26cpp/Polymorphism/" class="md-nav__link">
+      <a href="../../coding/c%26cpp/Polymorphism/" class="md-nav__link">
         Polymorphism
       </a>
     </li>
@@ -1024,7 +872,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c%26cpp/asm/" class="md-nav__link">
+      <a href="../../coding/c%26cpp/asm/" class="md-nav__link">
         Asm
       </a>
     </li>
@@ -1036,7 +884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c%26cpp/c%2B%2B/" class="md-nav__link">
+      <a href="../../coding/c%26cpp/c%2B%2B/" class="md-nav__link">
         C++
       </a>
     </li>
@@ -1048,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c%26cpp/cmake/" class="md-nav__link">
+      <a href="../../coding/c%26cpp/cmake/" class="md-nav__link">
         Cmake
       </a>
     </li>
@@ -1060,7 +908,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c%26cpp/lib/" class="md-nav__link">
+      <a href="../../coding/c%26cpp/lib/" class="md-nav__link">
         Lib
       </a>
     </li>
@@ -1072,7 +920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c%26cpp/pointer/" class="md-nav__link">
+      <a href="../../coding/c%26cpp/pointer/" class="md-nav__link">
         Pointer
       </a>
     </li>
@@ -1084,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../c%26cpp/qt/" class="md-nav__link">
+      <a href="../../coding/c%26cpp/qt/" class="md-nav__link">
         Qt 静态编译
       </a>
     </li>
@@ -1124,7 +972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dataBase/mysql/" class="md-nav__link">
+      <a href="../../coding/dataBase/mysql/" class="md-nav__link">
         Mysql
       </a>
     </li>
@@ -1136,7 +984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dataBase/%E5%9D%91/" class="md-nav__link">
+      <a href="../../coding/dataBase/%E5%9D%91/" class="md-nav__link">
         坑
       </a>
     </li>
@@ -1176,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../golang/Golang%2020%20Tips/" class="md-nav__link">
+      <a href="../../coding/golang/Golang%2020%20Tips/" class="md-nav__link">
         Golang tips and traps
       </a>
     </li>
@@ -1188,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../golang/gin/" class="md-nav__link">
+      <a href="../../coding/golang/gin/" class="md-nav__link">
         Gin
       </a>
     </li>
@@ -1200,7 +1048,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../golang/go/" class="md-nav__link">
+      <a href="../../coding/golang/go/" class="md-nav__link">
         Go
       </a>
     </li>
@@ -1212,7 +1060,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../golang/problem/" class="md-nav__link">
+      <a href="../../coding/golang/problem/" class="md-nav__link">
         Problem
       </a>
     </li>
@@ -1224,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../golang/rsa/" class="md-nav__link">
+      <a href="../../coding/golang/rsa/" class="md-nav__link">
         Rsa
       </a>
     </li>
@@ -1236,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../golang/vgo/" class="md-nav__link">
+      <a href="../../coding/golang/vgo/" class="md-nav__link">
         Vgo
       </a>
     </li>
@@ -1276,7 +1124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/ARM/" class="md-nav__link">
+      <a href="../../coding/linux/ARM/" class="md-nav__link">
         ARM
       </a>
     </li>
@@ -1288,7 +1136,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/CentOS7/" class="md-nav__link">
+      <a href="../../coding/linux/CentOS7/" class="md-nav__link">
         CentOS7
       </a>
     </li>
@@ -1300,7 +1148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/arch/" class="md-nav__link">
+      <a href="../../coding/linux/arch/" class="md-nav__link">
         Arch
       </a>
     </li>
@@ -1312,7 +1160,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/etcd/" class="md-nav__link">
+      <a href="../../coding/linux/etcd/" class="md-nav__link">
         Etcd
       </a>
     </li>
@@ -1324,7 +1172,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/kernel_send_pack/" class="md-nav__link">
+      <a href="../../coding/linux/kernel_send_pack/" class="md-nav__link">
         Kernel send pack
       </a>
     </li>
@@ -1336,7 +1184,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/linux_driver/" class="md-nav__link">
+      <a href="../../coding/linux/linux_driver/" class="md-nav__link">
         linux 设备驱动第三版
       </a>
     </li>
@@ -1348,7 +1196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/nginx/" class="md-nav__link">
+      <a href="../../coding/linux/nginx/" class="md-nav__link">
         Nginx
       </a>
     </li>
@@ -1360,7 +1208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/ptrace/" class="md-nav__link">
+      <a href="../../coding/linux/ptrace/" class="md-nav__link">
         Ptrace
       </a>
     </li>
@@ -1372,7 +1220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/tmux/" class="md-nav__link">
+      <a href="../../coding/linux/tmux/" class="md-nav__link">
         Tmux
       </a>
     </li>
@@ -1384,7 +1232,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/ubuntu/" class="md-nav__link">
+      <a href="../../coding/linux/ubuntu/" class="md-nav__link">
         Ubuntu
       </a>
     </li>
@@ -1418,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/devops/docker/" class="md-nav__link">
+      <a href="../../coding/linux/devops/docker/" class="md-nav__link">
         Docker
       </a>
     </li>
@@ -1430,7 +1278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/devops/gitlab%26ci/" class="md-nav__link">
+      <a href="../../coding/linux/devops/gitlab%26ci/" class="md-nav__link">
         Gitlab&ci
       </a>
     </li>
@@ -1442,7 +1290,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/devops/https%26ssl/" class="md-nav__link">
+      <a href="../../coding/linux/devops/https%26ssl/" class="md-nav__link">
         使用Let's Encrypt 进行泛解析。
       </a>
     </li>
@@ -1454,7 +1302,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/devops/improve_performance/" class="md-nav__link">
+      <a href="../../coding/linux/devops/improve_performance/" class="md-nav__link">
         性能优化
       </a>
     </li>
@@ -1466,7 +1314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/devops/iptables/" class="md-nav__link">
+      <a href="../../coding/linux/devops/iptables/" class="md-nav__link">
         Iptables
       </a>
     </li>
@@ -1478,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/devops/linux/" class="md-nav__link">
+      <a href="../../coding/linux/devops/linux/" class="md-nav__link">
         Linux
       </a>
     </li>
@@ -1490,7 +1338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../linux/devops/op%26docker%20service/" class="md-nav__link">
+      <a href="../../coding/linux/devops/op%26docker%20service/" class="md-nav__link">
         Op&docker service
       </a>
     </li>
@@ -1536,7 +1384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/DjangoStudy/" class="md-nav__link">
+      <a href="../../coding/python/DjangoStudy/" class="md-nav__link">
         Django学习
       </a>
     </li>
@@ -1548,7 +1396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/math/" class="md-nav__link">
+      <a href="../../coding/python/math/" class="md-nav__link">
         Math
       </a>
     </li>
@@ -1560,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/python/" class="md-nav__link">
+      <a href="../../coding/python/python/" class="md-nav__link">
         Python
       </a>
     </li>
@@ -1600,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rust/init/" class="md-nav__link">
+      <a href="../../coding/rust/init/" class="md-nav__link">
         Init
       </a>
     </li>
@@ -1612,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rust/trait/" class="md-nav__link">
+      <a href="../../coding/rust/trait/" class="md-nav__link">
         Trait
       </a>
     </li>
@@ -1624,7 +1472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../rust/%E5%8F%98%E9%87%8F/" class="md-nav__link">
+      <a href="../../coding/rust/%E5%8F%98%E9%87%8F/" class="md-nav__link">
         变量
       </a>
     </li>
@@ -1664,7 +1512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../win/win%20ctl/" class="md-nav__link">
+      <a href="../../coding/win/win%20ctl/" class="md-nav__link">
         Win ctl
       </a>
     </li>
@@ -1676,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../win/win_kernel/" class="md-nav__link">
+      <a href="../../coding/win/win_kernel/" class="md-nav__link">
         Win kernel
       </a>
     </li>
@@ -1688,7 +1536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../win/winapi/" class="md-nav__link">
+      <a href="../../coding/win/winapi/" class="md-nav__link">
         Winapi
       </a>
     </li>
@@ -1728,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%89%8D%E7%AB%AF%E2%99%82js/ThreeJS/" class="md-nav__link">
+      <a href="../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/ThreeJS/" class="md-nav__link">
         ThreeJS
       </a>
     </li>
@@ -1740,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%89%8D%E7%AB%AF%E2%99%82js/WDS%20can%27t%20connet/" class="md-nav__link">
+      <a href="../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/WDS%20can%27t%20connet/" class="md-nav__link">
         WDS can't connet
       </a>
     </li>
@@ -1752,7 +1600,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%89%8D%E7%AB%AF%E2%99%82js/css/" class="md-nav__link">
+      <a href="../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/css/" class="md-nav__link">
         Css
       </a>
     </li>
@@ -1764,7 +1612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%89%8D%E7%AB%AF%E2%99%82js/js/" class="md-nav__link">
+      <a href="../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/js/" class="md-nav__link">
         Js
       </a>
     </li>
@@ -1776,7 +1624,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%89%8D%E7%AB%AF%E2%99%82js/npm%26webpack/" class="md-nav__link">
+      <a href="../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/npm%26webpack/" class="md-nav__link">
         Npm&webpack
       </a>
     </li>
@@ -1788,7 +1636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%89%8D%E7%AB%AF%E2%99%82js/vue/" class="md-nav__link">
+      <a href="../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/vue/" class="md-nav__link">
         Vue
       </a>
     </li>
@@ -1800,7 +1648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E5%89%8D%E7%AB%AF%E2%99%82js/vuetify/" class="md-nav__link">
+      <a href="../../coding/%E5%89%8D%E7%AB%AF%E2%99%82js/vuetify/" class="md-nav__link">
         Vuetify
       </a>
     </li>
@@ -1840,7 +1688,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/overView/" class="md-nav__link">
+      <a href="../../coding/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/overView/" class="md-nav__link">
         概述
       </a>
     </li>
@@ -2839,12 +2687,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
       
       <label class="md-nav__link" for="nav-7">
         gameSecurity
@@ -2863,7 +2713,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gameSecurity/protect/" class="md-nav__link">
+      <a href="../protect/" class="md-nav__link">
         Protect
       </a>
     </li>
@@ -2873,11 +2723,18 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../gameSecurity/todo/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Todo
       </a>
+      
     </li>
   
 
@@ -2887,7 +2744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gameSecurity/unity/" class="md-nav__link">
+      <a href="../unity/" class="md-nav__link">
         Unity
       </a>
     </li>
@@ -3522,236 +3379,21 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#my-first-patch" class="md-nav__link">
-    My first patch
-  </a>
-  
-    <nav class="md-nav" aria-label="My first patch">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#edit-gitconfig" class="md-nav__link">
-    Edit ~/.gitconfig
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#generate-patch-file" class="md-nav__link">
-    Generate Patch file
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#send-email" class="md-nav__link">
-    Send email
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-clone" class="md-nav__link">
-    git clone 优化大小
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    从历史的提交建立新分支的方法：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    将某个历史版本全部拉到工作区和暂存区：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    将历史版本的某文件版本拉到当前工作区或者暂存区进行处理：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    已经有添加到暂存区的文件修改，之后又进行了修改。想要都撤销掉，变为和仓库中的版本相同（仓库覆盖工作和暂存）：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-reset-hard-head-headhard" class="md-nav__link">
-    方法一：git reset --hard HEAD 重设HEAD，hard参数覆盖工作区和暂存区。
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    撤销当前工作区的文件修改，变为和暂存区相同（暂存覆盖工作）：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    撤销添加到暂存区的文件修改，将修改退回到工作区（暂存先覆盖工作，然后仓库覆盖暂存）：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    清空暂存区文件修改：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    清空暂存区：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checkout" class="md-nav__link">
-    checkout文件层面的操作：
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reset" class="md-nav__link">
-    reset文件层面的操作：
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/git.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/gameSecurity/todo.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Git</h1>
+                  <h1>Todo</h1>
                 
-                <h2 id="my-first-patch">My first patch<a class="headerlink" href="#my-first-patch" title="Permanent link">&para;</a></h2>
-<p>Linux kernel不是pr维护，而是patch mail。</p>
-<h3 id="edit-gitconfig">Edit ~/.gitconfig<a class="headerlink" href="#edit-gitconfig" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>[sendemail]
-  smtpuser = username@mail.com
-  smtpserver = smtp.mail.com
-  smtpencryption = tls
-  smtpserverport = 587
-  #smtppass =  ;using git send-email; prompts for password
-</code></pre></div>
-<h3 id="generate-patch-file">Generate Patch file<a class="headerlink" href="#generate-patch-file" title="Permanent link">&para;</a></h3>
-<p><code>git format-patch HEAD~</code>
-<code>git format-patch HEAD~&lt;number of commits to convert to patches&gt;</code> turn multiple commits into patch files. These patch files will be emailed to the <a href="https://lkml.org/">Linux Kernel Mailing List (lkml)</a>. They can be applied with <code>git am &lt;patchfile&gt;</code></p>
-<h3 id="send-email">Send email<a class="headerlink" href="#send-email" title="Permanent link">&para;</a></h3>
-<p><code>git send-email</code>
-don't forget to install git-mail git core</p>
-<h2 id="git-clone">git clone 优化大小<a class="headerlink" href="#git-clone" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git clone https://xxx/xxx.git --depth <span class="m">1</span>
-<span class="c1">#重新拉去历史记录</span>
-git pull --unshallow 
-<span class="sb">```</span>sh 
-<span class="c1">## Multiple accounts on Github</span>
-
-<span class="sb">```</span>bash
-ssh-keygen -t rsa -C <span class="s2">&quot;your_name@home_email.com&quot;</span>
-ssh-keygen -t rsa -C <span class="s2">&quot;your_name@company_email.com&quot;</span>
-<span class="nb">cd</span> ~/.ssh/
-touch config
-vim config
-
-<span class="c1"># Home account</span>
-Host home.github.com
-  HostName github.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa_home
-
-<span class="c1"># Company account</span>
-Host company.github.com
-  HostName github.com
-  PreferredAuthentications publickey
-  IdentityFile ~/.ssh/id_rsa_company
-
-git clone git@home.github.com:xxxxx/xx.git
-<span class="c1"># 或者更改.git/config中url字段</span>
-</code></pre></div>
-<p>不行的话，执行</p>
-<div class="highlight"><pre><span></span><code>ssh-add -D
-ssh-add -s
-ssh-add -l
-</code></pre></div>
-<h2 id="_1">从历史的提交建立新分支的方法：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>方法一： checkout到历史提交，然后checkout -b。
-方法二： reset到历史提交，checkout -b，然后再reset到原来的版本。
-方法三： git branch <code>&lt;branch&gt; &lt;start point&gt;</code></p>
-<h2 id="_2">将某个历史版本全部拉到工作区和暂存区：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>方法一： 可能的需求是为了将过去删除掉的修改重新应用到最新的版本，这时可以先回到历史版本处建立分支，然后回到原来的最新的版本，进行merge分支的操作。
-方法二： reset加上hard参数到需要的历史版本，然后再reset加上soft参数回来。</p>
-<h2 id="_3">将历史版本的某文件版本拉到当前工作区或者暂存区进行处理：<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>方法一： git reset HEAD~2 foo.py，直接拉到暂存区。
-方法二： git checkout HEAD~2 foo.py，拉到工作区和暂存区。</p>
-<h2 id="_4">已经有添加到暂存区的文件修改，之后又进行了修改。想要都撤销掉，变为和仓库中的版本相同（仓库覆盖工作和暂存）：<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>方法一：1、git reset HEAD file 清空暂存区的提交，变为和仓库中的版本相同。2、git checkout  --  file 以暂存区为蓝本，覆盖掉工作区。
-方法二：git checkout HEAD --  file 。</p>
-<h2 id="git-reset-hard-head-headhard">方法一：git reset --hard HEAD 重设HEAD，hard参数覆盖工作区和暂存区。<a class="headerlink" href="#git-reset-hard-head-headhard" title="Permanent link">&para;</a></h2>
-<p>方法二：强制切换到其他分支丢弃更改，然后再切回来。</p>
-<h2 id="_5">撤销当前工作区的文件修改，变为和暂存区相同（暂存覆盖工作）：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>方法一：git checkout -- file 暂存区覆盖工作区(以暂存区为蓝本，覆盖掉工作区)。</p>
-<h2 id="_6">撤销添加到暂存区的文件修改，将修改退回到工作区（暂存先覆盖工作，然后仓库覆盖暂存）：<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<p>方法一：1、git checkout  --  file 以暂存区为蓝本，覆盖掉工作区。 2、git reset HEAD file 清空暂存区的提交，变为和仓库中的版本相同。</p>
-<h2 id="_7">清空暂存区文件修改：<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
-<p>方法一：git reset -- file 清空暂存区的文件修改。</p>
-<h2 id="_8">清空暂存区：<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<p>方法一：git reset HEAD file 清空暂存区。</p>
-<h2 id="checkout">checkout文件层面的操作：<a class="headerlink" href="#checkout" title="Permanent link">&para;</a></h2>
-<p>主要对暂存区和工作区起作用，一般有暂存区覆盖工作区的行为特征。</p>
-<h2 id="reset">reset文件层面的操作：<a class="headerlink" href="#reset" title="Permanent link">&para;</a></h2>
-<p>主要对暂存区起作用。
-<a href="https://zhuanlan.zhihu.com/p/31154756">https://zhuanlan.zhihu.com/p/31154756</a></p>
+                
+                
+                  
                 
               
               
@@ -3795,7 +3437,7 @@ ssh-add -l
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../gdb/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../protect/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -3804,19 +3446,19 @@ ssh-add -l
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                Gdb
+                Protect
               </div>
             </div>
           </a>
         
         
-          <a href="../interview/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../unity/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                Interview
+                Unity
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
