@@ -1,3 +1,7 @@
+## 课程资料
+https://gitee.com/ipads-lab/chcore-lab
+https://www.cnmooc.org/portal/course/5610/14956.mooc
+https://ipads.se.sjtu.edu.cn/mospi/
 ## 向量中断控制器
 ## GIC 通用中断控制器
 中断类型多，将中断分发给不同的核（对称或非对称）
