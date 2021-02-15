@@ -1,5 +1,11 @@
 ## 环境
 ### 依赖安装
+archlinux
+```sh
+yay -S community/aarch64-linux-gnu-glibc \
+community/aarch64-linux-gnu-gcc \
+community/aarch64-linux-gnu-binutils
+```
 eabi和eabihf不同，对FPU有不同的处理。
 ```sh
 apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
