@@ -123,14 +123,14 @@ yay -S kdecoration qt5-declarative qt5-x11extras kcoreaddons kguiaddons kconfigw
 
 ```sh
 # fonts amd vim code
- yay -S visual-studio-code-bin
- yay -S yapf
- yay -S adobe-source-han-sans-otc-fonts ttf-dejavu wqy-zenhei wqy-microhei ttf-opensans 
- wireshark-qt 
- #don't forget gpasswd -a username wireshark
- yay -S wps-office-cn
- yay -S gvim
- yay -S ttf-ms-win10-zh_cn
+yay -S visual-studio-code-bin
+yay -S yapf
+yay -S adobe-source-han-sans-otc-fonts ttf-dejavu wqy-zenhei wqy-microhei ttf-opensans 
+wireshark-qt 
+#don't forget gpasswd -a username wireshark
+yay -S wps-office-cn
+yay -S gvim
+yay -S ttf-ms-win10-zh_cn
 
 ````
 
