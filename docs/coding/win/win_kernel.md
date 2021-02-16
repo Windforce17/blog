@@ -1,3 +1,5 @@
+## 小工具
+https://github.com/AxtMueller/Windows-Kernel-Explorer
 ## 内存布局和内核加载
 寻址：和linux比较像，64位下，win的最大寻址是64T
 内核加载阶段：ntldr会从注册表读取安装的驱动程序，然后加载。
