@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://windforce17.github.io/blog/coding/win/win_kernel/">
       
       <link rel="shortcut icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.0b1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.0b2">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.25519675.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.fa8597d9.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e70b70b6.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e03a20ad.min.css">
         
           
           
@@ -1561,6 +1561,13 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    小工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     内存布局和内核加载
   </a>
   
@@ -1574,14 +1581,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     驱动加载和运行
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     内核对象
   </a>
   
@@ -1603,7 +1610,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     其他
   </a>
   
@@ -3154,6 +3161,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../reverse/%E5%85%B6%E4%BB%96%E5%A3%B3/" class="md-nav__link">
+        其他壳
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../reverse/%E5%8F%8D%E8%B0%83%E8%AF%95/" class="md-nav__link">
         反调试
       </a>
@@ -3168,6 +3187,18 @@
     <li class="md-nav__item">
       <a href="../../../reverse/%E5%90%84%E7%A7%8D%E6%AE%B5/" class="md-nav__link">
         各种段
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reverse/%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90/" class="md-nav__link">
+        恶意代码分析
       </a>
     </li>
   
@@ -3201,30 +3232,18 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../../reverse/%E9%BB%91%E5%BD%B1vip/" class="md-nav__link">
-        黑影vip
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-19" type="checkbox" id="nav-11-19" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11-20" type="checkbox" id="nav-11-20" >
       
-      <label class="md-nav__link" for="nav-11-19">
+      <label class="md-nav__link" for="nav-11-20">
         010editor
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="010editor" data-md-level="2">
-        <label class="md-nav__title" for="nav-11-19">
+        <label class="md-nav__title" for="nav-11-20">
           <span class="md-nav__icon md-icon"></span>
           010editor
         </label>
@@ -3478,6 +3497,13 @@
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
+    小工具
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
     内存布局和内核加载
   </a>
   
@@ -3491,14 +3517,14 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     驱动加载和运行
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     内核对象
   </a>
   
@@ -3520,7 +3546,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     其他
   </a>
   
@@ -3550,7 +3576,9 @@
                 
                   <h1>Win kernel</h1>
                 
-                <h2 id="_1">内存布局和内核加载<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+                <h2 id="_1">小工具<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/AxtMueller/Windows-Kernel-Explorer">https://github.com/AxtMueller/Windows-Kernel-Explorer</a></p>
+<h2 id="_2">内存布局和内核加载<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>寻址：和linux比较像，64位下，win的最大寻址是64T
 内核加载阶段：ntldr会从注册表读取安装的驱动程序，然后加载。
 会话管理启动：启动smss.exe，创建系统环境变量，加载win32k.sys csrss.exe 启动 winlogon.exe,创建虚拟内存等..
@@ -3558,7 +3586,7 @@
 <h2 id="r3r0">r3和r0通信<a class="headerlink" href="#r3r0" title="Permanent link">&para;</a></h2>
 <p>实际上系统api在ntdll..dll中，名称分别为Nt和Zw开头，本质是一样的，名字不同。完成参数检查工作后，调用一个中断<code>int 2Eh</code>或<code>SysEnter</code>，进入r0。在内科ntokrnl.exe中有一个SSDT，与ntdll.dll中函数对应。
 从用户模式调用Nt的api，连接到ntdll.lib，从内核模式调用则会连接到ntoskrnl.lib。其中Zw*的API不会对参数进行严格检查，通过KiSystemService最终跳转到对应代码处。</p>
-<h2 id="_2">驱动加载和运行<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">驱动加载和运行<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>在注册表下建立一个与驱动相关的键。</li>
 <li>对象管理器生成驱动对象并传递给DriverEntry()函数，执行入口函数。</li>
@@ -3568,14 +3596,14 @@
 <li>注册特定的分发派遣函数。</li>
 <li>其他初始化动作，Hook，过滤，回调等。</li>
 </ol>
-<h2 id="_3">内核对象<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">内核对象<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>内核对象分为对象头和对象体，对象头至少有OBJECT_HEADER，紧接着是对象体，对象指针指向对象体。对象体有一个type和size成员。内核对象是可以等待的。可以作为参数传递给内核的KeWaitForSingalObject()、KeWaitForMultipleObjects()函数以及应用层WaitForSingalObject()函数WaitForMultipleObject()</p>
 <h3 id="dispatch">dispatch对象<a class="headerlink" href="#dispatch" title="Permanent link">&para;</a></h3>
 <p>对象体开头放置了一个DISPATCHER_HEADER，以K开头的内核对象名表明这是一个内核对象。</p>
 <h3 id="io">I/O 对象<a class="headerlink" href="#io" title="Permanent link">&para;</a></h3>
 <p>I/O对象开始位置没有DISPATCHER_HEADER，会放置一个type和size有关的成员。
 常见的I/O对象包括DEVICE_OBJECT DRIVER_OBJECT FILE_OBJECT IRP VPB KPROFILE。</p>
-<h3 id="_4">其他<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h3 id="_5">其他<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>EPROCESS和ETHREAD对象。未导出。可以将自己从EPROCESS链表摘除，隐藏进程。
 使用PsLookupProcessByProcessId拿到进程的EPROCESS结构，PsGetCurrentProcss拿到当前EPROCESS结构。</p>
                 
@@ -3675,11 +3703,11 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/worker/search.b9424174.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/worker/search.3f4c5856.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/vendor.e32ed4d0.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.b0aa5de8.min.js"></script>
+      <script src="../../../assets/javascripts/vendor.00ecb175.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.e8ecd72e.min.js"></script>
       
         <script src="https://cdnjs.loli.net/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
       
