@@ -2261,8 +2261,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ldmstm" class="md-nav__link">
+    LDM/STM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    移位
   </a>
   
 </li>
@@ -3530,8 +3544,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#ldmstm" class="md-nav__link">
+    LDM/STM
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     指令
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    移位
   </a>
   
 </li>
@@ -3593,7 +3621,8 @@ qemu-system-arm -M versatilepb -kernel vmlinuz-3.2.0-4-versatile -initrd initrd.
 </code></pre></div></li>
 </ol>
 <h2 id="arm32">arm32<a class="headerlink" href="#arm32" title="Permanent link">&para;</a></h2>
-<p>r11保存ebp
+<p>数据访问根据SCTLR寄存器的值决定大小端，取指一定是小端
+r11保存ebp
 pc寄存器存的是<code>当前指令位置+2*指令长度</code>,因为流水线。
 r0<sub>r3用来传递参数，无需恢复r0</sub>r3储存内容
 r0储存返回值：
@@ -3618,12 +3647,23 @@ x29保存ebp
 x30寄存器保存返回地址，执行ret时将x30的值给pc。
 某些情况下，返回值是通过X8返回的。
 bl指令用于跳转，返回地址保存在x30中。</p>
+<h3 id="ldmstm">LDM/STM<a class="headerlink" href="#ldmstm" title="Permanent link">&para;</a></h3>
+<p>传送指令，LDM从内存到寄存器，STM从寄存器到内存。例如
+<div class="highlight"><pre><span></span><code><span class="nf">STMDB</span>  <span class="no">SP</span><span class="p">!,</span> <span class="err">{</span><span class="no">R0-R3</span><span class="p">,</span>  <span class="no">LR</span><span class="err">}</span>  <span class="err">&lt;</span><span class="p">--</span><span class="err">&gt;</span>  <span class="no">PUSH</span>  <span class="err">{</span><span class="no">R0-R3</span><span class="p">,</span> <span class="no">LR</span><span class="err">}</span>     
+<span class="no">LDMIA</span>  <span class="no">SP</span><span class="p">!,</span> <span class="err">{</span><span class="no">R0-R3</span><span class="p">,</span>  <span class="no">PC</span><span class="err">}</span>  <span class="err">&lt;</span><span class="p">--</span><span class="err">&gt;</span>  <span class="no">POP</span>  <span class="err">{</span><span class="no">R0-R3</span><span class="p">,</span> <span class="no">PC</span><span class="err">}</span>
+</code></pre></div>
+STM和LDM都有不同的方向。I代表increase，地址增长，D代表decrease，地址减小。不仅如此，还区分Before和After，控制传送和增加地址的动作的先后顺序。
+<code>STMDB</code>代表Decrease和Before。意味着先减少地址，再传送。</p>
 <h3 id="_4">指令<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>在ARMv8中，LDM/STM被新一代的指令LDP(Load Pair)和STP(Store Pair)所取代了，LDM/STM对寄存器列表里包含的寄存器数量并没有什么限制，而LDP/STP要求和内存之间传送数据的寄存器不超过2个。</p>
 <div class="highlight"><pre><span></span><code><span class="nf">ldp</span> <span class="no">x19</span><span class="p">,</span> <span class="no">x20</span><span class="p">,</span> <span class="p">[</span><span class="no">sp</span><span class="p">,</span> <span class="mi">#0</span><span class="no">x10</span><span class="p">]</span>     <span class="err">从</span> <span class="no">sp</span><span class="err">+</span><span class="mi">0x10</span> <span class="err">的位置读</span> <span class="mi">0x10</span> <span class="err">字节，按顺序放入</span> <span class="no">x19</span><span class="p">,</span> <span class="no">x20</span> <span class="err">寄存器</span>
 <span class="nf">ldp</span> <span class="no">x29</span><span class="p">,</span> <span class="no">x30</span><span class="p">,</span> <span class="p">[</span><span class="no">sp</span><span class="p">],</span> <span class="mi">#0</span><span class="no">x40</span>      <span class="err">从</span> <span class="no">sp</span> <span class="err">的位置读</span> <span class="mi">0x10</span> <span class="err">字节，按顺序放入</span> <span class="no">x29</span><span class="p">,</span> <span class="no">x30</span> <span class="err">寄存器，然后</span> <span class="no">sp</span> <span class="err">+=</span> <span class="mi">0x40</span>
 <span class="nf">MOV</span> <span class="no">X1</span><span class="p">,</span> <span class="no">X0</span>  <span class="err">寄存器</span><span class="no">X0的值传给X1</span>
 <span class="nf">blr</span> <span class="no">x3</span>    <span class="err">跳转到由</span><span class="no">Xm目标寄存器指定的地址处</span><span class="err">，同时将下一条指令存放到</span><span class="no">X30寄存器中</span>  
 </code></pre></div>
+<h3 id="_5">移位<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>逻辑左移/右移(LSL/LSR)，溢出的删除
+ASR，算数右移，ARM仅有算数右移，么有算数左移。溢出的位进行循环。移动一位的结果相当于/2</p>
                 
               
               
