@@ -3,6 +3,7 @@ SSRF(Server-Side Request Forgery:服务器端请求伪造) 是一种由攻击者
 
 SSRF 形成的原因大都是由于服务端提供了从其他服务器应用获取数据的功能且没有对目标地址做过滤与限制。比如从指定URL地址获取网页文本内容，加载指定地址的图片，下载等等。
 
+工具：https://github.com/ethicalhackingplayground/ssrf-king
 ## 常用绕过 payload等
 ```
 
