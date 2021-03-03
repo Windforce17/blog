@@ -1,6 +1,3 @@
-## cloud docker nginx
-
-https://zhuanlan.zhihu.com/p/95255564
 
 ## 要复习的
 

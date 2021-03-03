@@ -1,9 +1,13 @@
 # Antigen: https://github.com/zsh-users/antigen
 ANTIGEN="$HOME/.local/bin/antigen.zsh"
+if [ ! -f "$ANTIGEN" ];then
+	ANTIGEN = "/usr/share/zsh-antigen/antigen.zsh"
 
 # Install antigen.zsh if not exist
 if [ ! -f "$ANTIGEN" ]; then
+	ANTIGEN="$HOME/.local/bin/antigen.zsh"
 	echo "Installing antigen ..."
+
 	[ ! -d "$HOME/.local" ] && mkdir -p "$HOME/.local" 2> /dev/null
 	[ ! -d "$HOME/.local/bin" ] && mkdir -p "$HOME/.local/bin" 2> /dev/null
 	[ ! -f "$HOME/.z" ] && touch "$HOME/.z"
