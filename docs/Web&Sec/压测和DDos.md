@@ -75,6 +75,9 @@ T50除了能够修改网络路由，能够在单个SOCKET上顺序发送所有�
 -s ＜pps＞ #发包速率mdk3 --help b #查看详细内容
 　　示例：mdk3 mon0 b –f /usr/share/set/src/fasttrack/wordlist.txt –t –c 6 –s 80
 
+## slowhttptest
+使用畸形报文进行DOS
+git clone https://github.com/shekyan/slowhttptest
 # DDos防御
 大带宽防御不了
 ## 常见弱点
