@@ -103,8 +103,6 @@ https://github.com/cr0hn/vulnerable-node
 
 本地网络扫描器
 https://github.com/SkyLined/LocalNetworkScanner
-子域名扫描器
-https://github.com/lijiejie/subDomainsBrute
 漏洞路由扫描器
 https://github.com/jh00nbr/Routerhunter-2.0
 迷你批量信息泄漏扫描脚本
@@ -116,10 +114,6 @@ https://github.com/EnableSecurity/wafw00f
 
 社工插件，可查找以 email、phone、username 的注册的所有网站账号信息
 https://github.com/n0tr00t/Sreg
-Github 信息搜集，可实时扫描查询 git 最新上传有关邮箱账号密码信息
-https://github.com/sea-god/gitscan
-github Repo 信息搜集工具
-https://github.com/metac0rtex/GitHarvester
 
 ## WEB 工具
 
@@ -311,14 +305,8 @@ https://github.com/binux/pyspider
 ## 以下内容来自：https://github.com/We5ter/Scanners-Box/blob/master/README_CN.md
 
 子域名枚举类
-https://github.com/lijiejie/subDomainsBrute (经典的子域名爆破枚举脚本)
-https://github.com/ring04h/wydomain (子域名字典穷举)
 https://github.com/le4f/dnsmaper (子域名枚举与地图标记)
-https://github.com/0xbug/orangescan (在线子域名信息收集工具)
-https://github.com/TheRook/subbrute （根据 DNS 记录查询子域名)
 https://github.com/We5ter/GoogleSSLdomainFinder (基于谷歌 SSL 透明证书的子域名查询脚本)
-https://github.com/mandatoryprogrammer/cloudflare_enum （使用 CloudFlare 进行子域名枚举的脚本）
-https://github.com/18F/domain-scan (A domain scanner）
 https://github.com/Evi1CLAY/Cool ... Python/DomainSeeker（多方式收集目标子域名信息）
 数据库漏洞扫描类
 https://github.com/0xbug/SQLiScanner (一款基于 SQLMAP 和 Charles 的被动 SQL 注入漏洞扫描工具)
