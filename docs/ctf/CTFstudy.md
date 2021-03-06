@@ -10,7 +10,7 @@
 
 ### 刷题地址
 1. 综合
-
+- https://hackme.inndy.tw/
 - [shiyanbar](http://www.shiyanbar.com/ctf/)
 - [nuptzj](http://ctf.nuptzj.cn/)
 - [jarvisoj](https://www.jarvisoj.com/)
