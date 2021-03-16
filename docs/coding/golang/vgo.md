@@ -44,6 +44,4 @@ require (
 ### vendor
 go module 默认忽略vendor目录的，当然如果要添加vendor依赖，可以使用`go mod vendor`创建一个vendor目录，并且拷贝所有依赖进去，同时build的时候也要使用`bo build -mod vendor`
 建议开发时用go build,zai CI时使用`vendor`，因为CI过程中不一定有外网环境
-## go proxy
-有了go mod特性，可以使用`go proxy`来代理go mod，只需要设置环境变量即可`GOPROXY = "https://goproxy.io"` 更多请看：https://goproxy.io/
 

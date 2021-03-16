@@ -1,7 +1,5 @@
 # Antigen: https://github.com/zsh-users/antigen
 ANTIGEN="$HOME/.local/bin/antigen.zsh"
-if [ ! -f "$ANTIGEN" ];then
-	ANTIGEN = "/usr/share/zsh-antigen/antigen.zsh"
 
 # Install antigen.zsh if not exist
 if [ ! -f "$ANTIGEN" ]; then
