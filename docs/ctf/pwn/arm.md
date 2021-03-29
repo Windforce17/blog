@@ -8,12 +8,12 @@ community/aarch64-linux-gnu-binutils
 ```
 eabi和eabihf不同，对FPU有不同的处理。
 ```sh
-apt install gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
-apt install gcc-arm-linux-gnueabi g++-arm-linux-gnueabi
-apt install gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
-apt install libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi
-apt install python2-pip python3-pip build-essential gcc-multilib g++-multilib   gcc-arm-linux-gnueabi libncurses5-dev
-apt install gcc-mips-linux-gnu
+apt install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf  && \
+apt install -y gcc-arm-linux-gnueabi g++-arm-linux-gnueabi  && \
+apt install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu && \
+apt install -y libc6-armel-cross libc6-dev-armel-cross binutils-arm-linux-gnueabi && \
+apt install -y python2-pip python3-pip build-essential gcc-multilib g++-multilib   gcc-arm-linux-gnueabi libncurses5-dev && \
+apt install -y gcc-mips-linux-gnu
 ```
 qemu安装
 ```sh
