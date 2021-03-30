@@ -17,7 +17,7 @@ apt install -y gcc-mips-linux-gnu
 ```
 qemu安装
 ```sh
-apt install qemu-user-static qemu-user
+apt install -y qemu-user-static qemu-user
 ```
 ### 运行
 1. 直接运行elf
@@ -28,6 +28,7 @@ socat tcp-l:10002,fork exec:"qemu-arm -g 1234 -L /usr/arm-linux-gnueabi ./pwn",r
 ```
 2. 系统级模拟
 下载kernel:https://people.debian.org/~aurel32/qemu/armel/
+    http://ftp.sjtu.edu.cn/sites/ftp.kernel.org/pub/linux/kernel/
 ```
 sudo tunctl -t tap0 -u `whoami`
 sudo ifconfig tap0 192.168.2.1/24
