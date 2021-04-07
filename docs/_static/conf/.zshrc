@@ -161,10 +161,10 @@ alias -s bz2='tar -xjvf'
 alias -s zst='tar -xvf'
 
 # proxy
-#alias proxyon='export ALL_PROXY=socks5://127.0.0.1:1080'
-alias proxyon='export ALL_PROXY=http://127.0.0.1:12333;git config --global http.proxy socks5://127.0.0.1:1080;git config --global https.proxy socks5://127.0.0.1:1080'
-alias proxyoff='unset ALL_PROXY;proxy git config --global --unset http.proxy;git config --global --unset https.proxy'
-
+proxy_addr="http://192.168.0.123:7890"
+#alias proxyon='export ALL_PROXY=socks5://192.168.100.27:1080'
+alias proxyon="export ALL_PROXY=$proxty_addr;export all_proxy=$proxy_addr;export https_proxy=$proxy_addr;git config --global http.proxy $proxy_addr;git config --global https.proxy $proxy_addr"
+alias proxyoff='unset ALL_PROXY;unset all_proxy;unset https_proxy;git config --global --unset http.proxy;git config --global --unset https.proxy'
 #debian
 alias aupdate='sudo apt update && sudo apt upgrade -y'
 
