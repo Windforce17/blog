@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.78f4c236.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f955dcd.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -1474,6 +1474,7 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+      
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Init
           <span class="md-nav__icon md-icon"></span>
@@ -1485,6 +1486,7 @@
       
         
 <nav class="md-nav md-nav--secondary" aria-label="目录">
+  
   
   
   
@@ -3445,6 +3447,7 @@
   
   
   
+  
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       目录
@@ -3502,17 +3505,16 @@
 <div class="highlight"><pre><span></span><code>yay -S rustup
 rustup default stable
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">RUSTUP_DIST_SERVER</span><span class="o">=</span><span class="s1">&#39;https://mirrors.ustc.edu.cn/rust-static&#39;</span>
-<span class="nb">export</span> <span class="nv">RUSTUP_UPDATE_ROOT</span><span class="o">=</span><span class="s1">&#39;https://mirrors.ustc.edu.cn/rust-static/rustup&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">RUSTUP_DIST_SERVER</span><span class="o">=</span><span class="s1">&#39;https://mirrors.sjtug.sjtu.edu.cn/rust-static&#39;</span>
+<span class="nb">export</span> <span class="nv">RUSTUP_UPDATE_ROOT</span><span class="o">=</span><span class="s1">&#39;https://mirrors.sjtug.sjtu.edu.cn/rust-static/rustup&#39;</span>
 curl https://mirrors.ustc.edu.cn/rust-static/rustup/rustup-init.sh <span class="p">|</span> sh
 </code></pre></div>
 <p>cargo:
 <div class="highlight"><pre><span></span><code>#~/.cargo/config
+[source.mirror]
+registry = &quot;https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/&quot;
 [source.crates-io]
-registry = &quot;https://github.com/rust-lang/crates.io-index&quot;
-replace-with = &#39;ustc&#39;
-[source.ustc]
-registry = &quot;https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git&quot;
+replace-with = &quot;mirror&quot;
 </code></pre></div></p>
 <p>其他问题查看<a href="https://wiki.archlinux.org/index.php/Rust#Installation">这个</a></p>
 <h2 id="debug">debug 输出<a class="headerlink" href="#debug" title="Permanent link">&para;</a></h2>

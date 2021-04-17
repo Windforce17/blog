@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.78f4c236.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f955dcd.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -1165,6 +1165,7 @@
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
       
       
+      
         <label class="md-nav__link md-nav__link--active" for="__toc">
           Arch
           <span class="md-nav__icon md-icon"></span>
@@ -1176,6 +1177,7 @@
       
         
 <nav class="md-nav md-nav--secondary" aria-label="目录">
+  
   
   
   
@@ -1302,6 +1304,19 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wine" class="md-nav__link">
+    Wine
+  </a>
+  
+    <nav class="md-nav" aria-label="Wine">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#qqwechat" class="md-nav__link">
@@ -3581,6 +3596,7 @@
   
   
   
+  
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       目录
@@ -3704,6 +3720,19 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wine" class="md-nav__link">
+    Wine
+  </a>
+  
+    <nav class="md-nav" aria-label="Wine">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#qqwechat" class="md-nav__link">
@@ -3945,6 +3974,8 @@ net.ipv4.tcp_congestion_control = bbr
 </code></pre></div>
 <h3 id="pacman">设置pacman彩色输出<a class="headerlink" href="#pacman" title="Permanent link">&para;</a></h3>
 <p>打开/etc/pacman.conf文件，找到被注释的#Color，改为Color。pacman就会输出彩色信息，方便查看。</p>
+<h2 id="wine">Wine<a class="headerlink" href="#wine" title="Permanent link">&para;</a></h2>
+<p>安装包的同时安装依赖：<code>sudo pacman -S --asdeps --needed $(pacman -Si wine | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.*://g' | sed 's/^\s*//g' | tr '\n' ' ')</code></p>
 <h3 id="qqwechat">qq/wechat<a class="headerlink" href="#qqwechat" title="Permanent link">&para;</a></h3>
 <p><code>yay -S deepin.com.qq.im electronic-wechat</code></p>
 <ol>
@@ -3956,7 +3987,7 @@ export XMODIFIERS=&quot;@im=fcitx&quot;
 </code></pre></div>
 <ol>
 <li>安装<code>环境配置</code>中的两个字体:wqy-zenhei 与 wqy-microhei
-   要设置 LANG 为支持 utf8 的字符集</li>
+要设置 LANG 为支持 utf8 的字符集,建议设置为zh_CN.UTF-8</li>
 </ol>
 <h4 id="_9">图片不加载<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
 <ol>
