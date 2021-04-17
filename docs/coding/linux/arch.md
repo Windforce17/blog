@@ -212,6 +212,9 @@ net.ipv4.tcp_congestion_control = bbr
 ### 设置pacman彩色输出
 
 打开/etc/pacman.conf文件，找到被注释的#Color，改为Color。pacman就会输出彩色信息，方便查看。
+## Wine
+安装包的同时安装依赖：`sudo pacman -S --asdeps --needed $(pacman -Si wine | sed -n '/^Opt/,/^Conf/p' | sed '$d' | sed 's/^Opt.*://g' | sed 's/^\s*//g' | tr '\n' ' ')`
+
 ### qq/wechat
 
 `yay -S deepin.com.qq.im electronic-wechat`
@@ -225,7 +228,7 @@ export XMODIFIERS="@im=fcitx"
 ```
 
 2. 安装`环境配置`中的两个字体:wqy-zenhei 与 wqy-microhei
-   要设置 LANG 为支持 utf8 的字符集
+要设置 LANG 为支持 utf8 的字符集,建议设置为zh_CN.UTF-8
 
 #### 图片不加载
 

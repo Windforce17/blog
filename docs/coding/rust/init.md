@@ -6,19 +6,18 @@ rustup default stable
 ```
 
 ```sh
-export RUSTUP_DIST_SERVER='https://mirrors.ustc.edu.cn/rust-static'
-export RUSTUP_UPDATE_ROOT='https://mirrors.ustc.edu.cn/rust-static/rustup'
+export RUSTUP_DIST_SERVER='https://mirrors.sjtug.sjtu.edu.cn/rust-static'
+export RUSTUP_UPDATE_ROOT='https://mirrors.sjtug.sjtu.edu.cn/rust-static/rustup'
 curl https://mirrors.ustc.edu.cn/rust-static/rustup/rustup-init.sh | sh
 ```
 
 cargo:
 ```conf
 #~/.cargo/config
+[source.mirror]
+registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"
 [source.crates-io]
-registry = "https://github.com/rust-lang/crates.io-index"
-replace-with = 'ustc'
-[source.ustc]
-registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
+replace-with = "mirror"
 ```
 
 
