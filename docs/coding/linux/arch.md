@@ -85,14 +85,24 @@ ServerAliveInterval 60
 ```
 
 ### vmware
+yay -S vmware-workstation linux-lts-headers
 
+modprobe -a vmw_vmci vmmon
 ```sh
 yay -S gtkmm gtkmm3 --needed
-systemctl enable vmware-networks.service
-systemctl enable vmware-usbarbitrator.service
-systemctl enable vmware-hostd.service
+systemctl enable --now vmware-networks.service
+systemctl enable --now vmware-usbarbitrator.service
+systemctl enable --now vmware-hostd.service
 ```
 
+vmware16:
+ZF71R-DMX85-08DQY-8YMNC-PPHV8
+AZ3E8-DCD8J-0842Z-N6NZE-XPKYF
+FC11K-00DE0-0800Z-04Z5E-MC8T6
+AZ3E8-DCD8J-0842Z-N6NZE-XPKYF
+FC7D0-D1YDL-M8DXZ-CYPZE-P2AY6
+YF390-0HF8P-M81RQ-2DXQE-M2UT6
+ZC3TK-63GE6-481JY-WWW5T-Z7ATA
 ### package
 ```sh
 

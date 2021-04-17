@@ -59,6 +59,8 @@ ssh-add -s
 ssh-add -l
 ```
 
+## 统计提交前5名
+`git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 5`
 ## 从历史的提交建立新分支的方法：
 
 方法一： checkout到历史提交，然后checkout -b。
