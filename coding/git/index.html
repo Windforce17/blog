@@ -687,6 +687,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    统计提交前5名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     从历史的提交建立新分支的方法：
   </a>
@@ -3584,6 +3591,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    统计提交前5名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     从历史的提交建立新分支的方法：
   </a>
@@ -3729,6 +3743,8 @@ git clone git@home.github.com:xxxxx/xx.git
 ssh-add -s
 ssh-add -l
 </code></pre></div>
+<h2 id="5">统计提交前5名<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p><code>git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 5</code></p>
 <h2 id="_1">从历史的提交建立新分支的方法：<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>方法一： checkout到历史提交，然后checkout -b。
 方法二： reset到历史提交，checkout -b，然后再reset到原来的版本。

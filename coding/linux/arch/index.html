@@ -3867,11 +3867,21 @@ TCPKeepAlive=yes
 ServerAliveInterval 60
 </code></pre></div></p>
 <h3 id="vmware">vmware<a class="headerlink" href="#vmware" title="Permanent link">&para;</a></h3>
+<p>yay -S vmware-workstation linux-lts-headers</p>
+<p>modprobe -a vmw_vmci vmmon
 <div class="highlight"><pre><span></span><code>yay -S gtkmm gtkmm3 --needed
-systemctl <span class="nb">enable</span> vmware-networks.service
-systemctl <span class="nb">enable</span> vmware-usbarbitrator.service
-systemctl <span class="nb">enable</span> vmware-hostd.service
-</code></pre></div>
+systemctl <span class="nb">enable</span> --now vmware-networks.service
+systemctl <span class="nb">enable</span> --now vmware-usbarbitrator.service
+systemctl <span class="nb">enable</span> --now vmware-hostd.service
+</code></pre></div></p>
+<p>vmware16:
+ZF71R-DMX85-08DQY-8YMNC-PPHV8
+AZ3E8-DCD8J-0842Z-N6NZE-XPKYF
+FC11K-00DE0-0800Z-04Z5E-MC8T6
+AZ3E8-DCD8J-0842Z-N6NZE-XPKYF
+FC7D0-D1YDL-M8DXZ-CYPZE-P2AY6
+YF390-0HF8P-M81RQ-2DXQE-M2UT6
+ZC3TK-63GE6-481JY-WWW5T-Z7ATA</p>
 <h3 id="package">package<a class="headerlink" href="#package" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>fakeroot
 ntfs-3g
