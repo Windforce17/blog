@@ -15,3 +15,6 @@ see `config/.tmux.conf`
 `ctrl+x d` 相当于`tmux detach`,注意此时 session 并没有关闭，只是在后台。
 `tmux ls`查看 session 列表。
 `tmux a -t
+
+## 将标准输出重定向到/dev/null,将错误输出重定向到标准输出
+./script 2>&1 1>/dev/null | ./other-script
