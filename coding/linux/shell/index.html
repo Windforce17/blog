@@ -13,18 +13,18 @@
         <meta name="author" content="Windforce17">
       
       
-        <link rel="canonical" href="https://windforce17.github.io/blog/coding/linux/tmux/">
+        <link rel="canonical" href="https://windforce17.github.io/blog/coding/linux/shell/">
       
       <link rel="icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.1">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
     
     
       
-        <title>Tmux - windforce17's blog</title>
+        <title>Shell - windforce17's blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6f955dcd.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcbf0b87.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -101,7 +101,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tmux
+              Shell
             
           </span>
         </div>
@@ -1239,12 +1239,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Tmux
+          Shell
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Tmux
+        Shell
       </a>
       
         
@@ -1276,6 +1276,13 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     快捷键
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devnull" class="md-nav__link">
+    将标准输出重定向到/dev/null,将错误输出重定向到标准输出
   </a>
   
 </li>
@@ -3468,6 +3475,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#devnull" class="md-nav__link">
+    将标准输出重定向到/dev/null,将错误输出重定向到标准输出
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3480,12 +3494,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/linux/tmux.md" title="编辑此页" class="md-content__button md-icon">
+                  <a href="https://github.com/Windforce17/blog/blob/master/docs/coding/linux/shell.md" title="编辑此页" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Tmux</h1>
+                  <h1>Shell</h1>
                 
                 <h2 id="tmux">tmux<a class="headerlink" href="#tmux" title="Permanent link">&para;</a></h2>
 <p>tmux 是以 session、Windows、panel 为基础的。 window 可以切割为不同的 panel，我个人喜欢单独开一个 Window，屏幕小没办法..
@@ -3498,6 +3512,8 @@ tmux 中的快捷键是有前缀的，默认是<code>ctrl+b</code>.</p>
 <code>ctrl+x d</code> 相当于<code>tmux detach</code>,注意此时 session 并没有关闭，只是在后台。
 <code>tmux ls</code>查看 session 列表。
 `tmux a -t</p>
+<h2 id="devnull">将标准输出重定向到/dev/null,将错误输出重定向到标准输出<a class="headerlink" href="#devnull" title="Permanent link">&para;</a></h2>
+<p>./script 2&gt;&amp;1 1&gt;/dev/null | ./other-script</p>
                 
               
               
