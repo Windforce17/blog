@@ -30,3 +30,15 @@ int main()
     return 0;
 }
 ```
+
+
+## 傻逼AT&T
+```asm
+at&t                             intel
+movl -4(%ebp, %edx, 4), %eax     mov eax, [ebp-4+edx*4]
+movl -4(%ebp), %eax              mov eax, [ebp-4]
+movl (%ecx), %edx                mov edx, [ecx]
+leal 8(,%eax,4), %eax            lea eax, [eax*4+8]
+leal (%eax,%eax,2), %eax         lea eax, [eax*2+eax]
+
+```
