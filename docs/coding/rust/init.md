@@ -61,6 +61,26 @@ where
     }
 }
 ```
+
+## cargo
+https://doc.rust-lang.org/cargo/guide/why-cargo-exists.html
+
+
+## unsafe
+
+https://doc.rust-lang.org/nomicon/index.html
+
+## std
+https://doc.rust-lang.org/std/
+
+## example
+https://doc.rust-lang.org/rust-by-example/conversion/try_from_try_into.html
+
+## async
+https://rust-lang.github.io/async-book/01_getting_started/02_why_async.html
+
+## cheats
+https://cheats.rs/
 ## 常用的 crates
 
 1. Rayon

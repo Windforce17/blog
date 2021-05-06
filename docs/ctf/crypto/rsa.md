@@ -12,6 +12,9 @@ https://www.mscto.com/python/603282.html
 https://zhuanlan.zhihu.com/p/76228394
 https://blog.csdn.net/hiahiachang/article/details/109749551
 https://blog.csdn.net/jcbx_/article/details/110182640
+
+## 关于用CRT优化
+https://www.anquanke.com/post/id/235241#0-qzone-1-82905-d020d2d2a4e8d1a374a433f596ad1440
 ### 公钥、私钥
 
 https://blog.csdn.net/qq_31481187/article/details/70448108

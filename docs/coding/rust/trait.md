@@ -1,4 +1,4 @@
-## derie
+## derive
 可以使用`#[derive()]`去让编译器自动impl某些trait
 例如:
 ```rust
@@ -8,3 +8,8 @@ struct Foo{
 }
 fn main(){}
 ```
+
+## trait对象
+//todo 
+## 动态分发和静态分发
+//todo
