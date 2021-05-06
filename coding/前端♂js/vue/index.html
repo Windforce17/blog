@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://windforce17.github.io/blog/coding/%E5%89%8D%E7%AB%AF%E2%99%82js/vue/">
       
       <link rel="icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcbf0b87.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bde7dde4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -3680,7 +3680,7 @@
 <span class="p">};</span>
 </code></pre></div>
 <h2 id="v-chart">v-chart<a class="headerlink" href="#v-chart" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">VCharts</span> <span class="nx">from</span> <span class="s2">&quot;v-charts&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nx">VCharts</span> <span class="k">from</span> <span class="s2">&quot;v-charts&quot;</span><span class="p">;</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">VCharts</span><span class="p">);</span>
 </code></pre></div>
 <h3 id="_1">按需引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
@@ -3709,7 +3709,7 @@
 <p>安装：cnpm install axios --save</p>
 <h3 id="_2">改写原型链<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1">//在main.js中引入：</span>
-<span class="k">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
 <span class="c1">//改写原型链</span>
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">$ajax</span> <span class="o">=</span> <span class="nx">axios</span><span class="p">;</span>
 </code></pre></div>
@@ -3729,11 +3729,11 @@
 <h3 id="vuex_1">封装进 vuex 中<a class="headerlink" href="#vuex_1" title="Permanent link">&para;</a></h3>
 <p>action 和 mutations 也很类似，主要的区别在于，action 可以包含异步操作，而且可以通过 action 来提交 mutations</p>
 <div class="highlight"><pre><span></span><code><span class="c1">// store.js</span>
-<span class="k">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s2">&quot;Vue&quot;</span><span class="p">;</span>
-<span class="k">import</span> <span class="nx">Vuex</span> <span class="nx">from</span> <span class="s2">&quot;vuex&quot;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Vue</span> <span class="k">from</span> <span class="s2">&quot;Vue&quot;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">Vuex</span> <span class="k">from</span> <span class="s2">&quot;vuex&quot;</span><span class="p">;</span>
 
 <span class="c1">// 引入 axios</span>
-<span class="k">import</span> <span class="nx">axios</span> <span class="nx">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">axios</span> <span class="k">from</span> <span class="s2">&quot;axios&quot;</span><span class="p">;</span>
 
 <span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">Vuex</span><span class="p">);</span>
 
@@ -3932,10 +3932,10 @@ assetsPublicPath: '' 或者设置为'./'</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="https://cdnjs.loli.net/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
       

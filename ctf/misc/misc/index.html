@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://windforce17.github.io/blog/ctf/misc/misc/">
       
       <link rel="icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcbf0b87.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bde7dde4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -3686,11 +3686,11 @@ python-PIL 处理图片库</p>
 <h3 id="ads">ADS流<a class="headerlink" href="#ads" title="Permanent link">&para;</a></h3>
 <p>这是一种<code>隐藏文件</code>的方法
 <div class="highlight"><pre><span></span><code><span class="c"># 创建数据流</span>
-<span class="n">c</span><span class="err">:</span><span class="p">\</span><span class="n">test</span><span class="p">&gt;</span><span class="nb">echo </span><span class="n">Hello</span><span class="p">,</span> <span class="n">freebuf</span><span class="p">!</span> <span class="p">&gt;</span> <span class="n">test</span><span class="p">.</span><span class="n">txt</span><span class="err">:</span><span class="n">ThisIsAnADS</span>
+<span class="n">c</span><span class="p">:\</span><span class="n">test</span><span class="p">&gt;</span><span class="nb">echo </span><span class="n">Hello</span><span class="p">,</span> <span class="n">freebuf</span><span class="p">!</span> <span class="p">&gt;</span> <span class="n">test</span><span class="p">.</span><span class="n">txt</span><span class="p">:</span><span class="n">ThisIsAnADS</span>
 <span class="c">## 列出数据流</span>
-<span class="n">c</span><span class="err">:</span><span class="p">\</span><span class="n">test</span><span class="p">&gt;</span><span class="nb">dir </span><span class="p">/</span><span class="nb">r </span><span class="n">test</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">c</span><span class="p">:\</span><span class="n">test</span><span class="p">&gt;</span><span class="nb">dir </span><span class="p">/</span><span class="nb">r </span><span class="n">test</span><span class="p">.</span><span class="n">txt</span>
 <span class="c"># 查看ADS内容</span>
-<span class="nb">PS </span><span class="n">C</span><span class="err">:</span><span class="p">\</span><span class="n">test</span><span class="p">&gt;</span> <span class="nb">Get-Content</span> <span class="n">test</span><span class="p">.</span><span class="n">txt</span> <span class="n">-stream</span> <span class="n">ThisIsAnADS</span>
+<span class="nb">PS </span><span class="n">C</span><span class="p">:\</span><span class="n">test</span><span class="p">&gt;</span> <span class="nb">Get-Content</span> <span class="n">test</span><span class="p">.</span><span class="n">txt</span> <span class="n">-stream</span> <span class="n">ThisIsAnADS</span>
 </code></pre></div></p>
 <h2 id="png">png<a class="headerlink" href="#png" title="Permanent link">&para;</a></h2>
 <p>分析lsb：<a href="https://github.com/zed-0xff/zsteg">https://github.com/zed-0xff/zsteg</a></p>
@@ -3830,10 +3830,10 @@ zlib扩展阅读http://zlib.net/</p>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="https://cdnjs.loli.net/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
       

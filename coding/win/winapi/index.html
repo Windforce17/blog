@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://windforce17.github.io/blog/coding/win/winapi/">
       
       <link rel="icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
     
     
       
@@ -24,7 +24,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.dcbf0b87.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.bde7dde4.min.css">
       
         
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.ef6f36e2.min.css">
@@ -3549,9 +3549,9 @@
 <h2 id="_4">触发蓝屏<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp"></span>
 
-<span class="k">typedef</span> <span class="nf">NTSTATUS</span><span class="p">(</span><span class="n">NTAPI</span> <span class="o">*</span><span class="n">TFNRtlAdjustPrivilege</span><span class="p">)(</span><span class="n">ULONG</span> <span class="n">Privilege</span><span class="p">,</span> <span class="n">BOOLEAN</span> <span class="n">Enable</span><span class="p">,</span> <span class="n">BOOLEAN</span> <span class="n">CurrentThread</span><span class="p">,</span> <span class="n">PBOOLEAN</span> <span class="n">Enabled</span><span class="p">);</span>
+<span class="k">typedef</span> <span class="n">NTSTATUS</span><span class="p">(</span><span class="n">NTAPI</span> <span class="o">*</span><span class="n">TFNRtlAdjustPrivilege</span><span class="p">)(</span><span class="n">ULONG</span> <span class="n">Privilege</span><span class="p">,</span> <span class="n">BOOLEAN</span> <span class="n">Enable</span><span class="p">,</span> <span class="n">BOOLEAN</span> <span class="n">CurrentThread</span><span class="p">,</span> <span class="n">PBOOLEAN</span> <span class="n">Enabled</span><span class="p">);</span>
 
-<span class="k">typedef</span> <span class="nf">NTSTATUS</span><span class="p">(</span><span class="n">NTAPI</span> <span class="o">*</span><span class="n">TFNNtRaiseHardError</span><span class="p">)(</span><span class="n">NTSTATUS</span> <span class="n">ErrorStatus</span><span class="p">,</span> <span class="n">ULONG</span> <span class="n">NumberOfParameters</span><span class="p">,</span>
+<span class="k">typedef</span> <span class="n">NTSTATUS</span><span class="p">(</span><span class="n">NTAPI</span> <span class="o">*</span><span class="n">TFNNtRaiseHardError</span><span class="p">)(</span><span class="n">NTSTATUS</span> <span class="n">ErrorStatus</span><span class="p">,</span> <span class="n">ULONG</span> <span class="n">NumberOfParameters</span><span class="p">,</span>
     <span class="n">ULONG</span> <span class="n">UnicodeStringParameterMask</span><span class="p">,</span> <span class="n">PULONG_PTR</span> <span class="o">*</span><span class="n">Parameters</span><span class="p">,</span> <span class="n">ULONG</span> <span class="n">ValidResponseOption</span><span class="p">,</span> <span class="n">PULONG</span> <span class="n">Response</span><span class="p">);</span>
 
 <span class="kt">int</span> <span class="n">WINAPI</span> <span class="n">WinMain</span><span class="p">(</span><span class="n">HINSTANCE</span> <span class="n">hInstance</span><span class="p">,</span> <span class="n">HINSTANCE</span> <span class="n">hPrevInstance</span><span class="p">,</span> <span class="n">LPTSTR</span> <span class="n">lpCmdLine</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cmdShow</span><span class="p">)</span>
@@ -3670,10 +3670,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.fe42c31b.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4ea5477f.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
       
         <script src="https://cdnjs.loli.net/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
       
