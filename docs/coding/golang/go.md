@@ -40,6 +40,13 @@ go get -u -v github.com/rogpeppe/godef
 go get -u -v golang.org/x/tools/cmd/goimports
 go get -u -v golang.org/x/lint/golint
 
+## go http keey-alive bug
+https://github.com/golang/go
+https://golang.org/doc/contribute
+https://github.com/golang/go/wiki/Questions
+https://tools.ietf.org/html/rfc7230#appendix-A.1.2
+https://tools.ietf.org/html/rfc2068#section-19.7.1
+https://github.com/golang/go/issues/4677
 ## 常用包
 
 1. https://github.com/urfave/cli

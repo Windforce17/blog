@@ -11,6 +11,9 @@ https://wiki.archlinux.org/index.php/Multiboot_USB_drive
 2. 更新时间`timedatectl set-ntp true`
 3. 分区，根目录，LVM，RAID,swap 等,然后格式化,uefi 的可以试试直接格式化/dev/sda....
 4. swap 处理 `mkswap /dev/sdX2;swapon /dev/sdX2`
+use zram-generator
+https://github.com/systemd/zram-generator/blob/main/README.md
+https://wiki.archlinux.org/index.php/swap#Performance
 5. 挂载根目录 `mount /dev/sdX1 /mnt`
 6. 修改`/etc/pacman.d/mirrorlist` 选择最快的地址，我使用 ustc 和清华的，或者使用`pacman-mirrors -b testing -c China`
 7. 安装系统：`pacstrap /mnt base base-devel linux linux-firmware zsh`

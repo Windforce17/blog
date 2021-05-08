@@ -43,3 +43,7 @@ o2kQ+X5xK9cipRgEKwIDAQAB
 
 最新版本的jwt-go是支持rs256的，parsewithclaims的key的类型为*rsa.PublicKey。
 
+## flask session
+https://10-0-0-55.github.io/web/flask/session/
+\https://terryvogelsang.tech/MITRECTF2018-my-flask-app/
+https://www.anquanke.com/post/id/163975

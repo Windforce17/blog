@@ -4,7 +4,7 @@
 ![编译失败](2019-03-20-17-25-40.png)
 在go1.11以后，使用了全新的go module管理方式
 
-## go mod
+## go modf
 官方文档:https://github.com/golang/go/wiki/Modules  
 教程:https://roberto.selbach.ca/intro-to-go-modules/  
 go在1.11.1以上添加了go mod特性，用来取代以前的依赖管理。在Goland新建选项的时候选择第二个Go module
