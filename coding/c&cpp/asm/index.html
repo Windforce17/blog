@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://windforce17.github.io/blog/coding/c%26cpp/asm/">
       
       <link rel="icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
     
     
       
@@ -928,6 +928,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#att" class="md-nav__link">
+    傻逼AT&amp;T
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1091,6 +1098,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../golang/crypto/" class="md-nav__link">
+        Crypto
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../golang/gin/" class="md-nav__link">
         Gin
       </a>
@@ -1117,18 +1136,6 @@
     <li class="md-nav__item">
       <a href="../../golang/problem/" class="md-nav__link">
         Problem
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../golang/rsa/" class="md-nav__link">
-        Rsa
       </a>
     </li>
   
@@ -1622,11 +1629,50 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_26" type="checkbox" id="__nav_4_26" >
       
       <label class="md-nav__link" for="__nav_4_26">
+        分布式系统
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="分布式系统" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_26">
+          <span class="md-nav__icon md-icon"></span>
+          分布式系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%88%86%E5%B8%83%E5%BC%8F%E7%B3%BB%E7%BB%9F/%E4%B8%80%E8%87%B4%E6%80%A7hash%E7%AE%97%E6%B3%95/" class="md-nav__link">
+        一致性hash算法
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_27" type="checkbox" id="__nav_4_27" >
+      
+      <label class="md-nav__link" for="__nav_4_27">
         前端♂js
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="前端♂js" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_26">
+        <label class="md-nav__title" for="__nav_4_27">
           <span class="md-nav__icon md-icon"></span>
           前端♂js
         </label>
@@ -1730,14 +1776,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_27" type="checkbox" id="__nav_4_27" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_28" type="checkbox" id="__nav_4_28" >
       
-      <label class="md-nav__link" for="__nav_4_27">
+      <label class="md-nav__link" for="__nav_4_28">
         编译原理
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="编译原理" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_27">
+        <label class="md-nav__title" for="__nav_4_28">
           <span class="md-nav__icon md-icon"></span>
           编译原理
         </label>
@@ -3454,6 +3500,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#att" class="md-nav__link">
+    傻逼AT&amp;T
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3505,6 +3558,14 @@
     <span class="n">printf</span><span class="p">(</span><span class="s">&quot;ecx=%d  count = %d&quot;</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">strCount</span><span class="p">);</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
+</code></pre></div>
+<h2 id="att">傻逼AT&amp;T<a class="headerlink" href="#att" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nf">at</span><span class="err">&amp;</span><span class="no">t</span>                             <span class="no">intel</span>
+<span class="nf">movl</span> <span class="mi">-4</span><span class="p">(</span><span class="nv">%ebp</span><span class="p">,</span> <span class="nv">%edx</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="nv">%eax</span>     <span class="no">mov</span> <span class="no">eax</span><span class="p">,</span> <span class="p">[</span><span class="no">ebp-4</span><span class="err">+</span><span class="no">edx</span><span class="p">*</span><span class="mi">4</span><span class="p">]</span>
+<span class="nf">movl</span> <span class="mi">-4</span><span class="p">(</span><span class="nv">%ebp</span><span class="p">),</span> <span class="nv">%eax</span>              <span class="no">mov</span> <span class="no">eax</span><span class="p">,</span> <span class="p">[</span><span class="no">ebp-4</span><span class="p">]</span>
+<span class="nf">movl</span> <span class="p">(</span><span class="nv">%ecx</span><span class="p">),</span> <span class="nv">%edx</span>                <span class="no">mov</span> <span class="no">edx</span><span class="p">,</span> <span class="p">[</span><span class="no">ecx</span><span class="p">]</span>
+<span class="nf">leal</span> <span class="mi">8</span><span class="p">(,</span><span class="nv">%eax</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="nv">%eax</span>            <span class="no">lea</span> <span class="no">eax</span><span class="p">,</span> <span class="p">[</span><span class="no">eax</span><span class="p">*</span><span class="mi">4</span><span class="err">+</span><span class="mi">8</span><span class="p">]</span>
+<span class="nf">leal</span> <span class="p">(</span><span class="nv">%eax</span><span class="p">,</span><span class="nv">%eax</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="nv">%eax</span>         <span class="no">lea</span> <span class="no">eax</span><span class="p">,</span> <span class="p">[</span><span class="no">eax</span><span class="p">*</span><span class="mi">2</span><span class="err">+</span><span class="no">eax</span><span class="p">]</span>
 </code></pre></div>
                 
               
