@@ -41,9 +41,9 @@ modprobe rndis_host cdc_ether usbnet
 
 ```sh
 # 接入archlinuxcn
-echo 'Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch' > /etc/pacman.d/mirrorlist
+echo 'Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
 echo '[archlinuxcn]
-Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux-cn/$arch
 ' >> /etc/pacman.conf
 ```
 ## wifi
@@ -218,8 +218,8 @@ net.ipv4.tcp_fastopen = 3
 net.ipv4.tcp_max_syn_backlog = 30000
 net.ipv4.tcp_max_tw_buckets = 2000000
 net.ipv4.tcp_mtu_probing = 1
-net.core.default_qdisc = fq
-net.ipv4.tcp_congestion_control = bbr
+fs.file-max=65535
+net.ipv4.tcp_tw_reuse = 1
 ```
 
 ### 设置pacman彩色输出
