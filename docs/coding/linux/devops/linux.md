@@ -1,3 +1,5 @@
+## 有用的命令
+`grep -ir sync.Once $(go env GOROOT)/src | wc -l`
 ## locale issue
 
 ```sh
