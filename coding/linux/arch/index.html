@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://windforce17.github.io/blog/coding/linux/arch/">
       
       <link rel="icon" href="../../..">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.4">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
     
     
       
@@ -3369,6 +3369,18 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../reverse/%E8%99%9A%E6%8B%9F%E5%8C%96%E6%A3%80%E6%B5%8B/" class="md-nav__link">
+        虚拟化检测
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../reverse/%E8%B0%83%E7%94%A8%E7%BA%A6%E5%AE%9A/" class="md-nav__link">
         调用约定
       </a>
@@ -3384,14 +3396,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_20" type="checkbox" id="__nav_11_20" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_21" type="checkbox" id="__nav_11_21" >
       
-      <label class="md-nav__link" for="__nav_11_20">
+      <label class="md-nav__link" for="__nav_11_21">
         010editor
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="010editor" data-md-level="2">
-        <label class="md-nav__title" for="__nav_11_20">
+        <label class="md-nav__title" for="__nav_11_21">
           <span class="md-nav__icon md-icon"></span>
           010editor
         </label>
@@ -3872,9 +3884,9 @@ use zram-generator
 <span class="c1"># 然后使用dhcp之类的设置ip地址，没有dns还要设置dns ping 一下试试</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1"># 接入archlinuxcn</span>
-<span class="nb">echo</span> <span class="s1">&#39;Server = https://mirrors.ustc.edu.cn/manjaro/stable/$repo/$arch&#39;</span> &gt; /etc/pacman.d/mirrorlist
+<span class="nb">echo</span> <span class="s1">&#39;Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux/$repo/os/$arch&#39;</span> &gt; /etc/pacman.d/mirrorlist
 <span class="nb">echo</span> <span class="s1">&#39;[archlinuxcn]</span>
-<span class="s1">Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch</span>
+<span class="s1">Server = https://mirrors.sjtug.sjtu.edu.cn/archlinux-cn/$arch</span>
 <span class="s1">&#39;</span> &gt;&gt; /etc/pacman.conf
 </code></pre></div>
 <h2 id="wifi">wifi<a class="headerlink" href="#wifi" title="Permanent link">&para;</a></h2>
@@ -4021,8 +4033,8 @@ net.ipv4.tcp_fastopen = 3
 net.ipv4.tcp_max_syn_backlog = 30000
 net.ipv4.tcp_max_tw_buckets = 2000000
 net.ipv4.tcp_mtu_probing = 1
-net.core.default_qdisc = fq
-net.ipv4.tcp_congestion_control = bbr
+fs.file-max=65535
+net.ipv4.tcp_tw_reuse = 1
 </code></pre></div>
 <h3 id="pacman">设置pacman彩色输出<a class="headerlink" href="#pacman" title="Permanent link">&para;</a></h3>
 <p>打开/etc/pacman.conf文件，找到被注释的#Color，改为Color。pacman就会输出彩色信息，方便查看。</p>
@@ -4172,10 +4184,10 @@ net.ipv6.conf.lo.disable_ipv6 =1
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.4fa0e4ee.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["tabs"], "translations": {"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.a1609d9a.min.js"></script>
       
         <script src="https://cdnjs.loli.net/ajax/libs/pangu/3.3.0/pangu.min.js"></script>
       
