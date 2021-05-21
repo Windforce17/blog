@@ -3584,7 +3584,8 @@
 <h2 id="indexyaml">index.yaml<a class="headerlink" href="#indexyaml" title="Permanent link">&para;</a></h2>
 <h2 id="k8s">k8s<a class="headerlink" href="#k8s" title="Permanent link">&para;</a></h2>
 <h3 id="_1">新加权限<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p><a href="https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/#kubectl-auth-reconcile">https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/#kubectl-auth-reconcile</a></p>
+<p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/</a>
+<a href="https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/#kubectl-auth-reconcile">https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/#kubectl-auth-reconcile</a></p>
 <h3 id="serviceaccounttoken">使用serviceaccount的token链接集群<a class="headerlink" href="#serviceaccounttoken" title="Permanent link">&para;</a></h3>
 <p>SECRET_TOKEN=$(kubectl get sa <span><span class="MathJax_Preview">{K8SUSERNAME} -o jsonpath='{.secrets[0].name}')
 export SA_TOKEN=</span><script type="math/tex">{K8SUSERNAME} -o jsonpath='{.secrets[0].name}')
@@ -3593,7 +3594,7 @@ export SA_TOKEN=</script></span>(kubectl get secret ${SECRET_TOKEN} -o jsonpath=
 <p>kubectl config set-credentials <span><span class="MathJax_Preview">{K8SUSERNAME} --token=</span><script type="math/tex">{K8SUSERNAME} --token=</script></span>{SA_TOKEN}</p>
 <p>kubectl config set-context <span><span class="MathJax_Preview">{K8SUSERNAME} --cluster=cls-4pp6s10w--namespace=default --user=</span><script type="math/tex">{K8SUSERNAME} --cluster=cls-4pp6s10w--namespace=default --user=</script></span>{K8SUSERNAME}</p>
 <p>kubectl rolling-update myapp --image=us.gcr.io/project-107012/myapp:5c3dda6b</p>
-<p>kubectl set image -n dev deployment/</p>
+<p>kubectl set image -n dev deployment</p>
                 
               
               
