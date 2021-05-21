@@ -112,7 +112,7 @@ button[data-md-color-scheme='slate']{
   background-color: var(--md-default-bg-color);
 }
 button[data-md-color-accent]:hover, button[data-md-color-primary]:hover {
-    opacity: .75;
+    opacity: 0;
 }
 </style>
 
