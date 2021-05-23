@@ -1,5 +1,6 @@
-# Qt 静态编译
-
+# Qt 编程指南
+https://qtguide.ustclug.org/
+## 静态编译
 1.  官网下载 5.8 的包,源码https://pan.baidu.com/s/1bpgkTnp
 2.  安装 mingw
 3.  解压 static 包到 c:\qt 下,解压 OpenSSL 的 zip 压缩包（openssl-1.0.1c_static_w32_mingw.zip）到 C:\Dev
@@ -136,4 +137,17 @@ QMatrix matrix;
 matrix.rotate(270);
 *imgRotate = img->transformed(matrix);
 ui->label->setPixmap(QPixmap::fromImage(*imgRotate));
+```
+
+# QT 字符串处理
+```c++
+// string to Qstring
+std::string strStd = "中文";
+QString strQ = QString::fromLocal8Bit(strStd.c_str());
+//Qstring to string
+QString strQ("中文");
+std::string strStd= strQ.toStdString();
+QTextCodec *code = QTextCodec::codecForName("gb18030");
+ // 如果code为0，表示在运行的机器上没有装gb18030字符集。不过一般的中文windows系统中都安装了这一字符集
+ if (code)    strStd= code->fromUnicode(strQ).data();
 ```
