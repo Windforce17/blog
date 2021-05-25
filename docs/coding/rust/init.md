@@ -1,5 +1,5 @@
 ## install
-
+https://rust.godbolt.org/
 ```sh
 yay -S rustup
 rustup default stable

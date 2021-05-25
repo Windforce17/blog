@@ -1,0 +1,1 @@
+https://medium.com/@shnatsel/smoke-testing-rust-http-clients-b8f2ee5db4e6
