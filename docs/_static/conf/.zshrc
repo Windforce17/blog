@@ -161,7 +161,7 @@ alias -s bz2='tar -xjvf'
 alias -s zst='tar -xvf'
 
 # proxy
-proxy_addr="http://192.168.0.123:7890"
+proxy_addr="http://192.168.100.23:1080"
 #alias proxyon='export ALL_PROXY=socks5://192.168.100.27:1080'
 alias proxyon="export ALL_PROXY=$proxty_addr;export all_proxy=$proxy_addr;export https_proxy=$proxy_addr;git config --global http.proxy $proxy_addr;git config --global https.proxy $proxy_addr"
 alias proxyoff='unset ALL_PROXY;unset all_proxy;unset https_proxy;git config --global --unset http.proxy;git config --global --unset https.proxy'
@@ -176,8 +176,11 @@ export LANG=en_US.UTF-8
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/.local/bin
 
+# golang
+export PATH=$PATH:/usr/local/go/bin
+
 # rust
-#source $HOME/.cargo/env
+source $HOME/.cargo/env
 
 # options
 unsetopt correct_all
