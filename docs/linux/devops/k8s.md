@@ -7,6 +7,12 @@ https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-accou
 https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/#kubectl-auth-reconcile
 https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/#kubectl-create-role
 https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/#kubectl-create-clusterrolebinding
+
+```sh
+kubectl create sa nighting-build
+kubectl create clusterrolebinding nighting-build --clusterrole=nighting-build --serviceaccount=nighting-build:nighting-build
+kubectl create clusterrole nighting-build --verb=get,list,watch,patch,create,update --resource=deployment,configmap,service,ingress
+```
 ### 使用serviceaccount的token链接集群
 SECRET_TOKEN=$(kubectl get sa ${K8SUSERNAME} -o jsonpath='{.secrets[0].name}')
 export SA_TOKEN=$(kubectl get secret ${SECRET_TOKEN} -o jsonpath={.data.token} -n sa-test | base64 -d)
