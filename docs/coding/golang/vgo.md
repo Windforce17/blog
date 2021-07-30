@@ -4,7 +4,7 @@
 ![编译失败](2019-03-20-17-25-40.png)
 在go1.11以后，使用了全新的go module管理方式
 
-## go mod
+## go modf
 官方文档:https://github.com/golang/go/wiki/Modules  
 教程:https://roberto.selbach.ca/intro-to-go-modules/  
 go在1.11.1以上添加了go mod特性，用来取代以前的依赖管理。在Goland新建选项的时候选择第二个Go module
@@ -44,6 +44,4 @@ require (
 ### vendor
 go module 默认忽略vendor目录的，当然如果要添加vendor依赖，可以使用`go mod vendor`创建一个vendor目录，并且拷贝所有依赖进去，同时build的时候也要使用`bo build -mod vendor`
 建议开发时用go build,zai CI时使用`vendor`，因为CI过程中不一定有外网环境
-## go proxy
-有了go mod特性，可以使用`go proxy`来代理go mod，只需要设置环境变量即可`GOPROXY = "https://goproxy.io"` 更多请看：https://goproxy.io/
 

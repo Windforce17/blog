@@ -100,7 +100,7 @@ int main(){
 另一种编译 main.c，并链接 libmyshare.so 的方式如下（该方式通过./libmyshare.so 直接指定使用当前目录下的 libmyshare.so 文件），使用命令：gcc -o app_share main.c ./libmyshare.so
 
 ## 动态链接库
-
+PIE和PIC之间的问题:https://www.ibm.com/developerworks/cn/linux/l-cn-sdlstatic/index.html
 ### c
 
 ```c
@@ -210,8 +210,9 @@ int main() {
 ## 右值引用(std::move())
 
 如果学完了 rust 可能理解更深了,
-[深入浅出 C++ 11 右值引用](https://www.zhihu.com/collection/262759047)
-
 ## 元编程
 
 [浅谈 C++元编程](https://zhuanlan.zhihu.com/p/87917516)
+
+## 其他
+SIGFPE信号来源：除0，(INT_MIN /-1),这个会得到一个无法表示的正数。

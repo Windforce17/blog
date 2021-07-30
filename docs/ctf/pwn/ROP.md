@@ -3,14 +3,23 @@
 http://www.scs.stanford.edu/brop/
 
 ## srop
-
+```py
+#seting architect
+context.arch = "amd64"
+# 设置寄存器
+sigframe = SigreturnFrame()
+sigframe.rax = 0x1
+sigframe.rdi = 0x2
+sigframe.rsi = 0x3
+sigframe.rdx = 0x4
+```
 https://www.freebuf.com/articles/network/87447.html
 https://blog.csdn.net/qq_29343201/article/details/72627439
 
 ## ROPgadget
 
 1.  ROPgadget 得到代码片断
-2.  cd80c3 就是 int0x80;ret,s 使用`ROPgadget --binary {binaryname} --opcode cd80c3`来寻找
+2.  cd80c3 就是 int0x80;ret,使用`ROPgadget --binary {binaryname} --opcode cd80c3`来寻找
 3.  动态链接找不到 int 0x80,需要构造 rop
 4.  `ROPgadget --binary {binary_name} --ropchain`可以直接生成 ROP chain，不过要转换一下
 
@@ -33,10 +42,10 @@ i=0
 while(i<len(rop)):
     if rop[i]=='/bin':
         rop[i]='0x6e69622f'
-    if rop[i]=='sh':
+    if rop[i]=='//sh':
         rop[i]='0x68732f2f'
     i+=1
-print rop
+print(rop)
 ```
 
 ## one_gadget
@@ -57,7 +66,7 @@ https://github.com/david942j/one_gadget
 将 eax 赋值为 3
 
 ### 栈转移
-
+   
 寻找 leave;ret;指令，然后更改 ebp 的值即可
 
 ```py

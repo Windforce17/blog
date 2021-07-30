@@ -15,20 +15,22 @@ theme:
   palette:
     primary: 'white'
     accent: 'red'
-  logo:
-    icon: 'school'
-  feature:
-    tabs: true
+  icon:
+    logo: 'material/school'
+  features:
+    - tabs
   font:
     text: 'Fira Sans'
     code: 'Fira Mono'
 
 extra_javascript:
+  - 'https://cdnjs.loli.net/ajax/libs/pangu/3.3.0/pangu.min.js'
   - '_static/js/extra.js'
   - 'https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML'
 extra:
   search:
-    language: 'zh-CN'
+    lang: 
+      - zh-CN
   disqus: 'Windforce17'
   copyright: 'CC BY-NC-SA 4.0'
 

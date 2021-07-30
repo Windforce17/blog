@@ -20,6 +20,12 @@ Linux kernel不是pr维护，而是patch mail。
 `git send-email`
 don't forget to install git-mail git core
 
+## git clone 优化大小
+```sh
+git clone https://xxx/xxx.git --depth 1
+#重新拉去历史记录
+git pull --unshallow 
+```sh 
 ## Multiple accounts on Github
 
 ```bash
@@ -53,6 +59,8 @@ ssh-add -s
 ssh-add -l
 ```
 
+## 统计提交前5名
+`git log --pretty='%aN' | sort | uniq -c | sort -k1 -n -r | head -n 5`
 ## 从历史的提交建立新分支的方法：
 
 方法一： checkout到历史提交，然后checkout -b。

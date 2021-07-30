@@ -9,6 +9,17 @@ CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
 CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build
 # 32bit GOARCH=386
 ```
+## debug
+1. 删除debug信息
+```sh
+go build -ldflags “-s -w”
+```
+
+2. 有用的函数
+```go
+runtime.Breakpoint()//触发调试器断点。
+runtime/debug.PrintStack()//显示调试堆栈。
+```
 
 ## vscode 需要的包
 
@@ -29,6 +40,13 @@ go get -u -v github.com/rogpeppe/godef
 go get -u -v golang.org/x/tools/cmd/goimports
 go get -u -v golang.org/x/lint/golint
 
+## go http keey-alive bug
+https://github.com/golang/go
+https://golang.org/doc/contribute
+https://github.com/golang/go/wiki/Questions
+https://tools.ietf.org/html/rfc7230#appendix-A.1.2
+https://tools.ietf.org/html/rfc2068#section-19.7.1
+https://github.com/golang/go/issues/4677
 ## 常用包
 
 1. https://github.com/urfave/cli

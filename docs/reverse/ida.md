@@ -16,3 +16,4 @@ https://blog.csdn.net/lixiangminghate/article/details/78820388
 
 ## 插件
 golang逆向：https://github.com/sibears/IDAGolangHelper
+rizzo恢复函数签名：https://github.com/fireundubh/IDA7-Rizzo

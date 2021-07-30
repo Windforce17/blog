@@ -1,9 +1,25 @@
 ## install
-
+https://rust.godbolt.org/
 ```sh
 yay -S rustup
 rustup default stable
 ```
+
+```sh
+export RUSTUP_DIST_SERVER='https://mirrors.sjtug.sjtu.edu.cn/rust-static'
+export RUSTUP_UPDATE_ROOT='https://mirrors.sjtug.sjtu.edu.cn/rust-static/rustup'
+curl https://mirrors.ustc.edu.cn/rust-static/rustup/rustup-init.sh | sh
+```
+
+cargo:
+```conf
+#~/.cargo/config
+[source.mirror]
+registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index/"
+[source.crates-io]
+replace-with = "mirror"
+```
+
 
 其他问题查看[这个](https://wiki.archlinux.org/index.php/Rust#Installation)
 
@@ -45,6 +61,26 @@ where
     }
 }
 ```
+
+## cargo
+https://doc.rust-lang.org/cargo/guide/why-cargo-exists.html
+
+
+## unsafe
+
+https://doc.rust-lang.org/nomicon/index.html
+
+## std
+https://doc.rust-lang.org/std/
+
+## example
+https://doc.rust-lang.org/rust-by-example/conversion/try_from_try_into.html
+
+## async
+https://rust-lang.github.io/async-book/01_getting_started/02_why_async.html
+
+## cheats
+https://cheats.rs/
 ## 常用的 crates
 
 1. Rayon

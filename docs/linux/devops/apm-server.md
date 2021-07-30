@@ -1,0 +1,6 @@
+## 配置
+1. 环境变量
+```sh
+env ELASTIC_APM_LOG_FILE=stderr
+env ELASTIC_APM_SERVICE_NAME=gtest 
+env ELASTIC_APM_ENVIRONMENT=dev

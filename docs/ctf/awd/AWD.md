@@ -89,7 +89,7 @@ https://people.redhat.com/~rjones/virt-what/
 
 angry ip scanner
 nmap
-msscan
+rustscan
 
 ## 常用命令
 

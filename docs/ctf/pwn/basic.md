@@ -74,7 +74,8 @@ plt 指向 got,采用延时绑定。printf 函数中，0x404c010 实际内容是
 ## shellcode
 
 ### x86
-
+int 0x80调用需要设置5个寄存器
+eax = 11 = 0xb, ebx = &(“/bin/sh”), ecx = edx = edi = 0.
 ```x86asm
 jmp sh
 run:

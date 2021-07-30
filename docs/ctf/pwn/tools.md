@@ -1,5 +1,5 @@
-## gdb-peda
-
+## pwndbg
+`cyclic/cyclic -l`来寻找padding的长度
 `vmmap`
 查看 process mapping 信息，得到每个地址的权限
 `find` 在内存中搜索字符串，还有一种方法，`cat /proc/{pid}/maps`
@@ -19,6 +19,7 @@
 from pwn import *
 import binascii
 context.log_level='debug'
+# context.terminal = ["tmux","split","-h"]
 context.terminal=['bash']
 debug=True
 
@@ -46,6 +47,7 @@ else:
 ### 运行时变量
 
 ```py
+## 设置context.binary后 arch都不用设置了
 context.log_level = 'debug'
 context.arch      = 'i386' # 32 bit
 context.arch      = 'amd64'# 64 bit
@@ -106,7 +108,7 @@ str(rop)
 
 专门应为没有 libc 的漏洞利用，基本框架
 
-```
+```py
 p = process('./xxx')
 def leak(address):
   #各种预处理

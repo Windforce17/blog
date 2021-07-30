@@ -9,27 +9,37 @@
 - 新手过招，靠的是技巧,高手过招，靠的是技术
 
 ### 刷题地址
-
+1. 综合
+- https://hackme.inndy.tw/
 - [shiyanbar](http://www.shiyanbar.com/ctf/)
 - [nuptzj](http://ctf.nuptzj.cn/)
 - [jarvisoj](https://www.jarvisoj.com/)
 - [ichunqiu](https://www.ichunqiu.com/competition)
 - [whaledu](http://www.whaledu.com/)
-- http://ddctf.didichuxing.com/
+- https://ringzer0ctf.com/challenges
+- https://hackme.inndy.tw/
+- http://wargame.kr/
+- [hakcmeinndy wp](http://carlstar.club/)
+- http://oj.xctf.org.cn/
+- https://adworld.xctf.org.cn/
+- http://ctf.bugku.com/
+- http://rookiehacker.org/
+- https://buuoj.cn/
+- https://vulhub.org/
+1. pwn
+
 - http://pwnable.kr/
 - https://pwnable.tw/
 - https://pwnhub.cn/
 - https://pwnable.xyz/
-- http://wargame.kr/
-- https://ropemporium.com/
-- https://hackme.inndy.tw/
-- http://www.exploit-exercises.com
-- http://www.wechall.net/
-- https://www.zhihu.com/question/24740239
 - [be pwn](https://haveibeenpwned.com/)
-- [hakcmeinndy wp](http://carlstar.club/)
 - [pwanable wp](https://bbs.ichunqiu.com/thread-46026-1-1.html)
+- https://ropemporium.com/
 
+3. web
+
+- [exploit exercise](https://exploit-exercises.lains.space/)
+- http://www.wechall.net/challs
 ### 有用的 url
 
 - [在线执行代码](https://www.dooccn.com)
@@ -73,6 +83,16 @@
 - [文件上传](https://github.com/c0ny1/upload-labs)
 - [蚁剑](https://github.com/AntSwordProject/antSword)
 
+
+### crypto
+
+密码学：C/C++语言实现（原书第2版）
+应用密码学：协议、算法与c程序
+经典密码学与现代密码学-斯皮尔曼
+公钥密码学的数学基础
+深入浅出密码学:常用加密技术原理与应用
+密码学基础教程:秘密与承诺
+密码编码学与网络安全：原理与实践
 ### pdf search
 
 - 首选: http://libgen.io/
@@ -88,6 +108,10 @@
 
 - cheat engine
 - 符号执行：[angr](https://docs.angr.io)
+- ida
+- pwndbg
+- x64dbg
+- 各种小工具
 
 ### misc
 

@@ -23,6 +23,21 @@ print('{:,}'.format(100000000))
 print('{:,}'.format(235445.234235))
 ```
 
+## type和isinstance()
+这两个函数都是查看or判断变量类型的，但isinstance()对继承来的对象判断更准确。
+```py3
+class Vehicle:
+    pass
+
+class Truck(Vehicle):
+    pass
+
+isinstance(Vehicle(), Vehicle)  # returns True
+type(Vehicle()) == Vehicle      # returns True
+isinstance(Truck(), Vehicle)    # returns True
+type(Truck()) == Vehicle        # returns False, and this probably won't be what you want.
+
+```
 ## bytes&&string on py3
 
 ```py
@@ -42,6 +57,18 @@ username=''
 for x in u:
     username+=x.to_bytes(4).decode()
 print(username)
+
+### hex转换float,float转hex
+def float2hex(s):
+    fp = ctypes.pointer(ctypes.c_float(s))
+    cp = ctypes.cast(fp,ctypes.POINTER(ctypes.c_long))
+    return hex(cp.contents.value)
+
+def hex2float(h):
+    i = int(h,16)
+    cp = ctypes.pointer(ctypes.c_int(i))
+    fp = ctypes.cast(cp,ctypes.POINTER(ctypes.c_float))
+    return fp.contents.value
 ```
 
 ## multiprocessing
@@ -89,6 +116,7 @@ import sys
 print('\n'.join(sys.path))
 ````
 
+
 ### Mac OS X 上如何切换默认的 Python 版本
 
 https://www.zhihu.com/question/30941329
@@ -123,8 +151,3 @@ autoreconf -v -i
 ./configure --prefix=/opt/libemu;  
 sudo make install
 pip3 install pylibemu
-
-## gmpy2
-
-大数计算的优化 lib
-apt install python-gmpy2
