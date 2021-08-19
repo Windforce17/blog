@@ -1,7 +1,24 @@
-## helm
-## index.yaml
-
 ## k8s
+### 加固
+1. 使用非root权限容器，或增加`runAsUser`,`runAsGroup`,
+2. 使用只读文件系统，`readOnlyRootFilesystem: true` 
+3. 禁用不安全访问：`-insecure-port=0`
+4. 控制平面端口
+6443 8080 kube-api
+2379 2389 etcd
+10250 kubelet
+10251 kube-scheduler
+10252 kube-controller-manager
+10258 cloud-controller-manager
+
+### dump 所有资源
+```sh
+for res in $(kubectl api-resources -o name);do kubectl get "${res}" -A -o yaml > ${res}.yaml; done
+```
+当前账户权限
+``sh
+kubectl auth can-i --list (-n < namespace)
+```
 ### 新加权限
 https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
 https://kubernetes.io/zh/docs/reference/access-authn-authz/rbac/#kubectl-auth-reconcile
