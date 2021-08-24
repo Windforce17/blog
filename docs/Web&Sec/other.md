@@ -152,9 +152,6 @@ Powershell 渗透库合集
 https://github.com/PowerShellMafia/PowerSploit
 Powershell tools 合集
 https://github.com/clymb3r/PowerShell
-Fuzz
-Web 向 Fuzz 工具
-https://github.com/xmendez/wfuzz
 HTTP 暴力破解，撞库攻击脚本
 https://github.com/lijiejie/htpwdScan
 漏洞利用及攻击框架
