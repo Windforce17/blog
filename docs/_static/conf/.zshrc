@@ -9,7 +9,7 @@ if [ ! -f "$ANTIGEN" ]; then
 	[ ! -d "$HOME/.local" ] && mkdir -p "$HOME/.local" 2> /dev/null
 	[ ! -d "$HOME/.local/bin" ] && mkdir -p "$HOME/.local/bin" 2> /dev/null
 	[ ! -f "$HOME/.z" ] && touch "$HOME/.z"
-	URL="http://git.io/antigen"
+	URL="https://dotproxy.cf/https://raw.githubusercontent.com/zsh-users/antigen/master/bin/antigen.zsh"
 	TMPFILE="/tmp/antigen.zsh"
 	if [ -x "$(which curl)" ]; then
 		curl -L "$URL" -o "$TMPFILE" 
@@ -60,13 +60,13 @@ antigen use oh-my-zsh
 # antigen bundle heroku
 antigen bundle pip
 #antigen bundle svn-fast-info
-# antigen bundle command-not-find
+antigen bundle command-not-find
 
 antigen bundle colorize
 antigen bundle github
 antigen bundle python
 antigen bundle rupa/z z.sh
-# antigen bundle z
+antigen bundle z
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
@@ -155,15 +155,16 @@ bindkey '\ev' deer
 alias ll='ls -lh'
 # open file
 alias -s gz='tar -xzvf'
+alias -s xz='tar -xvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip -O cp936'
 alias -s bz2='tar -xjvf'
 alias -s zst='tar -xvf'
 
 # proxy
-proxy_addr="http://192.168.100.23:1080"
+proxy_addr="http://192.168.147.1:1080"
 #alias proxyon='export ALL_PROXY=socks5://192.168.100.27:1080'
-alias proxyon="export ALL_PROXY=$proxty_addr;export all_proxy=$proxy_addr;export https_proxy=$proxy_addr;git config --global http.proxy $proxy_addr;git config --global https.proxy $proxy_addr"
+alias proxyon="export ALL_PROXY=$proxy_addr;export all_proxy=$proxy_addr;export https_proxy=$proxy_addr;git config --global http.proxy $proxy_addr;git config --global https.proxy $proxy_addr"
 alias proxyoff='unset ALL_PROXY;unset all_proxy;unset https_proxy;git config --global --unset http.proxy;git config --global --unset https.proxy'
 #debian
 alias aupdate='sudo apt update && sudo apt upgrade -y'
@@ -178,9 +179,17 @@ export PATH=$PATH:~/.local/bin
 
 # golang
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
 
 # rust
-source $HOME/.cargo/env
+if [ -f $HOME/.cargo/env ]; then 
+	source $HOME/.cargo/env 
+fi
+
+# nodeJs
+export PATH=/usr/local/lib/nodejs/node/bin:$PATH
+# myapp
+export PATH=$PATH:$HOME/app
 
 # options
 unsetopt correct_all
@@ -202,9 +211,12 @@ setopt HIST_VERIFY # Don't execute immediately upon history expansion.
 [ -f "$HOME/.local/etc/function.sh" ] && . "$HOME/.local/etc/function.sh"
 
 
-# ignore complition
+# compleition
 zstyle ':completion:*:complete:-command-:*:*' ignored-patterns '*.pdf|*.exe|*.dll'
 zstyle ':completion:*:*sh:*:' tag-order files
 
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
 
 
