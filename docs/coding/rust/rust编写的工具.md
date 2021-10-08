@@ -10,3 +10,6 @@
 https://github.com/crev-dev/cargo-crev
 6. 缩小二进制体积
    https://github.com/johnthagen/min-sized-rust
+
+7. cargo-edit
+  增加cargo add命令。cargo add tokio 
