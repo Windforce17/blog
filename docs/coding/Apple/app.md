@@ -5,10 +5,7 @@ brew install \
 curl		icu4c		ncurses		unrar		zsh\
 gettext		libidn2		node		wget \
 go		libunistring	openssl		yarn \
-
-# app
-brew cask install \
-baidunetdisk        iterm2              qq                  visual-studio-code \
-docker              jetbrains-toolbox   shadowsocksx-ng     wechat \
-google-chrome       neteasemusic        thunder \
-```
+thunder sougouinput iterm2 \
+cheatsheet                        figma                             insomnia                          microsoft-remote-desktop          sogouinput  \                      visual-studio-code
+clashx                            firefox                           iterm2                            qq                                tencent-meeting                   wechat \
+dingtalk                          google-chrome                     macfuse                           sketch                            thunder                           wechatwork \
