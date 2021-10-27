@@ -16,3 +16,5 @@ https://github.com/crev-dev/cargo-crev
 https://github.com/ruslashev/elfcat
 9. xh 用户友好http客户端
     https://github.com/ducaale/xh
+10. finddomain 子域名查找
+   https://github.com/Findomain/Findomain
