@@ -10,6 +10,9 @@
 https://github.com/crev-dev/cargo-crev
 6. 缩小二进制体积
    https://github.com/johnthagen/min-sized-rust
-
 7. cargo-edit
   增加cargo add命令。cargo add tokio 
+8. elfcat，elf图形化，输出html
+https://github.com/ruslashev/elfcat
+9. xh 用户友好http客户端
+    https://github.com/ducaale/xh
