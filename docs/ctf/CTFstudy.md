@@ -1,6 +1,7 @@
 ## 学习基本思路
 
 - [ctf-wiki](https://ctf-wiki.github.io/ctf-wiki/)
+- [ctf-beginning](http://ctf.forgottensec.com/wiki/index.php?title=Main_Page#Online_CTFs)
 - 第一阶段，拿到题目要能看懂
 - 第二阶段，分析出题目逻辑
 - 做了一个月题啥也不会也是正常的...
