@@ -1,3 +1,6 @@
+## 安装任意来源的软件
+sudo spctl --master-disable
+
 ## mac下常用的软件
 ```sh
 # 命令后工具，库
