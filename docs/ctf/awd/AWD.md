@@ -10,6 +10,65 @@
 - 配置 waf，文件监控，日志记录
 - /var/www/html/ 设置为不可写
 
+第一步：修改 ssh密码 数据库密码
+ssh密码修改：sudo passwd user //xingchen@123
+mysql密码修改： set password for 'root'@'localhost' = password\('35hfnuz'\);
+update admin set logpass='你准备的密码字符串' where xxx='xxx' 限定修改的帐号
+eg:update admin set user_pass='35hfnu?z' where user_id=1;
+python sqlmap.py -d "mysql://root:root@192.168.43.159:8803/mysql" --os-shell
+
+
+第二步：备网站源码 数据库
+nginx： 默认在usr/local/nginx/html, 可以输入nginx -t查看配置文件目录来找到路径
+Apache: 默认在/var/www/html，配置文件在/etc/httpd/conf/httpd.conf
+备份网站源码
+tar zcf backup.zip /var/www/html
+使用Winscp等工具下载var/www/html下的文件，备份
+tar -zcvf web.tar /var/www/html 备份源码
+tar -zcf /tmp/name.tar /path/web
+解包tar -zxvf archive_name.tar
+
+备份数据库
+登陆数据库，命令备份数据库(2选1):
+mysqldump -u root -p --events --events --ignore-table=mysql.events --all-database>fsz888backup7.sql
+mysqldump -u root -p --all-databases>fsz888backup7.sql
+
+还原数据库：
+mysql -u root -p < fsz888backup7.sql
+
+重置sql数据库密码
+方法1：用SET PASSWORD命令
+mysql> set password for 用户名@localhost = password('xingchenfsz.');
+方法2：用mysqladmin
+mysqladmin -u用户名 -p旧密码 password 新密码
+ps：如果是数据库弱密码的话，尝试能不能登陆数据库改密码、写shell、或者删库。
+准备 AWD_weaksql脚本、修改密码脚本、删库脚本
+set password for 'root'@'localhost' = password('root');
+
+
+
+第三步：D盾扫描，删除预留后门
+如果后门直接删除。
+或者在源码里，全局搜索危险函数。
+危险函数如下：
+eval(),assert(),create_funtion,array_map，system(),passthru(),exec(),shell_exec(),popen()
+fopen(),file_get_contents(),curl_exec(),readfile(),require(),require_once(),include(),include_once()
+grep "flag" -R /var/www/html
+
+前期如果可以利用好预置后门，将权限维持并得到分数，你甚至不需要去挖掘其他漏洞就可以主宰比赛，所以开始时的反应速度很重要，我们可以利用相关工具入（D盾）查杀一些比较明显的后门，并进行快速利用。
+接着就是进行权限维持的阶段了，在你发现了漏洞攻击对手的时候，他人一定也会对他的服务进行修复和维护，特别在一些挂了waf的服务中，我们很可能就泄露了自己的漏洞利用点，当对手将漏洞修复之后，我们的权限也就不复存在了，所以我们需要进行权限维持，权限维持和进阶操作我将会在第三期进行详述
+
+
+第四步：挂waf 上狗
+使用方法：
+find /var/www/html/ -path /var/www/html/124687a7bc37d57cc9ecd1cbd9d676f7 -prune -o  -type f -name '*.php'|xargs  sed -i '1i<?php require_once("/var/www/html/drop_wiki.php");?>'
+1.将waf.php传到要包含的文件的目录
+2.在页面中加入防护，有两种做法，根据情况二选一即可：
+在所需要防护的页面加入代码：require_once('drop_wiki.php');
+如果想整站防注，就在网站的一个公用文件中，如数据库链接文件config.inc.php中！
+添加require_once('drop_wiki.php');来调用本代码
+常用php系统添加文件
+PHPCMS V9 \phpc
 ## blog
 
 https://0day.design/2018/12/20/HCTF%202018%20AWD%E5%B0%8F%E7%BB%93
@@ -81,6 +140,7 @@ ssh msfadmin@192.168.189.131 tail -f /var/log/apache2/access.log | ngxtop -f
 
 ## 虚拟化判断
 
+//todo
 https://www.bboysoul.com/2017/11/08/%E6%8E%A8%E8%8D%90%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E5%88%A4%E6%96%AD%E4%BD%A0%E7%9A%84vps%E4%BD%BF%E7%94%A8%E4%BB%80%E4%B9%88%E8%99%9A%E6%8B%9F%E5%8C%96%E6%8A%80%E6%9C%AF%E7%9A%84%E5%B7%A5%E5%85%B7/
   
 https://people.redhat.com/~rjones/virt-what/

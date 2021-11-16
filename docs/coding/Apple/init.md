@@ -12,3 +12,8 @@ thunder sougouinput iterm2 \
 cheatsheet                        figma                             insomnia                          microsoft-remote-desktop          sogouinput  \                      visual-studio-code
 clashx                            firefox                           iterm2                            qq                                tencent-meeting                   wechat \
 dingtalk                          google-chrome                     macfuse                           sketch                            thunder                           wechatwork \
+```
+
+## 鼠标灵敏度
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
+https://downloads.steelseriescdn.com/drivers/tools/steelseries-exactmouse-tool.dmg
