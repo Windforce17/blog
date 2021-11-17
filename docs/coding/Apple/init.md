@@ -2,6 +2,7 @@
 sudo spctl --master-disable
 
 ## mac下常用的软件
+更新:brew upgrade --cask --greedy
 ```sh
 # 命令后工具，库
 brew install \
