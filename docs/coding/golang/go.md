@@ -53,3 +53,14 @@ https://github.com/golang/go/issues/4677
    A simple, fast, and fun package for building command line apps in Go
 2. gopkg.in/yaml.v2
    yaml decoder
+
+## 设计模式
+https://smartscribs.com/tag/design-patterns/
+
+## 正确的退出
+1. 等待所有Goroutine退出
+2. 多进程模式下，传递信号给其他进程
+可以使用context，channel，信号量来实现。
+
+## Gos实现的数据结构和算法
+https://goa.lenggirl.com/
