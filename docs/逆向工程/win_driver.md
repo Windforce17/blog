@@ -4,6 +4,7 @@ vs WDK windbgx 要安装
 https://docs.microsoft.com/zh-cn/windows-hardware/drivers/  
 VirtualKD 免去配置 Windbg 双击调试的步骤，提高响应速度  
 http://sysprogs.com/legacy/virtualkd/download/
+https://github.com/4d61726b/VirtualKD-Redux
 
 ## 配置
 
