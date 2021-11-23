@@ -2,7 +2,7 @@
 python -m compileall  test.py 
 
 ## py反编译
-[支持3.7, `pip install uncompyle`](https://github.com/rocky/python-uncompyle6)
+[支持3.7，不支持3.9, `pip install uncompyle`](https://github.com/rocky/python-uncompyle6)
 
 https://rednaxelafx.iteye.com/blog/382423  
 https://github.com/zrax/pycdc  
