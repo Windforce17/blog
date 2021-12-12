@@ -2,45 +2,10 @@
 openrce.org
 woodmann.com
 hexblog.com
+//todo
 https://github.com/michalmalik/linux-re-101
-## 工具
-### 符号执行工具 angr
-https://xz.aliyun.com/t/3990
-https://xz.aliyun.com/t/4039
-```python
-import angr
-import claripy
-argv1 = claripy.BVS('argv1',50*8) # 如有程序需求参数的话,50个字符长度
-proj = angr.Project('./target')
-state = proj.factory.full_init_state()## proj.factory.entry_state(args=['./target', argv1]) 参数0是目标本身的名字
-simgr = proj.factory.simgr(state)
-simgr.explore(find = 0x40112e,avoid = 0x4010d5) # start traverse
-#simgr.found[0]。solver.eval(argv1,cast_to=str)
-simgr.found[0].posix.dumps(1)
-```
-```py
-import angr
-import claripy
-flag_chars = [claripy.BVS('flag_%d' % i, 8) for i in range(42)]
-# flag = claripy.Concat(*flag_chars + [claripy.BVV(b'\n')])
-flag = claripy.Concat(*flag_chars)
-
-p=angr.Project('./fxck',auto_load_libs=True)
-st = p.factory.full_init_state(
-            args=['./fxck'],
-            add_options=angr.options.unicorn,
-            stdin=flag,
-)
-    
-# for k in flag_chars:
-#     st.solver.add(k >= 0xA)
-#     st.solver.add(k <= 0x7f)
-
-fxck_simgr = p.factory.simgr(st)
-fxck_simgr.explore(find = 0x400fbe,avoid = [0x400f71,0x400f4e]) # start traverse
-```
 ### java逆向
-clss逆向工具：jad
+clss逆向工具：jad
 
 ### PC
 
