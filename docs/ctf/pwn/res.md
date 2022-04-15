@@ -2,15 +2,8 @@ https://pwnorz.com/2018/06/ciscn-2018-semi-final-writeup/
 https://r00tk1ts.github.io/archives/page/2/
 
 ## 题目
-https://github.com/nnamon/linux-exploitation-course
-https://exploit.courses/#/index
 
-堆
-https://github.com/shellphish/how2heap
-https://heap-exploitation.dhavalkapil.com/
-https://sensepost.com/blog/heap/
-嵌入式：
-https://microcorruption.com/login
+
 
 ## 教程
 http://security.cs.rpi.edu/courses/binexp-spring2015/

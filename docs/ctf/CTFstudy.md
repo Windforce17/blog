@@ -6,7 +6,7 @@
 - 第二阶段，分析出题目逻辑
 - 做了一个月题啥也不会也是正常的...
 - 学习曲线坑爹，怎么开始不重要，但是一定要坚持下来
-- 保持练习强度，量变引起质变，瓶颈期，不存在的
+- 保持练习强度，量变引起质变，不存在瓶颈期
 - 新手过招，靠的是技巧,高手过招，靠的是技术
 
 ### 刷题地址
@@ -28,7 +28,7 @@
 - https://buuoj.cn/
 - https://vulhub.org/
 1. pwn
-
+- https://microcorruption.com/login 嵌入式oj
 - http://pwnable.kr/
 - https://pwnable.tw/
 - https://pwnhub.cn/
@@ -36,6 +36,8 @@
 - [be pwn](https://haveibeenpwned.com/)
 - [pwanable wp](https://bbs.ichunqiu.com/thread-46026-1-1.html)
 - https://ropemporium.com/
+- https://github.com/nnamon/linux-exploitation-course
+https://exploit.courses/#/index
 
 3. web
 
