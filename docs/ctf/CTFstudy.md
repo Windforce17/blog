@@ -21,7 +21,6 @@
 - https://hackme.inndy.tw/
 - http://wargame.kr/
 - [hakcmeinndy wp](http://carlstar.club/)
-- http://oj.xctf.org.cn/
 - https://adworld.xctf.org.cn/
 - http://ctf.bugku.com/
 - http://rookiehacker.org/
